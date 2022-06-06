@@ -4,6 +4,7 @@ import Paper from "@mui/material/Paper";
 
 import "core-js/features/url";
 import "core-js/features/url-search-params";
+import Arrow, { DIRECTION, HEAD } from "react-arrows";
 
 
 const Dashboard = () => {
@@ -29,6 +30,26 @@ const Dashboard = () => {
     </div>
   };
 
+  const mkEdges = (edges) => {
+    return <div>
+      {edges.map(edge => {
+        return <Arrow
+          className={"arrow"}
+          from={{
+            direction: DIRECTION.BOTTOM,
+            node: () => document.getElementById(edge[0]),
+            translation: [0, 0]
+          }}
+          to={{
+            direction: DIRECTION.TOP,
+            node: () => document.getElementById(edge[1]),
+            translation: [0, 0]
+          }}
+          head={HEAD.THIN}/>
+      })}
+    </div>
+  };
+
   const mkGraph = () => {
     let currNodes = [finalNode];
     const layers = [];
@@ -37,6 +58,7 @@ const Dashboard = () => {
       const layer = mkLayer(currNodes);
       layers.push(layer);
       const newNodes = [];
+      const edgePairs = [];
       for(let node of currNodes){
         if(node in graphReverse){
           for(let childNode of graphReverse[node]){
@@ -44,11 +66,15 @@ const Dashboard = () => {
               seen.add(childNode);
               newNodes.push(childNode);
             }
+            edgePairs.push([childNode, node])
           }
         }
       }
+      const edges = mkEdges(edgePairs);
+      layers.push(edges);
       currNodes = newNodes;
     }
+    layers.reverse();
     return <div>{layers}</div>;
   };
   return (
