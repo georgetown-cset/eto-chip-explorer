@@ -45,38 +45,62 @@ const Dashboard = () => {
             node: () => document.getElementById(edge[1]),
             translation: [0, 0]
           }}
-          head={HEAD.THIN}/>
+          head={HEAD.NORMAL}/>
       })}
     </div>
   };
 
   const mkGraph = () => {
     let currNodes = [finalNode];
-    const layers = [];
+    const layers = [mkLayer(currNodes)];
     const seen = new Set();
+    currNodes.map(n => seen.add(n));
     while(currNodes.length > 0){
-      const layer = mkLayer(currNodes);
-      layers.push(layer);
-      const newNodes = [];
       const edgePairs = [];
       for(let node of currNodes){
         if(node in graphReverse){
-          for(let childNode of graphReverse[node]){
-            if(!seen.has(childNode)){
-              seen.add(childNode);
-              newNodes.push(childNode);
-            }
-            edgePairs.push([childNode, node])
+          for(let parentNode of graphReverse[node]){
+            edgePairs.push([parentNode, node])
           }
         }
       }
-      const edges = mkEdges(edgePairs);
+      const newNodes = edgePairs.map(e => e[0]);
+      const filtEdges = [];
+      currNodes = [];
+      const bump = [];
+      for(let edge of edgePairs){
+        let siblings = [];
+        const parent = edge[0];
+        const child = edge[1];
+        if(parent in graphReverse) {
+          for (let grandParent of graphReverse[parent]) {
+            siblings = siblings.concat(graph[grandParent]);
+          }
+        }
+        let allSiblingsSeen = true;
+        for(let sib of siblings){
+          allSiblingsSeen &= (newNodes.includes(sib) || seen.has(sib));
+        }
+        if(allSiblingsSeen){
+          filtEdges.push(edge);
+          if(!seen.has(parent)) {
+            currNodes.push(parent);
+          }
+          seen.add(parent);
+        } else{
+          bump.push(child);
+        }
+      }
+      const layer = mkLayer(currNodes);
+      layers.push(layer);
+      currNodes = currNodes.concat(bump);
+      const edges = mkEdges(filtEdges);
       layers.push(edges);
-      currNodes = newNodes;
     }
     layers.reverse();
     return <div>{layers}</div>;
   };
+
   return (
     <div style={{textAlign: "center"}}>
       {mkGraph()}
