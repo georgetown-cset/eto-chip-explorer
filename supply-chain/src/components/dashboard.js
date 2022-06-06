@@ -6,21 +6,11 @@ import "core-js/features/url";
 import "core-js/features/url-search-params";
 import Arrow, { DIRECTION, HEAD } from "react-arrows";
 
+import {graph, graphReverse, nodeToMeta} from "../../data/graph";
+
 
 const Dashboard = () => {
-  const finalNode = "E";
-  const graphReverse = {
-    "B": ["A"],
-    "C": ["A"],
-    "D": ["B"],
-    "E": ["C", "D"]
-  };
-  const graph = {
-    "A": ["B", "C"],
-    "B": ["D"],
-    "C": ["E"],
-    "D": ["E"]
-  };
+  const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
   const mkLayer = (edges) => {
     return <div>
@@ -81,7 +71,7 @@ const Dashboard = () => {
         for(let sib of siblings){
           allSiblingsSeen &= (newNodes.includes(sib) || seen.has(sib));
         }
-        if(allSiblingsSeen){
+        if(true){
           filtEdges.push(edge);
           if(!seen.has(parent)) {
             currNodes.push(parent);
