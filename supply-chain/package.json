@@ -1,0 +1,29 @@
+{
+  "name": "supply-chain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "supply-chain",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@mui/material": "^5.8.2",
+    "gatsby": "^4.15.2",
+    "gatsby-plugin-mdx": "^3.15.2",
+    "gatsby-source-filesystem": "^4.15.0",
+    "react": "^18.1.0",
+    "react-arrows": "^1.2.0",
+    "react-dom": "^18.1.0"
+  }
+}
