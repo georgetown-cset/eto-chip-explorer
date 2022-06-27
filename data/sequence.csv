@@ -1,0 +1,98 @@
+input_name,input_id,goes_into_name,goes_into_id,is_type_of_name,is_type_of_id
+Crystal growing furnaces,N8,Wafer manufacturing,N26,,
+Crystal machining tools,N9,Wafer manufacturing,N26,,
+EUV scanners,N20,,,Advanced photolithography equipment,N19
+ArF scanners,N21,,,Advanced photolithography equipment,N19
+ArF immersion scanners,N22,,,Advanced photolithography equipment,N19
+Advanced photolithography equipment,N19,Photolithography,N25,,
+Ion implanter,N17,Wafer manufacturing,N26,,
+Wafer marking systems,N13,Wafer manufacturing,N26,,
+Maskless lithography equipment,N28,Advanced photomask,N33,,
+Electron-beam lithography tools,N29,,,Maskless lithography equipment,N28
+Laser lithography tools,N30,,,Maskless lithography equipment,N28
+Advanced photomask,N33,Photolithography,N25,,
+Wafer manufacturing,N26,Deposition,N35,,
+Photoresist,N31,Photolithography,N25,,
+Resist processing tools,N32,Photolithography,N25,,
+Deposition tools,N36,Deposition,N35,,
+Plasma CVD tools,N38,,,Chemical vapor deposition tools,N47
+Low-pressure CVD tools,N39,,,Chemical vapor deposition tools,N47
+High-temperature CVD tools,N40,,,Chemical vapor deposition tools,N47
+Atomic layer deposition tools,N41,,,Chemical vapor deposition tools,N47
+Physical vapor deposition tools,N42,,,Deposition tools,N36
+Rapid thermal processing tools,N43,,,Deposition tools,N36
+Tube-based diffusion and deposition tools,N44,,,Deposition tools,N36
+Electrochemical coating tools,N45,,,Deposition tools,N36
+Deposition,N35,Photolithography,N25,,
+Photolithography,N25,Etch and clean,N46,,
+Chemical vapor deposition tools,N47,Deposition,N35,,
+Etching and cleaning tools,N55,Etch and clean,N55,,
+Dry etching and cleaning tools,N48,,,Etching and cleaning tools,N55
+Wet etching and cleaning tools,N49,,,Etching and cleaning tools,N55
+Conductor etching tools,N50,,,Dry etching and cleaning tools,N48
+Dielectric etching tools,N51,,,Dry etching and cleaning tools,N48
+Ion milling tools,N52,,,Dry etching and cleaning tools,N48
+Etch and clean,N46,Chemical mechanical planarization,N57,,
+Chemical mechanical planarization tools,N86,Chemical mechanical planarization,N57,,
+Wafer handlers,N11,Wafer and photomask handling,N59,,
+Photomask handlers,N12,Wafer and photomask handling,N59,,
+Wafer and photomask handling,N59,Deposition,N35,,
+Wafer and photomask handling,N59,Photolithography,N25,,
+Wafer and photomask handling,N59,Etch and clean,N46,,
+Wafer and photomask handling,N59,Chemical mechanical planarization,N57,,
+Wafer bonding and aligning tools,N10,Wafer manufacturing,N26,,
+Process control,N60,Deposition,N35,,
+Process control,N60,Photolithography,N25,,
+Process control,N60,Etch and clean,N46,,
+Process control,N60,Chemical mechanical planarization,N57,,
+Wafer inspection equipment,N61,Process control,N60,,
+Photomask inspection and repair tools,N62,Process control,N60,,
+Wafer level packaging inspection tools,N63,Process control,N60,,
+Process monitoring and curve tracing equipment,N64,Process control,N60,,
+Film and wafer measuring tools,N65,,,Wafer inspection equipment,N61
+Critical dimensions measurement tools,N66,,,Wafer inspection equipment,N61
+Defect inspection tools,N67,,,Wafer inspection equipment,N61
+General-purpose microscopy tools,N68,,,Wafer inspection equipment,N61
+Chemical mechanical planarization,N57,Assembly and packaging,N69,,
+Assembly inspection tools,N70,Assembly and packaging,N69,,
+Dicing tools,N71,Assembly and packaging,N69,,
+Bonding tools,N72,Assembly and packaging,N69,,
+Die attaching tools,N73,,,Bonding tools,N72
+Wire bonding tools,N74,,,Bonding tools,N72
+Advanced interconnect tools,N75,,,Bonding tools,N72
+Packaging tools,N76,Assembly and packaging,N69,,
+Integrated assembly tools,N77,Assembly and packaging,N69,,
+Assembly and packaging,N69,Testing,N78,,
+SoC test equipment,N80,Testing,N78,,
+Burn-in test equipment,N81,Testing,N78,,
+Linear and discrete testing tools,N82,Testing,N78,,
+Handlers and probes,N83,Testing,N78,,
+Core intellectual property,N85,Logic chip design: Advanced CPUs,N1,,
+Core intellectual property,N85,Logic chip design: Discrete GPUs,N2,,
+Core intellectual property,N85,Logic chip design: FPGAs,N3,,
+Core intellectual property,N85,Logic chip design: AI ASICs,N4,,
+Electronic design automation software,N84,Logic chip design: Advanced CPUs,N1,,
+Electronic design automation software,N84,Logic chip design: Discrete GPUs,N2,,
+Electronic design automation software,N84,Logic chip design: FPGAs,N3,,
+Electronic design automation software,N84,Logic chip design: AI ASICs,N4,,
+Chemical mechanical planarization tools,N86,Assembly and packaging,N69,,
+Chemical mechanical planarization materials,N90,Chemical mechanical planarization,N57,,
+Deposition materials,N88,Deposition,N35,,
+Electronic gases,N91,Deposition,N35,,
+Electronic gases,N91,Photolithography,N25,,
+Electronic gases,N91,Etch and clean,N46,,
+Electronic gases,N91,Chemical mechanical planarization,N57,,
+Electronic gases,N91,Assembly and packaging,N69,,
+Wet chemicals,N92,Deposition,N35,,
+Wet chemicals,N92,Photolithography,N25,,
+Wet chemicals,N92,Etch and clean,N46,,
+Wet chemicals,N92,Chemical mechanical planarization,N57,,
+Wet chemicals,N92,,,Packaging materials,N100
+Lead frames,N93,,,Packaging materials,N100
+Bond wires,N94,,,Packaging materials,N100
+Ceramic packages,N95,,,Packaging materials,N100
+Substrates,N96,,,Packaging materials,N100
+Encapsulation resins,N97,,,Packaging materials,N100
+Die attach materials,N98,,,Packaging materials,N100
+Testing,N78,Finished logic chip,N99,,
+Packaging materials,N100,Assembly and packaging,N69,,

@@ -1,0 +1,304 @@
+provider_name,provider_id,provider_type,country
+USA,P1,country,
+CHN,P2,country,
+Other,P3,country,
+KOR,P4,country,
+Europe,P5,country,
+Asia-Pacific,P6,country,
+JPN,P7,country,
+TWN,P8,country,
+Intel,P9,organization,USA
+AMD,P10,organization,USA
+Nvidia,P11,organization,USA
+Jingjia Micro,P12,organization,CHN
+Loongson,P13,organization,CHN
+Zhaoxin,P14,organization,CHN
+Phytium,P15,organization,CHN
+Efinix,P16,organization,CHN
+HiSilicon,P17,organization,CHN
+Lattice,P18,organization,USA
+Microchip,P19,organization,USA
+Achronix,P20,organization,USA
+Flex Logic,P21,organization,USA
+Google,P22,organization,USA
+Cerebras,P23,organization,USA
+Tesla,P24,organization,USA
+Graphcore,P25,organization,USA
+Cambricon,P26,organization,CHN
+Horizon Robotics,P27,organization,CHN
+Intellifusion,P28,organization,CHN
+Gowin,P29,organization,CHN
+Shenzhen Pango,P30,organization,CHN
+Sunway,P31,organization,CHN
+DEU,P32,country,
+ITA,P33,country,
+TSMC,P34,organization,TWN
+Samsung,P35,organization,KOR
+GlobalFoundries,P36,organization,USA
+SMIC,P37,organization,CHN
+UMC,P38,organization,TWN
+Powerchip,P39,organization,TWN
+Hua Hong,P40,organization,CHN
+STMicroelectronics,P42,organization,CHE
+NXP,P43,organization,NLD
+Toshiba,P44,organization,JPN
+NLD,P45,country,
+MAL,P46,country,
+SGP,P47,country,
+ASE,P48,organization,TWN
+Amkor,P49,organization,USA
+JCET,P50,organization,CHN
+TongFu,P52,organization,CHN
+Tianshui,P53,organization,CHN
+UTAC,P54,organization,SGP
+SK Hynix,P55,organization,KOR
+Micron,P56,organization,USA
+Powertech,P57,organization,TWN
+PVA TePla,P58,organization,DEU
+JSG,P59,organization,CHN
+Accretech,P60,organization,JPN
+Okamoto,P61,organization,JPN
+Disco,P62,organization,JPN
+Meyer Burger,P63,organization,CHE
+Toyo,P64,organization,JPN
+Lanzhou Rapid Equipment Manufacturing,P65,organization,CHN
+Beijing JingYi Century Automatic Equipment,P66,organization,CHN
+EV Group,P67,organization,AUT
+SUSS MicroTec,P68,organization,DEU
+Neutronix,P69,organization,USA
+SMEE,P70,organization,CHN
+Daifuku,P71,organization,JPN
+Rorze,P72,organization,JPN
+SEMES,P73,organization,KOR
+Muratec,P74,organization,JPN
+Gudeng,P75,organization,TWN
+RECIF,P76,organization,FRA
+Brooks,P77,organization,USA
+ESI,P78,organization,USA
+CHE,P79,country,
+AUT,P80,country,
+Applied Materials,P81,organization,USA
+Nissin Ion,P82,organization,JPN
+SMIT,P83,organization,JPN
+Axcelis,P84,organization,USA
+CETC,P85,organization,CHN
+Hermes-Epitek,P86,organization,TWN
+Kingstone Semiconductor,P87,organization,CHN
+ASML,P88,organization,NLD
+Nikon,P89,organization,JPN
+SWE,P90,country,
+NuFlare,P91,organization,JPN
+JEOL,P92,organization,JPN
+Vistec,P93,organization,DEU
+Mycronic,P94,organization,SWE
+Heidelberg Instruments,P95,organization,DEU
+Thermo Fisher,P96,organization,USA
+Hitachi,P97,organization,JPN
+Zeiss,P98,organization,DEU
+Tescan,P99,organization,CZE
+HORIBA,P100,organization,JPN
+Eurofins,P101,organization,LUX
+A&D,P102,organization,JPN
+Raith,P103,organization,DEU
+FOCUS,P104,organization,DEU
+Tokyo Electron,P105,organization,JPN
+Screen,P106,organization,JPN
+Kingsemi,P107,organization,CHN
+Brewer Science,P108,organization,USA
+Rite Track,P109,organization,USA
+GBR,P110,country,
+Lam Research,P111,organization,USA
+ASM International,P112,organization,NLD
+Piotech,P113,organization,CHN
+SKY Technology Development,P114,organization,CHN
+NAURA,P115,organization,CHN
+Kokusai,P116,organization,JPN
+ULVAC,P117,organization,JPN
+KLA,P118,organization,USA
+Mattson Tech,P119,organization,USA
+AP Systems,P120,organization,KOR
+Veeco,P121,organization,USA
+Grand Plastic,P122,organization,TWN
+AMEC,P123,organization,CHN
+Plasma-Therm,P124,organization,USA
+SAMCO,P125,organization,JPN
+GigaLane,P126,organization,KOR
+Charm Engineering,P127,organization,KOR
+EBARA,P128,organization,JPN
+Hwatsing,P129,organization,CHN
+KCTech,P130,organization,KOR
+Revasum,P131,organization,USA
+FRA,P132,country,
+ISR,P133,country,
+BLR,P134,country,
+Bruker,P135,organization,DEU
+Rigaku,P136,organization,JPN
+RSIC,P137,organization,CHN
+Nanotronics,P138,organization,USA
+Onto Innovation,P139,organization,USA
+Lasertec,P140,organization,JPN
+CAMTEK,P141,organization,ISR
+Keysight Tech,P142,organization,USA
+Keithley Instruments,P143,organization,USA
+Top Engineering,P144,organization,KOR
+ASM Pacific,P145,organization,CHN
+ASTI,P146,organization,SGP
+Koh Young Tech,P147,organization,KOR
+Cohu,P148,organization,USA
+MIRTEC,P149,organization,KOR
+Grand Tec,P150,organization,CHN
+DISCO,P151,organization,JPN
+Accretech,P152,organization,JPN
+Longhill,P154,organization,CHN
+SYNOVA,P155,organization,CHN
+Besi,P156,organization,NLD
+Fasford Tech,P158,organization,JPN
+Canon,P159,organization,JPN
+Hoson,P160,organization,CHN
+PROTEC,P161,organization,KOR
+JIAFENG,P162,organization,CHN
+DIAS Automation,P163,organization,CHN
+Kulicke & Soffa,P164,organization,SGP
+Hesse,P165,organization,DEU
+Shinkawa,P166,organization,JPN
+SSP,P167,organization,KOR
+KOSES,P168,organization,KOR
+TOWA,P169,organization,JPN
+HANMI,P170,organization,KOR
+Trinity Tech,P171,organization,CHN
+Grohmann,P172,organization,DEU
+CZE,P173,country,
+CAN,P174,country,
+Advantest,P175,organization,JPN
+Teradyne,P176,organization,USA
+UniTest,P177,organization,KOR
+DI,P178,organization,KOR
+Micro Control,P179,organization,USA
+National Instruments,P180,organization,USA
+TESEC,P181,organization,JPN
+AccoTEST,P182,organization,CHN
+Shanghai Juno,P183,organization,CHN
+JHT,P184,organization,CHN
+Synopsys,P185,organization,USA
+Cadence,P186,organization,USA
+Mentor Graphics,P187,organization,USA
+Ansys,P188,organization,USA
+Silvaco,P189,organization,USA
+PDF Solutions,P190,organization,USA
+Huada Empyrean,P191,organization,CHN
+Primarius,P192,organization,CHN
+Xpeedic,P193,organization,CHN
+Semitronix,P194,organization,CHN
+Platform-da,P195,organization,CHN
+Microscapes,P196,organization,CHN
+Arcas-da,P197,organization,CHN
+ARM,P198,organization,GBR
+SST,P199,organization,USA
+Imagination Technologies,P200,organization,GBR
+Ceva,P201,organization,USA
+Verisilicon,P202,organization,CHN
+Rambus,P203,organization,USA
+eMemory Technology,P204,organization,TWN
+Shenzhen Newway,P205,organization,CHN
+JSR,P206,organization,JPN
+Tokyo Ohka Kogyo,P207,organization,JPN
+Shin-Etsu,P208,organization,JPN
+Fujifilm,P209,organization,JPN
+Sumitomo Chemical,P210,organization,JPN
+Dongjin,P211,organization,KOR
+DuPont Electronic Solutions,P212,organization,USA
+EMD Performance Materials,P213,organization,USA
+Inpria,P214,organization,USA
+Ruihong,P215,organization,CHN
+Kempur,P216,organization,CHN
+Nata Opto-electronic Material,P217,organization,CHN
+JHM,P218,organization,CHN
+Fujimi,P219,organization,JPN
+Saint-Gobain,P220,organization,FRA
+Versum Materials,P221,organization,USA
+DuPont,P222,organization,USA
+Cabot,P223,organization,USA
+Thomas West,P224,organization,USA
+SUMCO,P225,organization,JPN
+GlobalWafers,P226,organization,TWN
+Siltronic,P227,organization,DEU
+SK Siltron,P228,organization,KOR
+Okmetic,P229,organization,CHN
+JRH,P230,organization,CHN
+Zhonghuan,P231,organization,CHN
+Gritek,P232,organization,CHN
+MCL,P233,organization,CHN
+Simgui,P234,organization,CHN
+GuoSheng,P235,organization,CHN
+POSHING,P236,organization,CHN
+ZingSEMI,P237,organization,CHN
+Dai Nippon,P238,organization,JPN
+Photronics,P239,organization,USA
+Toppan Photomasks,P240,organization,JPN
+Hoya Corporation,P241,organization,JPN
+Taiwan Mask Corporation,P242,organization,TWN
+Merck,P243,organization,DEU
+CMC,P244,organization,USA
+Anji,P245,organization,CHN
+Hubei Dinglong,P246,organization,CHN
+JX Nippon,P247,organization,JPN
+Honeywell,P248,organization,USA
+Tosoh SMD,P249,organization,JPN
+Linde,P250,organization,DEU
+Praxair,P251,organization,USA
+KFMI,P252,organization,CHN
+Grikin,P253,organization,CHN
+Entegris,P255,organization,USA
+Air Products,P256,organization,USA
+Air Liquide,P257,organization,FRA
+Praxair,P258,organization,USA
+BASF,P260,organization,DEU
+TNSC,P261,organization,JPN
+Showa Denka,P262,organization,JPN
+Wonik,P263,organization,KOR
+SK Materials,P264,organization,KOR
+Haute Gas,P265,organization,CHN
+Jinhong,P266,organization,CHN
+PERIC,P267,organization,CHN
+KMG Chemicals,P268,organization,USA
+Avantor,P269,organization,USA
+Kanto Chemical,P270,organization,JPN
+Runma,P271,organization,CHN
+Jiangyin Chemical Reagents,P272,organization,CHN
+Sinophorus,P273,organization,CHN
+Sinyang,P274,organization,CHN
+Etching Liquid,P275,organization,CHN
+Yongzhi,P276,organization,CHN
+Heraeus,P277,organization,JPN
+Tanaka Denshi,P278,organization,JPN
+Nippon Micro,P279,organization,JPN
+Doublink,P280,organization,CHN
+Kangqiang,P281,organization,CHN
+YesDo,P282,organization,CHN
+KDDX,P283,organization,CHN
+Quik-Pak,P284,organization,USA
+NGK,P285,organization,JPN
+Alent,P286,organization,GBR
+Kyocera,P287,organization,JPN
+LG,P288,organization,KOR
+Sumitomo,P289,organization,JPN
+Mitsui High-Tec,P290,organization,JPN
+Henkel,P291,organization,DEU
+Toray,P292,organization,JPN
+Tanaka,P294,organization,JPN
+Zhongwei,P295,organization,CHN
+Yixing,P296,organization,CHN
+Ibiden,P297,organization,JPN
+NanYa,P298,organization,TWN
+Shinko,P299,organization,JPN
+Shennan Circuits,P300,organization,CHN
+Zhuhai Yueya,P301,organization,CHN
+AKM,P302,organization,CHN
+Sinopaco,P303,organization,CHN
+HHCK,P304,organization,CHN
+Darbond,P305,organization,CHN
+Hysol Huawei,P306,organization,CHN
+Y-Bond,P307,organization,CHN
+SH Material,P308,organization,JPN
+Hualong,P309,organization,CHN
+Eminess,P310,organization,USA
