@@ -9,7 +9,7 @@ import Arrow, { DIRECTION, HEAD } from "react-arrows";
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
 const typeToColor = {
-  "input_resource": "rgba(122, 196, 165, 0.75)",
+  "material_resource": "rgba(122, 196, 165, 0.75)",
   "process": "rgba(21, 175, 208, 0.75)",
   "stage": "rgba(124, 51, 111, 0.75)",
   "tool_resource": "rgba(241, 127, 76, 0.75)",
