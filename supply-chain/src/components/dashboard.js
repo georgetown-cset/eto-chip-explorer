@@ -6,38 +6,20 @@ import "core-js/features/url";
 import "core-js/features/url-search-params";
 import Arrow, { DIRECTION, HEAD } from "react-arrows";
 
+import GraphNode from "./graph_node";
+
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-const typeToColor = {
-  "material_resource": "rgba(122, 196, 165, 0.75)",
-  "process": "rgba(21, 175, 208, 0.75)",
-  "stage": "rgba(124, 51, 111, 0.75)",
-  "tool_resource": "rgba(241, 127, 76, 0.75)",
-  "ultimate_output": "rgba(229, 191, 33, 0.75)",
-};
+
 
 const Dashboard = () => {
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
   const mkLayer = (edges) => {
     return <div>
-      {edges.map(edge => {
-        return <Paper id={edge} style={{width: "200px", padding: "5px",
-          margin: "50px 20px", display: "inline-block", backgroundColor: typeToColor[nodeToMeta[edge]["type"]]}}>
-          <div>
-            {edge}
-            <Typography component={"p"} variant={"body2"}>{nodeToMeta[edge]["name"]}</Typography>
-            {nodeToMeta[edge]["materials"].length > 0 &&
-              <Typography component={"p"} variant={"body2"}>
-                Materials: {nodeToMeta[edge]["materials"].join(", ")}
-              </Typography>}
-            {nodeToMeta[edge]["tools"].length > 0 &&
-              <Typography component={"p"} variant={"body2"}>
-                Tools: {nodeToMeta[edge]["tools"].join(", ")}
-              </Typography>}
-          </div>
-        </Paper>
-      })}
+      {edges.map(edge =>
+        <GraphNode edge={edge} meta={nodeToMeta[edge]}/>
+      )}
     </div>
   };
 

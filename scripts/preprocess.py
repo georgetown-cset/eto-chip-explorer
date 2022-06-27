@@ -17,7 +17,7 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
             node_to_meta[node_id] = {
                 "name": line["input_name"],
                 "type": node_type,
-                "stage_name": line["stage_name"]
+                "stage_id": line["stage_id"]
             }
             assert node_type in EXPECTED_TYPES
             if node_type in BASE_NODE_TYPES:
