@@ -10,14 +10,14 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
     graph_reverse = {}
     with open(nodes) as f:
         for line in csv.DictReader(f):
-            node_to_meta[line["node_id"]] = {
-                "name": line["node_name"],
+            node_to_meta[line["input_id"]] = {
+                "name": line["input_name"],
                 "type": line["type"],
                 "stage_name": line["stage_name"]
             }
     with open(sequence) as f:
         for line in csv.DictReader(f):
-            parent = line["node_id"]
+            parent = line["input_id"]
             child = line["goes_into_id"]
             for node in [parent, child]:
                 if node and node not in node_to_meta:
@@ -43,7 +43,7 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--nodes", default=os.path.join("data", "nodes.csv"))
+    parser.add_argument("--nodes", default=os.path.join("data", "inputs.csv"))
     parser.add_argument("--sequence", default=os.path.join("data", "sequence.csv"))
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
     args = parser.parse_args()
