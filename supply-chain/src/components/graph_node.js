@@ -1,5 +1,4 @@
 import Paper from "@mui/material/Paper";
-import {nodeToMeta} from "../../data/graph";
 import Typography from "@mui/material/Typography";
 import React from "react";
 

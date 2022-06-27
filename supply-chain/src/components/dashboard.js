@@ -1,15 +1,9 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-
-import "core-js/features/url";
-import "core-js/features/url-search-params";
 import Arrow, { DIRECTION, HEAD } from "react-arrows";
 
 import GraphNode from "./graph_node";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
-
 
 
 const Dashboard = () => {
