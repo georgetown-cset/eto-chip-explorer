@@ -9,10 +9,25 @@ import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 const Dashboard = () => {
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
-  const mkLayer = (edges) => {
+  const mkLayer = (nodes) => {
+    nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
+    // Now that we have sorted the nodes by number of outgoing edges, we want to put the nodes with the fewest
+    // edges in the middle of the node list
+    const nodesPrefix = [];
+    const nodesSuffix = [];
+    for(let idx = 0; idx < nodes.length; idx ++){
+      if(idx % 2 === 0){
+        nodesSuffix.push(nodes[idx])
+      } else {
+        nodesPrefix.push(nodes[idx])
+      }
+    }
+    nodesPrefix.reverse();
+    const reorderedNodes = nodesPrefix.concat(nodesSuffix);
+    
     return <div>
-      {edges.map(edge =>
-        <GraphNode edge={edge} meta={nodeToMeta[edge]}/>
+      {reorderedNodes.map(node =>
+        <GraphNode node={node} meta={nodeToMeta[node]}/>
       )}
     </div>
   };
