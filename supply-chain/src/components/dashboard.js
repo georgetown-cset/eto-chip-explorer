@@ -22,11 +22,19 @@ const Dashboard = () => {
   const mkLayer = (edges) => {
     return <div>
       {edges.map(edge => {
-        return <Paper id={edge} style={{width: "200px", height: "60px", padding: "5px",
+        return <Paper id={edge} style={{width: "200px", padding: "5px",
           margin: "50px 20px", display: "inline-block", backgroundColor: typeToColor[nodeToMeta[edge]["type"]]}}>
           <div>
             {edge}
             <Typography component={"p"} variant={"body2"}>{nodeToMeta[edge]["name"]}</Typography>
+            {nodeToMeta[edge]["materials"].length > 0 &&
+              <Typography component={"p"} variant={"body2"}>
+                Materials: {nodeToMeta[edge]["materials"].join(", ")}
+              </Typography>}
+            {nodeToMeta[edge]["tools"].length > 0 &&
+              <Typography component={"p"} variant={"body2"}>
+                Tools: {nodeToMeta[edge]["tools"].join(", ")}
+              </Typography>}
           </div>
         </Paper>
       })}
