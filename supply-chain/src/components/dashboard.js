@@ -9,7 +9,7 @@ import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 const Dashboard = () => {
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
-  const mkLayer = (nodes) => {
+  const getLayerOrder = (nodes) => {
     nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
     // Now that we have sorted the nodes by number of outgoing edges, we want to put the nodes with the fewest
     // edges in the middle of the node list
@@ -23,31 +23,42 @@ const Dashboard = () => {
       }
     }
     nodesPrefix.reverse();
-    const reorderedNodes = nodesPrefix.concat(nodesSuffix);
-    
+    return nodesPrefix.concat(nodesSuffix);
+  };
+
+  const mkLayer = (nodes) => {
     return <div>
-      {reorderedNodes.map(node =>
+      {nodes.map(node =>
         <GraphNode node={node} meta={nodeToMeta[node]}/>
       )}
     </div>
   };
 
-  const mkEdges = (edges) => {
+  const mkEdges = (edges, nodeToPosition) => {
     return <div>
       {edges.map(edge => {
+        let fromDirection = DIRECTION.BOTTOM;
+        let toDirection = DIRECTION.TOP;
+        if(nodeToPosition[edge[0]] > 0){
+          fromDirection = DIRECTION.LEFT;
+          toDirection = DIRECTION.RIGHT;
+        } else if(nodeToPosition[edge[0]] < 0){
+          fromDirection = DIRECTION.RIGHT;
+          toDirection = DIRECTION.LEFT;
+        }
         return <Arrow
           className={"arrow"}
           from={{
-            direction: DIRECTION.BOTTOM,
+            direction: fromDirection,
             node: () => document.getElementById(edge[0]),
             translation: [0, 0]
           }}
           to={{
-            direction: DIRECTION.TOP,
+            direction: toDirection,
             node: () => document.getElementById(edge[1]),
             translation: [0, 0]
           }}
-          head={HEAD.NORMAL}/>
+          />
       })}
     </div>
   };
@@ -57,6 +68,7 @@ const Dashboard = () => {
     const layers = [mkLayer(currNodes)];
     const seen = new Set();
     currNodes.map(n => seen.add(n));
+    const nodeToPosition = {};
     while(currNodes.length > 0){
       const edgePairs = [];
       for(let node of currNodes){
@@ -93,10 +105,16 @@ const Dashboard = () => {
           bump.push(child);
         }
       }
-      const layer = mkLayer(currNodes);
+      const orderedLayerNodes = getLayerOrder(currNodes);
+      const centerPoint = orderedLayerNodes.length/2 - 0.5;
+      orderedLayerNodes.forEach((node, idx) => {
+        nodeToPosition[node] = idx - centerPoint;
+      });
+      const layer = mkLayer(orderedLayerNodes);
       layers.push(layer);
+      const layerSize = orderedLayerNodes.length;
       currNodes = currNodes.concat(bump);
-      const edges = mkEdges(filtEdges);
+      const edges = mkEdges(filtEdges, nodeToPosition);
       layers.push(edges);
     }
     layers.reverse();
