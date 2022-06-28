@@ -1,131 +1,96 @@
 import React from "react";
-import Arrow, { DIRECTION, HEAD } from "react-arrows";
+import { useTheme } from "@mui/material/styles";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import Typography from "@mui/material/Typography";
+import Select from "@mui/material/Select";
+import Paper from "@mui/material/Paper";
 
-import GraphNode from "./graph_node";
+import Map from "./map";
+import {nodeToMeta} from "../../data/graph";
 
-import {graph, graphReverse, nodeToMeta} from "../../data/graph";
-
+function getStyles(name, selectedName, theme) {
+  return {
+    fontWeight:
+      selectedName !== name
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
 const Dashboard = () => {
-  const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
-
-  const getLayerOrder = (nodes) => {
-    nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
-    // Now that we have sorted the nodes by number of outgoing edges, we want to put the nodes with the fewest
-    // edges in the middle of the node list
-    const nodesPrefix = [];
-    const nodesSuffix = [];
-    for(let idx = 0; idx < nodes.length; idx ++){
-      if(idx % 2 === 0){
-        nodesSuffix.push(nodes[idx])
-      } else {
-        nodesPrefix.push(nodes[idx])
+  const getMaterialToNodes = () => {
+    const materialToNode = {};
+    for(let node in nodeToMeta){
+      if(nodeToMeta[node]["type"] === "process"){
+        for(let material of nodeToMeta[node]["materials"]){
+          if(!(material in materialToNode)){
+            materialToNode[material] = [];
+          }
+          materialToNode[material].push(node);
+        }
       }
     }
-    nodesPrefix.reverse();
-    return nodesPrefix.concat(nodesSuffix);
+    return materialToNode;
   };
 
-  const mkLayer = (nodes) => {
-    return <div>
-      {nodes.map(node =>
-        <GraphNode node={node} meta={nodeToMeta[node]}/>
-      )}
-    </div>
+  const theme = useTheme();
+  const [filterValues, setFilterValues] = React.useState({
+    "material-resource": "All",
+    "country": "All"
+  });
+  const materialToNode = getMaterialToNodes();
+
+  const handleChange = (evt, key) => {
+    const updatedFilterValues = {...filterValues};
+    updatedFilterValues[key] = evt.target.value;
+    setFilterValues(updatedFilterValues);
   };
 
-  const mkEdges = (edges, nodeToPosition) => {
-    return <div>
-      {edges.map(edge => {
-        let fromDirection = DIRECTION.BOTTOM;
-        let toDirection = DIRECTION.TOP;
-        if(nodeToPosition[edge[0]] > 0){
-          fromDirection = DIRECTION.LEFT;
-          toDirection = DIRECTION.RIGHT;
-        } else if(nodeToPosition[edge[0]] < 0){
-          fromDirection = DIRECTION.RIGHT;
-          toDirection = DIRECTION.LEFT;
-        }
-        return <Arrow
-          className={"arrow"}
-          from={{
-            direction: fromDirection,
-            node: () => document.getElementById(edge[0]),
-            translation: [0, 0]
-          }}
-          to={{
-            direction: toDirection,
-            node: () => document.getElementById(edge[1]),
-            translation: [0, 0]
-          }}
-          />
-      })}
-    </div>
-  };
-
-  const mkGraph = () => {
-    let currNodes = [finalNode];
-    const layers = [mkLayer(currNodes)];
-    const seen = new Set();
-    currNodes.map(n => seen.add(n));
-    const nodeToPosition = {};
-    while(currNodes.length > 0){
-      const edgePairs = [];
-      for(let node of currNodes){
-        if(node in graphReverse){
-          for(let parentNode of graphReverse[node]){
-            edgePairs.push([parentNode, node])
-          }
-        }
-      }
-      const newNodes = edgePairs.map(e => e[0]);
-      const filtEdges = [];
-      currNodes = [];
-      const bump = [];
-      for(let edge of edgePairs){
-        let siblings = [];
-        const parent = edge[0];
-        const child = edge[1];
-        if(parent in graphReverse) {
-          for (let grandParent of graphReverse[parent]) {
-            siblings = siblings.concat(graph[grandParent]);
-          }
-        }
-        let allSiblingsSeen = true;
-        for(let sib of siblings){
-          allSiblingsSeen &= (newNodes.includes(sib) || seen.has(sib));
-        }
-        if(true){
-          filtEdges.push(edge);
-          if(!seen.has(parent)) {
-            currNodes.push(parent);
-          }
-          seen.add(parent);
-        } else{
-          bump.push(child);
-        }
-      }
-      const orderedLayerNodes = getLayerOrder(currNodes);
-      const centerPoint = orderedLayerNodes.length/2 - 0.5;
-      orderedLayerNodes.forEach((node, idx) => {
-        nodeToPosition[node] = idx - centerPoint;
-      });
-      const layer = mkLayer(orderedLayerNodes);
-      layers.push(layer);
-      const layerSize = orderedLayerNodes.length;
-      currNodes = currNodes.concat(bump);
-      const edges = mkEdges(filtEdges, nodeToPosition);
-      layers.push(edges);
+  const getCurrentHighlights = () => {
+    const currMatResource = filterValues["material-resource"];
+    if(currMatResource in materialToNode){
+      return new Set(materialToNode[currMatResource]);
     }
-    layers.reverse();
-    return <div>{layers}</div>;
+    return new Set();
   };
 
-  return (
-    <div style={{textAlign: "center"}}>
-      {mkGraph()}
-    </div>
-  )
+  return (<div>
+    <Paper style={{"width": "400px", verticalAlign: "top",
+          padding: "20px", backgroundColor: "aliceblue", height: "100vh", position: "fixed"}}>
+      <Typography component={"p"} variant={"h6"}>Highlight by...</Typography>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
+        <InputLabel id="material-select-label">Material component</InputLabel>
+        <Select
+          labelId="material-select-label"
+          id="material-select"
+          value={filterValues["material-resource"]}
+          onChange={e => handleChange(e, "material-resource")}
+          input={<OutlinedInput label={"Material component"}/>}
+        >
+          <MenuItem
+            key={"All"}
+            value={"All"}
+            style={getStyles("All", filterValues["material-resource"], theme)}
+            >
+              All
+          </MenuItem>
+          {Object.keys(materialToNode).sort((a, b) => nodeToMeta[a]["name"] > nodeToMeta[b]["name"]).map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, filterValues["material-resource"], theme)}
+            >
+              {nodeToMeta[name]["name"]}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </Paper>
+    <Map highlights={getCurrentHighlights()}/>
+  </div>);
 };
 
 export default Dashboard;

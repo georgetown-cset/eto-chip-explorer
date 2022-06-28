@@ -9,11 +9,12 @@ const stageToColor = {
 };
 
 const GraphNode = (props) => {
-  const {node, meta} = props;
+  const {node, meta, highlight} = props;
 
   return (
     <Paper id={node} style={{width: "200px", padding: "5px",
-      margin: "50px 50px", display: "inline-block", border: "3px solid "+stageToColor[meta["stage_id"]]}}>
+      margin: "50px 50px", display: "inline-block", border: "3px solid "+stageToColor[meta["stage_id"]],
+      backgroundColor: highlight ? "yellow" : "white"}}>
       <div>
         {node}
         <Typography component={"p"} variant={"body2"}>{meta["name"]}</Typography>

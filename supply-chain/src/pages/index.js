@@ -14,7 +14,6 @@ const IndexPage = () => {
 
   return (
     <div>
-      <Header/>
       {(typeof window !== "undefined") &&
         <React.Suspense fallback={<div style={{textAlign: "center"}}><CircularProgress/></div>}>
           <Dashboard/>
