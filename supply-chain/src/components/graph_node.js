@@ -1,5 +1,6 @@
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
 import React from "react";
 
 const stageToColor = {
@@ -20,11 +21,11 @@ const GraphNode = (props) => {
         <Typography component={"p"} variant={"body2"}>{meta["name"]}</Typography>
         {meta["materials"].length > 0 &&
           <Typography component={"p"} variant={"body2"}>
-            Materials: {meta["materials"].join(", ")}
+            Materials: {meta["materials"].map((material) => <Link href={"/details/"+material.toLowerCase()} style={{paddingLeft: "5px"}}>{material}</Link>)}
           </Typography>}
         {meta["tools"].length > 0 &&
           <Typography component={"p"} variant={"body2"}>
-            Tools: {meta["tools"].join(", ")}
+            Tools: {meta["tools"].map((tool) => <Link href={"/details/"+tool.toLowerCase()} style={{paddingLeft: "5px"}}>{tool}</Link>)}
           </Typography>}
       </div>
     </Paper>
