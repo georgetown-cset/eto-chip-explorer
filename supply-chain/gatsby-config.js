@@ -6,8 +6,8 @@ module.exports = {
   plugins: ["gatsby-plugin-mdx", {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "pages",
-      "path": "./src/pages/"
+      "name": "details",
+      "path": "./details/"
     },
     __key: "pages"
   }]

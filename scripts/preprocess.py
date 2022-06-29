@@ -88,12 +88,21 @@ def mk_provision(provision_fi: str, output_dir: str):
         f.write("\nexport {countryProvision, orgProvision};\n")
 
 
+def mk_text(nodes_fi: str, output_dir: str):
+    with open(nodes_fi) as f:
+        for line in csv.DictReader(f):
+           with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
+               out.write(f"#### {line['input_name']}\n\n")
+               out.write(line["description"])
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--nodes", default=os.path.join("data", "inputs.csv"))
     parser.add_argument("--sequence", default=os.path.join("data", "sequence.csv"))
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
+    parser.add_argument("--output_text_dir", default=os.path.join("supply-chain", "src", "pages"))
     args = parser.parse_args()
 
     if not os.path.exists(args.output_dir):
@@ -101,3 +110,4 @@ if __name__ == "__main__":
 
     mk_data(args.nodes, args.sequence, args.output_dir)
     mk_provision(args.provision, args.output_dir)
+    mk_text(args.nodes, args.output_text_dir)
