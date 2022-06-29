@@ -31,7 +31,7 @@ const Map = (props) => {
   const mkLayer = (nodes) => {
     return <div>
       {nodes.map(node =>
-        <GraphNode node={node} meta={nodeToMeta[node]} highlight={highlights.has(node)}/>
+        <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}/>
       )}
     </div>
   };

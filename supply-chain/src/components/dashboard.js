@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 
 import Map from "./map";
 import {nodeToMeta} from "../../data/graph";
+import {countryProvision, orgProvision} from "../../data/provision";
 
 function getStyles(name, selectedName, theme) {
   return {
@@ -27,40 +28,53 @@ const Dashboard = () => {
       if(nodeToMeta[node]["type"] === "process"){
         for(let material of nodeToMeta[node]["materials"]){
           if(!(material in materialToNode)){
-            materialToNode[material] = [];
+            materialToNode[material] = {};
           }
-          materialToNode[material].push(node);
+          materialToNode[material][node] = 1;
         }
       }
     }
     return materialToNode;
   };
 
-  const theme = useTheme();
-  const [filterValues, setFilterValues] = React.useState({
-    "material-resource": "All",
-    "country": "All"
-  });
-  const materialToNode = getMaterialToNodes();
-
-  const handleChange = (evt, key) => {
-    const updatedFilterValues = {...filterValues};
-    updatedFilterValues[key] = evt.target.value;
-    setFilterValues(updatedFilterValues);
+  const getCurrentHighlights = (currFilterValues = filterValues) => {
+    let highlighter = "material-resource";
+    for(let fv in defaultFilterValues){
+      if(defaultFilterValues[fv] !== currFilterValues[fv]){
+        highlighter = fv;
+      }
+    }
+    const currMapping = filterToValues[highlighter];
+    setHighlights(currFilterValues[highlighter] in currMapping ? currMapping[currFilterValues[highlighter]]: {})
   };
 
-  const getCurrentHighlights = () => {
-    const currMatResource = filterValues["material-resource"];
-    if(currMatResource in materialToNode){
-      return new Set(materialToNode[currMatResource]);
-    }
-    return new Set();
+  const materialToNode = getMaterialToNodes();
+  const theme = useTheme();
+  const defaultFilterValues = {
+    "material-resource": "All",
+    "country": "All",
+    "org": "All"
+  };
+  const filterToValues = {
+    "material-resource": materialToNode,
+    "country": countryProvision,
+    "org": orgProvision
+  };
+  const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
+  const [highlights, setHighlights] = React.useState({});
+
+  const handleChange = (evt, key) => {
+    const updatedFilterValues = {...defaultFilterValues};
+    updatedFilterValues[key] = evt.target.value;
+    setFilterValues(updatedFilterValues);
+    getCurrentHighlights(updatedFilterValues);
   };
 
   return (<div>
     <Paper style={{"width": "400px", verticalAlign: "top",
           padding: "20px", backgroundColor: "aliceblue", height: "100vh", position: "fixed"}}>
       <Typography component={"p"} variant={"h6"}>Highlight by...</Typography>
+      <div>
       <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
         <InputLabel id="material-select-label">Material component</InputLabel>
         <Select
@@ -88,8 +102,67 @@ const Dashboard = () => {
           ))}
         </Select>
       </FormControl>
+      </div>
+      <div>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
+        <InputLabel id="country-select-label">Country provision share</InputLabel>
+        <Select
+          labelId="country-select-label"
+          id="country-select"
+          value={filterValues["country"]}
+          onChange={e => handleChange(e, "country")}
+          input={<OutlinedInput label={"Country provision share"}/>}
+        >
+          <MenuItem
+            key={"All"}
+            value={"All"}
+            style={getStyles("All", filterValues["country"], theme)}
+            >
+              All
+          </MenuItem>
+          {Object.keys(countryProvision).sort().map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, filterValues["country"], theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      </div>
+      <div>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
+        <InputLabel id="org-select-label">Organization provision share</InputLabel>
+        <Select
+          labelId="org-select-label"
+          id="org-select"
+          value={filterValues["org"]}
+          onChange={e => handleChange(e, "org")}
+          input={<OutlinedInput label={"Organization provision share"}/>}
+        >
+          <MenuItem
+            key={"All"}
+            value={"All"}
+            style={getStyles("All", filterValues["org"], theme)}
+            >
+              All
+          </MenuItem>
+          {Object.keys(orgProvision).sort().map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, filterValues["org"], theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      </div>
     </Paper>
-    <Map highlights={getCurrentHighlights()}/>
+    <Map highlights={highlights}/>
   </div>);
 };
 

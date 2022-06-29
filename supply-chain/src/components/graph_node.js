@@ -14,7 +14,7 @@ const GraphNode = (props) => {
   return (
     <Paper id={node} style={{width: "200px", padding: "5px",
       margin: "50px 50px", display: "inline-block", border: "3px solid "+stageToColor[meta["stage_id"]],
-      backgroundColor: highlight ? "yellow" : "white"}}>
+      backgroundColor: "rgba(229,191,33,"+highlight+")"}}>
       <div>
         {node}
         <Typography component={"p"} variant={"body2"}>{meta["name"]}</Typography>
