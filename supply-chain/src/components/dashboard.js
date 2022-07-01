@@ -154,35 +154,6 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
-      <div>
-      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
-        <InputLabel id="org-select-label">Organization provision share</InputLabel>
-        <Select
-          labelId="org-select-label"
-          id="org-select"
-          value={filterValues["org"]}
-          onChange={e => handleChange(e, "org")}
-          input={<OutlinedInput label={"Organization provision share"}/>}
-        >
-          <MenuItem
-            key={"All"}
-            value={"All"}
-            style={getStyles("All", filterValues["org"], theme)}
-            >
-              All
-          </MenuItem>
-          {Object.keys(orgProvision).sort().map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, filterValues["org"], theme)}
-            >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      </div>
     </Paper>
     <Map highlights={highlights}/>
   </div>);
