@@ -45,8 +45,30 @@ const Dashboard = () => {
       }
     }
     const currMapping = filterToValues[highlighter];
-    setHighlights(currFilterValues[highlighter] in currMapping ? currMapping[currFilterValues[highlighter]]: {})
+    if(highlighter === "material-resource") {
+      setHighlights(currFilterValues[highlighter] in currMapping ? currMapping[currFilterValues[highlighter]] : {})
+    } else {
+      setHighlights(currMapping(currFilterValues[highlighter]));
+    }
   };
+
+  const getProvisionMetric = (provider, provisionMapping) => {
+    const providerProcessShare = {};
+    const providerValues = provisionMapping[provider];
+    for(let node in nodeToMeta){
+      if(nodeToMeta[node]["type"] === "process"){
+        const provisionCounts = [];
+        for(let tool of nodeToMeta[node]["tools"]){
+          provisionCounts.push(tool in providerValues ? providerValues[tool] : 0);
+        }
+        for(let material of nodeToMeta[node]["materials"]){
+          provisionCounts.push(material in providerValues ? providerValues[material]: 0);
+        }
+        providerProcessShare[node] = provisionCounts.reduce((sum, a) => sum + a, 0)/provisionCounts.length;
+      }
+    }
+    return providerProcessShare;
+  }
 
   const materialToNode = getMaterialToNodes();
   const theme = useTheme();
@@ -57,8 +79,8 @@ const Dashboard = () => {
   };
   const filterToValues = {
     "material-resource": materialToNode,
-    "country": countryProvision,
-    "org": orgProvision
+    "country": (country) => getProvisionMetric(country, countryProvision),
+    "org": (org) => getProvisionMetric(org, orgProvision)
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
   const [highlights, setHighlights] = React.useState({});
@@ -75,7 +97,7 @@ const Dashboard = () => {
           padding: "20px", backgroundColor: "aliceblue", height: "100vh", position: "fixed"}}>
       <Typography component={"p"} variant={"h6"}>Highlight by...</Typography>
       <div>
-      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
         <InputLabel id="material-select-label">Material component</InputLabel>
         <Select
           labelId="material-select-label"
@@ -104,7 +126,7 @@ const Dashboard = () => {
       </FormControl>
       </div>
       <div>
-      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
         <InputLabel id="country-select-label">Country provision share</InputLabel>
         <Select
           labelId="country-select-label"
@@ -133,7 +155,7 @@ const Dashboard = () => {
       </FormControl>
       </div>
       <div>
-      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "150px"}}>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
         <InputLabel id="org-select-label">Organization provision share</InputLabel>
         <Select
           labelId="org-select-label"
