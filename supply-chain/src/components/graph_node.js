@@ -10,7 +10,7 @@ const stageToColor = {
 };
 
 const GraphNode = (props) => {
-  const {node, meta, highlight} = props;
+  const {node, meta, highlight, unattached} = props;
 
   return (
     <Paper id={node} style={{width: "200px", padding: "5px",

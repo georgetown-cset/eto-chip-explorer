@@ -28,10 +28,11 @@ const Map = (props) => {
     return nodesPrefix.concat(nodesSuffix);
   };
 
-  const mkLayer = (nodes) => {
+  const mkLayer = (nodes, isUnattached=false) => {
     return <div>
       {nodes.map(node =>
-        <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}/>
+        <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}
+                   unattached={isUnattached}/>
       )}
     </div>
   };
@@ -120,7 +121,18 @@ const Map = (props) => {
       layers.push(edges);
     }
     layers.reverse();
-    return <div>{layers}</div>;
+    const unattached = [];
+    for(let node in nodeToMeta){
+      if((! seen.has(node)) && (nodeToMeta[node]["type"] === "process")){
+        unattached.push(node)
+      }
+    }
+    return (
+      <div>
+        <div>{mkLayer(unattached)}</div>
+        <div>{layers}</div>
+      </div>
+    );
   };
 
   return (
