@@ -37,3 +37,21 @@ a:hover{
   stroke-width: 1px;
 }
 
+.graph-node{
+  width: 200px;
+  z-index: 9000;
+}
+
+.graph-node:hover{
+  width: 500px;
+  min-height: 200px;
+}
+
+.expanded-graph-node-content{
+  display: none;
+  text-align: left;
+}
+
+.graph-node:hover .expanded-graph-node-content{
+  display: block;
+}

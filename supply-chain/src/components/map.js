@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby"
 import Arrow, { DIRECTION } from "react-arrows";
 
 import GraphNode from "./graph_node";
@@ -9,6 +10,17 @@ import Header from "./header";
 
 const Map = (props) => {
   const {highlights} = props;
+  const data = useStaticQuery(graphql`
+    query getMdx {
+      allMdx {
+        nodes {
+          body,
+          slug
+        }
+      }
+    }  
+  `);
+
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
   const getLayerOrder = (nodes) => {
@@ -32,7 +44,7 @@ const Map = (props) => {
     return <div>
       {nodes.map(node =>
         <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}
-                   unattached={isUnattached}/>
+                   unattached={isUnattached} description={data.allMdx.nodes.filter(n => n.slug === node)[0].body}/>
       )}
     </div>
   };
