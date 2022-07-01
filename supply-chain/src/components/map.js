@@ -129,7 +129,7 @@ const Map = (props) => {
     }
     return (
       <div>
-        <div>{mkLayer(unattached)}</div>
+        <div>{mkLayer(unattached, true)}</div>
         <div>{layers}</div>
       </div>
     );

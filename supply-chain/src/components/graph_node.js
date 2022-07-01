@@ -1,6 +1,8 @@
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import InputIcon from "@mui/icons-material/Input";
 import React from "react";
 
 const stageToColor = {
@@ -14,18 +16,22 @@ const GraphNode = (props) => {
 
   return (
     <Paper id={node} style={{width: "200px", padding: "5px",
-      margin: "50px 50px", display: "inline-block", border: "3px solid "+stageToColor[meta["stage_id"]],
+      margin: unattached ? "20px" : "20px 50px", display: "inline-block", border: "3px solid "+stageToColor[meta["stage_id"]],
       backgroundColor: "rgba(229,191,33,"+highlight+")"}}>
       <div>
-        {node}
-        <Typography component={"p"} variant={"body2"}>{meta["name"]}</Typography>
-        {meta["materials"].length > 0 &&
+        <Typography component={"div"} variant={"body2"}>{node}: {meta["name"]}</Typography>
+        {((meta["materials"].length > 0) || (meta["tools"].length > 0)) &&
           <Typography component={"p"} variant={"body2"}>
-            Materials: {meta["materials"].map((material) => <Link href={"/details/"+material.toLowerCase()} style={{paddingLeft: "5px"}}>{material}</Link>)}
-          </Typography>}
-        {meta["tools"].length > 0 &&
-          <Typography component={"p"} variant={"body2"}>
-            Tools: {meta["tools"].map((tool) => <Link href={"/details/"+tool.toLowerCase()} style={{paddingLeft: "5px"}}>{tool}</Link>)}
+            {meta["materials"].length > 0 && <span style={{marginRight: "10px"}}>{meta["materials"].map((material) =>
+              <Link href={"/details/" + material.toLowerCase()} style={{paddingLeft: "5px"}}>
+                <InputIcon style={{fontSize: "90%"}}/>
+              </Link>)}
+              </span>}
+            <span>{meta["tools"].map((tool) =>
+              <Link href={"/details/" + tool.toLowerCase()} style={{paddingLeft: "5px"}}>
+                <ConstructionIcon style={{fontSize: "90%"}}/>
+              </Link>)}
+              </span>
           </Typography>}
       </div>
     </Paper>
