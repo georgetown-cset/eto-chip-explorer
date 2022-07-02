@@ -148,7 +148,7 @@ const Map = (props) => {
   };
 
   return (
-    <div style={{textAlign: "center", marginLeft: "400px"}}>
+    <div style={{textAlign: "center", marginLeft: "410px"}}>
       <Header/>
       {mkGraph()}
     </div>
