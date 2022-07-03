@@ -43,7 +43,6 @@ a:hover{
 }
 
 .graph-node:hover{
-  border: 3px solid red;
   cursor: -moz-zoom-in;
   cursor: -webkit-zoom-in;
   cursor: zoom-in;

@@ -16,6 +16,7 @@ const stageToColor = {
 
 const GraphNode = (props) => {
   const {node, meta, highlight, unattached, description, setSelected=null} = props;
+  const [elevation, setElevation] = React.useState(1);
 
   const updateSelected = (evt) => {
     if(setSelected !== null) {
@@ -28,7 +29,8 @@ const GraphNode = (props) => {
     <Paper id={node} className={"graph-node"} style={{padding: "5px",
       margin: "20px 25px", display: "inline-block",
       border: "3px solid "+stageToColor[meta["stage_id"]],
-      backgroundColor: "rgba(229,191,33,"+highlight+")"}} onClick={updateSelected}>
+      backgroundColor: "rgba(229,191,33,"+highlight+")"}} onClick={updateSelected} elevation={elevation}
+      onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
       <div>
         <Typography component={"div"} variant={"body2"}>{node}: {meta["name"]}</Typography>
         {((meta["materials"].length > 0) || (meta["tools"].length > 0)) &&
