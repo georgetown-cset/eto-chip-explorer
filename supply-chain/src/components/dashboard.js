@@ -111,7 +111,7 @@ const Dashboard = () => {
   };
 
   return (<div>
-    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%"}}>
+    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}>
       <Header/>
       <div style={{display: "inline-block", verticalAlign: "bottom", paddingLeft: "20px"}}><Typography component={"p"} variant={"h6"}>Highlight by...</Typography></div>
       <div style={{display: "inline-block"}}>
@@ -175,15 +175,16 @@ const Dashboard = () => {
     </Paper>
     <div>
     {(selectedNode === null) && <div style={{"minWidth": "400px", width: "20%", verticalAlign: "top",
-          padding: "20px", display: "inline-block", borderRight: "3px double", height: "100vh"}}>
+          padding: "20px", display: "inline-block"}}>
       <Typography component={"p"} variant={"body2"}>
         ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
       </Typography>
     </div>}
-    <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%", textAlign: "center"}}>
+    <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%",
+        textAlign: "center", borderLeft: "3px double", borderRight: "3px double"}}>
       <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
     </div>
-    {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", width: "50%", borderLeft: "3px double"}}>
+    {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", width: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
         <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>
       </div>}
