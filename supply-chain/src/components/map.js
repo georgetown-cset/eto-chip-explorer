@@ -1,11 +1,12 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import Arrow, { DIRECTION } from "react-arrows";
-
-import GraphNode from "./graph_node";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import Button from "@mui/material/Button";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import Header from "./header";
+import GraphNode from "./graph_node";
 import ProcessDetail from "./process_detail";
 
 
@@ -164,6 +165,7 @@ const Map = (props) => {
         {mkGraph()}
       </div>
       <div style={{display: "inline-block", verticalAlign: "top", width: "50%"}}>
+        <Button style={{verticalAlign: "top"}} onClick={() => updateView(null)}><HighlightOffIcon/></Button>
         {(selectedNode !== null) && <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>}
       </div>
     </div>
