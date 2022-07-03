@@ -1,35 +1,11 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby"
 import Arrow, { DIRECTION } from "react-arrows";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import Button from "@mui/material/Button";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
-import Header from "./header";
 import GraphNode from "./graph_node";
-import ProcessDetail from "./process_detail";
-
 
 const Map = (props) => {
-  const {highlights, setToolbarVisible} = props;
-  const [selectedNode, setSelectedNode] = React.useState(null);
-
-  const updateView = (node) => {
-    setSelectedNode(node);
-    setToolbarVisible(node === null);
-  };
-
-  const data = useStaticQuery(graphql`
-    query getMdx {
-      allMdx {
-        nodes {
-          body,
-          slug
-        }
-      }
-    }  
-  `);
-
+  const {highlights, selectedNode, setSelectedNode} = props;
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
   const getLayerOrder = (nodes) => {
@@ -53,7 +29,7 @@ const Map = (props) => {
     return <div>
       {nodes.map(node =>
         <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}
-                   unattached={isUnattached} setSelected={updateView}/>
+                   unattached={isUnattached} setSelected={setSelectedNode}/>
       )}
     </div>
   };
@@ -136,7 +112,6 @@ const Map = (props) => {
       });
       const layer = mkLayer(orderedLayerNodes);
       layers.push(layer);
-      const layerSize = orderedLayerNodes.length;
       currNodes = currNodes.concat(bump);
       const edges = mkEdges(filtEdges, nodeToPosition);
       layers.push(edges);
@@ -156,20 +131,7 @@ const Map = (props) => {
     );
   };
 
-  return (
-    <div>
-      <div style={{textAlign: "center", marginLeft: selectedNode === null ? "450px" : "0px",
-        width: selectedNode === null ? "auto": "49%", minWidth: "700px",
-        backgroundColor: selectedNode === null ? "white": "aliceblue", display: "inline-block"}}>
-        <Header/>
-        {mkGraph()}
-      </div>
-      <div style={{display: "inline-block", verticalAlign: "top", width: "50%"}}>
-        <Button style={{verticalAlign: "top"}} onClick={() => updateView(null)}><HighlightOffIcon/></Button>
-        {(selectedNode !== null) && <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>}
-      </div>
-    </div>
-  )
+  return mkGraph();
 };
 
 export default Map;

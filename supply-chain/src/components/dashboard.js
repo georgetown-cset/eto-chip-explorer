@@ -1,5 +1,7 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby"
 import { useTheme } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,8 +9,11 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Paper from "@mui/material/Paper";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
+import Header from "./header";
 import Map from "./map";
+import ProcessDetail from "./process_detail";
 import {nodeToMeta} from "../../data/graph";
 import {countryProvision, orgProvision} from "../../data/provision";
 
@@ -22,6 +27,18 @@ function getStyles(name, selectedName, theme) {
 }
 
 const Dashboard = () => {
+  const [selectedNode, setSelectedNode] = React.useState(null);
+  const data = useStaticQuery(graphql`
+    query getMdx {
+      allMdx {
+        nodes {
+          body,
+          slug
+        }
+      }
+    }  
+  `);
+
   const getMaterialToNodes = () => {
     const materialToNode = {};
     for(let node in nodeToMeta){
@@ -94,10 +111,10 @@ const Dashboard = () => {
   };
 
   return (<div>
-    {toolbarVisible && <Paper style={{"width": "400px", verticalAlign: "top",
-          padding: "20px", backgroundColor: "aliceblue", height: "100vh", position: "fixed", float: "left"}}>
-      <Typography component={"p"} variant={"h6"}>Highlight by...</Typography>
-      <div>
+    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%"}}>
+      <Header/>
+      <div style={{display: "inline-block", verticalAlign: "bottom", paddingLeft: "20px"}}><Typography component={"p"} variant={"h6"}>Highlight by...</Typography></div>
+      <div style={{display: "inline-block"}}>
       <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
         <InputLabel id="material-select-label">Material component</InputLabel>
         <Select
@@ -126,7 +143,7 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
-      <div>
+      <div style={{display: "inline-block"}}>
       <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
         <InputLabel id="country-select-label">Country provision share</InputLabel>
         <Select
@@ -155,8 +172,22 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
-    </Paper>}
-    <Map highlights={highlights} setToolbarVisible={setToolbarVisible}/>
+    </Paper>
+    <div>
+    {(selectedNode === null) && <div style={{"minWidth": "400px", width: "20%", verticalAlign: "top",
+          padding: "20px", display: "inline-block", borderRight: "3px double", height: "100vh"}}>
+      <Typography component={"p"} variant={"body2"}>
+        ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
+      </Typography>
+    </div>}
+    <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%", textAlign: "center"}}>
+      <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
+    </div>
+    {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", width: "50%", borderLeft: "3px double"}}>
+        <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
+        <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>
+      </div>}
+    </div>
   </div>);
 };
 

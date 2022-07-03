@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import Header from "../components/header";
 
 /* Set the body margin and padding to 0 here */
 import "../styles/styles.css";

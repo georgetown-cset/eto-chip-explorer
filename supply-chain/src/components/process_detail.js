@@ -3,8 +3,6 @@ import Typography from "@mui/material/Typography";
 import {nodeToMeta} from "../../data/graph";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
-import GraphNode from "./graph_node";
-
 
 const ProcessDetail = (props) => {
   const {selectedNode, descriptions} = props;
