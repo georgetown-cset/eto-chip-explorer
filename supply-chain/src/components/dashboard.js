@@ -84,6 +84,7 @@ const Dashboard = () => {
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
   const [highlights, setHighlights] = React.useState({});
+  const [toolbarVisible, setToolbarVisible] = React.useState(true);
 
   const handleChange = (evt, key) => {
     const updatedFilterValues = {...defaultFilterValues};
@@ -93,8 +94,8 @@ const Dashboard = () => {
   };
 
   return (<div>
-    <Paper style={{"width": "400px", verticalAlign: "top",
-          padding: "20px", backgroundColor: "aliceblue", height: "100vh", position: "fixed"}}>
+    {toolbarVisible && <Paper style={{"width": "400px", verticalAlign: "top",
+          padding: "20px", backgroundColor: "aliceblue", height: "100vh", position: "fixed", float: "left"}}>
       <Typography component={"p"} variant={"h6"}>Highlight by...</Typography>
       <div>
       <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
@@ -154,8 +155,8 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
-    </Paper>
-    <Map highlights={highlights}/>
+    </Paper>}
+    <Map highlights={highlights} setToolbarVisible={setToolbarVisible}/>
   </div>);
 };
 

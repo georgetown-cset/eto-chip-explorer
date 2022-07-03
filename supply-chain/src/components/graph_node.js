@@ -15,13 +15,20 @@ const stageToColor = {
 };
 
 const GraphNode = (props) => {
-  const {node, meta, highlight, unattached, description} = props;
+  const {node, meta, highlight, unattached, description, setSelected=null} = props;
+
+  const updateSelected = (evt) => {
+    if(setSelected !== null) {
+      evt.stopPropagation();
+      setSelected(node);
+    }
+  };
 
   return (
     <Paper id={node} className={"graph-node"} style={{padding: "5px",
-      margin: unattached ? "20px" : "20px 50px", display: "inline-block",
+      margin: "20px 25px", display: "inline-block",
       border: "3px solid "+stageToColor[meta["stage_id"]],
-      backgroundColor: "rgba(229,191,33,"+highlight+")"}}>
+      backgroundColor: "rgba(229,191,33,"+highlight+")"}} onClick={updateSelected}>
       <div>
         <Typography component={"div"} variant={"body2"}>{node}: {meta["name"]}</Typography>
         {((meta["materials"].length > 0) || (meta["tools"].length > 0)) &&
@@ -37,11 +44,6 @@ const GraphNode = (props) => {
               </Link>)}
               </span>
           </Typography>}
-        <div className={"expanded-graph-node-content"}>
-          <MDXProvider>
-            <MDXRenderer>{description}</MDXRenderer>
-          </MDXProvider>
-        </div>
       </div>
     </Paper>
   )

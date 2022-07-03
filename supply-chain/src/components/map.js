@@ -6,10 +6,18 @@ import GraphNode from "./graph_node";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import Header from "./header";
+import ProcessDetail from "./process_detail";
 
 
 const Map = (props) => {
-  const {highlights} = props;
+  const {highlights, setToolbarVisible} = props;
+  const [selectedNode, setSelectedNode] = React.useState(null);
+
+  const updateView = (node) => {
+    setSelectedNode(node);
+    setToolbarVisible(node === null);
+  };
+
   const data = useStaticQuery(graphql`
     query getMdx {
       allMdx {
@@ -44,7 +52,7 @@ const Map = (props) => {
     return <div>
       {nodes.map(node =>
         <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}
-                   unattached={isUnattached} description={data.allMdx.nodes.filter(n => n.slug === node)[0].body}/>
+                   unattached={isUnattached} setSelected={updateView}/>
       )}
     </div>
   };
@@ -148,9 +156,16 @@ const Map = (props) => {
   };
 
   return (
-    <div style={{textAlign: "center", marginLeft: "410px"}}>
-      <Header/>
-      {mkGraph()}
+    <div>
+      <div style={{textAlign: "center", marginLeft: selectedNode === null ? "450px" : "0px",
+        width: selectedNode === null ? "auto": "49%", minWidth: "700px",
+        backgroundColor: selectedNode === null ? "white": "aliceblue", display: "inline-block"}}>
+        <Header/>
+        {mkGraph()}
+      </div>
+      <div style={{display: "inline-block", verticalAlign: "top", width: "50%"}}>
+        {(selectedNode !== null) && <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>}
+      </div>
     </div>
   )
 };
