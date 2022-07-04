@@ -181,7 +181,7 @@ const Dashboard = () => {
       </Typography>
     </div>}
     <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%",
-        textAlign: "center", borderLeft: "3px double", borderRight: "3px double"}}>
+        textAlign: "center", borderLeft: "3px double", borderRight: "3px double", height: "100vh", overflow: "scroll"}}>
       <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
     </div>
     {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", width: "50%"}}>

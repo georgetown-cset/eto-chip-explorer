@@ -1,12 +1,10 @@
 import React from "react";
-import {graphql} from "gatsby";
+import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import InputIcon from "@mui/icons-material/Input";
-import {MDXRenderer} from "gatsby-plugin-mdx";
-import {MDXProvider} from "@mdx-js/react";
 
 const stageToColor = {
   "S3": "rgba(122, 196, 165, 0.75)",
@@ -14,9 +12,48 @@ const stageToColor = {
   "S2": "rgba(229, 191, 33, 0.75)",
 };
 
-const GraphNode = (props) => {
-  const {node, meta, highlight, unattached, description, setSelected=null} = props;
+// from https://mui.com/material-ui/react-tooltip/#customization
+
+const HtmlTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: 'rgb(240,240,240)',
+    color: 'rgba(0, 0, 0, 0.87)',
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: '1px solid #dadde9',
+  },
+  [`a`] : {
+    textDecoration: "none"
+  }
+}));
+
+const SubNode = (props) => {
+  const {nodeType, name} = props;
   const [elevation, setElevation] = React.useState(1);
+  const iconStyle = {fontSize: "20px"};
+  const icon = nodeType === "tools" ? <ConstructionIcon style={iconStyle}/> : <InputIcon style={iconStyle}/>;
+
+  return (
+    <Paper style={{width: "20px", height: "20px", display: "inline-block", padding: "3px", margin: "5px",
+            textAlign: "center", backgroundColor: "rgba(229,191,33,0.5)"}}
+           onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)} elevation={elevation}>
+      <HtmlTooltip title={
+        <div style={{padding: "5px"}}>
+          <Typography component={"div"} variant={"body2"}>{name}</Typography>
+        </div>
+      }>
+        {icon}
+      </HtmlTooltip>
+    </Paper>
+  );
+};
+
+const GraphNode = (props) => {
+  const {node, nodeToMeta, highlight, setSelected=null} = props;
+  const [elevation, setElevation] = React.useState(1);
+  const meta = nodeToMeta[node];
 
   const updateSelected = (evt) => {
     if(setSelected !== null) {
@@ -31,20 +68,16 @@ const GraphNode = (props) => {
       border: "3px solid "+stageToColor[meta["stage_id"]],
       backgroundColor: "rgba(229,191,33,"+highlight+")"}} onClick={updateSelected} elevation={elevation}
       onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
-      <div>
-        <Typography component={"div"} variant={"body2"}>{node}: {meta["name"]}</Typography>
+      <div style={{textAlign: "left"}}>
+        <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
+          {node}: {meta["name"]}
+        </Typography>
         {((meta["materials"].length > 0) || (meta["tools"].length > 0)) &&
           <Typography component={"p"} variant={"body2"}>
-            {meta["materials"].length > 0 && <span style={{marginRight: "10px"}}>{meta["materials"].map((material) =>
-              <Link href={"/details/" + material.toLowerCase()} style={{paddingLeft: "5px"}} key={material.toLowerCase()}>
-                <InputIcon style={{fontSize: "90%"}}/>
-              </Link>)}
-              </span>}
-            <span>{meta["tools"].map((tool) =>
-              <Link href={"/details/" + tool.toLowerCase()} style={{paddingLeft: "5px"}} key={tool.toLowerCase()}>
-                <ConstructionIcon style={{fontSize: "90%"}}/>
-              </Link>)}
-              </span>
+            {meta["materials"].length > 0 && meta["materials"].map((material) =>
+              <SubNode nodeType={"materials"} name={nodeToMeta[material]["name"]}/>)}
+            {meta["tools"].length > 0 && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
+              <SubNode nodeType={"tools"} name={nodeToMeta[tool]["name"]}/>)}</span>}
           </Typography>}
       </div>
     </Paper>

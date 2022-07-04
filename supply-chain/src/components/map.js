@@ -28,7 +28,7 @@ const Map = (props) => {
   const mkLayer = (nodes, isUnattached=false) => {
     return <div>
       {nodes.map(node =>
-        <GraphNode node={node} meta={nodeToMeta[node]} highlight={node in highlights ? highlights[node]: 0}
+        <GraphNode node={node} nodeToMeta={nodeToMeta} highlight={node in highlights ? highlights[node]: 0}
                    unattached={isUnattached} setSelected={setSelectedNode}/>
       )}
     </div>
