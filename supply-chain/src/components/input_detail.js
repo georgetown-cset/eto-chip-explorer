@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Loadable from "react-loadable";
 import Typography from "@mui/material/Typography";
 import {nodeToMeta} from "../../data/graph";
@@ -38,6 +38,10 @@ const BarGraph = (props) => {
 
 const InputDetail = (props) => {
   const {selectedNode, descriptions, countries, values} = props;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px"}}>

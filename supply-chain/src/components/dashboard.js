@@ -179,12 +179,12 @@ const Dashboard = () => {
       </Typography>
     </div>}
     <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%",
-        textAlign: "center", borderLeft: "3px double", borderRight: (selectedNode !== null) ? "3px double" : "", height: "100vh", overflow: "scroll"}}>
+        textAlign: "center", borderLeft: "3px double", borderRight: (selectedNode !== null) ? "3px double" : ""}}>
       <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
     </div>
     {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] === "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
-        <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>
+        <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}/>
       </div>}
     {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] !== "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>

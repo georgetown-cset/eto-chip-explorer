@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import {nodeToMeta} from "../../data/graph";
 import {MDXProvider} from "@mdx-js/react";
@@ -6,6 +6,10 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 
 const ProcessDetail = (props) => {
   const {selectedNode, descriptions} = props;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px"}}>
