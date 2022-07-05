@@ -63,29 +63,13 @@ const Dashboard = () => {
     }
     const currMapping = filterToValues[highlighter];
     if(highlighter === "material-resource") {
-      setHighlights(currFilterValues[highlighter] in currMapping ? currMapping[currFilterValues[highlighter]] : {})
+      const identityMap = {}
+      identityMap[currFilterValues[highlighter]] = 1
+      setHighlights(identityMap)
     } else {
-      setHighlights(currMapping(currFilterValues[highlighter]));
+      setHighlights(currMapping[currFilterValues[highlighter]]);
     }
   };
-
-  const getProvisionMetric = (provider, provisionMapping) => {
-    const providerProcessShare = {};
-    const providerValues = provisionMapping[provider];
-    for(let node in nodeToMeta){
-      if(nodeToMeta[node]["type"] === "process"){
-        const provisionCounts = [];
-        for(let tool of nodeToMeta[node]["tools"]){
-          provisionCounts.push(tool in providerValues ? providerValues[tool] : 0);
-        }
-        for(let material of nodeToMeta[node]["materials"]){
-          provisionCounts.push(material in providerValues ? providerValues[material]: 0);
-        }
-        providerProcessShare[node] = provisionCounts.reduce((sum, a) => sum + a, 0)/provisionCounts.length;
-      }
-    }
-    return providerProcessShare;
-  }
 
   const materialToNode = getMaterialToNodes();
   const theme = useTheme();
@@ -96,12 +80,10 @@ const Dashboard = () => {
   };
   const filterToValues = {
     "material-resource": materialToNode,
-    "country": (country) => getProvisionMetric(country, countryProvision),
-    "org": (org) => getProvisionMetric(org, orgProvision)
+    "country": countryProvision
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
   const [highlights, setHighlights] = React.useState({});
-  const [toolbarVisible, setToolbarVisible] = React.useState(true);
 
   const handleChange = (evt, key) => {
     const updatedFilterValues = {...defaultFilterValues};
@@ -181,10 +163,10 @@ const Dashboard = () => {
       </Typography>
     </div>}
     <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%",
-        textAlign: "center", borderLeft: "3px double", borderRight: "3px double", height: "100vh", overflow: "scroll"}}>
+        textAlign: "center", borderLeft: "3px double", borderRight: (selectedNode !== null) ? "3px double" : "", height: "100vh", overflow: "scroll"}}>
       <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
     </div>
-    {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", width: "50%"}}>
+    {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
         <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>
       </div>}

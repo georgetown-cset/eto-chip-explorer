@@ -30,14 +30,14 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 }));
 
 const SubNode = (props) => {
-  const {nodeType, name} = props;
+  const {nodeType, name, highlight} = props;
   const [elevation, setElevation] = React.useState(1);
   const iconStyle = {fontSize: "20px"};
   const icon = nodeType === "tools" ? <ConstructionIcon style={iconStyle}/> : <InputIcon style={iconStyle}/>;
 
   return (
     <Paper style={{width: "20px", height: "20px", display: "inline-block", padding: "3px", margin: "5px",
-            textAlign: "center", backgroundColor: "rgba(229,191,33,0.5)"}}
+            textAlign: "center", backgroundColor: "rgba(229,191,33,"+highlight+")"}}
            onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)} elevation={elevation}>
       <HtmlTooltip title={
         <div style={{padding: "5px"}}>
@@ -51,7 +51,7 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, nodeToMeta, highlight, setSelected=null} = props;
+  const {node, nodeToMeta, highlights, setSelected=null} = props;
   const [elevation, setElevation] = React.useState(1);
   const meta = nodeToMeta[node];
 
@@ -65,8 +65,7 @@ const GraphNode = (props) => {
   return (
     <Paper id={node} className={"graph-node"} style={{padding: "5px",
       margin: "20px 25px", display: "inline-block",
-      border: "3px solid "+stageToColor[meta["stage_id"]],
-      backgroundColor: "rgba(229,191,33,"+highlight+")"}} onClick={updateSelected} elevation={elevation}
+      border: "3px solid "+stageToColor[meta["stage_id"]]}} onClick={updateSelected} elevation={elevation}
       onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
       <div style={{textAlign: "left"}}>
         <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
@@ -75,9 +74,11 @@ const GraphNode = (props) => {
         {((meta["materials"].length > 0) || (meta["tools"].length > 0)) &&
           <Typography component={"p"} variant={"body2"}>
             {meta["materials"].length > 0 && meta["materials"].map((material) =>
-              <SubNode nodeType={"materials"} name={nodeToMeta[material]["name"]}/>)}
+              <SubNode nodeType={"materials"} name={nodeToMeta[material]["name"]}
+                       highlight={material in highlights ? highlights[material] : 0}/>)}
             {meta["tools"].length > 0 && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
-              <SubNode nodeType={"tools"} name={nodeToMeta[tool]["name"]}/>)}</span>}
+              <SubNode nodeType={"tools"} name={nodeToMeta[tool]["name"]}
+                       highlight={tool in highlights ? highlights[tool] : 0}/>)}</span>}
           </Typography>}
       </div>
     </Paper>
