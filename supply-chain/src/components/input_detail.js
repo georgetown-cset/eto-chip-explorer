@@ -49,7 +49,9 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      <BarGraph countries={countries} values={values}/>
+      {(countries !== null) && (values !== null) &&
+        <BarGraph countries={countries} values={values}/>
+      }
     </div>
   )
 };
