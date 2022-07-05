@@ -30,7 +30,7 @@ const BarGraph = (props) => {
     <div>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
-      layout={{autosize: true, margin: {t: 50, r: 50, b: 50, l: 50, pad: 4}, title: "Country Provision"}}
+      layout={{autosize: true, margin: {t: 50, r: 50, b: 100, l: 50, pad: 4}, title: "Country Provision"}}
       config={{responsive: true}}
     />
     </div>

@@ -188,7 +188,7 @@ const Dashboard = () => {
       </div>}
     {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] !== "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
-        <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}
+        <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
                      countries={nodeToCountryProvision[selectedNode]["countries"]}
                      values={nodeToCountryProvision[selectedNode]["values"]}/>
       </div>}
