@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import {nodeToMeta} from "../../data/graph";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
+import mdxComponents from "../helpers/mdx_style";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -45,7 +46,7 @@ const InputDetail = (props) => {
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px"}}>
-      <MDXProvider>
+      <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
       <BarGraph countries={countries} values={values}/>
