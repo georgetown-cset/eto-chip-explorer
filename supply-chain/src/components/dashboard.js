@@ -14,6 +14,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Header from "./header";
 import Map from "./map";
 import ProcessDetail from "./process_detail";
+import InputDetail from "./input_detail";
 import {nodeToMeta} from "../../data/graph";
 import {countryProvision, orgProvision} from "../../data/provision";
 
@@ -54,6 +55,20 @@ const Dashboard = () => {
     return materialToNode;
   };
 
+  const getNodeToCountryProvision = () => {
+    const nodeToCountryProvision = {};
+    for(let country in countryProvision){
+      for(let node in countryProvision[country]){
+        if(!(node in nodeToCountryProvision)){
+          nodeToCountryProvision[node] = {"countries": [], "values": []}
+        }
+        nodeToCountryProvision[node]["countries"].push(country);
+        nodeToCountryProvision[node]["values"].push(100*countryProvision[country][node]);
+      }
+    }
+    return nodeToCountryProvision;
+  };
+
   const getCurrentHighlights = (currFilterValues = filterValues) => {
     let highlighter = "material-resource";
     for(let fv in defaultFilterValues){
@@ -72,6 +87,7 @@ const Dashboard = () => {
   };
 
   const materialToNode = getMaterialToNodes();
+  const nodeToCountryProvision = getNodeToCountryProvision();
   const theme = useTheme();
   const defaultFilterValues = {
     "material-resource": "All",
@@ -166,9 +182,15 @@ const Dashboard = () => {
         textAlign: "center", borderLeft: "3px double", borderRight: (selectedNode !== null) ? "3px double" : "", height: "100vh", overflow: "scroll"}}>
       <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
     </div>
-    {(selectedNode !== null) && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
+    {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] === "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
         <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}/>
+      </div>}
+    {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] !== "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
+        <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
+        <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes}
+                     countries={nodeToCountryProvision[selectedNode]["countries"]}
+                     values={nodeToCountryProvision[selectedNode]["values"]}/>
       </div>}
     </div>
   </div>);
