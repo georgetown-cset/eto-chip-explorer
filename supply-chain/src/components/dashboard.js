@@ -184,7 +184,8 @@ const Dashboard = () => {
     </div>
     {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] === "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
-        <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}/>
+        <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
+                       setSelectedNode={setSelectedNode} highlights={highlights}/>
       </div>}
     {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] !== "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>

@@ -42,7 +42,7 @@ const InputDetail = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px"}}>
