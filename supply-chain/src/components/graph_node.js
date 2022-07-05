@@ -30,14 +30,14 @@ const HtmlTooltip = styled(({ className, ...props }) => (
 }));
 
 const SubNode = (props) => {
-  const {nodeType, name, highlight, nodeId, updateSelected} = props;
+  const {nodeType, name, highlight, nodeId, updateSelected, borderStyle} = props;
   const [elevation, setElevation] = React.useState(1);
   const iconStyle = {fontSize: "20px"};
   const icon = nodeType === "tools" ? <ConstructionIcon style={iconStyle}/> : <InputIcon style={iconStyle}/>;
 
   return (
     <Paper style={{width: "20px", height: "20px", display: "inline-block", padding: "3px", margin: "5px",
-            textAlign: "center", backgroundColor: "rgba(229,191,33,"+highlight+")"}}
+            textAlign: "center", backgroundColor: "rgba(229,191,33,"+highlight+")", border: borderStyle}}
            onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)} elevation={elevation}
            onClick={updateSelected}>
       <HtmlTooltip title={
@@ -52,7 +52,7 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, nodeToMeta, highlights, setSelected=null} = props;
+  const {node, nodeToMeta, highlights, currSelectedNode, setSelected=null} = props;
   const [elevation, setElevation] = React.useState(1);
   const meta = nodeToMeta[node];
 
@@ -63,10 +63,20 @@ const GraphNode = (props) => {
     }
   };
 
+  const getBorderStyle = (currNode, isParent=false) => {
+    if(currNode === currSelectedNode){
+      return "3px solid red";
+    }
+    if(isParent){
+      return "3px solid "+stageToColor[meta["stage_id"]];
+    }
+    return "0px";
+  }
+
   return (
     <Paper id={node} className={"graph-node"} style={{padding: "5px",
       margin: "20px 25px", display: "inline-block",
-      border: "3px solid "+stageToColor[meta["stage_id"]]}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
+      border: getBorderStyle(node, true)}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
       onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
       <div style={{textAlign: "left"}}>
         <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
@@ -77,11 +87,13 @@ const GraphNode = (props) => {
             {meta["materials"].length > 0 && meta["materials"].map((material) =>
               <SubNode nodeType={"materials"} name={nodeToMeta[material]["name"]}
                        highlight={material in highlights ? highlights[material] : 0}
-                       updateSelected={(evt) => updateSelected(evt, material)}/>)}
+                       updateSelected={(evt) => updateSelected(evt, material)}
+                       borderStyle={getBorderStyle(material)}/>)}
             {meta["tools"].length > 0 && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
               <SubNode nodeType={"tools"} name={nodeToMeta[tool]["name"]}
                        highlight={tool in highlights ? highlights[tool] : 0}
-                       updateSelected={(evt) => updateSelected(evt, tool)}/>)}</span>}
+                       updateSelected={(evt) => updateSelected(evt, tool)}
+                       borderStyle={getBorderStyle(tool)}/>)}</span>}
           </Typography>}
       </div>
     </Paper>
