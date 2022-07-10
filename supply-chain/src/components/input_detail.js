@@ -5,6 +5,9 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
+import getIcon from "../helpers/shared";
+import GraphNode from "./graph_node";
+import {nodeToMeta} from "../../data/graph";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -38,8 +41,9 @@ const BarGraph = (props) => {
 };
 
 const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
-  const orgNames = Object.keys(orgs);
+  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta, variants, variantOf, setSelectedNode} = props;
+  const orgNames = orgs === undefined ? [] : Object.keys(orgs);
+  const iconStyle={verticalAlign: "middle", margin: "2px 5px"}
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,16 +54,32 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Provider Organizations</Typography>
+      {(variants !== undefined) && (
+        <div style={{marginBottom: "20px"}}>
+          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variants</Typography>
+          {variants.map((node) =>
+            <GraphNode node={node} currSelectedNode={selectedNode} setSelected={setSelectedNode} wide={true}
+                content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[node]["type"], iconStyle)}{nodeToMeta[node]["name"]}</p>}/>)}
+        </div>
+      )}
+      {(variantOf !== undefined) && (
+        <div style={{marginBottom: "20px"}}>
+          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variant of</Typography>
+          <GraphNode node={variantOf} currSelectedNode={selectedNode} setSelected={setSelectedNode} wide={true}
+              content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[variantOf]["type"], iconStyle)}{nodeToMeta[variantOf]["name"]}</p>}/>
+        </div>
+      )}
       {(orgs !== undefined) &&
-        orgNames.map(org =>
-          (orgMeta[org] !== undefined) &&
+        <div>
+          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Provider Organizations</Typography>
+          {orgNames.map(org => (orgMeta[org] !== undefined) &&
           <div>
             {orgMeta[org]["hq"]} <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
               {orgMeta[org]["name"]}
             </Link>: {orgs[org]}
           </div>
         )
+        }</div>
       }
       {(countries !== null) && (countryValues !== null) &&
         <BarGraph countries={countries} values={countryValues}/>

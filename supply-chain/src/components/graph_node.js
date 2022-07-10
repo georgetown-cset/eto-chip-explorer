@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
+import {nodeToMeta} from "../../data/graph";
 
 import getIcon from "../helpers/shared";
 
@@ -51,9 +52,9 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, nodeToMeta, highlights, currSelectedNode, setSelected=null, wide=false, content=null} = props;
+  const {node, highlights = {}, currSelectedNode, setSelected=null, wide=false, content=null} = props;
   const [elevation, setElevation] = React.useState(1);
-  const meta = nodeToMeta[node];
+  const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const header = content === null ? node+": "+meta["name"] : content;
   const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
     (("tools" in meta) && (meta["tools"].length > 0));

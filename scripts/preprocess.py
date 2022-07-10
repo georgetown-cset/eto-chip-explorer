@@ -12,6 +12,7 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
     node_to_meta = {}
     graph = {}
     graph_reverse = {}
+    variants = {}
     with open(nodes) as f:
         for line in csv.DictReader(f):
             node_type = line["type"]
@@ -29,6 +30,10 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
         for line in csv.DictReader(f):
             parent = line["input_id"]
             child = line["goes_into_id"]
+            if line.get("is_type_of_id"):
+                if line["is_type_of_id"] not in variants:
+                    variants[line["is_type_of_id"]] = []
+                variants[line["is_type_of_id"]].append(parent)
             had_missing = False
             for node in [parent, child]:
                 if node and node not in node_to_meta:
@@ -62,7 +67,8 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
         f.write(f"const graph={json.dumps(graph)};\n")
         f.write(f"const graphReverse={json.dumps(graph_reverse)};\n")
         f.write(f"const nodeToMeta={json.dumps(node_to_meta)};\n")
-        f.write("\nexport {graph, graphReverse, nodeToMeta};\n")
+        f.write(f"const variants={json.dumps(variants)};\n")
+        f.write("\nexport {graph, graphReverse, nodeToMeta, variants};\n")
     return node_to_meta
 
 

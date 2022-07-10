@@ -15,7 +15,7 @@ import Header from "./header";
 import Map from "./map";
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
-import {nodeToMeta} from "../../data/graph";
+import {nodeToMeta, variants} from "../../data/graph";
 import {countryProvision, orgProvision, providerMeta} from "../../data/provision";
 
 function getStyles(name, selectedName, theme) {
@@ -99,9 +99,20 @@ const Dashboard = () => {
     }
   };
 
+  const getVariantsOf = () => {
+    const variantsOf = {};
+    for(let node in variants){
+      for(let v of variants[node]){
+        variantsOf[v] = node;
+      }
+    }
+    return variantsOf;
+  }
+
   const materialToNode = getMaterialToNodes();
   const nodeToCountryProvision = getNodeToCountryProvision();
   const nodeToOrgProvision = getNodeToOrgProvision();
+  const variantsOf = getVariantsOf();
   const theme = useTheme();
   const defaultFilterValues = {
     "material-resource": "All",
@@ -206,7 +217,8 @@ const Dashboard = () => {
         <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
                      countries={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["countries"] : null}
                      countryValues={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["values"] : null}
-                     orgs={nodeToOrgProvision[selectedNode]} orgMeta={providerMeta}/>
+                     orgs={nodeToOrgProvision[selectedNode]} orgMeta={providerMeta} variants={variants[selectedNode]}
+                     setSelectedNode={setSelectedNode} variantOf={variantsOf[selectedNode]}/>
       </div>}
     </div>
   </div>);
