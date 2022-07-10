@@ -16,7 +16,7 @@ import Map from "./map";
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
 import {nodeToMeta} from "../../data/graph";
-import {countryProvision, orgProvision} from "../../data/provision";
+import {countryProvision, orgProvision, providerMeta} from "../../data/provision";
 
 function getStyles(name, selectedName, theme) {
   return {
@@ -69,6 +69,19 @@ const Dashboard = () => {
     return nodeToCountryProvision;
   };
 
+  const getNodeToOrgProvision = () => {
+    const nodeToOrgProvision = {};
+    for(let org in orgProvision){
+      for(let node in orgProvision[org]){
+        if(!(node in nodeToOrgProvision)){
+          nodeToOrgProvision[node] = {}
+        }
+        nodeToOrgProvision[node][org] = orgProvision[org][node]
+      }
+    }
+    return nodeToOrgProvision;
+  };
+
   const getCurrentHighlights = (currFilterValues = filterValues) => {
     let highlighter = "material-resource";
     for(let fv in defaultFilterValues){
@@ -88,6 +101,7 @@ const Dashboard = () => {
 
   const materialToNode = getMaterialToNodes();
   const nodeToCountryProvision = getNodeToCountryProvision();
+  const nodeToOrgProvision = getNodeToOrgProvision();
   const theme = useTheme();
   const defaultFilterValues = {
     "material-resource": "All",
@@ -172,7 +186,7 @@ const Dashboard = () => {
       </div>
     </Paper>
     <div>
-    {(selectedNode === null) && <div style={{"minWidth": "400px", width: "20%", verticalAlign: "top",
+    {(selectedNode === null) && <div style={{width: "20%", verticalAlign: "top",
           padding: "20px", display: "inline-block"}}>
       <Typography component={"p"} variant={"body2"}>
         ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
@@ -191,7 +205,8 @@ const Dashboard = () => {
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
         <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
                      countries={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["countries"] : null}
-                     values={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["values"] : null}/>
+                     countryValues={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["values"] : null}
+                     orgs={nodeToOrgProvision[selectedNode]} orgMeta={providerMeta}/>
       </div>}
     </div>
   </div>);

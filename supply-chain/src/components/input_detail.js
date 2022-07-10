@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Loadable from "react-loadable";
-import Typography from "@mui/material/Typography";
-import {nodeToMeta} from "../../data/graph";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
 
 const Plot = Loadable({
@@ -38,7 +38,8 @@ const BarGraph = (props) => {
 };
 
 const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, values} = props;
+  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
+  const orgNames = Object.keys(orgs);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,8 +50,19 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      {(countries !== null) && (values !== null) &&
-        <BarGraph countries={countries} values={values}/>
+      <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Provider Organizations</Typography>
+      {(orgs !== undefined) &&
+        orgNames.map(org =>
+          (orgMeta[org] !== undefined) &&
+          <div>
+            {orgMeta[org]["hq"]} <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
+              {orgMeta[org]["name"]}
+            </Link>: {orgs[org]}
+          </div>
+        )
+      }
+      {(countries !== null) && (countryValues !== null) &&
+        <BarGraph countries={countries} values={countryValues}/>
       }
     </div>
   )
