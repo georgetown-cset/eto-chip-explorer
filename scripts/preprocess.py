@@ -8,7 +8,7 @@ EXPECTED_TYPES = {"material_resource", "process", "stage", "tool_resource", "ult
 BASE_NODE_TYPES = {"process", "ultimate_output"}
 
 
-def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
+def mk_data(nodes: str, sequence: str, output_dir: str) -> dict:
     node_to_meta = {}
     graph = {}
     graph_reverse = {}
@@ -27,6 +27,7 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
                 node_to_meta[node_id]["materials"] = []
                 node_to_meta[node_id]["tools"] = []
     with open(sequence) as f:
+        num_process_edges = 0
         for line in csv.DictReader(f):
             parent = line["input_id"]
             child = line["goes_into_id"]
@@ -53,6 +54,7 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
             child_type = node_to_meta[child]["type"]
             if parent and child:
                 if (parent_type == "process") and (child_type in BASE_NODE_TYPES):
+                    num_process_edges += 1
                     if parent not in graph:
                         graph[parent] = []
                     graph[parent].append(child)
@@ -63,6 +65,7 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> None:
                     print(f"Unexpected lineage: {line}")
                 else:
                     node_to_meta[child]["materials" if parent_type == "material_resource" else "tools"].append(parent)
+        print(f"Number of process edges should be {num_process_edges}")
     with open(os.path.join(output_dir, "graph.js"), mode="w") as f:
         f.write(f"const graph={json.dumps(graph)};\n")
         f.write(f"const graphReverse={json.dumps(graph_reverse)};\n")
