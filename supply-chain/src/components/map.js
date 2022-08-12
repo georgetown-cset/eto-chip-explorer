@@ -1,5 +1,5 @@
 import React from "react";
-import Arrow, { DIRECTION } from "react-arrows";
+import Xarrow from "react-xarrows";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import GraphNode from "./graph_node";
@@ -34,31 +34,52 @@ const Map = (props) => {
     </div>
   };
 
-  const mkEdges = (edges, nodeToPosition) => {
+  const mkEdges = (edges, nodeToPosition, nodeToLayerNumber) => {
     return <div>
       {edges.map(edge => {
-        let fromDirection = DIRECTION.BOTTOM;
-        let toDirection = DIRECTION.TOP;
-        if(nodeToPosition[edge[0]] > 0){
-          fromDirection = DIRECTION.LEFT;
-          toDirection = DIRECTION.RIGHT;
-        } else if(nodeToPosition[edge[0]] < 0){
-          fromDirection = DIRECTION.RIGHT;
-          toDirection = DIRECTION.LEFT;
+        let fromDirection = "bottom";
+        let toDirection = "top";
+        let gridBreak = "50%";
+        let path = "grid";
+        // If arrow is going from center to edge
+        if(Math.abs(nodeToPosition[edge[0]]) < Math.abs(nodeToPosition[edge[1]])){
+          // Arrow will leave center on the left or right 
+          fromDirection = nodeToPosition[edge[0]] > 0 ? "left" : "right";
+          // Arrow will bend as far as possible from center 
+          gridBreak = "100%";
+          // Arrow should enter from top if going to a lower layer node 
+          toDirection = fromDirection === "right" ? "left" : "right";
+          if (nodeToLayerNumber[edge[0]] > nodeToLayerNumber[edge[1]]) {
+            toDirection = "top";
+          } else if (nodeToLayerNumber[edge[0]] < nodeToLayerNumber[edge[1]]) {
+            toDirection = "bottom";
+          } else {  // Same layer connection
+            path = "straight";
+          }
+        // If arrow is going from edge to center
+        } else if(Math.abs(nodeToPosition[edge[0]]) > Math.abs(nodeToPosition[edge[1]])){
+          // Arrow will meet center on the left or right 
+          toDirection = nodeToPosition[edge[0]] > 0 ? "right" : "left";
+          // Arrow will bend as far as possible from center 
+          gridBreak = "0%";
+          // Arrow should leave from bottom if going to a lower layer node 
+          fromDirection = toDirection === "right" ? "left" : "right";
+          if (nodeToLayerNumber[edge[0]] > nodeToLayerNumber[edge[1]]) {
+            fromDirection = "bottom";
+          } else if (nodeToLayerNumber[edge[0]] < nodeToLayerNumber[edge[1]]) {
+            fromDirection = "top";
+          } else {  // Same layer connection
+            path = "straight";
+          }
         }
-        return <Arrow
-          className={"arrow"}
-          from={{
-            direction: fromDirection,
-            node: () => document.getElementById(edge[0]),
-            translation: [0, 0]
-          }}
-          to={{
-            direction: toDirection,
-            node: () => document.getElementById(edge[1]),
-            translation: [0, 0]
-          }}
-          />
+        return <Xarrow
+          start={edge[0]}
+          end={edge[1]}
+          path={path}
+          gridBreak={gridBreak}
+          startAnchor={fromDirection}
+          endAnchor={toDirection}
+        />
       })}
     </div>
   };
@@ -68,7 +89,10 @@ const Map = (props) => {
     const layers = [mkLayer(currNodes)];
     const seen = new Set();
     currNodes.map(n => seen.add(n));
+    // To help us figure out how to draw arrows 
     const nodeToPosition = {};
+    let layerNumber = 0;
+    const nodeToLayerNumber = {};
     while(currNodes.length > 0){
       const edgePairs = [];
       for(let node of currNodes){
@@ -109,12 +133,14 @@ const Map = (props) => {
       const centerPoint = orderedLayerNodes.length/2 - 0.5;
       orderedLayerNodes.forEach((node, idx) => {
         nodeToPosition[node] = idx - centerPoint;
+        nodeToLayerNumber[node] = layerNumber;
       });
       const layer = mkLayer(orderedLayerNodes);
       layers.push(layer);
       currNodes = currNodes.concat(bump);
-      const edges = mkEdges(filtEdges, nodeToPosition);
+      const edges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber);
       layers.push(edges);
+      layerNumber += 1;
     }
     layers.reverse();
     const unattached = [];
