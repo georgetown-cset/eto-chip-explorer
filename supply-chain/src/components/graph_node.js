@@ -1,4 +1,5 @@
 import React from "react";
+import {useXarrow} from "react-xarrows";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
@@ -59,11 +60,13 @@ const GraphNode = (props) => {
   const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
     (("tools" in meta) && (meta["tools"].length > 0));
 
+  const updateXarrow = useXarrow();
   const updateSelected = (evt, selectedNode) => {
     if(setSelected !== null) {
       evt.stopPropagation();
       setSelected(selectedNode);
     }
+    updateXarrow();
   };
 
   const getBorderStyle = (currNode, isParent=false) => {
@@ -87,14 +90,18 @@ const GraphNode = (props) => {
           {header}
         </Typography>
         {showInputs &&
-          <Typography component={"p"} variant={"body2"}>
+          <Typography component={"div"} variant={"body2"}>
             {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
-              <SubNode nodeType={"materials"} name={nodeToMeta[material]["name"]}
+              <SubNode nodeType={"materials"}
+                       name={nodeToMeta[material]["name"]}
+                       key={nodeToMeta[material]["name"]}
                        highlight={material in highlights ? highlights[material] : 0}
                        updateSelected={(evt) => updateSelected(evt, material)}
                        borderStyle={getBorderStyle(material)}/>)}
             {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
-              <SubNode nodeType={"tools"} name={nodeToMeta[tool]["name"]}
+              <SubNode nodeType={"tools"}
+                       name={nodeToMeta[tool]["name"]}
+                       key={nodeToMeta[tool]["name"]}
                        highlight={tool in highlights ? highlights[tool] : 0}
                        updateSelected={(evt) => updateSelected(evt, tool)}
                        borderStyle={getBorderStyle(tool)}/>)}</span>}

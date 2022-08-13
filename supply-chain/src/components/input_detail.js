@@ -58,7 +58,7 @@ const InputDetail = (props) => {
         <div style={{marginBottom: "20px"}}>
           <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variants</Typography>
           {variants.map((node) =>
-            <GraphNode node={node} currSelectedNode={selectedNode} setSelected={setSelectedNode} wide={true}
+            <GraphNode node={node} currSelectedNode={selectedNode} setSelected={setSelectedNode} wide={true} key={node}
                 content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[node]["type"], iconStyle)}{nodeToMeta[node]["name"]}</p>}/>)}
         </div>
       )}
@@ -73,7 +73,7 @@ const InputDetail = (props) => {
         <div>
           <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Provider Organizations</Typography>
           {orgNames.map(org => (orgMeta[org] !== undefined) &&
-          <div>
+          <div key={org}>
             {orgMeta[org]["hq"]} <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
               {orgMeta[org]["name"]}
             </Link>: {orgs[org]}

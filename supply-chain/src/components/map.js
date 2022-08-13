@@ -1,5 +1,5 @@
 import React from "react";
-import Xarrow from "react-xarrows";
+import Xarrow, {Xwrapper} from "react-xarrows";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import GraphNode from "./graph_node";
@@ -28,7 +28,7 @@ const Map = (props) => {
   const mkLayer = (nodes, isUnattached=false) => {
     return <div>
       {nodes.map(node =>
-        <GraphNode node={node} highlights={highlights} key={node+selectedNode}
+        <GraphNode node={node} highlights={highlights} key={node}
                    unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       )}
     </div>
@@ -43,11 +43,11 @@ const Map = (props) => {
         let path = "grid";
         // If arrow is going from center to edge
         if(Math.abs(nodeToPosition[edge[0]]) < Math.abs(nodeToPosition[edge[1]])){
-          // Arrow will leave center on the left or right 
+          // Arrow will leave center on the left or right
           fromDirection = nodeToPosition[edge[0]] > 0 ? "left" : "right";
-          // Arrow will bend as far as possible from center 
+          // Arrow will bend as far as possible from center
           gridBreak = "100%";
-          // Arrow should enter from top if going to a lower layer node 
+          // Arrow should enter from top if going to a lower layer node
           toDirection = fromDirection === "right" ? "left" : "right";
           if (nodeToLayerNumber[edge[0]] > nodeToLayerNumber[edge[1]]) {
             toDirection = "top";
@@ -58,11 +58,11 @@ const Map = (props) => {
           }
         // If arrow is going from edge to center
         } else if(Math.abs(nodeToPosition[edge[0]]) > Math.abs(nodeToPosition[edge[1]])){
-          // Arrow will meet center on the left or right 
+          // Arrow will meet center on the left or right
           toDirection = nodeToPosition[edge[0]] > 0 ? "right" : "left";
-          // Arrow will bend as far as possible from center 
+          // Arrow will bend as far as possible from center
           gridBreak = "0%";
-          // Arrow should leave from bottom if going to a lower layer node 
+          // Arrow should leave from bottom if going to a lower layer node
           fromDirection = toDirection === "right" ? "left" : "right";
           if (nodeToLayerNumber[edge[0]] > nodeToLayerNumber[edge[1]]) {
             fromDirection = "bottom";
@@ -75,6 +75,7 @@ const Map = (props) => {
         return <Xarrow
           start={edge[0]}
           end={edge[1]}
+          key={`${edge[0]}-to-${edge[1]}`}
           path={path}
           gridBreak={gridBreak}
           startAnchor={fromDirection}
@@ -89,7 +90,7 @@ const Map = (props) => {
     const layers = [mkLayer(currNodes)];
     const seen = new Set();
     currNodes.map(n => seen.add(n));
-    // To help us figure out how to draw arrows 
+    // To help us figure out how to draw arrows
     const nodeToPosition = {};
     let layerNumber = 0;
     const nodeToLayerNumber = {};
@@ -151,8 +152,10 @@ const Map = (props) => {
     }
     return (
       <div>
-        <div>{mkLayer(unattached, true)}</div>
-        <div>{layers}</div>
+        <Xwrapper>
+          <div>{mkLayer(unattached, true)}</div>
+          <div>{layers}</div>
+        </Xwrapper>
       </div>
     );
   };
