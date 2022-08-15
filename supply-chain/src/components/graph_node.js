@@ -1,9 +1,11 @@
 import React from "react";
 import {useXarrow} from "react-xarrows";
 import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import {nodeToMeta} from "../../data/graph";
 
 import getIcon from "../helpers/shared";
@@ -73,41 +75,62 @@ const GraphNode = (props) => {
     if(currNode === currSelectedNode){
       return "3px solid red";
     }
-    if(isParent){
+    if(isParent && (meta["stage_id"] in stageToColor)){
       return "3px solid "+stageToColor[meta["stage_id"]];
     }
     return "0px";
   }
 
   return (
-    <Paper id={node} className={"graph-node"} style={{padding: "5px",
-      margin: wide ? "5px 0px" : "20px 25px", display: "inline-block",
-      backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": "white",
-      border: getBorderStyle(node, true), width: wide ? "100%": "150px"}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
-      onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
-      <div style={{textAlign: "left"}}>
-        <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
-          {header}
-        </Typography>
-        {showInputs &&
-          <Typography component={"div"} variant={"body2"}>
-            {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
-              <SubNode nodeType={"materials"}
-                       name={nodeToMeta[material]["name"]}
-                       key={nodeToMeta[material]["name"]}
-                       highlight={material in highlights ? highlights[material] : 0}
-                       updateSelected={(evt) => updateSelected(evt, material)}
-                       borderStyle={getBorderStyle(material)}/>)}
-            {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
-              <SubNode nodeType={"tools"}
-                       name={nodeToMeta[tool]["name"]}
-                       key={nodeToMeta[tool]["name"]}
-                       highlight={tool in highlights ? highlights[tool] : 0}
-                       updateSelected={(evt) => updateSelected(evt, tool)}
-                       borderStyle={getBorderStyle(tool)}/>)}</span>}
-          </Typography>}
-      </div>
-    </Paper>
+    <div style={{display: "inline-block"}}>
+      <Paper id={node} className={"graph-node"} style={{padding: "5px",
+        margin: wide ? "5px 0px" : "20px 25px",
+        marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
+        display: "inline-block",
+        backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": "white",
+        border: getBorderStyle(node, true), width: wide ? "100%": "150px"}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
+        onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
+        <div style={{textAlign: "left"}}>
+          <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
+            {header}
+          </Typography>
+          {showInputs &&
+            <Typography component={"div"} variant={"body2"}>
+              {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
+                <SubNode nodeType={"materials"}
+                        name={nodeToMeta[material]["name"]}
+                        key={nodeToMeta[material]["name"]}
+                        highlight={material in highlights ? highlights[material] : 0}
+                        updateSelected={(evt) => updateSelected(evt, material)}
+                        borderStyle={getBorderStyle(material)}/>)}
+              {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
+                <SubNode nodeType={"tools"}
+                        name={nodeToMeta[tool]["name"]}
+                        key={nodeToMeta[tool]["name"]}
+                        highlight={tool in highlights ? highlights[tool] : 0}
+                        updateSelected={(evt) => updateSelected(evt, tool)}
+                        borderStyle={getBorderStyle(tool)}/>)}</span>}
+            </Typography>}
+        </div>
+      </Paper>
+      {node === currSelectedNode &&
+        <Paper id={`${node}-documentation`}
+          style={{padding: "5px", display: "inline-block",
+          border: getBorderStyle(node, true),
+          marginTop: "0px", marginBottom: "20px" }}>
+          <Button style={{verticalAlign: "top"}} onClick={(evt) => updateSelected(evt, null)}><HighlightOffIcon/></Button>
+          <Typography component={"p"} variant={"body2"}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Phasellus
+            vestibulum lorem sed risus. Molestie ac feugiat sed lectus. Pulvinar sapien et ligula ullamcorper
+            malesuada proin. Cursus in hac habitasse platea dictumst. Nunc id cursus metus aliquam eleifend mi.
+            Purus in massa tempor nec feugiat. Morbi blandit cursus risus at ultrices. Nisl rhoncus mattis
+            rhoncus urna neque viverra justo nec ultrices. Purus sit amet luctus venenatis lectus. Et ligula
+            ullamcorper malesuada proin libero nunc. At risus viverra adipiscing at in tellus.
+          </Typography>
+        </Paper>
+      }
+    </div>
   )
 };
 

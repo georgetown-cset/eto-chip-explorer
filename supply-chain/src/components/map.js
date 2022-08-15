@@ -37,6 +37,8 @@ const Map = (props) => {
   const mkEdges = (edges, nodeToPosition, nodeToLayerNumber) => {
     return <div>
       {edges.map(edge => {
+        let startNode = edge[0];
+        let endNode = edge[1]
         let fromDirection = "bottom";
         let toDirection = "top";
         let gridBreak = "50%";
@@ -72,9 +74,20 @@ const Map = (props) => {
             path = "straight";
           }
         }
+        // If current node is expanded, we need some special handling because we
+        // don't want arrows to run across the documentation panel
+        if (edge[0] === selectedNode) {
+          startNode = `${edge[0]}-documentation`;
+          path = "straight";
+          fromDirection = "auto";
+        } else if (edge[1] === selectedNode && toDirection !== "top") {
+          endNode = `${edge[1]}-documentation`;
+          path = "straight";
+          toDirection = "auto";
+        }
         return <Xarrow
-          start={edge[0]}
-          end={edge[1]}
+          start={startNode}
+          end={endNode}
           key={`${edge[0]}-to-${edge[1]}`}
           path={path}
           gridBreak={gridBreak}
