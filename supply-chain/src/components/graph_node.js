@@ -6,6 +6,7 @@ import Paper from "@mui/material/Paper";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {nodeToMeta} from "../../data/graph";
 
 import getIcon from "../helpers/shared";
@@ -82,7 +83,7 @@ const GraphNode = (props) => {
   }
 
   return (
-    <div style={{display: "inline-block"}}>
+    <div style={{display: "inline-block", position: "relative"}}>
       <Paper id={node} className={"graph-node"} style={{padding: "5px",
         margin: wide ? "5px 0px" : "20px 25px",
         marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
@@ -114,21 +115,15 @@ const GraphNode = (props) => {
         </div>
       </Paper>
       {node === currSelectedNode &&
-        <Paper id={`${node}-documentation`}
-          style={{padding: "5px", display: "inline-block",
-          border: getBorderStyle(node, true),
-          marginTop: "0px", marginBottom: "20px" }}>
-          <Button style={{verticalAlign: "top"}} onClick={(evt) => updateSelected(evt, null)}><HighlightOffIcon/></Button>
-          <Typography component={"p"} variant={"body2"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Phasellus
-            vestibulum lorem sed risus. Molestie ac feugiat sed lectus. Pulvinar sapien et ligula ullamcorper
-            malesuada proin. Cursus in hac habitasse platea dictumst. Nunc id cursus metus aliquam eleifend mi.
-            Purus in massa tempor nec feugiat. Morbi blandit cursus risus at ultrices. Nisl rhoncus mattis
-            rhoncus urna neque viverra justo nec ultrices. Purus sit amet luctus venenatis lectus. Et ligula
-            ullamcorper malesuada proin libero nunc. At risus viverra adipiscing at in tellus.
-          </Typography>
-        </Paper>
+        <ArrowDropDownIcon
+          style={{
+            display: "block",
+            marginTop: "-17px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            fontSize: "40px",
+          }}
+        />
       }
     </div>
   )

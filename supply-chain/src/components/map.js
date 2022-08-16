@@ -2,6 +2,7 @@ import React from "react";
 import Xarrow, {Xwrapper} from "react-xarrows";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
+import DocumentationNode from "./documentation_node";
 import GraphNode from "./graph_node";
 
 const Map = (props) => {
@@ -31,6 +32,10 @@ const Map = (props) => {
         <GraphNode node={node} highlights={highlights} key={node}
                    unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       )}
+      {nodes.includes(selectedNode) &&
+        <DocumentationNode node={selectedNode} highlights={highlights}
+          unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
+      }
     </div>
   };
 
@@ -75,17 +80,6 @@ const Map = (props) => {
           } else {  // Same layer connection
             path = "straight";
           }
-        }
-        // If current node is expanded, we need some special handling because we
-        // don't want arrows to run across the documentation panel
-        if (edge[0] === selectedNode) {
-          startNode = `${edge[0]}-documentation`;
-          path = "straight";
-          fromDirection = "auto";
-        } else if (edge[1] === selectedNode && toDirection !== "top") {
-          endNode = `${edge[1]}-documentation`;
-          path = "straight";
-          toDirection = "auto";
         }
         return <Xarrow
           start={startNode}
