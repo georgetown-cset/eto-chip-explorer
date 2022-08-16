@@ -1,11 +1,9 @@
 import React from "react";
 import {useXarrow} from "react-xarrows";
 import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {nodeToMeta} from "../../data/graph";
 

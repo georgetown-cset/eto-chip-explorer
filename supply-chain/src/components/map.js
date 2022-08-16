@@ -44,8 +44,6 @@ const Map = (props) => {
   const mkEdges = (edges, nodeToPosition, nodeToLayerNumber) => {
     return <div>
       {edges.map(edge => {
-        let startNode = edge[0];
-        let endNode = edge[1]
         let fromDirection = "bottom";
         let toDirection = "top";
         let gridBreak = "50%";
@@ -82,8 +80,8 @@ const Map = (props) => {
           }
         }
         return <Xarrow
-          start={startNode}
-          end={endNode}
+          start={edge[0]}
+          end={edge[1]}
           key={`${edge[0]}-to-${edge[1]}`}
           path={path}
           gridBreak={gridBreak}
