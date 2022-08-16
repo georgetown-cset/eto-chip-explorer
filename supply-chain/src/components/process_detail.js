@@ -31,7 +31,7 @@ const ProcessDetail = (props) => {
       <div>
         {nodeToMeta[selectedNode]["materials"].map((node) =>
           <GraphNode node={node} highlights={highlights} currSelectedNode={selectedNode} setSelected={setSelectedNode}
-              nodeToMeta={nodeToMeta} wide={true}
+              nodeToMeta={nodeToMeta} wide={true} key={node}
               content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
         )}
       </div>}
@@ -39,7 +39,7 @@ const ProcessDetail = (props) => {
       <div>
         {nodeToMeta[selectedNode]["tools"].map((node) =>
           <GraphNode node={node} highlights={highlights} currSelectedNode={selectedNode} setSelected={setSelectedNode}
-              nodeToMeta={nodeToMeta} wide={true}
+              nodeToMeta={nodeToMeta} wide={true} key={node}
               content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
         )}
       </div>}
