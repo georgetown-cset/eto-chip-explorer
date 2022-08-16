@@ -34,6 +34,8 @@ const Map = (props) => {
     </div>
   };
 
+  const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
+
   const mkEdges = (edges, nodeToPosition, nodeToLayerNumber) => {
     return <div>
       {edges.map(edge => {
@@ -80,6 +82,9 @@ const Map = (props) => {
           gridBreak={gridBreak}
           startAnchor={fromDirection}
           endAnchor={toDirection}
+          strokeWidth={2}
+          headSize={10}
+          headShape={arrowShape}
         />
       })}
     </div>
