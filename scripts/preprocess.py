@@ -3,6 +3,8 @@ import csv
 import json
 import os
 import pycountry
+import re
+import urllib.request
 
 EXPECTED_TYPES = {"material_resource", "process", "stage", "tool_resource", "ultimate_output"}
 BASE_NODE_TYPES = {"process", "ultimate_output"}
@@ -112,9 +114,9 @@ def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provide
 def mk_text(nodes_fi: str, output_dir: str):
     with open(nodes_fi) as f:
         for line in csv.DictReader(f):
-           with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
-               out.write(f"#### {line['input_name']}\n\n")
-               out.write(line["description"])
+            with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
+                out.write(f"#### {line['input_name']}\n\n")
+                out.write(line["description"])
 
 
 def mk_provider_to_meta(provider_fi: str, basic_info_fi: str):
@@ -137,6 +139,19 @@ def mk_provider_to_meta(provider_fi: str, basic_info_fi: str):
     return provider_meta
 
 
+def mk_images(images_fi: str, output_dir: str):
+    with open(images_fi) as f:
+        for line in csv.DictReader(f):
+            # image_col is of the format 'something.jpeg (https://link.com/to/something.jpeg)'
+            image_col = line['Image']
+            image_fi = re.search(r'\((http.*?)\)', image_col)[1]
+            file_type = image_fi.split('.')[-1]
+            urllib.request.urlretrieve(
+                image_fi,
+                os.path.join(output_dir, line["Node ID for semi map"])+f".{file_type}"
+            )
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--nodes", default=os.path.join("data", "inputs.csv"))
@@ -144,14 +159,19 @@ if __name__ == "__main__":
     parser.add_argument("--providers", default=os.path.join("data", "providers.csv"))
     parser.add_argument("--basic_company_info", default=os.path.join("data", "basic_company_info.csv"))
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
+    parser.add_argument("--images", default=os.path.join("data", "images.csv"))
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
     parser.add_argument("--output_text_dir", default=os.path.join("supply-chain", "src", "pages"))
+    parser.add_argument("--output_images_dir", default=os.path.join("supply-chain", "src", "images"))
     args = parser.parse_args()
 
     if not os.path.exists(args.output_dir):
         os.makedirs(args.output_dir)
+    if not os.path.exists(args.output_images_dir):
+        os.makedirs(args.output_images_dir)
 
     node_to_meta = mk_data(args.nodes, args.sequence, args.output_dir)
     provider_to_meta = mk_provider_to_meta(args.providers, args.basic_company_info)
     mk_provision(args.provision, args.output_dir, node_to_meta, provider_to_meta)
     mk_text(args.nodes, args.output_text_dir)
+    mk_images(args.images, args.output_images_dir)
