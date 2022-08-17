@@ -140,6 +140,11 @@ def mk_provider_to_meta(provider_fi: str, basic_info_fi: str):
 
 
 def mk_images(images_fi: str, output_dir: str):
+    """
+    Downloads images from an airtable CSV and renames them according to their associated node
+    :param image_fi: Path to airtable CSV
+    :param output_dir: Path to output folder where images will be placed
+    """
     with open(images_fi) as f:
         for line in csv.DictReader(f):
             # image_col is of the format 'something.jpeg (https://link.com/to/something.jpeg)'
@@ -159,7 +164,8 @@ if __name__ == "__main__":
     parser.add_argument("--providers", default=os.path.join("data", "providers.csv"))
     parser.add_argument("--basic_company_info", default=os.path.join("data", "basic_company_info.csv"))
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
-    parser.add_argument("--images", default=os.path.join("data", "images.csv"))
+    parser.add_argument("--images", action='store_true')
+    parser.add_argument("--images_file", default=os.path.join("data", "images.csv"))
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
     parser.add_argument("--output_text_dir", default=os.path.join("supply-chain", "src", "pages"))
     parser.add_argument("--output_images_dir", default=os.path.join("supply-chain", "src", "images"))
@@ -174,4 +180,5 @@ if __name__ == "__main__":
     provider_to_meta = mk_provider_to_meta(args.providers, args.basic_company_info)
     mk_provision(args.provision, args.output_dir, node_to_meta, provider_to_meta)
     mk_text(args.nodes, args.output_text_dir)
-    mk_images(args.images, args.output_images_dir)
+    if args.images:
+        mk_images(args.images_file, args.output_images_dir)
