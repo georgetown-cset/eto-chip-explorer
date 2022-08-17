@@ -183,7 +183,7 @@ const Dashboard = () => {
             >
               All
           </MenuItem>
-          {Object.keys(countryProvision).sort().filter((c) => (c !== "null") && (c !== "Other")).map((name) => (
+          {Object.keys(countryProvision).sort().filter((c) => c !== "Other").map((name) => (
             <MenuItem
               key={name}
               value={name}
