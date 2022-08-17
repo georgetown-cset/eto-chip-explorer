@@ -38,7 +38,8 @@ COUNTRY_MAPPING = {
 def mk_metadata(nodes: str) -> dict:
     """
     Reads metadata from inputs sheet and instantiates a mapping between a node id and its metadata
-    :param nodes: inputs.csv (https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
+    :param nodes: input csv
+        (from https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
     :return: Dict mapping node ids to metadata
     """
     node_to_meta = {}
@@ -52,63 +53,73 @@ def mk_metadata(nodes: str) -> dict:
                 "stage_id": line["stage_id"]
             }
             assert node_type in EXPECTED_TYPES
-            if node_type in BASE_NODE_TYPES:
-                node_to_meta[node_id]["materials"] = []
-                node_to_meta[node_id]["tools"] = []
+            node_to_meta[node_id]["materials"] = []
+            node_to_meta[node_id]["tools"] = []
     return node_to_meta
 
 
-def mk_data(node_to_meta: dict, sequence: str, output_dir: str) -> None:
+def update_variants(parent: str, child: str, record: dict, variants: dict, node_to_meta: dict) -> bool:
     """
+    Checks a sequence file row for variants, which should have a non-null is_type_of_id. Also prints
+    warnings if other column values are unexpected
+    :param parent: Parent (input) node
+    :param child: Child (target) node
+    :param canonical_variant: If not null, then the canonical id for a set of variants
+    :param variants: Dict mapping canonical ids to variant ids
+    :param node_to_meta: Dict mapping nodes to their metadata
+    :return: True if further processing of the record should be skipped
+    """
+    canonical_variant = record.get("is_type_of_id")
+    if canonical_variant:
+        if canonical_variant not in variants:
+            variants[canonical_variant] = []
+        variants[canonical_variant].append(parent)
+        if not child:
+            return True
+    for node in [parent, child]:
+        if not node:
+            print(f"Unexpected null node in {record}")
+            return True
+        if node not in node_to_meta:
+            print(f"Missing meta for {node} from {record}")
+            return True
+    return False
 
+
+def write_graphs(node_to_meta: dict, sequence: str, output_dir: str) -> None:
+    """
+    Parses a csv that specifies node type, the edges between nodes, and node variants
     :param node_to_meta:
-    :param sequence:
-    :param output_dir:
+    :param sequence: sequence csv
+        (from https://docs.google.com/spreadsheets/d/1DLfaIrmJYRy3FzculWDF2gRo74lDnf5WptnC7uIIkhE/edit#gid=0)
+    :param output_dir: directory where graph metadata should be written
     :return: None (mutates node_to_meta)
     """
     graph = {}
     graph_reverse = {}
     variants = {}
     with open(sequence) as f:
-        num_process_edges = 0
         for line in csv.DictReader(f):
             parent = line["input_id"]
             child = line["goes_into_id"]
-            if line.get("is_type_of_id"):
-                if line["is_type_of_id"] not in variants:
-                    variants[line["is_type_of_id"]] = []
-                variants[line["is_type_of_id"]].append(parent)
-            had_missing = False
-            for node in [parent, child]:
-                if node and node not in node_to_meta:
-                    print("Missing meta for "+node)
-                    node_to_meta[node] = {
-                        "name": "???",
-                        "type": "???",
-                        "stage_name": "???"
-                    }
-                    had_missing = True
-                elif not node:
-                    had_missing = True
-            if had_missing:
-                print(f"Skipping {line}")
+            skip = update_variants(parent, child, line, variants, node_to_meta)
+            if skip:
                 continue
             parent_type = node_to_meta[parent]["type"]
             child_type = node_to_meta[child]["type"]
-            if parent and child:
-                if (parent_type == "process") and (child_type in BASE_NODE_TYPES):
-                    num_process_edges += 1
+            if parent_type == "process":
+                if child_type in BASE_NODE_TYPES:
                     if parent not in graph:
                         graph[parent] = []
                     graph[parent].append(child)
                     if child not in graph_reverse:
                         graph_reverse[child] = []
                     graph_reverse[child].append(parent)
-                elif not (child_type in BASE_NODE_TYPES):
-                    print(f"Unexpected lineage: {line}")
                 else:
-                    node_to_meta[child]["materials" if parent_type == "material_resource" else "tools"].append(parent)
-        print(f"Number of process edges should be {num_process_edges}")
+                    print(f"Unexpected lineage: {line}")
+            else:
+                node_type = "materials" if parent_type == "material_resource" else "tools"
+                node_to_meta[child][node_type].append(parent)
     with open(os.path.join(output_dir, "graph.js"), mode="w") as f:
         f.write(f"const graph={json.dumps(graph)};\n")
         f.write(f"const graphReverse={json.dumps(graph_reverse)};\n")
@@ -132,7 +143,16 @@ def get_country(raw_country_name: str) -> str:
     return COUNTRY_MAPPING.get(clean_country_name, clean_country_name)
 
 
-def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provider_to_meta: dict):
+def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provider_to_meta: dict) -> None:
+    """
+    Create metadata for providers
+    :param provision_fi: provision csv
+        (from https://docs.google.com/spreadsheets/d/1FGib0RJ2vEFOXNZOGWNcZJZu82r330337DjKIbsz2ao/edit#gid=0)
+    :param output_dir: directory where output metadata should be written
+    :param node_to_meta: dict mapping nodes to their metadata
+    :param provider_to_meta: dict mapping provider ids to their metadata
+    :return: None
+    """
     org_provision = {}
     country_provision = {}
     with open(provision_fi) as f:
@@ -165,7 +185,8 @@ def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provide
 def write_node_descriptions(nodes_fi: str, output_dir: str) -> None:
     """
     Write out node descriptions as markdown
-    :param nodes_fi: inputs.csv (https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
+    :param nodes_fi: inputs csv
+        (from https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
     :param output_dir: Directory where output markdown should be written
     :return: None
     """
@@ -176,7 +197,15 @@ def write_node_descriptions(nodes_fi: str, output_dir: str) -> None:
                 out.write(line["description"])
 
 
-def mk_provider_to_meta(provider_fi: str, basic_info_fi: str):
+def mk_provider_to_meta(provider_fi: str, company_metadata_fi: str) -> dict:
+    """
+    Create a mapping between provider ids and their metadata, such as name, type, and url (for company providers)
+    :param provider_fi: provider csv
+        (from https://docs.google.com/spreadsheets/d/1QaUTc75gnwk1SwEy3vCx3J0w6oE0yCierYF2pO0Uino/edit#gid=0)
+    :param company_metadata_fi: Airtable export of basic company metadata
+        (from https://airtable.com/apptyAYjYFVXWONzU/tblbaY2Qa4hMpknjk/viwHEhESHcbtBk2ya?blocks=hide)
+    :return: Mapping from provider ids to their metadata
+    """
     provider_meta = {}
     name_to_id = {}
     with open(provider_fi) as f:
@@ -186,7 +215,7 @@ def mk_provider_to_meta(provider_fi: str, basic_info_fi: str):
                 "type": line["provider_type"]
             }
             name_to_id[line["provider_name"]] = line["provider_id"]
-    with open(basic_info_fi) as f:
+    with open(company_metadata_fi) as f:
         for line in csv.DictReader(f):
             company_id = name_to_id.get(line["Company"])
             if not company_id:
@@ -196,11 +225,12 @@ def mk_provider_to_meta(provider_fi: str, basic_info_fi: str):
     return provider_meta
 
 
-def mk_images(images_fi: str, output_dir: str):
+def mk_images(images_fi: str, output_dir: str) -> None:
     """
     Downloads images from an airtable CSV and renames them according to their associated node
     :param image_fi: Path to airtable CSV
     :param output_dir: Path to output folder where images will be placed
+    :return: None
     """
     with open(images_fi) as f:
         for line in csv.DictReader(f):
@@ -212,6 +242,26 @@ def mk_images(images_fi: str, output_dir: str):
                 image_fi,
                 os.path.join(output_dir, line["Node ID for semi map"])+f".{file_type}"
             )
+
+
+def main(args) -> None:
+    """
+    Generates data for the supply chain app from exports of google sheet and airtable files
+    :return: None
+    """
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+    if not os.path.exists(args.output_images_dir):
+        os.makedirs(args.output_images_dir)
+
+    node_to_meta = mk_metadata(args.nodes)
+    write_node_descriptions(args.nodes, args.output_text_dir)
+
+    write_graphs(node_to_meta, args.sequence, args.output_dir)
+    provider_to_meta = mk_provider_to_meta(args.providers, args.basic_company_info)
+    mk_provision(args.provision, args.output_dir, node_to_meta, provider_to_meta)
+    if args.images:
+        mk_images(args.images_file, args.output_images_dir)
 
 
 if __name__ == "__main__":
@@ -228,16 +278,4 @@ if __name__ == "__main__":
     parser.add_argument("--output_images_dir", default=os.path.join("supply-chain", "src", "images"))
     args = parser.parse_args()
 
-    if not os.path.exists(args.output_dir):
-        os.makedirs(args.output_dir)
-    if not os.path.exists(args.output_images_dir):
-        os.makedirs(args.output_images_dir)
-
-    node_to_meta = mk_metadata(args.nodes)
-    write_node_descriptions(args.nodes, args.output_text_dir)
-
-    mk_data(node_to_meta, args.sequence, args.output_dir)
-    provider_to_meta = mk_provider_to_meta(args.providers, args.basic_company_info)
-    mk_provision(args.provision, args.output_dir, node_to_meta, provider_to_meta)
-    if args.images:
-        mk_images(args.images_file, args.output_images_dir)
+    main(args)
