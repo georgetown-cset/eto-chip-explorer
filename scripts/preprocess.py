@@ -35,11 +35,13 @@ COUNTRY_MAPPING = {
 }
 
 
-def mk_data(nodes: str, sequence: str, output_dir: str) -> dict:
+def mk_metadata(nodes: str) -> dict:
+    """
+    Reads metadata from inputs sheet and instantiates a mapping between a node id and its metadata
+    :param nodes: inputs.csv (https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
+    :return: Dict mapping node ids to metadata
+    """
     node_to_meta = {}
-    graph = {}
-    graph_reverse = {}
-    variants = {}
     with open(nodes) as f:
         for line in csv.DictReader(f):
             node_type = line["type"]
@@ -53,6 +55,20 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> dict:
             if node_type in BASE_NODE_TYPES:
                 node_to_meta[node_id]["materials"] = []
                 node_to_meta[node_id]["tools"] = []
+    return node_to_meta
+
+
+def mk_data(node_to_meta: dict, sequence: str, output_dir: str) -> None:
+    """
+
+    :param node_to_meta:
+    :param sequence:
+    :param output_dir:
+    :return: None (mutates node_to_meta)
+    """
+    graph = {}
+    graph_reverse = {}
+    variants = {}
     with open(sequence) as f:
         num_process_edges = 0
         for line in csv.DictReader(f):
@@ -99,7 +115,6 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> dict:
         f.write(f"const nodeToMeta={json.dumps(node_to_meta)};\n")
         f.write(f"const variants={json.dumps(variants)};\n")
         f.write("\nexport {graph, graphReverse, nodeToMeta, variants};\n")
-    return node_to_meta
 
 
 def get_country(raw_country_name: str) -> str:
@@ -147,7 +162,13 @@ def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provide
         f.write("\nexport {countryProvision, orgProvision, providerMeta};\n")
 
 
-def mk_text(nodes_fi: str, output_dir: str):
+def write_node_descriptions(nodes_fi: str, output_dir: str) -> None:
+    """
+    Write out node descriptions as markdown
+    :param nodes_fi: inputs.csv (https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
+    :param output_dir: Directory where output markdown should be written
+    :return: None
+    """
     with open(nodes_fi) as f:
         for line in csv.DictReader(f):
             with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
@@ -212,9 +233,11 @@ if __name__ == "__main__":
     if not os.path.exists(args.output_images_dir):
         os.makedirs(args.output_images_dir)
 
-    node_to_meta = mk_data(args.nodes, args.sequence, args.output_dir)
+    node_to_meta = mk_metadata(args.nodes)
+    write_node_descriptions(args.nodes, args.output_text_dir)
+
+    mk_data(node_to_meta, args.sequence, args.output_dir)
     provider_to_meta = mk_provider_to_meta(args.providers, args.basic_company_info)
     mk_provision(args.provision, args.output_dir, node_to_meta, provider_to_meta)
-    mk_text(args.nodes, args.output_text_dir)
     if args.images:
         mk_images(args.images_file, args.output_images_dir)
