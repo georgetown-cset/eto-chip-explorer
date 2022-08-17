@@ -9,6 +9,31 @@ import urllib.request
 EXPECTED_TYPES = {"material_resource", "process", "stage", "tool_resource", "ultimate_output"}
 BASE_NODE_TYPES = {"process", "ultimate_output"}
 
+# TODO: somewhat duplicative of CAT, refactor into shared lib
+COUNTRY_MAPPING = {
+    "MAL": "Malaysia",
+    "TAN": "Tanzania",
+    "BAH": "Bahamas",
+    "Venezuela, Bolivarian Republic of": "Venezuela",
+    "Macao": "Macau",
+    "Viet Nam": "Vietnam",
+    "Cayman Islands": "Cayman Islands (the)",
+    "China": "China (mainland)",
+    "Eswatini": "Swaziland",
+    "Korea, Republic of": "South Korea",
+    "Korea": "South Korea",
+    "Korea, Democratic People's Republic of": "North Korea",
+    "Lao People's Democratic Republic": "Laos",
+    "Bolivia, Plurinational State of": "Bolivia",
+    "Palestine, State of": "Palestine",
+    "Sao Tome and Principe": "São Tomé and Príncipe",
+    "Syrian Arab Republic": "Syria",
+    "Reunion": "Réunion",
+    "Russian Federation": "Russia",
+    "Iran, Islamic Republic of": "Iran",
+    "Taiwan, Province of China": "Taiwan",
+}
+
 
 def mk_data(nodes: str, sequence: str, output_dir: str) -> dict:
     node_to_meta = {}
@@ -77,6 +102,21 @@ def mk_data(nodes: str, sequence: str, output_dir: str) -> dict:
     return node_to_meta
 
 
+def get_country(raw_country_name: str) -> str:
+    """
+    Normalize country names, including mapping from alpha3
+    :param raw_country_name: Raw analyst-specified country name
+    :return: Normalized country name
+    """
+    country = pycountry.countries.get(alpha_3=raw_country_name)
+    clean_country_name = None if country is None else country.name
+    if clean_country_name is None:
+        if raw_country_name not in COUNTRY_MAPPING:
+            print("warning: pycountry could not find " + raw_country_name)
+        clean_country_name = raw_country_name
+    return COUNTRY_MAPPING.get(clean_country_name, clean_country_name)
+
+
 def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provider_to_meta: dict):
     org_provision = {}
     country_provision = {}
@@ -86,11 +126,7 @@ def mk_provision(provision_fi: str, output_dir: str, node_to_meta: dict, provide
             provider_name = provider_to_meta[line["provider_id"]]["name"]
             provided = line["provided_id"]
             if provider_to_meta[line["provider_id"].strip()]["type"] == "country":
-                country = pycountry.countries.get(alpha_3=provider_name)
-                country_name = None if country is None else country.name
-                if country_name is None:
-                    print("pycountry could not find "+provider_name)
-                    country_name = provider_name
+                country_name = get_country(provider_name)
                 if country_name not in country_provision:
                     country_provision[country_name] = {}
                 provision_share = 50 if not line["share_provided"] else int(line["share_provided"].strip("%"))
