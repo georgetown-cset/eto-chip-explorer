@@ -471,11 +471,11 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 511,Achronix,P20,Core intellectual property,N85,,
 512,Rambus,P203,Core intellectual property,N85,,
 513,eMemory Technology,P204,Core intellectual property,N85,,Minor
-514,JPN,P7,Wafer manufacturing,N26,56%,
-516,TWN,P8,Wafer manufacturing,N26,16%,
-517,DEU,P32,Wafer manufacturing,N26,14%,
-518,KOR,P4,Wafer manufacturing,N26,10%,
-519,CHN,P2,Wafer manufacturing,N26,4%,
+514,JPN,P7,Wafer,N26,56%,
+516,TWN,P8,Wafer,N26,16%,
+517,DEU,P32,Wafer,N26,14%,
+518,KOR,P4,Wafer,N26,10%,
+519,CHN,P2,Wafer,N26,4%,
 520,JPN,P7,Advanced photomask,N33,53%,
 521,USA,P1,Advanced photomask,N33,40%,
 522,TWN,P8,Advanced photomask,N33,7%,
@@ -498,20 +498,20 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 538,DEU,P32,Wet chemicals,N92,,
 539,JPN,P7,Wet chemicals,N92,,
 540,CHN,P2,Wet chemicals,N92,,
-541,Shin-Etsu,P208,Wafer manufacturing,N26,,
-542,SUMCO,P225,Wafer manufacturing,N26,,
-543,GlobalWafers,P226,Wafer manufacturing,N26,,
-544,Siltronic,P227,Wafer manufacturing,N26,,
-545,SK Siltron,P228,Wafer manufacturing,N26,,
-546,Okmetic,P229,Wafer manufacturing,N26,,Minor
-547,JRH,P230,Wafer manufacturing,N26,,Minor
-548,Zhonghuan,P231,Wafer manufacturing,N26,,Minor
-549,Gritek,P232,Wafer manufacturing,N26,,Minor
-550,MCL,P233,Wafer manufacturing,N26,,Minor
-551,Simgui,P234,Wafer manufacturing,N26,,Minor
-552,GuoSheng,P235,Wafer manufacturing,N26,,Minor
-553,POSHING,P236,Wafer manufacturing,N26,,Minor
-554,ZingSEMI,P237,Wafer manufacturing,N26,,Minor
+541,Shin-Etsu,P208,Wafer,N26,,
+542,SUMCO,P225,Wafer,N26,,
+543,GlobalWafers,P226,Wafer,N26,,
+544,Siltronic,P227,Wafer,N26,,
+545,SK Siltron,P228,Wafer,N26,,
+546,Okmetic,P229,Wafer,N26,,Minor
+547,JRH,P230,Wafer,N26,,Minor
+548,Zhonghuan,P231,Wafer,N26,,Minor
+549,Gritek,P232,Wafer,N26,,Minor
+550,MCL,P233,Wafer,N26,,Minor
+551,Simgui,P234,Wafer,N26,,Minor
+552,GuoSheng,P235,Wafer,N26,,Minor
+553,POSHING,P236,Wafer,N26,,Minor
+554,ZingSEMI,P237,Wafer,N26,,Minor
 555,Dai Nippon,P238,Advanced photomask,N33,,
 556,Photronics,P239,Advanced photomask,N33,,
 557,Toppan Photomasks,P240,Advanced photomask,N33,,

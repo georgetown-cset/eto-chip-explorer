@@ -1,4 +1,9 @@
 ﻿Row,Company,In PARAT?,HQ country,HQ city,HQ state/province,Website URL,Major presence in countries other than country of HQ,Subsidiarity,Sources
+1,[Test] Fake Corporation,,USA,Minneapolis,Minnesota,fakecorp.com,Canada,,
+2,[Test] Imaginary Solutions ,,China,Shenzhen,Guangdong,sic.com,Vietnam,,
+3,[Test] Xi'an Fake Supply Co,,China,Xi'an,Shaanxi,xiansupply.cn,,Is a subsidiary of Xi'an Consolidated Holdings Ltd.,
+5,[Test] Her Majesty's Fictional Company,,United Kingdom,Edinburgh,Scotland,fiction.co.uk,"Canada,Australia",,
+6,[Test] Fake Company in PARAT,checked,,,,,,,
 292,Intel,checked,USA,Santa Clara,California,https://www.intel.com/content/www/us/en/homepage.html,"Ireland,Israel,Costa Rica,China,Vietnam,Malaysia",,"https://www.intel.com/content/www/us/en/support/contact-intel.html?tab=campus-locations#
 
 https://www.nytimes.com/2022/03/15/technology/intel-factory-germany.html#:~:text=Intel%20now%20has%20factories%20in%20Ireland%20and%20Israel%2C,have%20become%20key%20customers%20for%20chip%20makers.%20Mr.
@@ -503,6 +508,9 @@ https://www.mitsui-high-tec.com/en/corporate/location/asia.php"
 556,Ningbo Hualong,,China,Ningbo,Zhejiang,http://www.nbhldz.com/index.shtml,,,http://www.nbhldz.com/doc/zjhl/gsjj/index.shtml
 557,Sinopaco,,China,Lianyungang,Jiangsu,,,,"https://www.bloomberg.com/profile/company/0167037D:CH#xj4y7vzkg
 https://aiqicha.baidu.com/wenshu?wenshuId=47af98caf5fe35e962e1206a6140532375dfadae
+"
+558,,,China,Nanjing,Jiangsu,,,,"https://www.dnb.com/business-directory/company-profiles.nanjing_jiafeng_electronic_technology_co_ltd.15590a0505c7df6e36c0ddccc1643b29.html
+https://aiqicha.baidu.com/company_detail_56546228042327?tab=basic&isSeo=true
 "
 559,Henkel,,Germany,Düsseldorf,North Rhine-Westphalia,https://www.henkel-adhesives.com/us/en.html,"North America (various),Europe (various),Asia (various),South America (various),Middle East (various)",,https://www.henkel.com/company/locations?pageID=
 560,Ibiden,,Japan,Ogaki,Gifu,https://www.ibiden.com/,"Hungary,France,Italy,USA,Mexico,Philippines ,China,Malaysia,South Korea",,"https://www.ibiden.com/company/profile/info/
