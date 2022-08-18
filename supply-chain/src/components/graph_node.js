@@ -16,7 +16,7 @@ const stageToColor = {
 };
 
 const SubNode = (props) => {
-  const {nodeType, name, highlight, nodeId, updateSelected, borderStyle, depth=0} = props;
+  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, borderStyle, getBorderStyle, depth=0} = props;
   const [elevation, setElevation] = React.useState(1);
   const icon = getIcon(nodeType, {fontSize: "20px"});
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
@@ -26,7 +26,7 @@ const SubNode = (props) => {
     <div>
       <Paper style={{backgroundColor: "rgba(229,191,33,"+highlight+")", border: borderStyle, marginLeft: 10*depth+"px"}}
              onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)} elevation={elevation}
-             onClick={updateSelected}>
+             onClick={(evt) => updateSelected(evt, nodeId, parent)}>
         {icon} {name}
       </Paper>
       <Typography component={"div"} variant={"body2"}>
@@ -35,7 +35,9 @@ const SubNode = (props) => {
                   name={nodeToMeta[material]["name"]}
                   key={nodeToMeta[material]["name"]}
                   metadata={nodeToMeta}
-                  updateSelected={(evt) => updateSelected(evt, material)}
+                  highlight={material in highlights ? highlights[material] : 0}
+                  updateSelected={(evt) => updateSelected(evt, material, parent)}
+                  borderStyle={getBorderStyle(material)}
                   depth={1}
                   />)}
         {(subTools !== undefined) && (subTools.length > 0) && <span style={{marginRight: "10px"}}>{subTools.map((tool) =>
@@ -43,7 +45,9 @@ const SubNode = (props) => {
                   name={nodeToMeta[tool]["name"]}
                   key={nodeToMeta[tool]["name"]}
                   metadata={nodeToMeta}
-                  updateSelected={(evt) => updateSelected(evt, tool)}
+                  highlight={tool in highlights ? highlights[tool] : 0}
+                  updateSelected={(evt) => updateSelected(evt, tool, parent)}
+                  borderStyle={getBorderStyle(tool)}
                   depth={1}
                   />)}</span>}
       </Typography>
@@ -103,8 +107,12 @@ const GraphNode = (props) => {
                         nodeId={material}
                         metadata={nodeToMeta}
                         highlight={material in highlights ? highlights[material] : 0}
-                        updateSelected={(evt) => updateSelected(evt, material, node)}
-                        borderStyle={getBorderStyle(material)}/>)}
+                        updateSelected={updateSelected}
+                        borderStyle={getBorderStyle(material)}
+                        parent={node}
+                        highlights={highlights}
+                        getBorderStyle={getBorderStyle}
+                />)}
               {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
                 <SubNode nodeType={"tools"}
                         name={nodeToMeta[tool]["name"]}
@@ -112,8 +120,12 @@ const GraphNode = (props) => {
                         nodeId={tool}
                         metadata={nodeToMeta}
                         highlight={tool in highlights ? highlights[tool] : 0}
-                        updateSelected={(evt) => updateSelected(evt, tool, node)}
-                        borderStyle={getBorderStyle(tool)}/>)}</span>}
+                        updateSelected={updateSelected}
+                        borderStyle={getBorderStyle(tool)}
+                        parent={node}
+                        highlights={highlights}
+                        getBorderStyle={getBorderStyle}
+                />)}</span>}
             </Typography>}
         </div>
       </Paper>
