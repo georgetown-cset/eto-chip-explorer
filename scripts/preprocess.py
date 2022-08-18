@@ -155,9 +155,9 @@ class Preprocess:
 
     def get_provision(self, record: dict):
         """
-
-        :param record:
-        :return:
+        Get numeric or descriptive provision value from row of provision data
+        :param record: Row of provision data
+        :return: Provision value
         """
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
