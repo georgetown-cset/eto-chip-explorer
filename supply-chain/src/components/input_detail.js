@@ -52,7 +52,8 @@ const InputDetail = (props) => {
   const graphCountries = [];
   const graphCountryValues = [];
   const undefinedProvisionCountries = [];
-  const hasCountries = (countries !== null) && (countryValues !== null);
+  const hasCountries = (countries !== null) && (countryValues !== null) &&
+    (countries !== undefined) && (countryValues !== undefined);
   if(hasCountries) {
     for (let i = 0; i < countries.length; i++) {
       if (typeof countryValues[i] !== "number") {

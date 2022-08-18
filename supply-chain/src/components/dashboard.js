@@ -216,7 +216,7 @@ const Dashboard = () => {
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
         <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
                      countries={nodeToCountryProvision?.[selectedNode]?.["countries"]}
-                     countryValues={nodeToCountryProvision?.[selectedNode]["values"]}
+                     countryValues={nodeToCountryProvision?.[selectedNode]?.["values"]}
                      orgs={nodeToOrgProvision[selectedNode]} orgMeta={providerMeta} variants={variants[selectedNode]}
                      setSelectedNode={setSelectedNode} variantOf={variantsOf[selectedNode]}/>
       </div>}
