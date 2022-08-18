@@ -153,6 +153,19 @@ class Preprocess:
             clean_country_name = raw_country_name
         return COUNTRY_MAPPING.get(clean_country_name, clean_country_name)
 
+    def get_provision(self, record: dict):
+        """
+
+        :param record:
+        :return:
+        """
+        if record["share_provided"]:
+            return int(record["share_provided"].strip("%"))
+        if not record["minor_share"].strip():
+            return "Minor"
+        return "Major"
+
+
     def mk_provision(self, provision_fi: str, output_dir: str) -> None:
         """
         Create metadata for providers
@@ -172,8 +185,8 @@ class Preprocess:
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
-                    provision_share = 50 if not line["share_provided"] else int(line["share_provided"].strip("%"))
-                    country_provision[country_name][provided] = provision_share/100
+                    provision_share = self.get_provision(line)
+                    country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or \
                             (self.node_to_meta[provided]["type"] not in ["tool_resource", "material_resource"]):
                         print(f"unexpected country provision: {provided} " +
@@ -181,8 +194,7 @@ class Preprocess:
                 else:
                     if provider_name not in org_provision:
                         org_provision[line["provider_id"]] = {}
-                    org_provision[line["provider_id"]][provided] = "Major" if (not line["minor_share"].strip()) \
-                                                                             else "Minor"
+                    org_provision[line["provider_id"]][provided] = self.get_provision(line)
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
             f.write(f"const countryProvision={json.dumps(country_provision)};\n")
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")

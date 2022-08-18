@@ -63,7 +63,7 @@ const Dashboard = () => {
           nodeToCountryProvision[node] = {"countries": [], "values": []}
         }
         nodeToCountryProvision[node]["countries"].push(country);
-        nodeToCountryProvision[node]["values"].push(100*countryProvision[country][node]);
+        nodeToCountryProvision[node]["values"].push(countryProvision[country][node]);
       }
     }
     return nodeToCountryProvision;
@@ -215,8 +215,8 @@ const Dashboard = () => {
     {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] !== "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
         <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
         <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
-                     countries={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["countries"] : null}
-                     countryValues={selectedNode in nodeToCountryProvision ? nodeToCountryProvision[selectedNode]["values"] : null}
+                     countries={nodeToCountryProvision?.[selectedNode]?.["countries"]}
+                     countryValues={nodeToCountryProvision?.[selectedNode]["values"]}
                      orgs={nodeToOrgProvision[selectedNode]} orgMeta={providerMeta} variants={variants[selectedNode]}
                      setSelectedNode={setSelectedNode} variantOf={variantsOf[selectedNode]}/>
       </div>}
