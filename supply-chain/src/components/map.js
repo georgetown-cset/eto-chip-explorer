@@ -6,7 +6,13 @@ import DocumentationNode from "./documentation_node";
 import GraphNode from "./graph_node";
 
 const Map = (props) => {
-  const {highlights, selectedNode, setSelectedNode} = props;
+  const {highlights, descriptions} = props;
+  // Keeps track of the selected node, which can be a process node or a process input/tool/material
+  const [selectedNode, setSelectedNode] = React.useState(null);
+  // Keeps track of the parent node, which must be a process node. This is used to keep track of
+  // where the documentation node should be displayed.
+  const [parentNode, setParentNode] = React.useState(null);
+
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
   const getLayerOrder = (nodes) => {
@@ -29,11 +35,11 @@ const Map = (props) => {
   const mkLayer = (nodes, isUnattached=false) => {
     return <div>
       {nodes.map(node =>
-        <GraphNode node={node} highlights={highlights} key={node}
+        <GraphNode node={node} highlights={highlights} key={node} setParent={setParentNode} parent={parentNode}
                    unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       )}
-      {nodes.includes(selectedNode) &&
-        <DocumentationNode node={selectedNode} highlights={highlights}
+      {nodes.includes(parentNode) &&
+        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} setParent={setParentNode}
           unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       }
     </div>

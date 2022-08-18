@@ -52,7 +52,7 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, highlights = {}, currSelectedNode, setSelected=null, wide=false, content=null} = props;
+  const {node, highlights = {}, currSelectedNode, setSelected=null, parent, setParent=null, wide=false, content=null} = props;
   const [elevation, setElevation] = React.useState(1);
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const header = content === null ? node+": "+meta["name"] : content;
@@ -60,10 +60,13 @@ const GraphNode = (props) => {
     (("tools" in meta) && (meta["tools"].length > 0));
 
   const updateXarrow = useXarrow();
-  const updateSelected = (evt, selectedNode) => {
+  const updateSelected = (evt, selectedNode, parentNode) => {
     if(setSelected !== null) {
       evt.stopPropagation();
       setSelected(selectedNode);
+    }
+    if(setParent !== null) {
+      setParent(parentNode);
     }
     updateXarrow();
   };
@@ -85,7 +88,7 @@ const GraphNode = (props) => {
         marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
         display: "inline-block",
         backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": "white",
-        border: getBorderStyle(node, true), width: wide ? "100%": "250px"}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
+        border: getBorderStyle(node, true), width: wide ? "100%": "250px"}} onClick={(evt) => updateSelected(evt, node, node)} elevation={elevation}
         onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
         <div style={{textAlign: "left"}}>
           <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
@@ -100,7 +103,7 @@ const GraphNode = (props) => {
                         nodeId={material}
                         metadata={nodeToMeta}
                         highlight={material in highlights ? highlights[material] : 0}
-                        updateSelected={(evt) => updateSelected(evt, material)}
+                        updateSelected={(evt) => updateSelected(evt, material, node)}
                         borderStyle={getBorderStyle(material)}/>)}
               {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
                 <SubNode nodeType={"tools"}
@@ -109,16 +112,16 @@ const GraphNode = (props) => {
                         nodeId={tool}
                         metadata={nodeToMeta}
                         highlight={tool in highlights ? highlights[tool] : 0}
-                        updateSelected={(evt) => updateSelected(evt, tool)}
+                        updateSelected={(evt) => updateSelected(evt, tool, node)}
                         borderStyle={getBorderStyle(tool)}/>)}</span>}
             </Typography>}
         </div>
       </Paper>
-      {node === currSelectedNode &&
+      {node === parent &&
         <ArrowDropDownIcon
           style={{
             display: "block",
-            marginTop: "-17px",
+            marginTop: node === currSelectedNode ? "-17px" : "-37px",
             marginLeft: "auto",
             marginRight: "auto",
             fontSize: "40px",
