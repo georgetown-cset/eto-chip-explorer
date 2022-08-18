@@ -46,7 +46,7 @@ class Preprocess:
             os.makedirs(args.output_images_dir)
 
         self.mk_metadata(args.nodes)
-        self.write_node_descriptions(args.nodes, args.output_text_dir)
+        self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
         self.write_graphs(args.sequence, args.output_dir)
         self.mk_provider_to_meta(args.providers, args.basic_company_info)
@@ -190,18 +190,26 @@ class Preprocess:
             f.write("\nexport {countryProvision, orgProvision, providerMeta};\n")
 
     @staticmethod
-    def write_node_descriptions(nodes_fi: str, output_dir: str) -> None:
+    def write_descriptions(nodes_fi: str, stages_fi: str, output_dir: str) -> None:
         """
-        Write out node descriptions as markdown
+        Write out node or stage descriptions as markdown
         :param nodes_fi: inputs csv
             (from https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
+        :param stages_fi: stages csv
+            (from https://docs.google.com/spreadsheets/d/1zZnskTSTMyhEwlA8xGgJ7EjOqHaxwxRtYavTDYAOIqM/edit#gid=0)
         :param output_dir: Directory where output markdown should be written
         :return: None
         """
+        header_template = "#### {}\n\n"
         with open(nodes_fi) as f:
             for line in csv.DictReader(f):
                 with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
-                    out.write(f"#### {line['input_name']}\n\n")
+                    out.write(header_template.format(line["input_name"]))
+                    out.write(line["description"])
+        with open(stages_fi) as f:
+            for line in csv.DictReader(f):
+                with open(os.path.join(output_dir, line["stage_id"])+".mdx", mode="w") as out:
+                    out.write(header_template.format(line["stage_name"]))
                     out.write(line["description"])
 
     def mk_provider_to_meta(self, provider_fi: str, company_metadata_fi: str):
@@ -253,6 +261,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--nodes", default=os.path.join("data", "inputs.csv"))
     parser.add_argument("--sequence", default=os.path.join("data", "sequence.csv"))
+    parser.add_argument("--stages", default=os.path.join("data", "stages.csv"))
     parser.add_argument("--providers", default=os.path.join("data", "providers.csv"))
     parser.add_argument("--basic_company_info", default=os.path.join("data", "basic_company_info.csv"))
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
