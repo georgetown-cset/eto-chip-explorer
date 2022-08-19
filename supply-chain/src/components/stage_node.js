@@ -14,19 +14,7 @@ export const stageToColor = {
 };
 
 const StageNode = (props) => {
-  const {stage, parent, setSelected, setParent} = props;
-
-  const updateXarrow = useXarrow();
-  const updateSelected = (evt, selectedNode, parentNode) => {
-    if(setSelected !== null) {
-      evt.stopPropagation();
-      setSelected(selectedNode);
-    }
-    if(setParent !== null) {
-      setParent(parentNode);
-    }
-    updateXarrow();
-  };
+  const {stage, parent, updateSelected} = props;
 
   return (
     <div style={{

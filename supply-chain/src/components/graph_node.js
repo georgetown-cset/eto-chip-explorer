@@ -51,24 +51,12 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, highlights = {}, currSelectedNode, setSelected=null, parent, setParent=null, wide=false, content=null} = props;
+  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null} = props;
   const [elevation, setElevation] = React.useState(1);
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const header = content === null ? node+": "+meta["name"] : content;
   const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
     (("tools" in meta) && (meta["tools"].length > 0));
-
-  const updateXarrow = useXarrow();
-  const updateSelected = (evt, selectedNode, parentNode) => {
-    if(setSelected !== null) {
-      evt.stopPropagation();
-      setSelected(selectedNode);
-    }
-    if(setParent !== null) {
-      setParent(parentNode);
-    }
-    updateXarrow();
-  };
 
   const getBorderStyle = (currNode, isParent=false) => {
     if(currNode === currSelectedNode){
