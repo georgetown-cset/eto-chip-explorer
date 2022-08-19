@@ -8,13 +8,7 @@ import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
-
-const stageToColor = {
-  "S3": "rgba(122, 196, 165, 0.75)",
-  "S1": "rgba(124, 51, 111, 0.75)",
-  "S2": "rgba(229, 191, 33, 0.75)",
-};
-
+import { stageToColor } from "./stage_node";
 
 const DocumentationNode = (props) => {
   const {node, highlights = {}, descriptions, currSelectedNode, setSelected=null, setParent=null, wide=false, content=null} = props;
