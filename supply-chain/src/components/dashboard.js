@@ -13,10 +13,8 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 import Header from "./header";
 import Map from "./map";
-import ProcessDetail from "./process_detail";
-import InputDetail from "./input_detail";
-import {nodeToMeta, variants} from "../../data/graph";
-import {countryProvision, orgProvision, providerMeta} from "../../data/provision";
+import { nodeToMeta } from "../../data/graph";
+import { countryProvision } from "../../data/provision";
 
 function getStyles(name, selectedName, theme) {
   return {
@@ -28,7 +26,6 @@ function getStyles(name, selectedName, theme) {
 }
 
 const Dashboard = () => {
-  const [selectedNode, setSelectedNode] = React.useState(null);
   const data = useStaticQuery(graphql`
     query getMdx {
       allMdx {
@@ -37,7 +34,7 @@ const Dashboard = () => {
           slug
         }
       }
-    }  
+    }
   `);
 
   const getMaterialToNodes = () => {
@@ -53,33 +50,6 @@ const Dashboard = () => {
       }
     }
     return materialToNode;
-  };
-
-  const getNodeToCountryProvision = () => {
-    const nodeToCountryProvision = {};
-    for(let country in countryProvision){
-      for(let node in countryProvision[country]){
-        if(!(node in nodeToCountryProvision)){
-          nodeToCountryProvision[node] = {"countries": [], "values": []}
-        }
-        nodeToCountryProvision[node]["countries"].push(country);
-        nodeToCountryProvision[node]["values"].push(countryProvision[country][node]);
-      }
-    }
-    return nodeToCountryProvision;
-  };
-
-  const getNodeToOrgProvision = () => {
-    const nodeToOrgProvision = {};
-    for(let org in orgProvision){
-      for(let node in orgProvision[org]){
-        if(!(node in nodeToOrgProvision)){
-          nodeToOrgProvision[node] = {}
-        }
-        nodeToOrgProvision[node][org] = orgProvision[org][node]
-      }
-    }
-    return nodeToOrgProvision;
   };
 
   const getCurrentHighlights = (currFilterValues = filterValues) => {
@@ -99,20 +69,7 @@ const Dashboard = () => {
     }
   };
 
-  const getVariantsOf = () => {
-    const variantsOf = {};
-    for(let node in variants){
-      for(let v of variants[node]){
-        variantsOf[v] = node;
-      }
-    }
-    return variantsOf;
-  }
-
   const materialToNode = getMaterialToNodes();
-  const nodeToCountryProvision = getNodeToCountryProvision();
-  const nodeToOrgProvision = getNodeToOrgProvision();
-  const variantsOf = getVariantsOf();
   const theme = useTheme();
   const defaultFilterValues = {
     "material-resource": "All",
@@ -196,30 +153,11 @@ const Dashboard = () => {
       </FormControl>
       </div>
     </Paper>
-    <div>
-    {(selectedNode === null) && <div style={{width: "20%", verticalAlign: "top",
-          padding: "20px", display: "inline-block"}}>
-      <Typography component={"p"} variant={"body2"}>
-        ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
-      </Typography>
-    </div>}
-    <div style={{display: "inline-block", minWidth: "700px", width: selectedNode === null ? "72%": "49%",
-        textAlign: "center", borderLeft: "3px double", borderRight: (selectedNode !== null) ? "3px double" : ""}}>
-      <Map highlights={highlights} selectedNode={selectedNode} setSelectedNode={setSelectedNode}/>
-    </div>
-    {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] === "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
-        <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
-        <ProcessDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
-                       setSelectedNode={setSelectedNode} highlights={highlights}/>
-      </div>}
-    {(selectedNode !== null) && (nodeToMeta[selectedNode]["type"] !== "process") && <div style={{display: "inline-block", verticalAlign: "top", maxWidth: "50%"}}>
-        <Button style={{verticalAlign: "top"}} onClick={() => setSelectedNode(null)}><HighlightOffIcon/></Button>
-        <InputDetail selectedNode={selectedNode} descriptions={data.allMdx.nodes} key={selectedNode}
-                     countries={nodeToCountryProvision?.[selectedNode]?.["countries"]}
-                     countryValues={nodeToCountryProvision?.[selectedNode]?.["values"]}
-                     orgs={nodeToOrgProvision[selectedNode]} orgMeta={providerMeta} variants={variants[selectedNode]}
-                     setSelectedNode={setSelectedNode} variantOf={variantsOf[selectedNode]}/>
-      </div>}
+    <Typography component={"p"} variant={"body2"}>
+      ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
+    </Typography>
+    <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
+      <Map highlights={highlights} descriptions={data.allMdx.nodes}/>
     </div>
   </div>);
 };
