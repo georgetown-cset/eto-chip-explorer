@@ -15,41 +15,39 @@ const stageToColor = {
   "S2": "rgba(229, 191, 33, 0.75)",
 };
 
-// from https://mui.com/material-ui/react-tooltip/#customization
-
-const HtmlTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: 'rgb(240,240,240)',
-    color: 'rgba(0, 0, 0, 0.87)',
-    maxWidth: 220,
-    fontSize: theme.typography.pxToRem(12),
-    border: '1px solid #dadde9',
-  },
-  [`a`] : {
-    textDecoration: "none"
-  }
-}));
-
 const SubNode = (props) => {
-  const {nodeType, name, highlight, nodeId, updateSelected, borderStyle} = props;
+  const {nodeType, name, highlight, nodeId, updateSelected, borderStyle, depth=0} = props;
   const [elevation, setElevation] = React.useState(1);
   const icon = getIcon(nodeType, {fontSize: "20px"});
+  const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
+  const subTools = nodeToMeta?.[nodeId]?.["tools"];
 
   return (
-    <Paper style={{width: "20px", height: "20px", display: "inline-block", padding: "3px", margin: "5px",
-            textAlign: "center", backgroundColor: "rgba(229,191,33,"+highlight+")", border: borderStyle}}
-           onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)} elevation={elevation}
-           onClick={updateSelected}>
-      <HtmlTooltip title={
-        <div style={{padding: "5px"}}>
-          <Typography component={"div"} variant={"body2"}>{name}</Typography>
-        </div>
-      }>
-        {icon}
-      </HtmlTooltip>
-    </Paper>
+    <div>
+      <Paper style={{backgroundColor: "rgba(229,191,33,"+highlight+")", border: borderStyle, marginLeft: 10*depth+"px"}}
+             onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)} elevation={elevation}
+             onClick={updateSelected}>
+        {icon} {name}
+      </Paper>
+      <Typography component={"div"} variant={"body2"}>
+        {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.map((material) =>
+          <SubNode nodeType={"materials"}
+                  name={nodeToMeta[material]["name"]}
+                  key={nodeToMeta[material]["name"]}
+                  metadata={nodeToMeta}
+                  updateSelected={(evt) => updateSelected(evt, material)}
+                  depth={1}
+                  />)}
+        {(subTools !== undefined) && (subTools.length > 0) && <span style={{marginRight: "10px"}}>{subTools.map((tool) =>
+          <SubNode nodeType={"tools"}
+                  name={nodeToMeta[tool]["name"]}
+                  key={nodeToMeta[tool]["name"]}
+                  metadata={nodeToMeta}
+                  updateSelected={(evt) => updateSelected(evt, tool)}
+                  depth={1}
+                  />)}</span>}
+      </Typography>
+    </div>
   );
 };
 
@@ -78,7 +76,7 @@ const GraphNode = (props) => {
       return "3px solid "+stageToColor[meta["stage_id"]];
     }
     return "0px";
-  }
+  };
 
   return (
     <div style={{display: "inline-block", position: "relative"}}>
@@ -87,7 +85,7 @@ const GraphNode = (props) => {
         marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
         display: "inline-block",
         backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": "white",
-        border: getBorderStyle(node, true), width: wide ? "100%": "150px"}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
+        border: getBorderStyle(node, true), width: wide ? "100%": "250px"}} onClick={(evt) => updateSelected(evt, node)} elevation={elevation}
         onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
         <div style={{textAlign: "left"}}>
           <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
@@ -99,6 +97,8 @@ const GraphNode = (props) => {
                 <SubNode nodeType={"materials"}
                         name={nodeToMeta[material]["name"]}
                         key={nodeToMeta[material]["name"]}
+                        nodeId={material}
+                        metadata={nodeToMeta}
                         highlight={material in highlights ? highlights[material] : 0}
                         updateSelected={(evt) => updateSelected(evt, material)}
                         borderStyle={getBorderStyle(material)}/>)}
@@ -106,6 +106,8 @@ const GraphNode = (props) => {
                 <SubNode nodeType={"tools"}
                         name={nodeToMeta[tool]["name"]}
                         key={nodeToMeta[tool]["name"]}
+                        nodeId={tool}
+                        metadata={nodeToMeta}
                         highlight={tool in highlights ? highlights[tool] : 0}
                         updateSelected={(evt) => updateSelected(evt, tool)}
                         borderStyle={getBorderStyle(tool)}/>)}</span>}

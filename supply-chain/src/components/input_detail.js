@@ -27,7 +27,7 @@ const BarGraph = (props) => {
     x: countries,
     y: values,
     type: "bar"
-  }]
+  }];
 
   return (
     <div>
@@ -43,11 +43,27 @@ const BarGraph = (props) => {
 const InputDetail = (props) => {
   const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta, variants, variantOf, setSelectedNode} = props;
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
-  const iconStyle={verticalAlign: "middle", margin: "2px 5px"}
+  const iconStyle={verticalAlign: "middle", margin: "2px 5px"};
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const graphCountries = [];
+  const graphCountryValues = [];
+  const undefinedProvisionCountries = [];
+  const hasCountries = (countries !== null) && (countryValues !== null) &&
+    (countries !== undefined) && (countryValues !== undefined);
+  if(hasCountries) {
+    for (let i = 0; i < countries.length; i++) {
+      if (typeof countryValues[i] !== "number") {
+        undefinedProvisionCountries.push(countries[i]+" ("+countryValues[i]+")");
+      } else {
+        graphCountries.push(countries[i]);
+        graphCountryValues.push(countryValues[i]);
+      }
+    }
+  }
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px"}}>
@@ -81,8 +97,17 @@ const InputDetail = (props) => {
         )
         }</div>
       }
-      {(countries !== null) && (countryValues !== null) &&
-        <BarGraph countries={countries} values={countryValues}/>
+      {hasCountries &&
+        <div>
+          {graphCountries.length > 0 &&
+            <BarGraph countries={graphCountries} values={graphCountryValues}/>
+          }
+          {undefinedProvisionCountries.length > 0 &&
+            <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>
+              Countries with unknown provision share: {undefinedProvisionCountries.join(", ")}
+            </Typography>
+          }
+        </div>
       }
     </div>
   )
