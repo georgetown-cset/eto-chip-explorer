@@ -6,14 +6,9 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {nodeToMeta} from "../../data/graph";
+import {stageToColor} from "./stage_node";
 
 import getIcon from "../helpers/shared";
-
-const stageToColor = {
-  "S3": "rgba(122, 196, 165, 0.75)",
-  "S1": "rgba(124, 51, 111, 0.75)",
-  "S2": "rgba(229, 191, 33, 0.75)",
-};
 
 const SubNode = (props) => {
   const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, borderStyle, getBorderStyle, depth=0} = props;
@@ -87,13 +82,19 @@ const GraphNode = (props) => {
 
   return (
     <div style={{display: "inline-block", position: "relative"}}>
-      <Paper id={node} className={"graph-node"} style={{padding: "5px",
-        margin: wide ? "5px 0px" : "20px 25px",
-        marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
-        display: "inline-block",
-        backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": "white",
-        border: getBorderStyle(node, true), width: wide ? "100%": "250px"}} onClick={(evt) => updateSelected(evt, node, node)} elevation={elevation}
-        onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}>
+      <Paper id={node} className={"graph-node"}
+        style={{
+          padding: "5px",
+          margin: wide ? "5px 0px" : "20px 25px",
+          marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
+          display: "inline-block",
+          backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": "white",
+          border: getBorderStyle(node, true),
+          width: wide ? "100%": "250px"
+        }}
+        onClick={(evt) => updateSelected(evt, node, node)} elevation={elevation}
+        onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}
+      >
         <div style={{textAlign: "left"}}>
           <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
             {header}

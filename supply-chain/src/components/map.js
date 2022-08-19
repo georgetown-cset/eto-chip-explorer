@@ -4,6 +4,7 @@ import Xarrow, {Xwrapper} from "react-xarrows";
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
 import GraphNode from "./graph_node";
+import StageNode, {stageToColor} from "./stage_node";
 
 const Map = (props) => {
   const {highlights, descriptions} = props;
@@ -32,8 +33,12 @@ const Map = (props) => {
     return nodesPrefix.concat(nodesSuffix);
   };
 
+  const mkStage = (stage) => {
+    return <StageNode stage={stage} />
+  }
+
   const mkLayer = (nodes, isUnattached=false) => {
-    return <div>
+    return <div style={{borderLeft: `10px ${stageToColor[nodeToMeta[nodes[0]]?.["stage_id"]]} solid`}}>
       {nodes.map(node =>
         <GraphNode node={node} highlights={highlights} key={node} setParent={setParentNode} parent={parentNode}
                    unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
@@ -110,6 +115,7 @@ const Map = (props) => {
     const nodeToPosition = {};
     let layerNumber = 0;
     const nodeToLayerNumber = {};
+    let currStage = null;
     while(currNodes.length > 0){
       const edgePairs = [];
       for(let node of currNodes){
@@ -122,7 +128,6 @@ const Map = (props) => {
       const newNodes = edgePairs.map(e => e[0]);
       const filtEdges = [];
       currNodes = [];
-      const bump = [];
       for(let edge of edgePairs){
         let siblings = [];
         const parent = edge[0];
@@ -136,25 +141,30 @@ const Map = (props) => {
         for(let sib of siblings){
           allSiblingsSeen &= (newNodes.includes(sib) || seen.has(sib));
         }
-        if(true){
-          filtEdges.push(edge);
-          if(!seen.has(parent)) {
-            currNodes.push(parent);
-          }
-          seen.add(parent);
-        } else{
-          bump.push(child);
+        filtEdges.push(edge);
+        if(!seen.has(parent)) {
+          currNodes.push(parent);
         }
+        seen.add(parent);
       }
       const orderedLayerNodes = getLayerOrder(currNodes);
+      // Add a stage layer if a new stage has started
+      if (orderedLayerNodes && currStage !== nodeToMeta[orderedLayerNodes[0]]?.["stage_id"]) {
+        if (layerNumber !== 0) {
+          const stage = mkStage(currStage);
+          layers.push(stage);
+        }
+        currStage = nodeToMeta[orderedLayerNodes[0]]?.["stage_id"];
+      }
+      // Add nodes for the current layer
+      const layer = mkLayer(orderedLayerNodes);
+      layers.push(layer);
+      // Add edges for the current layer
       const centerPoint = orderedLayerNodes.length/2 - 0.5;
       orderedLayerNodes.forEach((node, idx) => {
         nodeToPosition[node] = idx - centerPoint;
         nodeToLayerNumber[node] = layerNumber;
       });
-      const layer = mkLayer(orderedLayerNodes);
-      layers.push(layer);
-      currNodes = currNodes.concat(bump);
       const edges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber);
       layers.push(edges);
       layerNumber += 1;
@@ -169,6 +179,7 @@ const Map = (props) => {
     return (
       <div>
         <Xwrapper>
+          <div>{mkStage(nodeToMeta[unattached[0]]["stage_id"])}</div>
           <div>{mkLayer(unattached, true)}</div>
           <div>{layers}</div>
         </Xwrapper>

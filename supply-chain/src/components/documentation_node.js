@@ -91,7 +91,7 @@ const DocumentationNode = (props) => {
             display: "inline-block",
             backgroundColor: "lightgray",
             border: getBorderStyle(node, true),
-            marginTop: "-15px", marginBottom: "20px",
+            marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
         <Button style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}><HighlightOffIcon/></Button>
