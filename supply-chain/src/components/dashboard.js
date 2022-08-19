@@ -1,7 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby"
 import { useTheme } from "@mui/material/styles";
-import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,7 +8,6 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Paper from "@mui/material/Paper";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 import Header from "./header";
 import Map from "./map";

@@ -34,7 +34,13 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <StageNode stage={stage} />
+    return <div style={{borderLeft: `10px ${stageToColor[stage]} solid`}}>
+      <StageNode stage={stage} setParent={setParentNode} setSelected={setSelectedNode} parent={parentNode} />
+      {stage === parentNode &&
+        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} setParent={setParentNode}
+          setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
+      }
+    </div>
   }
 
   const mkLayer = (nodes, isUnattached=false) => {
@@ -45,7 +51,7 @@ const Map = (props) => {
       )}
       {nodes.includes(parentNode) &&
         <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} setParent={setParentNode}
-          unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
+          setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       }
     </div>
   };

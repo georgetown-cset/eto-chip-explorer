@@ -89,11 +89,11 @@ const DocumentationNode = (props) => {
             position: "relative",
       }}>
         <Button style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}><HighlightOffIcon/></Button>
-        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]["type"] === "process") &&
+        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
           <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         setSelectedNode={setSelected} highlights={highlights}/>
         }
-        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]["type"] !== "process") &&
+        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] !== "process") &&
           <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
                       countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
                       countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
