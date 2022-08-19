@@ -11,7 +11,7 @@ import InputDetail from "./input_detail";
 import { stageToColor } from "./stage_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, descriptions, currSelectedNode, updateSelected, wide=false, content=null} = props;
+  const {node, highlights = {}, descriptions, currSelectedNode, updateSelected, minimap} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getBorderStyle = (currNode, isParent=false) => {
@@ -71,23 +71,30 @@ const DocumentationNode = (props) => {
         style={{
             padding: "5px",
             display: "inline-block",
-            backgroundColor: "lightgray",
+            backgroundColor: "whitesmoke",
             border: getBorderStyle(node, true),
             marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
         <Button style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}><HighlightOffIcon/></Button>
-        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
-          <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                      updateSelected={updateSelected} highlights={highlights}/>
+        {(currSelectedNode !== null) && (currSelectedNode[0] !== "S") &&
+          <div style={{float: "left"}}>
+            {minimap}
+          </div>
         }
-        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] !== "process") &&
-          <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                      countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
-                      countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
-                      orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} variants={variants[currSelectedNode]}
-                      updateSelected={updateSelected} variantOf={variantsOf[currSelectedNode]}/>
-        }
+        <div style={{width: "80%", display: "inline-block"}}>
+          {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
+            <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
+                        updateSelected={updateSelected} highlights={highlights}/>
+          }
+          {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] !== "process") &&
+            <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
+                        countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
+                        countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} variants={variants[currSelectedNode]}
+                        updateSelected={updateSelected} variantOf={variantsOf[currSelectedNode]}/>
+          }
+        </div>
       </Paper>
     )
   }

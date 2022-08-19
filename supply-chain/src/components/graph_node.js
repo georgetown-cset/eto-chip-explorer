@@ -133,4 +133,22 @@ const GraphNode = (props) => {
   )
 };
 
+export const MiniGraphNode = (props) => {
+  const {node, currSelectedNode, parent} = props;
+  const meta = node in nodeToMeta ? nodeToMeta[node] : {};
+
+  return (
+    <div id={`${node}-minimap`} className={"graph-node"}
+      style={{
+        margin: "5px",
+        display: "inline-block",
+        height: "10px",
+        width: "20px",
+        backgroundColor: node === parent ? "darkblue" : "lightblue"
+      }}
+    >
+    </div>
+  )
+};
+
 export default GraphNode;
