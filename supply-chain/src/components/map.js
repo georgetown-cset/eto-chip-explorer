@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby"
 import Xarrow, {Xwrapper} from "react-xarrows";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
@@ -7,7 +8,7 @@ import GraphNode from "./graph_node";
 import StageNode, {stageToColor} from "./stage_node";
 
 const Map = (props) => {
-  const {highlights, descriptions} = props;
+  const {highlights} = props;
   // Keeps track of the selected node, which can be a process node or a process input/tool/material
   const [selectedNode, setSelectedNode] = React.useState(null);
   // Keeps track of the parent node, which must be a process node. This is used to keep track of
@@ -15,6 +16,30 @@ const Map = (props) => {
   const [parentNode, setParentNode] = React.useState(null);
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
+
+  const images = useStaticQuery(graphql`
+    query getImgs {
+      allFile(filter: {sourceInstanceName: {eq: "images"}}) {
+        nodes {
+          id
+          name
+          publicURL
+        }
+      }
+    }
+  `);
+
+  const data = useStaticQuery(graphql`
+    query getMdx {
+      allMdx {
+        nodes {
+          body,
+          slug
+        }
+      }
+    }
+  `);
+  const descriptions= data.allMdx.nodes;
 
   const getLayerOrder = (nodes) => {
     nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
@@ -44,7 +69,7 @@ const Map = (props) => {
                    unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       )}
       {nodes.includes(parentNode) &&
-        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} setParent={setParentNode}
+        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} images={images} setParent={setParentNode}
           unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
       }
     </div>

@@ -11,7 +11,7 @@ import InputDetail from "./input_detail";
 import { stageToColor } from "./stage_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, descriptions, currSelectedNode, setSelected=null, setParent=null, wide=false, content=null} = props;
+  const {node, highlights = {}, descriptions, images, currSelectedNode, setSelected=null, setParent=null, wide=false, content=null} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const updateXarrow = useXarrow();
@@ -89,6 +89,7 @@ const DocumentationNode = (props) => {
             position: "relative",
       }}>
         <Button style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}><HighlightOffIcon/></Button>
+        <img src={images.allFile.nodes.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />
         {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]["type"] === "process") &&
           <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         setSelectedNode={setSelected} highlights={highlights}/>
