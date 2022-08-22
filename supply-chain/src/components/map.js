@@ -17,20 +17,15 @@ const Map = (props) => {
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
-  const images = useStaticQuery(graphql`
-    query getImgs {
+  const data = useStaticQuery(graphql`
+  query getData {
       allFile(filter: {sourceInstanceName: {eq: "images"}}) {
         nodes {
           id
           name
           publicURL
         }
-      }
-    }
-  `);
-
-  const data = useStaticQuery(graphql`
-    query getMdx {
+      },
       allMdx {
         nodes {
           body,
@@ -39,7 +34,9 @@ const Map = (props) => {
       }
     }
   `);
+
   const descriptions= data.allMdx.nodes;
+  const images = data.allFile.nodes;
 
   const getLayerOrder = (nodes) => {
     nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
