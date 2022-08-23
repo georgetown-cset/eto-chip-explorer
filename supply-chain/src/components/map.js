@@ -68,7 +68,8 @@ const Map = (props) => {
     return <div style={{borderLeft: `10px ${stageToColor[stage]} solid`}}>
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
-        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions}
+        <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+          descriptions={descriptions} images={images} isStage={true}
           updateSelected={updateSelected} currSelectedNode={selectedNode}/>
       }
     </div>
@@ -89,7 +90,8 @@ const Map = (props) => {
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
         )}
         {nodes.includes(parentNode) &&
-          <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} images={images}
+          <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+            descriptions={descriptions} images={images} isStage={false}
             updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
         }
       </div>
