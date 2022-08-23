@@ -10,7 +10,7 @@ import GraphNode from "./graph_node";
 
 
 const ProcessDetail = (props) => {
-  const {selectedNode, descriptions, highlights, updateSelected} = props;
+  const {selectedNode, parent, descriptions, highlights, updateSelected} = props;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,7 +30,7 @@ const ProcessDetail = (props) => {
       {hasMaterials &&
       <div>
         {nodeToMeta[selectedNode]["materials"].map((node) =>
-          <GraphNode node={node} highlights={highlights} currSelectedNode={selectedNode} updateSelected={updateSelected}
+          <GraphNode node={node} highlights={highlights} currSelectedNode={selectedNode} parent={parent} inDocumentation={true} updateSelected={updateSelected}
               nodeToMeta={nodeToMeta} wide={true} key={node}
               content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
         )}
@@ -38,7 +38,7 @@ const ProcessDetail = (props) => {
       {hasTools &&
       <div>
         {nodeToMeta[selectedNode]["tools"].map((node) =>
-          <GraphNode node={node} highlights={highlights} currSelectedNode={selectedNode} updateSelected={updateSelected}
+          <GraphNode node={node} highlights={highlights} currSelectedNode={selectedNode} parent={parent} inDocumentation={true} updateSelected={updateSelected}
               nodeToMeta={nodeToMeta} wide={true} key={node}
               content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
         )}

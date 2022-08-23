@@ -51,7 +51,7 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null} = props;
+  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null, inDocumentation=false} = props;
   const [elevation, setElevation] = React.useState(1);
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const header = content === null ? node+": "+meta["name"] : content;
@@ -80,7 +80,7 @@ const GraphNode = (props) => {
           border: getBorderStyle(node, true),
           width: wide ? "100%": "250px"
         }}
-        onClick={(evt) => updateSelected(evt, node, node)} elevation={elevation}
+        onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)} elevation={elevation}
         onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}
       >
         <div style={{textAlign: "left"}}>
