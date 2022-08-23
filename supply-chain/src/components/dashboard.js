@@ -1,5 +1,4 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby"
 import { useTheme } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -24,16 +23,6 @@ function getStyles(name, selectedName, theme) {
 }
 
 const Dashboard = () => {
-  const data = useStaticQuery(graphql`
-    query getMdx {
-      allMdx {
-        nodes {
-          body,
-          slug
-        }
-      }
-    }
-  `);
 
   const getMaterialToNodes = () => {
     const materialToNode = {};
@@ -155,7 +144,7 @@ const Dashboard = () => {
       ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
     </Typography>
     <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
-      <Map highlights={highlights} descriptions={data.allMdx.nodes}/>
+      <Map highlights={highlights} />
     </div>
   </div>);
 };
