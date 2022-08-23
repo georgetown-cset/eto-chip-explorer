@@ -1,6 +1,6 @@
 import React from "react";
+import Xarrow, {Xwrapper, useXarrow} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
-import Xarrow, {Xwrapper} from "react-xarrows";
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
@@ -14,6 +14,14 @@ const Map = (props) => {
   // Keeps track of the parent node, which must be a process node. This is used to keep track of
   // where the documentation node should be displayed.
   const [parentNode, setParentNode] = React.useState(null);
+  // Function to update the above nodes
+  const updateXarrow = useXarrow();
+  const updateSelected = (evt, selectedNode, parentNode) => {
+    evt.stopPropagation();
+    setSelectedNode(selectedNode);
+    setParentNode(parentNode);
+    updateXarrow();
+  };
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
@@ -56,18 +64,24 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <StageNode stage={stage} />
+    return <div style={{borderLeft: `10px ${stageToColor[stage]} solid`}}>
+      <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
+      {stage === parentNode &&
+        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions}
+          updateSelected={updateSelected} currSelectedNode={selectedNode}/>
+      }
+    </div>
   }
 
   const mkLayer = (nodes, isUnattached=false) => {
     return <div style={{borderLeft: `10px ${stageToColor[nodeToMeta[nodes[0]]?.["stage_id"]]} solid`}}>
       {nodes.map(node =>
-        <GraphNode node={node} highlights={highlights} key={node} setParent={setParentNode} parent={parentNode}
-                   unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
+        <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
+                   unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
       )}
       {nodes.includes(parentNode) &&
-        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} images={images} setParent={setParentNode}
-          unattached={isUnattached} setSelected={setSelectedNode} currSelectedNode={selectedNode}/>
+        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} images={images}
+          updateSelected={updateSelected} currSelectedNode={selectedNode}/>
       }
     </div>
   };

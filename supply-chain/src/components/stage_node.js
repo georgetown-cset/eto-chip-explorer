@@ -1,5 +1,10 @@
 import React from "react";
+import {useXarrow} from "react-xarrows";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import InfoIcon from '@mui/icons-material/Info';
+
 
 export const stageToColor = {
   "S3": "rgba(122, 196, 165, 0.75)",
@@ -9,20 +14,34 @@ export const stageToColor = {
 };
 
 const StageNode = (props) => {
-  const {stage} = props;
+  const {stage, parent, updateSelected} = props;
 
   return (
     <div style={{
-      borderLeft: `10px ${stageToColor[stage]} solid`,
       marginTop: "20px",
+      textAlign: "left",
     }}>
       <Typography component={"p"} variant={"body2"}
         style={{
           textAlign: "left",
           paddingLeft: "5px",
+          display: "inline-block",
       }}>
         {stage}
       </Typography>
+      <Button style={{verticalAlign: "top", display: "inline-block"}} onClick={(evt) => updateSelected(evt, stage, stage)}>
+        <InfoIcon style={{verticalAlign: "top"}} />
+        Documentation
+      </Button>
+      {stage === parent &&
+        <ArrowDropDownIcon
+          style={{
+            display: "block",
+            marginTop: "-17px",
+            fontSize: "40px",
+          }}
+        />
+      }
     </div>
   )
 }
