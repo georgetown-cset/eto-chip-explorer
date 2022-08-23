@@ -67,8 +67,8 @@ const DocumentationNode = (props) => {
   const nodeToOrgProvision = getNodeToOrgProvision();
   const variantsOf = getVariantsOf();
 
-  const hasMaterials = nodeToMeta[parent].materials?.length > 0;
-  const hasTools = nodeToMeta[parent].tools?.length > 0;
+  const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
+  const hasTools = nodeToMeta[parent]?.tools?.length > 0;
   const iconStyle= {verticalAlign: "middle", margin: "2px 5px"};
 
   if (node === currSelectedNode) {
