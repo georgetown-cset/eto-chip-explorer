@@ -87,7 +87,7 @@ const GraphNode = (props) => {
           <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
             {header}
           </Typography>
-          {showInputs &&
+          {!(inDocumentation && node === parent) && showInputs &&
             <Typography component={"div"} variant={"body2"}>
               {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
                 <SubNode nodeType={"materials"}
@@ -118,7 +118,7 @@ const GraphNode = (props) => {
             </Typography>}
         </div>
       </Paper>
-      {node === parent &&
+      {!inDocumentation && node === parent &&
         <ArrowDropDownIcon
           style={{
             display: "block",

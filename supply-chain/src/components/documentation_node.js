@@ -89,6 +89,12 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div style={{width: "10%", display: "inline-block"}}>
+          {(hasMaterials || hasTools) &&
+            <div>
+              <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
+                updateSelected={updateSelected} currSelectedNode={currSelectedNode} />
+            </div>
+          }
           {hasMaterials &&
             <div>
               {nodeToMeta[parent]["materials"].map((node) =>
