@@ -11,7 +11,7 @@ import InputDetail from "./input_detail";
 import { stageToColor } from "./stage_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, descriptions, currSelectedNode, updateSelected, minimap} = props;
+  const {node, highlights = {}, descriptions, images, currSelectedNode, updateSelected, minimap} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getBorderStyle = (currNode, isParent=false) => {
@@ -83,6 +83,7 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div style={{width: "80%", display: "inline-block"}}>
+          {images !== undefined && <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />}
           {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
             <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         updateSelected={updateSelected} highlights={highlights}/>

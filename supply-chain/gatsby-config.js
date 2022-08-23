@@ -6,9 +6,16 @@ module.exports = {
   plugins: ["gatsby-plugin-mdx", {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "details",
-      "path": "./details/"
+      "name": "pages",
+      "path": "./src/pages"
     },
     __key: "pages"
+  }, {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "images",
+      "path": "./src/images"
+    },
+    __key: "images"
   }]
 };
