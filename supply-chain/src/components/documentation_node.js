@@ -9,6 +9,8 @@ import { countryProvision, orgProvision, providerMeta } from "../../data/provisi
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
 import { stageToColor } from "./stage_node";
+import getIcon from "../helpers/shared";
+import GraphNode from "./graph_node";
 
 const DocumentationNode = (props) => {
   const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
@@ -65,6 +67,10 @@ const DocumentationNode = (props) => {
   const nodeToOrgProvision = getNodeToOrgProvision();
   const variantsOf = getVariantsOf();
 
+  const hasMaterials = nodeToMeta[parent].materials?.length > 0;
+  const hasTools = nodeToMeta[parent].tools?.length > 0;
+  const iconStyle= {verticalAlign: "middle", margin: "2px 5px"};
+
   if (node === currSelectedNode) {
     return (
       <Paper id={`${node}-documentation`}
@@ -82,7 +88,27 @@ const DocumentationNode = (props) => {
             {minimap}
           </div>
         }
-        <div style={{width: "80%", display: "inline-block"}}>
+        <div style={{width: "10%", display: "inline-block"}}>
+          {hasMaterials &&
+            <div>
+              {nodeToMeta[parent]["materials"].map((node) =>
+                <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                    updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
+                    content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+              )}
+            </div>
+          }
+          {hasTools &&
+            <div>
+              {nodeToMeta[parent]["tools"].map((node) =>
+                <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                    updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
+                    content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+              )}
+            </div>
+          }
+        </div>
+        <div style={{width: "70%", display: "inline-block"}}>
           {images !== undefined && <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />}
           {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
             <ProcessDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}

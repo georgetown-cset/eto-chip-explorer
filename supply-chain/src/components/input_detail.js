@@ -45,10 +45,6 @@ const InputDetail = (props) => {
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
   const iconStyle={verticalAlign: "middle", margin: "2px 5px"};
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const graphCountries = [];
   const graphCountryValues = [];
   const undefinedProvisionCountries = [];
