@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -72,7 +73,9 @@ const Dashboard = () => {
 
   const handleChange = (evt, key) => {
     const updatedFilterValues = {...defaultFilterValues};
-    updatedFilterValues[key] = evt.target.value;
+    if (key !== null) {
+      updatedFilterValues[key] = evt.target.value;
+    }
     setFilterValues(updatedFilterValues);
     getCurrentHighlights(updatedFilterValues);
   };
@@ -139,6 +142,9 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
+      <Button style={{display: "inline-block", verticalAlign: "bottom"}} onClick={(evt) => handleChange(evt, null)}>
+        Clear
+      </Button>
     </Paper>
     <Typography component={"p"} variant={"body2"}>
       ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
