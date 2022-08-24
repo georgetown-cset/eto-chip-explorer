@@ -11,7 +11,7 @@ import InputDetail from "./input_detail";
 import { stageToColor } from "./stage_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, descriptions, images, currSelectedNode, updateSelected} = props;
+  const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getBorderStyle = (currNode, isParent=false) => {
@@ -71,24 +71,31 @@ const DocumentationNode = (props) => {
         style={{
             padding: "5px",
             display: "inline-block",
-            backgroundColor: "lightgray",
+            backgroundColor: "whitesmoke",
             border: getBorderStyle(node, true),
             marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
         <Button style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}><HighlightOffIcon/></Button>
-        {images !== undefined && <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />}
-        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
-          <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                      updateSelected={updateSelected} highlights={highlights}/>
+        {(currSelectedNode !== null) && !isStage &&
+          <div style={{float: "left"}}>
+            {minimap}
+          </div>
         }
-        {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] !== "process") &&
-          <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                      countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
-                      countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
-                      orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} variants={variants[currSelectedNode]}
-                      updateSelected={updateSelected} variantOf={variantsOf[currSelectedNode]}/>
-        }
+        <div style={{width: "80%", display: "inline-block"}}>
+          {images !== undefined && <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />}
+          {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
+            <ProcessDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
+                        updateSelected={updateSelected} highlights={highlights}/>
+          }
+          {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] !== "process") &&
+            <InputDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
+                        countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
+                        countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} variants={variants[currSelectedNode]}
+                        updateSelected={updateSelected} variantOf={variantsOf[currSelectedNode]}/>
+          }
+        </div>
       </Paper>
     )
   }

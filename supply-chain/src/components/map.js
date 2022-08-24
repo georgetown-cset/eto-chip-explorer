@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
-import GraphNode from "./graph_node";
+import GraphNode, {MiniGraphNode} from "./graph_node";
 import StageNode, {stageToColor} from "./stage_node";
 
 const Map = (props) => {
@@ -25,6 +25,7 @@ const Map = (props) => {
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
+  const minimapLayers = [];
   const data = useStaticQuery(graphql`
   query getData {
       allFile(filter: {sourceInstanceName: {eq: "images"}}) {
@@ -67,30 +68,43 @@ const Map = (props) => {
     return <div style={{borderLeft: `10px ${stageToColor[stage]} solid`}}>
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
-        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions}
+        <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+          descriptions={descriptions} images={images} isStage={true}
           updateSelected={updateSelected} currSelectedNode={selectedNode}/>
       }
     </div>
   }
 
-  const mkLayer = (nodes, isUnattached=false) => {
-    return <div style={{borderLeft: `10px ${stageToColor[nodeToMeta[nodes[0]]?.["stage_id"]]} solid`}}>
-      {nodes.map(node =>
-        <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
-                   unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
-      )}
-      {nodes.includes(parentNode) &&
-        <DocumentationNode node={selectedNode} highlights={highlights} descriptions={descriptions} images={images}
-          updateSelected={updateSelected} currSelectedNode={selectedNode}/>
-      }
-    </div>
+  const mkLayer = (nodes, isUnattached=false, minimap=false) => {
+    if (minimap) {
+      return <div>
+        {nodes.map(node =>
+          <MiniGraphNode node={node} key={node} parent={parentNode} currSelectedNode={selectedNode}/>
+        )}
+      </div>
+    }
+    else {
+      return <div style={{borderLeft: `10px ${stageToColor[nodeToMeta[nodes[0]]?.["stage_id"]]} solid`}}>
+        {nodes.map(node =>
+          <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
+                    unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
+        )}
+        {nodes.includes(parentNode) &&
+          <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+            descriptions={descriptions} images={images} isStage={false}
+            updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
+        }
+      </div>
+    }
   };
 
   const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
 
-  const mkEdges = (edges, nodeToPosition, nodeToLayerNumber) => {
+  const mkEdges = (edges, nodeToPosition, nodeToLayerNumber, minimap=false) => {
     return <div>
       {edges.map(edge => {
+        let startEdge = edge[0] + (minimap ? "-minimap" : "");
+        let endEdge = edge[1] + (minimap ? "-minimap" : "");
         let fromDirection = "bottom";
         let toDirection = "top";
         let gridBreak = "50%";
@@ -127,14 +141,14 @@ const Map = (props) => {
           }
         }
         return <Xarrow
-          start={edge[0]}
-          end={edge[1]}
-          key={`${edge[0]}-to-${edge[1]}`}
+          start={startEdge}
+          end={endEdge}
+          key={`${startEdge}-to-${endEdge}`}
           path={path}
           gridBreak={gridBreak}
           startAnchor={fromDirection}
           endAnchor={toDirection}
-          strokeWidth={2}
+          strokeWidth={minimap ? 1 : 2}
           headSize={10}
           headShape={arrowShape}
         />
@@ -145,6 +159,7 @@ const Map = (props) => {
   const mkGraph = () => {
     let currNodes = [finalNode];
     const layers = [mkLayer(currNodes)];
+    minimapLayers.push(mkLayer(currNodes, false, true))
     const seen = new Set();
     currNodes.map(n => seen.add(n));
     // To help us figure out how to draw arrows
@@ -195,6 +210,8 @@ const Map = (props) => {
       // Add nodes for the current layer
       const layer = mkLayer(orderedLayerNodes);
       layers.push(layer);
+      const minimapLayer = mkLayer(orderedLayerNodes, false, true);
+      minimapLayers.push(minimapLayer);
       // Add edges for the current layer
       const centerPoint = orderedLayerNodes.length/2 - 0.5;
       orderedLayerNodes.forEach((node, idx) => {
@@ -203,15 +220,19 @@ const Map = (props) => {
       });
       const edges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber);
       layers.push(edges);
+      const minimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true);
+      minimapLayers.push(minimapEdges);
       layerNumber += 1;
     }
     layers.reverse();
+    minimapLayers.reverse();
     const unattached = [];
     for(let node in nodeToMeta){
       if((! seen.has(node)) && (nodeToMeta[node]["type"] === "process")){
         unattached.push(node)
       }
     }
+    minimapLayers.unshift(mkLayer(unattached, true, true));
     return (
       <div>
         <Xwrapper>
