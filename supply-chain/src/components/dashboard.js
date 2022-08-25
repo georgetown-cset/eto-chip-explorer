@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useTheme } from "@mui/material/styles";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
@@ -58,10 +58,10 @@ const Dashboard = () => {
 
   const materialToNode = getMaterialToNodes();
   const theme = useTheme();
+  const filterKeys = ["material-resource", "country"];
   const defaultFilterValues = {
     "material-resource": "All",
     "country": "All",
-    "org": "All"
   };
   const filterToValues = {
     "material-resource": materialToNode,
@@ -75,7 +75,35 @@ const Dashboard = () => {
     updatedFilterValues[key] = evt.target.value;
     setFilterValues(updatedFilterValues);
     getCurrentHighlights(updatedFilterValues);
+    // Put filter values in URL parameters.
+    const urlParams = new URLSearchParams(window.location.search);
+    for (const filterKey of filterKeys) {
+      const filterVal = updatedFilterValues[filterKey];
+      if (filterVal) {
+        if (filterVal === defaultFilterValues[filterKey]) {
+          urlParams.delete(filterKey);
+        } else {
+          urlParams.set(filterKey, filterVal);
+        }
+      }
+    }
+    window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
   };
+
+  // Sets the state of the app based on the queries in the URL.
+  // This will only run once, when the component is initially rendered.
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const updatedFilterValues = {...defaultFilterValues};
+    for (const filterKey of filterKeys) {
+      const filterVal = urlParams.get(filterKey);
+      if (filterVal) {
+        updatedFilterValues[filterKey] = filterVal;
+      }
+    }
+    setFilterValues(updatedFilterValues);
+    getCurrentHighlights(updatedFilterValues);
+  }, [])
 
   return (<div>
     <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}>
