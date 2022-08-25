@@ -25,7 +25,7 @@ const Map = (props) => {
     const urlParams = new URLSearchParams(window.location.search);
     const filterKeys = ["parentNode", "selectedNode"];
     for (const filterKey of filterKeys) {
-      const filterVal = (filterKeys === "parentNode") ? parentNode : selectedNode;
+      const filterVal = (filterKey === "parentNode") ? parentNode : selectedNode;
       if (filterVal) {
         urlParams.set(filterKey, filterVal);
       } else {
@@ -40,9 +40,15 @@ const Map = (props) => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const paramsParentNode = urlParams.get("parentNode");
-    const paramsSelectedNode = urlParams.get("parentNode");
+    const paramsSelectedNode = urlParams.get("selectedNode");
     setParentNode(paramsParentNode);
     setSelectedNode(paramsSelectedNode);
+    updateXarrow();
+    // Scroll the open documentation into view
+    if (paramsParentNode) {
+      const parentElem = document.getElementById(paramsParentNode);
+      parentElem.scrollIntoView({behavior: "smooth", block: "start"});
+    }
   }, [])
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];

@@ -96,7 +96,7 @@ const GraphNode = (props) => {
                         highlight={material in highlights ? highlights[material] : 0}
                         updateSelected={updateSelected}
                         borderStyle={getBorderStyle(material)}
-                        parent={parent}
+                        parent={inDocumentation ? parent : node}
                         highlights={highlights}
                         getBorderStyle={getBorderStyle}
                 />)}
@@ -109,7 +109,7 @@ const GraphNode = (props) => {
                         highlight={tool in highlights ? highlights[tool] : 0}
                         updateSelected={updateSelected}
                         borderStyle={getBorderStyle(tool)}
-                        parent={parent}
+                        parent={inDocumentation ? parent : node}
                         highlights={highlights}
                         getBorderStyle={getBorderStyle}
                 />)}</span>}
