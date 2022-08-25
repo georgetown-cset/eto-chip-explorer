@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import StarIcon from '@mui/icons-material/Star';
 import {nodeToMeta} from "../../data/graph";
 import {stageToColor} from "./stage_node";
 
@@ -59,9 +60,6 @@ const GraphNode = (props) => {
     (("tools" in meta) && (meta["tools"].length > 0));
 
   const getBorderStyle = (currNode, isParent=false) => {
-    if(currNode === currSelectedNode){
-      return "3px solid red";
-    }
     if(isParent && (meta["stage_id"] in stageToColor)){
       return "3px solid "+stageToColor[meta["stage_id"]];
     }
@@ -147,6 +145,16 @@ export const MiniGraphNode = (props) => {
         backgroundColor: node === parent ? "darkblue" : "lightblue"
       }}
     >
+      {(meta["materials"]?.includes(currSelectedNode) || meta["tools"]?.includes(currSelectedNode) || (node === parent && node !== currSelectedNode)) &&
+        <StarIcon
+          style={{
+            display: "inline-block",
+            fontSize: "10px",
+            color: "yellow",
+            verticalAlign: "top"
+          }}
+        />
+      }
     </div>
   )
 };
