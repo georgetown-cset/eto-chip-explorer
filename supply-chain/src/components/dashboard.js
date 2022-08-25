@@ -8,6 +8,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Paper from "@mui/material/Paper";
+import { Header as ETOHeader, Footer } from "@eto/eto-ui-components";
 
 import Header from "./header";
 import Map from "./map";
@@ -81,6 +82,7 @@ const Dashboard = () => {
   };
 
   return (<div>
+    <ETOHeader/>
     <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}>
       <Header/>
       <div style={{display: "inline-block", verticalAlign: "bottom", paddingLeft: "20px"}}><Typography component={"p"} variant={"h6"}>Highlight by...</Typography></div>
@@ -152,6 +154,7 @@ const Dashboard = () => {
     <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
       <Map highlights={highlights} />
     </div>
+    <Footer/>
   </div>);
 };
 
