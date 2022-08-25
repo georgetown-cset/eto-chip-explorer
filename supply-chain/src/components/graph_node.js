@@ -51,7 +51,7 @@ const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null} = props;
+  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null, inDocumentation=false} = props;
   const [elevation, setElevation] = React.useState(1);
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const header = content === null ? node+": "+meta["name"] : content;
@@ -80,14 +80,14 @@ const GraphNode = (props) => {
           border: getBorderStyle(node, true),
           width: wide ? "100%": "250px"
         }}
-        onClick={(evt) => updateSelected(evt, node, node)} elevation={elevation}
+        onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)} elevation={elevation}
         onMouseEnter={()=>setElevation(7)} onMouseLeave={()=>setElevation(1)}
       >
         <div style={{textAlign: "left"}}>
           <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
             {header}
           </Typography>
-          {showInputs &&
+          {!(inDocumentation && node === parent) && showInputs &&
             <Typography component={"div"} variant={"body2"}>
               {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
                 <SubNode nodeType={"materials"}
@@ -98,7 +98,7 @@ const GraphNode = (props) => {
                         highlight={material in highlights ? highlights[material] : 0}
                         updateSelected={updateSelected}
                         borderStyle={getBorderStyle(material)}
-                        parent={node}
+                        parent={parent}
                         highlights={highlights}
                         getBorderStyle={getBorderStyle}
                 />)}
@@ -111,14 +111,14 @@ const GraphNode = (props) => {
                         highlight={tool in highlights ? highlights[tool] : 0}
                         updateSelected={updateSelected}
                         borderStyle={getBorderStyle(tool)}
-                        parent={node}
+                        parent={parent}
                         highlights={highlights}
                         getBorderStyle={getBorderStyle}
                 />)}</span>}
             </Typography>}
         </div>
       </Paper>
-      {node === parent &&
+      {!inDocumentation && node === parent &&
         <ArrowDropDownIcon
           style={{
             display: "block",
