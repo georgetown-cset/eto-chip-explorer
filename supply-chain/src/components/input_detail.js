@@ -41,13 +41,9 @@ const BarGraph = (props) => {
 };
 
 const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta, variants, variantOf, updateSelected} = props;
+  const {selectedNode, parent, descriptions, countries, countryValues, orgs, orgMeta, variants, variantOf, updateSelected} = props;
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
   const iconStyle={verticalAlign: "middle", margin: "2px 5px"};
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const graphCountries = [];
   const graphCountryValues = [];
@@ -74,14 +70,14 @@ const InputDetail = (props) => {
         <div style={{marginBottom: "20px"}}>
           <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variants</Typography>
           {variants.map((node) =>
-            <GraphNode node={node} currSelectedNode={selectedNode} updateSelected={updateSelected} wide={true} key={node}
+            <GraphNode node={node} currSelectedNode={selectedNode} parent={parent} inDocumentation={true} updateSelected={updateSelected} wide={true} key={node}
                 content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[node]["type"], iconStyle)}{nodeToMeta[node]["name"]}</p>}/>)}
         </div>
       )}
       {(variantOf !== undefined) && (
         <div style={{marginBottom: "20px"}}>
           <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variant of</Typography>
-          <GraphNode node={variantOf} currSelectedNode={selectedNode} updateSelected={updateSelected} wide={true}
+          <GraphNode node={variantOf} currSelectedNode={selectedNode} parent={parent} inDocumentation={true} updateSelected={updateSelected} wide={true}
               content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[variantOf]["type"], iconStyle)}{nodeToMeta[variantOf]["name"]}</p>}/>
         </div>
       )}

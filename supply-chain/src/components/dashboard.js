@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import { useTheme } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -7,6 +8,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Typography from "@mui/material/Typography";
 import Select from "@mui/material/Select";
 import Paper from "@mui/material/Paper";
+import { Header as ETOHeader, Footer } from "@eto/eto-ui-components";
 
 import Header from "./header";
 import Map from "./map";
@@ -72,7 +74,9 @@ const Dashboard = () => {
 
   const handleChange = (evt, key) => {
     const updatedFilterValues = {...defaultFilterValues};
-    updatedFilterValues[key] = evt.target.value;
+    if (key !== null) {
+      updatedFilterValues[key] = evt.target.value;
+    }
     setFilterValues(updatedFilterValues);
     getCurrentHighlights(updatedFilterValues);
     // Put filter values in URL parameters.
@@ -106,6 +110,7 @@ const Dashboard = () => {
   }, [])
 
   return (<div>
+    <ETOHeader/>
     <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}>
       <Header/>
       <div style={{display: "inline-block", verticalAlign: "bottom", paddingLeft: "20px"}}><Typography component={"p"} variant={"h6"}>Highlight by...</Typography></div>
@@ -167,6 +172,9 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
+      <Button style={{display: "inline-block", verticalAlign: "bottom"}} onClick={(evt) => handleChange(evt, null)}>
+        Clear
+      </Button>
     </Paper>
     <Typography component={"p"} variant={"body2"}>
       ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
@@ -174,6 +182,7 @@ const Dashboard = () => {
     <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
       <Map highlights={highlights} />
     </div>
+    <Footer/>
   </div>);
 };
 
