@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Xarrow, {Xwrapper, useXarrow} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -21,7 +21,29 @@ const Map = (props) => {
     setSelectedNode(selectedNode);
     setParentNode(parentNode);
     updateXarrow();
+    // Put filter values in URL parameters.
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterKeys = ["parentNode", "selectedNode"];
+    for (const filterKey of filterKeys) {
+      const filterVal = (filterKeys === "parentNode") ? parentNode : selectedNode;
+      if (filterVal) {
+        urlParams.set(filterKey, filterVal);
+      } else {
+        urlParams.delete(filterKey);
+      }
+    }
+    window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
   };
+
+  // Sets the state of the app based on the queries in the URL.
+  // This will only run once, when the component is initially rendered.
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramsParentNode = urlParams.get("parentNode");
+    const paramsSelectedNode = urlParams.get("parentNode");
+    setParentNode(paramsParentNode);
+    setSelectedNode(paramsSelectedNode);
+  }, [])
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
