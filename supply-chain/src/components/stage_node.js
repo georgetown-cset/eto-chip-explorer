@@ -17,7 +17,7 @@ const StageNode = (props) => {
   const {stage, parent, updateSelected} = props;
 
   return (
-    <div style={{
+    <div id={stage} style={{
       marginTop: "20px",
       textAlign: "left",
     }}>
