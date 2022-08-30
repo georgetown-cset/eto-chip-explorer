@@ -52,7 +52,7 @@ const SubNode = (props) => {
 const GraphNode = (props) => {
   const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null, inDocumentation=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
-  const header = content === null ? node+": "+meta["name"] : content;
+  const header = content === null ? meta["name"] : content;
   const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
     (("tools" in meta) && (meta["tools"].length > 0));
 
@@ -70,7 +70,7 @@ const GraphNode = (props) => {
         elevation={0}
       >
         <div style={{textAlign: "left"}}>
-          <Typography component={"div"} variant={"body2"} style={{textAlign: "center", marginBottom: "5px"}}>
+          <Typography component={"h3"} style={{marginBottom: "5px"}}>
             {header}
           </Typography>
           {!(inDocumentation && node === parent) && showInputs &&
