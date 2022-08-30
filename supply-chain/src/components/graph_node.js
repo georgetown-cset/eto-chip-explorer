@@ -83,7 +83,7 @@ const GraphNode = (props) => {
                         metadata={nodeToMeta}
                         highlight={material in highlights ? highlights[material] : 0}
                         updateSelected={updateSelected}
-                        parent={parent}
+                        parent={inDocumentation ? parent : node}
                         highlights={highlights}
                 />)}
               {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
@@ -94,7 +94,7 @@ const GraphNode = (props) => {
                         metadata={nodeToMeta}
                         highlight={tool in highlights ? highlights[tool] : 0}
                         updateSelected={updateSelected}
-                        parent={parent}
+                        parent={inDocumentation ? parent : node}
                         highlights={highlights}
                 />)}</span>}
             </Typography>}
