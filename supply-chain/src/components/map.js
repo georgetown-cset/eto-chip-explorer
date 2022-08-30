@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
 import GraphNode, {MiniGraphNode} from "./graph_node";
-import StageNode, {stageToColor} from "./stage_node";
+import StageNode from "./stage_node";
 
 const Map = (props) => {
   const {highlights} = props;
@@ -65,7 +65,7 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <div style={{borderLeft: `10px ${stageToColor[stage]} solid`}}>
+    return <div className="stage-border">
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
         <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
@@ -84,7 +84,7 @@ const Map = (props) => {
       </div>
     }
     else {
-      return <div style={{borderLeft: `10px ${stageToColor[nodeToMeta[nodes[0]]?.["stage_id"]]} solid`}}>
+      return <div className="stage-border">
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
@@ -151,6 +151,7 @@ const Map = (props) => {
           strokeWidth={minimap ? 1 : 2}
           headSize={10}
           headShape={arrowShape}
+          color="rgb(76, 152, 255)"  // color is --bright-blue
         />
       })}
     </div>

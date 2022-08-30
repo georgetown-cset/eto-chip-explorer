@@ -83,8 +83,10 @@ const Dashboard = () => {
 
   return (<div>
     <ETOHeader/>
-    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}>
-      <Header/>
+    <Header/>
+    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+      className="filter-bar"
+    >
       <div style={{display: "inline-block"}}>
       <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
         <InputLabel id="country-select-label">Countries</InputLabel>
@@ -147,9 +149,6 @@ const Dashboard = () => {
         Clear
       </Button>
     </Paper>
-    <Typography component={"p"} variant={"body2"}>
-      ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
-    </Typography>
     <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
       <Map highlights={highlights} />
     </div>
