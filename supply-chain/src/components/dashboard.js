@@ -85,39 +85,9 @@ const Dashboard = () => {
     <ETOHeader/>
     <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}>
       <Header/>
-      <div style={{display: "inline-block", verticalAlign: "bottom", paddingLeft: "20px"}}><Typography component={"p"} variant={"h6"}>Highlight by...</Typography></div>
       <div style={{display: "inline-block"}}>
       <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
-        <InputLabel id="material-select-label">Material component</InputLabel>
-        <Select
-          labelId="material-select-label"
-          id="material-select"
-          value={filterValues["material-resource"]}
-          onChange={e => handleChange(e, "material-resource")}
-          input={<OutlinedInput label={"Material component"}/>}
-        >
-          <MenuItem
-            key={"All"}
-            value={"All"}
-            style={getStyles("All", filterValues["material-resource"], theme)}
-            >
-              All
-          </MenuItem>
-          {Object.keys(materialToNode).sort((a, b) => nodeToMeta[a]["name"] > nodeToMeta[b]["name"]).map((name) => (
-            <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, filterValues["material-resource"], theme)}
-            >
-              {nodeToMeta[name]["name"]}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      </div>
-      <div style={{display: "inline-block"}}>
-      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
-        <InputLabel id="country-select-label">Country provision share</InputLabel>
+        <InputLabel id="country-select-label">Countries</InputLabel>
         <Select
           labelId="country-select-label"
           id="country-select"
@@ -144,7 +114,36 @@ const Dashboard = () => {
         </Select>
       </FormControl>
       </div>
-      <Button style={{display: "inline-block", verticalAlign: "bottom"}} onClick={(evt) => handleChange(evt, null)}>
+      <div style={{display: "inline-block"}}>
+      <FormControl sx={{m: 1}} size={"small"} style={{margin: "15px 0 0 15px", textAlign: "left", minWidth: "200px"}}>
+        <InputLabel id="material-select-label">Inputs</InputLabel>
+        <Select
+          labelId="material-select-label"
+          id="material-select"
+          value={filterValues["material-resource"]}
+          onChange={e => handleChange(e, "material-resource")}
+          input={<OutlinedInput label={"Material component"}/>}
+        >
+          <MenuItem
+            key={"All"}
+            value={"All"}
+            style={getStyles("All", filterValues["material-resource"], theme)}
+            >
+              All
+          </MenuItem>
+          {Object.keys(materialToNode).sort((a, b) => nodeToMeta[a]["name"] > nodeToMeta[b]["name"]).map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, filterValues["material-resource"], theme)}
+            >
+              {nodeToMeta[name]["name"]}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+      </div>
+      <Button style={{float: "right", marginRight: "10px"}} onClick={(evt) => handleChange(evt, null)}>
         Clear
       </Button>
     </Paper>
