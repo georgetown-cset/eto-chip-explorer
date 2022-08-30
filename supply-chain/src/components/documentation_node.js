@@ -1,9 +1,9 @@
 import React from "react";
 import {useXarrow} from "react-xarrows";
-import Button from "@mui/material/Button";
+import IconButton from '@mui/material/IconButton'
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import CancelIcon from '@mui/icons-material/Cancel';
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
@@ -63,22 +63,21 @@ const DocumentationNode = (props) => {
   if (node === currSelectedNode) {
     return (
       <Paper id={`${node}-documentation`}
+        className="documentation-node"
+        elevation={0}
         style={{
             padding: "5px",
-            display: "inline-block",
-            backgroundColor: "whitesmoke",
             marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
-        <Button style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}><HighlightOffIcon/></Button>
         {(currSelectedNode !== null) && !isStage &&
-          <div style={{float: "left"}}>
+          <div>
             {minimap}
           </div>
         }
-        <div style={{width: "10%", display: "inline-block"}}>
+        <div style={{width: "20%"}}>
           {(hasMaterials || hasTools) &&
-            <div>
+            <div style={{textAlign: "left"}}>
               <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
                 updateSelected={updateSelected} currSelectedNode={currSelectedNode} />
             </div>
@@ -102,7 +101,7 @@ const DocumentationNode = (props) => {
             </div>
           }
         </div>
-        <div style={{width: "70%", display: "inline-block"}}>
+        <div style={{width: "60%"}}>
           {images !== undefined && <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />}
           {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
             <ProcessDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
@@ -116,6 +115,9 @@ const DocumentationNode = (props) => {
                         updateSelected={updateSelected} variantOf={variantsOf[currSelectedNode]}/>
           }
         </div>
+        <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}>
+          <span className="icon"><CancelIcon/></span>
+        </IconButton>
       </Paper>
     )
   }

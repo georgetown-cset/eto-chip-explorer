@@ -71,3 +71,44 @@ a {
 .stage-border {
   border-left: 10px solid var(--bright-blue);
 }
+
+.MuiPaper-root.documentation-node {
+  background-color: var(--grey-lightest);
+  border-top: 1px solid var(--bright-blue);
+  border-radius: 0px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .MuiTypography-root {
+    font-family: GTZirkonLight;
+  }
+  p.MuiTypography-root {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  .MuiIconButton-root:hover {
+    background-color: unset;
+  }
+  .icon-wrapper {
+    border: 0;
+    background-color: unset;
+  }
+  .icon {
+    color: var(--bright-blue);
+  }
+  .graph-node {
+    width: unset;
+    background-color: unset;
+    border: 0px;
+    padding: 0px;
+    p.MuiTypography-root {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      text-align: left;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

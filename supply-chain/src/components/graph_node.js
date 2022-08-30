@@ -60,17 +60,17 @@ const GraphNode = (props) => {
     <div style={{display: "inline-block", position: "relative"}}>
       <Paper id={node} className={"graph-node"}
         style={{
-          margin: wide ? "5px 0px" : "20px 25px",
-          marginBottom: node === currSelectedNode ? "0px" : (wide ? "5px" : "20px"),
+          margin: wide ? "" : "20px 25px",
+          marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),
           display: "inline-block",
           backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": null,
-          width: wide ? "100%": "250px"
+          width: wide ? "": "250px"
         }}
         onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}
         elevation={0}
       >
         <div style={{textAlign: "left"}}>
-          <Typography component={"h3"} style={{marginBottom: "5px"}}>
+          <Typography component={inDocumentation ? "p" : "h3"} style={{marginBottom: "5px"}}>
             {header}
           </Typography>
           {!(inDocumentation && node === parent) && showInputs &&
