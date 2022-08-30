@@ -21,7 +21,7 @@ const StageNode = (props) => {
       marginTop: "20px",
       textAlign: "left",
     }}>
-      <Typography component={"p"} variant={"body2"}
+      <Typography component={"h3"}
         style={{
           textAlign: "left",
           paddingLeft: "5px",
@@ -29,9 +29,17 @@ const StageNode = (props) => {
       }}>
         {stage}
       </Typography>
-      <Button style={{verticalAlign: "top", display: "inline-block"}} onClick={(evt) => updateSelected(evt, stage, stage)}>
+      <Button
+        style={{
+          verticalAlign: "top",
+          display: "inline-block",
+          padding: "0px",
+          backgroundColor: "unset",
+        }}
+        onClick={(evt) => updateSelected(evt, stage, stage)}
+        disableRipple={true}
+      >
         <InfoIcon style={{verticalAlign: "top"}} />
-        Documentation
       </Button>
       {stage === parent &&
         <ArrowDropDownIcon
