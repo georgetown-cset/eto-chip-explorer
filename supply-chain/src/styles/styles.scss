@@ -97,6 +97,9 @@ a {
   .icon {
     color: var(--bright-blue);
   }
+  .star-icon {
+    color: var(--yellow);
+  }
   .graph-node {
     width: unset;
     background-color: unset;
@@ -109,6 +112,12 @@ a {
       &:hover {
         text-decoration: underline;
       }
+    }
+    &.minimap-light {
+      background-color: var(--bright-blue-light);
+    }
+    &.minimap-dark {
+      background-color: var(--bright-blue);
     }
   }
 }

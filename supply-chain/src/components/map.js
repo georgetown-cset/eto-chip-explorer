@@ -176,10 +176,10 @@ const Map = (props) => {
           gridBreak={gridBreak}
           startAnchor={fromDirection}
           endAnchor={toDirection}
-          strokeWidth={minimap ? 1 : 2}
+          strokeWidth={minimap ? 0.6 : 2}
           headSize={10}
           headShape={arrowShape}
-          color="rgb(76, 152, 255)"  // color is --bright-blue
+          color={minimap ? "rgb(0, 0, 0)" : "rgb(76, 152, 255)"} // color is --bright-blue or --black
         />
       })}
     </div>

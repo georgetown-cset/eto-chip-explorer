@@ -120,24 +120,24 @@ export const MiniGraphNode = (props) => {
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   return (
-    <div id={`${node}-minimap`} className={"graph-node"}
+    <div id={`${node}-minimap`} className={`graph-node ${node === parent ? "minimap-dark" : "minimap-light"}`}
       style={{
         margin: "5px",
         display: "inline-block",
         height: "10px",
         width: "20px",
-        backgroundColor: node === parent ? "darkblue" : "lightblue"
       }}
     >
       {(meta["materials"]?.includes(currSelectedNode) || meta["tools"]?.includes(currSelectedNode) || (node === parent && node !== currSelectedNode)) &&
-        <StarIcon
-          style={{
-            display: "inline-block",
-            fontSize: "10px",
-            color: "yellow",
-            verticalAlign: "top"
-          }}
-        />
+        <span class="star-icon">
+          <StarIcon
+            style={{
+              display: "inline-block",
+              fontSize: "10px",
+              verticalAlign: "top"
+            }}
+          />
+        </span>
       }
     </div>
   )
