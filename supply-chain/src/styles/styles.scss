@@ -83,20 +83,28 @@ a {
     &:hover {
       text-decoration: underline;
     }
-    &.highlighted {
-      background-color: var(--bright-blue-light);
-      &.opacity-20 {
-        background-color: rgba(var(--bright-blue-light-no-rgb), 0.2);
-      }
-      &.opacity-40 {
-        background-color: rgba(var(--bright-blue-light-no-rgb), 0.4);
-      }
-      &.opacity-60 {
-        background-color: rgba(var(--bright-blue-light-no-rgb), 0.6);
-      }
-      &.opacity-80 {
-        background-color: rgba(var(--bright-blue-light-no-rgb), 0.8);
-      }
+  }
+  &.highlighted, .graph-sub-node.highlighted {
+    background-color: var(--bright-blue-light);
+    --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
+    --bright-blue-light-hsl-g80: hsl(215, 100%, 80%);
+    --bright-blue-light-hsl-g60: hsl(215, 100%, 85%);
+    --bright-blue-light-hsl-g40: hsl(215, 100%, 90%);
+    --bright-blue-light-hsl-g20: hsl(215, 100%, 95%);
+    &.gradient-100 {
+      background-color: var(--bright-blue-light-hsl-g100);
+    }
+    &.gradient-80 {
+      background-color: var(--bright-blue-light-hsl-g80);
+    }
+    &.gradient-60 {
+      background-color: var(--bright-blue-light-hsl-g60);
+    }
+    &.gradient-40 {
+      background-color: var(--bright-blue-light-hsl-g40);
+    }
+    &.gradient-20 {
+      background-color: var(--bright-blue-light-hsl-g20);
     }
   }
 }

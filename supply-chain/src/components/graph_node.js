@@ -18,23 +18,27 @@ export const NodeHeading = (props) => {
   )
 }
 
+const getBackgroundGradient = (highlight, highlights) => {
+  let backgroundGradient = "gradient-100";
+  if (highlights && highlights.type === "gradient") {
+    if (highlight <= 20) {backgroundGradient = "gradient-20"}
+    else if (highlight <= 40) {backgroundGradient = "gradient-40"}
+    else if (highlight <= 60) {backgroundGradient = "gradient-60"}
+    else if (highlight <= 80) {backgroundGradient = "gradient-80"}
+    else {backgroundGradient = "gradient-100"};
+  }
+  return backgroundGradient;
+}
+
 export const SubNode = (props) => {
   const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0} = props;
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
   const subTools = nodeToMeta?.[nodeId]?.["tools"];
 
-  let backgroundOpacity = "opacity-100";
-  if (highlights && highlights.type === "gradient") {
-    if (highlight <= 20) {backgroundOpacity = "opacity-20"}
-    else if (highlight <= 40) {backgroundOpacity = "opacity-40"}
-    else if (highlight <= 60) {backgroundOpacity = "opacity-60"}
-    else if (highlight <= 80) {backgroundOpacity = "opacity-80"};
-  }
-
   return (
     <div>
       <Paper elevation={0}
-             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + backgroundOpacity : "")}
+             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) : "")}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
         <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth} />
       </Paper>
@@ -74,7 +78,7 @@ const GraphNode = (props) => {
 
   return (
     <div style={{display: "inline-block", position: "relative"}}>
-      <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted" : "")}
+      <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : "")}
         style={{
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),

@@ -51,6 +51,10 @@ const Dashboard = () => {
       for (const countryName of currFilterValues[highlighter]) {
         const currMappingByCountry = currMapping[countryName];
         for (const countryProvKey of Object.keys(currMapping[countryName])) {
+          // Don't try to add major/minor provision values
+          if (isNaN(currMapping[countryName][countryProvKey])) {
+            continue;
+          }
           if (countryProvKey in countryMap) {
             countryMap[countryProvKey] += currMapping[countryName][countryProvKey];
           } else {
