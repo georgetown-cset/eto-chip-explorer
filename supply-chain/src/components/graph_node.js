@@ -10,7 +10,7 @@ import {nodeToMeta} from "../../data/graph";
 
 import getIcon from "../helpers/shared";
 
-const SubNode = (props) => {
+export const SubNode = (props) => {
   const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"});
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];

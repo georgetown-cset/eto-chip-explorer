@@ -10,7 +10,7 @@ import { countryProvision, orgProvision, providerMeta } from "../../data/provisi
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
 import getIcon from "../helpers/shared";
-import GraphNode from "./graph_node";
+import GraphNode, { SubNode } from "./graph_node";
 
 const DocumentationNode = (props) => {
   const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
@@ -43,19 +43,8 @@ const DocumentationNode = (props) => {
     return nodeToOrgProvision;
   };
 
-  const getVariantsOf = () => {
-    const variantsOf = {};
-    for(let node in variants){
-      for(let v of variants[node]){
-        variantsOf[v] = node;
-      }
-    }
-    return variantsOf;
-  };
-
   const nodeToCountryProvision = getNodeToCountryProvision();
   const nodeToOrgProvision = getNodeToOrgProvision();
-  const variantsOf = getVariantsOf();
 
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
@@ -70,7 +59,6 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            padding: "5px",
             marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
@@ -89,18 +77,50 @@ const DocumentationNode = (props) => {
           {hasMaterials &&
             <div style={{textAlign: "left"}}>
               {nodeToMeta[parent]["materials"].map((node) =>
-                <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
-                    updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                    content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+                <div>
+                  <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                      updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
+                      content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+                  {variants[node] &&
+                    <div>
+                      <Typography component={"p"}>Variants</Typography>
+                      {variants[node].map((variant) =>
+                        <GraphNode node={variant} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                          updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
+                          content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[variant]["type"], iconStyle)}{nodeToMeta[node]["name"]}</p>}/>)}
+                    </div>
+                  }
+                </div>
               )}
             </div>
           }
           {hasTools &&
             <div style={{textAlign: "left"}}>
               {nodeToMeta[parent]["tools"].map((node) =>
-                <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
-                    updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                    content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+                <div>
+                  <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                      updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
+                      content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+                  {variants[node] &&
+                    <div>
+                      <Typography component={"p"} style={{marginLeft: "20px", fontWeight: "bolder"}}>Variants</Typography>
+                      {variants[node].map((variant) =>
+                        <SubNode nodeType={nodeToMeta[variant]["type"]}
+                          name={nodeToMeta[variant]["name"]}
+                          key={nodeToMeta[variant]["name"]}
+                          nodeId={variant}
+                          metadata={nodeToMeta}
+                          highlight={variant in highlights ? highlights[variant] : 0}
+                          updateSelected={updateSelected}
+                          parent={parent}
+                          highlights={highlights}
+                          depth={2}
+                          currSelectedNode={currSelectedNode}
+                        />
+                      )}
+                    </div>
+                  }
+                </div>
               )}
             </div>
           }
@@ -125,8 +145,7 @@ const DocumentationNode = (props) => {
             <InputDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
                         countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
                         countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
-                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} variants={variants[currSelectedNode]}
-                        updateSelected={updateSelected} variantOf={variantsOf[currSelectedNode]}/>
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           }
         </div>
         <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}>
