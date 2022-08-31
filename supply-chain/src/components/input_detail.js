@@ -24,16 +24,17 @@ const BarGraph = (props) => {
   const {countries, values} = props;
 
   const data = [{
-    x: countries,
-    y: values,
-    type: "bar"
+    x: values,
+    y: countries,
+    type: "bar",
+    orientation: "h"
   }];
 
   return (
     <div>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
-      layout={{autosize: true, margin: {t: 50, r: 50, b: 100, l: 50, pad: 4}, title: "Country Provision"}}
+      layout={{autosize: true, margin: {t: 50, r: 30, b: 30, l: 120, pad: 4}, title: "Country Provision"}}
       config={{responsive: true}}
     />
     </div>
