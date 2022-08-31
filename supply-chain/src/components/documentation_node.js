@@ -102,7 +102,14 @@ const DocumentationNode = (props) => {
           }
         </div>
         <div style={{width: "60%"}}>
-          {images !== undefined && <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />}
+          {images !== undefined && images.filter(i => i.name === node)[0] &&
+            <div>
+              <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />
+              <Typography component="p" className="caption">
+                Placeholder image caption
+              </Typography>
+            </div>
+          }
           {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
             <ProcessDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
                         updateSelected={updateSelected} highlights={highlights}/>
