@@ -28,9 +28,9 @@ export const SubNode = (props) => {
 
   return (
     <div>
-      <Paper style={{backgroundColor: highlight !== 0 ? "rgba(229,191,33,"+highlight+")" : null, marginLeft: 10*depth+"px"}}
+      <Paper style={{marginLeft: 10*depth+"px"}}
              elevation={0}
-             className="graph-sub-node"
+             className={"graph-sub-node" + (highlight !== 0 ? " highlighted" : "")}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
         <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} />
       </Paper>
@@ -70,12 +70,11 @@ const GraphNode = (props) => {
 
   return (
     <div style={{display: "inline-block", position: "relative"}}>
-      <Paper id={node} className={"graph-node"}
+      <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted" : "")}
         style={{
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),
           display: "inline-block",
-          backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": null,
           width: wide ? "": "250px"
         }}
         onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}

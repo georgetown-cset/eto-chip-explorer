@@ -48,9 +48,12 @@ a {
   background-color: var(--bright-blue-lightest);
   border-left: 10px solid var(--bright-blue-light);
   border-radius: 0px;
-  padding: 20px 20px 10px 10px;
+  padding: 20px 20px 10px 0px;
   .MuiTypography-root {
     font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+  }
+  h3.MuiTypography-root {
+    margin-left: 10px;
   }
   &:hover{
     cursor: -moz-zoom-in;
@@ -66,6 +69,11 @@ a {
   }
   .graph-sub-node {
     background-color: var(--bright-blue-lightest);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-radius: 0px;
+    width: calc(10px + 100%);
+    padding-left: 10px;
     margin-bottom: 5px;
     p.MuiTypography-root {
       font-size: 0.8rem;
@@ -74,6 +82,9 @@ a {
     }
     &:hover {
       text-decoration: underline;
+    }
+    &.highlighted {
+      background-color: var(--bright-blue-light);
     }
   }
 }
