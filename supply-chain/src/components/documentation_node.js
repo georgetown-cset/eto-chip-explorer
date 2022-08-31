@@ -83,7 +83,7 @@ const DocumentationNode = (props) => {
             </div>
           }
           {hasMaterials &&
-            <div>
+            <div style={{textAlign: "left"}}>
               {nodeToMeta[parent]["materials"].map((node) =>
                 <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                     updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
@@ -92,7 +92,7 @@ const DocumentationNode = (props) => {
             </div>
           }
           {hasTools &&
-            <div>
+            <div style={{textAlign: "left"}}>
               {nodeToMeta[parent]["tools"].map((node) =>
                 <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                     updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}

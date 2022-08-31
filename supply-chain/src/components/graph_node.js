@@ -11,7 +11,7 @@ import {nodeToMeta} from "../../data/graph";
 import getIcon from "../helpers/shared";
 
 const SubNode = (props) => {
-  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, depth=0} = props;
+  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"});
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
   const subTools = nodeToMeta?.[nodeId]?.["tools"];
@@ -23,26 +23,30 @@ const SubNode = (props) => {
              className="graph-sub-node"
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
         <span className="graph-node-icon">{icon}</span>
-        {name}
+        <span className={(nodeId === currSelectedNode) ? "selected-documentation-link" : ""}>{name}</span>
       </Paper>
       <Typography component={"div"} variant={"body2"}>
         {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.map((material) =>
           <SubNode nodeType={"materials"}
                   name={nodeToMeta[material]["name"]}
                   key={nodeToMeta[material]["name"]}
+                  nodeId={material}
                   metadata={nodeToMeta}
                   highlight={material in highlights ? highlights[material] : 0}
                   updateSelected={(evt) => updateSelected(evt, material, parent)}
                   depth={1}
+                  currSelectedNode={currSelectedNode}
                   />)}
         {(subTools !== undefined) && (subTools.length > 0) && <span style={{marginRight: "10px"}}>{subTools.map((tool) =>
           <SubNode nodeType={"tools"}
                   name={nodeToMeta[tool]["name"]}
                   key={nodeToMeta[tool]["name"]}
+                  nodeId={tool}
                   metadata={nodeToMeta}
                   highlight={tool in highlights ? highlights[tool] : 0}
                   updateSelected={(evt) => updateSelected(evt, tool, parent)}
                   depth={1}
+                  currSelectedNode={currSelectedNode}
                   />)}</span>}
       </Typography>
     </div>
@@ -70,7 +74,10 @@ const GraphNode = (props) => {
         elevation={0}
       >
         <div style={{textAlign: "left"}}>
-          <Typography component={inDocumentation ? "p" : "h3"} style={{marginBottom: "5px"}}>
+          <Typography component={inDocumentation ? "p" : "h3"}
+            style={{marginBottom: "5px"}}
+            className={(node === currSelectedNode) ? "selected-documentation-link" : ""}
+          >
             {header}
           </Typography>
           {!(inDocumentation && node === parent) && showInputs &&
@@ -85,6 +92,8 @@ const GraphNode = (props) => {
                         updateSelected={updateSelected}
                         parent={inDocumentation ? parent : node}
                         highlights={highlights}
+                        depth={inDocumentation ? 2 : 0}
+                        currSelectedNode={currSelectedNode}
                 />)}
               {("tools" in meta) && (meta["tools"].length > 0) && <span style={{marginRight: "10px"}}>{meta["tools"].map((tool) =>
                 <SubNode nodeType={"tools"}
@@ -96,6 +105,8 @@ const GraphNode = (props) => {
                         updateSelected={updateSelected}
                         parent={inDocumentation ? parent : node}
                         highlights={highlights}
+                        depth={inDocumentation ? 2 : 0}
+                        currSelectedNode={currSelectedNode}
                 />)}</span>}
             </Typography>}
         </div>

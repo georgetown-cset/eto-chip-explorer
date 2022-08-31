@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import { createTheme } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material';
 /* Set the body margin and padding to 0 here */
 import "../styles/styles.scss";
 
@@ -24,13 +24,13 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       {(typeof window !== "undefined") &&
         <React.Suspense fallback={<div style={{textAlign: "center"}}><CircularProgress/></div>}>
           <Dashboard/>
         </React.Suspense>
       }
-    </div>
+    </ThemeProvider>
   )
 };
 

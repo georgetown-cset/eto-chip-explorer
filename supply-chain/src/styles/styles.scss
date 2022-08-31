@@ -49,6 +49,9 @@ a {
   border-left: 10px solid var(--bright-blue-light);
   border-radius: 0px;
   padding: 20px 20px 10px 10px;
+  .MuiTypography-root {
+    font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+  }
   &:hover{
     cursor: -moz-zoom-in;
     cursor: -webkit-zoom-in;
@@ -100,11 +103,17 @@ a {
   .star-icon {
     color: var(--yellow);
   }
-  .graph-node {
+  .graph-node-icon {
+    color: var(--black);
+  }
+  .graph-node, .graph-sub-node {
     width: unset;
     background-color: unset;
     border: 0px;
     padding: 0px;
+    .selected-documentation-link {
+      font-family: GTZirkonBold;
+    }
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
