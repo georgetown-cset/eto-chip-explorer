@@ -1,5 +1,6 @@
 import React from "react";
-import {useXarrow} from "react-xarrows";
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
 import IconButton from '@mui/material/IconButton'
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
@@ -60,6 +61,9 @@ const DocumentationNode = (props) => {
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
   const iconStyle= {verticalAlign: "middle", margin: "2px 5px"};
 
+  // For image modal
+  const [open, setOpen] = React.useState(false);
+
   if (node === currSelectedNode) {
     return (
       <Paper id={`${node}-documentation`}
@@ -104,7 +108,10 @@ const DocumentationNode = (props) => {
         <div style={{width: "60%"}}>
           {images !== undefined && images.filter(i => i.name === node)[0] &&
             <div>
-              <img src={images.filter(i => i.name === node)[0]?.publicURL} style={{maxWidth: "300px", height: "auto"}} />
+              <img src={images.filter(i => i.name === node)[0]?.publicURL}
+                style={{maxWidth: "300px", height: "auto" }}
+                onClick={() => setOpen(true)}
+              />
               <Typography component="p" className="caption">
                 Placeholder image caption
               </Typography>
@@ -125,6 +132,31 @@ const DocumentationNode = (props) => {
         <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}>
           <span className="icon"><CancelIcon/></span>
         </IconButton>
+
+        <Modal
+          open={open}
+          onClose={() => setOpen(false)}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            bgcolor: "white",
+            border: '2px solid #fff',
+            boxShadow: 24,
+            p: 4,
+          }}>
+            <img src={images.filter(i => i.name === node)[0]?.publicURL}
+              style={{maxWidth: "600px", height: "auto"}}
+            />
+            <Typography component="p" className="caption">
+              Placeholder image caption
+            </Typography>
+          </Box>
+        </Modal>
       </Paper>
     )
   }
