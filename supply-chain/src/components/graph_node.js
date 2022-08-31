@@ -1,8 +1,5 @@
 import React from "react";
-import {useXarrow} from "react-xarrows";
-import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
@@ -11,11 +8,11 @@ import {nodeToMeta} from "../../data/graph";
 import getIcon from "../helpers/shared";
 
 export const NodeHeading = (props) => {
-  const {nodeType, nodeId, currSelectedNode, name} = props;
+  const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
   return (
     <Typography component="p" className={"node-heading" + ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")}>
-      <span className="graph-node-icon">{icon}</span>
+      <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
       <span>{name}</span>
     </Typography>
   )
@@ -26,13 +23,20 @@ export const SubNode = (props) => {
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
   const subTools = nodeToMeta?.[nodeId]?.["tools"];
 
+  let backgroundOpacity = "opacity-100";
+  if (highlights && highlights.type === "gradient") {
+    if (highlight <= 20) {backgroundOpacity = "opacity-20"}
+    else if (highlight <= 40) {backgroundOpacity = "opacity-40"}
+    else if (highlight <= 60) {backgroundOpacity = "opacity-60"}
+    else if (highlight <= 80) {backgroundOpacity = "opacity-80"};
+  }
+
   return (
     <div>
-      <Paper style={{marginLeft: 10*depth+"px"}}
-             elevation={0}
-             className={"graph-sub-node" + (highlight !== 0 ? " highlighted" : "")}
+      <Paper elevation={0}
+             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + backgroundOpacity : "")}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
-        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} />
+        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth} />
       </Paper>
       <Typography component={"div"} variant={"body2"}>
         {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.map((material) =>

@@ -43,11 +43,22 @@ const Dashboard = () => {
     }
     const currMapping = filterToValues[highlighter];
     if(highlighter === "input-resource") {
-      const identityMap = {}
+      const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
       identityMap[currFilterValues[highlighter]] = 1
       setHighlights(identityMap)
     } else {
-      setHighlights(currMapping[currFilterValues[highlighter]]);
+      const countryMap = {"type" : "gradient"};  // Use gradient shading on nodes
+      for (const countryName of currFilterValues[highlighter]) {
+        const currMappingByCountry = currMapping[countryName];
+        for (const countryProvKey of Object.keys(currMapping[countryName])) {
+          if (countryProvKey in countryMap) {
+            countryMap[countryProvKey] += currMapping[countryName][countryProvKey];
+          } else {
+            countryMap[countryProvKey] = currMapping[countryName][countryProvKey];
+          }
+        }
+      }
+      setHighlights(countryMap);
     }
   };
 

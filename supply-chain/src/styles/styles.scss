@@ -85,6 +85,18 @@ a {
     }
     &.highlighted {
       background-color: var(--bright-blue-light);
+      &.opacity-20 {
+        background-color: rgba(var(--bright-blue-light-no-rgb), 0.2);
+      }
+      &.opacity-40 {
+        background-color: rgba(var(--bright-blue-light-no-rgb), 0.4);
+      }
+      &.opacity-60 {
+        background-color: rgba(var(--bright-blue-light-no-rgb), 0.6);
+      }
+      &.opacity-80 {
+        background-color: rgba(var(--bright-blue-light-no-rgb), 0.8);
+      }
     }
   }
 }
