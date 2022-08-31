@@ -84,6 +84,16 @@ a {
       text-decoration: underline;
     }
   }
+}
+
+.stage-border {
+  border-left: 10px solid var(--bright-blue);
+  &.uncolored {
+    border-color: var(--white);
+  }
+}
+
+.graph-node, .stage-border {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
     --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
@@ -107,10 +117,6 @@ a {
       background-color: var(--bright-blue-light-hsl-g20);
     }
   }
-}
-
-.stage-border {
-  border-left: 10px solid var(--bright-blue);
 }
 
 .MuiPaper-root.documentation-node {

@@ -49,7 +49,10 @@ const Dashboard = () => {
     } else {
       const countryMap = {"type" : "gradient"};  // Use gradient shading on nodes
       for (const countryName of currFilterValues[highlighter]) {
-        const currMappingByCountry = currMapping[countryName];
+        // If countryName is "All", we ignore it
+        if (!(countryName in currMapping)) {
+          continue;
+        }
         for (const countryProvKey of Object.keys(currMapping[countryName])) {
           // Don't try to add major/minor provision values
           if (isNaN(currMapping[countryName][countryProvKey])) {
@@ -168,7 +171,7 @@ const Dashboard = () => {
         Clear
       </Button>
     </Paper>
-    <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
+    <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
       <Map highlights={highlights} />
     </div>
     <Footer/>

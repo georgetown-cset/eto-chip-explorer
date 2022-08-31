@@ -18,7 +18,7 @@ export const NodeHeading = (props) => {
   )
 }
 
-const getBackgroundGradient = (highlight, highlights) => {
+export const getBackgroundGradient = (highlight, highlights) => {
   let backgroundGradient = "gradient-100";
   if (highlights && highlights.type === "gradient") {
     if (highlight <= 20) {backgroundGradient = "gradient-20"}
