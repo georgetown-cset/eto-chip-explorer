@@ -61,10 +61,17 @@ a {
     color: var(--bright-blue);
     margin-right: 5px;
   }
+  h3.MuiTypography-root {
+    margin-bottom: 10px;
+  }
   .graph-sub-node {
     background-color: var(--bright-blue-lightest);
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    margin-bottom: 5px;
+    p.MuiTypography-root {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-family: GTZirkonLight;
+    }
     &:hover {
       text-decoration: underline;
     }
@@ -112,6 +119,9 @@ a {
   .graph-node-icon {
     color: var(--black);
     margin-right: 5px;
+  }
+  .node-heading {
+    margin-bottom: 0.7rem;
   }
   .variants-heading {
     font-family: GTZirkonBold;

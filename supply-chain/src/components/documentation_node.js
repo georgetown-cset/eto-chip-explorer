@@ -10,7 +10,7 @@ import { countryProvision, orgProvision, providerMeta } from "../../data/provisi
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
 import getIcon from "../helpers/shared";
-import GraphNode, { SubNode } from "./graph_node";
+import GraphNode, { NodeHeading, SubNode } from "./graph_node";
 
 const DocumentationNode = (props) => {
   const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
@@ -71,7 +71,8 @@ const DocumentationNode = (props) => {
           {(hasMaterials || hasTools) &&
             <div style={{textAlign: "left"}}>
               <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
-                updateSelected={updateSelected} currSelectedNode={currSelectedNode} />
+                updateSelected={updateSelected} currSelectedNode={currSelectedNode}
+                content={<NodeHeading nodeType={undefined} nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
             </div>
           }
           {hasMaterials &&
@@ -80,14 +81,24 @@ const DocumentationNode = (props) => {
                 <div>
                   <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                       updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                      content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+                      content={<NodeHeading nodeType={nodeToMeta[node]["type"]} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
                   {variants[node] &&
                     <div>
                       <Typography className="variants-heading" component={"p"}>Variants</Typography>
                       {variants[node].map((variant) =>
-                        <GraphNode node={variant} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
-                          updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                          content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[variant]["type"], iconStyle)}{nodeToMeta[node]["name"]}</p>}/>)}
+                        <SubNode nodeType={nodeToMeta[variant]["type"]}
+                          name={nodeToMeta[variant]["name"]}
+                          key={nodeToMeta[variant]["name"]}
+                          nodeId={variant}
+                          metadata={nodeToMeta}
+                          highlight={variant in highlights ? highlights[variant] : 0}
+                          updateSelected={updateSelected}
+                          parent={parent}
+                          highlights={highlights}
+                          depth={2}
+                          currSelectedNode={currSelectedNode}
+                        />
+                      )}
                     </div>
                   }
                 </div>
@@ -100,7 +111,7 @@ const DocumentationNode = (props) => {
                 <div>
                   <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                       updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                      content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
+                      content={<NodeHeading nodeType={nodeToMeta[node]["type"]} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
                   {variants[node] &&
                     <div>
                       <Typography className="variants-heading" component={"p"}>Variants</Typography>

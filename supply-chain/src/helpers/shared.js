@@ -22,6 +22,7 @@ const BeakerIcon = (props) => {
 }
 
 const getIcon = (nodeType, style) => {
+  if (nodeType === undefined) {return null;}
  return nodeType === "tools" ? <CogIcon style={style}/> : <BeakerIcon style={style}/>;
 };
 
