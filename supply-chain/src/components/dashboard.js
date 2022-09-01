@@ -54,14 +54,20 @@ const Dashboard = () => {
           continue;
         }
         for (const countryProvKey of Object.keys(currMapping[countryName])) {
-          // Don't try to add major/minor provision values
-          if (isNaN(currMapping[countryName][countryProvKey])) {
+          let provValue = currMapping[countryName][countryProvKey]
+          // We round qualitative "major"/"minor" values to numerical approximations
+          if (provValue === "Major") {
+            provValue = 80;
+          } else if (provValue === "Minor") {
+            provValue = 0;
+          }
+          if (isNaN(provValue)) {
             continue;
           }
           if (countryProvKey in countryMap) {
-            countryMap[countryProvKey] += currMapping[countryName][countryProvKey];
+            countryMap[countryProvKey] += provValue;
           } else {
-            countryMap[countryProvKey] = currMapping[countryName][countryProvKey];
+            countryMap[countryProvKey] = provValue;
           }
         }
       }

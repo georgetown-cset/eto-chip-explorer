@@ -7,7 +7,7 @@ body {
   font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
 }
 
-.MuiTypography-root {
+p.MuiTypography-root {
   font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
 }
 
@@ -74,7 +74,8 @@ a {
     border-radius: 0px;
     width: calc(10px + 100%);
     padding-left: 10px;
-    margin-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
