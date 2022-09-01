@@ -117,11 +117,17 @@ a {
     color: var(--black);
   }
   .graph-node-icon {
-    color: var(--black);
     margin-right: 5px;
+    color: var(--bright-blue);
   }
   .node-heading {
     margin-bottom: 0.7rem;
+    &.selected-documentation-link {
+      font-family: GTZirkonBold;
+      .graph-node-icon {
+        color: var(--black);
+      }
+    }
   }
   .variants-heading {
     font-family: GTZirkonBold;
@@ -139,9 +145,6 @@ a {
     text-transform: uppercase;
     font-family: GTZirkonLight;
 
-    .selected-documentation-link {
-      font-family: GTZirkonBold;
-    }
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;

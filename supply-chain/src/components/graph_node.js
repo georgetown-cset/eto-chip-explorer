@@ -12,7 +12,7 @@ import getIcon from "../helpers/shared";
 
 export const NodeHeading = (props) => {
   const {nodeType, nodeId, currSelectedNode, name} = props;
-  const icon = getIcon(nodeType, {fontSize: "20px"});
+  const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
   return (
     <Typography component="p" className={"node-heading" + ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")}>
       <span className="graph-node-icon">{icon}</span>

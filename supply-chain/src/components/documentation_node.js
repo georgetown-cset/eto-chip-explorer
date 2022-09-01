@@ -72,7 +72,7 @@ const DocumentationNode = (props) => {
             <div style={{textAlign: "left"}}>
               <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
                 updateSelected={updateSelected} currSelectedNode={currSelectedNode}
-                content={<NodeHeading nodeType={undefined} nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
+                content={<NodeHeading nodeType="parent" nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
             </div>
           }
           {hasMaterials &&
