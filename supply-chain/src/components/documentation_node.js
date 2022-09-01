@@ -83,7 +83,7 @@ const DocumentationNode = (props) => {
                       content={<p style={{textAlign: "left"}}>{getIcon("materials", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
                   {variants[node] &&
                     <div>
-                      <Typography component={"p"}>Variants</Typography>
+                      <Typography className="variants-heading" component={"p"}>Variants</Typography>
                       {variants[node].map((variant) =>
                         <GraphNode node={variant} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                           updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
@@ -103,7 +103,7 @@ const DocumentationNode = (props) => {
                       content={<p style={{textAlign: "left"}}>{getIcon("tools", iconStyle)}{nodeToMeta[node]["name"]}</p>}/>
                   {variants[node] &&
                     <div>
-                      <Typography component={"p"} style={{marginLeft: "20px", fontWeight: "bolder"}}>Variants</Typography>
+                      <Typography className="variants-heading" component={"p"}>Variants</Typography>
                       {variants[node].map((variant) =>
                         <SubNode nodeType={nodeToMeta[variant]["type"]}
                           name={nodeToMeta[variant]["name"]}

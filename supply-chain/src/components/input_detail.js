@@ -69,15 +69,29 @@ const InputDetail = (props) => {
       </MDXProvider>
       {(orgs !== undefined) &&
         <div>
-          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Provider Organizations</Typography>
-          {orgNames.map(org => (orgMeta[org] !== undefined) &&
-          <div key={org}>
-            {orgMeta[org]["hq"]} <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
-              {orgMeta[org]["name"]}
-            </Link>: {orgs[org]}
-          </div>
-        )
-        }</div>
+          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+            Provider Organizations
+          </Typography>
+          <table>
+            {orgNames.map(org => (orgMeta[org] !== undefined) &&
+              <tr key={org}>
+                <td>
+                  <Typography component="p">
+                    {orgMeta[org]["hq"] && <span className="org-flag">{orgMeta[org]["hq"]}</span>}
+                    <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
+                      {orgMeta[org]["name"]}
+                    </Link>
+                  </Typography>
+                </td>
+                <td>
+                  <Typography component="p">
+                    {orgs[org]}
+                  </Typography>
+                </td>
+              </tr>
+            )}
+          </table>
+        </div>
       }
       {hasCountries &&
         <div>

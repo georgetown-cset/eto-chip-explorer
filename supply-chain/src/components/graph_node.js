@@ -22,8 +22,10 @@ export const SubNode = (props) => {
              elevation={0}
              className="graph-sub-node"
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
-        <span className="graph-node-icon">{icon}</span>
-        <span className={(nodeId === currSelectedNode) ? "selected-documentation-link" : ""}>{name}</span>
+        <Typography component="p">
+          <span className="graph-node-icon">{icon}</span>
+          <span className={(nodeId === currSelectedNode) ? "selected-documentation-link" : ""}>{name}</span>
+        </Typography>
       </Paper>
       <Typography component={"div"} variant={"body2"}>
         {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.map((material) =>
@@ -76,7 +78,7 @@ const GraphNode = (props) => {
         <div style={{textAlign: "left"}}>
           <Typography component={inDocumentation ? "p" : "h3"}
             style={{marginBottom: "5px"}}
-            className={(node === currSelectedNode) ? "selected-documentation-link" : ""}
+            className={(node === currSelectedNode || node === parent) ? "selected-documentation-link" : ""}
           >
             {header}
           </Typography>

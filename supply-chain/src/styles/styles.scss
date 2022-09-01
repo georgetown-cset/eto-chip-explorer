@@ -107,10 +107,18 @@ a {
     color: var(--bright-blue);
   }
   .star-icon {
-    color: var(--yellow);
+    color: var(--black);
   }
   .graph-node-icon {
     color: var(--black);
+    margin-right: 5px;
+  }
+  .variants-heading {
+    font-family: GTZirkonBold;
+    margin-left: 20px;
+  }
+  .provision-heading {
+    font-family: GTZirkonBold;
   }
   .graph-node, .graph-sub-node {
     width: unset;
@@ -147,5 +155,16 @@ a {
     cursor: -moz-zoom-in;
     cursor: -webkit-zoom-in;
     cursor: zoom-in;
+  }
+  table {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+    td {
+      width: 50%;
+      .org-flag {
+        margin-right: 5px;
+      }
+    }
   }
 }
