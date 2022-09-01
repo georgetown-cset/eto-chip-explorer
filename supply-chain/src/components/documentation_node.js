@@ -8,23 +8,12 @@ import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
-import { stageToColor } from "./stage_node";
 import getIcon from "../helpers/shared";
 import GraphNode from "./graph_node";
 
 const DocumentationNode = (props) => {
   const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
-
-  const getBorderStyle = (currNode, isParent=false) => {
-    if(currNode === currSelectedNode){
-      return "3px solid red";
-    }
-    if(isParent && (meta["stage_id"] in stageToColor)){
-      return "3px solid "+stageToColor[meta["stage_id"]];
-    }
-    return "0px";
-  };
 
   const getNodeToCountryProvision = () => {
     const nodeToCountryProvision = {};
@@ -78,7 +67,6 @@ const DocumentationNode = (props) => {
             padding: "5px",
             display: "inline-block",
             backgroundColor: "whitesmoke",
-            border: getBorderStyle(node, true),
             marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>

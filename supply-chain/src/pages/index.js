@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 
 /* Set the body margin and padding to 0 here */
-import "../styles/styles.css";
+import "../styles/styles.scss";
 const Dashboard = React.lazy(() => import("../components/dashboard"));
 
 const IndexPage = () => {

@@ -1,0 +1,73 @@
+@import "../../../node_modules/@eto/eto-ui-components/dist/styles/colors.css";
+@import "../../../node_modules/@eto/eto-ui-components/dist/styles/fonts.css";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+}
+
+.MuiTypography-root {
+  font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+}
+
+h3.MuiTypography-root {
+  font-family: GTZirkonMedium;
+  font-size: 1.1rem;
+}
+
+a {
+  cursor: pointer;
+  line-height: 1.235;
+  letter-spacing: 0.00735em;
+  color: #1976d2;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+/* Come back to this */
+.MuiPopover-paper{
+  width: 415px !important;
+  max-height: 500px !important;
+}
+
+.MuiPaper-root.filter-bar {
+  background-color: var(--bright-blue-lightest);
+
+  #clear-button {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--bright-blue);
+  }
+}
+
+.MuiPaper-root.graph-node{
+  z-index: 9000;
+  background-color: var(--bright-blue-lightest);
+  border-left: 10px solid var(--bright-blue-light);
+  border-radius: 0px;
+  padding: 20px 20px 10px 10px;
+  &:hover{
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+  }
+  .graph-node-icon {
+    color: var(--bright-blue);
+    margin-right: 5px;
+  }
+  .graph-sub-node {
+    background-color: var(--bright-blue-lightest);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.stage-border {
+  border-left: 10px solid var(--bright-blue);
+}

@@ -3,19 +3,23 @@ module.exports = {
     title: `supply-chain`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages"
-    },
-    __key: "pages"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images"
-    },
-    __key: "images"
-  }]
+  plugins: [
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sass",
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "pages",
+        "path": "./src/pages"
+      },
+      __key: "pages"
+    }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images"
+      },
+      __key: "images"
+    }
+  ]
 };
