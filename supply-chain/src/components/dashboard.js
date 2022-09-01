@@ -152,7 +152,7 @@ const Dashboard = () => {
   return (<div>
     <ETOHeader/>
     <Header/>
-    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+    <Paper style={{paddingBottom: "20px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
@@ -178,7 +178,7 @@ const Dashboard = () => {
       </Button>
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
-      <Map highlights={highlights} />
+      <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues} />
     </div>
     <Footer/>
   </div>);

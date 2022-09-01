@@ -120,6 +120,13 @@ a {
   }
 }
 
+.documentation-node {
+  margin-top: 1px;
+}
+.map .documentation-node{
+  margin-top: -15px;
+}
+
 .MuiPaper-root.documentation-node {
   background-color: var(--grey-lightest);
   border-top: 1px solid var(--bright-blue);
@@ -166,6 +173,12 @@ a {
         color: var(--black);
       }
     }
+    &.top-documentation-link {
+      font-family: GTZirkonBold;
+    }
+  }
+  .standalone-pane-heading p.MuiTypography-root {
+    font-family: GTZirkonBold;
   }
   .variants-heading {
     font-family: GTZirkonBold;
@@ -190,6 +203,9 @@ a {
       &:hover {
         text-decoration: underline;
       }
+    }
+    &.standalone-pane-heading p.MuiTypography-root:hover {
+      text-decoration: none;
     }
     &.minimap-light {
       background-color: var(--bright-blue-light);

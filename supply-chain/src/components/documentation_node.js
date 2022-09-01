@@ -59,7 +59,7 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
+            marginTop: (parent === null) ? "1px" : "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
         {(currSelectedNode !== null) && !isStage &&
@@ -68,6 +68,13 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div style={{width: "20%"}}>
+          {!(hasMaterials || hasTools) &&
+            <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
+              <Typography component={"p"}>
+                {meta["name"]}
+              </Typography>
+            </div>
+          }
           {(hasMaterials || hasTools) &&
             <div style={{textAlign: "left"}}>
               <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
