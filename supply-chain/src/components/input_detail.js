@@ -24,16 +24,17 @@ const BarGraph = (props) => {
   const {countries, values} = props;
 
   const data = [{
-    x: countries,
-    y: values,
-    type: "bar"
+    x: values,
+    y: countries,
+    type: "bar",
+    orientation: "h"
   }];
 
   return (
     <div>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
-      layout={{autosize: true, margin: {t: 50, r: 50, b: 100, l: 50, pad: 4}, title: "Country Provision"}}
+      layout={{autosize: true, margin: {t: 50, r: 30, b: 30, l: 120, pad: 4}, title: "Country Provision"}}
       config={{responsive: true}}
     />
     </div>
@@ -41,7 +42,7 @@ const BarGraph = (props) => {
 };
 
 const InputDetail = (props) => {
-  const {selectedNode, parent, descriptions, countries, countryValues, orgs, orgMeta, variants, variantOf, updateSelected} = props;
+  const {selectedNode, parent, descriptions, countries, countryValues, orgs, orgMeta} = props;
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
   const iconStyle={verticalAlign: "middle", margin: "2px 5px"};
 
@@ -66,32 +67,31 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      {(variants !== undefined) && (
-        <div style={{marginBottom: "20px"}}>
-          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variants</Typography>
-          {variants.map((node) =>
-            <GraphNode node={node} currSelectedNode={selectedNode} parent={parent} inDocumentation={true} updateSelected={updateSelected} wide={true} key={node}
-                content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[node]["type"], iconStyle)}{nodeToMeta[node]["name"]}</p>}/>)}
-        </div>
-      )}
-      {(variantOf !== undefined) && (
-        <div style={{marginBottom: "20px"}}>
-          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Variant of</Typography>
-          <GraphNode node={variantOf} currSelectedNode={selectedNode} parent={parent} inDocumentation={true} updateSelected={updateSelected} wide={true}
-              content={<p style={{textAlign: "left"}}>{getIcon(nodeToMeta[variantOf]["type"], iconStyle)}{nodeToMeta[variantOf]["name"]}</p>}/>
-        </div>
-      )}
       {(orgs !== undefined) &&
         <div>
-          <Typography component={"p"} variant={"h6"} style={{marginBottom: "10px"}}>Provider Organizations</Typography>
-          {orgNames.map(org => (orgMeta[org] !== undefined) &&
-          <div key={org}>
-            {orgMeta[org]["hq"]} <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
-              {orgMeta[org]["name"]}
-            </Link>: {orgs[org]}
-          </div>
-        )
-        }</div>
+          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+            Provider Organizations
+          </Typography>
+          <table>
+            {orgNames.map(org => (orgMeta[org] !== undefined) &&
+              <tr key={org}>
+                <td>
+                  <Typography component="p">
+                    {orgMeta[org]["hq"] && <span className="org-flag">{orgMeta[org]["hq"]}</span>}
+                    <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
+                      {orgMeta[org]["name"]}
+                    </Link>
+                  </Typography>
+                </td>
+                <td>
+                  <Typography component="p">
+                    {orgs[org]}
+                  </Typography>
+                </td>
+              </tr>
+            )}
+          </table>
+        </div>
       }
       {hasCountries &&
         <div>

@@ -1,4 +1,6 @@
 import React from "react";
+import CircleIcon from '@mui/icons-material/Circle';
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import SvgIcon from '@mui/material/SvgIcon';
 
 const CogIcon = (props) => {
@@ -21,8 +23,18 @@ const BeakerIcon = (props) => {
   );
 }
 
-const getIcon = (nodeType, style) => {
- return nodeType === "tools" ? <CogIcon style={style}/> : <BeakerIcon style={style}/>;
+const getIcon = (nodeType, style, selected=false) => {
+  if (nodeType === "parent") {
+    if (selected) {
+      return <CircleIcon style={{...style, fontSize: "0.6rem", margin: "0px 0.4rem"}}/>;
+    } else {
+      return <CircleOutlinedIcon style={{...style, fontSize: "0.6rem", margin: "0px 0.4rem"}}/>;
+    }
+  } else if (nodeType === "tools") {
+    return <CogIcon style={style}/>;
+  } else {
+    return <BeakerIcon style={style}/>;
+  }
 };
 
 export default getIcon;

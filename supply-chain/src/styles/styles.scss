@@ -49,6 +49,9 @@ a {
   border-left: 10px solid var(--bright-blue-light);
   border-radius: 0px;
   padding: 20px 20px 10px 10px;
+  .MuiTypography-root {
+    font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+  }
   &:hover{
     cursor: -moz-zoom-in;
     cursor: -webkit-zoom-in;
@@ -58,10 +61,17 @@ a {
     color: var(--bright-blue);
     margin-right: 5px;
   }
+  h3.MuiTypography-root {
+    margin-bottom: 10px;
+  }
   .graph-sub-node {
     background-color: var(--bright-blue-lightest);
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    margin-bottom: 5px;
+    p.MuiTypography-root {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-family: GTZirkonLight;
+    }
     &:hover {
       text-decoration: underline;
     }
@@ -70,4 +80,104 @@ a {
 
 .stage-border {
   border-left: 10px solid var(--bright-blue);
+}
+
+.MuiPaper-root.documentation-node {
+  background-color: var(--grey-lightest);
+  border-top: 1px solid var(--bright-blue);
+  border-radius: 0px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 5px;
+  .MuiTypography-root {
+    font-family: GTZirkonLight;
+  }
+  p.MuiTypography-root {
+    font-size: 0.9rem;
+    text-align: left;
+    &.caption {
+      text-align: center;
+      color: var(--grey);
+      font-size: 0.8rem;
+    }
+  }
+  .MuiIconButton-root:hover {
+    background-color: unset;
+  }
+  .icon-wrapper {
+    border: 0;
+    background-color: unset;
+  }
+  .icon {
+    color: var(--bright-blue);
+  }
+  .star-icon {
+    color: var(--black);
+  }
+  .graph-node-icon {
+    margin-right: 5px;
+    color: var(--bright-blue);
+  }
+  .node-heading {
+    margin-bottom: 0.7rem;
+    &.selected-documentation-link {
+      font-family: GTZirkonBold;
+      .graph-node-icon {
+        color: var(--black);
+      }
+    }
+  }
+  .variants-heading {
+    font-family: GTZirkonBold;
+    margin-left: 20px;
+  }
+  .provision-heading {
+    font-family: GTZirkonBold;
+  }
+  .graph-node, .graph-sub-node {
+    width: unset;
+    background-color: unset;
+    border: 0px;
+    padding: 0px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: GTZirkonLight;
+
+    p.MuiTypography-root {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      text-align: left;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &.minimap-light {
+      background-color: var(--bright-blue-light);
+    }
+    &.minimap-dark {
+      background-color: var(--bright-blue);
+    }
+  }
+  img:hover {
+    cursor: pointer;
+  }
+  .graph-sub-node:hover {
+    text-decoration: underline;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+  }
+  table {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+    td {
+      width: 50%;
+      .org-flag {
+        margin-right: 5px;
+      }
+    }
+  }
 }
