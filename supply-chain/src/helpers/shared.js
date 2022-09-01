@@ -26,9 +26,9 @@ const BeakerIcon = (props) => {
 const getIcon = (nodeType, style, selected=false) => {
   if (nodeType === "parent") {
     if (selected) {
-      return <CircleIcon style={{...style, fontSize: "0.6rem"}}/>;
+      return <CircleIcon style={{...style, fontSize: "0.6rem", margin: "0px 0.4rem"}}/>;
     } else {
-      return <CircleOutlinedIcon style={{...style, fontSize: "0.6rem"}}/>;
+      return <CircleOutlinedIcon style={{...style, fontSize: "0.6rem", margin: "0px 0.4rem"}}/>;
     }
   } else if (nodeType === "tools") {
     return <CogIcon style={style}/>;
