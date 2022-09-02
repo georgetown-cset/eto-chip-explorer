@@ -202,12 +202,12 @@ class Preprocess:
             else:
                 threshold_tracker[node].sort(reverse=True)
             # Add up how many country shares it takes to reach the threshold
-            i = 0
+            num_countries = 0
             curr_threshold = 0
-            while curr_threshold < CONCENTRATION_THRESHOLD and i < len(threshold_tracker[node]):
-                curr_threshold += threshold_tracker[node][i]
-                i += 1
-            country_provision_concentration[node] = i if i > 0 else None
+            while curr_threshold < CONCENTRATION_THRESHOLD and num_countries < len(threshold_tracker[node]):
+                curr_threshold += threshold_tracker[node][num_countries]
+                num_countries += 1
+            country_provision_concentration[node] = num_countries if num_countries > 0 else None
         return country_provision_concentration
 
 

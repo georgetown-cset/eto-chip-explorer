@@ -66,7 +66,7 @@ const Dashboard = () => {
           if (!(countryName in currMapping)) {
             continue;
           }
-          for (const countryProvKey of Object.keys(currMapping[countryName])) {
+          for (const countryProvKey in currMapping[countryName]) {
             let provValue = currMapping[countryName][countryProvKey]
             // We round qualitative "major"/"minor" values to numerical approximations
             if (provValue === "Major") {
