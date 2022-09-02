@@ -246,7 +246,7 @@ class Preprocess:
             f.write(f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n")
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
-            f.write("\nexport {countryProvision, orgProvision, providerMeta};\n")
+            f.write("\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n")
 
     @staticmethod
     def write_descriptions(nodes_fi: str, stages_fi: str, output_dir: str) -> None:
