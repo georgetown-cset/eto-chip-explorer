@@ -10,6 +10,7 @@ const StageNode = (props) => {
   return (
     <div id={stage} style={{
       marginTop: "20px",
+      paddingTop: "10px",
       textAlign: "left",
     }}>
       <Typography component={"h3"}

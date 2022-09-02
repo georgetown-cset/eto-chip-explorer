@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
-import GraphNode, {MiniGraphNode} from "./graph_node";
+import GraphNode, {MiniGraphNode, getBackgroundGradient} from "./graph_node";
 import StageNode from "./stage_node";
 
 const Map = (props) => {
@@ -93,7 +93,7 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <div className="stage-border">
+    return <div className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
         <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
@@ -112,7 +112,12 @@ const Map = (props) => {
       </div>
     }
     else {
-      return <div className="stage-border">
+      // Making an assumption that the first node in the list has a stage provided
+      const stage = nodeToMeta[nodes[0]]?.["stage_id"];
+      let stageClassName = "stage-border";
+      if (!stage) {stageClassName += " uncolored"};
+      if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
+      return <div className={stageClassName}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>

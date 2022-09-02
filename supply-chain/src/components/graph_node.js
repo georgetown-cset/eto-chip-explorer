@@ -1,8 +1,5 @@
 import React from "react";
-import {useXarrow} from "react-xarrows";
-import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
@@ -11,14 +8,26 @@ import {nodeToMeta} from "../../data/graph";
 import getIcon from "../helpers/shared";
 
 export const NodeHeading = (props) => {
-  const {nodeType, nodeId, currSelectedNode, name} = props;
+  const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
   return (
     <Typography component="p" className={"node-heading" + ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")}>
-      <span className="graph-node-icon">{icon}</span>
+      <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
       <span>{name}</span>
     </Typography>
   )
+}
+
+export const getBackgroundGradient = (highlight, highlights) => {
+  let backgroundGradient = "gradient-100";
+  if (highlights && highlights.type === "gradient") {
+    if (highlight <= 20) {backgroundGradient = "gradient-20"}
+    else if (highlight <= 40) {backgroundGradient = "gradient-40"}
+    else if (highlight <= 60) {backgroundGradient = "gradient-60"}
+    else if (highlight <= 80) {backgroundGradient = "gradient-80"}
+    else {backgroundGradient = "gradient-100"};
+  }
+  return backgroundGradient;
 }
 
 export const SubNode = (props) => {
@@ -28,11 +37,10 @@ export const SubNode = (props) => {
 
   return (
     <div>
-      <Paper style={{backgroundColor: highlight !== 0 ? "rgba(229,191,33,"+highlight+")" : null, marginLeft: 10*depth+"px"}}
-             elevation={0}
-             className="graph-sub-node"
+      <Paper elevation={0}
+             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) : "")}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
-        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} />
+        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth} />
       </Paper>
       <Typography component={"div"} variant={"body2"}>
         {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.map((material) =>
@@ -70,12 +78,11 @@ const GraphNode = (props) => {
 
   return (
     <div style={{display: "inline-block", position: "relative"}}>
-      <Paper id={node} className={"graph-node"}
+      <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : "")}
         style={{
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),
           display: "inline-block",
-          backgroundColor: node in highlights ? "rgba(229,191,33,"+highlights[node]+")": null,
           width: wide ? "": "250px"
         }}
         onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}

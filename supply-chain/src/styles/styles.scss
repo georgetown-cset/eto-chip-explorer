@@ -7,7 +7,7 @@ body {
   font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
 }
 
-.MuiTypography-root {
+p.MuiTypography-root {
   font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
 }
 
@@ -48,9 +48,12 @@ a {
   background-color: var(--bright-blue-lightest);
   border-left: 10px solid var(--bright-blue-light);
   border-radius: 0px;
-  padding: 20px 20px 10px 10px;
+  padding: 20px 20px 10px 0px;
   .MuiTypography-root {
     font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+  }
+  h3.MuiTypography-root {
+    margin-left: 10px;
   }
   &:hover{
     cursor: -moz-zoom-in;
@@ -66,7 +69,13 @@ a {
   }
   .graph-sub-node {
     background-color: var(--bright-blue-lightest);
-    margin-bottom: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border-radius: 0px;
+    width: calc(10px + 100%);
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -80,6 +89,35 @@ a {
 
 .stage-border {
   border-left: 10px solid var(--bright-blue);
+  &.uncolored {
+    border-color: var(--white);
+  }
+}
+
+.graph-node, .stage-border {
+  &.highlighted, .graph-sub-node.highlighted {
+    background-color: var(--bright-blue-light);
+    --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
+    --bright-blue-light-hsl-g80: hsl(215, 100%, 80%);
+    --bright-blue-light-hsl-g60: hsl(215, 100%, 85%);
+    --bright-blue-light-hsl-g40: hsl(215, 100%, 90%);
+    --bright-blue-light-hsl-g20: hsl(215, 100%, 95%);
+    &.gradient-100 {
+      background-color: var(--bright-blue-light-hsl-g100);
+    }
+    &.gradient-80 {
+      background-color: var(--bright-blue-light-hsl-g80);
+    }
+    &.gradient-60 {
+      background-color: var(--bright-blue-light-hsl-g60);
+    }
+    &.gradient-40 {
+      background-color: var(--bright-blue-light-hsl-g40);
+    }
+    &.gradient-20 {
+      background-color: var(--bright-blue-light-hsl-g20);
+    }
+  }
 }
 
 .MuiPaper-root.documentation-node {

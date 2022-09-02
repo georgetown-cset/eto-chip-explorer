@@ -43,11 +43,35 @@ const Dashboard = () => {
     }
     const currMapping = filterToValues[highlighter];
     if(highlighter === "input-resource") {
-      const identityMap = {}
+      const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
       identityMap[currFilterValues[highlighter]] = 1
       setHighlights(identityMap)
     } else {
-      setHighlights(currMapping[currFilterValues[highlighter]]);
+      const countryMap = {"type" : "gradient"};  // Use gradient shading on nodes
+      for (const countryName of currFilterValues[highlighter]) {
+        // If countryName is "All", we ignore it
+        if (!(countryName in currMapping)) {
+          continue;
+        }
+        for (const countryProvKey of Object.keys(currMapping[countryName])) {
+          let provValue = currMapping[countryName][countryProvKey]
+          // We round qualitative "major"/"minor" values to numerical approximations
+          if (provValue === "Major") {
+            provValue = 80;
+          } else if (provValue === "Minor") {
+            provValue = 0;
+          }
+          if (isNaN(provValue)) {
+            continue;
+          }
+          if (countryProvKey in countryMap) {
+            countryMap[countryProvKey] += provValue;
+          } else {
+            countryMap[countryProvKey] = provValue;
+          }
+        }
+      }
+      setHighlights(countryMap);
     }
   };
 
@@ -153,7 +177,7 @@ const Dashboard = () => {
         Clear
       </Button>
     </Paper>
-    <div style={{display: "inline-block", minWidth: "700px", textAlign: "center"}}>
+    <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
       <Map highlights={highlights} />
     </div>
     <Footer/>
