@@ -183,9 +183,14 @@ class Preprocess:
         :param record: Row of provision data
         :return: Provision value
         """
+        print((len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0))
+        assert not ((len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0)), \
+            f"Record should have either minor share or provision, not both: {record}"
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
-        if record["minor_share"].strip():
+        share = record["minor_share"].strip()
+        if share:
+            assert share.lower() == MINOR_PROVISION.lower(), share
             return MINOR_PROVISION
         return MAJOR_PROVISION
 
@@ -249,7 +254,6 @@ class Preprocess:
         country_provision = {}
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
-                assert sum([not line["share_provided"], not line["minor_share"]]) > 0
                 provider_meta = self.provider_to_meta[line["provider_id"].strip()]
                 provider_name = provider_meta["name"]
                 provided = line["provided_id"]
