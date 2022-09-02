@@ -34,6 +34,8 @@ COUNTRY_MAPPING = {
     "Taiwan, Province of China": "Taiwan",
 }
 
+MAJOR_PROVISION = "Major"
+MINOR_PROVISION = "Minor"
 
 class Preprocess:
     def __init__(self, args):
@@ -161,9 +163,52 @@ class Preprocess:
         """
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
-        if not record["minor_share"].strip():
-            return "Minor"
-        return "Major"
+        if record["minor_share"].strip():
+            return MINOR_PROVISION
+        return MAJOR_PROVISION
+
+    def get_provision_concentration(self, country_provision):
+        """
+        Calculate how concentrated the country provision for each node is. This is
+        approximated as the number of countries it takes to account for 75% of the
+        market.
+        :param country_provision: The country provision dictionary, created in the
+            mk_provision function
+        :return: A dictionary mapping node ID to number of countries
+        """
+        CONCENTRATION_THRESHOLD = 75
+        # Create a mapping of a node to an array of country shares
+        threshold_tracker = {}
+        for country in country_provision:
+            for node in country_provision[country]:
+                provision_value = country_provision[country][node]
+                # We drop minor providers because they are not relevant for concentration purposes
+                if provision_value == MINOR_PROVISION:
+                    continue
+                if node not in threshold_tracker:
+                    threshold_tracker[node] = [provision_value]
+                else:
+                    threshold_tracker[node].append(provision_value)
+        country_provision_concentration = {}
+        # Sort the country shares so we can add them in descending order
+        for node in threshold_tracker:
+            if MAJOR_PROVISION in threshold_tracker[node]:
+                # Call the node highly concentrated if there are 2 or fewer "Major"
+                # providers, and not concentrated if there are 3 or more
+                if len(threshold_tracker[node]) < 3:
+                    threshold_tracker[node] = [80]
+                else:
+                    threshold_tracker[node] = [20, 20, 20, 20]
+            else:
+                threshold_tracker[node].sort(reverse=True)
+            # Add up how many country shares it takes to reach the threshold
+            num_countries = 0
+            curr_threshold = 0
+            while curr_threshold < CONCENTRATION_THRESHOLD and num_countries < len(threshold_tracker[node]):
+                curr_threshold += threshold_tracker[node][num_countries]
+                num_countries += 1
+            country_provision_concentration[node] = num_countries if num_countries > 0 else None
+        return country_provision_concentration
 
 
     def mk_provision(self, provision_fi: str, output_dir: str) -> None:
@@ -195,11 +240,13 @@ class Preprocess:
                     if provider_name not in org_provision:
                         org_provision[line["provider_id"]] = {}
                     org_provision[line["provider_id"]][provided] = self.get_provision(line)
+        country_provision_concentration = self.get_provision_concentration(country_provision)
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
             f.write(f"const countryProvision={json.dumps(country_provision)};\n")
+            f.write(f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n")
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
-            f.write("\nexport {countryProvision, orgProvision, providerMeta};\n")
+            f.write("\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n")
 
     @staticmethod
     def write_descriptions(nodes_fi: str, stages_fi: str, output_dir: str) -> None:

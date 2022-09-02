@@ -1,20 +1,21 @@
 import React, {useEffect} from "react";
 import { useTheme } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import Select from "@mui/material/Select";
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import Paper from "@mui/material/Paper";
 import { Header as ETOHeader, Footer, Dropdown } from "@eto/eto-ui-components";
 
 import Header from "./header";
 import Map from "./map";
 import { nodeToMeta } from "../../data/graph";
-import { countryProvision } from "../../data/provision";
+import { countryProvision, countryProvisionConcentration } from "../../data/provision";
 
 const Dashboard = () => {
+
+  const FILTER_INPUT = "input-resource";
+  const FILTER_COUNTRY = "country";
+  const FILTER_CONCENTRATION = "concentration";
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -35,56 +36,71 @@ const Dashboard = () => {
   };
 
   const getCurrentHighlights = (currFilterValues = filterValues) => {
-    let highlighter = "input-resource";
+    let highlighter = FILTER_INPUT;
     for(let fv in defaultFilterValues){
       if(defaultFilterValues[fv] !== currFilterValues[fv]){
         highlighter = fv;
       }
     }
     const currMapping = filterToValues[highlighter];
-    if(highlighter === "input-resource") {
+    if(highlighter === FILTER_INPUT) {
       const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
       identityMap[currFilterValues[highlighter]] = 1
       setHighlights(identityMap)
     } else {
-      const countryMap = {"type" : "gradient"};  // Use gradient shading on nodes
-      for (const countryName of currFilterValues[highlighter]) {
-        // If countryName is "All", we ignore it
-        if (!(countryName in currMapping)) {
-          continue;
-        }
-        for (const countryProvKey of Object.keys(currMapping[countryName])) {
-          let provValue = currMapping[countryName][countryProvKey]
-          // We round qualitative "major"/"minor" values to numerical approximations
-          if (provValue === "Major") {
-            provValue = 80;
-          } else if (provValue === "Minor") {
-            provValue = 0;
-          }
-          if (isNaN(provValue)) {
+      const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
+      if (highlighter === FILTER_CONCENTRATION) {
+        for (const nodeId in countryProvisionConcentration) {
+          const numCountries = countryProvisionConcentration[nodeId];
+          if (numCountries === 1) {  // Highly concentrated
+            highlightGradientMap[nodeId] = 81;
+          } else if (numCountries <= 3) {  // Medium concentrated
+            highlightGradientMap[nodeId] = 41;
+          } else {  // Not concentrated
             continue;
           }
-          if (countryProvKey in countryMap) {
-            countryMap[countryProvKey] += provValue;
-          } else {
-            countryMap[countryProvKey] = provValue;
+        }
+      } else if (highlighter === FILTER_COUNTRY) {
+        for (const countryName of currFilterValues[highlighter]) {
+          // If countryName is "All", we ignore it
+          if (!(countryName in currMapping)) {
+            continue;
+          }
+          for (const countryProvKey in currMapping[countryName]) {
+            let provValue = currMapping[countryName][countryProvKey]
+            // We round qualitative "major"/"minor" values to numerical approximations
+            if (provValue === "Major") {
+              provValue = 80;
+            } else if (provValue === "Minor") {
+              provValue = 0;
+            }
+            if (isNaN(provValue)) {
+              continue;
+            }
+            if (countryProvKey in highlightGradientMap) {
+              highlightGradientMap[countryProvKey] += provValue;
+            } else {
+              highlightGradientMap[countryProvKey] = provValue;
+            }
           }
         }
       }
-      setHighlights(countryMap);
+      setHighlights(highlightGradientMap);
     }
   };
 
   const inputToNode = getInputToNodes();
   const theme = useTheme();
-  const filterKeys = ["input-resource", "country"];
+  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_CONCENTRATION];
   const defaultFilterValues = {
-    "input-resource": "All",
-    "country": ["All"],
+    [FILTER_INPUT]: "All",
+    [FILTER_COUNTRY]: ["All"],
+    [FILTER_CONCENTRATION]: false,
   };
   const filterToValues = {
-    "input-resource": inputToNode,
-    "country": countryProvision
+    [FILTER_INPUT]: inputToNode,
+    [FILTER_COUNTRY]: countryProvision,
+    [FILTER_CONCENTRATION]: [true, false],
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
   const [highlights, setHighlights] = React.useState({});
@@ -96,7 +112,7 @@ const Dashboard = () => {
       updatedFilterValues[key] = val;
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues["input-resource"] != defaultFilterValues["input-resource"]) {
+    if (updatedFilterValues[FILTER_INPUT] != defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
     getCurrentHighlights(updatedFilterValues);
@@ -104,7 +120,7 @@ const Dashboard = () => {
     const urlParams = new URLSearchParams(window.location.search);
     for (const filterKey of filterKeys) {
       const filterVal = updatedFilterValues[filterKey];
-      if (filterVal) {
+      if (filterVal !== null) {
         if (filterVal === defaultFilterValues[filterKey]) {
           urlParams.delete(filterKey);
         } else {
@@ -117,7 +133,7 @@ const Dashboard = () => {
 
   // Functions to interface with ETO dropdown component
   const handleCountryChange = (val) => {
-    handleChange(val, "country");
+    handleChange(val, FILTER_COUNTRY);
   };
   const countryOptions = [{"val": "All", "text": "All"}];
   Object.keys(countryProvision).sort().filter((c) => c !== "Other").map((name) => (
@@ -125,7 +141,7 @@ const Dashboard = () => {
   ));
 
   const handleInputResourceChange = (val) => {
-    handleChange(val, "input-resource");
+    handleChange(val, FILTER_INPUT);
   };
   const inputResourceOptions = [{"val": "All", "text": "All"}];
   Object.keys(inputToNode).sort(
@@ -134,6 +150,10 @@ const Dashboard = () => {
     inputResourceOptions.push({"val": name, "text": nodeToMeta[name]["name"]})
   ));
 
+  const handleConcentrationChange = (evt) => {
+    handleChange(evt.target.checked, FILTER_CONCENTRATION);
+  };
+
   // Sets the state of the app based on the queries in the URL.
   // This will only run once, when the component is initially rendered.
   useEffect(() => {
@@ -141,8 +161,8 @@ const Dashboard = () => {
     const updatedFilterValues = {...defaultFilterValues};
     for (const filterKey of filterKeys) {
       let filterVal = urlParams.get(filterKey);
-      if (filterVal) {
-        if (filterKey === "country") {
+      if (filterVal !== null) {
+        if (filterKey === FILTER_COUNTRY) {
           // This is a multi-select, so we need to pass in an array
           filterVal = filterVal.split(",");
         }
@@ -150,7 +170,7 @@ const Dashboard = () => {
       }
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues["input-resource"] != defaultFilterValues["input-resource"]) {
+    if (updatedFilterValues[FILTER_INPUT] != defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
     getCurrentHighlights(updatedFilterValues);
@@ -163,23 +183,26 @@ const Dashboard = () => {
       className="filter-bar"
       elevation={0}
     >
-      <div style={{display: "inline-block"}}>
+      <div>
         <Dropdown
           inputLabel="Countries"
-          selected={filterValues["country"]}
+          selected={filterValues[FILTER_COUNTRY]}
           setSelected={handleCountryChange}
           multiple="true"
           options={countryOptions}
         />
       </div>
-      <div style={{display: "inline-block"}}>
+      <div>
         <Dropdown
           inputLabel="Inputs"
-          selected={filterValues["input-resource"]}
+          selected={filterValues[FILTER_INPUT]}
           setSelected={handleInputResourceChange}
           options={inputResourceOptions}
         />
       </div>
+      <FormControlLabel id="concentration-checkbox" control={
+        <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
+      } label="Show Concentration" />
       <Button id="clear-button" style={{float: "right", marginRight: "10px"}} onClick={(evt) => handleChange(evt, null)}>
         Clear
       </Button>

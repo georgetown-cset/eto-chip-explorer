@@ -1,5 +1,5 @@
-@import "../../../node_modules/@eto/eto-ui-components/dist/styles/colors.css";
-@import "../../../node_modules/@eto/eto-ui-components/dist/styles/fonts.css";
+@import "../../node_modules/@eto/eto-ui-components/dist/styles/colors.css";
+@import "../../node_modules/@eto/eto-ui-components/dist/styles/fonts.css";
 
 body {
   padding: 0;
@@ -35,6 +35,26 @@ a {
 
 .MuiPaper-root.filter-bar {
   background-color: var(--bright-blue-lightest);
+  display: flex;
+  align-items: flex-end;
+
+  .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
+    font-family: GTZirkonRegular;
+    color: var(--bright-blue);
+    text-transform: uppercase;
+  }
+
+  #concentration-checkbox {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: var(--bright-blue);
+    .MuiCheckbox-root {
+      padding-right: 3px;
+    }
+    .Mui-checked {
+      color: var(--bright-blue);
+    }
+  }
 
   #clear-button {
     text-transform: uppercase;
