@@ -1,7 +1,13 @@
 import copy
 import unittest
 
-from scripts.preprocess import Preprocess, MAJOR_PROVISION, MINOR_PROVISION, TOOLS, MATERIALS
+from scripts.preprocess import (
+    MAJOR_PROVISION,
+    MATERIALS,
+    MINOR_PROVISION,
+    TOOLS,
+    Preprocess,
+)
 
 
 class TestPreprocess(unittest.TestCase):
@@ -18,27 +24,49 @@ class TestPreprocess(unittest.TestCase):
         self.assertEqual("Malaysia", Preprocess.get_country("MAL"))
 
     def test_get_provision_concentration(self):
-        self.assertEqual({"N1": 2, "N2": 1}, Preprocess.get_provision_concentration({
-            "Malaysia": {"N1": 50, "N2": 100},
-            "United States": {"N1": 50}
-        }))
-        self.assertEqual({"N1": 4}, Preprocess.get_provision_concentration({
-            "Malaysia": {"N1": "Major"},
-            "United States": {"N1": "Major"},
-            "South Africa": {"N1": "Major"}
-        }))
-        self.assertEqual({"N1": 1}, Preprocess.get_provision_concentration({
-            "Malaysia": {"N1": "Major"},
-            "United States": {"N1": "Major"},
-            "South Africa": {"N1": "Minor"}
-        }))
+        self.assertEqual(
+            {"N1": 2, "N2": 1},
+            Preprocess.get_provision_concentration(
+                {"Malaysia": {"N1": 50, "N2": 100}, "United States": {"N1": 50}}
+            ),
+        )
+        self.assertEqual(
+            {"N1": 4},
+            Preprocess.get_provision_concentration(
+                {
+                    "Malaysia": {"N1": "Major"},
+                    "United States": {"N1": "Major"},
+                    "South Africa": {"N1": "Major"},
+                }
+            ),
+        )
+        self.assertEqual(
+            {"N1": 1},
+            Preprocess.get_provision_concentration(
+                {
+                    "Malaysia": {"N1": "Major"},
+                    "United States": {"N1": "Major"},
+                    "South Africa": {"N1": "Minor"},
+                }
+            ),
+        )
 
     def test_get_provision(self):
-        self.assertEqual(90, Preprocess.get_provision({"share_provided": "90%", "minor_share": ""}))
-        self.assertEqual(MAJOR_PROVISION, Preprocess.get_provision({"share_provided": "", "minor_share": ""}))
-        self.assertEqual(MINOR_PROVISION, Preprocess.get_provision({"share_provided": "", "minor_share": "Minor"}))
+        self.assertEqual(
+            90, Preprocess.get_provision({"share_provided": "90%", "minor_share": ""})
+        )
+        self.assertEqual(
+            MAJOR_PROVISION,
+            Preprocess.get_provision({"share_provided": "", "minor_share": ""}),
+        )
+        self.assertEqual(
+            MINOR_PROVISION,
+            Preprocess.get_provision({"share_provided": "", "minor_share": "Minor"}),
+        )
         with self.assertRaises(AssertionError):
-            Preprocess.get_provision({"share_provided": "", "minor_share": MAJOR_PROVISION})
+            Preprocess.get_provision(
+                {"share_provided": "", "minor_share": MAJOR_PROVISION}
+            )
         with self.assertRaises(AssertionError):
             Preprocess.get_provision({"share_provided": "30%", "minor_share": "Minor"})
 
@@ -69,7 +97,7 @@ class TestPreprocess(unittest.TestCase):
             {"input_id": "T1", "goes_into_id": "N3"},
             {"input_id": "T2", "goes_into_id": "N3"},
             {"input_id": "M1", "goes_into_id": "T1"},
-            {"input_id": "M1", "goes_into_id": "N6"}
+            {"input_id": "M1", "goes_into_id": "N6"},
         ]
         expected_graph = {
             "N1": ["N2", "N3"],
@@ -85,7 +113,7 @@ class TestPreprocess(unittest.TestCase):
             "N3": ["N1", "N4"],
             "N100": ["N2", "N3", "N7"],
             "N6": ["N5"],
-            "N7": ["N6"]
+            "N7": ["N6"],
         }
         expected_node_to_meta = copy.deepcopy(preproc.node_to_meta)
         expected_node_to_meta["N3"][TOOLS] = ["T1", "T2"]
@@ -99,7 +127,14 @@ class TestPreprocess(unittest.TestCase):
 
     def test_update_variants(self):
         preproc = Preprocess(None, is_test=True)
-        preproc.node_to_meta = {"N1": {}, "N2": {}, "N3": {}, "N4": {}, "N5": {}, "N6": {}}
+        preproc.node_to_meta = {
+            "N1": {},
+            "N2": {},
+            "N3": {},
+            "N4": {},
+            "N5": {},
+            "N6": {},
+        }
         self.assertTrue(preproc.update_variants("N1", "", {"is_type_of_id": "N4"}))
         with self.assertRaises(AssertionError):
             preproc.update_variants("N2", "", {"is_type_of_id": ""})

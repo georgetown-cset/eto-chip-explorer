@@ -106,7 +106,9 @@ class Preprocess:
                 return True
         for node in [parent, child]:
             assert node, f"Unexpected null node in {record}"
-            assert node in self.node_to_meta, f"Missing metadata for {node} from {record}"
+            assert (
+                node in self.node_to_meta
+            ), f"Missing metadata for {node} from {record}"
         return False
 
     def generate_graph(self, lines: iter) -> tuple:
@@ -134,9 +136,7 @@ class Preprocess:
                     graph_reverse[child] = []
                 graph_reverse[child].append(parent)
             else:
-                node_type = (
-                    MATERIALS if parent_type == "material_resource" else TOOLS
-                )
+                node_type = MATERIALS if parent_type == "material_resource" else TOOLS
                 self.node_to_meta[child][node_type].append(parent)
         return graph, graph_reverse
 
@@ -180,8 +180,9 @@ class Preprocess:
         :param record: Row of provision data
         :return: Provision value
         """
-        assert not ((len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0)), \
-            f"Record should have either minor share or provision, not both: {record}"
+        assert not (
+            (len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0)
+        ), f"Record should have either minor share or provision, not both: {record}"
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
         share = record["minor_share"].strip()
@@ -264,8 +265,8 @@ class Preprocess:
                         not in ["tool_resource", "material_resource", "stage"]
                     ):
                         print(
-                            f"unexpected country provision: {provided} "+
-                            self.node_to_meta.get(provided, {}).get("type", "")
+                            f"unexpected country provision: {provided} "
+                            + self.node_to_meta.get(provided, {}).get("type", "")
                         )
                 else:
                     if provider_name not in org_provision:
@@ -287,7 +288,9 @@ class Preprocess:
                 "\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n"
             )
 
-    def write_descriptions(self, nodes_fi: str, stages_fi: str, output_dir: str) -> None:
+    def write_descriptions(
+        self, nodes_fi: str, stages_fi: str, output_dir: str
+    ) -> None:
         """
         Write out node or stage descriptions as markdown
         :param nodes_fi: inputs csv
@@ -309,7 +312,7 @@ class Preprocess:
             for line in csv.DictReader(f):
                 self.node_to_meta[line["stage_id"]] = {
                     "name": line["stage_name"],
-                    "type": "stage"
+                    "type": "stage",
                 }
                 with open(
                     os.path.join(output_dir, line["stage_id"]) + ".mdx", mode="w"
