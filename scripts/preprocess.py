@@ -261,15 +261,11 @@ class Preprocess:
                     country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
                         self.node_to_meta[provided]["type"]
-                        not in ["tool_resource", "material_resource"]
+                        not in ["tool_resource", "material_resource", "stage"]
                     ):
                         print(
-                            f"unexpected country provision: {provided} "
-                            + (
-                                ""
-                                if provided not in self.node_to_meta
-                                else self.node_to_meta[provided]["type"]
-                            )
+                            f"unexpected country provision: {provided} "+
+                            self.node_to_meta.get(provided, {}).get("type", "")
                         )
                 else:
                     if provider_name not in org_provision:
@@ -291,8 +287,7 @@ class Preprocess:
                 "\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n"
             )
 
-    @staticmethod
-    def write_descriptions(nodes_fi: str, stages_fi: str, output_dir: str) -> None:
+    def write_descriptions(self, nodes_fi: str, stages_fi: str, output_dir: str) -> None:
         """
         Write out node or stage descriptions as markdown
         :param nodes_fi: inputs csv
@@ -312,6 +307,10 @@ class Preprocess:
                     out.write(line["description"])
         with open(stages_fi) as f:
             for line in csv.DictReader(f):
+                self.node_to_meta[line["stage_id"]] = {
+                    "name": line["stage_name"],
+                    "type": "stage"
+                }
                 with open(
                     os.path.join(output_dir, line["stage_id"]) + ".mdx", mode="w"
                 ) as out:
