@@ -120,7 +120,7 @@ const Dashboard = () => {
     const urlParams = new URLSearchParams(window.location.search);
     for (const filterKey of filterKeys) {
       const filterVal = updatedFilterValues[filterKey];
-      if (filterVal) {
+      if (filterVal !== null) {
         if (filterVal === defaultFilterValues[filterKey]) {
           urlParams.delete(filterKey);
         } else {
@@ -161,7 +161,7 @@ const Dashboard = () => {
     const updatedFilterValues = {...defaultFilterValues};
     for (const filterKey of filterKeys) {
       let filterVal = urlParams.get(filterKey);
-      if (filterVal) {
+      if (filterVal !== null) {
         if (filterKey === FILTER_COUNTRY) {
           // This is a multi-select, so we need to pass in an array
           filterVal = filterVal.split(",");
@@ -183,7 +183,7 @@ const Dashboard = () => {
       className="filter-bar"
       elevation={0}
     >
-      <div style={{display: "inline-block"}}>
+      <div>
         <Dropdown
           inputLabel="Countries"
           selected={filterValues[FILTER_COUNTRY]}
@@ -192,7 +192,7 @@ const Dashboard = () => {
           options={countryOptions}
         />
       </div>
-      <div style={{display: "inline-block"}}>
+      <div>
         <Dropdown
           inputLabel="Inputs"
           selected={filterValues[FILTER_INPUT]}
@@ -200,7 +200,7 @@ const Dashboard = () => {
           options={inputResourceOptions}
         />
       </div>
-      <FormControlLabel control={
+      <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show Concentration" />
       <Button id="clear-button" style={{float: "right", marginRight: "10px"}} onClick={(evt) => handleChange(evt, null)}>
