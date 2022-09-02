@@ -15,6 +15,8 @@ EXPECTED_TYPES = {
     "ultimate_output",
 }
 BASE_NODE_TYPES = {"process", "ultimate_output"}
+TOOLS = "tools"
+MATERIALS = "materials"
 
 # TODO: somewhat duplicative of CAT, refactor into shared lib
 COUNTRY_MAPPING = {
@@ -46,23 +48,24 @@ MINOR_PROVISION = "Minor"
 
 
 class Preprocess:
-    def __init__(self, args):
+    def __init__(self, args, is_test=False):
         self.node_to_meta = {}
         self.provider_to_meta = {}
         self.variants = {}
-        if not os.path.exists(args.output_dir):
-            os.makedirs(args.output_dir)
-        if not os.path.exists(args.output_images_dir):
-            os.makedirs(args.output_images_dir)
+        if not is_test:
+            if not os.path.exists(args.output_dir):
+                os.makedirs(args.output_dir)
+            if not os.path.exists(args.output_images_dir):
+                os.makedirs(args.output_images_dir)
 
-        self.mk_metadata(args.nodes)
-        self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
+            self.mk_metadata(args.nodes)
+            self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
-        self.write_graphs(args.sequence, args.output_dir)
-        self.mk_provider_to_meta(args.providers, args.basic_company_info)
-        self.write_provision(args.provision, args.output_dir)
-        if args.images:
-            self.mk_images(args.images_file, args.output_images_dir)
+            self.write_graphs(args.sequence, args.output_dir)
+            self.mk_provider_to_meta(args.providers, args.basic_company_info)
+            self.write_provision(args.provision, args.output_dir)
+            if args.images:
+                self.mk_images(args.images_file, args.output_images_dir)
 
     def mk_metadata(self, nodes: str):
         """
@@ -81,8 +84,8 @@ class Preprocess:
                     "stage_id": line["stage_id"],
                 }
                 assert node_type in EXPECTED_TYPES
-                self.node_to_meta[node_id]["materials"] = []
-                self.node_to_meta[node_id]["tools"] = []
+                self.node_to_meta[node_id][MATERIALS] = []
+                self.node_to_meta[node_id][TOOLS] = []
 
     def update_variants(self, parent: str, child: str, record: dict) -> bool:
         """
@@ -126,18 +129,16 @@ class Preprocess:
             parent_type = self.node_to_meta[parent]["type"]
             child_type = self.node_to_meta[child]["type"]
             if parent_type == "process":
-                if child_type in BASE_NODE_TYPES:
-                    if parent not in graph:
-                        graph[parent] = []
-                    graph[parent].append(child)
-                    if child not in graph_reverse:
-                        graph_reverse[child] = []
-                    graph_reverse[child].append(parent)
-                else:
-                    print(f"Unexpected lineage: {line}")
+                assert child_type in BASE_NODE_TYPES, f"Unexpected lineage: {line}"
+                if parent not in graph:
+                    graph[parent] = []
+                graph[parent].append(child)
+                if child not in graph_reverse:
+                    graph_reverse[child] = []
+                graph_reverse[child].append(parent)
             else:
                 node_type = (
-                    "materials" if parent_type == "material_resource" else "tools"
+                    MATERIALS if parent_type == "material_resource" else TOOLS
                 )
                 self.node_to_meta[child][node_type].append(parent)
         return graph, graph_reverse
