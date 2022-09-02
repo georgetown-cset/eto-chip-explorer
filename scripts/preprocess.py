@@ -165,7 +165,8 @@ class Preprocess:
             clean_country_name = raw_country_name
         return COUNTRY_MAPPING.get(clean_country_name, clean_country_name)
 
-    def get_provision(self, record: dict):
+    @staticmethod
+    def get_provision(record: dict):
         """
         Get numeric or descriptive provision value from row of provision data
         :param record: Row of provision data
@@ -177,7 +178,8 @@ class Preprocess:
             return MINOR_PROVISION
         return MAJOR_PROVISION
 
-    def get_provision_concentration(self, country_provision):
+    @staticmethod
+    def get_provision_concentration(country_provision):
         """
         Calculate how concentrated the country provision for each node is. This is
         approximated as the number of countries it takes to account for 75% of the
@@ -338,7 +340,7 @@ class Preprocess:
     def mk_images(images_fi: str, output_dir: str) -> None:
         """
         Downloads images from an airtable CSV and renames them according to their associated node
-        :param image_fi: Path to airtable CSV
+        :param images_fi: Path to airtable CSV
         :param output_dir: Path to output folder where images will be placed
         :return: None
         """
