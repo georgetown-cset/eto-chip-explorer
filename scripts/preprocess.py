@@ -78,6 +78,7 @@ class Preprocess:
             for line in csv.DictReader(f):
                 node_type = line["type"]
                 node_id = line["input_id"]
+                assert node_id not in self.node_to_meta, f"Duplicate id: {node_id}"
                 self.node_to_meta[node_id] = {
                     "name": line["input_name"],
                     "type": node_type,
