@@ -104,12 +104,8 @@ class Preprocess:
             if not child:
                 return True
         for node in [parent, child]:
-            if not node:
-                print(f"Unexpected null node in {record}")
-                return True
-            if node not in self.node_to_meta:
-                print(f"Missing meta for {node} from {record}")
-                return True
+            assert node, f"Unexpected null node in {record}"
+            assert node in self.node_to_meta, f"Missing metadata for {node} from {record}"
         return False
 
     def generate_graph(self, lines: iter) -> tuple:

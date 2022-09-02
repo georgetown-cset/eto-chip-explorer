@@ -98,4 +98,12 @@ class TestPreprocess(unittest.TestCase):
         self.assertEqual(expected_node_to_meta, preproc.node_to_meta)
 
     def test_update_variants(self):
-        pass
+        preproc = Preprocess(None, is_test=True)
+        preproc.node_to_meta = {"N1": {}, "N2": {}, "N3": {}, "N4": {}, "N5": {}, "N6": {}}
+        self.assertTrue(preproc.update_variants("N1", "", {"is_type_of_id": "N4"}))
+        with self.assertRaises(AssertionError):
+            preproc.update_variants("N2", "", {"is_type_of_id": ""})
+        with self.assertRaises(AssertionError):
+            preproc.update_variants("", "N7", {"is_type_of_id": ""})
+        self.assertFalse(preproc.update_variants("N2", "N3", {"is_type_of_id": "N4"}))
+        self.assertFalse(preproc.update_variants("N5", "N6", {"is_type_of_id": ""}))
