@@ -2,11 +2,18 @@ import argparse
 import csv
 import json
 import os
-import pycountry
 import re
 import urllib.request
 
-EXPECTED_TYPES = {"material_resource", "process", "stage", "tool_resource", "ultimate_output"}
+import pycountry
+
+EXPECTED_TYPES = {
+    "material_resource",
+    "process",
+    "stage",
+    "tool_resource",
+    "ultimate_output",
+}
 BASE_NODE_TYPES = {"process", "ultimate_output"}
 
 # TODO: somewhat duplicative of CAT, refactor into shared lib
@@ -36,6 +43,7 @@ COUNTRY_MAPPING = {
 
 MAJOR_PROVISION = "Major"
 MINOR_PROVISION = "Minor"
+
 
 class Preprocess:
     def __init__(self, args):
@@ -70,7 +78,7 @@ class Preprocess:
                 self.node_to_meta[node_id] = {
                     "name": line["input_name"],
                     "type": node_type,
-                    "stage_id": line["stage_id"]
+                    "stage_id": line["stage_id"],
                 }
                 assert node_type in EXPECTED_TYPES
                 self.node_to_meta[node_id]["materials"] = []
@@ -131,7 +139,9 @@ class Preprocess:
                     else:
                         print(f"Unexpected lineage: {line}")
                 else:
-                    node_type = "materials" if parent_type == "material_resource" else "tools"
+                    node_type = (
+                        "materials" if parent_type == "material_resource" else "tools"
+                    )
                     self.node_to_meta[child][node_type].append(parent)
         with open(os.path.join(output_dir, "graph.js"), mode="w") as f:
             f.write(f"const graph={json.dumps(graph)};\n")
@@ -204,12 +214,15 @@ class Preprocess:
             # Add up how many country shares it takes to reach the threshold
             num_countries = 0
             curr_threshold = 0
-            while curr_threshold < CONCENTRATION_THRESHOLD and num_countries < len(threshold_tracker[node]):
+            while curr_threshold < CONCENTRATION_THRESHOLD and num_countries < len(
+                threshold_tracker[node]
+            ):
                 curr_threshold += threshold_tracker[node][num_countries]
                 num_countries += 1
-            country_provision_concentration[node] = num_countries if num_countries > 0 else None
+            country_provision_concentration[node] = (
+                num_countries if num_countries > 0 else None
+            )
         return country_provision_concentration
-
 
     def mk_provision(self, provision_fi: str, output_dir: str) -> None:
         """
@@ -226,27 +239,46 @@ class Preprocess:
                 assert sum([not line["share_provided"], not line["minor_share"]]) > 0
                 provider_name = self.provider_to_meta[line["provider_id"]]["name"]
                 provided = line["provided_id"]
-                if self.provider_to_meta[line["provider_id"].strip()]["type"] == "country":
+                if (
+                    self.provider_to_meta[line["provider_id"].strip()]["type"]
+                    == "country"
+                ):
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
                     provision_share = self.get_provision(line)
                     country_provision[country_name][provided] = provision_share
-                    if (provided not in self.node_to_meta) or \
-                            (self.node_to_meta[provided]["type"] not in ["tool_resource", "material_resource"]):
-                        print(f"unexpected country provision: {provided} " +
-                              ("" if provided not in self.node_to_meta else self.node_to_meta[provided]["type"]))
+                    if (provided not in self.node_to_meta) or (
+                        self.node_to_meta[provided]["type"]
+                        not in ["tool_resource", "material_resource"]
+                    ):
+                        print(
+                            f"unexpected country provision: {provided} "
+                            + (
+                                ""
+                                if provided not in self.node_to_meta
+                                else self.node_to_meta[provided]["type"]
+                            )
+                        )
                 else:
                     if provider_name not in org_provision:
                         org_provision[line["provider_id"]] = {}
-                    org_provision[line["provider_id"]][provided] = self.get_provision(line)
-        country_provision_concentration = self.get_provision_concentration(country_provision)
+                    org_provision[line["provider_id"]][provided] = self.get_provision(
+                        line
+                    )
+        country_provision_concentration = self.get_provision_concentration(
+            country_provision
+        )
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
             f.write(f"const countryProvision={json.dumps(country_provision)};\n")
-            f.write(f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n")
+            f.write(
+                f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n"
+            )
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
-            f.write("\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n")
+            f.write(
+                "\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n"
+            )
 
     @staticmethod
     def write_descriptions(nodes_fi: str, stages_fi: str, output_dir: str) -> None:
@@ -262,12 +294,16 @@ class Preprocess:
         header_template = "#### {}\n\n"
         with open(nodes_fi) as f:
             for line in csv.DictReader(f):
-                with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
+                with open(
+                    os.path.join(output_dir, line["input_id"]) + ".mdx", mode="w"
+                ) as out:
                     out.write(header_template.format(line["input_name"]))
                     out.write(line["description"])
         with open(stages_fi) as f:
             for line in csv.DictReader(f):
-                with open(os.path.join(output_dir, line["stage_id"])+".mdx", mode="w") as out:
+                with open(
+                    os.path.join(output_dir, line["stage_id"]) + ".mdx", mode="w"
+                ) as out:
                     out.write(header_template.format(line["stage_name"]))
                     out.write(line["description"])
 
@@ -285,7 +321,7 @@ class Preprocess:
             for line in csv.DictReader(f):
                 self.provider_to_meta[line["provider_id"]] = {
                     "name": line["provider_name"],
-                    "type": line["provider_type"]
+                    "type": line["provider_type"],
                 }
                 name_to_id[line["provider_name"]] = line["provider_id"]
         with open(company_metadata_fi) as f:
@@ -293,7 +329,9 @@ class Preprocess:
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(line["HQ country"].strip()).flag
+                self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(
+                    line["HQ country"].strip()
+                ).flag
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod
@@ -312,7 +350,8 @@ class Preprocess:
                 file_type = image_fi.split(".")[-1]
                 urllib.request.urlretrieve(
                     image_fi,
-                    os.path.join(output_dir, line["Node ID for semi map"])+f".{file_type}"
+                    os.path.join(output_dir, line["Node ID for semi map"])
+                    + f".{file_type}",
                 )
 
 
@@ -322,13 +361,19 @@ if __name__ == "__main__":
     parser.add_argument("--sequence", default=os.path.join("data", "sequence.csv"))
     parser.add_argument("--stages", default=os.path.join("data", "stages.csv"))
     parser.add_argument("--providers", default=os.path.join("data", "providers.csv"))
-    parser.add_argument("--basic_company_info", default=os.path.join("data", "basic_company_info.csv"))
+    parser.add_argument(
+        "--basic_company_info", default=os.path.join("data", "basic_company_info.csv")
+    )
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
     parser.add_argument("--images", action="store_true")
     parser.add_argument("--images_file", default=os.path.join("data", "images.csv"))
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
-    parser.add_argument("--output_text_dir", default=os.path.join("supply-chain", "src", "pages"))
-    parser.add_argument("--output_images_dir", default=os.path.join("supply-chain", "src", "images"))
+    parser.add_argument(
+        "--output_text_dir", default=os.path.join("supply-chain", "src", "pages")
+    )
+    parser.add_argument(
+        "--output_images_dir", default=os.path.join("supply-chain", "src", "images")
+    )
     args = parser.parse_args()
 
     Preprocess(args)

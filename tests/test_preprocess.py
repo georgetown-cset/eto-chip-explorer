@@ -2,6 +2,7 @@ import unittest
 
 from scripts.preprocess import Preprocess
 
+
 class TestPreprocess(unittest.TestCase):
     def test_get_country_alpha3(self):
         self.assertEqual("United States", Preprocess.get_country("USA"))

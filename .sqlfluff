@@ -1,0 +1,8 @@
+[sqlfluff]
+dialect=bigquery
+indent_unit = space
+exclude_rules = L014,L018,L027,L032,L042,L044
+
+[sqlfluff:rules]
+tab_space_size = 2
+max_line_length = 120
