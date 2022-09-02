@@ -13,7 +13,7 @@ import getIcon from "../helpers/shared";
 import GraphNode, { NodeHeading, SubNode } from "./graph_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
+  const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {
@@ -166,7 +166,8 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           }
         </div>
-        <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}>
+        <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
+          onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
           <span className="icon"><CancelIcon/></span>
         </IconButton>
 

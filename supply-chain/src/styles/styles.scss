@@ -154,6 +154,9 @@ a {
   .icon-wrapper {
     border: 0;
     background-color: unset;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .icon {
     color: var(--bright-blue);

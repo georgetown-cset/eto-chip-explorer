@@ -8,7 +8,7 @@ import GraphNode, {MiniGraphNode, getBackgroundGradient} from "./graph_node";
 import StageNode from "./stage_node";
 
 const Map = (props) => {
-  const {highlights, filterValues, defaultFilterValues} = props;
+  const {highlights, filterValues, defaultFilterValues, documentationPanelToggle, setDocumentationPanelToggle} = props;
   // Keeps track of the selected node, which can be a process node or a process input/tool/material
   const [selectedNode, setSelectedNode] = React.useState(null);
   // Keeps track of the parent node, which must be a process node. This is used to keep track of
@@ -278,10 +278,10 @@ const Map = (props) => {
     standaloneMinimapLayers.unshift(mkLayer(unattached, true, true, true));
     return (
       <div>
-        {filterValues["input-resource"] !== defaultFilterValues["input-resource"] &&
+        {filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
           <DocumentationNode node={filterValues["input-resource"]} parent={null}
-            descriptions={descriptions} images={images} isStage={false}
-            updateSelected={updateSelected} currSelectedNode={filterValues["input-resource"]}
+            descriptions={descriptions} images={images} isStage={false} standalone={true}
+            updateSelected={setDocumentationPanelToggle} currSelectedNode={filterValues["input-resource"]}
             minimap={standaloneMinimapLayers} />
         }
         <Xwrapper>
