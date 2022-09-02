@@ -150,7 +150,6 @@ class Preprocess:
         with open(sequence) as f:
             lines = csv.DictReader(f)
             graph, graph_reverse = self.generate_graph(lines)
-        graph_reverse = {}
         with open(os.path.join(output_dir, "graph.js"), mode="w") as f:
             f.write(f"const graph={json.dumps(graph)};\n")
             f.write(f"const graphReverse={json.dumps(graph_reverse)};\n")
@@ -180,7 +179,6 @@ class Preprocess:
         :param record: Row of provision data
         :return: Provision value
         """
-        print((len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0))
         assert not ((len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0)), \
             f"Record should have either minor share or provision, not both: {record}"
         if record["share_provided"]:
