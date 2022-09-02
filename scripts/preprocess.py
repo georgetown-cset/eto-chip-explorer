@@ -60,7 +60,7 @@ class Preprocess:
 
         self.write_graphs(args.sequence, args.output_dir)
         self.mk_provider_to_meta(args.providers, args.basic_company_info)
-        self.mk_provision(args.provision, args.output_dir)
+        self.write_provision(args.provision, args.output_dir)
         if args.images:
             self.mk_images(args.images_file, args.output_images_dir)
 
@@ -109,6 +109,39 @@ class Preprocess:
                 return True
         return False
 
+    def generate_graph(self, lines: iter) -> tuple:
+        """
+        Generates dicts specifying a graph of process nodes, and associates nodes with their inputs
+        :param lines: iterable of dict-like objects corresponding to node edge list
+        :return: A tuple of the graph dict (parents: children) and its reverse (children: parents)
+        """
+        graph = {}
+        graph_reverse = {}
+        for line in lines:
+            parent = line["input_id"]
+            child = line["goes_into_id"]
+            skip = self.update_variants(parent, child, line)
+            if skip:
+                continue
+            parent_type = self.node_to_meta[parent]["type"]
+            child_type = self.node_to_meta[child]["type"]
+            if parent_type == "process":
+                if child_type in BASE_NODE_TYPES:
+                    if parent not in graph:
+                        graph[parent] = []
+                    graph[parent].append(child)
+                    if child not in graph_reverse:
+                        graph_reverse[child] = []
+                    graph_reverse[child].append(parent)
+                else:
+                    print(f"Unexpected lineage: {line}")
+            else:
+                node_type = (
+                    "materials" if parent_type == "material_resource" else "tools"
+                )
+                self.node_to_meta[child][node_type].append(parent)
+        return graph, graph_reverse
+
     def write_graphs(self, sequence: str, output_dir: str) -> None:
         """
         Parses a csv that specifies node type, the edges between nodes, and node variants
@@ -117,32 +150,10 @@ class Preprocess:
         :param output_dir: directory where graph metadata should be written
         :return: None
         """
-        graph = {}
-        graph_reverse = {}
         with open(sequence) as f:
-            for line in csv.DictReader(f):
-                parent = line["input_id"]
-                child = line["goes_into_id"]
-                skip = self.update_variants(parent, child, line)
-                if skip:
-                    continue
-                parent_type = self.node_to_meta[parent]["type"]
-                child_type = self.node_to_meta[child]["type"]
-                if parent_type == "process":
-                    if child_type in BASE_NODE_TYPES:
-                        if parent not in graph:
-                            graph[parent] = []
-                        graph[parent].append(child)
-                        if child not in graph_reverse:
-                            graph_reverse[child] = []
-                        graph_reverse[child].append(parent)
-                    else:
-                        print(f"Unexpected lineage: {line}")
-                else:
-                    node_type = (
-                        "materials" if parent_type == "material_resource" else "tools"
-                    )
-                    self.node_to_meta[child][node_type].append(parent)
+            lines = csv.DictReader(f)
+            graph, graph_reverse = self.generate_graph(lines)
+        graph_reverse = {}
         with open(os.path.join(output_dir, "graph.js"), mode="w") as f:
             f.write(f"const graph={json.dumps(graph)};\n")
             f.write(f"const graphReverse={json.dumps(graph_reverse)};\n")
@@ -226,7 +237,7 @@ class Preprocess:
             )
         return country_provision_concentration
 
-    def mk_provision(self, provision_fi: str, output_dir: str) -> None:
+    def write_provision(self, provision_fi: str, output_dir: str) -> None:
         """
         Create metadata for providers
         :param provision_fi: provision csv
@@ -239,12 +250,10 @@ class Preprocess:
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
                 assert sum([not line["share_provided"], not line["minor_share"]]) > 0
-                provider_name = self.provider_to_meta[line["provider_id"]]["name"]
+                provider_meta = self.provider_to_meta[line["provider_id"].strip()]
+                provider_name = provider_meta["name"]
                 provided = line["provided_id"]
-                if (
-                    self.provider_to_meta[line["provider_id"].strip()]["type"]
-                    == "country"
-                ):
+                if provider_meta["type"] == "country":
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
