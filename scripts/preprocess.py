@@ -5,7 +5,6 @@ import os
 import pycountry
 import re
 import urllib.request
-from pprint import pprint
 
 EXPECTED_TYPES = {"material_resource", "process", "stage", "tool_resource", "ultimate_output"}
 BASE_NODE_TYPES = {"process", "ultimate_output"}
@@ -42,20 +41,20 @@ class Preprocess:
     def __init__(self, args):
         self.node_to_meta = {}
         self.provider_to_meta = {}
-        # self.variants = {}
-        # if not os.path.exists(args.output_dir):
-        #     os.makedirs(args.output_dir)
-        # if not os.path.exists(args.output_images_dir):
-        #     os.makedirs(args.output_images_dir)
+        self.variants = {}
+        if not os.path.exists(args.output_dir):
+            os.makedirs(args.output_dir)
+        if not os.path.exists(args.output_images_dir):
+            os.makedirs(args.output_images_dir)
 
         self.mk_metadata(args.nodes)
-        # self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
+        self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
-        # self.write_graphs(args.sequence, args.output_dir)
+        self.write_graphs(args.sequence, args.output_dir)
         self.mk_provider_to_meta(args.providers, args.basic_company_info)
         self.mk_provision(args.provision, args.output_dir)
-        # if args.images:
-        #     self.mk_images(args.images_file, args.output_images_dir)
+        if args.images:
+            self.mk_images(args.images_file, args.output_images_dir)
 
     def mk_metadata(self, nodes: str):
         """
