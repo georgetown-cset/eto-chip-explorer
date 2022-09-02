@@ -8,7 +8,7 @@ import GraphNode, {MiniGraphNode, getBackgroundGradient} from "./graph_node";
 import StageNode from "./stage_node";
 
 const Map = (props) => {
-  const {highlights} = props;
+  const {highlights, filterValues, defaultFilterValues, documentationPanelToggle, setDocumentationPanelToggle} = props;
   // Keeps track of the selected node, which can be a process node or a process input/tool/material
   const [selectedNode, setSelectedNode] = React.useState(null);
   // Keeps track of the parent node, which must be a process node. This is used to keep track of
@@ -54,6 +54,7 @@ const Map = (props) => {
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
   const minimapLayers = [];
+  const standaloneMinimapLayers = [];
   const data = useStaticQuery(graphql`
   query getData {
       allFile(filter: {sourceInstanceName: {eq: "images"}}) {
@@ -103,11 +104,12 @@ const Map = (props) => {
     </div>
   }
 
-  const mkLayer = (nodes, isUnattached=false, minimap=false) => {
+  const mkLayer = (nodes, isUnattached=false, minimap=false, standalone=false) => {
     if (minimap) {
       return <div>
         {nodes.map(node =>
-          <MiniGraphNode node={node} key={node} parent={parentNode} currSelectedNode={selectedNode}/>
+          <MiniGraphNode node={node} key={node} parent={standalone ? null : parentNode} standalone={standalone}
+            currSelectedNode={standalone ? filterValues["input-resource"] : selectedNode}/>
         )}
       </div>
     }
@@ -133,11 +135,11 @@ const Map = (props) => {
 
   const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
 
-  const mkEdges = (edges, nodeToPosition, nodeToLayerNumber, minimap=false) => {
+  const mkEdges = (edges, nodeToPosition, nodeToLayerNumber, minimap=false, standalone=false) => {
     return <div>
       {edges.map(edge => {
-        let startEdge = edge[0] + (minimap ? "-minimap" : "");
-        let endEdge = edge[1] + (minimap ? "-minimap" : "");
+        let startEdge = edge[0] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");
+        let endEdge = edge[1] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");
         let fromDirection = "bottom";
         let toDirection = "top";
         let gridBreak = "50%";
@@ -193,7 +195,8 @@ const Map = (props) => {
   const mkGraph = () => {
     let currNodes = [finalNode];
     const layers = [mkLayer(currNodes)];
-    minimapLayers.push(mkLayer(currNodes, false, true))
+    minimapLayers.push(mkLayer(currNodes, false, true));
+    standaloneMinimapLayers.push(mkLayer(currNodes, false, true, true));
     const seen = new Set();
     currNodes.map(n => seen.add(n));
     // To help us figure out how to draw arrows
@@ -246,6 +249,8 @@ const Map = (props) => {
       layers.push(layer);
       const minimapLayer = mkLayer(orderedLayerNodes, false, true);
       minimapLayers.push(minimapLayer);
+      const standaloneMinimapLayer = mkLayer(orderedLayerNodes, false, true, true);
+      standaloneMinimapLayers.push(standaloneMinimapLayer);
       // Add edges for the current layer
       const centerPoint = orderedLayerNodes.length/2 - 0.5;
       orderedLayerNodes.forEach((node, idx) => {
@@ -256,10 +261,13 @@ const Map = (props) => {
       layers.push(edges);
       const minimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true);
       minimapLayers.push(minimapEdges);
+      const standaloneMinimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true, true);
+      standaloneMinimapLayers.push(standaloneMinimapEdges);
       layerNumber += 1;
     }
     layers.reverse();
     minimapLayers.reverse();
+    standaloneMinimapLayers.reverse();
     const unattached = [];
     for(let node in nodeToMeta){
       if((! seen.has(node)) && (nodeToMeta[node]["type"] === "process")){
@@ -267,8 +275,15 @@ const Map = (props) => {
       }
     }
     minimapLayers.unshift(mkLayer(unattached, true, true));
+    standaloneMinimapLayers.unshift(mkLayer(unattached, true, true, true));
     return (
       <div>
+        {filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
+          <DocumentationNode node={filterValues["input-resource"]} parent={null}
+            descriptions={descriptions} images={images} isStage={false} standalone={true}
+            updateSelected={setDocumentationPanelToggle} currSelectedNode={filterValues["input-resource"]}
+            minimap={standaloneMinimapLayers} />
+        }
         <Xwrapper>
           <div>{mkStage(nodeToMeta[unattached[0]]["stage_id"])}</div>
           <div>{mkLayer(unattached, true)}</div>

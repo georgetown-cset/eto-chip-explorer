@@ -11,7 +11,13 @@ export const NodeHeading = (props) => {
   const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
   return (
-    <Typography component="p" className={"node-heading" + ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")}>
+    <Typography component="p"
+      className={
+        "node-heading" +
+        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "") +
+        ((nodeType === "parent") ? " top-documentation-link" : "")
+      }
+    >
       <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
       <span>{name}</span>
     </Typography>
@@ -142,11 +148,11 @@ const GraphNode = (props) => {
 };
 
 export const MiniGraphNode = (props) => {
-  const {node, currSelectedNode, parent} = props;
+  const {node, currSelectedNode, parent, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   return (
-    <div id={`${node}-minimap`} className={`graph-node ${node === parent ? "minimap-dark" : "minimap-light"}`}
+    <div id={`${node}-minimap` + (standalone ? "-standalone" : "") } className={`graph-node ${node === parent ? "minimap-dark" : "minimap-light"}`}
       style={{
         margin: "5px",
         display: "inline-block",

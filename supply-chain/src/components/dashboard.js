@@ -88,6 +88,7 @@ const Dashboard = () => {
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
   const [highlights, setHighlights] = React.useState({});
+  const [documentationPanelToggle, setDocumentationPanelToggle] = React.useState(false);
 
   const handleChange = (val, key) => {
     const updatedFilterValues = {...defaultFilterValues};
@@ -95,6 +96,9 @@ const Dashboard = () => {
       updatedFilterValues[key] = val;
     }
     setFilterValues(updatedFilterValues);
+    if (updatedFilterValues["input-resource"] != defaultFilterValues["input-resource"]) {
+      setDocumentationPanelToggle(true);
+    }
     getCurrentHighlights(updatedFilterValues);
     // Put filter values in URL parameters.
     const urlParams = new URLSearchParams(window.location.search);
@@ -146,13 +150,16 @@ const Dashboard = () => {
       }
     }
     setFilterValues(updatedFilterValues);
+    if (updatedFilterValues["input-resource"] != defaultFilterValues["input-resource"]) {
+      setDocumentationPanelToggle(true);
+    }
     getCurrentHighlights(updatedFilterValues);
   }, []);
 
   return (<div>
     <ETOHeader/>
     <Header/>
-    <Paper style={{paddingBottom: "20px", marginBottom: "5px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+    <Paper style={{paddingBottom: "20px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
@@ -178,7 +185,8 @@ const Dashboard = () => {
       </Button>
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
-      <Map highlights={highlights} />
+      <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
+        documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle} />
     </div>
     <Footer/>
   </div>);

@@ -13,7 +13,7 @@ import getIcon from "../helpers/shared";
 import GraphNode, { NodeHeading, SubNode } from "./graph_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap} = props;
+  const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {
@@ -59,7 +59,7 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            marginTop: "-15px", marginBottom: "20px", marginLeft: "10px",
+            marginTop: (parent === null) ? "1px" : "-15px", marginBottom: "20px", marginLeft: "10px",
             position: "relative",
       }}>
         {(currSelectedNode !== null) && !isStage &&
@@ -68,6 +68,13 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div style={{width: "20%"}}>
+          {!(hasMaterials || hasTools) &&
+            <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
+              <Typography component={"p"}>
+                {meta["name"]}
+              </Typography>
+            </div>
+          }
           {(hasMaterials || hasTools) &&
             <div style={{textAlign: "left"}}>
               <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
@@ -159,7 +166,8 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           }
         </div>
-        <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}} onClick={(evt) => updateSelected(evt, null, null)}>
+        <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
+          onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
           <span className="icon"><CancelIcon/></span>
         </IconButton>
 
