@@ -148,11 +148,11 @@ const GraphNode = (props) => {
 };
 
 export const MiniGraphNode = (props) => {
-  const {node, currSelectedNode, parent} = props;
+  const {node, currSelectedNode, parent, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   return (
-    <div id={`${node}-minimap`} className={`graph-node ${node === parent ? "minimap-dark" : "minimap-light"}`}
+    <div id={`${node}-minimap` + (standalone ? "-standalone" : "") } className={`graph-node ${node === parent ? "minimap-dark" : "minimap-light"}`}
       style={{
         margin: "5px",
         display: "inline-block",
