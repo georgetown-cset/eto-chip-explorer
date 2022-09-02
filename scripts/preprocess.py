@@ -163,7 +163,7 @@ class Preprocess:
         """
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
-        if not record["minor_share"].strip():
+        if record["minor_share"].strip():
             return MINOR_PROVISION
         return MAJOR_PROVISION
 
@@ -182,20 +182,26 @@ class Preprocess:
         for country in country_provision:
             for node in country_provision[country]:
                 provision_value = country_provision[country][node]
-                if provision_value == MAJOR_PROVISION:
-                    provision_value = 80
-                elif provision_value == MINOR_PROVISION:
-                    provision_value = 20
+                # We drop minor providers because they are not relevant for concentration purposes
+                if provision_value == MINOR_PROVISION:
+                    continue
                 if node not in threshold_tracker:
                     threshold_tracker[node] = [provision_value]
                 else:
                     threshold_tracker[node].append(provision_value)
-        # Sort the country shares so we can add them in descending order
-        for arr in threshold_tracker.values():
-            arr.sort(reverse=True)
-        # Add up how many country shares it takes to reach the threshold
         country_provision_concentration = {}
+        # Sort the country shares so we can add them in descending order
         for node in threshold_tracker:
+            if MAJOR_PROVISION in threshold_tracker[node]:
+                # Call the node highly concentrated if there are 2 or fewer "Major"
+                # providers, and not concentrated if there are 3 or more
+                if len(threshold_tracker[node]) < 3:
+                    threshold_tracker[node] = [80]
+                else:
+                    threshold_tracker[node] = [20, 20, 20, 20]
+            else:
+                threshold_tracker[node].sort(reverse=True)
+            # Add up how many country shares it takes to reach the threshold
             i = 0
             curr_threshold = 0
             while curr_threshold < CONCENTRATION_THRESHOLD and i < len(threshold_tracker[node]):
