@@ -77,7 +77,7 @@ const DocumentationNode = (props) => {
           }
           {(hasMaterials || hasTools) &&
             <div style={{textAlign: "left"}}>
-              <GraphNode node={parent} highlights={highlights} parent={parent} inDocumentation={true} wide={true}
+              <GraphNode node={parent} parent={parent} inDocumentation={true} wide={true}
                 updateSelected={updateSelected} currSelectedNode={currSelectedNode}
                 content={<NodeHeading nodeType="parent" nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
             </div>
@@ -86,22 +86,21 @@ const DocumentationNode = (props) => {
             <div style={{textAlign: "left"}}>
               {nodeToMeta[parent]["materials"].map((node) =>
                 <div>
-                  <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                  <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                       updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                      content={<NodeHeading nodeType={nodeToMeta[node]["type"]} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
+                      content={<NodeHeading nodeType={"materials"} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
                   {variants[node] &&
                     <div>
                       <Typography className="variants-heading" component={"p"}>Variants</Typography>
                       {variants[node].map((variant) =>
-                        <SubNode nodeType={nodeToMeta[variant]["type"]}
+                        <SubNode nodeType={"materials"}
                           name={nodeToMeta[variant]["name"]}
                           key={nodeToMeta[variant]["name"]}
                           nodeId={variant}
                           metadata={nodeToMeta}
-                          highlight={variant in highlights ? highlights[variant] : 0}
+                          highlight={0}
                           updateSelected={updateSelected}
                           parent={parent}
-                          highlights={highlights}
                           depth={2}
                           currSelectedNode={currSelectedNode}
                         />
@@ -116,22 +115,21 @@ const DocumentationNode = (props) => {
             <div style={{textAlign: "left"}}>
               {nodeToMeta[parent]["tools"].map((node) =>
                 <div>
-                  <GraphNode node={node} highlights={highlights} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                  <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                       updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                      content={<NodeHeading nodeType={nodeToMeta[node]["type"]} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
+                      content={<NodeHeading nodeType={"tools"} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
                   {variants[node] &&
                     <div>
                       <Typography className="variants-heading" component={"p"}>Variants</Typography>
                       {variants[node].map((variant) =>
-                        <SubNode nodeType={nodeToMeta[variant]["type"]}
+                        <SubNode nodeType={"tools"}
                           name={nodeToMeta[variant]["name"]}
                           key={nodeToMeta[variant]["name"]}
                           nodeId={variant}
                           metadata={nodeToMeta}
-                          highlight={variant in highlights ? highlights[variant] : 0}
+                          highlight={0}
                           updateSelected={updateSelected}
                           parent={parent}
-                          highlights={highlights}
                           depth={2}
                           currSelectedNode={currSelectedNode}
                         />
