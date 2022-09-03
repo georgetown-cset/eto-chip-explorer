@@ -9,13 +9,14 @@ import { Header as ETOHeader, Footer, Dropdown } from "@eto/eto-ui-components";
 import Header from "./header";
 import Map from "./map";
 import { nodeToMeta } from "../../data/graph";
-import { countryProvision, countryProvisionConcentration } from "../../data/provision";
+import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 
 const Dashboard = () => {
 
   const FILTER_INPUT = "input-resource";
   const FILTER_COUNTRY = "country";
   const FILTER_CONCENTRATION = "concentration";
+  const FILTER_ORG = "organization";
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -45,7 +46,7 @@ const Dashboard = () => {
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
       const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
-      identityMap[currFilterValues[highlighter]] = 1
+      identityMap[currFilterValues[highlighter]] = 1;
       setHighlights(identityMap)
     } else {
       const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
@@ -91,15 +92,17 @@ const Dashboard = () => {
 
   const inputToNode = getInputToNodes();
   const theme = useTheme();
-  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_CONCENTRATION];
+  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
     [FILTER_INPUT]: "All",
     [FILTER_COUNTRY]: ["All"],
+    [FILTER_ORG]: ["All"],
     [FILTER_CONCENTRATION]: false,
   };
   const filterToValues = {
     [FILTER_INPUT]: inputToNode,
     [FILTER_COUNTRY]: countryProvision,
+    [FILTER_ORG]: orgProvision,
     [FILTER_CONCENTRATION]: [true, false],
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
@@ -132,17 +135,11 @@ const Dashboard = () => {
   };
 
   // Functions to interface with ETO dropdown component
-  const handleCountryChange = (val) => {
-    handleChange(val, FILTER_COUNTRY);
-  };
   const countryOptions = [{"val": "All", "text": "All"}];
   Object.keys(countryProvision).sort().filter((c) => c !== "Other").map((name) => (
     countryOptions.push({"val": name, "text": name})
   ));
 
-  const handleInputResourceChange = (val) => {
-    handleChange(val, FILTER_INPUT);
-  };
   const inputResourceOptions = [{"val": "All", "text": "All"}];
   Object.keys(inputToNode).sort(
     (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
@@ -150,9 +147,37 @@ const Dashboard = () => {
     inputResourceOptions.push({"val": name, "text": nodeToMeta[name]["name"]})
   ));
 
+  const organizationOptions = [{"val": "All", "text": "All"}];
+  Object.keys(orgProvision).sort(
+    (a, b) => ('' + providerMeta[a]["name"]).localeCompare(providerMeta[b]["name"])
+  ).map((name) => (
+    organizationOptions.push({"val": name, "text": providerMeta[name]["name"]})
+  ));
+
   const handleConcentrationChange = (evt) => {
     handleChange(evt.target.checked, FILTER_CONCENTRATION);
   };
+
+  const dropdownParams = [
+    {
+      "label": "Countries",
+      "key": FILTER_COUNTRY,
+      "multiple": true,
+      "options": countryOptions
+    },
+    {
+      "label": "Inputs",
+      "key": FILTER_INPUT,
+      "multiple": false,
+      "options": inputResourceOptions
+    },
+    {
+      "label": "Organizations",
+      "key": FILTER_ORG,
+      "multiple": true,
+      "options": organizationOptions
+    },
+  ];
 
   // Sets the state of the app based on the queries in the URL.
   // This will only run once, when the component is initially rendered.
@@ -183,23 +208,18 @@ const Dashboard = () => {
       className="filter-bar"
       elevation={0}
     >
-      <div>
-        <Dropdown
-          inputLabel="Countries"
-          selected={filterValues[FILTER_COUNTRY]}
-          setSelected={handleCountryChange}
-          multiple="true"
-          options={countryOptions}
-        />
-      </div>
-      <div>
-        <Dropdown
-          inputLabel="Inputs"
-          selected={filterValues[FILTER_INPUT]}
-          setSelected={handleInputResourceChange}
-          options={inputResourceOptions}
-        />
-      </div>
+      {dropdownParams.map((dropdown) =>
+        <div>
+          <Dropdown
+            inputLabel={dropdown.label}
+            selected={filterValues[dropdown.key]}
+            setSelected={(evt) => handleChange(evt, dropdown.key)}
+            multiple={dropdown.multiple}
+            options={dropdown.options}
+            key={dropdown.label}
+          />
+        </div>
+      )}
       <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show Concentration" />
