@@ -17,6 +17,7 @@ const Dashboard = () => {
   const FILTER_COUNTRY = "country";
   const FILTER_CONCENTRATION = "concentration";
   const FILTER_ORG = "organization";
+  const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -61,14 +62,14 @@ const Dashboard = () => {
             continue;
           }
         }
-      } else if (highlighter === FILTER_COUNTRY) {
-        for (const countryName of currFilterValues[highlighter]) {
-          // If countryName is "All", we ignore it
-          if (!(countryName in currMapping)) {
+      } else if (MULTI_FILTERS.includes(highlighter)) {
+        for (const name of currFilterValues[highlighter]) {
+          // If name is "All", we ignore it
+          if (!(name in currMapping)) {
             continue;
           }
-          for (const countryProvKey in currMapping[countryName]) {
-            let provValue = currMapping[countryName][countryProvKey]
+          for (const provKey in currMapping[name]) {
+            let provValue = currMapping[name][provKey]
             // We round qualitative "major"/"minor" values to numerical approximations
             if (provValue === "Major") {
               provValue = 80;
@@ -78,10 +79,10 @@ const Dashboard = () => {
             if (isNaN(provValue)) {
               continue;
             }
-            if (countryProvKey in highlightGradientMap) {
-              highlightGradientMap[countryProvKey] += provValue;
+            if (provKey in highlightGradientMap) {
+              highlightGradientMap[provKey] += provValue;
             } else {
-              highlightGradientMap[countryProvKey] = provValue;
+              highlightGradientMap[provKey] = provValue;
             }
           }
         }
@@ -162,19 +163,16 @@ const Dashboard = () => {
     {
       "label": "Countries",
       "key": FILTER_COUNTRY,
-      "multiple": true,
       "options": countryOptions
     },
     {
       "label": "Inputs",
       "key": FILTER_INPUT,
-      "multiple": false,
       "options": inputResourceOptions
     },
     {
       "label": "Organizations",
       "key": FILTER_ORG,
-      "multiple": true,
       "options": organizationOptions
     },
   ];
@@ -187,7 +185,7 @@ const Dashboard = () => {
     for (const filterKey of filterKeys) {
       let filterVal = urlParams.get(filterKey);
       if (filterVal !== null) {
-        if (filterKey === FILTER_COUNTRY) {
+        if (MULTI_FILTERS.includes(filterKey)) {
           // This is a multi-select, so we need to pass in an array
           filterVal = filterVal.split(",");
         }
@@ -214,7 +212,7 @@ const Dashboard = () => {
             inputLabel={dropdown.label}
             selected={filterValues[dropdown.key]}
             setSelected={(evt) => handleChange(evt, dropdown.key)}
-            multiple={dropdown.multiple}
+            multiple={MULTI_FILTERS.includes(dropdown.key)}
             options={dropdown.options}
             key={dropdown.label}
           />
