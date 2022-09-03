@@ -113,7 +113,11 @@ const Dashboard = () => {
   const handleChange = (val, key) => {
     const updatedFilterValues = {...defaultFilterValues};
     if (key !== null) {
-      updatedFilterValues[key] = val;
+      if (MULTI_FILTERS.includes(key) && val.length > 0){
+        updatedFilterValues[key] = val.filter((v) => v !== "All");
+      } else {
+        updatedFilterValues[key] = val;
+      }
     }
     setFilterValues(updatedFilterValues);
     if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
