@@ -113,8 +113,13 @@ const Dashboard = () => {
   const handleChange = (val, key) => {
     const updatedFilterValues = {...defaultFilterValues};
     if (key !== null) {
-      if (MULTI_FILTERS.includes(key) && val.length > 0){
-        updatedFilterValues[key] = val.filter((v) => v !== "All");
+      if (MULTI_FILTERS.includes(key) && (val.length > 1)){
+        if(filterValues[key].includes("All")){
+          updatedFilterValues[key] = val.filter((v) => v !== "All");
+        } else {
+          // if the user has just added the all value, clear out the rest of the values
+          updatedFilterValues[key] = val.includes("All") ? ["All"] : val;
+        }
       } else {
         updatedFilterValues[key] = val;
       }
