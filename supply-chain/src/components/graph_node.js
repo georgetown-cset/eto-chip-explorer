@@ -83,7 +83,7 @@ const GraphNode = (props) => {
     (("tools" in meta) && (meta["tools"].length > 0));
 
   return (
-    <div style={{display: "inline-block", position: "relative"}}>
+    <div style={{display: "inline-block", position: "relative", verticalAlign: "middle"}}>
       <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : "")}
         style={{
           margin: wide ? "" : "20px 25px",
@@ -158,6 +158,7 @@ export const MiniGraphNode = (props) => {
         display: "inline-block",
         height: "10px",
         width: "20px",
+        verticalAlign: "middle"
       }}
     >
       {(meta["materials"]?.includes(currSelectedNode) || meta["tools"]?.includes(currSelectedNode) || (node === parent && node !== currSelectedNode)) &&
