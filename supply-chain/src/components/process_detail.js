@@ -1,14 +1,11 @@
-import React, { useEffect } from "react";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import {nodeToMeta} from "../../data/graph";
+import React from "react";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import mdxComponents from "../helpers/mdx_style";
 
 
 const ProcessDetail = (props) => {
-  const {selectedNode, parent, descriptions, highlights, updateSelected} = props;
+  const {selectedNode, descriptions} = props;
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px"}}>

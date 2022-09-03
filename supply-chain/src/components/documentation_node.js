@@ -9,7 +9,6 @@ import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
-import getIcon from "../helpers/shared";
 import GraphNode, { NodeHeading, SubNode } from "./graph_node";
 
 const DocumentationNode = (props) => {
@@ -43,12 +42,43 @@ const DocumentationNode = (props) => {
     return nodeToOrgProvision;
   };
 
+  const getInputList = (input_type) => {
+    return (
+      <div style={{textAlign: "left"}}>
+        {nodeToMeta[parent][input_type].map((node) =>
+          <div>
+            <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
+                updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
+                content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
+            {variants[node] &&
+              <div>
+                <Typography className="variants-heading" component={"p"}>Variants</Typography>
+                {variants[node].map((variant) =>
+                  <SubNode nodeType={input_type}
+                    name={nodeToMeta[variant]["name"]}
+                    key={nodeToMeta[variant]["name"]}
+                    nodeId={variant}
+                    metadata={nodeToMeta}
+                    highlight={0}
+                    updateSelected={updateSelected}
+                    parent={parent}
+                    depth={2}
+                    currSelectedNode={currSelectedNode}
+                  />
+                )}
+              </div>
+            }
+          </div>
+        )}
+      </div>
+    )
+  };
+
   const nodeToCountryProvision = getNodeToCountryProvision();
   const nodeToOrgProvision = getNodeToOrgProvision();
 
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
-  const iconStyle= {verticalAlign: "middle", margin: "2px 5px"};
 
   // For image modal
   const [open, setOpen] = React.useState(false);
@@ -68,78 +98,20 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div style={{width: "20%"}}>
-          {!(hasMaterials || hasTools) &&
+          {!(hasMaterials || hasTools) ?
             <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
               <Typography component={"p"}>
                 {meta["name"]}
               </Typography>
-            </div>
-          }
-          {(hasMaterials || hasTools) &&
+            </div> :
             <div style={{textAlign: "left"}}>
               <GraphNode node={parent} parent={parent} inDocumentation={true} wide={true}
                 updateSelected={updateSelected} currSelectedNode={currSelectedNode}
                 content={<NodeHeading nodeType="parent" nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
             </div>
           }
-          {hasMaterials &&
-            <div style={{textAlign: "left"}}>
-              {nodeToMeta[parent]["materials"].map((node) =>
-                <div>
-                  <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
-                      updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                      content={<NodeHeading nodeType={"materials"} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
-                  {variants[node] &&
-                    <div>
-                      <Typography className="variants-heading" component={"p"}>Variants</Typography>
-                      {variants[node].map((variant) =>
-                        <SubNode nodeType={"materials"}
-                          name={nodeToMeta[variant]["name"]}
-                          key={nodeToMeta[variant]["name"]}
-                          nodeId={variant}
-                          metadata={nodeToMeta}
-                          highlight={0}
-                          updateSelected={updateSelected}
-                          parent={parent}
-                          depth={2}
-                          currSelectedNode={currSelectedNode}
-                        />
-                      )}
-                    </div>
-                  }
-                </div>
-              )}
-            </div>
-          }
-          {hasTools &&
-            <div style={{textAlign: "left"}}>
-              {nodeToMeta[parent]["tools"].map((node) =>
-                <div>
-                  <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
-                      updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                      content={<NodeHeading nodeType={"tools"} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
-                  {variants[node] &&
-                    <div>
-                      <Typography className="variants-heading" component={"p"}>Variants</Typography>
-                      {variants[node].map((variant) =>
-                        <SubNode nodeType={"tools"}
-                          name={nodeToMeta[variant]["name"]}
-                          key={nodeToMeta[variant]["name"]}
-                          nodeId={variant}
-                          metadata={nodeToMeta}
-                          highlight={0}
-                          updateSelected={updateSelected}
-                          parent={parent}
-                          depth={2}
-                          currSelectedNode={currSelectedNode}
-                        />
-                      )}
-                    </div>
-                  }
-                </div>
-              )}
-            </div>
-          }
+          {hasMaterials && getInputList("materials")}
+          {hasTools && getInputList("tools")}
         </div>
         <div style={{width: "60%"}}>
           {images !== undefined && images.filter(i => i.name === node)[0] &&
@@ -147,22 +119,20 @@ const DocumentationNode = (props) => {
               <img src={images.filter(i => i.name === node)[0]?.publicURL}
                 style={{maxWidth: "300px", height: "auto" }}
                 onClick={() => setOpen(true)}
+                alt={node}
               />
               <Typography component="p" className="caption">
-                Placeholder image caption
               </Typography>
             </div>
           }
-          {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] === "process") &&
-            <ProcessDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
-                        updateSelected={updateSelected} highlights={highlights}/>
-          }
-          {(currSelectedNode !== null) && (nodeToMeta[currSelectedNode]?.["type"] !== "process") &&
-            <InputDetail selectedNode={currSelectedNode} parent={parent} descriptions={descriptions}
+          {(currSelectedNode !== null) && (
+            (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
+              <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
                         countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
-                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
-          }
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} /> :
+              <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
+          )}
         </div>
         <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
           onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
@@ -185,7 +155,7 @@ const DocumentationNode = (props) => {
             boxShadow: 24,
             p: 4,
           }}>
-            <img src={images.filter(i => i.name === node)[0]?.publicURL}
+            <img src={images.filter(i => i.name === node)[0]?.publicURL} alt={node}
               style={{maxWidth: "600px", height: "auto"}}
             />
             <Typography component="p" className="caption">

@@ -112,7 +112,7 @@ const Dashboard = () => {
       updatedFilterValues[key] = val;
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues[FILTER_INPUT] != defaultFilterValues[FILTER_INPUT]) {
+    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
     getCurrentHighlights(updatedFilterValues);
@@ -170,7 +170,7 @@ const Dashboard = () => {
       }
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues[FILTER_INPUT] != defaultFilterValues[FILTER_INPUT]) {
+    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
     getCurrentHighlights(updatedFilterValues);
