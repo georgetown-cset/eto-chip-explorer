@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import InfoIcon from '@mui/icons-material/Info';
+import {nodeToMeta} from "../../data/graph";
 
 const StageNode = (props) => {
   const {stage, parent, updateSelected} = props;
@@ -19,7 +20,7 @@ const StageNode = (props) => {
           paddingLeft: "5px",
           display: "inline-block",
       }}>
-        {stage}
+        {nodeToMeta[stage]["name"]}
       </Typography>
       <Button
         style={{
