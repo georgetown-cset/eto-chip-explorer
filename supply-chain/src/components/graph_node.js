@@ -89,7 +89,7 @@ const GraphNode = (props) => {
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),
           display: "inline-block",
-          width: wide ? "": "250px"
+          width: wide ? "": "320px",
         }}
         onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}
         elevation={0}
@@ -102,7 +102,7 @@ const GraphNode = (props) => {
             </Typography>
           }
           {!(inDocumentation && node === parent) && showInputs &&
-            <Typography component={"div"} variant={"body2"}>
+            <Typography component={"div"} variant={"body2"} style={{padding: "10px"}}>
               {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
                 <SubNode nodeType={"materials"}
                         name={nodeToMeta[material]["name"]}
