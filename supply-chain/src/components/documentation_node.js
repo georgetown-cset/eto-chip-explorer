@@ -12,7 +12,7 @@ import InputDetail from "./input_detail";
 import GraphNode, { NodeHeading, SubNode } from "./graph_node";
 
 const DocumentationNode = (props) => {
-  const {node, highlights = {}, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
+  const {node, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {

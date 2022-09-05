@@ -4,9 +4,9 @@ import Button from "@mui/material/Button";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Paper from "@mui/material/Paper";
-import { Header as ETOHeader, Footer, Dropdown } from "@eto/eto-ui-components";
+import Typography from "@mui/material/Typography";
+import { AppIntro, AppWrapper, Dropdown } from "@eto/eto-ui-components";
 
-import Header from "./header";
 import Map from "./map";
 import { nodeToMeta } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
@@ -208,10 +208,18 @@ const Dashboard = () => {
     getCurrentHighlights(updatedFilterValues);
   }, []);
 
-  return (<div>
-    <ETOHeader/>
-    <Header/>
-    <Paper style={{paddingBottom: "20px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+  return (<AppWrapper>
+    <div style={{margin: "40px 20px 40px 100px", maxWidth: "1200px"}}>
+    <AppIntro title={"Supply Chain Explorer"} content={<Typography component={"div"} variant={"body1"}>
+      ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
+      This edition of the Explorer covers the essential tools, materials, processes, countries,
+      and firms involved in producing advanced logic chips. It’s built to help users who are not
+      semiconductor experts get up to speed on how this essential technology is produced, and
+      to allow users of all backgrounds to visually explore how different inputs, companies,
+      and nations interact in the production process.
+    </Typography>}/>
+    </div>
+    <Paper style={{padding: "20px 0px 20px 10px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
@@ -229,7 +237,7 @@ const Dashboard = () => {
       <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show Concentration" />
-      <Button id="clear-button" style={{marginLeft: "auto", marginRight: "10px", fontSize: "1rem"}} onClick={(evt) => handleChange(evt, null)}>
+      <Button id="clear-button" style={{marginLeft: "20px", fontSize: "1rem"}} variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
         Clear
       </Button>
     </Paper>
@@ -237,8 +245,7 @@ const Dashboard = () => {
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle} />
     </div>
-    <Footer/>
-  </div>);
+  </AppWrapper>);
 };
 
 export default Dashboard;
