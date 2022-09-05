@@ -97,7 +97,7 @@ const Map = (props) => {
     return <div key={stage} className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
-        <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+        <DocumentationNode node={selectedNode} parent={parentNode}
           descriptions={descriptions} images={images} isStage={true}
           updateSelected={updateSelected} currSelectedNode={selectedNode}/>
       }
@@ -119,13 +119,13 @@ const Map = (props) => {
       let stageClassName = "stage-border";
       if (!stage) {stageClassName += " uncolored"};
       if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
-      return <div className={stageClassName} key={JSON.stringify(nodes)}>>
+      return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
         )}
         {nodes.includes(parentNode) &&
-          <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+          <DocumentationNode node={selectedNode} parent={parentNode}
             descriptions={descriptions} images={images} isStage={false}
             updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
         }
