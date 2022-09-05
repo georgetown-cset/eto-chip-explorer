@@ -31,7 +31,16 @@ const BarGraph = (props) => {
     <div>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
-      layout={{autosize: true, margin: {t: 50, r: 30, b: 30, l: 120, pad: 4}, title: "Country Provision"}}
+      layout={{
+        autosize: true,
+        margin: {t: 50, r: 30, b: 30, l: 120, pad: 4},
+        title: "Country Provision",
+        font: {
+          family: "GTZirkonRegular, Arial"
+        },
+        paper_bgcolor: "rgba(0,0,0,0)",
+        plot_bgcolor: "rgba(0,0,0,0)"
+      }}
       config={{responsive: true}}
     />
     </div>
@@ -59,7 +68,7 @@ const InputDetail = (props) => {
   }
 
   return (
-    <div style={{display: "inline-block", padding: "0px 40px"}}>
+    <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
@@ -69,6 +78,7 @@ const InputDetail = (props) => {
             Provider Organizations
           </Typography>
           <table>
+            <tbody>
             {orgNames.map(org => (orgMeta[org] !== undefined) &&
               <tr key={org}>
                 <td>
@@ -86,6 +96,7 @@ const InputDetail = (props) => {
                 </td>
               </tr>
             )}
+            </tbody>
           </table>
         </div>
       }

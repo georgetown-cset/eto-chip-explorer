@@ -46,7 +46,7 @@ const DocumentationNode = (props) => {
     return (
       <div style={{textAlign: "left"}}>
         {nodeToMeta[parent][input_type].map((node) =>
-          <div>
+          <div key={parent+input_type+node}>
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
                 content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
@@ -134,7 +134,7 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
           )}
         </div>
-        <IconButton class="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
+        <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
           onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
           <span className="icon"><CancelIcon/></span>
         </IconButton>
