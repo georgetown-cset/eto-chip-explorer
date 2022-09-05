@@ -102,7 +102,7 @@ const GraphNode = (props) => {
             </Typography>
           }
           {!(inDocumentation && node === parent) && showInputs &&
-            <Typography component={"div"} variant={"body2"} style={{padding: "10px"}}>
+            <Typography component={"div"} variant={"body2"} style={{paddingRight: "10px"}}>
               {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
                 <SubNode nodeType={"materials"}
                         name={nodeToMeta[material]["name"]}
@@ -162,7 +162,7 @@ export const MiniGraphNode = (props) => {
       }}
     >
       {(meta["materials"]?.includes(currSelectedNode) || meta["tools"]?.includes(currSelectedNode) || (node === parent && node !== currSelectedNode)) &&
-        <span class="star-icon">
+        <span className="star-icon">
           <StarIcon
             style={{
               display: "inline-block",

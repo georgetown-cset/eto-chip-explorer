@@ -94,7 +94,7 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <div className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
+    return <div key={stage} className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
         <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
@@ -106,7 +106,7 @@ const Map = (props) => {
 
   const mkLayer = (nodes, isUnattached=false, minimap=false, standalone=false) => {
     if (minimap) {
-      return <div>
+      return <div key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <MiniGraphNode node={node} key={node} parent={standalone ? null : parentNode} standalone={standalone}
             currSelectedNode={standalone ? filterValues["input-resource"] : selectedNode}/>
@@ -119,7 +119,7 @@ const Map = (props) => {
       let stageClassName = "stage-border";
       if (!stage) {stageClassName += " uncolored"};
       if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
-      return <div className={stageClassName}>
+      return <div className={stageClassName} key={JSON.stringify(nodes)}>>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
@@ -136,7 +136,7 @@ const Map = (props) => {
   const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
 
   const mkEdges = (edges, nodeToPosition, nodeToLayerNumber, minimap=false, standalone=false) => {
-    return <div>
+    return <div key={JSON.stringify(edges)}>
       {edges.map(edge => {
         let startEdge = edge[0] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");
         let endEdge = edge[1] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");

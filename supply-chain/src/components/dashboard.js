@@ -216,21 +216,20 @@ const Dashboard = () => {
       elevation={0}
     >
       {dropdownParams.map((dropdown) =>
-        <div>
+        <div key={dropdown.label}>
           <Dropdown
             inputLabel={dropdown.label}
             selected={filterValues[dropdown.key]}
             setSelected={(evt) => handleChange(evt, dropdown.key)}
             multiple={MULTI_FILTERS.includes(dropdown.key)}
             options={dropdown.options}
-            key={dropdown.label}
           />
         </div>
       )}
       <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show Concentration" />
-      <Button id="clear-button" style={{float: "right", marginRight: "10px"}} onClick={(evt) => handleChange(evt, null)}>
+      <Button id="clear-button" style={{marginLeft: "auto", marginRight: "10px", fontSize: "1rem"}} onClick={(evt) => handleChange(evt, null)}>
         Clear
       </Button>
     </Paper>
