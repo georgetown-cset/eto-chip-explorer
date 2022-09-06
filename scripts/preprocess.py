@@ -265,7 +265,9 @@ class Preprocess:
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
-                        country_flags[country_name] = self.get_country(provider_name, flag=True)
+                        country_flags[country_name] = self.get_country(
+                            provider_name, flag=True
+                        )
                     provision_share = self.get_provision(line)
                     country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
