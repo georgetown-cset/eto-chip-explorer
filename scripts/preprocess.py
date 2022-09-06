@@ -272,9 +272,7 @@ class Preprocess:
                 else:
                     if provider_id not in org_provision:
                         org_provision[provider_id] = {}
-                    org_provision[provider_id][provided] = self.get_provision(
-                        line
-                    )
+                    org_provision[provider_id][provided] = self.get_provision(line)
         country_provision_concentration = self.get_provision_concentration(
             country_provision
         )
