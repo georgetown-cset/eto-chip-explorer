@@ -298,3 +298,43 @@ a {
     }
   }
 }
+
+/* Mobile view styling */
+
+.graph-node-wrapper {
+  display: block;
+}
+
+.graph-arrows-wrapper {
+  display: none;
+}
+
+.graph-node-connections-text {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-family: GTZirkonLight;
+  .connection-text {
+    .bold {
+      font-family: GTZirkonBold;
+      margin-right: 5px;
+    }
+  }
+}
+
+/* Desktop styling */
+
+@media (min-width: 1220px) {
+  .graph-node-wrapper {
+    display: inline-block;
+  }
+
+  .graph-arrows-wrapper {
+    display: unset;
+  }
+
+  .graph-node-connections-text {
+    display: none;
+  }
+}

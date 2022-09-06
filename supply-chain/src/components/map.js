@@ -136,7 +136,7 @@ const Map = (props) => {
   const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
 
   const mkEdges = (edges, nodeToPosition, nodeToLayerNumber, minimap=false, standalone=false) => {
-    return <div key={JSON.stringify(edges)}>
+    return <div className="graph-arrows-wrapper" key={JSON.stringify(edges)}>
       {edges.map(edge => {
         let startEdge = edge[0] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");
         let endEdge = edge[1] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");

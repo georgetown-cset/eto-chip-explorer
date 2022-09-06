@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
-import {nodeToMeta} from "../../data/graph";
+import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
 import getIcon from "../helpers/shared";
 
@@ -82,7 +82,7 @@ const GraphNode = (props) => {
     (("tools" in meta) && (meta["tools"].length > 0));
 
   return (
-    <div style={{display: "inline-block", position: "relative", verticalAlign: "middle"}}>
+    <div className="graph-node-wrapper" style={{position: "relative", verticalAlign: "middle"}}>
       <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : "")}
         style={{
           margin: wide ? "" : "20px 25px",
@@ -99,6 +99,30 @@ const GraphNode = (props) => {
             <Typography component="h3">
               {meta["name"]}
             </Typography>
+          }
+          {!inDocumentation &&
+            <div className="graph-node-connections-text">
+              {graphReverse[node] &&
+                <div className="connection-text">
+                  <span className="bold">
+                    Parent(s):
+                  </span>
+                  <span>
+                    {graphReverse[node].map((n) => nodeToMeta[n].name).join(", ")}
+                  </span>
+                </div>
+              }
+              {graph[node] &&
+                <div className="connection-text">
+                  <span className="bold">
+                    Child(ren):
+                  </span>
+                  <span>
+                    {graph[node].map((n) => nodeToMeta[n].name).join(", ")}
+                  </span>
+                </div>
+              }
+            </div>
           }
           {!(inDocumentation && node === parent) && showInputs &&
             <Typography component={"div"} variant={"body2"} style={{paddingRight: "10px"}}>
