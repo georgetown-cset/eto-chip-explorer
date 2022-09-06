@@ -170,17 +170,17 @@ const Dashboard = () => {
 
   const dropdownParams = [
     {
-      "label": "Countries",
-      "key": FILTER_COUNTRY,
-      "options": countryOptions
-    },
-    {
-      "label": "Inputs",
+      "label": "Jump to input",
       "key": FILTER_INPUT,
       "options": inputResourceOptions
     },
     {
-      "label": "Organizations",
+      "label": "Supplier countries",
+      "key": FILTER_COUNTRY,
+      "options": countryOptions
+    },
+    {
+      "label": "Supplier companies",
       "key": FILTER_ORG,
       "options": organizationOptions
     },
@@ -236,7 +236,7 @@ const Dashboard = () => {
       )}
       <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
-      } label="Show Concentration" />
+      } label="Show supplier concentration" />
       <Button id="clear-button" style={{marginLeft: "20px", fontSize: "1rem"}} variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
         Clear
       </Button>
