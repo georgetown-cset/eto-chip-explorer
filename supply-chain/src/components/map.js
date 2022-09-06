@@ -225,6 +225,22 @@ const Map = (props) => {
         }
         filtEdges.push(edge);
         if(!seen.has(parent)) {
+          // Nodes N59 and N60 get special handling.
+          // By default, these nodes would appear near the bottom of stage 2.
+          // However, because they are a parent to almost every node in stage 2,
+          // it makes more sense if they appear near the top (especially in mobile
+          // view where arrows cannot provide guidance to the user).
+          // Therefore, this algorithm skips placing these two nodes in the map
+          // until we reach the top of stage 2 (node N35), although we still
+          // need to assign them a position and layer number to make the arrows
+          // behave correctly.
+          if (((parent === "N59") || (parent === "N60")) && (!seen.has("N35"))) {
+            nodeToPosition["N59"] = -1;
+            nodeToLayerNumber["N59"] = layerNumber;
+            nodeToPosition["N60"] = 1;
+            nodeToLayerNumber["N60"] = layerNumber;
+            continue;
+          }
           currNodes.push(parent);
         }
         seen.add(parent);
