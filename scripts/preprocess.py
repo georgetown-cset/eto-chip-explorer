@@ -251,7 +251,8 @@ class Preprocess:
         country_provision = {}
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
-                provider_meta = self.provider_to_meta[line["provider_id"].strip()]
+                provider_id = line["provider_id"].strip()
+                provider_meta = self.provider_to_meta[provider_id]
                 provider_name = provider_meta["name"]
                 provided = line["provided_id"]
                 if provider_meta["type"] == "country":
@@ -269,9 +270,9 @@ class Preprocess:
                             + self.node_to_meta.get(provided, {}).get("type", "")
                         )
                 else:
-                    if provider_name not in org_provision:
-                        org_provision[line["provider_id"]] = {}
-                    org_provision[line["provider_id"]][provided] = self.get_provision(
+                    if provider_id not in org_provision:
+                        org_provision[provider_id] = {}
+                    org_provision[provider_id][provided] = self.get_provision(
                         line
                     )
         country_provision_concentration = self.get_provision_concentration(
