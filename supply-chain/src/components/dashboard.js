@@ -9,13 +9,15 @@ import { Header as ETOHeader, Footer, Dropdown } from "@eto/eto-ui-components";
 import Header from "./header";
 import Map from "./map";
 import { nodeToMeta } from "../../data/graph";
-import { countryProvision, countryProvisionConcentration } from "../../data/provision";
+import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 
 const Dashboard = () => {
 
   const FILTER_INPUT = "input-resource";
   const FILTER_COUNTRY = "country";
   const FILTER_CONCENTRATION = "concentration";
+  const FILTER_ORG = "organization";
+  const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -45,7 +47,7 @@ const Dashboard = () => {
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
       const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
-      identityMap[currFilterValues[highlighter]] = 1
+      identityMap[currFilterValues[highlighter]] = 1;
       setHighlights(identityMap)
     } else {
       const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
@@ -60,14 +62,14 @@ const Dashboard = () => {
             continue;
           }
         }
-      } else if (highlighter === FILTER_COUNTRY) {
-        for (const countryName of currFilterValues[highlighter]) {
-          // If countryName is "All", we ignore it
-          if (!(countryName in currMapping)) {
+      } else if (MULTI_FILTERS.includes(highlighter)) {
+        for (const name of currFilterValues[highlighter]) {
+          // If name is "All", we ignore it
+          if (!(name in currMapping)) {
             continue;
           }
-          for (const countryProvKey in currMapping[countryName]) {
-            let provValue = currMapping[countryName][countryProvKey]
+          for (const provKey in currMapping[name]) {
+            let provValue = currMapping[name][provKey]
             // We round qualitative "major"/"minor" values to numerical approximations
             if (provValue === "Major") {
               provValue = 80;
@@ -77,10 +79,10 @@ const Dashboard = () => {
             if (isNaN(provValue)) {
               continue;
             }
-            if (countryProvKey in highlightGradientMap) {
-              highlightGradientMap[countryProvKey] += provValue;
+            if (provKey in highlightGradientMap) {
+              highlightGradientMap[provKey] += provValue;
             } else {
-              highlightGradientMap[countryProvKey] = provValue;
+              highlightGradientMap[provKey] = provValue;
             }
           }
         }
@@ -91,15 +93,17 @@ const Dashboard = () => {
 
   const inputToNode = getInputToNodes();
   const theme = useTheme();
-  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_CONCENTRATION];
+  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
     [FILTER_INPUT]: "All",
     [FILTER_COUNTRY]: ["All"],
+    [FILTER_ORG]: ["All"],
     [FILTER_CONCENTRATION]: false,
   };
   const filterToValues = {
     [FILTER_INPUT]: inputToNode,
     [FILTER_COUNTRY]: countryProvision,
+    [FILTER_ORG]: orgProvision,
     [FILTER_CONCENTRATION]: [true, false],
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
@@ -109,10 +113,19 @@ const Dashboard = () => {
   const handleChange = (val, key) => {
     const updatedFilterValues = {...defaultFilterValues};
     if (key !== null) {
-      updatedFilterValues[key] = val;
+      if (MULTI_FILTERS.includes(key) && (val.length > 1)){
+        if(filterValues[key].includes("All")){
+          updatedFilterValues[key] = val.filter((v) => v !== "All");
+        } else {
+          // if the user has just added the all value, clear out the rest of the values
+          updatedFilterValues[key] = val.includes("All") ? ["All"] : val;
+        }
+      } else {
+        updatedFilterValues[key] = val;
+      }
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues[FILTER_INPUT] != defaultFilterValues[FILTER_INPUT]) {
+    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
     getCurrentHighlights(updatedFilterValues);
@@ -132,17 +145,11 @@ const Dashboard = () => {
   };
 
   // Functions to interface with ETO dropdown component
-  const handleCountryChange = (val) => {
-    handleChange(val, FILTER_COUNTRY);
-  };
   const countryOptions = [{"val": "All", "text": "All"}];
   Object.keys(countryProvision).sort().filter((c) => c !== "Other").map((name) => (
     countryOptions.push({"val": name, "text": name})
   ));
 
-  const handleInputResourceChange = (val) => {
-    handleChange(val, FILTER_INPUT);
-  };
   const inputResourceOptions = [{"val": "All", "text": "All"}];
   Object.keys(inputToNode).sort(
     (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
@@ -150,9 +157,34 @@ const Dashboard = () => {
     inputResourceOptions.push({"val": name, "text": nodeToMeta[name]["name"]})
   ));
 
+  const organizationOptions = [{"val": "All", "text": "All"}];
+  Object.keys(orgProvision).sort(
+    (a, b) => ('' + providerMeta[a]["name"]).localeCompare(providerMeta[b]["name"])
+  ).map((name) => (
+    organizationOptions.push({"val": name, "text": providerMeta[name]["name"]})
+  ));
+
   const handleConcentrationChange = (evt) => {
     handleChange(evt.target.checked, FILTER_CONCENTRATION);
   };
+
+  const dropdownParams = [
+    {
+      "label": "Countries",
+      "key": FILTER_COUNTRY,
+      "options": countryOptions
+    },
+    {
+      "label": "Inputs",
+      "key": FILTER_INPUT,
+      "options": inputResourceOptions
+    },
+    {
+      "label": "Organizations",
+      "key": FILTER_ORG,
+      "options": organizationOptions
+    },
+  ];
 
   // Sets the state of the app based on the queries in the URL.
   // This will only run once, when the component is initially rendered.
@@ -162,7 +194,7 @@ const Dashboard = () => {
     for (const filterKey of filterKeys) {
       let filterVal = urlParams.get(filterKey);
       if (filterVal !== null) {
-        if (filterKey === FILTER_COUNTRY) {
+        if (MULTI_FILTERS.includes(filterKey)) {
           // This is a multi-select, so we need to pass in an array
           filterVal = filterVal.split(",");
         }
@@ -170,7 +202,7 @@ const Dashboard = () => {
       }
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues[FILTER_INPUT] != defaultFilterValues[FILTER_INPUT]) {
+    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
     getCurrentHighlights(updatedFilterValues);
@@ -183,23 +215,18 @@ const Dashboard = () => {
       className="filter-bar"
       elevation={0}
     >
-      <div>
-        <Dropdown
-          inputLabel="Countries"
-          selected={filterValues[FILTER_COUNTRY]}
-          setSelected={handleCountryChange}
-          multiple="true"
-          options={countryOptions}
-        />
-      </div>
-      <div>
-        <Dropdown
-          inputLabel="Inputs"
-          selected={filterValues[FILTER_INPUT]}
-          setSelected={handleInputResourceChange}
-          options={inputResourceOptions}
-        />
-      </div>
+      {dropdownParams.map((dropdown) =>
+        <div>
+          <Dropdown
+            inputLabel={dropdown.label}
+            selected={filterValues[dropdown.key]}
+            setSelected={(evt) => handleChange(evt, dropdown.key)}
+            multiple={MULTI_FILTERS.includes(dropdown.key)}
+            options={dropdown.options}
+            key={dropdown.label}
+          />
+        </div>
+      )}
       <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show Concentration" />

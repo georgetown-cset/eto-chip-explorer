@@ -1,13 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Loadable from "react-loadable";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
-import getIcon from "../helpers/shared";
-import GraphNode from "./graph_node";
-import {nodeToMeta} from "../../data/graph";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -42,9 +39,8 @@ const BarGraph = (props) => {
 };
 
 const InputDetail = (props) => {
-  const {selectedNode, parent, descriptions, countries, countryValues, orgs, orgMeta} = props;
+  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
-  const iconStyle={verticalAlign: "middle", margin: "2px 5px"};
 
   const graphCountries = [];
   const graphCountryValues = [];

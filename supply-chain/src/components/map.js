@@ -213,21 +213,15 @@ const Map = (props) => {
           }
         }
       }
-      const newNodes = edgePairs.map(e => e[0]);
       const filtEdges = [];
       currNodes = [];
       for(let edge of edgePairs){
         let siblings = [];
         const parent = edge[0];
-        const child = edge[1];
         if(parent in graphReverse) {
           for (let grandParent of graphReverse[parent]) {
             siblings = siblings.concat(graph[grandParent]);
           }
-        }
-        let allSiblingsSeen = true;
-        for(let sib of siblings){
-          allSiblingsSeen &= (newNodes.includes(sib) || seen.has(sib));
         }
         filtEdges.push(edge);
         if(!seen.has(parent)) {

@@ -1,4 +1,4 @@
-import React, {useEffect, memo} from "react";
+import React, {memo} from "react";
 import Typography from "@mui/material/Typography"
 
 const mdxComponents = {
