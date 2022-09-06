@@ -1,0 +1,14 @@
+[tool.black]
+py36 = true
+include = '\.pyi?$'
+exclude = '''
+/(
+\.git
+| \.venv
+| build
+| dist
+)/
+'''
+
+[tool.isort]
+profile = "black"

@@ -2,12 +2,21 @@ import argparse
 import csv
 import json
 import os
-import pycountry
 import re
 import urllib.request
 
-EXPECTED_TYPES = {"material_resource", "process", "stage", "tool_resource", "ultimate_output"}
+import pycountry
+
+EXPECTED_TYPES = {
+    "material_resource",
+    "process",
+    "stage",
+    "tool_resource",
+    "ultimate_output",
+}
 BASE_NODE_TYPES = {"process", "ultimate_output"}
+TOOLS = "tools"
+MATERIALS = "materials"
 
 # TODO: somewhat duplicative of CAT, refactor into shared lib
 COUNTRY_MAPPING = {
@@ -37,24 +46,26 @@ COUNTRY_MAPPING = {
 MAJOR_PROVISION = "Major"
 MINOR_PROVISION = "Minor"
 
+
 class Preprocess:
-    def __init__(self, args):
+    def __init__(self, args, is_test=False):
         self.node_to_meta = {}
         self.provider_to_meta = {}
         self.variants = {}
-        if not os.path.exists(args.output_dir):
-            os.makedirs(args.output_dir)
-        if not os.path.exists(args.output_images_dir):
-            os.makedirs(args.output_images_dir)
+        if not is_test:
+            if not os.path.exists(args.output_dir):
+                os.makedirs(args.output_dir)
+            if not os.path.exists(args.output_images_dir):
+                os.makedirs(args.output_images_dir)
 
-        self.mk_metadata(args.nodes)
-        self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
+            self.mk_metadata(args.nodes)
+            self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
-        self.write_graphs(args.sequence, args.output_dir)
-        self.mk_provider_to_meta(args.providers, args.basic_company_info)
-        self.mk_provision(args.provision, args.output_dir)
-        if args.images:
-            self.mk_images(args.images_file, args.output_images_dir)
+            self.write_graphs(args.sequence, args.output_dir)
+            self.mk_provider_to_meta(args.providers, args.basic_company_info)
+            self.write_provision(args.provision, args.output_dir)
+            if args.images:
+                self.mk_images(args.images_file, args.output_images_dir)
 
     def mk_metadata(self, nodes: str):
         """
@@ -67,14 +78,15 @@ class Preprocess:
             for line in csv.DictReader(f):
                 node_type = line["type"]
                 node_id = line["input_id"]
+                assert node_id not in self.node_to_meta, f"Duplicate id: {node_id}"
                 self.node_to_meta[node_id] = {
                     "name": line["input_name"],
                     "type": node_type,
-                    "stage_id": line["stage_id"]
+                    "stage_id": line["stage_id"],
                 }
                 assert node_type in EXPECTED_TYPES
-                self.node_to_meta[node_id]["materials"] = []
-                self.node_to_meta[node_id]["tools"] = []
+                self.node_to_meta[node_id][MATERIALS] = []
+                self.node_to_meta[node_id][TOOLS] = []
 
     def update_variants(self, parent: str, child: str, record: dict) -> bool:
         """
@@ -93,13 +105,40 @@ class Preprocess:
             if not child:
                 return True
         for node in [parent, child]:
-            if not node:
-                print(f"Unexpected null node in {record}")
-                return True
-            if node not in self.node_to_meta:
-                print(f"Missing meta for {node} from {record}")
-                return True
+            assert node, f"Unexpected null node in {record}"
+            assert (
+                node in self.node_to_meta
+            ), f"Missing metadata for {node} from {record}"
         return False
+
+    def generate_graph(self, lines: iter) -> tuple:
+        """
+        Generates dicts specifying a graph of process nodes, and associates nodes with their inputs
+        :param lines: iterable of dict-like objects corresponding to node edge list
+        :return: A tuple of the graph dict (parents: children) and its reverse (children: parents)
+        """
+        graph = {}
+        graph_reverse = {}
+        for line in lines:
+            parent = line["input_id"]
+            child = line["goes_into_id"]
+            skip = self.update_variants(parent, child, line)
+            if skip:
+                continue
+            parent_type = self.node_to_meta[parent]["type"]
+            child_type = self.node_to_meta[child]["type"]
+            if parent_type == "process":
+                assert child_type in BASE_NODE_TYPES, f"Unexpected lineage: {line}"
+                if parent not in graph:
+                    graph[parent] = []
+                graph[parent].append(child)
+                if child not in graph_reverse:
+                    graph_reverse[child] = []
+                graph_reverse[child].append(parent)
+            else:
+                node_type = MATERIALS if parent_type == "material_resource" else TOOLS
+                self.node_to_meta[child][node_type].append(parent)
+        return graph, graph_reverse
 
     def write_graphs(self, sequence: str, output_dir: str) -> None:
         """
@@ -109,30 +148,9 @@ class Preprocess:
         :param output_dir: directory where graph metadata should be written
         :return: None
         """
-        graph = {}
-        graph_reverse = {}
         with open(sequence) as f:
-            for line in csv.DictReader(f):
-                parent = line["input_id"]
-                child = line["goes_into_id"]
-                skip = self.update_variants(parent, child, line)
-                if skip:
-                    continue
-                parent_type = self.node_to_meta[parent]["type"]
-                child_type = self.node_to_meta[child]["type"]
-                if parent_type == "process":
-                    if child_type in BASE_NODE_TYPES:
-                        if parent not in graph:
-                            graph[parent] = []
-                        graph[parent].append(child)
-                        if child not in graph_reverse:
-                            graph_reverse[child] = []
-                        graph_reverse[child].append(parent)
-                    else:
-                        print(f"Unexpected lineage: {line}")
-                else:
-                    node_type = "materials" if parent_type == "material_resource" else "tools"
-                    self.node_to_meta[child][node_type].append(parent)
+            lines = csv.DictReader(f)
+            graph, graph_reverse = self.generate_graph(lines)
         with open(os.path.join(output_dir, "graph.js"), mode="w") as f:
             f.write(f"const graph={json.dumps(graph)};\n")
             f.write(f"const graphReverse={json.dumps(graph_reverse)};\n")
@@ -155,19 +173,26 @@ class Preprocess:
             clean_country_name = raw_country_name
         return COUNTRY_MAPPING.get(clean_country_name, clean_country_name)
 
-    def get_provision(self, record: dict):
+    @staticmethod
+    def get_provision(record: dict):
         """
         Get numeric or descriptive provision value from row of provision data
         :param record: Row of provision data
         :return: Provision value
         """
+        assert not (
+            (len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0)
+        ), f"Record should have either minor share or provision, not both: {record}"
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
-        if record["minor_share"].strip():
+        share = record["minor_share"].strip()
+        if share:
+            assert share.lower() == MINOR_PROVISION.lower(), share
             return MINOR_PROVISION
         return MAJOR_PROVISION
 
-    def get_provision_concentration(self, country_provision):
+    @staticmethod
+    def get_provision_concentration(country_provision):
         """
         Calculate how concentrated the country provision for each node is. This is
         approximated as the number of countries it takes to account for 75% of the
@@ -204,14 +229,17 @@ class Preprocess:
             # Add up how many country shares it takes to reach the threshold
             num_countries = 0
             curr_threshold = 0
-            while curr_threshold < CONCENTRATION_THRESHOLD and num_countries < len(threshold_tracker[node]):
+            while curr_threshold < CONCENTRATION_THRESHOLD and num_countries < len(
+                threshold_tracker[node]
+            ):
                 curr_threshold += threshold_tracker[node][num_countries]
                 num_countries += 1
-            country_provision_concentration[node] = num_countries if num_countries > 0 else None
+            country_provision_concentration[node] = (
+                num_countries if num_countries > 0 else None
+            )
         return country_provision_concentration
 
-
-    def mk_provision(self, provision_fi: str, output_dir: str) -> None:
+    def write_provision(self, provision_fi: str, output_dir: str) -> None:
         """
         Create metadata for providers
         :param provision_fi: provision csv
@@ -223,33 +251,45 @@ class Preprocess:
         country_provision = {}
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
-                assert sum([not line["share_provided"], not line["minor_share"]]) > 0
-                provider_name = self.provider_to_meta[line["provider_id"]]["name"]
+                provider_id = line["provider_id"].strip()
+                provider_meta = self.provider_to_meta[provider_id]
+                provider_name = provider_meta["name"]
                 provided = line["provided_id"]
-                if self.provider_to_meta[line["provider_id"].strip()]["type"] == "country":
+                if provider_meta["type"] == "country":
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
                     provision_share = self.get_provision(line)
                     country_provision[country_name][provided] = provision_share
-                    if (provided not in self.node_to_meta) or \
-                            (self.node_to_meta[provided]["type"] not in ["tool_resource", "material_resource"]):
-                        print(f"unexpected country provision: {provided} " +
-                              ("" if provided not in self.node_to_meta else self.node_to_meta[provided]["type"]))
+                    if (provided not in self.node_to_meta) or (
+                        self.node_to_meta[provided]["type"]
+                        not in ["tool_resource", "material_resource", "stage"]
+                    ):
+                        print(
+                            f"unexpected country provision: {provided} "
+                            + self.node_to_meta.get(provided, {}).get("type", "")
+                        )
                 else:
-                    if provider_name not in org_provision:
-                        org_provision[line["provider_id"]] = {}
-                    org_provision[line["provider_id"]][provided] = self.get_provision(line)
-        country_provision_concentration = self.get_provision_concentration(country_provision)
+                    if provider_id not in org_provision:
+                        org_provision[provider_id] = {}
+                    org_provision[provider_id][provided] = self.get_provision(line)
+        country_provision_concentration = self.get_provision_concentration(
+            country_provision
+        )
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
             f.write(f"const countryProvision={json.dumps(country_provision)};\n")
-            f.write(f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n")
+            f.write(
+                f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n"
+            )
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
-            f.write("\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n")
+            f.write(
+                "\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n"
+            )
 
-    @staticmethod
-    def write_descriptions(nodes_fi: str, stages_fi: str, output_dir: str) -> None:
+    def write_descriptions(
+        self, nodes_fi: str, stages_fi: str, output_dir: str
+    ) -> None:
         """
         Write out node or stage descriptions as markdown
         :param nodes_fi: inputs csv
@@ -262,12 +302,20 @@ class Preprocess:
         header_template = "#### {}\n\n"
         with open(nodes_fi) as f:
             for line in csv.DictReader(f):
-                with open(os.path.join(output_dir, line["input_id"])+".mdx", mode="w") as out:
+                with open(
+                    os.path.join(output_dir, line["input_id"]) + ".mdx", mode="w"
+                ) as out:
                     out.write(header_template.format(line["input_name"]))
                     out.write(line["description"])
         with open(stages_fi) as f:
             for line in csv.DictReader(f):
-                with open(os.path.join(output_dir, line["stage_id"])+".mdx", mode="w") as out:
+                self.node_to_meta[line["stage_id"]] = {
+                    "name": line["stage_name"],
+                    "type": "stage",
+                }
+                with open(
+                    os.path.join(output_dir, line["stage_id"]) + ".mdx", mode="w"
+                ) as out:
                     out.write(header_template.format(line["stage_name"]))
                     out.write(line["description"])
 
@@ -285,7 +333,7 @@ class Preprocess:
             for line in csv.DictReader(f):
                 self.provider_to_meta[line["provider_id"]] = {
                     "name": line["provider_name"],
-                    "type": line["provider_type"]
+                    "type": line["provider_type"],
                 }
                 name_to_id[line["provider_name"]] = line["provider_id"]
         with open(company_metadata_fi) as f:
@@ -293,14 +341,16 @@ class Preprocess:
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(line["HQ country"].strip()).flag
+                self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(
+                    line["HQ country"].strip()
+                ).flag
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod
     def mk_images(images_fi: str, output_dir: str) -> None:
         """
         Downloads images from an airtable CSV and renames them according to their associated node
-        :param image_fi: Path to airtable CSV
+        :param images_fi: Path to airtable CSV
         :param output_dir: Path to output folder where images will be placed
         :return: None
         """
@@ -312,7 +362,8 @@ class Preprocess:
                 file_type = image_fi.split(".")[-1]
                 urllib.request.urlretrieve(
                     image_fi,
-                    os.path.join(output_dir, line["Node ID for semi map"])+f".{file_type}"
+                    os.path.join(output_dir, line["Node ID for semi map"])
+                    + f".{file_type}",
                 )
 
 
@@ -322,13 +373,19 @@ if __name__ == "__main__":
     parser.add_argument("--sequence", default=os.path.join("data", "sequence.csv"))
     parser.add_argument("--stages", default=os.path.join("data", "stages.csv"))
     parser.add_argument("--providers", default=os.path.join("data", "providers.csv"))
-    parser.add_argument("--basic_company_info", default=os.path.join("data", "basic_company_info.csv"))
+    parser.add_argument(
+        "--basic_company_info", default=os.path.join("data", "basic_company_info.csv")
+    )
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
     parser.add_argument("--images", action="store_true")
     parser.add_argument("--images_file", default=os.path.join("data", "images.csv"))
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
-    parser.add_argument("--output_text_dir", default=os.path.join("supply-chain", "src", "pages"))
-    parser.add_argument("--output_images_dir", default=os.path.join("supply-chain", "src", "images"))
+    parser.add_argument(
+        "--output_text_dir", default=os.path.join("supply-chain", "src", "pages")
+    )
+    parser.add_argument(
+        "--output_images_dir", default=os.path.join("supply-chain", "src", "images")
+    )
     args = parser.parse_args()
 
     Preprocess(args)
