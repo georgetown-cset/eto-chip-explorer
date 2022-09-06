@@ -1,18 +1,18 @@
-Order added,provider_name,provider_id,provided_name,provided_id,share_provided,minor_share
+Order added,provider_name,provider_id,provided_name,provided_id,share_provided,negligible_share
 1,USA,P1,Design,S1,61%,
 2,CHN,P2,Design,S1,6%,
-3,Europe,P5,Design,S1,9%,
+3,Various,P5,Design,S1,9%,
 4,JPN,P7,Design,S1,6%,
 5,TWN,P8,Design,S1,9%,
 6,CHN,P2,Design,S1,9%,
 10,Intel,P9,Logic chip design: Advanced CPUs,N1,,
 11,AMD,P10,Logic chip design: Advanced CPUs,N1,,
 12,Nvidia,P11,Logic chip design: Discrete GPUs,N2,,
-13,Jingjia Micro,P12,Logic chip design: Discrete GPUs,N2,,Minor
-14,Loongson,P13,Logic chip design: Advanced CPUs,N1,,Minor
-15,Zhaoxin,P14,Logic chip design: Advanced CPUs,N1,,Minor
-16,Phytium,P15,Logic chip design: Advanced CPUs,N1,,Minor
-17,Efinix,P16,Logic chip design: FPGAs,N3,,Minor
+13,Jingjia Micro,P12,Logic chip design: Discrete GPUs,N2,,negligible
+14,Loongson,P13,Logic chip design: Advanced CPUs,N1,,negligible
+15,Zhaoxin,P14,Logic chip design: Advanced CPUs,N1,,negligible
+16,Phytium,P15,Logic chip design: Advanced CPUs,N1,,negligible
+17,Efinix,P16,Logic chip design: FPGAs,N3,,negligible
 18,Lattice,P18,Logic chip design: FPGAs,N3,,
 19,Microchip,P19,Logic chip design: FPGAs,N3,,
 20,Achronix,P20,Logic chip design: FPGAs,N3,,
@@ -25,9 +25,9 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 27,Cambricon,P26,Logic chip design: AI ASICs,N4,,
 28,Horizon Robotics,P27,Logic chip design: AI ASICs,N4,,
 29,Intellifusion,P28,Logic chip design: AI ASICs,N4,,
-30,Gowin,P29,Logic chip design: FPGAs,N3,,Minor
-31,Shenzhen Pango,P30,Logic chip design: FPGAs,N3,,Minor
-32,Sunway,P31,Logic chip design: Advanced CPUs,N1,,Minor
+30,Gowin,P29,Logic chip design: FPGAs,N3,,negligible
+31,Shenzhen Pango,P30,Logic chip design: FPGAs,N3,,negligible
+32,Sunway,P31,Logic chip design: Advanced CPUs,N1,,negligible
 33,AMD,P10,Logic chip design: Discrete GPUs,N2,,
 34,USA,P1,Fabrication,S2,27%,
 35,TWN,P8,Fabrication,S2,47%,
@@ -38,10 +38,10 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 40,TSMC,P34,Fabrication,S2,,
 41,Samsung,P35,Fabrication,S2,,
 42,GlobalFoundries,P36,Fabrication,S2,,
-43,SMIC,P37,Fabrication,S2,,Minor
+43,SMIC,P37,Fabrication,S2,,negligible
 44,UMC,P38,Fabrication,S2,,
 45,Powerchip,P39,Fabrication,S2,,
-46,Hua Hong,P40,Fabrication,S2,,Minor
+46,Hua Hong,P40,Fabrication,S2,,negligible
 47,STMicroelectronics,P42,Fabrication,S2,,
 48,NXP,P43,Fabrication,S2,,
 49,Toshiba,P44,Fabrication,S2,,
@@ -64,32 +64,32 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 66,CHN,P2,"Assembly, testing, and packaging (ATP)",S3,14%,
 67,KOR,P4,"Assembly, testing, and packaging (ATP)",S3,13%,
 68,JPN,P7,"Assembly, testing, and packaging (ATP)",S3,7%,
-69,Europe,P5,"Assembly, testing, and packaging (ATP)",S3,5%,
+69,Various,P5,"Assembly, testing, and packaging (ATP)",S3,5%,
 70,MAL,P46,"Assembly, testing, and packaging (ATP)",S3,2%,
 71,SGP,P47,"Assembly, testing, and packaging (ATP)",S3,2%,
 72,ASE,P48,"Assembly, testing, and packaging (ATP)",S3,,
 73,DEU,P32,Crystal growing furnaces,N8,100%,
 74,PVA TePla,P58,Crystal growing furnaces,N8,,
-75,JSG,P59,Crystal growing furnaces,N8,,Minor
+75,JSG,P59,Crystal growing furnaces,N8,,negligible
 76,Accretech,P60,Crystal machining tools,N9,,
 77,Okamoto,P61,Crystal machining tools,N9,,
 78,Disco,P62,Crystal machining tools,N9,,
 79,Meyer Burger,P63,Crystal machining tools,N9,,
 80,Toyo,P64,Crystal machining tools,N9,,
-81,JSG,P59,Crystal machining tools,N9,,Minor
-82,Lanzhou Rapid Equipment Manufacturing,P65,Crystal machining tools,N9,,Minor
-83,Beijing JingYi Century Automatic Equipment,P66,Crystal machining tools,N9,,Minor
+81,JSG,P59,Crystal machining tools,N9,,negligible
+82,Lanzhou Rapid Equipment Manufacturing,P65,Crystal machining tools,N9,,negligible
+83,Beijing JingYi Century Automatic Equipment,P66,Crystal machining tools,N9,,negligible
 84,EV Group,P67,Wafer bonding and aligning tools,N10,,
 85,SUSS MicroTec,P68,Wafer bonding and aligning tools,N10,,
 86,Neutronix,P69,Wafer bonding and aligning tools,N10,,
-87,SMEE,P70,Wafer bonding and aligning tools,N10,,Minor
+87,SMEE,P70,Wafer bonding and aligning tools,N10,,negligible
 88,Daifuku,P71,Wafer handlers,N11,,
 89,Rorze,P72,Wafer handlers,N11,,
 90,SEMES,P73,Wafer handlers,N11,,
 91,Muratec,P74,Wafer handlers,N11,,
 92,Gudeng,P75,Wafer handlers,N11,,
 93,RECIF,P76,Wafer handlers,N11,,
-94,SMEE,P70,Wafer handlers,N11,,Minor
+94,SMEE,P70,Wafer handlers,N11,,negligible
 95,Brooks,P77,Photomask handlers,N12,,
 96,Daifuku,P71,Photomask handlers,N12,,
 97,Gudeng,P75,Photomask handlers,N12,,
@@ -110,14 +110,14 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 112,USA,P1,Wafer marking systems,N13,100%,
 113,USA,P1,Ion implanter,N17,,
 114,JPN,P7,Ion implanter,N17,,
-115,TWN,P8,Ion implanter,N17,,Minor
+115,TWN,P8,Ion implanter,N17,,negligible
 116,Applied Materials,P81,Ion implanter,N17,,
 117,Nissin Ion,P82,Ion implanter,N17,,
 118,SMIT,P83,Ion implanter,N17,,
 119,Axcelis,P84,Ion implanter,N17,,
-120,CETC,P85,Ion implanter,N17,,Minor
-121,Hermes-Epitek,P86,Ion implanter,N17,,Minor
-122,Kingstone Semiconductor,P87,Ion implanter,N17,,Minor
+120,CETC,P85,Ion implanter,N17,,negligible
+121,Hermes-Epitek,P86,Ion implanter,N17,,negligible
+122,Kingstone Semiconductor,P87,Ion implanter,N17,,negligible
 123,NLD,P45,Advanced photolithography equipment,N19,,
 124,JPN,P7,Advanced photolithography equipment,N19,,
 125,NLD,P45,EUV scanners,N20,100%,
@@ -130,30 +130,30 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 132,ASML,P88,ArF scanners,N21,57%,
 133,Nikon,P89,ArF immersion scanners,N22,9%,
 134,Nikon,P89,ArF scanners,N21,43%,
-135,SMEE,P70,ArF scanners,N21,,Minor
+135,SMEE,P70,ArF scanners,N21,,negligible
 136,JPN,P7,Electron-beam lithography tools,N29,91%,
 137,USA,P1,Electron-beam lithography tools,N29,8%,
 138,DEU,P32,Electron-beam lithography tools,N29,1%,
 139,SWE,P90,Laser lithography tools,N30,97%,
 140,NuFlare,P91,Electron-beam lithography tools,N29,,
 141,JEOL,P92,Electron-beam lithography tools,N29,,
-142,Applied Materials,P81,Electron-beam lithography tools,N29,,Minor
-143,Vistec,P93,Electron-beam lithography tools,N29,,Minor
+142,Applied Materials,P81,Electron-beam lithography tools,N29,,negligible
+143,Vistec,P93,Electron-beam lithography tools,N29,,negligible
 144,Mycronic,P94,Laser lithography tools,N30,97%,
 145,Heidelberg Instruments,P95,Laser lithography tools,N30,3%,
 155,DEU,P32,Laser lithography tools,N30,3%,
 156,JPN,P7,Resist processing tools,N32,96%,
-157,USA,P1,Resist processing tools,N32,,Minor
+157,USA,P1,Resist processing tools,N32,,negligible
 158,DEU,P32,Resist processing tools,N32,2%,
 159,CHN,P2,Resist processing tools,N32,1%,
 160,KOR,P4,Resist processing tools,N32,1%,
 161,Tokyo Electron,P105,Resist processing tools,N32,,
 162,Screen,P106,Resist processing tools,N32,,
-163,SUSS MicroTec,P68,Resist processing tools,N32,,Minor
-164,SEMES,P73,Resist processing tools,N32,,Minor
-165,Kingsemi,P107,Resist processing tools,N32,,Minor
-166,Brewer Science,P108,Resist processing tools,N32,,Minor
-167,Rite Track,P109,Resist processing tools,N32,,Minor
+163,SUSS MicroTec,P68,Resist processing tools,N32,,negligible
+164,SEMES,P73,Resist processing tools,N32,,negligible
+165,Kingsemi,P107,Resist processing tools,N32,,negligible
+166,Brewer Science,P108,Resist processing tools,N32,,negligible
+167,Rite Track,P109,Resist processing tools,N32,,negligible
 168,USA,P1,Plasma CVD tools,N38,91%,
 169,NLD,P45,Plasma CVD tools,N38,4%,
 170,KOR,P4,Plasma CVD tools,N38,5%,
@@ -187,38 +187,38 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 198,CHN,P2,Tube-based diffusion and deposition tools,N44,3%,
 199,Applied Materials,P81,Plasma CVD tools,N38,,
 200,Lam Research,P111,Plasma CVD tools,N38,,
-201,ASM International,P112,Plasma CVD tools,N38,,Minor
-202,Piotech,P113,Plasma CVD tools,N38,,Minor
-203,SKY Technology Development,P114,Plasma CVD tools,N38,,Minor
+201,ASM International,P112,Plasma CVD tools,N38,,negligible
+202,Piotech,P113,Plasma CVD tools,N38,,negligible
+203,SKY Technology Development,P114,Plasma CVD tools,N38,,negligible
 204,Lam Research,P111,Low-pressure CVD tools,N39,,
 205,Applied Materials,P81,Low-pressure CVD tools,N39,,
 206,Tokyo Electron,P105,Low-pressure CVD tools,N39,,
-207,NAURA,P115,Low-pressure CVD tools,N39,,Minor
+207,NAURA,P115,Low-pressure CVD tools,N39,,negligible
 208,Applied Materials,P81,High-temperature CVD tools,N40,,
 209,ASM International,P112,High-temperature CVD tools,N40,,
 210,ASM International,P112,Atomic layer deposition tools,N41,,
 211,Tokyo Electron,P105,Atomic layer deposition tools,N41,,
 212,Kokusai,P116,Atomic layer deposition tools,N41,,
 213,Lam Research,P111,Atomic layer deposition tools,N41,,
-214,Piotech,P113,Atomic layer deposition tools,N41,,Minor
-215,NAURA,P115,Atomic layer deposition tools,N41,,Minor
+214,Piotech,P113,Atomic layer deposition tools,N41,,negligible
+215,NAURA,P115,Atomic layer deposition tools,N41,,negligible
 216,Applied Materials,P81,Physical vapor deposition tools,N42,,
 217,ULVAC,P117,Physical vapor deposition tools,N42,,
-218,NAURA,P115,Physical vapor deposition tools,N42,,Minor
+218,NAURA,P115,Physical vapor deposition tools,N42,,negligible
 219,KLA,P118,Physical vapor deposition tools,N42,,
-220,SKY Technology Development,P114,Physical vapor deposition tools,N42,,Minor
+220,SKY Technology Development,P114,Physical vapor deposition tools,N42,,negligible
 221,Applied Materials,P81,Rapid thermal processing tools,N43,,
 222,Mattson Tech,P119,Rapid thermal processing tools,N43,,
 223,Screen,P106,Rapid thermal processing tools,N43,,
-224,AP Systems,P120,Rapid thermal processing tools,N43,,Minor
+224,AP Systems,P120,Rapid thermal processing tools,N43,,negligible
 225,Veeco,P121,Rapid thermal processing tools,N43,,
 226,Tokyo Electron,P105,Tube-based diffusion and deposition tools,N44,,
 227,Kokusai,P116,Tube-based diffusion and deposition tools,N44,,
 228,ASM International,P112,Tube-based diffusion and deposition tools,N44,,
-229,NAURA,P115,Tube-based diffusion and deposition tools,N44,,Minor
+229,NAURA,P115,Tube-based diffusion and deposition tools,N44,,negligible
 230,Lam Research,P111,Electrochemical coating tools,N45,,
 231,Applied Materials,P81,Electrochemical coating tools,N45,,
-232,Grand Plastic,P122,Electrochemical coating tools,N45,,Minor
+232,Grand Plastic,P122,Electrochemical coating tools,N45,,negligible
 233,USA,P1,Conductor etching tools,N50,84%,
 234,JPN,P7,Conductor etching tools,N50,16%,
 235,KOR,P4,Conductor etching tools,N50,1%,
@@ -239,35 +239,35 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 264,Applied Materials,P81,Conductor etching tools,N50,,
 265,Hitachi,P97,Conductor etching tools,N50,,
 266,Tokyo Electron,P105,Conductor etching tools,N50,,
-267,NAURA,P115,Conductor etching tools,N50,,Minor
+267,NAURA,P115,Conductor etching tools,N50,,negligible
 268,Tokyo Electron,P105,Dielectric etching tools,N51,,
 269,Lam Research,P111,Dielectric etching tools,N51,,
-270,AMEC,P123,Dielectric etching tools,N51,,Minor
+270,AMEC,P123,Dielectric etching tools,N51,,negligible
 276,Veeco,P121,Ion milling tools,N52,,
 283,Screen,P106,Wet etching and cleaning tools,N49,,
 284,Tokyo Electron,P105,Wet etching and cleaning tools,N49,,
 285,Lam Research,P111,Wet etching and cleaning tools,N49,,
 286,SEMES,P73,Wet etching and cleaning tools,N49,,
-287,NAURA,P115,Wet etching and cleaning tools,N49,,Minor
-288,Kingsemi,P107,Wet etching and cleaning tools,N49,,Minor
+287,NAURA,P115,Wet etching and cleaning tools,N49,,negligible
+288,Kingsemi,P107,Wet etching and cleaning tools,N49,,negligible
 289,USA,P1,Chemical mechanical planarization tools,N86,,
 290,JPN,P7,Chemical mechanical planarization tools,N86,,
 291,CHN,P2,Chemical mechanical planarization tools,N86,,
-292,KOR,P4,Chemical mechanical planarization tools,N86,,Minor
+292,KOR,P4,Chemical mechanical planarization tools,N86,,negligible
 293,Applied Materials,P81,Chemical mechanical planarization tools,N86,,
 294,EBARA,P128,Chemical mechanical planarization tools,N86,,
 295,Accretech,P60,Chemical mechanical planarization tools,N86,,
 296,Hwatsing,P129,Chemical mechanical planarization tools,N86,,
-297,KCTech,P130,Chemical mechanical planarization tools,N86,,Minor
+297,KCTech,P130,Chemical mechanical planarization tools,N86,,negligible
 298,Revasum,P131,Chemical mechanical planarization tools,N86,,
 299,CETC,P85,Chemical mechanical planarization tools,N86,,
 300,USA,P1,Wafer inspection equipment,N61,,
 301,JPN,P7,Wafer inspection equipment,N61,,
 302,NLD,P45,Wafer inspection equipment,N61,,
 303,DEU,P32,Wafer inspection equipment,N61,,
-304,ISR,P133,Wafer inspection equipment,N61,,Minor
-305,FRA,P132,Wafer inspection equipment,N61,,Minor
-306,CHN,P2,Wafer inspection equipment,N61,,Minor
+304,ISR,P133,Wafer inspection equipment,N61,,negligible
+305,FRA,P132,Wafer inspection equipment,N61,,negligible
+306,CHN,P2,Wafer inspection equipment,N61,,negligible
 307,USA,P1,Photomask inspection and repair tools,N62,58%,
 308,JPN,P7,Photomask inspection and repair tools,N62,23%,
 309,DEU,P32,Photomask inspection and repair tools,N62,18%,
@@ -288,8 +288,8 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 324,Hitachi,P97,Wafer inspection equipment,N61,,
 325,ASML,P88,Wafer inspection equipment,N61,,
 326,Applied Materials,P81,Wafer inspection equipment,N61,,
-327,RSIC,P137,Wafer inspection equipment,N61,,Minor
-328,SMEE,P70,Wafer inspection equipment,N61,,Minor
+327,RSIC,P137,Wafer inspection equipment,N61,,negligible
+328,SMEE,P70,Wafer inspection equipment,N61,,negligible
 329,Thermo Fisher,P96,Wafer inspection equipment,N61,,
 330,Zeiss,P98,Wafer inspection equipment,N61,,
 331,PVA TePla,P58,Wafer inspection equipment,N61,,
@@ -392,7 +392,7 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 428,Grand Tec,P150,Packaging tools,N76,,
 429,DIAS Automation,P163,Packaging tools,N76,,
 430,ASM Pacific,P145,Integrated assembly tools,N77,,
-431,Grohmann,P172,Integrated assembly tools,N77,,Minor
+431,Grohmann,P172,Integrated assembly tools,N77,,negligible
 432,JPN,P7,Burn-in test equipment,N81,11%,
 433,USA,P1,Burn-in test equipment,N81,28%,
 434,KOR,P4,Burn-in test equipment,N81,50%,
@@ -432,9 +432,9 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 475,Accretech,P60,Handlers and probes,N83,,
 476,Cohu,P148,Handlers and probes,N83,,
 477,Tokyo Electron,P105,Handlers and probes,N83,,
-478,ASM Pacific,P145,Handlers and probes,N83,,Minor
-479,Grand Tec,P150,Handlers and probes,N83,,Minor
-480,JHT,P184,Handlers and probes,N83,,Minor
+478,ASM Pacific,P145,Handlers and probes,N83,,negligible
+479,Grand Tec,P150,Handlers and probes,N83,,negligible
+480,JHT,P184,Handlers and probes,N83,,negligible
 481,USA,P1,Electronic design automation software,N84,96%,
 482,GBR,P110,Electronic design automation software,N84,1%,
 483,JPN,P7,Electronic design automation software,N84,3%,
@@ -446,28 +446,28 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 489,Ansys,P188,Electronic design automation software,N84,,
 490,Silvaco,P189,Electronic design automation software,N84,,
 491,PDF Solutions,P190,Electronic design automation software,N84,,
-492,Huada Empyrean,P191,Electronic design automation software,N84,,Minor
-493,Primarius,P192,Electronic design automation software,N84,,Minor
-494,Xpeedic,P193,Electronic design automation software,N84,,Minor
-495,Semitronix,P194,Electronic design automation software,N84,,Minor
-496,Platform-da,P195,Electronic design automation software,N84,,Minor
-497,Microscapes,P196,Electronic design automation software,N84,,Minor
-498,Arcas-da,P197,Electronic design automation software,N84,,Minor
+492,Huada Empyrean,P191,Electronic design automation software,N84,,negligible
+493,Primarius,P192,Electronic design automation software,N84,,negligible
+494,Xpeedic,P193,Electronic design automation software,N84,,negligible
+495,Semitronix,P194,Electronic design automation software,N84,,negligible
+496,Platform-da,P195,Electronic design automation software,N84,,negligible
+497,Microscapes,P196,Electronic design automation software,N84,,negligible
+498,Arcas-da,P197,Electronic design automation software,N84,,negligible
 499,USA,P1,Core intellectual property,N85,52%,
 500,GBR,P110,Core intellectual property,N85,43%,
 501,CHN,P2,Core intellectual property,N85,2%,
 502,TWN,P8,Core intellectual property,N85,1%,
-503,Other,P3,Core intellectual property,N85,2%,
+503,Various,P3,Core intellectual property,N85,2%,
 504,ARM,P198,Core intellectual property,N85,,
 505,Synopsys,P185,Core intellectual property,N85,,
 506,Cadence,P186,Core intellectual property,N85,,
 507,SST,P199,Core intellectual property,N85,,
 508,Imagination Technologies,P200,Core intellectual property,N85,,
 509,Ceva,P201,Core intellectual property,N85,,
-510,Verisilicon,P202,Core intellectual property,N85,,Minor
+510,Verisilicon,P202,Core intellectual property,N85,,negligible
 511,Achronix,P20,Core intellectual property,N85,,
 512,Rambus,P203,Core intellectual property,N85,,
-513,eMemory Technology,P204,Core intellectual property,N85,,Minor
+513,eMemory Technology,P204,Core intellectual property,N85,,negligible
 514,JPN,P7,Wafer,N26,56%,
 516,TWN,P8,Wafer,N26,16%,
 517,DEU,P32,Wafer,N26,14%,
@@ -477,12 +477,12 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 521,USA,P1,Advanced photomask,N33,40%,
 522,TWN,P8,Advanced photomask,N33,7%,
 523,JPN,P7,Photoresist,N31,,
-524,USA,P1,Photoresist,N31,,Minor
-525,KOR,P4,Photoresist,N31,,Minor
+524,USA,P1,Photoresist,N31,,negligible
+525,KOR,P4,Photoresist,N31,,negligible
 526,USA,P1,Chemical mechanical planarization materials,N90,,
 526a,JPN,P7,Chemical mechanical planarization materials,N90,,
 527,FRA,P132,Chemical mechanical planarization materials,N90,,
-528,CHN,P2,Chemical mechanical planarization materials,N90,,Minor
+528,CHN,P2,Chemical mechanical planarization materials,N90,,negligible
 529,USA,P1,Deposition materials,N88,,
 530,JPN,P7,Deposition materials,N88,,
 531,CHN,P2,Deposition materials,N88,,
@@ -500,15 +500,15 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 543,GlobalWafers,P226,Wafer,N26,,
 544,Siltronic,P227,Wafer,N26,,
 545,SK Siltron,P228,Wafer,N26,,
-546,Okmetic,P229,Wafer,N26,,Minor
-547,JRH,P230,Wafer,N26,,Minor
-548,Zhonghuan,P231,Wafer,N26,,Minor
-549,Gritek,P232,Wafer,N26,,Minor
-550,MCL,P233,Wafer,N26,,Minor
-551,Simgui,P234,Wafer,N26,,Minor
-552,GuoSheng,P235,Wafer,N26,,Minor
-553,POSHING,P236,Wafer,N26,,Minor
-554,ZingSEMI,P237,Wafer,N26,,Minor
+546,Okmetic,P229,Wafer,N26,,negligible
+547,JRH,P230,Wafer,N26,,negligible
+548,Zhonghuan,P231,Wafer,N26,,negligible
+549,Gritek,P232,Wafer,N26,,negligible
+550,MCL,P233,Wafer,N26,,negligible
+551,Simgui,P234,Wafer,N26,,negligible
+552,GuoSheng,P235,Wafer,N26,,negligible
+553,POSHING,P236,Wafer,N26,,negligible
+554,ZingSEMI,P237,Wafer,N26,,negligible
 555,Dai Nippon,P238,Advanced photomask,N33,,
 556,Photronics,P239,Advanced photomask,N33,,
 557,Toppan Photomasks,P240,Advanced photomask,N33,,
@@ -518,8 +518,8 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 561,Samsung,P35,Advanced photomask,N33,,
 562,TSMC,P34,Advanced photomask,N33,,
 563,GlobalFoundries,P36,Advanced photomask,N33,,
-564,SMIC,P37,Advanced photomask,N33,,Minor
-565,Shenzhen Newway,P205,Advanced photomask,N33,,Minor
+564,SMIC,P37,Advanced photomask,N33,,negligible
+565,Shenzhen Newway,P205,Advanced photomask,N33,,negligible
 566,JSR,P206,Photoresist,N31,,
 567,Tokyo Ohka Kogyo,P207,Photoresist,N31,,
 568,Shin-Etsu,P208,Photoresist,N31,,
@@ -529,10 +529,10 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 572,DuPont,P222,Photoresist,N31,,
 573,EMD Performance Materials,P213,Photoresist,N31,,
 574,Inpria,P214,Photoresist,N31,,
-575,Ruihong,P215,Photoresist,N31,,Minor
-576,Kempur,P216,Photoresist,N31,,Minor
-577,Nata Opto-electronic Material,P217,Photoresist,N31,,Minor
-578,JHM,P218,Photoresist,N31,,Minor
+575,Ruihong,P215,Photoresist,N31,,negligible
+576,Kempur,P216,Photoresist,N31,,negligible
+577,Nata Opto-electronic Material,P217,Photoresist,N31,,negligible
+578,JHM,P218,Photoresist,N31,,negligible
 579,Fujifilm,P209,Chemical mechanical planarization materials,N90,,
 580,Fujimi,P219,Chemical mechanical planarization materials,N90,,
 581,Hitachi,P97,Chemical mechanical planarization materials,N90,,
@@ -544,8 +544,8 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 587,JSR,P206,Chemical mechanical planarization materials,N90,,
 588,Merck,P243,Chemical mechanical planarization materials,N90,,
 589,CMC,P244,Chemical mechanical planarization materials,N90,,
-590,Anji,P245,Chemical mechanical planarization materials,N90,,Minor
-591,Hubei Dinglong,P246,Chemical mechanical planarization materials,N90,,Minor
+590,Anji,P245,Chemical mechanical planarization materials,N90,,negligible
+591,Hubei Dinglong,P246,Chemical mechanical planarization materials,N90,,negligible
 592,JX Nippon,P247,Deposition materials,N88,,
 593,Honeywell,P248,Deposition materials,N88,,
 594,Tosoh SMD,P249,Deposition materials,N88,,
@@ -631,7 +631,7 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,m
 675,CHN,P2,Packaging materials,N100,,
 676,USA,P1,Packaging materials,N100,,
 677,DEU,P32,Packaging materials,N100,,
-678,KOR,P4,Packaging materials,N100,,Minor
-679,GBR,P110,Packaging materials,N100,,Minor
-680,TWN,P8,Packaging materials,N100,,Minor
+678,KOR,P4,Packaging materials,N100,,negligible
+679,GBR,P110,Packaging materials,N100,,negligible
+680,TWN,P8,Packaging materials,N100,,negligible
 681,Eminess,P310,Chemical mechanical planarization materials,N90,,

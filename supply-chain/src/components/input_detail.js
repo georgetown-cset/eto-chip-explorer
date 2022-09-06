@@ -31,7 +31,7 @@ const BarGraph = (props) => {
     <div>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
-      layout={{autosize: true, margin: {t: 50, r: 30, b: 30, l: 120, pad: 4}, title: "Country Provision"}}
+      layout={{autosize: true, margin: {t: 50, r: 30, b: 30, l: 120, pad: 4}, title: "Supplier countries"}}
       config={{responsive: true}}
     />
     </div>
@@ -66,7 +66,7 @@ const InputDetail = (props) => {
       {(orgs !== undefined) &&
         <div>
           <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-            Provider Organizations
+           Supplier companies
           </Typography>
           <table>
             {orgNames.map(org => (orgMeta[org] !== undefined) &&

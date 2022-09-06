@@ -25,7 +25,7 @@ Tube-based diffusion and deposition tools,N44,,,Deposition tools,N36
 Electrochemical coating tools,N45,,,Deposition tools,N36
 Deposition,N35,Photolithography,N25,,
 Photolithography,N25,Etch and clean,N46,,
-Chemical vapor deposition tools,N47,Deposition,N35,,
+Chemical vapor deposition tools,N47,,,Deposition tools,N36
 Etching and cleaning tools,N55,Etch and clean,N46,,
 Dry etching and cleaning tools,N48,,,Etching and cleaning tools,N55
 Wet etching and cleaning tools,N49,,,Etching and cleaning tools,N55

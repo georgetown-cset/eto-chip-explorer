@@ -1,10 +1,8 @@
 provider_name,provider_id,provider_type,country
 USA,P1,country,
 CHN,P2,country,
-Other,P3,country,
 KOR,P4,country,
-Europe,P5,country,
-Asia-Pacific,P6,country,
+Various,P5,country,
 JPN,P7,country,
 TWN,P8,country,
 Intel,P9,organization,USA
