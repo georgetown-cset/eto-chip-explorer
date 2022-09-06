@@ -67,6 +67,42 @@ const InputDetail = (props) => {
     }
   }
 
+  const mkOrgTableRows = () => {
+    const filteredOrgNames = orgNames.filter(org => org in orgMeta);
+    filteredOrgNames.sort((a, b) => {
+      const a_fmt = orgMeta[a]["hq"] ? orgMeta[a]["hq"] + orgMeta[a]["name"] : orgMeta[a]["name"];
+      const b_fmt = orgMeta[b]["hq"] ? orgMeta[b]["hq"] + orgMeta[b]["name"] : orgMeta[b]["name"];
+      if(a_fmt > b_fmt){
+        return 1;
+      } else if(b_fmt > a_fmt){
+        return -1;
+      }
+      return 0;
+    });
+    const rows = [];
+    for(let idx = 0; idx < filteredOrgNames.length; idx += 2){
+      const rowOrgs = [filteredOrgNames[idx]];
+      if(idx+1 < filteredOrgNames.length){
+        rowOrgs.push(filteredOrgNames[idx+1])
+      }
+      rows.push(
+        <tr key={rowOrgs.join("-")}>
+          {rowOrgs.map((org) => (
+          <td key={org}>
+            <Typography component="p">
+              {orgMeta[org]["hq"] && <span className="org-flag">{orgMeta[org]["hq"]}</span>}
+              <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
+                {orgMeta[org]["name"]}
+              </Link>{orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
+            </Typography>
+          </td>
+          ))}
+        </tr>
+      )
+    }
+    return rows;
+  };
+
   return (
     <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
@@ -79,23 +115,7 @@ const InputDetail = (props) => {
           </Typography>
           <table>
             <tbody>
-            {orgNames.map(org => (orgMeta[org] !== undefined) &&
-              <tr key={org}>
-                <td>
-                  <Typography component="p">
-                    {orgMeta[org]["hq"] && <span className="org-flag">{orgMeta[org]["hq"]}</span>}
-                    <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
-                      {orgMeta[org]["name"]}
-                    </Link>
-                  </Typography>
-                </td>
-                <td>
-                  <Typography component="p">
-                    {orgs[org]}
-                  </Typography>
-                </td>
-              </tr>
-            )}
+            {mkOrgTableRows()}
             </tbody>
           </table>
         </div>
