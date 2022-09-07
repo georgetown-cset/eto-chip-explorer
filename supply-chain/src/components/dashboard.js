@@ -18,15 +18,16 @@ const FILTER_ORG = "organization";
 const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
 const GradientLegend = (props) => {
-  const {type} = props;
+  const {type, numSelected} = props;
 
   let startLegend, endLegend = "";
   let boxes = null;
 
   switch (type) {
     case FILTER_COUNTRY:
-      startLegend = "selected country has 0% market share";
-      endLegend = "selected country has >80% market share";
+      const has = numSelected === 1 ? "country has" : "countries have";
+      startLegend = `selected ${has} 0% market share`;
+      endLegend = `selected ${has} >80% market share`;
       boxes = <div className="gradient-box-wrapper">
         <div className="gradient-box gradient-20" />
         <div className="gradient-box gradient-40" />
@@ -45,8 +46,9 @@ const GradientLegend = (props) => {
     </div>;
       break;
     case FILTER_ORG:
-      startLegend = "not provided by selected company";
-      endLegend = "provided by selected company";
+      const company = numSelected === 1 ? "company" : "companies";
+      startLegend = `not provided by selected ${company}`;
+      endLegend = `provided by selected ${company}`;
       boxes = <div className="gradient-box-wrapper">
       <div className="gradient-box gradient-20" />
       <div className="gradient-box gradient-80" />
@@ -273,7 +275,7 @@ const Dashboard = () => {
       and nations interact in the production process.
     </Typography>}/>
     </div>
-    <Paper style={{padding: "20px 0px 20px 10px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+    <Paper style={{padding: "20px 0px 30px 10px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
@@ -296,7 +298,7 @@ const Dashboard = () => {
       </Button>
       {
         highlighterFilter !== '' && highlighterFilter !== FILTER_INPUT &&
-        <GradientLegend type={highlighterFilter} />
+        <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
       }
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
