@@ -50,7 +50,7 @@ const DocumentationNode = (props) => {
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
                 content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
-            {variants[node] &&
+            {variants[node] && (currSelectedNode === node || variants[node].includes(currSelectedNode)) &&
               <div>
                 <Typography className="variants-heading" component={"p"}>Variants</Typography>
                 {variants[node].map((variant) =>
