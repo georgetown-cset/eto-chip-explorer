@@ -238,7 +238,7 @@ const Dashboard = () => {
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show supplier concentration" />
       <Button id="clear-button" style={{marginLeft: "20px", fontSize: "1rem"}} variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
-        Clear
+        Clear Filters
       </Button>
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
