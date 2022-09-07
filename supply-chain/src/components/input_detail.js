@@ -33,8 +33,11 @@ const BarGraph = (props) => {
       data={data}
       layout={{
         autosize: true,
-        margin: {t: 50, r: 30, b: 30, l: 120, pad: 4},
+        margin: {t: 50, r: 30, b: 35, l: 120, pad: 4},
         title: "Country Provision",
+        xaxis: {
+          title: "Share of global market"
+        },
         font: {
           family: "GTZirkonRegular, Arial"
         },
