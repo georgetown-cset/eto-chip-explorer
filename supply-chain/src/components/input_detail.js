@@ -5,6 +5,7 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
+import { countryFlags } from "../../data/provision";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -62,7 +63,10 @@ const InputDetail = (props) => {
   if(hasCountries) {
     for (let i = 0; i < countries.length; i++) {
       if (typeof countryValues[i] !== "number") {
-        undefinedProvisionCountries.push(countries[i]+" ("+countryValues[i]+")");
+        undefinedProvisionCountries.push({
+          country: countries[i],
+          countryValue: countryValues[i]
+        });
       } else {
         graphCountries.push(countries[i]);
         graphCountryValues.push(countryValues[i]);
@@ -93,12 +97,35 @@ const InputDetail = (props) => {
           {rowOrgs.map((org) => (
           <td key={org}>
             <Typography component="p">
-              {orgMeta[org]["hq"] && <span className="org-flag">{orgMeta[org]["hq"]}</span>}
+              {orgMeta[org]["hq"] && <span className="flag">{orgMeta[org]["hq"]}</span>}
               <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
                 {orgMeta[org]["name"]}
               </Link>{orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
             </Typography>
           </td>
+          ))}
+        </tr>
+      )
+    }
+    return rows;
+  };
+
+  const mkCountryTableRows = () => {
+    const rows = [];
+    for (let idx = 0; idx < undefinedProvisionCountries.length; idx += 2){
+      const rowCountryInfos = [undefinedProvisionCountries[idx]];
+      if(idx+1 < undefinedProvisionCountries.length){
+        rowCountryInfos.push(undefinedProvisionCountries[idx+1])
+      }
+      rows.push(
+        <tr key={idx}>
+          {rowCountryInfos.map((countryInfo) => (
+            <td key={countryInfo.country}>
+              <Typography component="p">
+                {countryFlags[countryInfo.country] && <span className="flag">{countryFlags[countryInfo.country]}</span>}
+                {countryInfo.country}{countryInfo.countryValue !== "Major" && <span> ({countryInfo.countryValue})</span>}
+              </Typography>
+            </td>
           ))}
         </tr>
       )
@@ -118,20 +145,32 @@ const InputDetail = (props) => {
           </Typography>
           <table>
             <tbody>
-            {mkOrgTableRows()}
+              {mkOrgTableRows()}
             </tbody>
           </table>
         </div>
       }
       {hasCountries &&
         <div>
+          {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
+            <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+              Country Provision
+            </Typography>
+          }
           {graphCountries.length > 0 &&
             <BarGraph countries={graphCountries} values={graphCountryValues}/>
           }
-          {undefinedProvisionCountries.length > 0 &&
+          {graphCountries.length > 0 && undefinedProvisionCountries.length > 0 &&
             <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>
-              Countries with unknown provision share: {undefinedProvisionCountries.join(", ")}
+              Minor providers (not pictured): {undefinedProvisionCountries.map(c => c.country).join(", ")}
             </Typography>
+          }
+          {graphCountries.length === 0 && undefinedProvisionCountries.length > 0 &&
+            <table>
+              <tbody>
+                {mkCountryTableRows()}
+              </tbody>
+            </table>
           }
         </div>
       }

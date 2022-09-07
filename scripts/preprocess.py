@@ -159,13 +159,18 @@ class Preprocess:
             f.write("\nexport {graph, graphReverse, nodeToMeta, variants};\n")
 
     @staticmethod
-    def get_country(raw_country_name: str) -> str:
+    def get_country(raw_country_name: str, flag: bool = False) -> str:
         """
         Normalize country names, including mapping from alpha3
         :param raw_country_name: Raw analyst-specified country name
         :return: Normalized country name
         """
         country = pycountry.countries.get(alpha_3=raw_country_name)
+        if flag:
+            if country:
+                return country.flag
+            else:
+                return None
         clean_country_name = None if country is None else country.name
         if clean_country_name is None:
             if raw_country_name not in COUNTRY_MAPPING:
@@ -249,6 +254,7 @@ class Preprocess:
         """
         org_provision = {}
         country_provision = {}
+        country_flags = {}
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
                 provider_id = line["provider_id"].strip()
@@ -259,6 +265,9 @@ class Preprocess:
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
+                        country_flags[country_name] = self.get_country(
+                            provider_name, flag=True
+                        )
                     provision_share = self.get_provision(line)
                     country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
@@ -278,13 +287,14 @@ class Preprocess:
         )
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
             f.write(f"const countryProvision={json.dumps(country_provision)};\n")
+            f.write(f"const countryFlags={json.dumps(country_flags)};\n")
             f.write(
                 f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n"
             )
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
             f.write(
-                "\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n"
+                "\nexport {countryProvision, countryFlags, countryProvisionConcentration, orgProvision, providerMeta};\n"
             )
 
     def write_descriptions(

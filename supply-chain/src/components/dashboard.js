@@ -1,5 +1,4 @@
 import React, {useEffect} from "react";
-import { useTheme } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -8,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { AppIntro, AppWrapper, Dropdown } from "@eto/eto-ui-components";
 
 import Map from "./map";
-import { nodeToMeta } from "../../data/graph";
+import { nodeToMeta, variants } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 
 const Dashboard = () => {
@@ -36,6 +35,17 @@ const Dashboard = () => {
     }
     return inputToNode;
   };
+
+  const getVariantToNode = () => {
+    const variantToNode = {};
+    for (const node in variants) {
+      for (const variant of variants[node]) {
+        variantToNode[variant] = node;
+      }
+    }
+    return variantToNode;
+  }
+  const variantToNode = getVariantToNode();
 
   const getCurrentHighlights = (currFilterValues = filterValues) => {
     let highlighter = FILTER_INPUT;
@@ -84,6 +94,16 @@ const Dashboard = () => {
             } else {
               highlightGradientMap[provKey] = provValue;
             }
+            // If the provision node is a variant of another parent node,
+            // we show the highlighting on that parent node.
+            if (variantToNode[provKey] !== undefined) {
+              const varientParentNode = variantToNode[provKey];
+              if (varientParentNode in highlightGradientMap) {
+                highlightGradientMap[varientParentNode] += provValue;
+              } else {
+                highlightGradientMap[varientParentNode] = provValue;
+              }
+            }
           }
         }
       }
@@ -92,7 +112,6 @@ const Dashboard = () => {
   };
 
   const inputToNode = getInputToNodes();
-  const theme = useTheme();
   const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
     [FILTER_INPUT]: "All",
