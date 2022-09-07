@@ -70,6 +70,7 @@ export const SubNode = (props) => {
                   depth={1}
                   currSelectedNode={currSelectedNode}
                   />)}
+        {props.children}
       </Typography>
     </div>
   );

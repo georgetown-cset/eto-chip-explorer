@@ -11,6 +11,52 @@ import ProcessDetail from "./process_detail";
 import InputDetail from "./input_detail";
 import GraphNode, { NodeHeading, SubNode } from "./graph_node";
 
+// List of all subvariants a parent variant has
+const getAllSubVariantsList = () => {
+  let subVariantsList = {...variants};
+  for (const nodeWithVariants in subVariantsList) {
+    // Deep copy
+    subVariantsList[nodeWithVariants] = [...subVariantsList[nodeWithVariants]];
+    for (const nodeVariant of subVariantsList[nodeWithVariants]) {
+      if (nodeVariant in subVariantsList) {
+        subVariantsList[nodeWithVariants].push(...subVariantsList[nodeVariant]);
+      }
+    }
+  }
+  return subVariantsList;
+};
+const allSubVariantsList = getAllSubVariantsList();
+
+// Recursive component to construct variants tree
+const VariantsList = (props) => {
+  const {node, currSelectedNode, input_type, updateSelected, parent, depth} = props;
+  console.log(variants);
+  return (
+    <div>
+      {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
+        <div>
+          <Typography className="variants-heading" component={"p"} style={{marginLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
+          {variants[node].map((variant) =>
+            <SubNode nodeType={input_type}
+              name={nodeToMeta[variant]["name"]}
+              key={nodeToMeta[variant]["name"]}
+              nodeId={variant}
+              metadata={nodeToMeta}
+              highlight={0}
+              updateSelected={updateSelected}
+              parent={parent}
+              depth={depth}
+              currSelectedNode={currSelectedNode}
+            >
+              <VariantsList node={variant} currSelectedNode={currSelectedNode} input_type={input_type} updateSelected={updateSelected} parent={parent} depth={depth+2} />
+            </SubNode>
+          )}
+        </div>
+      }
+    </div>
+  )
+}
+
 const DocumentationNode = (props) => {
   const {node, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
@@ -50,24 +96,7 @@ const DocumentationNode = (props) => {
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
                 content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
-            {variants[node] && (currSelectedNode === node || variants[node].includes(currSelectedNode)) &&
-              <div>
-                <Typography className="variants-heading" component={"p"}>Variants</Typography>
-                {variants[node].map((variant) =>
-                  <SubNode nodeType={input_type}
-                    name={nodeToMeta[variant]["name"]}
-                    key={nodeToMeta[variant]["name"]}
-                    nodeId={variant}
-                    metadata={nodeToMeta}
-                    highlight={0}
-                    updateSelected={updateSelected}
-                    parent={parent}
-                    depth={2}
-                    currSelectedNode={currSelectedNode}
-                  />
-                )}
-              </div>
-            }
+            <VariantsList node={node} currSelectedNode={currSelectedNode} input_type={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
           </div>
         )}
       </div>
