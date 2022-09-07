@@ -82,7 +82,7 @@ const GraphNode = (props) => {
     (("tools" in meta) && (meta["tools"].length > 0));
 
   return (
-    <div className="graph-node-wrapper" style={{position: "relative", verticalAlign: "middle"}}>
+    <div className="graph-node-wrapper">
       <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : "")}
         style={{
           margin: wide ? "" : "20px 25px",
@@ -163,6 +163,7 @@ const GraphNode = (props) => {
             marginLeft: "auto",
             marginRight: "auto",
             fontSize: "40px",
+            zIndex: "5",
           }}
         />
       }

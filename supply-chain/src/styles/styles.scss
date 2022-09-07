@@ -42,6 +42,7 @@ a {
 .MuiPaper-root.filter-bar {
   background-color: var(--bright-blue-lightest);
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
 
   .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
@@ -68,6 +69,8 @@ a {
     color: var(--orange);
     font-family: GTZirkonRegular;
     border-color: var(--orange);
+    margin-left: 20px;
+    font-size: 1rem;
   }
 
   .gradient-legend {
@@ -195,6 +198,7 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 5px;
+  z-index: 5;
   .MuiTypography-root {
     font-family: GTZirkonLight;
   }
@@ -301,8 +305,13 @@ a {
 
 /* Mobile view styling */
 
-.graph-node-wrapper {
-  display: block;
+.stage-border {
+  display: contents;
+  .graph-node-wrapper {
+    display: inline;
+    position: relative;
+    vertical-align: bottom;
+  }
 }
 
 .graph-arrows-wrapper {
@@ -326,12 +335,16 @@ a {
 /* Desktop styling */
 
 @media (min-width: 1220px) {
-  .graph-node-wrapper {
-    display: inline-block;
+  .stage-border {
+    display: block;
+    .graph-node-wrapper {
+      display: inline-block;
+    }
   }
 
   .graph-arrows-wrapper {
     display: unset;
+    z-index: 1;
   }
 
   .graph-node-connections-text {

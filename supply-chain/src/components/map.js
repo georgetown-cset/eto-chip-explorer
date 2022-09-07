@@ -195,6 +195,7 @@ const Map = (props) => {
   const mkGraph = () => {
     let currNodes = [finalNode];
     const layers = [mkLayer(currNodes)];
+    const layerEdges = [];
     minimapLayers.push(mkLayer(currNodes, false, true));
     standaloneMinimapLayers.push(mkLayer(currNodes, false, true, true));
     const seen = new Set();
@@ -268,7 +269,7 @@ const Map = (props) => {
         nodeToLayerNumber[node] = layerNumber;
       });
       const edges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber);
-      layers.push(edges);
+      layerEdges.push(edges);
       const minimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true);
       minimapLayers.push(minimapEdges);
       const standaloneMinimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true, true);
@@ -276,6 +277,12 @@ const Map = (props) => {
       layerNumber += 1;
     }
     layers.reverse();
+    // SVGs don't respect z-index, so to order them, we need to draw them in the correct order.
+    // We add the arrows to the front of the array so they are drawn before anything else,
+    // because the arrows are the bottom layer of the map, and other elements/SVGs
+    // (most importantly, the little black down arrow on the bottom edge of the graph node)
+    // should show on top of them.
+    layers.unshift(layerEdges);
     minimapLayers.reverse();
     standaloneMinimapLayers.reverse();
     const unattached = [];
