@@ -309,7 +309,7 @@ a {
   .graph-node-wrapper {
     display: inline;
     position: relative;
-    vertical-align: bottom;
+    vertical-align: top;
   }
 }
 
@@ -338,6 +338,7 @@ a {
     display: block;
     .graph-node-wrapper {
       display: inline-block;
+      vertical-align: middle;
     }
   }
 
