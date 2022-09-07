@@ -11,13 +11,59 @@ import Map from "./map";
 import { nodeToMeta } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 
-const Dashboard = () => {
+const FILTER_INPUT = "input-resource";
+const FILTER_COUNTRY = "country";
+const FILTER_CONCENTRATION = "concentration";
+const FILTER_ORG = "organization";
+const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
-  const FILTER_INPUT = "input-resource";
-  const FILTER_COUNTRY = "country";
-  const FILTER_CONCENTRATION = "concentration";
-  const FILTER_ORG = "organization";
-  const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
+const GradientLegend = (props) => {
+  const {type} = props;
+
+  let startLegend, endLegend = "";
+  let boxes = null;
+
+  switch (type) {
+    case FILTER_COUNTRY:
+      startLegend = "selected country has 0% market share";
+      endLegend = "selected country has >80% market share";
+      boxes = <div className="gradient-box-wrapper">
+        <div className="gradient-box gradient-20" />
+        <div className="gradient-box gradient-40" />
+        <div className="gradient-box gradient-60" />
+        <div className="gradient-box gradient-80" />
+        <div className="gradient-box gradient-100" />
+      </div>;
+      break;
+    case FILTER_CONCENTRATION:
+      startLegend = "fewer supplier countries";
+      endLegend = "more supplier countries";
+      boxes = <div className="gradient-box-wrapper">
+      <div className="gradient-box gradient-20" />
+      <div className="gradient-box gradient-60" />
+      <div className="gradient-box gradient-100" />
+    </div>;
+      break;
+    case FILTER_ORG:
+      startLegend = "not provided by selected company";
+      endLegend = "provided by selected company";
+      boxes = <div className="gradient-box-wrapper">
+      <div className="gradient-box gradient-20" />
+      <div className="gradient-box gradient-80" />
+    </div>;
+      break;
+  }
+
+  return (
+    <div className="gradient-legend">
+      {startLegend}
+      {boxes}
+      {endLegend}
+    </div>
+  )
+}
+
+const Dashboard = () => {
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -39,10 +85,17 @@ const Dashboard = () => {
 
   const getCurrentHighlights = (currFilterValues = filterValues) => {
     let highlighter = FILTER_INPUT;
+    let hasHighlighter = false;
     for(let fv in defaultFilterValues){
       if(defaultFilterValues[fv] !== currFilterValues[fv]){
         highlighter = fv;
+        hasHighlighter = true;
       }
+    }
+    if (hasHighlighter) {
+      setHighlighterFilter(highlighter)
+    } else {
+      setHighlighterFilter('');
     }
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
@@ -107,6 +160,7 @@ const Dashboard = () => {
     [FILTER_CONCENTRATION]: [true, false],
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
+  const [highlighterFilter, setHighlighterFilter] = React.useState('');
   const [highlights, setHighlights] = React.useState({});
   const [documentationPanelToggle, setDocumentationPanelToggle] = React.useState(false);
 
@@ -240,6 +294,10 @@ const Dashboard = () => {
       <Button id="clear-button" style={{marginLeft: "20px", fontSize: "1rem"}} variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
         Clear
       </Button>
+      {
+        highlighterFilter !== '' && highlighterFilter !== FILTER_INPUT &&
+        <GradientLegend type={highlighterFilter} />
+      }
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
