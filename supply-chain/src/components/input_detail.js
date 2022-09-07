@@ -98,9 +98,8 @@ const InputDetail = (props) => {
           <td key={org}>
             <Typography component="p">
               {orgMeta[org]["hq"] && <span className="flag">{orgMeta[org]["hq"]}</span>}
-              <Link target={"_blank"} rel={"noopener"} href={orgMeta[org]["url"]}>
-                {orgMeta[org]["name"]}
-              </Link>{orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
+              {orgMeta[org]["name"]}
+              {orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
             </Typography>
           </td>
           ))}

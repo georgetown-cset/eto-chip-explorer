@@ -331,7 +331,7 @@ class Preprocess:
 
     def mk_provider_to_meta(self, provider_fi: str, company_metadata_fi: str):
         """
-        Create a mapping between provider ids and their metadata, such as name, type, and url (for company providers)
+        Create a mapping between provider ids and their metadata, such as name and type (for company providers)
         :param provider_fi: provider csv
             (from https://docs.google.com/spreadsheets/d/1QaUTc75gnwk1SwEy3vCx3J0w6oE0yCierYF2pO0Uino/edit#gid=0)
         :param company_metadata_fi: Airtable export of basic company metadata
@@ -354,7 +354,6 @@ class Preprocess:
                 self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(
                     line["HQ country"].strip()
                 ).flag
-                self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod
     def mk_images(images_fi: str, output_dir: str) -> None:
