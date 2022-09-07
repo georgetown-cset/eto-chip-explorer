@@ -44,6 +44,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
+  justify-content: space-around;
 
   .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
     font-family: GTZirkonRegular;
@@ -52,7 +53,6 @@ a {
   }
 
   #concentration-checkbox {
-    margin-left: 10px;
     margin-bottom: 5px;
     color: var(--bright-blue);
     .MuiCheckbox-root {
@@ -69,7 +69,6 @@ a {
     color: var(--orange);
     font-family: GTZirkonRegular;
     border-color: var(--orange);
-    margin-left: 20px;
     font-size: 1rem;
   }
 
