@@ -312,7 +312,7 @@ const Dashboard = () => {
       <FormControlLabel id="concentration-checkbox" control={
         <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
       } label="Show supplier concentration" />
-      <Button id="clear-button" style={{marginLeft: "20px", fontSize: "1rem"}} variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
+      <Button id="clear-button" variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
         Clear Filters
       </Button>
       {
