@@ -294,7 +294,7 @@ const Dashboard = () => {
       and nations interact in the production process.
     </Typography>}/>
     </div>
-    <Paper style={{padding: "20px 0px 30px 10px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+    <Paper style={{padding: "20px 0px 30px 0px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
