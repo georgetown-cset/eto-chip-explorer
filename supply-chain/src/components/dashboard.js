@@ -10,10 +10,12 @@ import Map from "./map";
 import { nodeToMeta, variants } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 
+const FILTER_CHOOSE = "filter-choose";
 const FILTER_INPUT = "input-resource";
 const FILTER_COUNTRY = "country";
 const FILTER_CONCENTRATION = "concentration";
 const FILTER_ORG = "organization";
+const DROPDOWN_FILTERS = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG];
 const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
 const GradientLegend = (props) => {
@@ -167,14 +169,23 @@ const Dashboard = () => {
   };
 
   const inputToNode = getInputToNodes();
-  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
+  const listOfFilters = [
+    {val: "None", text: "None"},
+    {val: FILTER_INPUT, text: "Jump to Input"},
+    {val: FILTER_COUNTRY, text: "Supplier Countries"},
+    {val: FILTER_ORG, text: "Supplier Companies"},
+    {val: FILTER_CONCENTRATION, text: "Show Supplier Concentration"},
+  ];
+  const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
+    [FILTER_CHOOSE]: "None",
     [FILTER_INPUT]: "All",
     [FILTER_COUNTRY]: ["All"],
     [FILTER_ORG]: ["All"],
     [FILTER_CONCENTRATION]: false,
   };
   const filterToValues = {
+    [FILTER_CHOOSE]: listOfFilters,
     [FILTER_INPUT]: inputToNode,
     [FILTER_COUNTRY]: countryProvision,
     [FILTER_ORG]: orgProvision,
@@ -188,6 +199,8 @@ const Dashboard = () => {
   const handleChange = (val, key) => {
     const updatedFilterValues = {...defaultFilterValues};
     if (key !== null) {
+      // Keep the value of FILTER_CHOOSE until the user explicitly clears it
+      updatedFilterValues[FILTER_CHOOSE] = filterValues[FILTER_CHOOSE];
       if (MULTI_FILTERS.includes(key) && (val.length > 1)){
         if(filterValues[key].includes("All")){
           updatedFilterValues[key] = val.filter((v) => v !== "All");
@@ -202,6 +215,11 @@ const Dashboard = () => {
     setFilterValues(updatedFilterValues);
     if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
+    }
+    // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
+    // since that filter has no dropdown
+    if (updatedFilterValues[FILTER_CHOOSE] === FILTER_CONCENTRATION) {
+      updatedFilterValues[FILTER_CONCENTRATION] = true;
     }
     getCurrentHighlights(updatedFilterValues);
     // Put filter values in URL parameters.
@@ -239,27 +257,23 @@ const Dashboard = () => {
     organizationOptions.push({"val": name, "text": providerMeta[name]["name"]})
   ));
 
-  const handleConcentrationChange = (evt) => {
-    handleChange(evt.target.checked, FILTER_CONCENTRATION);
-  };
-
-  const dropdownParams = [
-    {
+  const dropdownParams = {
+    [FILTER_INPUT]: {
       "label": "Jump to input",
       "key": FILTER_INPUT,
       "options": inputResourceOptions
     },
-    {
+    [FILTER_COUNTRY]: {
       "label": "Supplier countries",
       "key": FILTER_COUNTRY,
       "options": countryOptions
     },
-    {
+    [FILTER_ORG]: {
       "label": "Supplier companies",
       "key": FILTER_ORG,
       "options": organizationOptions
     },
-  ];
+  };
 
   // Sets the state of the app based on the queries in the URL.
   // This will only run once, when the component is initially rendered.
@@ -280,6 +294,11 @@ const Dashboard = () => {
     if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
+    // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
+    // since that filter has no dropdown
+    if (updatedFilterValues[FILTER_CHOOSE] === FILTER_CONCENTRATION) {
+      updatedFilterValues[FILTER_CONCENTRATION] = true;
+    }
     getCurrentHighlights(updatedFilterValues);
   }, []);
 
@@ -294,24 +313,27 @@ const Dashboard = () => {
       and nations interact in the production process.
     </Typography>}/>
     </div>
-    <Paper style={{padding: "20px 0px 30px 0px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+    <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
-      {dropdownParams.map((dropdown) =>
-        <div key={dropdown.label}>
+      <Dropdown
+        inputLabel="Choose filter"
+        selected={filterValues[FILTER_CHOOSE]}
+        setSelected={(evt) => handleChange(evt, FILTER_CHOOSE)}
+        options={filterToValues[FILTER_CHOOSE]}
+      />
+      {(DROPDOWN_FILTERS.includes(filterValues[FILTER_CHOOSE])) &&
+        <div key={dropdownParams[filterValues[FILTER_CHOOSE]].label}>
           <Dropdown
-            inputLabel={dropdown.label}
-            selected={filterValues[dropdown.key]}
-            setSelected={(evt) => handleChange(evt, dropdown.key)}
-            multiple={MULTI_FILTERS.includes(dropdown.key)}
-            options={dropdown.options}
+            inputLabel={dropdownParams[filterValues[FILTER_CHOOSE]].label}
+            selected={filterValues[dropdownParams[filterValues[FILTER_CHOOSE]].key]}
+            setSelected={(evt) => handleChange(evt, dropdownParams[filterValues[FILTER_CHOOSE]].key)}
+            multiple={MULTI_FILTERS.includes(dropdownParams[filterValues[FILTER_CHOOSE]].key)}
+            options={dropdownParams[filterValues[FILTER_CHOOSE]].options}
           />
         </div>
-      )}
-      <FormControlLabel id="concentration-checkbox" control={
-        <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
-      } label="Show supplier concentration" />
+      }
       <Button id="clear-button" variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
         Clear Filters
       </Button>

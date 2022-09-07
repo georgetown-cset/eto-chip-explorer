@@ -44,7 +44,8 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  justify-content: space-around;
+  padding: 20px 20px 30px 20px;
+  width: calc(100% - 40px);
 
   .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
     font-family: GTZirkonRegular;
@@ -70,6 +71,7 @@ a {
     font-family: GTZirkonRegular;
     border-color: var(--orange);
     font-size: 1rem;
+    margin-left: auto;
   }
 
   .gradient-legend {
