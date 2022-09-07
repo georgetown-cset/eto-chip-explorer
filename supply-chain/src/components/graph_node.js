@@ -14,8 +14,7 @@ export const NodeHeading = (props) => {
     <Typography component="p"
       className={
         "node-heading" +
-        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "") +
-        ((nodeType === "parent") ? " top-documentation-link" : "")
+        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")
       }
     >
       <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>

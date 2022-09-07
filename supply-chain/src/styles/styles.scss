@@ -188,16 +188,15 @@ a {
     margin-right: 5px;
     color: var(--bright-blue);
   }
-  .node-heading {
-    margin-bottom: 0.7rem;
-    &.selected-documentation-link {
-      font-family: GTZirkonBold;
-      .graph-node-icon {
-        color: var(--black);
+  &, .graph-sub-node {
+    .node-heading {
+      margin-bottom: 0.7rem;
+      &.selected-documentation-link {
+        font-family: GTZirkonBold;
+        .graph-node-icon {
+          color: var(--black);
+        }
       }
-    }
-    &.top-documentation-link {
-      font-family: GTZirkonBold;
     }
   }
   .standalone-pane-heading p.MuiTypography-root {
