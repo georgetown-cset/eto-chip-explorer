@@ -34,8 +34,7 @@ const BarGraph = (props) => {
       data={data}
       layout={{
         autosize: true,
-        margin: {t: 50, r: 30, b: 30, l: 120, pad: 4},
-        title: "Country Provision",
+        margin: {t: 30, r: 30, b: 30, l: 120, pad: 4},
         font: {
           family: "GTZirkonRegular, Arial"
         },
@@ -149,6 +148,11 @@ const InputDetail = (props) => {
       }
       {hasCountries &&
         <div>
+          {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
+            <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+              Country Provision
+            </Typography>
+          }
           {graphCountries.length > 0 &&
             <BarGraph countries={graphCountries} values={graphCountryValues}/>
           }
@@ -158,16 +162,11 @@ const InputDetail = (props) => {
             </Typography>
           }
           {graphCountries.length === 0 && undefinedProvisionCountries.length > 0 &&
-            <div>
-              <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-                Country Provision
-              </Typography>
-              <table>
-                <tbody>
-                  {mkCountryTableRows()}
-                </tbody>
-              </table>
-            </div>
+            <table>
+              <tbody>
+                {mkCountryTableRows()}
+              </tbody>
+            </table>
           }
         </div>
       }
