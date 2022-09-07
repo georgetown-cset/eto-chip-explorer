@@ -159,18 +159,26 @@ class Preprocess:
             f.write("\nexport {graph, graphReverse, nodeToMeta, variants};\n")
 
     @staticmethod
-    def get_country(raw_country_name: str, flag: bool = False) -> str:
+    def get_flag(country_name: str) -> str:
+        """
+        Return flag emoji for country
+        :param raw_country_name: Country name string
+        :return: Flag emoji (in unicode) for that country or None
+        """
+        try:
+            country = pycountry.countries.lookup(country_name)
+            return country.flag
+        except LookupError:
+            return None
+
+    @staticmethod
+    def get_country(raw_country_name: str) -> str:
         """
         Normalize country names, including mapping from alpha3
         :param raw_country_name: Raw analyst-specified country name
         :return: Normalized country name
         """
         country = pycountry.countries.get(alpha_3=raw_country_name)
-        if flag:
-            if country:
-                return country.flag
-            else:
-                return None
         clean_country_name = None if country is None else country.name
         if clean_country_name is None:
             if raw_country_name not in COUNTRY_MAPPING:
@@ -265,9 +273,7 @@ class Preprocess:
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
-                        country_flags[country_name] = self.get_country(
-                            provider_name, flag=True
-                        )
+                        country_flags[country_name] = self.get_flag(provider_name)
                     provision_share = self.get_provision(line)
                     country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
@@ -351,9 +357,9 @@ class Preprocess:
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(
+                self.provider_to_meta[company_id]["hq"] = self.get_flag(
                     line["HQ country"].strip()
-                ).flag
+                )
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod
