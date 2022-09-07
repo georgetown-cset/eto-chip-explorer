@@ -36,8 +36,8 @@ const GradientLegend = (props) => {
       </div>;
       break;
     case FILTER_CONCENTRATION:
-      startLegend = "fewer supplier countries";
-      endLegend = "more supplier countries";
+      startLegend = "more supplier countries";
+      endLegend = "fewer supplier countries";
       boxes = <div className="gradient-box-wrapper">
       <div className="gradient-box gradient-20" />
       <div className="gradient-box gradient-60" />
@@ -50,7 +50,7 @@ const GradientLegend = (props) => {
       endLegend = `provided by selected ${company}`;
       boxes = <div className="gradient-box-wrapper">
       <div className="gradient-box gradient-20" />
-      <div className="gradient-box gradient-80" />
+      <div className="gradient-box gradient-100" />
     </div>;
       break;
   }
@@ -137,7 +137,7 @@ const Dashboard = () => {
             let provValue = currMapping[name][provKey]
             // We round qualitative "major"/"minor" values to numerical approximations
             if (provValue === "Major") {
-              provValue = 80;
+              provValue = 81;
             } else if (provValue === "Minor") {
               provValue = 0;
             }
