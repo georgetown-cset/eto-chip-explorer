@@ -5,6 +5,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+
+  --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
+  --bright-blue-light-hsl-g80: hsl(215, 100%, 80%);
+  --bright-blue-light-hsl-g60: hsl(215, 100%, 85%);
+  --bright-blue-light-hsl-g40: hsl(215, 100%, 90%);
+  --bright-blue-light-hsl-g20: hsl(215, 100%, 95%);
 }
 
 p.MuiTypography-root {
@@ -62,6 +68,40 @@ a {
     color: var(--orange);
     font-family: GTZirkonRegular;
     border-color: var(--orange);
+  }
+
+  .gradient-legend {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    font-size: 0.8rem;
+    margin-left: 8px;
+    font-family: GTZirkonLightItalic;
+    .gradient-box-wrapper {
+      margin: 0px 5px;
+    }
+    .gradient-box {
+      width: 0.8rem;
+      height: 0.8rem;
+      display: inline-block;
+      border: 1px solid var(--black);
+      margin-left: -1px;
+      &.gradient-100 {
+        background-color: var(--bright-blue-light-hsl-g100);
+      }
+      &.gradient-80 {
+        background-color: var(--bright-blue-light-hsl-g80);
+      }
+      &.gradient-60 {
+        background-color: var(--bright-blue-light-hsl-g60);
+      }
+      &.gradient-40 {
+        background-color: var(--bright-blue-light-hsl-g40);
+      }
+      &.gradient-20 {
+        background-color: var(--bright-blue-light-hsl-g20);
+      }
+    }
   }
 }
 
@@ -121,11 +161,6 @@ a {
 .graph-node, .stage-border {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
-    --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
-    --bright-blue-light-hsl-g80: hsl(215, 100%, 80%);
-    --bright-blue-light-hsl-g60: hsl(215, 100%, 85%);
-    --bright-blue-light-hsl-g40: hsl(215, 100%, 90%);
-    --bright-blue-light-hsl-g20: hsl(215, 100%, 95%);
     &.gradient-100 {
       background-color: var(--bright-blue-light-hsl-g100);
     }
