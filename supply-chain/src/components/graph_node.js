@@ -105,7 +105,7 @@ const GraphNode = (props) => {
               {graphReverse[node] &&
                 <div className="connection-text">
                   <span className="bold">
-                    Parent(s):
+                    Input processes:
                   </span>
                   <span>
                     {graphReverse[node].map((n) => nodeToMeta[n].name).join(", ")}
@@ -115,7 +115,7 @@ const GraphNode = (props) => {
               {graph[node] &&
                 <div className="connection-text">
                   <span className="bold">
-                    Child(ren):
+                    Dependent processes:
                   </span>
                   <span>
                     {graph[node].map((n) => nodeToMeta[n].name).join(", ")}
