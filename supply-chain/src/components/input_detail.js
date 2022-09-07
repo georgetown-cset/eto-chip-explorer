@@ -119,7 +119,7 @@ const InputDetail = (props) => {
             <td key={countryInfo.country}>
               <Typography component="p">
                 {countryFlags[countryInfo.country] && <span className="flag">{countryFlags[countryInfo.country]}</span>}
-                {countryInfo.country + " (" + countryInfo.countryValue + ")"}
+                {countryInfo.country}{countryInfo.countryValue !== "Major" && <span> ({countryInfo.countryValue})</span>}
               </Typography>
             </td>
           ))}
