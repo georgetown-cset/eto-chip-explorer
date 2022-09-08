@@ -146,7 +146,12 @@ const DocumentationNode = (props) => {
             <div className="image-wrapper">
               <img src={images.filter(i => i.name === node)[0]?.publicURL}
                 onClick={() => setOpen(true)}
-                alt={node}
+                onKeyDown={(evt) => {
+                  if (evt.key === "Enter") {setOpen(true)};
+                }}
+                role="presentation"
+                tabIndex={0}
+                alt={`Image of ${meta.image_caption}`}
               />
             </div>
           }
