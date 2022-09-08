@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Xarrow, {Xwrapper} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -54,8 +54,10 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <div key={stage} className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
-      <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
+    let stageClassName = "stage-border";
+    if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
+    return <div key={stage}>
+      <StageNode stage={stage} stageClassName={stageClassName} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
         <DocumentationNode node={selectedNode} parent={parentNode}
           descriptions={descriptions} images={images} isStage={true}
@@ -151,6 +153,16 @@ const Map = (props) => {
       })}
     </div>
   };
+
+  // Close any open documentation node if the user clicks the background
+  useEffect(() => {
+    function handleClickOutside(evt) {
+      if (evt.target.classList.contains("stage-border")) {
+        updateSelected(null, null, null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const mkGraph = () => {
     let currNodes = [finalNode];
@@ -254,7 +266,7 @@ const Map = (props) => {
     minimapLayers.unshift(mkLayer(unattached, true, true));
     standaloneMinimapLayers.unshift(mkLayer(unattached, true, true, true));
     return (
-      <div>
+      <div className="map-background">
         {filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
           <DocumentationNode node={filterValues["input-resource"]} parent={null}
             descriptions={descriptions} images={images} isStage={false} standalone={true}
