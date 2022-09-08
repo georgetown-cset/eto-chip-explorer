@@ -6,43 +6,47 @@ import InfoIcon from '@mui/icons-material/Info';
 import {nodeToMeta} from "../../data/graph";
 
 const StageNode = (props) => {
-  const {stage, parent, updateSelected} = props;
+  const {stage, stageClassName, parent, updateSelected} = props;
 
   return (
-    <div id={stage} style={{
-      marginTop: "20px",
-      paddingTop: "10px",
-      textAlign: "left",
-    }}>
-      <Typography component={"h3"}
+    <div>
+      <div className="stage-border uncolored" style={{height: "20px"}}></div>
+      <div id={stage}
+        className={stageClassName}
         style={{
+          paddingTop: "10px",
           textAlign: "left",
-          paddingLeft: "5px",
-          display: "inline-block",
       }}>
-        {nodeToMeta[stage]["name"]}
-      </Typography>
-      <Button
-        style={{
-          verticalAlign: "top",
-          display: "inline-block",
-          padding: "0px",
-          backgroundColor: "unset",
-        }}
-        onClick={(evt) => updateSelected(evt, stage === parent ? null : stage, stage === parent ? null : stage)}
-        disableRipple={true}
-      >
-        <InfoIcon style={{verticalAlign: "top"}} />
-      </Button>
-      {stage === parent &&
-        <ArrowDropDownIcon
+        <Typography component={"h3"}
           style={{
-            display: "block",
-            marginTop: "-17px",
-            fontSize: "40px",
+            textAlign: "left",
+            paddingLeft: "5px",
+            display: "inline-block",
+        }}>
+          {nodeToMeta[stage]["name"]}
+        </Typography>
+        <Button
+          style={{
+            verticalAlign: "top",
+            display: "inline-block",
+            padding: "0px",
+            backgroundColor: "unset",
           }}
-        />
-      }
+          onClick={(evt) => updateSelected(evt, stage === parent ? null : stage, stage === parent ? null : stage)}
+          disableRipple={true}
+        >
+          <InfoIcon style={{verticalAlign: "top"}} />
+        </Button>
+        {stage === parent &&
+          <ArrowDropDownIcon
+            style={{
+              display: "block",
+              marginTop: "-17px",
+              fontSize: "40px",
+            }}
+          />
+        }
+      </div>
     </div>
   )
 }

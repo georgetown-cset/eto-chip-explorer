@@ -54,8 +54,10 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <div key={stage} className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
-      <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
+    let stageClassName = "stage-border";
+    if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
+    return <div key={stage}>
+      <StageNode stage={stage} stageClassName={stageClassName} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
         <DocumentationNode node={selectedNode} parent={parentNode}
           descriptions={descriptions} images={images} isStage={true}
