@@ -116,7 +116,7 @@ KLA,P118,organization,USA
 Mattson Tech,P119,organization,USA
 AP Systems,P120,organization,KOR
 Veeco,P121,organization,USA
-Grand Plastic,P122,organization,TWN
+Grand Process,P122,organization,TWN
 AMEC,P123,organization,CHN
 Plasma-Therm,P124,organization,USA
 SAMCO,P125,organization,JPN
@@ -146,8 +146,7 @@ Cohu,P148,organization,USA
 MIRTEC,P149,organization,KOR
 Grand Tec,P150,organization,CHN
 DISCO,P151,organization,JPN
-Accretech,P152,organization,JPN
-Longhill,P154,organization,CHN
+Longhill Industries,P154,organization,CHN
 SYNOVA,P155,organization,CHN
 Besi,P156,organization,NLD
 Fasford Tech,P158,organization,JPN
@@ -201,11 +200,10 @@ Shenzhen Newway,P205,organization,CHN
 JSR,P206,organization,JPN
 Tokyo Ohka Kogyo,P207,organization,JPN
 Shin-Etsu,P208,organization,JPN
-Fujifilm,P209,organization,JPN
-Sumitomo Chemical,P210,organization,JPN
+Fujifilm Electronic Materials,P209,organization,JPN
 Dongjin,P211,organization,KOR
 DuPont Electronic Solutions,P212,organization,USA
-EMD Performance Materials,P213,organization,USA
+EMD Electronics,P213,organization,USA
 Inpria,P214,organization,USA
 Ruihong,P215,organization,CHN
 Kempur,P216,organization,CHN
@@ -215,7 +213,7 @@ Fujimi,P219,organization,JPN
 Saint-Gobain,P220,organization,FRA
 Versum Materials,P221,organization,USA
 DuPont,P222,organization,USA
-Cabot,P223,organization,USA
+CMC,P223,organization,USA
 Thomas West,P224,organization,USA
 SUMCO,P225,organization,JPN
 GlobalWafers,P226,organization,TWN
@@ -223,7 +221,7 @@ Siltronic,P227,organization,DEU
 SK Siltron,P228,organization,KOR
 Okmetic,P229,organization,CHN
 JRH,P230,organization,CHN
-Zhonghuan,P231,organization,CHN
+Zhonghuan Semiconductor,P231,organization,CHN
 Gritek,P232,organization,CHN
 MCL,P233,organization,CHN
 Simgui,P234,organization,CHN
@@ -235,7 +233,7 @@ Photronics,P239,organization,USA
 Toppan Photomasks,P240,organization,JPN
 Hoya Corporation,P241,organization,JPN
 Taiwan Mask Corporation,P242,organization,TWN
-Merck,P243,organization,DEU
+Merck Group,P243,organization,DEU
 CMC,P244,organization,USA
 Anji,P245,organization,CHN
 Hubei Dinglong,P246,organization,CHN
@@ -249,23 +247,20 @@ Grikin,P253,organization,CHN
 Entegris,P255,organization,USA
 Air Products,P256,organization,USA
 Air Liquide,P257,organization,FRA
-Praxair,P258,organization,USA
 BASF,P260,organization,DEU
 TNSC,P261,organization,JPN
-Showa Denka,P262,organization,JPN
+Showa Denko,P262,organization,JPN
 Wonik,P263,organization,KOR
 SK Materials,P264,organization,KOR
-Haute Gas,P265,organization,CHN
-Jinhong,P266,organization,CHN
+Huate Gas,P265,organization,CHN
+Jinhong Gas,P266,organization,CHN
 PERIC,P267,organization,CHN
 KMG Chemicals,P268,organization,USA
 Avantor,P269,organization,USA
 Kanto Chemical,P270,organization,JPN
 Runma,P271,organization,CHN
-Jiangyin Chemical Reagents,P272,organization,CHN
 Sinophorus,P273,organization,CHN
 Sinyang,P274,organization,CHN
-Etching Liquid,P275,organization,CHN
 Yongzhi,P276,organization,CHN
 Heraeus,P277,organization,JPN
 Tanaka Denshi,P278,organization,JPN
@@ -273,8 +268,7 @@ Nippon Micro,P279,organization,JPN
 Doublink,P280,organization,CHN
 Kangqiang,P281,organization,CHN
 YesDo,P282,organization,CHN
-KDDX,P283,organization,CHN
-Quik-Pak,P284,organization,USA
+QP Technologies,P284,organization,USA
 NGK,P285,organization,JPN
 Alent,P286,organization,GBR
 Kyocera,P287,organization,JPN
@@ -296,7 +290,6 @@ Sinopaco,P303,organization,CHN
 HHCK,P304,organization,CHN
 Darbond,P305,organization,CHN
 Hysol Huawei,P306,organization,CHN
-Y-Bond,P307,organization,CHN
 SH Material,P308,organization,JPN
 Hualong,P309,organization,CHN
 Eminess,P310,organization,USA

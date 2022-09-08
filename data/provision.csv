@@ -14,6 +14,7 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 16,Phytium,P15,Logic chip design: Advanced CPUs,N1,,negligible
 17,Efinix,P16,Logic chip design: FPGAs,N3,,negligible
 18,Lattice,P18,Logic chip design: FPGAs,N3,,
+18a,Intel,P9,Logic chip design: FPGAs,N3,,
 19,Microchip,P19,Logic chip design: FPGAs,N3,,
 20,Achronix,P20,Logic chip design: FPGAs,N3,,
 21,Flex Logic,P21,Logic chip design: FPGAs,N3,,
@@ -77,7 +78,6 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 79,Meyer Burger,P63,Crystal machining tools,N9,,
 80,Toyo,P64,Crystal machining tools,N9,,
 81,JSG,P59,Crystal machining tools,N9,,negligible
-82,Lanzhou Rapid Equipment Manufacturing,P65,Crystal machining tools,N9,,negligible
 83,Beijing JingYi Century Automatic Equipment,P66,Crystal machining tools,N9,,negligible
 84,EV Group,P67,Wafer bonding and aligning tools,N10,,
 85,SUSS MicroTec,P68,Wafer bonding and aligning tools,N10,,
@@ -506,7 +506,6 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 549,Gritek,P232,Wafer,N26,,negligible
 550,MCL,P233,Wafer,N26,,negligible
 551,Simgui,P234,Wafer,N26,,negligible
-552,GuoSheng,P235,Wafer,N26,,negligible
 553,POSHING,P236,Wafer,N26,,negligible
 554,ZingSEMI,P237,Wafer,N26,,negligible
 555,Dai Nippon,P238,Advanced photomask,N33,,
@@ -524,7 +523,7 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 567,Tokyo Ohka Kogyo,P207,Photoresist,N31,,
 568,Shin-Etsu,P208,Photoresist,N31,,
 569,Fujifilm,P209,Photoresist,N31,,
-570,Sumitomo Chemical,P210,Photoresist,N31,,
+570,Sumitomo,P289,Photoresist,N31,,
 571,Dongjin,P211,Photoresist,N31,,
 572,DuPont,P222,Photoresist,N31,,
 573,EMD Performance Materials,P213,Photoresist,N31,,
@@ -575,10 +574,8 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 618,Kanto Chemical,P270,Wet chemicals,N92,,
 619,Runma,P271,Wet chemicals,N92,,
 620,JHM,P218,Wet chemicals,N92,,
-621,Jiangyin Chemical Reagents,P272,Wet chemicals,N92,,
 622,Sinophorus,P273,Wet chemicals,N92,,
 623,Sinyang,P274,Wet chemicals,N92,,
-624,Etching Liquid,P275,Wet chemicals,N92,,
 625,SH Material,P308,Lead frames,N93,,
 626,Mitsui High-Tec,P290,Lead frames,N93,,
 627,ASM Pacific,P145,Lead frames,N93,,
@@ -593,7 +590,6 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 636,Doublink,P280,Bond wires,N94,,
 637,Kangqiang,P281,Bond wires,N94,,
 638,YesDo,P282,Bond wires,N94,,
-639,KDDX,P283,Bond wires,N94,,
 640,Amkor,P49,Ceramic packages,N95,,
 641,Quik-Pak,P284,Ceramic packages,N95,,
 642,NGK,P285,Ceramic packages,N95,,
@@ -626,7 +622,6 @@ Order added,provider_name,provider_id,provided_name,provided_id,share_provided,n
 670,Sumitomo,P289,Die attach materials,N98,,
 671,Darbond,P305,Die attach materials,N98,,
 672,Hysol Huawei,P306,Die attach materials,N98,,
-673,Y-Bond,P307,Die attach materials,N98,,
 674,JPN,P7,Packaging materials,N100,,
 675,CHN,P2,Packaging materials,N100,,
 676,USA,P1,Packaging materials,N100,,
