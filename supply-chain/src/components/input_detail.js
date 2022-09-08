@@ -48,7 +48,10 @@ const BarGraph = (props) => {
         paper_bgcolor: "rgba(0,0,0,0)",
         plot_bgcolor: "rgba(0,0,0,0)"
       }}
-      config={{responsive: true}}
+      config={{
+        displayModeBar: false,
+        responsive: true
+      }}
     />
     </div>
   );
