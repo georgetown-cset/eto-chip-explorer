@@ -76,21 +76,13 @@ const InputDetail = (props) => {
 
   const mkOrgTableRows = () => {
     const filteredOrgNames = orgNames.filter(org => org in orgMeta);
-    filteredOrgNames.sort((a, b) => {
-      const a_fmt = orgMeta[a]["hq"] ? orgMeta[a]["hq"] + orgMeta[a]["name"] : orgMeta[a]["name"];
-      const b_fmt = orgMeta[b]["hq"] ? orgMeta[b]["hq"] + orgMeta[b]["name"] : orgMeta[b]["name"];
-      if(a_fmt > b_fmt){
-        return 1;
-      } else if(b_fmt > a_fmt){
-        return -1;
-      }
-      return 0;
-    });
+    filteredOrgNames.sort((a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
+    const numRows = Math.ceil(filteredOrgNames.length/2);
     const rows = [];
-    for(let idx = 0; idx < filteredOrgNames.length; idx += 2){
+    for(let idx = 0; idx < numRows; idx += 1){
       const rowOrgs = [filteredOrgNames[idx]];
-      if(idx+1 < filteredOrgNames.length){
-        rowOrgs.push(filteredOrgNames[idx+1])
+      if(numRows + idx < filteredOrgNames.length){
+        rowOrgs.push(filteredOrgNames[numRows + idx])
       }
       rows.push(
         <tr key={rowOrgs.join("-")}>
