@@ -282,8 +282,18 @@ a {
       background-color: var(--bright-blue);
     }
   }
-  img:hover {
-    cursor: pointer;
+  .image-wrapper {
+    height: 200px;
+    overflow: hidden;
+    margin-top: -20px;
+    img {
+      width: 100%;
+      height: auto;
+      transform: translateY(-50%);
+    }
+    img:hover {
+      cursor: pointer;
+    }
   }
   .graph-sub-node:hover {
     text-decoration: underline;
@@ -311,11 +321,7 @@ a {
   .graph-node-wrapper {
     display: inline;
     position: relative;
-<<<<<<< HEAD
     vertical-align: top;
-=======
-    vertical-align: bottom;
->>>>>>> 6536f1b766fff24eda34d7d499b537d138a7c056
   }
 }
 
