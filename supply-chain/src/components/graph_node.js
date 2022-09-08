@@ -3,7 +3,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
-import {nodeToMeta} from "../../data/graph";
+import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
 import getIcon from "../helpers/shared";
 
@@ -14,8 +14,7 @@ export const NodeHeading = (props) => {
     <Typography component="p"
       className={
         "node-heading" +
-        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "") +
-        ((nodeType === "parent") ? " top-documentation-link" : "")
+        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")
       }
     >
       <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
@@ -71,6 +70,7 @@ export const SubNode = (props) => {
                   depth={1}
                   currSelectedNode={currSelectedNode}
                   />)}
+        {props.children}
       </Typography>
     </div>
   );
@@ -83,13 +83,13 @@ const GraphNode = (props) => {
     (("tools" in meta) && (meta["tools"].length > 0));
 
   return (
-    <div style={{display: "inline-block", position: "relative"}}>
+    <div className="graph-node-wrapper">
       <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : "")}
         style={{
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),
           display: "inline-block",
-          width: wide ? "": "250px"
+          width: wide ? "": "320px",
         }}
         onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}
         elevation={0}
@@ -101,8 +101,32 @@ const GraphNode = (props) => {
               {meta["name"]}
             </Typography>
           }
+          {!inDocumentation &&
+            <div className="graph-node-connections-text">
+              {graphReverse[node] &&
+                <div className="connection-text">
+                  <span className="bold">
+                    Input processes:
+                  </span>
+                  <span>
+                    {graphReverse[node].map((n) => nodeToMeta[n].name).join(", ")}
+                  </span>
+                </div>
+              }
+              {graph[node] &&
+                <div className="connection-text">
+                  <span className="bold">
+                    Dependent processes:
+                  </span>
+                  <span>
+                    {graph[node].map((n) => nodeToMeta[n].name).join(", ")}
+                  </span>
+                </div>
+              }
+            </div>
+          }
           {!(inDocumentation && node === parent) && showInputs &&
-            <Typography component={"div"} variant={"body2"}>
+            <Typography component={"div"} variant={"body2"} style={{paddingRight: "10px"}}>
               {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
                 <SubNode nodeType={"materials"}
                         name={nodeToMeta[material]["name"]}
@@ -140,6 +164,7 @@ const GraphNode = (props) => {
             marginLeft: "auto",
             marginRight: "auto",
             fontSize: "40px",
+            zIndex: "5",
           }}
         />
       }
@@ -158,10 +183,11 @@ export const MiniGraphNode = (props) => {
         display: "inline-block",
         height: "10px",
         width: "20px",
+        verticalAlign: "middle"
       }}
     >
       {(meta["materials"]?.includes(currSelectedNode) || meta["tools"]?.includes(currSelectedNode) || (node === parent && node !== currSelectedNode)) &&
-        <span class="star-icon">
+        <span className="star-icon">
           <StarIcon
             style={{
               display: "inline-block",

@@ -159,6 +159,19 @@ class Preprocess:
             f.write("\nexport {graph, graphReverse, nodeToMeta, variants};\n")
 
     @staticmethod
+    def get_flag(country_name: str) -> str:
+        """
+        Return flag emoji for country
+        :param raw_country_name: Country name string
+        :return: Flag emoji (in unicode) for that country or None
+        """
+        try:
+            country = pycountry.countries.lookup(country_name)
+            return country.flag
+        except LookupError:
+            return None
+
+    @staticmethod
     def get_country(raw_country_name: str) -> str:
         """
         Normalize country names, including mapping from alpha3
@@ -250,6 +263,7 @@ class Preprocess:
         """
         org_provision = {}
         country_provision = {}
+        country_flags = {}
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
                 provider_id = line["provider_id"].strip()
@@ -260,6 +274,7 @@ class Preprocess:
                     country_name = self.get_country(provider_name)
                     if country_name not in country_provision:
                         country_provision[country_name] = {}
+                        country_flags[country_name] = self.get_flag(provider_name)
                     provision_share = self.get_provision(line)
                     country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
@@ -279,13 +294,14 @@ class Preprocess:
         )
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
             f.write(f"const countryProvision={json.dumps(country_provision)};\n")
+            f.write(f"const countryFlags={json.dumps(country_flags)};\n")
             f.write(
                 f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n"
             )
             f.write(f"const orgProvision={json.dumps(org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
             f.write(
-                "\nexport {countryProvision, countryProvisionConcentration, orgProvision, providerMeta};\n"
+                "\nexport {countryProvision, countryFlags, countryProvisionConcentration, orgProvision, providerMeta};\n"
             )
 
     def write_descriptions(
@@ -322,7 +338,7 @@ class Preprocess:
 
     def mk_provider_to_meta(self, provider_fi: str, company_metadata_fi: str):
         """
-        Create a mapping between provider ids and their metadata, such as name, type, and url (for company providers)
+        Create a mapping between provider ids and their metadata, such as name and type (for company providers)
         :param provider_fi: provider csv
             (from https://docs.google.com/spreadsheets/d/1QaUTc75gnwk1SwEy3vCx3J0w6oE0yCierYF2pO0Uino/edit#gid=0)
         :param company_metadata_fi: Airtable export of basic company metadata
@@ -342,9 +358,9 @@ class Preprocess:
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq"] = pycountry.countries.lookup(
+                self.provider_to_meta[company_id]["hq"] = self.get_flag(
                     line["HQ country"].strip()
-                ).flag
+                )
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod

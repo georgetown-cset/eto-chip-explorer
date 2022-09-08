@@ -94,10 +94,10 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    return <div className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
+    return <div key={stage} className={"stage-border" + (stage in highlights ? " highlighted " + getBackgroundGradient(highlights[stage], highlights) : "")}>
       <StageNode stage={stage} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
-        <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+        <DocumentationNode node={selectedNode} parent={parentNode}
           descriptions={descriptions} images={images} isStage={true}
           updateSelected={updateSelected} currSelectedNode={selectedNode}/>
       }
@@ -106,7 +106,7 @@ const Map = (props) => {
 
   const mkLayer = (nodes, isUnattached=false, minimap=false, standalone=false) => {
     if (minimap) {
-      return <div>
+      return <div key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <MiniGraphNode node={node} key={node} parent={standalone ? null : parentNode} standalone={standalone}
             currSelectedNode={standalone ? filterValues["input-resource"] : selectedNode}/>
@@ -119,13 +119,13 @@ const Map = (props) => {
       let stageClassName = "stage-border";
       if (!stage) {stageClassName += " uncolored"};
       if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
-      return <div className={stageClassName}>
+      return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
         )}
         {nodes.includes(parentNode) &&
-          <DocumentationNode node={selectedNode} highlights={highlights} parent={parentNode}
+          <DocumentationNode node={selectedNode} parent={parentNode}
             descriptions={descriptions} images={images} isStage={false}
             updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
         }
@@ -136,7 +136,7 @@ const Map = (props) => {
   const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
 
   const mkEdges = (edges, nodeToPosition, nodeToLayerNumber, minimap=false, standalone=false) => {
-    return <div>
+    return <div className="graph-arrows-wrapper" key={JSON.stringify(edges)}>
       {edges.map(edge => {
         let startEdge = edge[0] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");
         let endEdge = edge[1] + (minimap ? ("-minimap" + (standalone ? "-standalone" : "")) : "");
@@ -195,6 +195,7 @@ const Map = (props) => {
   const mkGraph = () => {
     let currNodes = [finalNode];
     const layers = [mkLayer(currNodes)];
+    const layerEdges = [];
     minimapLayers.push(mkLayer(currNodes, false, true));
     standaloneMinimapLayers.push(mkLayer(currNodes, false, true, true));
     const seen = new Set();
@@ -225,6 +226,22 @@ const Map = (props) => {
         }
         filtEdges.push(edge);
         if(!seen.has(parent)) {
+          // Nodes N59 and N60 get special handling.
+          // By default, these nodes would appear near the bottom of stage 2.
+          // However, because they are a parent to almost every node in stage 2,
+          // it makes more sense if they appear near the top (especially in mobile
+          // view where arrows cannot provide guidance to the user).
+          // Therefore, this algorithm skips placing these two nodes in the map
+          // until we reach the top of stage 2 (node N35), although we still
+          // need to assign them a position and layer number to make the arrows
+          // behave correctly.
+          if (((parent === "N59") || (parent === "N60")) && (!seen.has("N35"))) {
+            nodeToPosition["N59"] = -1;
+            nodeToLayerNumber["N59"] = layerNumber;
+            nodeToPosition["N60"] = 1;
+            nodeToLayerNumber["N60"] = layerNumber;
+            continue;
+          }
           currNodes.push(parent);
         }
         seen.add(parent);
@@ -252,7 +269,7 @@ const Map = (props) => {
         nodeToLayerNumber[node] = layerNumber;
       });
       const edges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber);
-      layers.push(edges);
+      layerEdges.push(edges);
       const minimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true);
       minimapLayers.push(minimapEdges);
       const standaloneMinimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true, true);
@@ -260,6 +277,12 @@ const Map = (props) => {
       layerNumber += 1;
     }
     layers.reverse();
+    // SVGs don't respect z-index, so to order them, we need to draw them in the correct order.
+    // We add the arrows to the front of the array so they are drawn before anything else,
+    // because the arrows are the bottom layer of the map, and other elements/SVGs
+    // (most importantly, the little black down arrow on the bottom edge of the graph node)
+    // should show on top of them.
+    layers.unshift(layerEdges);
     minimapLayers.reverse();
     standaloneMinimapLayers.reverse();
     const unattached = [];

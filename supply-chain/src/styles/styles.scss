@@ -5,6 +5,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+
+  --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
+  --bright-blue-light-hsl-g80: hsl(215, 100%, 80%);
+  --bright-blue-light-hsl-g60: hsl(215, 100%, 85%);
+  --bright-blue-light-hsl-g40: hsl(215, 100%, 90%);
+  --bright-blue-light-hsl-g20: hsl(215, 100%, 95%);
 }
 
 p.MuiTypography-root {
@@ -36,7 +42,10 @@ a {
 .MuiPaper-root.filter-bar {
   background-color: var(--bright-blue-lightest);
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
+  padding: 20px 20px 30px 20px;
+  width: calc(100% - 40px);
 
   .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
     font-family: GTZirkonRegular;
@@ -45,7 +54,6 @@ a {
   }
 
   #concentration-checkbox {
-    margin-left: 10px;
     margin-bottom: 5px;
     color: var(--bright-blue);
     .MuiCheckbox-root {
@@ -59,7 +67,45 @@ a {
   #clear-button {
     text-transform: uppercase;
     font-size: 12px;
-    color: var(--bright-blue);
+    color: var(--orange);
+    font-family: GTZirkonRegular;
+    border-color: var(--orange);
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+
+  .gradient-legend {
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    font-size: 0.8rem;
+    margin-left: 8px;
+    font-family: GTZirkonLightItalic;
+    .gradient-box-wrapper {
+      margin: 0px 5px;
+    }
+    .gradient-box {
+      width: 0.8rem;
+      height: 0.8rem;
+      display: inline-block;
+      border: 1px solid var(--black);
+      margin-left: -1px;
+      &.gradient-100 {
+        background-color: var(--bright-blue-light-hsl-g100);
+      }
+      &.gradient-80 {
+        background-color: var(--bright-blue-light-hsl-g80);
+      }
+      &.gradient-60 {
+        background-color: var(--bright-blue-light-hsl-g60);
+      }
+      &.gradient-40 {
+        background-color: var(--bright-blue-light-hsl-g40);
+      }
+      &.gradient-20 {
+        background-color: var(--bright-blue-light-hsl-g20);
+      }
+    }
   }
 }
 
@@ -92,7 +138,7 @@ a {
     font-size: 0.8rem;
     text-transform: uppercase;
     border-radius: 0px;
-    width: calc(10px + 100%);
+    width: calc(20px + 100%);
     padding-left: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -100,6 +146,8 @@ a {
       font-size: 0.8rem;
       text-transform: uppercase;
       font-family: GTZirkonLight;
+      text-indent: -1.8rem;
+      padding-left: 1.8rem;
     }
     &:hover {
       text-decoration: underline;
@@ -117,11 +165,6 @@ a {
 .graph-node, .stage-border {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
-    --bright-blue-light-hsl-g100: hsl(215, 100%, 75%);
-    --bright-blue-light-hsl-g80: hsl(215, 100%, 80%);
-    --bright-blue-light-hsl-g60: hsl(215, 100%, 85%);
-    --bright-blue-light-hsl-g40: hsl(215, 100%, 90%);
-    --bright-blue-light-hsl-g20: hsl(215, 100%, 95%);
     &.gradient-100 {
       background-color: var(--bright-blue-light-hsl-g100);
     }
@@ -156,6 +199,7 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 5px;
+  z-index: 5;
   .MuiTypography-root {
     font-family: GTZirkonLight;
   }
@@ -188,16 +232,15 @@ a {
     margin-right: 5px;
     color: var(--bright-blue);
   }
-  .node-heading {
-    margin-bottom: 0.7rem;
-    &.selected-documentation-link {
-      font-family: GTZirkonBold;
-      .graph-node-icon {
-        color: var(--black);
+  &, .graph-sub-node {
+    .node-heading {
+      margin-bottom: 0.7rem;
+      &.selected-documentation-link {
+        font-family: GTZirkonBold;
+        .graph-node-icon {
+          color: var(--black);
+        }
       }
-    }
-    &.top-documentation-link {
-      font-family: GTZirkonBold;
     }
   }
   .standalone-pane-heading p.MuiTypography-root {
@@ -223,6 +266,8 @@ a {
       font-size: 0.8rem;
       text-transform: uppercase;
       text-align: left;
+      text-indent: -1.8rem;
+      padding-left: 1.8rem;
       &:hover {
         text-decoration: underline;
       }
@@ -252,9 +297,59 @@ a {
     margin-bottom: 10px;
     td {
       width: 50%;
-      .org-flag {
+      .flag {
         margin-right: 5px;
       }
     }
+  }
+}
+
+/* Mobile view styling */
+
+.stage-border {
+  display: contents;
+  .graph-node-wrapper {
+    display: inline;
+    position: relative;
+    vertical-align: top;
+  }
+}
+
+.graph-arrows-wrapper {
+  display: none;
+}
+
+.graph-node-connections-text {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-family: GTZirkonLight;
+  .connection-text {
+    .bold {
+      font-family: GTZirkonBold;
+      margin-right: 5px;
+    }
+  }
+}
+
+/* Desktop styling */
+
+@media (min-width: 1220px) {
+  .stage-border {
+    display: block;
+    .graph-node-wrapper {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .graph-arrows-wrapper {
+    display: unset;
+    z-index: 1;
+  }
+
+  .graph-node-connections-text {
+    display: none;
   }
 }

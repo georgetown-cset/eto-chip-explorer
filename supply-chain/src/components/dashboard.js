@@ -1,23 +1,72 @@
 import React, {useEffect} from "react";
-import { useTheme } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Paper from "@mui/material/Paper";
-import { Header as ETOHeader, Footer, Dropdown } from "@eto/eto-ui-components";
+import Typography from "@mui/material/Typography";
+import { AppIntro, AppWrapper, Dropdown } from "@eto/eto-ui-components";
 
-import Header from "./header";
 import Map from "./map";
-import { nodeToMeta } from "../../data/graph";
+import { nodeToMeta, variants } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 
-const Dashboard = () => {
+const FILTER_CHOOSE = "filter-choose";
+const FILTER_INPUT = "input-resource";
+const FILTER_COUNTRY = "country";
+const FILTER_CONCENTRATION = "concentration";
+const FILTER_ORG = "organization";
+const DROPDOWN_FILTERS = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG];
+const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
-  const FILTER_INPUT = "input-resource";
-  const FILTER_COUNTRY = "country";
-  const FILTER_CONCENTRATION = "concentration";
-  const FILTER_ORG = "organization";
-  const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
+const GradientLegend = (props) => {
+  const {type, numSelected} = props;
+
+  let startLegend, endLegend = "";
+  let boxes = null;
+
+  switch (type) {
+    case FILTER_COUNTRY:
+      const has = numSelected === 1 ? "country has" : "countries have";
+      startLegend = `selected ${has} 0% market share`;
+      endLegend = `selected ${has} >80% market share`;
+      boxes = <div className="gradient-box-wrapper">
+        <div className="gradient-box gradient-20" />
+        <div className="gradient-box gradient-40" />
+        <div className="gradient-box gradient-60" />
+        <div className="gradient-box gradient-80" />
+        <div className="gradient-box gradient-100" />
+      </div>;
+      break;
+    case FILTER_CONCENTRATION:
+      startLegend = "more supplier countries";
+      endLegend = "fewer supplier countries";
+      boxes = <div className="gradient-box-wrapper">
+      <div className="gradient-box gradient-20" />
+      <div className="gradient-box gradient-60" />
+      <div className="gradient-box gradient-100" />
+    </div>;
+      break;
+    case FILTER_ORG:
+      const company = numSelected === 1 ? "company" : "companies";
+      startLegend = `not provided by selected ${company}`;
+      endLegend = `provided by selected ${company}`;
+      boxes = <div className="gradient-box-wrapper">
+      <div className="gradient-box gradient-20" />
+      <div className="gradient-box gradient-100" />
+    </div>;
+      break;
+  }
+
+  return (
+    <div className="gradient-legend">
+      {startLegend}
+      {boxes}
+      {endLegend}
+    </div>
+  )
+}
+
+const Dashboard = () => {
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -37,12 +86,30 @@ const Dashboard = () => {
     return inputToNode;
   };
 
+  const getVariantToNode = () => {
+    const variantToNode = {};
+    for (const node in variants) {
+      for (const variant of variants[node]) {
+        variantToNode[variant] = node;
+      }
+    }
+    return variantToNode;
+  }
+  const variantToNode = getVariantToNode();
+
   const getCurrentHighlights = (currFilterValues = filterValues) => {
     let highlighter = FILTER_INPUT;
+    let hasHighlighter = false;
     for(let fv in defaultFilterValues){
       if(defaultFilterValues[fv] !== currFilterValues[fv]){
         highlighter = fv;
+        hasHighlighter = true;
       }
+    }
+    if (hasHighlighter) {
+      setHighlighterFilter(highlighter)
+    } else {
+      setHighlighterFilter('');
     }
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
@@ -72,7 +139,7 @@ const Dashboard = () => {
             let provValue = currMapping[name][provKey]
             // We round qualitative "major"/"minor" values to numerical approximations
             if (provValue === "Major") {
-              provValue = 80;
+              provValue = 81;
             } else if (provValue === "Minor") {
               provValue = 0;
             }
@@ -84,6 +151,16 @@ const Dashboard = () => {
             } else {
               highlightGradientMap[provKey] = provValue;
             }
+            // If the provision node is a variant of another parent node,
+            // we show the highlighting on that parent node.
+            if (variantToNode[provKey] !== undefined) {
+              const variantParentNode = variantToNode[provKey];
+              if (variantParentNode in highlightGradientMap) {
+                highlightGradientMap[variantParentNode] += provValue;
+              } else {
+                highlightGradientMap[variantParentNode] = provValue;
+              }
+            }
           }
         }
       }
@@ -92,27 +169,38 @@ const Dashboard = () => {
   };
 
   const inputToNode = getInputToNodes();
-  const theme = useTheme();
-  const filterKeys = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
+  const listOfFilters = [
+    {val: "None", text: "None"},
+    {val: FILTER_INPUT, text: "Process Input"},
+    {val: FILTER_COUNTRY, text: "Supplier Countries"},
+    {val: FILTER_ORG, text: "Supplier Companies"},
+    {val: FILTER_CONCENTRATION, text: "Show Supplier Concentration"},
+  ];
+  const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
+    [FILTER_CHOOSE]: "None",
     [FILTER_INPUT]: "All",
     [FILTER_COUNTRY]: ["All"],
     [FILTER_ORG]: ["All"],
     [FILTER_CONCENTRATION]: false,
   };
   const filterToValues = {
+    [FILTER_CHOOSE]: listOfFilters,
     [FILTER_INPUT]: inputToNode,
     [FILTER_COUNTRY]: countryProvision,
     [FILTER_ORG]: orgProvision,
     [FILTER_CONCENTRATION]: [true, false],
   };
   const [filterValues, setFilterValues] = React.useState(defaultFilterValues);
+  const [highlighterFilter, setHighlighterFilter] = React.useState('');
   const [highlights, setHighlights] = React.useState({});
   const [documentationPanelToggle, setDocumentationPanelToggle] = React.useState(false);
 
   const handleChange = (val, key) => {
     const updatedFilterValues = {...defaultFilterValues};
     if (key !== null) {
+      // Keep the value of FILTER_CHOOSE until the user explicitly clears it
+      updatedFilterValues[FILTER_CHOOSE] = filterValues[FILTER_CHOOSE];
       if (MULTI_FILTERS.includes(key) && (val.length > 1)){
         if(filterValues[key].includes("All")){
           updatedFilterValues[key] = val.filter((v) => v !== "All");
@@ -127,6 +215,11 @@ const Dashboard = () => {
     setFilterValues(updatedFilterValues);
     if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
+    }
+    // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
+    // since that filter has no dropdown
+    if (updatedFilterValues[FILTER_CHOOSE] === FILTER_CONCENTRATION) {
+      updatedFilterValues[FILTER_CONCENTRATION] = true;
     }
     getCurrentHighlights(updatedFilterValues);
     // Put filter values in URL parameters.
@@ -164,27 +257,23 @@ const Dashboard = () => {
     organizationOptions.push({"val": name, "text": providerMeta[name]["name"]})
   ));
 
-  const handleConcentrationChange = (evt) => {
-    handleChange(evt.target.checked, FILTER_CONCENTRATION);
-  };
-
-  const dropdownParams = [
-    {
-      "label": "Countries",
-      "key": FILTER_COUNTRY,
-      "options": countryOptions
-    },
-    {
-      "label": "Inputs",
+  const dropdownParams = {
+    [FILTER_INPUT]: {
+      "label": "Choose process input",
       "key": FILTER_INPUT,
       "options": inputResourceOptions
     },
-    {
-      "label": "Organizations",
+    [FILTER_COUNTRY]: {
+      "label": "Choose supplier countries",
+      "key": FILTER_COUNTRY,
+      "options": countryOptions
+    },
+    [FILTER_ORG]: {
+      "label": "Choose supplier companies",
       "key": FILTER_ORG,
       "options": organizationOptions
     },
-  ];
+  };
 
   // Sets the state of the app based on the queries in the URL.
   // This will only run once, when the component is initially rendered.
@@ -205,41 +294,59 @@ const Dashboard = () => {
     if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
+    // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
+    // since that filter has no dropdown
+    if (updatedFilterValues[FILTER_CHOOSE] === FILTER_CONCENTRATION) {
+      updatedFilterValues[FILTER_CONCENTRATION] = true;
+    }
     getCurrentHighlights(updatedFilterValues);
   }, []);
 
-  return (<div>
-    <ETOHeader/>
-    <Header/>
-    <Paper style={{paddingBottom: "20px", position: "sticky", top: "0px", width: "100%", zIndex: "10"}}
+  return (<AppWrapper>
+    <div style={{margin: "40px 20px 40px 100px", maxWidth: "1200px"}}>
+    <AppIntro title={"Supply Chain Explorer"} content={<Typography component={"div"} variant={"body1"}>
+      ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
+      This edition of the Explorer covers the essential tools, materials, processes, countries,
+      and firms involved in producing advanced logic chips. It’s built to help users who are not
+      semiconductor experts get up to speed on how this essential technology is produced, and
+      to allow users of all backgrounds to visually explore how different inputs, companies,
+      and nations interact in the production process.
+    </Typography>}/>
+    </div>
+    <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
       className="filter-bar"
       elevation={0}
     >
-      {dropdownParams.map((dropdown) =>
-        <div>
+      <Dropdown
+        inputLabel="Choose filter"
+        selected={filterValues[FILTER_CHOOSE]}
+        setSelected={(evt) => handleChange(evt, FILTER_CHOOSE)}
+        options={filterToValues[FILTER_CHOOSE]}
+      />
+      {(DROPDOWN_FILTERS.includes(filterValues[FILTER_CHOOSE])) &&
+        <div key={dropdownParams[filterValues[FILTER_CHOOSE]].label}>
           <Dropdown
-            inputLabel={dropdown.label}
-            selected={filterValues[dropdown.key]}
-            setSelected={(evt) => handleChange(evt, dropdown.key)}
-            multiple={MULTI_FILTERS.includes(dropdown.key)}
-            options={dropdown.options}
-            key={dropdown.label}
+            inputLabel={dropdownParams[filterValues[FILTER_CHOOSE]].label}
+            selected={filterValues[dropdownParams[filterValues[FILTER_CHOOSE]].key]}
+            setSelected={(evt) => handleChange(evt, dropdownParams[filterValues[FILTER_CHOOSE]].key)}
+            multiple={MULTI_FILTERS.includes(dropdownParams[filterValues[FILTER_CHOOSE]].key)}
+            options={dropdownParams[filterValues[FILTER_CHOOSE]].options}
           />
         </div>
-      )}
-      <FormControlLabel id="concentration-checkbox" control={
-        <Checkbox checked={filterValues[FILTER_CONCENTRATION]} onChange={handleConcentrationChange} />
-      } label="Show Concentration" />
-      <Button id="clear-button" style={{float: "right", marginRight: "10px"}} onClick={(evt) => handleChange(evt, null)}>
-        Clear
+      }
+      <Button id="clear-button" variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
+        Clear Filters
       </Button>
+      {
+        highlighterFilter !== '' && highlighterFilter !== FILTER_INPUT &&
+        <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
+      }
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle} />
     </div>
-    <Footer/>
-  </div>);
+  </AppWrapper>);
 };
 
 export default Dashboard;
