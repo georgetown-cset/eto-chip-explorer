@@ -152,11 +152,11 @@ const Dashboard = () => {
             // If the provision node is a variant of another parent node,
             // we show the highlighting on that parent node.
             if (variantToNode[provKey] !== undefined) {
-              const varientParentNode = variantToNode[provKey];
-              if (varientParentNode in highlightGradientMap) {
-                highlightGradientMap[varientParentNode] += provValue;
+              const variantParentNode = variantToNode[provKey];
+              if (variantParentNode in highlightGradientMap) {
+                highlightGradientMap[variantParentNode] += provValue;
               } else {
-                highlightGradientMap[varientParentNode] = provValue;
+                highlightGradientMap[variantParentNode] = provValue;
               }
             }
           }
