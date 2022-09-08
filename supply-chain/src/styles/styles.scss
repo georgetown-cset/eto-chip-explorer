@@ -282,8 +282,18 @@ a {
       background-color: var(--bright-blue);
     }
   }
-  img:hover {
-    cursor: pointer;
+  .image-wrapper {
+    height: 200px;
+    overflow: hidden;
+    margin-top: -20px;
+    img {
+      width: 100%;
+      height: auto;
+      transform: translateY(-50%);
+    }
+    img:hover {
+      cursor: pointer;
+    }
   }
   .graph-sub-node:hover {
     text-decoration: underline;

@@ -143,14 +143,11 @@ const DocumentationNode = (props) => {
         </div>
         <div style={{width: "60%"}}>
           {images !== undefined && images.filter(i => i.name === node)[0] &&
-            <div>
+            <div className="image-wrapper">
               <img src={images.filter(i => i.name === node)[0]?.publicURL}
-                style={{maxWidth: "300px", height: "auto" }}
                 onClick={() => setOpen(true)}
                 alt={node}
               />
-              <Typography component="p" className="caption">
-              </Typography>
             </div>
           }
           {(currSelectedNode !== null) && (
@@ -184,10 +181,13 @@ const DocumentationNode = (props) => {
             p: 4,
           }}>
             <img src={images.filter(i => i.name === node)[0]?.publicURL} alt={node}
-              style={{maxWidth: "600px", height: "auto"}}
+              style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
             />
             <Typography component="p" className="caption">
-              Placeholder image caption
+              {meta.image_caption}
+            </Typography>
+            <Typography component="p" className="caption">
+              {meta.image_license}
             </Typography>
           </Box>
         </Modal>
