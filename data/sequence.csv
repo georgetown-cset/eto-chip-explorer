@@ -7,9 +7,9 @@ ArF immersion scanners,N22,,,Advanced photolithography equipment,N19
 Advanced photolithography equipment,N19,Photolithography,N25,,
 Ion implanter,N17,Wafer,N26,,
 Wafer marking systems,N13,Wafer,N26,,
-Maskless lithography equipment,N28,Advanced photomask,N33,,
-Electron-beam lithography tools,N29,,,Maskless lithography equipment,N28
-Laser lithography tools,N30,,,Maskless lithography equipment,N28
+Photomask (maskless) lithography equipment,N28,Advanced photomask,N33,,
+Electron-beam lithography tools,N29,,,Photomask (maskless) lithography equipment,N28
+Laser lithography tools,N30,,,Photomask (maskless) lithography equipment,N28
 Advanced photomask,N33,Photolithography,N25,,
 Wafer,N26,Deposition,N35,,
 Photoresist,N31,Photolithography,N25,,
@@ -87,7 +87,6 @@ Wet chemicals,N92,Deposition,N35,,
 Wet chemicals,N92,Photolithography,N25,,
 Wet chemicals,N92,Etch and clean,N46,,
 Wet chemicals,N92,Chemical mechanical planarization,N57,,
-Wet chemicals,N92,,,Packaging materials,N100
 Lead frames,N93,,,Packaging materials,N100
 Bond wires,N94,,,Packaging materials,N100
 Ceramic packages,N95,,,Packaging materials,N100
