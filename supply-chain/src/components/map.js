@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Xarrow, {Xwrapper} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -152,6 +152,16 @@ const Map = (props) => {
     </div>
   };
 
+  // Close any open documentation node if the user clicks the background
+  useEffect(() => {
+    function handleClickOutside(evt) {
+      if (evt.target.classList.contains("stage-border")) {
+        updateSelected(null, null, null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const mkGraph = () => {
     let currNodes = [finalNode];
     const layers = [mkLayer(currNodes)];
@@ -254,7 +264,7 @@ const Map = (props) => {
     minimapLayers.unshift(mkLayer(unattached, true, true));
     standaloneMinimapLayers.unshift(mkLayer(unattached, true, true, true));
     return (
-      <div>
+      <div className="map-background">
         {filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
           <DocumentationNode node={filterValues["input-resource"]} parent={null}
             descriptions={descriptions} images={images} isStage={false} standalone={true}

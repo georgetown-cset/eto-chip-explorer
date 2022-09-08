@@ -323,9 +323,6 @@ const Dashboard = () => {
       }
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
-      setDocumentationPanelToggle(true);
-    }
     // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
     // since that filter has no dropdown
     if (updatedFilterValues[FILTER_CHOOSE] === FILTER_CONCENTRATION) {
@@ -343,6 +340,12 @@ const Dashboard = () => {
     if (paramsParentNode) {
       const parentElem = document.getElementById(paramsParentNode);
       parentElem.scrollIntoView({behavior: "smooth", block: "start"});
+    }
+
+    // Only open the filter documentation node if no other documentation node
+    // is open
+    if (!paramsSelectedNode && updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
+      setDocumentationPanelToggle(true);
     }
   }, []);
 
