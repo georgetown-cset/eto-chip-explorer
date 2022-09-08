@@ -30,7 +30,6 @@ const allSubVariantsList = getAllSubVariantsList();
 // Recursive component to construct variants tree
 const VariantsList = (props) => {
   const {node, currSelectedNode, input_type, updateSelected, parent, depth} = props;
-  console.log(variants);
   return (
     <div>
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
