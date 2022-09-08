@@ -44,7 +44,7 @@ COUNTRY_MAPPING = {
 }
 
 MAJOR_PROVISION = "Major"
-MINOR_PROVISION = "Minor"
+MINOR_PROVISION = "negligible"
 
 
 class Preprocess:
@@ -181,11 +181,12 @@ class Preprocess:
         :return: Provision value
         """
         assert not (
-            (len(record["share_provided"]) > 0) and (len(record["minor_share"]) > 0)
+            (len(record["share_provided"]) > 0)
+            and (len(record["negligible_share"]) > 0)
         ), f"Record should have either minor share or provision, not both: {record}"
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
-        share = record["minor_share"].strip()
+        share = record["negligible_share"].strip()
         if share:
             assert share.lower() == MINOR_PROVISION.lower(), share
             return MINOR_PROVISION
