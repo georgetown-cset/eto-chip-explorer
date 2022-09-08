@@ -61,11 +61,12 @@ class Preprocess:
             self.mk_metadata(args.nodes)
             self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
+            if args.images:
+                self.mk_images(args.images_file, args.output_images_dir)
+
             self.write_graphs(args.sequence, args.output_dir)
             self.mk_provider_to_meta(args.providers, args.basic_company_info)
             self.write_provision(args.provision, args.output_dir)
-            if args.images:
-                self.mk_images(args.images_file, args.output_images_dir)
 
     def mk_metadata(self, nodes: str):
         """
@@ -363,8 +364,7 @@ class Preprocess:
                 )
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
-    @staticmethod
-    def mk_images(images_fi: str, output_dir: str) -> None:
+    def mk_images(self, images_fi: str, output_dir: str) -> None:
         """
         Downloads images from an airtable CSV and renames them according to their associated node
         :param images_fi: Path to airtable CSV
@@ -377,11 +377,13 @@ class Preprocess:
                 image_col = line["Image"]
                 image_fi = re.search(r"\((http.*?)\)", image_col)[1]
                 file_type = image_fi.split(".")[-1]
+                image_node_id = line["Node ID for semi map"]
                 urllib.request.urlretrieve(
                     image_fi,
-                    os.path.join(output_dir, line["Node ID for semi map"])
-                    + f".{file_type}",
+                    os.path.join(output_dir, image_node_id) + f".{file_type}",
                 )
+                self.node_to_meta[image_node_id]["image_caption"] = line["Caption"]
+                self.node_to_meta[image_node_id]["image_license"] = line["Licensing"]
 
 
 if __name__ == "__main__":
