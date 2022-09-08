@@ -46,29 +46,34 @@ class TestPreprocess(unittest.TestCase):
                 {
                     "Malaysia": {"N1": "Major"},
                     "United States": {"N1": "Major"},
-                    "South Africa": {"N1": "Minor"},
+                    "South Africa": {"N1": "negligible"},
                 }
             ),
         )
 
     def test_get_provision(self):
         self.assertEqual(
-            90, Preprocess.get_provision({"share_provided": "90%", "minor_share": ""})
+            90,
+            Preprocess.get_provision({"share_provided": "90%", "negligible_share": ""}),
         )
         self.assertEqual(
             MAJOR_PROVISION,
-            Preprocess.get_provision({"share_provided": "", "minor_share": ""}),
+            Preprocess.get_provision({"share_provided": "", "negligible_share": ""}),
         )
         self.assertEqual(
             MINOR_PROVISION,
-            Preprocess.get_provision({"share_provided": "", "minor_share": "Minor"}),
+            Preprocess.get_provision(
+                {"share_provided": "", "negligible_share": "negligible"}
+            ),
         )
         with self.assertRaises(AssertionError):
             Preprocess.get_provision(
-                {"share_provided": "", "minor_share": MAJOR_PROVISION}
+                {"share_provided": "", "negligible_share": MAJOR_PROVISION}
             )
         with self.assertRaises(AssertionError):
-            Preprocess.get_provision({"share_provided": "30%", "minor_share": "Minor"})
+            Preprocess.get_provision(
+                {"share_provided": "30%", "negligible_share": "negligible"}
+            )
 
     def test_generate_graph(self):
         preproc = Preprocess(None, is_test=True)
