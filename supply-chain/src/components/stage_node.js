@@ -29,7 +29,7 @@ const StageNode = (props) => {
           padding: "0px",
           backgroundColor: "unset",
         }}
-        onClick={(evt) => updateSelected(evt, stage, stage)}
+        onClick={(evt) => updateSelected(evt, stage === parent ? null : stage, stage === parent ? null : stage)}
         disableRipple={true}
       >
         <InfoIcon style={{verticalAlign: "top"}} />
