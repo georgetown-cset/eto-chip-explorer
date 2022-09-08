@@ -171,7 +171,7 @@ const Dashboard = () => {
   const inputToNode = getInputToNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
-    {val: FILTER_INPUT, text: "Jump to Input"},
+    {val: FILTER_INPUT, text: "Process Input"},
     {val: FILTER_COUNTRY, text: "Supplier Countries"},
     {val: FILTER_ORG, text: "Supplier Companies"},
     {val: FILTER_CONCENTRATION, text: "Show Supplier Concentration"},
@@ -259,17 +259,17 @@ const Dashboard = () => {
 
   const dropdownParams = {
     [FILTER_INPUT]: {
-      "label": "Jump to input",
+      "label": "Choose process input",
       "key": FILTER_INPUT,
       "options": inputResourceOptions
     },
     [FILTER_COUNTRY]: {
-      "label": "Supplier countries",
+      "label": "Choose supplier countries",
       "key": FILTER_COUNTRY,
       "options": countryOptions
     },
     [FILTER_ORG]: {
-      "label": "Supplier companies",
+      "label": "Choose supplier companies",
       "key": FILTER_ORG,
       "options": organizationOptions
     },
