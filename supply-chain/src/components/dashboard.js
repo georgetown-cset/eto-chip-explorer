@@ -389,7 +389,7 @@ const Dashboard = () => {
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
       }
     </Paper>
-    <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
+    <div style={{display: "inline-block", minWidth: "700px", padding: "0px 45px", textAlign: "center"}}>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
