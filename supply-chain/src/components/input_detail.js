@@ -25,7 +25,8 @@ const BarGraph = (props) => {
     x: values,
     y: countries,
     type: "bar",
-    orientation: "h"
+    orientation: "h",
+    hovertemplate: '%{x}%<extra></extra>',
   }];
 
   return (
@@ -34,10 +35,12 @@ const BarGraph = (props) => {
       data={data}
       layout={{
         autosize: true,
-        margin: {t: 50, r: 30, b: 35, l: 120, pad: 4},
-        title: "Supplier countries",
+        margin: {t: 30, r: 30, b: 35, l: 120, pad: 4},
         xaxis: {
           title: "Share of global market"
+        },
+        yaxis: {
+          categoryorder: "total ascending"
         },
         font: {
           family: "GTZirkonRegular, Arial"
