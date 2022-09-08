@@ -1,10 +1,9 @@
 import React, {useEffect} from "react";
 import Button from "@mui/material/Button";
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { AppIntro, AppWrapper, Dropdown } from "@eto/eto-ui-components";
+import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
 import { nodeToMeta, variants } from "../../data/graph";
@@ -67,6 +66,34 @@ const GradientLegend = (props) => {
 }
 
 const Dashboard = () => {
+
+  // Keeps track of the selected node, which can be a process node or a process input/tool/material
+  const [selectedNode, setSelectedNode] = React.useState(null);
+  // Keeps track of the parent node, which must be a process node. This is used to keep track of
+  // where the documentation node should be displayed.
+  const [parentNode, setParentNode] = React.useState(null);
+  // Function to update the above nodes
+  const updateXarrow = useXarrow();
+  const updateSelected = (evt, selectedNode, parentNode) => {
+    if (evt !== null) {
+      evt.stopPropagation();
+    }
+    setSelectedNode(selectedNode);
+    setParentNode(parentNode);
+    updateXarrow();
+    // Put filter values in URL parameters.
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterKeys = ["parentNode", "selectedNode"];
+    for (const filterKey of filterKeys) {
+      const filterVal = (filterKey === "parentNode") ? parentNode : selectedNode;
+      if (filterVal) {
+        urlParams.set(filterKey, filterVal);
+      } else {
+        urlParams.delete(filterKey);
+      }
+    }
+    window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
+  };
 
   const getInputToNodes = () => {
     const inputTypes = ["materials", "tools"];
@@ -235,6 +262,8 @@ const Dashboard = () => {
       }
     }
     window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
+    // Close any open documentation node
+    updateSelected(null, null, null);
   };
 
   // Functions to interface with ETO dropdown component
@@ -300,6 +329,18 @@ const Dashboard = () => {
       updatedFilterValues[FILTER_CONCENTRATION] = true;
     }
     getCurrentHighlights(updatedFilterValues);
+
+    // Handle documentation nodes
+    const paramsParentNode = urlParams.get("parentNode");
+    const paramsSelectedNode = urlParams.get("selectedNode");
+    setParentNode(paramsParentNode);
+    setSelectedNode(paramsSelectedNode);
+    updateXarrow();
+    // Scroll the open documentation into view
+    if (paramsParentNode) {
+      const parentElem = document.getElementById(paramsParentNode);
+      parentElem.scrollIntoView({behavior: "smooth", block: "start"});
+    }
   }, []);
 
   return (<AppWrapper>
@@ -344,7 +385,8 @@ const Dashboard = () => {
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", width: "100%", textAlign: "center"}}>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
-        documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle} />
+        documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
+        parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
     </div>
   </AppWrapper>);
 };

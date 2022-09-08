@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import Xarrow, {Xwrapper, useXarrow} from "react-xarrows";
+import React from "react";
+import Xarrow, {Xwrapper} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
@@ -8,48 +8,8 @@ import GraphNode, {MiniGraphNode, getBackgroundGradient} from "./graph_node";
 import StageNode from "./stage_node";
 
 const Map = (props) => {
-  const {highlights, filterValues, defaultFilterValues, documentationPanelToggle, setDocumentationPanelToggle} = props;
-  // Keeps track of the selected node, which can be a process node or a process input/tool/material
-  const [selectedNode, setSelectedNode] = React.useState(null);
-  // Keeps track of the parent node, which must be a process node. This is used to keep track of
-  // where the documentation node should be displayed.
-  const [parentNode, setParentNode] = React.useState(null);
-  // Function to update the above nodes
-  const updateXarrow = useXarrow();
-  const updateSelected = (evt, selectedNode, parentNode) => {
-    evt.stopPropagation();
-    setSelectedNode(selectedNode);
-    setParentNode(parentNode);
-    updateXarrow();
-    // Put filter values in URL parameters.
-    const urlParams = new URLSearchParams(window.location.search);
-    const filterKeys = ["parentNode", "selectedNode"];
-    for (const filterKey of filterKeys) {
-      const filterVal = (filterKey === "parentNode") ? parentNode : selectedNode;
-      if (filterVal) {
-        urlParams.set(filterKey, filterVal);
-      } else {
-        urlParams.delete(filterKey);
-      }
-    }
-    window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
-  };
-
-  // Sets the state of the app based on the queries in the URL.
-  // This will only run once, when the component is initially rendered.
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const paramsParentNode = urlParams.get("parentNode");
-    const paramsSelectedNode = urlParams.get("selectedNode");
-    setParentNode(paramsParentNode);
-    setSelectedNode(paramsSelectedNode);
-    updateXarrow();
-    // Scroll the open documentation into view
-    if (paramsParentNode) {
-      const parentElem = document.getElementById(paramsParentNode);
-      parentElem.scrollIntoView({behavior: "smooth", block: "start"});
-    }
-  }, [])
+  const {highlights, filterValues, defaultFilterValues, documentationPanelToggle, setDocumentationPanelToggle,
+    parentNode, selectedNode, updateSelected} = props;
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
 
