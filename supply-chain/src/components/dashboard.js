@@ -140,7 +140,7 @@ const Dashboard = () => {
             // We round qualitative "major"/"minor" values to numerical approximations
             if (provValue === "Major") {
               provValue = 81;
-            } else if (provValue === "Minor") {
+            } else if (provValue === "negligible") {
               provValue = 0;
             }
             if (isNaN(provValue)) {
@@ -239,7 +239,7 @@ const Dashboard = () => {
 
   // Functions to interface with ETO dropdown component
   const countryOptions = [{"val": "All", "text": "All"}];
-  Object.keys(countryProvision).sort().filter((c) => c !== "Other").map((name) => (
+  Object.keys(countryProvision).sort().filter((c) => c !== "Various").map((name) => (
     countryOptions.push({"val": name, "text": name})
   ));
 
