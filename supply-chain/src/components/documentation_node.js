@@ -35,7 +35,9 @@ const VariantsList = (props) => {
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
         <div>
           <Typography className="variants-heading" component={"p"} style={{marginLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
-          {variants[node].map((variant) =>
+          {variants[node].sort(
+            (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+          ).map((variant) =>
             <SubNode nodeType={input_type}
               name={nodeToMeta[variant]["name"]}
               key={nodeToMeta[variant]["name"]}
@@ -90,7 +92,9 @@ const DocumentationNode = (props) => {
   const getInputList = (input_type) => {
     return (
       <div style={{textAlign: "left"}}>
-        {nodeToMeta[parent][input_type].map((node) =>
+        {nodeToMeta[parent][input_type].sort(
+          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+        ).map((node) =>
           <div key={parent+input_type+node}>
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}

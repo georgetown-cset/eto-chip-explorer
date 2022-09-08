@@ -48,7 +48,9 @@ export const SubNode = (props) => {
         <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth} />
       </Paper>
       <Typography component={"div"} variant={"body2"}>
-        {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.map((material) =>
+        {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.sort(
+          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+        ).map((material) =>
           <SubNode nodeType={"materials"}
                   name={nodeToMeta[material]["name"]}
                   key={nodeToMeta[material]["name"]}
@@ -59,7 +61,9 @@ export const SubNode = (props) => {
                   depth={1}
                   currSelectedNode={currSelectedNode}
                   />)}
-        {(subTools !== undefined) && (subTools.length > 0) && subTools.map((tool) =>
+        {(subTools !== undefined) && (subTools.length > 0) && subTools.sort(
+          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+        ).map((tool) =>
           <SubNode nodeType={"tools"}
                   name={nodeToMeta[tool]["name"]}
                   key={nodeToMeta[tool]["name"]}
@@ -127,7 +131,9 @@ const GraphNode = (props) => {
           }
           {!(inDocumentation && node === parent) && showInputs &&
             <Typography component={"div"} variant={"body2"} style={{paddingRight: "10px"}}>
-              {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].map((material) =>
+              {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].sort(
+                (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+              ).map((material) =>
                 <SubNode nodeType={"materials"}
                         name={nodeToMeta[material]["name"]}
                         key={nodeToMeta[material]["name"]}
@@ -140,7 +146,9 @@ const GraphNode = (props) => {
                         depth={inDocumentation ? 2 : 0}
                         currSelectedNode={currSelectedNode}
                 />)}
-              {("tools" in meta) && (meta["tools"].length > 0) && meta["tools"].map((tool) =>
+              {("tools" in meta) && (meta["tools"].length > 0) && meta["tools"].sort(
+                (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+              ).map((tool) =>
                 <SubNode nodeType={"tools"}
                         name={nodeToMeta[tool]["name"]}
                         key={nodeToMeta[tool]["name"]}
