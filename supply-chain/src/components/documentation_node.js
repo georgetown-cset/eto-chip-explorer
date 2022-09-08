@@ -125,23 +125,26 @@ const DocumentationNode = (props) => {
             {minimap}
           </div>
         }
-        <div style={{width: "20%"}}>
-          {!(hasMaterials || hasTools) ?
-            <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
-              <Typography component={"p"}>
-                {meta["name"]}
-              </Typography>
-            </div> :
-            <div style={{textAlign: "left"}}>
-              <GraphNode node={parent} parent={parent} inDocumentation={true} wide={true}
-                updateSelected={updateSelected} currSelectedNode={currSelectedNode}
-                content={<NodeHeading nodeType="parent" nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
-            </div>
-          }
-          {hasMaterials && getInputList("materials")}
-          {hasTools && getInputList("tools")}
-        </div>
-        <div style={{width: "60%"}}>
+        {
+          !isStage &&
+          <div style={{width: "20%"}}>
+            {!(hasMaterials || hasTools) ?
+              <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
+                <Typography component={"p"}>
+                  {meta["name"]}
+                </Typography>
+              </div> :
+              <div style={{textAlign: "left"}}>
+                <GraphNode node={parent} parent={parent} inDocumentation={true} wide={true}
+                  updateSelected={updateSelected} currSelectedNode={currSelectedNode}
+                  content={<NodeHeading nodeType="parent" nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
+              </div>
+            }
+            {hasMaterials && getInputList("materials")}
+            {hasTools && getInputList("tools")}
+          </div>
+        }
+        <div className="documentation-node-description">
           {images !== undefined && images.filter(i => i.name === node)[0] &&
             <div className="image-wrapper">
               <img src={images.filter(i => i.name === node)[0]?.publicURL}

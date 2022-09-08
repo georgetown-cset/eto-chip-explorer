@@ -163,6 +163,13 @@ a {
   }
 }
 
+.stage-node-wrapper + .stage-border .MuiPaper-root.documentation-node {
+  width: 75%;
+  .documentation-node-description {
+    width: 90%;
+  }
+}
+
 .graph-node, .stage-border {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
@@ -201,6 +208,9 @@ a {
   align-items: flex-start;
   padding: 20px 5px;
   z-index: 5;
+  .documentation-node-description {
+    width: 60%;
+  }
   .MuiTypography-root {
     font-family: GTZirkonLight;
   }
