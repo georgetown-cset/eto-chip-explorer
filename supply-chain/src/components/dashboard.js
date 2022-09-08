@@ -93,6 +93,8 @@ const Dashboard = () => {
       }
     }
     window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
+    // Close the documentation node under the filter bar
+    setDocumentationPanelToggle(false);
   };
 
   const getInputToNodes = () => {
@@ -240,9 +242,6 @@ const Dashboard = () => {
       }
     }
     setFilterValues(updatedFilterValues);
-    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
-      setDocumentationPanelToggle(true);
-    }
     // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
     // since that filter has no dropdown
     if (updatedFilterValues[FILTER_CHOOSE] === FILTER_CONCENTRATION) {
@@ -264,6 +263,10 @@ const Dashboard = () => {
     window.history.replaceState(null, null, window.location.pathname + "?" + urlParams.toString());
     // Close any open documentation node
     updateSelected(null, null, null);
+    // Open a documentation node under the filter bar
+    if (updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
+      setDocumentationPanelToggle(true);
+    }
   };
 
   // Functions to interface with ETO dropdown component
