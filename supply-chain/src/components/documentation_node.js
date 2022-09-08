@@ -151,7 +151,7 @@ const DocumentationNode = (props) => {
                 }}
                 role="presentation"
                 tabIndex={0}
-                alt={`Image of ${meta.image_caption}`}
+                alt={meta.image_caption}
               />
             </div>
           }
