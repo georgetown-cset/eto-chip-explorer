@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Xarrow, Xwrapper} from "react-xarrows";
+import Xarrow, {Xwrapper} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";

@@ -2,8 +2,8 @@ import React from 'react';
 
 // There is a known issue with jest and react-xarrows.
 // This workaround is from https://github.com/Eliav2/react-xarrows/pull/144.
-module.exports = {
-  Xarrow: () => <span />,
-  Xwrapper: ({children}) => <div>{children}</div>,
-  useXarrow: () => jest.fn(),
-}
+export const Xwrapper = ({children}) => <div>{children}</div>;
+export const useXarrow = () => jest.fn();
+
+const Xarrow = () => <span />;
+export default Xarrow;
