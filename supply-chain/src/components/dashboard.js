@@ -200,10 +200,10 @@ const Dashboard = () => {
   const inputToNode = getInputToNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
-    {val: FILTER_INPUT, text: "Process Input"},
-    {val: FILTER_COUNTRY, text: "Supplier Countries"},
-    {val: FILTER_ORG, text: "Supplier Companies"},
-    {val: FILTER_CONCENTRATION, text: "Show Supplier Concentration"},
+    {val: FILTER_INPUT, text: "Specific inputs to processes"},
+    {val: FILTER_COUNTRY, text: "Supplier countries"},
+    {val: FILTER_ORG, text: "Supplier companies"},
+    {val: FILTER_CONCENTRATION, text: "Market concentration"},
   ];
   const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
