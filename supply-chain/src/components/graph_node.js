@@ -43,7 +43,8 @@ export const SubNode = (props) => {
   return (
     <div>
       <Paper elevation={0}
-             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) : "")}
+             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) :
+             (highlights && Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
         <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth} />
       </Paper>
@@ -55,6 +56,7 @@ export const SubNode = (props) => {
                   nodeId={material}
                   metadata={nodeToMeta}
                   highlight={material in highlights ? highlights[material] : 0}
+                  highlights={highlights}
                   updateSelected={(evt) => updateSelected(evt, material, parent)}
                   depth={1}
                   currSelectedNode={currSelectedNode}
@@ -66,6 +68,7 @@ export const SubNode = (props) => {
                   nodeId={tool}
                   metadata={nodeToMeta}
                   highlight={tool in highlights ? highlights[tool] : 0}
+                  highlights={highlights}
                   updateSelected={(evt) => updateSelected(evt, tool, parent)}
                   depth={1}
                   currSelectedNode={currSelectedNode}
@@ -84,7 +87,10 @@ const GraphNode = (props) => {
 
   return (
     <div className="graph-node-wrapper">
-      <Paper id={node} className={"graph-node" + (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) : " unhighlighted")}
+      <Paper id={node} className={
+        "graph-node" +
+        (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) :
+        (Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
         style={{
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),
