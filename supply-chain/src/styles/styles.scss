@@ -123,6 +123,9 @@ a {
   }
   h3.MuiTypography-root {
     margin-left: 10px;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &:hover{
     cursor: -moz-zoom-in;
