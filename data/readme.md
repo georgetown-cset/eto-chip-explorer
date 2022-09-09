@@ -9,7 +9,7 @@ Merck			name correction: Merck Group (disambiguating from Merck & Co.)
 Showa Denka		name correction: Showa Denko
 Jinhong			name correction: Jinhong Gas
 Cabot			name correction: CMC
-Eminess			???
+Eminess			name correction: Pureon
 Hualong			name correction: Ningbo Hualong
 KDDX			deleted; could not be conclusively identified in 2022 company research
 Quik-Pak		name correction: QP Technologies
