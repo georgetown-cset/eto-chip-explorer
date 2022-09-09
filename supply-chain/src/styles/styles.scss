@@ -191,7 +191,7 @@ a {
       background-color: var(--bright-blue-light-hsl-g20);
     }
   }
-  &.unhighlighted {
+  &.unhighlighted, .graph-sub-node.unhighlighted {
     background-color: var(--white);
     color: var(--grey);
   }
@@ -273,6 +273,7 @@ a {
   .graph-node, .graph-sub-node {
     width: unset;
     background-color: unset;
+    color: var(--black);
     border: 0px;
     padding: 0px;
     font-size: 0.8rem;

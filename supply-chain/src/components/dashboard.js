@@ -139,6 +139,8 @@ const Dashboard = () => {
       setHighlighterFilter(highlighter)
     } else {
       setHighlighterFilter('');
+      setHighlights({});
+      return;
     }
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
