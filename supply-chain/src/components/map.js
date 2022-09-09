@@ -82,7 +82,6 @@ const Map = (props) => {
       const stage = nodeToMeta[nodes[0]]?.["stage_id"];
       let stageClassName = "stage-border";
       if (!stage) {stageClassName += " uncolored"};
-      if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
       return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
