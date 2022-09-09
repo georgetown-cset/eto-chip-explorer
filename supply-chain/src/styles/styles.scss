@@ -138,8 +138,9 @@ a {
     font-size: 0.8rem;
     text-transform: uppercase;
     border-radius: 0px;
-    width: calc(20px + 100%);
+    width: calc(10px + 100%);
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
     p.MuiTypography-root {
@@ -159,6 +160,13 @@ a {
   border-left: 10px solid var(--bright-blue);
   &.uncolored {
     border-color: var(--white);
+  }
+}
+
+.stage-node-wrapper + .stage-border .MuiPaper-root.documentation-node {
+  width: 75%;
+  .documentation-node-description {
+    width: 90%;
   }
 }
 
@@ -200,6 +208,9 @@ a {
   align-items: flex-start;
   padding: 20px 5px;
   z-index: 5;
+  .documentation-node-description {
+    width: 60%;
+  }
   .MuiTypography-root {
     font-family: GTZirkonLight;
   }
@@ -345,7 +356,7 @@ a {
 
 /* Desktop styling */
 
-@media (min-width: 1220px) {
+@media (min-width: 1300px) {
   .stage-border {
     display: block;
     .graph-node-wrapper {

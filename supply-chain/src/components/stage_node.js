@@ -9,13 +9,11 @@ const StageNode = (props) => {
   const {stage, stageClassName, parent, updateSelected} = props;
 
   return (
-    <div>
+    <div className="stage-node-wrapper">
       <div className="stage-border uncolored" style={{height: "20px"}}></div>
-      <div id={stage}
-        className={stageClassName}
-        style={{
-          paddingTop: "10px",
-          textAlign: "left",
+      <div id={stage} className={"stage-node " + stageClassName} style={{
+        paddingTop: "10px",
+        textAlign: "left",
       }}>
         <Typography component={"h3"}
           style={{
