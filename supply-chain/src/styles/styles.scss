@@ -105,6 +105,9 @@ a {
       &.gradient-20 {
         background-color: var(--bright-blue-light-hsl-g20);
       }
+      &.unhighlighted {
+        background-color: var(--white);
+      }
     }
   }
 }
@@ -193,7 +196,10 @@ a {
   }
   &.unhighlighted, .graph-sub-node.unhighlighted {
     background-color: var(--white);
-    color: var(--grey);
+    color: var(--grey-light);
+    & > p > .graph-node-icon {
+      color: var(--grey-light);
+    }
   }
 }
 

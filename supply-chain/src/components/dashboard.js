@@ -29,6 +29,7 @@ const GradientLegend = (props) => {
       startLegend = `selected ${has} 0% market share`;
       endLegend = `selected ${has} >80% market share`;
       boxes = <div className="gradient-box-wrapper">
+        <div className="gradient-box unhighlighted" />
         <div className="gradient-box gradient-20" />
         <div className="gradient-box gradient-40" />
         <div className="gradient-box gradient-60" />
@@ -40,7 +41,7 @@ const GradientLegend = (props) => {
       startLegend = "more supplier countries";
       endLegend = "fewer supplier countries";
       boxes = <div className="gradient-box-wrapper">
-      <div className="gradient-box gradient-20" />
+      <div className="gradient-box unhighlighted" />
       <div className="gradient-box gradient-60" />
       <div className="gradient-box gradient-100" />
     </div>;
@@ -50,7 +51,7 @@ const GradientLegend = (props) => {
       startLegend = `not provided by selected ${company}`;
       endLegend = `provided by selected ${company}`;
       boxes = <div className="gradient-box-wrapper">
-      <div className="gradient-box gradient-20" />
+      <div className="gradient-box unhighlighted" />
       <div className="gradient-box gradient-100" />
     </div>;
       break;
@@ -130,7 +131,11 @@ const Dashboard = () => {
     let highlighter = FILTER_INPUT;
     let hasHighlighter = false;
     for(let fv in defaultFilterValues){
-      if(defaultFilterValues[fv] !== currFilterValues[fv]){
+      // The top-level filter does not result in any highlighting
+      if (fv === FILTER_CHOOSE) {
+        continue;
+      }
+      if (defaultFilterValues[fv] !== currFilterValues[fv]){
         highlighter = fv;
         hasHighlighter = true;
       }
