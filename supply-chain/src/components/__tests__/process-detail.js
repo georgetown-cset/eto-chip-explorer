@@ -9,11 +9,11 @@ const descriptions = [
 ]
 
 describe("Process detail", () => {
-  it("renders correctly", async () => {
+  it("renders correctly", () => {
     const {asFragment} = render(<ProcessDetail selectedNode="N35" descriptions={descriptions}/>);
     expect(asFragment()).toMatchSnapshot();
 
-    expect(screen.queryByText("Some text about N35")).not.toBeNull();
-    expect(screen.queryByText("Some text about N59")).toBeNull();
+    expect(screen.queryByText("N35", {exact: false})).not.toBeNull();
+    expect(screen.queryByText("N59", {exact: false})).toBeNull();
   })
 })

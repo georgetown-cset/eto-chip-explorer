@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gradient Legend renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="gradient-legend"
+  />
+</DocumentFragment>
+`;
+
+exports[`Gradient Legend renders empty correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="gradient-legend"
+  />
+</DocumentFragment>
+`;
+
+exports[`Gradient Legend renders with boxes correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="gradient-legend"
+  >
+    selected countries have 0% market share
+    <div
+      class="gradient-box-wrapper"
+    >
+      <div
+        class="gradient-box gradient-20"
+      />
+      <div
+        class="gradient-box gradient-40"
+      />
+      <div
+        class="gradient-box gradient-60"
+      />
+      <div
+        class="gradient-box gradient-80"
+      />
+      <div
+        class="gradient-box gradient-100"
+      />
+    </div>
+    selected countries have &gt;80% market share
+  </div>
+</DocumentFragment>
+`;
