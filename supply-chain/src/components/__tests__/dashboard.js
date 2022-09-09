@@ -25,6 +25,7 @@ describe("Gradient Legend", () => {
 
 describe("Dashboard", () => {
   it("renders correctly", () => {
-
+    const {asFragment} = render(<Dashboard/>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
