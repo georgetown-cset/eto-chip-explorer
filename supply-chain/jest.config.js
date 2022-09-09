@@ -12,5 +12,6 @@ module.exports = {
     __PATH_PREFIX__: ``,
   },
   setupFiles: [`<rootDir>/loadershim.js`],
+  setupFilesAfterEnv: ["<rootDir>/setup-test-env.js"],
   testEnvironment: 'jsdom'
 }

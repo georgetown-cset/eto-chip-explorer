@@ -1,5 +1,5 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, screen} from "@testing-library/react"
 
 import ProcessDetail from "../process_detail"
 
@@ -9,10 +9,11 @@ const descriptions = [
 ]
 
 describe("Process detail", () => {
-  it("renders correctly", () => {
-    const tree = renderer
-      .create(<ProcessDetail selectedNode="N35" descriptions={descriptions}/>)
-      .toJSON()
-    expect(tree).toMatchSnapshot()
+  it("renders correctly", async () => {
+    const {asFragment} = render(<ProcessDetail selectedNode="N35" descriptions={descriptions}/>);
+    expect(asFragment()).toMatchSnapshot();
+
+    expect(screen.queryByText("Some text about N35")).not.toBeNull();
+    expect(screen.queryByText("Some text about N59")).toBeNull();
   })
 })
