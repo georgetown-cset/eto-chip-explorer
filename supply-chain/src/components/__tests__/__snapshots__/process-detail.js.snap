@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Process detail renders correctly 1`] = `
+<div
+  style={
+    {
+      "display": "inline-block",
+      "padding": "0px 40px",
+    }
+  }
+>
+  <div>
+    Some text about N35
+  </div>
+</div>
+`;
