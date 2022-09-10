@@ -207,7 +207,7 @@ const Dashboard = () => {
   const inputToNode = getInputToNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
-    {val: FILTER_INPUT, text: "Specific inputs to processes"},
+    {val: FILTER_INPUT, text: "Specific inputs"},
     {val: FILTER_COUNTRY, text: "Supplier countries"},
     {val: FILTER_ORG, text: "Supplier companies"},
     {val: FILTER_CONCENTRATION, text: "Market concentration"},
@@ -372,7 +372,7 @@ const Dashboard = () => {
       elevation={0}
     >
       <Dropdown
-        inputLabel="Choose filter"
+        inputLabel="Highlight by"
         selected={filterValues[FILTER_CHOOSE]}
         setSelected={(evt) => handleChange(evt, FILTER_CHOOSE)}
         options={filterToValues[FILTER_CHOOSE]}
