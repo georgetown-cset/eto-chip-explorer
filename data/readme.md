@@ -25,12 +25,22 @@ CETC			???
 Lanzhou Rapid Equipment Manufacturing	deleted; could not be conclusively identified in 2022 company research
 
 
-### Removed inputs (bc market size too small)
+### Inputs removed due to negligible global market size (under $5m)
 
+Wafer marking systems
 Dry stripping
-???
+
 
 
 ### Other methodological notes
 
 [copy comments out of the various google sheets]
+<<<<<<< Updated upstream
+=======
+
+* A company has "negligible" market share if the country it belongs to has 2% or less (rounded value) of the overall market OR the text of the report explicitly indicates it's a negligible provider (for example, if its capabilities are far behind the state of the art).
+* Some inputs discussed in the report are not included in the explorer tool because they are not relevant to advanced logic chips specifically (e.g., inputs related to memory chips).
+* In any case where the text of the report is in tension with the tables and figures, we rely on the tables and figures.
+* Certain small percentages were extracted from the working files of the authors of the report, rather than the report itself (generally, when the specific percentage numbers were not included in the report).
+* Company information may be different from what's in the paper as a result of the 2022 annotation process for companies. See, for example, the table above.
+>>>>>>> Stashed changes

@@ -292,4 +292,9 @@ Darbond,P305,organization,CHN
 Hysol Huawei,P306,organization,CHN
 SH Material,P308,organization,JPN
 Hualong,P309,organization,CHN
+<<<<<<< Updated upstream
 Eminess,P310,organization,USA
+=======
+Pureon,P310,organization,USA
+Renesas,P311,organization,JPN
+>>>>>>> Stashed changes
