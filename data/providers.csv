@@ -47,7 +47,7 @@ ASE,P48,organization,TWN
 Amkor,P49,organization,USA
 JCET,P50,organization,CHN
 TongFu,P52,organization,CHN
-Tianshui,P53,organization,CHN
+Tianshui Huatian Technology,P53,organization,CHN
 UTAC,P54,organization,SGP
 SK Hynix,P55,organization,KOR
 Micron,P56,organization,USA
@@ -213,7 +213,6 @@ Fujimi,P219,organization,JPN
 Saint-Gobain,P220,organization,FRA
 Versum Materials,P221,organization,USA
 DuPont,P222,organization,USA
-CMC,P223,organization,USA
 Thomas West,P224,organization,USA
 SUMCO,P225,organization,JPN
 GlobalWafers,P226,organization,TWN
@@ -262,7 +261,7 @@ Runma,P271,organization,CHN
 Sinophorus,P273,organization,CHN
 Sinyang,P274,organization,CHN
 Yongzhi,P276,organization,CHN
-Heraeus,P277,organization,JPN
+Heraeus,P277,organization,DEU
 Tanaka Denshi,P278,organization,JPN
 Nippon Micro,P279,organization,JPN
 Doublink,P280,organization,CHN
@@ -291,10 +290,6 @@ HHCK,P304,organization,CHN
 Darbond,P305,organization,CHN
 Hysol Huawei,P306,organization,CHN
 SH Material,P308,organization,JPN
-Hualong,P309,organization,CHN
-<<<<<<< Updated upstream
-Eminess,P310,organization,USA
-=======
+Ningbo Hualong,P309,organization,CHN
 Pureon,P310,organization,USA
 Renesas,P311,organization,JPN
->>>>>>> Stashed changes

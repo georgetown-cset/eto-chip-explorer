@@ -5,8 +5,7 @@ EUV scanners,N20,,,Advanced photolithography equipment,N19
 ArF scanners,N21,,,Advanced photolithography equipment,N19
 ArF immersion scanners,N22,,,Advanced photolithography equipment,N19
 Advanced photolithography equipment,N19,Photolithography,N25,,
-Ion implanter,N17,Wafer,N26,,
-Wafer marking systems,N13,Wafer,N26,,
+Ion implanters,N17,Wafer,N26,,
 Photomask (maskless) lithography equipment,N28,Advanced photomask,N33,,
 Electron-beam lithography tools,N29,,,Photomask (maskless) lithography equipment,N28
 Laser lithography tools,N30,,,Photomask (maskless) lithography equipment,N28
@@ -31,7 +30,6 @@ Dry etching and cleaning tools,N48,,,Etching and cleaning tools,N55
 Wet etching and cleaning tools,N49,,,Etching and cleaning tools,N55
 Conductor etching tools,N50,,,Dry etching and cleaning tools,N48
 Dielectric etching tools,N51,,,Dry etching and cleaning tools,N48
-Ion milling tools,N52,,,Dry etching and cleaning tools,N48
 Etch and clean,N46,Chemical mechanical planarization,N57,,
 Chemical mechanical planarization tools,N86,Chemical mechanical planarization,N57,,
 Wafer handlers,N11,Wafer and photomask handling,N59,,
@@ -53,7 +51,6 @@ Film and wafer measuring tools,N65,,,Wafer inspection equipment,N61
 Critical dimensions measurement tools,N66,,,Wafer inspection equipment,N61
 Defect inspection tools,N67,,,Wafer inspection equipment,N61
 General-purpose microscopy tools,N68,,,Wafer inspection equipment,N61
-Chemical mechanical planarization,N57,Assembly and packaging,N69,,
 Assembly inspection tools,N70,Assembly and packaging,N69,,
 Dicing tools,N71,Assembly and packaging,N69,,
 Bonding tools,N72,Assembly and packaging,N69,,
