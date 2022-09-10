@@ -196,11 +196,11 @@ class Preprocess:
         """
         assert not (
             (len(record["share_provided"]) > 0)
-            and (len(record["negligible_share"]) > 0)
+            and (len(record["negligible_market_share"]) > 0)
         ), f"Record should have either minor share or provision, not both: {record}"
         if record["share_provided"]:
             return int(record["share_provided"].strip("%"))
-        share = record["negligible_share"].strip()
+        share = record["negligible_market_share"].strip()
         if share:
             assert share.lower() == MINOR_PROVISION.lower(), share
             return MINOR_PROVISION
