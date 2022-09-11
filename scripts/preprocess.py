@@ -359,15 +359,16 @@ class Preprocess:
                     "name": line["provider_name"],
                     "type": line["provider_type"],
                 }
+                if line["country"]:
+                    self.provider_to_meta[line["provider_id"]]["hq"] = self.get_flag(
+                        line["country"].strip()
+                    )
                 name_to_id[line["provider_name"]] = line["provider_id"]
         with open(company_metadata_fi) as f:
             for line in csv.DictReader(f):
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq"] = self.get_flag(
-                    line["HQ country"].strip()
-                )
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     def mk_images(self, images_fi: str, output_dir: str) -> None:
