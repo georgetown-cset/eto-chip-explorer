@@ -75,6 +75,12 @@ class TestPreprocess(unittest.TestCase):
             Preprocess.get_provision(
                 {"share_provided": "30%", MARKET_SHARE_COL: "negligible"}
             )
+        self.assertEqual(
+            MAJOR_PROVISION,
+            Preprocess.get_provision(
+                {"share_provided": "10%", MARKET_SHARE_COL: ""}, True
+            ),
+        )
 
     def test_generate_graph(self):
         preproc = Preprocess(None, is_test=True)
