@@ -3,6 +3,7 @@ import unittest
 
 from scripts.preprocess import (
     MAJOR_PROVISION,
+    MARKET_SHARE_COL,
     MATERIALS,
     MINOR_PROVISION,
     TOOLS,
@@ -54,25 +55,25 @@ class TestPreprocess(unittest.TestCase):
     def test_get_provision(self):
         self.assertEqual(
             90,
-            Preprocess.get_provision({"share_provided": "90%", "negligible_share": ""}),
+            Preprocess.get_provision({"share_provided": "90%", MARKET_SHARE_COL: ""}),
         )
         self.assertEqual(
             MAJOR_PROVISION,
-            Preprocess.get_provision({"share_provided": "", "negligible_share": ""}),
+            Preprocess.get_provision({"share_provided": "", MARKET_SHARE_COL: ""}),
         )
         self.assertEqual(
             MINOR_PROVISION,
             Preprocess.get_provision(
-                {"share_provided": "", "negligible_share": "negligible"}
+                {"share_provided": "", MARKET_SHARE_COL: "negligible"}
             ),
         )
         with self.assertRaises(AssertionError):
             Preprocess.get_provision(
-                {"share_provided": "", "negligible_share": MAJOR_PROVISION}
+                {"share_provided": "", MARKET_SHARE_COL: MAJOR_PROVISION}
             )
         with self.assertRaises(AssertionError):
             Preprocess.get_provision(
-                {"share_provided": "30%", "negligible_share": "negligible"}
+                {"share_provided": "30%", MARKET_SHARE_COL: "negligible"}
             )
 
     def test_generate_graph(self):
