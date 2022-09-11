@@ -51,6 +51,7 @@ Film and wafer measuring tools,N65,,,Wafer inspection equipment,N61
 Critical dimensions measurement tools,N66,,,Wafer inspection equipment,N61
 Defect inspection tools,N67,,,Wafer inspection equipment,N61
 General-purpose microscopy tools,N68,,,Wafer inspection equipment,N61
+Chemical mechanical planarization,N57,Assembly and packaging,N69,,
 Assembly inspection tools,N70,Assembly and packaging,N69,,
 Dicing tools,N71,Assembly and packaging,N69,,
 Bonding tools,N72,Assembly and packaging,N69,,
@@ -72,7 +73,6 @@ Electronic design automation software,N84,Logic chip design: Advanced CPUs,N1,,
 Electronic design automation software,N84,Logic chip design: Discrete GPUs,N2,,
 Electronic design automation software,N84,Logic chip design: FPGAs,N3,,
 Electronic design automation software,N84,Logic chip design: AI ASICs,N4,,
-Chemical mechanical planarization tools,N86,Assembly and packaging,N69,,
 Chemical mechanical planarization materials,N90,Chemical mechanical planarization,N57,,
 Deposition materials,N88,Deposition,N35,,
 Electronic gases,N91,Deposition,N35,,

@@ -52,4 +52,4 @@ Dry cleaning tools
 * In any case where the text of the report is in tension with the tables and figures, we rely on the tables and figures.
 * Certain small percentages were extracted from the working files of the authors of the report, rather than the report itself (generally, when the specific percentage numbers were not included in the report).
 * Company information may be different from what's in the paper as a result of the 2022 annotation process for companies. See, for example, the table above.
-* For simplicity's sake, CMP is included only in fabrication, not packaging, since the packaging application of CMP is relatively minor.
+* For simplicity's sake, CMP tools are included only in fabrication, not packaging, since the packaging application of CMP tools is relatively minor.
