@@ -2,7 +2,7 @@ import React from "react";
 import Loadable from "react-loadable";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
-import Link from "@mui/material/Link";
+import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
 import { countryFlags } from "../../data/provision";
@@ -95,7 +95,7 @@ const InputDetail = (props) => {
           {rowOrgs.map((org) => (
           <td key={org}>
             <Typography component="p">
-              {orgMeta[org]["hq"] && <span className="flag">{orgMeta[org]["hq"]}</span>}
+              {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
               {orgMeta[org]["name"]}
               {orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
             </Typography>

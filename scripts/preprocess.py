@@ -359,9 +359,12 @@ class Preprocess:
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq"] = self.get_flag(
+                self.provider_to_meta[company_id]["hq_flag"] = self.get_flag(
                     line["HQ country"].strip()
                 )
+                self.provider_to_meta[company_id]["hq_country"] = line[
+                    "HQ country"
+                ].strip()
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod
