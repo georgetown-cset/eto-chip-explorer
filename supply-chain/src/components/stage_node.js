@@ -12,7 +12,6 @@ const StageNode = (props) => {
     <div className="stage-node-wrapper">
       <div className="stage-border uncolored" style={{height: "20px"}}></div>
       <div id={stage} className={"stage-node " + stageClassName} style={{
-        paddingTop: "10px",
         textAlign: "left",
       }}>
         <Typography component={"h3"}
@@ -25,7 +24,6 @@ const StageNode = (props) => {
         </Typography>
         <Button
           style={{
-            verticalAlign: "top",
             display: "inline-block",
             padding: "0px",
             backgroundColor: "unset",
@@ -33,7 +31,7 @@ const StageNode = (props) => {
           onClick={(evt) => updateSelected(evt, stage === parent ? null : stage, stage === parent ? null : stage)}
           disableRipple={true}
         >
-          <InfoIcon style={{verticalAlign: "top"}} />
+          <InfoIcon style={{verticalAlign: "top"}} /> General overview
         </Button>
         {stage === parent &&
           <ArrowDropDownIcon
