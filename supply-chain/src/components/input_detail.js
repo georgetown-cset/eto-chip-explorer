@@ -138,7 +138,7 @@ const InputDetail = (props) => {
       {(orgs !== undefined) &&
         <div>
           <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-           Supplier companies
+           Notable supplier companies
           </Typography>
           <table>
             <tbody>

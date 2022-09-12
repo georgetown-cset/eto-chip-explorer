@@ -371,6 +371,19 @@ class Preprocess:
                     continue
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
+    @staticmethod
+    def clean_md_link(text) -> str:
+        """
+        Turns markdown link into html link
+        :param text: text that may contain a markdown link
+        :return: text with markdown link replaced with html link
+        """
+        return re.sub(
+            r"\[([^\]]+)\]\(([^\)]+)\)",
+            r"<a href='\2' target='_blank' rel='noopener'>\1</a>",
+            text,
+        )
+
     def mk_images(self, images_fi: str, output_dir: str) -> None:
         """
         Downloads images from an airtable CSV and renames them according to their associated node
@@ -381,16 +394,20 @@ class Preprocess:
         with open(images_fi) as f:
             for line in csv.DictReader(f):
                 # image_col is of the format "something.jpeg (https://link.com/to/something.jpeg)"
-                image_col = line["Image"]
+                image_col = line["image"]
                 image_fi = re.search(r"\((http.*?)\)", image_col)[1]
                 file_type = image_fi.split(".")[-1]
-                image_node_id = line["Node ID for semi map"]
+                image_node_id = line["input_id"]
                 urllib.request.urlretrieve(
                     image_fi,
                     os.path.join(output_dir, image_node_id) + f".{file_type}",
                 )
-                self.node_to_meta[image_node_id]["image_caption"] = line["Caption"]
-                self.node_to_meta[image_node_id]["image_license"] = line["Licensing"]
+                self.node_to_meta[image_node_id]["image_caption"] = self.clean_md_link(
+                    line["caption"]
+                )
+                self.node_to_meta[image_node_id]["image_license"] = self.clean_md_link(
+                    line["credit"]
+                )
 
 
 if __name__ == "__main__":
