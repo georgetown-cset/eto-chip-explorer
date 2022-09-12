@@ -135,18 +135,6 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      {(orgs !== undefined) &&
-        <div>
-          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-           Notable supplier companies
-          </Typography>
-          <table>
-            <tbody>
-              {mkOrgTableRows()}
-            </tbody>
-          </table>
-        </div>
-      }
       {hasCountries &&
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
@@ -169,6 +157,18 @@ const InputDetail = (props) => {
               </tbody>
             </table>
           }
+        </div>
+      }
+      {(orgs !== undefined) &&
+        <div>
+          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+           Notable supplier companies
+          </Typography>
+          <table>
+            <tbody>
+              {mkOrgTableRows()}
+            </tbody>
+          </table>
         </div>
       }
     </div>
