@@ -112,6 +112,8 @@ const DocumentationNode = (props) => {
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
 
+  const imgFileName = images?.filter(i => i.name === node)[0] ? images.filter(i => i.name === node)[0] : images.filter(i => i.name === "default")[0];
+
   // For image modal
   const [open, setOpen] = React.useState(false);
 
@@ -149,18 +151,21 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div className="documentation-node-description">
-          {images !== undefined && images.filter(i => i.name === node)[0] &&
+          {imgFileName !== undefined &&
             <div className="image-wrapper">
-              <img src={images.filter(i => i.name === node)[0]?.publicURL}
+              <img src={imgFileName.publicURL}
                 onClick={() => setOpen(true)}
                 onKeyDown={(evt) => {
                   if (evt.key === "Enter") {setOpen(true)};
                 }}
                 role="presentation"
                 tabIndex={0}
-                alt={meta.image_caption}
+                alt={meta.image_caption ? meta.image_caption : "Default"}
               />
             </div>
+          }
+          {imgFileName !== undefined && meta.image_license &&
+              <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
           }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
@@ -192,11 +197,15 @@ const DocumentationNode = (props) => {
             boxShadow: 24,
             p: 4,
           }}>
-            <img src={images.filter(i => i.name === node)[0]?.publicURL} alt={node}
+            <img src={imgFileName.publicURL} alt={node}
               style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
             />
-            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
-            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+            {meta.image_caption &&
+              <div>
+                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
+                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+              </div>
+            }
           </Box>
         </Modal>
       </Paper>

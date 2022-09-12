@@ -232,11 +232,6 @@ a {
   p.MuiTypography-root {
     font-size: 0.9rem;
     text-align: left;
-    &.caption {
-      text-align: center;
-      color: var(--grey);
-      font-size: 0.8rem;
-    }
   }
   .MuiIconButton-root:hover {
     background-color: unset;
@@ -339,6 +334,12 @@ a {
       }
     }
   }
+}
+
+.caption {
+  color: var(--grey);
+  font-size: 0.8rem;
+  font-family: GTZirkonLightItalic;
 }
 
 /* Mobile view styling */
