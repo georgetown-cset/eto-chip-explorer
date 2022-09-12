@@ -27,6 +27,7 @@ Tianshui		name correction: Tianshui Huatian Technology
 ASM Pacific		Country corrected to Singapore
 Heraeus			Country corrected to Germany
 Synova			Country corrected to Switzerland
+Xilinx			Merged into parent AMD
 
 
 ### Inputs not incorporated due to negligible global market size (under $25m)
