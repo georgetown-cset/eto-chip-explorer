@@ -96,29 +96,25 @@ const Dashboard = () => {
     setDocumentationPanelToggle(false);
   };
 
-  const getInputToNodes = () => {
-    const inputTypes = ["materials", "tools"];
-    const inputToNode = {};
+  const getInputNodes = () => {
+    const inputNodes = {};
     for(let node in nodeToMeta){
-      if(nodeToMeta[node]["type"] === "process"){
-        for (let inputType of inputTypes) {
-          for(let input of nodeToMeta[node][inputType]){
-            if(!(input in inputToNode)){
-              inputToNode[input] = {};
-            }
-            inputToNode[input][node] = 1;
-          }
-        }
+      if(nodeToMeta[node]["type"] === "tool_resource" || nodeToMeta[node]["type"] === "material_resource"){
+        inputNodes[node] = 1;
       }
     }
-    return inputToNode;
+    return inputNodes;
   };
 
   const getVariantToNode = () => {
     const variantToNode = {};
     for (const node in variants) {
       for (const variant of variants[node]) {
-        variantToNode[variant] = node;
+        let parentNode = node;
+        while (variantToNode[parentNode]) {
+          parentNode = variantToNode[parentNode];
+        }
+        variantToNode[variant] = parentNode;
       }
     }
     return variantToNode;
@@ -148,7 +144,12 @@ const Dashboard = () => {
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
       const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
-      identityMap[currFilterValues[highlighter]] = 1;
+      let provKey = currFilterValues[highlighter];
+      if (variantToNode[provKey] !== undefined) {
+        identityMap[variantToNode[provKey]] = 1;
+      } else {
+        identityMap[provKey] = 1;
+      }
       setHighlights(identityMap)
     } else {
       const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
@@ -202,7 +203,7 @@ const Dashboard = () => {
     }
   };
 
-  const inputToNode = getInputToNodes();
+  const inputNodes = getInputNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
     {val: FILTER_INPUT, text: <span>Specific inputs <HelpTooltip text={tooltips[FILTER_INPUT]} style={{verticalAlign: "top", height: "23px"}}/></span>},
@@ -220,7 +221,7 @@ const Dashboard = () => {
   };
   const filterToValues = {
     [FILTER_CHOOSE]: listOfFilters,
-    [FILTER_INPUT]: inputToNode,
+    [FILTER_INPUT]: inputNodes,
     [FILTER_COUNTRY]: countryProvision,
     [FILTER_ORG]: orgProvision,
     [FILTER_CONCENTRATION]: [true, false],
@@ -281,7 +282,7 @@ const Dashboard = () => {
   ));
 
   const inputResourceOptions = [{"val": "All", "text": "All"}];
-  Object.keys(inputToNode).sort(
+  Object.keys(inputNodes).sort(
     (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
   ).map((name) => (
     inputResourceOptions.push({"val": name, "text": nodeToMeta[name]["name"]})
