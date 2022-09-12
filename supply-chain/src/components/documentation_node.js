@@ -162,6 +162,10 @@ const DocumentationNode = (props) => {
                 tabIndex={0}
                 alt={meta.image_caption ? meta.image_caption : "Default"}
               />
+              <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
+                onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
+                <span className="icon"><CancelIcon/></span>
+              </IconButton>
             </div>
           }
           {imgFileName !== undefined && meta.image_license &&
@@ -176,10 +180,6 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
           )}
         </div>
-        <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
-          onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
-          <span className="icon"><CancelIcon/></span>
-        </IconButton>
 
         <Modal
           open={open}
