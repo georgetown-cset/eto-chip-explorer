@@ -29,8 +29,8 @@ const getAllSubVariantsList = () => {
 const allSubVariantsList = getAllSubVariantsList();
 
 // Recursive component to construct variants tree
-const VariantsList = (props) => {
-  const {node, currSelectedNode, input_type, updateSelected, parent, depth} = props;
+export const VariantsList = (props) => {
+  const {node, currSelectedNode, inputType, updateSelected, parent, depth} = props;
   return (
     <div>
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
@@ -39,7 +39,7 @@ const VariantsList = (props) => {
           {variants[node].sort(
             (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
           ).map((variant) =>
-            <SubNode nodeType={input_type}
+            <SubNode nodeType={inputType}
               name={nodeToMeta[variant]["name"]}
               key={nodeToMeta[variant]["name"]}
               nodeId={variant}
@@ -49,8 +49,9 @@ const VariantsList = (props) => {
               parent={parent}
               depth={depth}
               currSelectedNode={currSelectedNode}
+              inDocumentation={true}
             >
-              <VariantsList node={variant} currSelectedNode={currSelectedNode} input_type={input_type} updateSelected={updateSelected} parent={parent} depth={depth+2} />
+              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected} parent={parent} depth={depth+2} />
             </SubNode>
           )}
         </div>
@@ -100,7 +101,7 @@ const DocumentationNode = (props) => {
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
                 content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
-            <VariantsList node={node} currSelectedNode={currSelectedNode} input_type={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
+            <VariantsList node={node} currSelectedNode={currSelectedNode} inputType={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
           </div>
         )}
       </div>

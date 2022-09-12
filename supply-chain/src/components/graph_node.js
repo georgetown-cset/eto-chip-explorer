@@ -5,7 +5,12 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
+<<<<<<< HEAD
 import {getIcon} from "../helpers/shared";
+=======
+import getIcon from "../helpers/shared";
+import {VariantsList} from "./documentation_node";
+>>>>>>> 4bbaef8 (Closes #256)
 
 export const NodeHeading = (props) => {
   const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
@@ -36,7 +41,7 @@ export const getBackgroundGradient = (highlight, highlights) => {
 }
 
 export const SubNode = (props) => {
-  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0} = props;
+  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0, inDocumentation} = props;
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
   const subTools = nodeToMeta?.[nodeId]?.["tools"];
 
@@ -62,7 +67,8 @@ export const SubNode = (props) => {
                   updateSelected={(evt) => updateSelected(evt, material, parent)}
                   depth={1}
                   currSelectedNode={currSelectedNode}
-                  />)}
+                  inDocumentation={inDocumentation}
+          />)}
         {(subTools !== undefined) && (subTools.length > 0) && subTools.sort(
           (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
         ).map((tool) =>
@@ -76,8 +82,13 @@ export const SubNode = (props) => {
                   updateSelected={(evt) => updateSelected(evt, tool, parent)}
                   depth={1}
                   currSelectedNode={currSelectedNode}
-                  />)}
+                  inDocumentation={inDocumentation}
+          />)}
         {props.children}
+        {inDocumentation && !props.children &&
+          <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
+            updateSelected={updateSelected} parent={parent} depth={depth + 2} />
+        }
       </Typography>
     </div>
   );
@@ -151,6 +162,7 @@ const GraphNode = (props) => {
                         highlights={highlights}
                         depth={inDocumentation ? 2 : 0}
                         currSelectedNode={currSelectedNode}
+                        inDocumentation={inDocumentation}
                 />)}
               {("tools" in meta) && (meta["tools"].length > 0) && meta["tools"].sort(
                 (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
@@ -166,6 +178,7 @@ const GraphNode = (props) => {
                         highlights={highlights}
                         depth={inDocumentation ? 2 : 0}
                         currSelectedNode={currSelectedNode}
+                        inDocumentation={inDocumentation}
                 />)}
             </Typography>}
         </div>
