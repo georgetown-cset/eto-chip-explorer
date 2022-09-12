@@ -191,12 +191,8 @@ const DocumentationNode = (props) => {
             <img src={images.filter(i => i.name === node)[0]?.publicURL} alt={node}
               style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
             />
-            <Typography component="p" className="caption">
-              {meta.image_caption}
-            </Typography>
-            <Typography component="p" className="caption">
-              {meta.image_license}
-            </Typography>
+            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
+            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
           </Box>
         </Modal>
       </Paper>

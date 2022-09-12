@@ -148,3 +148,11 @@ class TestPreprocess(unittest.TestCase):
             preproc.update_variants("", "N7", {"is_type_of_id": ""})
         self.assertFalse(preproc.update_variants("N2", "N3", {"is_type_of_id": "N4"}))
         self.assertFalse(preproc.update_variants("N5", "N6", {"is_type_of_id": ""}))
+
+    def test_clean_md_link(self):
+        self.assertEqual(
+            "Flickr user <a href='https://www.flickr.com/photos/130561288@N04/50914099198/' target='_blank' rel='noopener'>FritzchensFritz</a>",
+            Preprocess.clean_md_link(
+                "Flickr user [FritzchensFritz](https://www.flickr.com/photos/130561288@N04/50914099198/)"
+            ),
+        )
