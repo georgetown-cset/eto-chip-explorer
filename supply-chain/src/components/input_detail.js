@@ -97,7 +97,7 @@ const InputDetail = (props) => {
             <Typography component="p">
               {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
               {orgMeta[org]["name"]}
-              {orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
+              {orgs[org] !== "Major" && <span> ({orgs[org]} market share)</span>}
             </Typography>
           </td>
           ))}
