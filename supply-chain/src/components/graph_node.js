@@ -47,7 +47,7 @@ export const SubNode = (props) => {
 
   return (
     <div>
-      <Paper elevation={0}
+      <Paper elevation={0} id={nodeId}
              className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) :
              (highlights && Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
