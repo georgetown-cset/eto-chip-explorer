@@ -189,16 +189,20 @@ class Preprocess:
         return COUNTRY_MAPPING.get(clean_country_name, clean_country_name)
 
     @staticmethod
-    def get_provision(record: dict):
+    def get_provision(record: dict, is_org: bool = False):
         """
         Get numeric or descriptive provision value from row of provision data
         :param record: Row of provision data
+        :param is_org: If true, the provider is an org and we should map any numeric
+            provision to major
         :return: Provision value
         """
         assert not (
             (len(record["share_provided"]) > 0) and (len(record[MARKET_SHARE_COL]) > 0)
-        ), f"Record should have either minor share or provision, not both: {record}"
+        ), f"Record should have either negligible share or provision, not both: {record}"
         if record["share_provided"]:
+            if is_org:
+                return MAJOR_PROVISION
             return int(record["share_provided"].strip("%"))
         share = record[MARKET_SHARE_COL].strip()
         if share:
@@ -289,7 +293,9 @@ class Preprocess:
                 else:
                     if provider_id not in org_provision:
                         org_provision[provider_id] = {}
-                    org_provision[provider_id][provided] = self.get_provision(line)
+                    org_provision[provider_id][provided] = self.get_provision(
+                        line, True
+                    )
         country_provision_concentration = self.get_provision_concentration(
             country_provision
         )
@@ -353,18 +359,19 @@ class Preprocess:
                     "name": line["provider_name"],
                     "type": line["provider_type"],
                 }
+                if line["country"]:
+                    self.provider_to_meta[line["provider_id"]][
+                        "hq_flag"
+                    ] = self.get_flag(line["country"].strip())
+                    self.provider_to_meta[line["provider_id"]][
+                        "hq_country"
+                    ] = self.get_country(line["country"]).strip()
                 name_to_id[line["provider_name"]] = line["provider_id"]
         with open(company_metadata_fi) as f:
             for line in csv.DictReader(f):
                 company_id = name_to_id.get(line["Company"])
                 if not company_id:
                     continue
-                self.provider_to_meta[company_id]["hq_flag"] = self.get_flag(
-                    line["HQ country"].strip()
-                )
-                self.provider_to_meta[company_id]["hq_country"] = line[
-                    "HQ country"
-                ].strip()
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     @staticmethod
