@@ -2,18 +2,16 @@ import React, {useEffect} from "react";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { AppIntro, AppWrapper, Dropdown } from "@eto/eto-ui-components";
+import { AppIntro, AppWrapper, Dropdown, HelpTooltip } from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
 import { nodeToMeta, variants } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
+import {FILTER_INPUT, FILTER_CONCENTRATION, FILTER_COUNTRY, FILTER_ORG} from "../helpers/shared";
+import tooltips from "../helpers/tooltips";
 
 const FILTER_CHOOSE = "filter-choose";
-const FILTER_INPUT = "input-resource";
-const FILTER_COUNTRY = "country";
-const FILTER_CONCENTRATION = "concentration";
-const FILTER_ORG = "organization";
 const DROPDOWN_FILTERS = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG];
 const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
@@ -207,10 +205,10 @@ const Dashboard = () => {
   const inputToNode = getInputToNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
-    {val: FILTER_INPUT, text: "Specific inputs"},
-    {val: FILTER_COUNTRY, text: "Supplier countries"},
-    {val: FILTER_ORG, text: "Supplier companies"},
-    {val: FILTER_CONCENTRATION, text: "Market concentration"},
+    {val: FILTER_INPUT, text: <span>Specific inputs <HelpTooltip text={tooltips[FILTER_INPUT]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_COUNTRY, text: <span>Supplier countries <HelpTooltip text={tooltips[FILTER_COUNTRY]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_ORG, text: <span>Supplier companies <HelpTooltip text={tooltips[FILTER_ORG]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_CONCENTRATION, text: <span>Market concentration <HelpTooltip text={tooltips[FILTER_CONCENTRATION]} style={{verticalAlign: "top", height: "23px"}}/></span>},
   ];
   const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {

@@ -37,4 +37,9 @@ const getIcon = (nodeType, style, selected=false) => {
   }
 };
 
-export default getIcon;
+const FILTER_INPUT = "input-resource";
+const FILTER_COUNTRY = "country";
+const FILTER_CONCENTRATION = "concentration";
+const FILTER_ORG = "organization";
+
+export {getIcon, FILTER_ORG, FILTER_COUNTRY, FILTER_INPUT, FILTER_CONCENTRATION};

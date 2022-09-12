@@ -5,7 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-import getIcon from "../helpers/shared";
+import {getIcon} from "../helpers/shared";
 
 export const NodeHeading = (props) => {
   const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
