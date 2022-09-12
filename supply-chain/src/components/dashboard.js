@@ -135,7 +135,12 @@ const Dashboard = () => {
       if (fv === FILTER_CHOOSE) {
         continue;
       }
-      if (defaultFilterValues[fv] !== currFilterValues[fv]){
+      // If the user hasn't selected anything, there should be no highlighting
+      if (MULTI_FILTERS.includes(fv) && currFilterValues[fv].length === 0) {
+        continue;
+      }
+      if ((defaultFilterValues[fv].length !== currFilterValues[fv].length) ||
+          (defaultFilterValues[fv][0] !== currFilterValues[fv][0])){
         highlighter = fv;
         hasHighlighter = true;
       }
@@ -324,7 +329,11 @@ const Dashboard = () => {
       if (filterVal !== null) {
         if (MULTI_FILTERS.includes(filterKey)) {
           // This is a multi-select, so we need to pass in an array
-          filterVal = filterVal.split(",");
+          if (filterVal === "") {
+            filterVal = [];
+          } else {
+            filterVal = filterVal.split(",");
+          }
         }
         updatedFilterValues[filterKey] = filterVal;
       }

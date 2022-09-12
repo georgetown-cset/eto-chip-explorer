@@ -198,7 +198,7 @@ a {
     }
   }
   &.unhighlighted, .graph-sub-node.unhighlighted {
-    background-color: var(--white);
+    background-color: var(--grey-lightest);
     color: var(--grey-light);
     & > p > .graph-node-icon {
       color: var(--grey-light);
