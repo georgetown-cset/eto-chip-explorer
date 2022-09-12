@@ -236,13 +236,6 @@ a {
   .MuiIconButton-root:hover {
     background-color: unset;
   }
-  .icon-wrapper {
-    border: 0;
-    background-color: unset;
-    &:hover {
-      cursor: pointer;
-    }
-  }
   .icon {
     color: var(--bright-blue);
   }
@@ -308,6 +301,7 @@ a {
     height: 200px;
     overflow: hidden;
     margin-top: -20px;
+    margin-right: -5px;
     img {
       width: 100%;
       height: auto;
@@ -315,6 +309,16 @@ a {
     }
     img:hover {
       cursor: pointer;
+    }
+    .icon-wrapper {
+      position: absolute;
+      right: 5px;
+      stroke: white;
+      stroke-opacity: 75%;
+      stroke-width: 0.5px;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   .graph-sub-node:hover {
