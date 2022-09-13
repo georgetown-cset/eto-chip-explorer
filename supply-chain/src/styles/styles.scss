@@ -305,7 +305,7 @@ a {
     img {
       width: 100%;
       height: auto;
-      transform: translateY(-50%);
+      transform: translateY(-10%);
     }
     img:hover {
       cursor: pointer;
@@ -315,7 +315,8 @@ a {
       right: 5px;
       stroke: white;
       stroke-opacity: 75%;
-      stroke-width: 0.5px;
+      stroke-width: 15px;
+      paint-order: stroke;
       &:hover {
         cursor: pointer;
       }
