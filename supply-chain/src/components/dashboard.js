@@ -136,7 +136,7 @@ const Dashboard = () => {
         continue;
       }
       // If the user hasn't selected anything, there should be no highlighting.
-      // First, we check this condition for the multi-selectes, by comparing arrays.
+      // First, we check this condition for the multi-selects, by comparing arrays.
       if (MULTI_FILTERS.includes(fv)) {
         if (currFilterValues[fv].length === 0) {
           continue;
