@@ -106,7 +106,7 @@ a {
         background-color: var(--bright-blue-light-hsl-g20);
       }
       &.unhighlighted {
-        background-color: var(--white);
+        background-color: var(--grey-lightest);
       }
     }
   }
@@ -198,7 +198,7 @@ a {
     }
   }
   &.unhighlighted, .graph-sub-node.unhighlighted {
-    background-color: var(--white);
+    background-color: var(--grey-lightest);
     color: var(--grey-light);
     & > p > .graph-node-icon {
       color: var(--grey-light);
