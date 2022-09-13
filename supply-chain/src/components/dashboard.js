@@ -149,9 +149,6 @@ const Dashboard = () => {
       provKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
       identityMap[provKey] = 1;
       setHighlights(identityMap);
-      // Scroll a highlighted element into view
-      const highlightedElem = document.getElementById(provKey);
-      highlightedElem.scrollIntoView({block: "center"});
     } else {
       const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
       if (highlighter === FILTER_CONCENTRATION) {
@@ -166,7 +163,7 @@ const Dashboard = () => {
           }
         }
       } else if (MULTI_FILTERS.includes(highlighter)) {
-        let highlightFirst = false;
+        let highlightFirst = undefined;
         for (const name of currFilterValues[highlighter]) {
           // If name is "All", we ignore it
           if (!(name in currMapping)) {
@@ -198,16 +195,19 @@ const Dashboard = () => {
                 highlightGradientMap[variantParentNode] = provValue;
               }
             }
-            // Highlight the first node
-            if (!highlightFirst) {
-              highlightFirst = true;
-              let highlightedProvKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
-              // Scroll a highlighted element into view
-              const highlightedElem = document.getElementById(highlightedProvKey);
-              highlightedElem.scrollIntoView({block: "center"});
+            // Find the top node so we can scroll it into view
+            const highlightedProvKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
+            const highlightedProvElem = document.getElementById(highlightedProvKey);
+            if ((highlightFirst === undefined) ||
+                (highlightedProvElem && highlightedProvElem.offsetTop < highlightFirst.offsetTop)) {
+              highlightFirst = highlightedProvElem;
             }
           }
         }
+        if (highlightFirst !== undefined) {
+          highlightFirst.scrollIntoView({block: "center"});
+        }
+
       }
       setHighlights(highlightGradientMap);
     }
