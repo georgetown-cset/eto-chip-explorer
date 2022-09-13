@@ -232,21 +232,9 @@ a {
   p.MuiTypography-root {
     font-size: 0.9rem;
     text-align: left;
-    &.caption {
-      text-align: center;
-      color: var(--grey);
-      font-size: 0.8rem;
-    }
   }
   .MuiIconButton-root:hover {
     background-color: unset;
-  }
-  .icon-wrapper {
-    border: 0;
-    background-color: unset;
-    &:hover {
-      cursor: pointer;
-    }
   }
   .icon {
     color: var(--bright-blue);
@@ -310,16 +298,28 @@ a {
     }
   }
   .image-wrapper {
-    height: 200px;
+    height: 240px;
     overflow: hidden;
     margin-top: -20px;
+    margin-right: -5px;
     img {
       width: 100%;
       height: auto;
-      transform: translateY(-50%);
+      transform: translateY(-10%);
     }
     img:hover {
       cursor: pointer;
+    }
+    .icon-wrapper {
+      position: absolute;
+      right: 5px;
+      stroke: white;
+      stroke-opacity: 75%;
+      stroke-width: 15px;
+      paint-order: stroke;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   .graph-sub-node:hover {
@@ -333,12 +333,19 @@ a {
     width: 100%;
     margin-bottom: 10px;
     td {
+      vertical-align: top;
       width: 50%;
       .flag {
         margin-right: 5px;
       }
     }
   }
+}
+
+.caption {
+  color: var(--grey);
+  font-size: 0.8rem;
+  font-family: GTZirkonLightItalic;
 }
 
 /* Mobile view styling */

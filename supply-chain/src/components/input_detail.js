@@ -2,7 +2,7 @@ import React from "react";
 import Loadable from "react-loadable";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
-import Link from "@mui/material/Link";
+import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
 import { countryFlags } from "../../data/provision";
@@ -95,9 +95,9 @@ const InputDetail = (props) => {
           {rowOrgs.map((org) => (
           <td key={org}>
             <Typography component="p">
-              {orgMeta[org]["hq"] && <span className="flag">{orgMeta[org]["hq"]}</span>}
+              {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
               {orgMeta[org]["name"]}
-              {orgs[org] !== "Major" && <span> ({orgs[org]} provider)</span>}
+              {orgs[org] !== "Major" && <span> ({orgs[org]} market share)</span>}
             </Typography>
           </td>
           ))}
@@ -135,18 +135,6 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      {(orgs !== undefined) &&
-        <div>
-          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-           Notable supplier companies
-          </Typography>
-          <table>
-            <tbody>
-              {mkOrgTableRows()}
-            </tbody>
-          </table>
-        </div>
-      }
       {hasCountries &&
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
@@ -169,6 +157,18 @@ const InputDetail = (props) => {
               </tbody>
             </table>
           }
+        </div>
+      }
+      {(orgs !== undefined) &&
+        <div>
+          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+           Notable supplier companies
+          </Typography>
+          <table>
+            <tbody>
+              {mkOrgTableRows()}
+            </tbody>
+          </table>
         </div>
       }
     </div>

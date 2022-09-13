@@ -360,9 +360,12 @@ class Preprocess:
                     "type": line["provider_type"],
                 }
                 if line["country"]:
-                    self.provider_to_meta[line["provider_id"]]["hq"] = self.get_flag(
-                        line["country"].strip()
-                    )
+                    self.provider_to_meta[line["provider_id"]][
+                        "hq_flag"
+                    ] = self.get_flag(line["country"].strip())
+                    self.provider_to_meta[line["provider_id"]][
+                        "hq_country"
+                    ] = self.get_country(line["country"]).strip()
                 name_to_id[line["provider_name"]] = line["provider_id"]
         with open(company_metadata_fi) as f:
             for line in csv.DictReader(f):

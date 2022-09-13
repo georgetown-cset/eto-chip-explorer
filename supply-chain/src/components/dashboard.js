@@ -2,18 +2,16 @@ import React, {useEffect} from "react";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { AppIntro, AppWrapper, Dropdown } from "@eto/eto-ui-components";
+import {AppIntro, AppWrapper, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
 import { nodeToMeta, variants } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
+import {FILTER_INPUT, FILTER_CONCENTRATION, FILTER_COUNTRY, FILTER_ORG} from "../helpers/shared";
+import tooltips from "../helpers/tooltips";
 
 const FILTER_CHOOSE = "filter-choose";
-const FILTER_INPUT = "input-resource";
-const FILTER_COUNTRY = "country";
-const FILTER_CONCENTRATION = "concentration";
-const FILTER_ORG = "organization";
 const DROPDOWN_FILTERS = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG];
 const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
@@ -98,29 +96,25 @@ const Dashboard = () => {
     setDocumentationPanelToggle(false);
   };
 
-  const getInputToNodes = () => {
-    const inputTypes = ["materials", "tools"];
-    const inputToNode = {};
+  const getInputNodes = () => {
+    const inputNodes = {};
     for(let node in nodeToMeta){
-      if(nodeToMeta[node]["type"] === "process"){
-        for (let inputType of inputTypes) {
-          for(let input of nodeToMeta[node][inputType]){
-            if(!(input in inputToNode)){
-              inputToNode[input] = {};
-            }
-            inputToNode[input][node] = 1;
-          }
-        }
+      if(nodeToMeta[node]["type"] === "tool_resource" || nodeToMeta[node]["type"] === "material_resource"){
+        inputNodes[node] = 1;
       }
     }
-    return inputToNode;
+    return inputNodes;
   };
 
   const getVariantToNode = () => {
     const variantToNode = {};
     for (const node in variants) {
       for (const variant of variants[node]) {
-        variantToNode[variant] = node;
+        let parentNode = node;
+        while (variantToNode[parentNode]) {
+          parentNode = variantToNode[parentNode];
+        }
+        variantToNode[variant] = parentNode;
       }
     }
     return variantToNode;
@@ -163,8 +157,11 @@ const Dashboard = () => {
     const currMapping = filterToValues[highlighter];
     if(highlighter === FILTER_INPUT) {
       const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
-      identityMap[currFilterValues[highlighter]] = 1;
-      setHighlights(identityMap)
+      let provKey = currFilterValues[highlighter];
+      // If the selected input is a variant, select the canonical version
+      provKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
+      identityMap[provKey] = 1;
+      setHighlights(identityMap);
     } else {
       const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
       if (highlighter === FILTER_CONCENTRATION) {
@@ -179,6 +176,7 @@ const Dashboard = () => {
           }
         }
       } else if (MULTI_FILTERS.includes(highlighter)) {
+        let highlightFirst = undefined;
         for (const name of currFilterValues[highlighter]) {
           // If name is "All", we ignore it
           if (!(name in currMapping)) {
@@ -210,20 +208,31 @@ const Dashboard = () => {
                 highlightGradientMap[variantParentNode] = provValue;
               }
             }
+            // Find the top node so we can scroll it into view
+            const highlightedProvKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
+            const highlightedProvElem = document.getElementById(highlightedProvKey);
+            if ((highlightFirst === undefined) ||
+                (highlightedProvElem && highlightedProvElem.offsetTop < highlightFirst.offsetTop)) {
+              highlightFirst = highlightedProvElem;
+            }
           }
         }
+        if (highlightFirst !== undefined) {
+          highlightFirst.scrollIntoView({block: "center"});
+        }
+
       }
       setHighlights(highlightGradientMap);
     }
   };
 
-  const inputToNode = getInputToNodes();
+  const inputNodes = getInputNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
-    {val: FILTER_INPUT, text: "Specific inputs"},
-    {val: FILTER_COUNTRY, text: "Supplier countries"},
-    {val: FILTER_ORG, text: "Supplier companies"},
-    {val: FILTER_CONCENTRATION, text: "Market concentration"},
+    {val: FILTER_INPUT, text: <span>Specific inputs <HelpTooltip text={tooltips[FILTER_INPUT]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_COUNTRY, text: <span>Supplier countries <HelpTooltip text={tooltips[FILTER_COUNTRY]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_ORG, text: <span>Supplier companies <HelpTooltip text={tooltips[FILTER_ORG]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_CONCENTRATION, text: <span>Market concentration <HelpTooltip text={tooltips[FILTER_CONCENTRATION]} style={{verticalAlign: "top", height: "23px"}}/></span>},
   ];
   const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
@@ -235,7 +244,7 @@ const Dashboard = () => {
   };
   const filterToValues = {
     [FILTER_CHOOSE]: listOfFilters,
-    [FILTER_INPUT]: inputToNode,
+    [FILTER_INPUT]: inputNodes,
     [FILTER_COUNTRY]: countryProvision,
     [FILTER_ORG]: orgProvision,
     [FILTER_CONCENTRATION]: [true, false],
@@ -296,7 +305,7 @@ const Dashboard = () => {
   ));
 
   const inputResourceOptions = [{"val": "All", "text": "All"}];
-  Object.keys(inputToNode).sort(
+  Object.keys(inputNodes).sort(
     (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
   ).map((name) => (
     inputResourceOptions.push({"val": name, "text": nodeToMeta[name]["name"]})
@@ -375,14 +384,16 @@ const Dashboard = () => {
 
   return (<AppWrapper>
     <div style={{margin: "40px 20px 40px 100px", maxWidth: "1200px"}}>
-    <AppIntro title={"Supply Chain Explorer"} content={<Typography component={"div"} variant={"body1"}>
-      ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
-      This edition of the Explorer covers the essential tools, materials, processes, countries,
-      and firms involved in producing advanced logic chips. It’s built to help users who are not
-      semiconductor experts get up to speed on how this essential technology is produced, and
-      to allow users of all backgrounds to visually explore how different inputs, companies,
-      and nations interact in the production process.
-    </Typography>}/>
+    <AppIntro title={"Supply Chain Explorer"}>
+      <Typography component={"div"} variant={"body1"}>
+        ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
+        This edition of the Explorer covers the essential tools, materials, processes, countries,
+        and firms involved in producing advanced logic chips. It’s built to help users who are not
+        semiconductor experts get up to speed on how this essential technology is produced, and
+        to allow users of all backgrounds to visually explore how different inputs, companies,
+        and nations interact in the production process.
+      </Typography>
+    </AppIntro>
     </div>
     <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
       className="filter-bar"
@@ -414,6 +425,10 @@ const Dashboard = () => {
       }
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", padding: "0px 45px", textAlign: "center"}}>
+      <div style={{textAlign: "right"}}>
+        <UserFeedback context={"the Supply Chain Explorer"}
+                      mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+      </div>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />

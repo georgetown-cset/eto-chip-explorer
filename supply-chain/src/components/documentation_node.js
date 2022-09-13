@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import CancelIcon from '@mui/icons-material/Cancel';
+import {UserFeedback} from "@eto/eto-ui-components";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
@@ -28,15 +29,17 @@ const getAllSubVariantsList = () => {
 const allSubVariantsList = getAllSubVariantsList();
 
 // Recursive component to construct variants tree
-const VariantsList = (props) => {
-  const {node, currSelectedNode, input_type, updateSelected, parent, depth} = props;
+export const VariantsList = (props) => {
+  const {node, currSelectedNode, inputType, updateSelected, parent, depth} = props;
   return (
     <div>
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
         <div>
           <Typography className="variants-heading" component={"p"} style={{marginLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
-          {variants[node].map((variant) =>
-            <SubNode nodeType={input_type}
+          {variants[node].sort(
+            (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+          ).map((variant) =>
+            <SubNode nodeType={inputType}
               name={nodeToMeta[variant]["name"]}
               key={nodeToMeta[variant]["name"]}
               nodeId={variant}
@@ -46,8 +49,9 @@ const VariantsList = (props) => {
               parent={parent}
               depth={depth}
               currSelectedNode={currSelectedNode}
+              inDocumentation={true}
             >
-              <VariantsList node={variant} currSelectedNode={currSelectedNode} input_type={input_type} updateSelected={updateSelected} parent={parent} depth={depth+2} />
+              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected} parent={parent} depth={depth+2} />
             </SubNode>
           )}
         </div>
@@ -90,12 +94,14 @@ const DocumentationNode = (props) => {
   const getInputList = (input_type) => {
     return (
       <div style={{textAlign: "left"}}>
-        {nodeToMeta[parent][input_type].map((node) =>
+        {nodeToMeta[parent][input_type].sort(
+          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
+        ).map((node) =>
           <div key={parent+input_type+node}>
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
                 content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
-            <VariantsList node={node} currSelectedNode={currSelectedNode} input_type={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
+            <VariantsList node={node} currSelectedNode={currSelectedNode} inputType={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
           </div>
         )}
       </div>
@@ -107,6 +113,8 @@ const DocumentationNode = (props) => {
 
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
+
+  const imgFileName = images?.filter(i => i.name === node)[0] ? images.filter(i => i.name === node)[0] : images.filter(i => i.name === "default")[0];
 
   // For image modal
   const [open, setOpen] = React.useState(false);
@@ -145,18 +153,25 @@ const DocumentationNode = (props) => {
           </div>
         }
         <div className="documentation-node-description">
-          {images !== undefined && images.filter(i => i.name === node)[0] &&
+          {imgFileName !== undefined &&
             <div className="image-wrapper">
-              <img src={images.filter(i => i.name === node)[0]?.publicURL}
+              <img src={imgFileName.publicURL}
                 onClick={() => setOpen(true)}
                 onKeyDown={(evt) => {
                   if (evt.key === "Enter") {setOpen(true)};
                 }}
                 role="presentation"
                 tabIndex={0}
-                alt={meta.image_caption}
+                alt={meta.image_caption ? meta.image_caption : "Default"}
               />
+              <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
+                onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
+                <span className="icon"><CancelIcon/></span>
+              </IconButton>
             </div>
+          }
+          {imgFileName !== undefined && meta.image_license &&
+              <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
           }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
@@ -166,11 +181,11 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} /> :
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
           )}
+          <div style={{textAlign: "right"}}>
+            <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
+                          mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+          </div>
         </div>
-        <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
-          onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
-          <span className="icon"><CancelIcon/></span>
-        </IconButton>
 
         <Modal
           open={open}
@@ -188,11 +203,17 @@ const DocumentationNode = (props) => {
             boxShadow: 24,
             p: 4,
           }}>
-            <img src={images.filter(i => i.name === node)[0]?.publicURL} alt={node}
-              style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
-            />
-            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
-            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+            {imgFileName !== undefined &&
+              <img src={imgFileName.publicURL} alt={node}
+                style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
+              />
+            }
+            {imgFileName !== undefined && meta.image_caption &&
+              <div>
+                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
+                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+              </div>
+            }
           </Box>
         </Modal>
       </Paper>
