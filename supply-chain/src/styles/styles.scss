@@ -364,6 +364,11 @@ a {
 
 /* Mobile view styling */
 
+.map-background {
+  min-width: unset;
+  padding: 0px 0px,
+}
+
 .stage-border {
   display: contents;
   .graph-node-wrapper {
@@ -394,6 +399,11 @@ a {
 /* Desktop styling */
 
 @media (min-width: 1300px) {
+  .map-background {
+    min-width: 700px;
+    padding: 0px 45px,
+  }
+
   .stage-border {
     display: block;
     .graph-node-wrapper {

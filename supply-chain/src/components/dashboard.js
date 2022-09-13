@@ -407,7 +407,7 @@ const Dashboard = () => {
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
       }
     </Paper>
-    <div style={{display: "inline-block", minWidth: "700px", padding: "0px 45px", textAlign: "center"}}>
+    <div style={{display: "inline-block", textAlign: "center"}}>
       <div style={{textAlign: "right"}}>
         <UserFeedback context={"the Supply Chain Explorer"}
                       mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
