@@ -78,6 +78,26 @@ const DocumentationNode = (props) => {
     return nodeToCountryProvision;
   };
 
+  const getNodeVariantsToProvision = (provisionDict, key=undefined) => {
+    const variantsToProvision = {};
+    if (!variants[currSelectedNode]) {
+      return variantsToProvision;
+    }
+    for (const variant of variants[currSelectedNode]) {
+      if (!(variant in provisionDict)) {
+        continue;
+      }
+      const provisionList = key ? provisionDict[variant]?.[key] : Object.keys(provisionDict[variant]);
+      for (const provisionName of provisionList) {
+        if (!(provisionName in variantsToProvision)) {
+          variantsToProvision[provisionName] = []
+        }
+        variantsToProvision[provisionName].push(variant);
+      }
+    }
+    return variantsToProvision;
+  }
+
   const getNodeToOrgProvision = () => {
     const nodeToOrgProvision = {};
     for(let org in orgProvision){
@@ -110,6 +130,8 @@ const DocumentationNode = (props) => {
 
   const nodeToCountryProvision = getNodeToCountryProvision();
   const nodeToOrgProvision = getNodeToOrgProvision();
+  const nodeVariantsToCountryProvision = getNodeVariantsToProvision(nodeToCountryProvision, "countries");
+  const nodeVariantsToOrgProvision = getNodeVariantsToProvision(nodeToOrgProvision);
 
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
@@ -176,9 +198,12 @@ const DocumentationNode = (props) => {
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
               <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
+                        updateSelected={updateSelected} parent={parent}
                         countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
                         countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
-                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} /> :
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta}
+                        variantCountries={nodeVariantsToCountryProvision}
+                        variantOrgs={nodeVariantsToOrgProvision} /> :
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
           )}
           <div style={{textAlign: "right"}}>

@@ -5,6 +5,8 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
+import { VariantsList } from "./documentation_node";
+import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
 
 const Plot = Loadable({
@@ -58,7 +60,8 @@ const BarGraph = (props) => {
 };
 
 const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
+  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta, updateSelected=null, parent,
+    variantCountries, variantOrgs} = props;
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
 
   const graphCountries = [];
@@ -66,7 +69,7 @@ const InputDetail = (props) => {
   const undefinedProvisionCountries = [];
   const hasCountries = (countries !== null) && (countryValues !== null) &&
     (countries !== undefined) && (countryValues !== undefined);
-  if(hasCountries) {
+  if (hasCountries) {
     for (let i = 0; i < countries.length; i++) {
       if (typeof countryValues[i] !== "number") {
         undefinedProvisionCountries.push({
@@ -131,10 +134,42 @@ const InputDetail = (props) => {
   };
 
   return (
-    <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
+    <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
+      {variants[selectedNode] &&
+        <div>
+          <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
+            updateSelected={updateSelected} parent={parent} />
+          {Object.keys(variantCountries).length > 0 &&
+            <div>
+              <Typography component={"p"} variant={"h6"} className="provision-heading">
+                Country Provision
+              </Typography>
+                {Object.entries(variantCountries).map(([country, countryVariants]) =>
+                  <Typography component="p">
+                    {countryFlags[country] && <span className="flag">{countryFlags[country]}</span>}
+                    {country} ({countryVariants.map(e => nodeToMeta[e].name).join(", ")})
+                  </Typography>
+                )}
+            </div>
+          }
+          {Object.keys(variantOrgs).length > 0 &&
+            <div>
+              <Typography component={"p"} variant={"h6"} className="provision-heading">
+                Notable supplier companies
+              </Typography>
+              {Object.entries(variantOrgs).map(([org, orgVariants]) =>
+                <Typography component="p">
+                  <span className="flag">{orgMeta[org]["hq_flag"]}</span>
+                  {orgMeta[org].name} ({orgVariants.map(e => nodeToMeta[e].name).join(", ")})
+                </Typography>
+              )}
+            </div>
+          }
+        </div>
+      }
       {hasCountries &&
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
