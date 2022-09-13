@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import CancelIcon from '@mui/icons-material/Cancel';
+import {UserFeedback} from "@eto/eto-ui-components";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
@@ -170,6 +171,10 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} /> :
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
           )}
+          <div style={{textAlign: "right"}}>
+            <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
+                          mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+          </div>
         </div>
         <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
           onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
