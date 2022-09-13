@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import { AppIntro, AppWrapper, Dropdown, HelpTooltip } from "@eto/eto-ui-components";
+import {AppIntro, AppWrapper, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
@@ -397,6 +397,10 @@ const Dashboard = () => {
       }
     </Paper>
     <div style={{display: "inline-block", minWidth: "700px", padding: "0px 45px", textAlign: "center"}}>
+      <div style={{textAlign: "right"}}>
+        <UserFeedback context={"the Supply Chain Explorer"}
+                      mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+      </div>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
