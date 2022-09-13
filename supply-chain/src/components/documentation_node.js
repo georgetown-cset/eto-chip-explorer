@@ -80,10 +80,10 @@ const DocumentationNode = (props) => {
 
   const getNodeVariantsToProvision = (provisionDict, key=undefined) => {
     const variantsToProvision = {};
-    if (!variants[currSelectedNode]) {
+    if (!allSubVariantsList[currSelectedNode]) {
       return variantsToProvision;
     }
-    for (const variant of variants[currSelectedNode]) {
+    for (const variant of allSubVariantsList[currSelectedNode]) {
       if (!(variant in provisionDict)) {
         continue;
       }
