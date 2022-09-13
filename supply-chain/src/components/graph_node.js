@@ -5,12 +5,8 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-<<<<<<< HEAD
 import {getIcon} from "../helpers/shared";
-=======
-import getIcon from "../helpers/shared";
 import {VariantsList} from "./documentation_node";
->>>>>>> 4bbaef8 (Closes #256)
 
 export const NodeHeading = (props) => {
   const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
