@@ -193,10 +193,12 @@ const DocumentationNode = (props) => {
             boxShadow: 24,
             p: 4,
           }}>
-            <img src={imgFileName.publicURL} alt={node}
-              style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
-            />
-            {meta.image_caption &&
+            {imgFileName !== undefined &&
+              <img src={imgFileName.publicURL} alt={node}
+                style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
+              />
+            }
+            {imgFileName !== undefined && meta.image_caption &&
               <div>
                 <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
                 <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
