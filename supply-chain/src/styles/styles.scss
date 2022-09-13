@@ -190,7 +190,7 @@ a {
   }
 }
 
-.graph-node, .stage-border {
+.graph-node, .stage-border, .stage-node {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
     &.gradient-100 {

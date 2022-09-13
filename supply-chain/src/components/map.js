@@ -158,7 +158,7 @@ const Map = (props) => {
   // Close any open documentation node if the user clicks the background.
   useEffect(() => {
     function handleClickOutside(evt) {
-      if (evt.target.classList.contains("stage-border") && selectedNode !== null) {
+      if (evt.target.classList.contains("stage-border")) {
         updateSelected(evt, null, null);
       }
     }
