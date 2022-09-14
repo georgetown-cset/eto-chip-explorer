@@ -69,10 +69,12 @@ const DocumentationNode = (props) => {
     for(let country in countryProvision){
       for(let node in countryProvision[country]){
         if(!(node in nodeToCountryProvision)){
-          nodeToCountryProvision[node] = {"countries": [], "values": []}
+          nodeToCountryProvision[node] = []
         }
-        nodeToCountryProvision[node]["countries"].push(country);
-        nodeToCountryProvision[node]["values"].push(countryProvision[country][node]);
+        nodeToCountryProvision[node].push({
+          country: country,
+          value: countryProvision[country][node]
+        })
       }
     }
     return nodeToCountryProvision;
@@ -176,8 +178,7 @@ const DocumentationNode = (props) => {
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
               <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                        countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
-                        countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
+                        countries={nodeToCountryProvision?.[currSelectedNode]}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} /> :
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
           )}
