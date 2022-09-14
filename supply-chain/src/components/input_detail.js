@@ -20,11 +20,27 @@ const Plot = Loadable({
 });
 
 const BarGraph = (props) => {
-  const {countries, values} = props;
+  const {countries} = props;
+
+  countries.sort((a, b) => {
+    // Country nodes for "Various" always go last
+    if (a.country === "Various") {
+      return -1;
+    } else if (b.country === "Various") {
+      return 1;
+    // Otherwise, sort by value in descending order
+    } else if (a.value > b.value) {
+      return 1;
+    } else if (b.value > a.value) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
 
   const data = [{
-    x: values,
-    y: countries,
+    x: countries.map(e => e.value),
+    y: countries.map(e => e.country),
     type: "bar",
     orientation: "h",
     hovertemplate: '%{x}%<extra></extra>',
@@ -39,9 +55,6 @@ const BarGraph = (props) => {
         margin: {t: 30, r: 30, b: 35, l: 120, pad: 4},
         xaxis: {
           title: "Share of global market"
-        },
-        yaxis: {
-          categoryorder: "total ascending"
         },
         font: {
           family: "GTZirkonRegular, Arial"
@@ -109,22 +122,20 @@ export const OrgListing = (props) => {
 
 const InputDetail = (props) => {
   const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
+  const orgNames = orgs === undefined ? [] : Object.keys(orgs);
 
   const graphCountries = [];
-  const graphCountryValues = [];
   const undefinedProvisionCountries = [];
-  const hasCountries = (countries !== null) && (countryValues !== null) &&
-    (countries !== undefined) && (countryValues !== undefined);
-  if(hasCountries) {
+  const hasCountries = (countries !== null) && (countries !== undefined) && (countries.length > 0);
+  if (hasCountries) {
     for (let i = 0; i < countries.length; i++) {
-      if (typeof countryValues[i] !== "number") {
+      if (typeof countries[i].value !== "number") {
         undefinedProvisionCountries.push({
-          country: countries[i],
-          countryValue: countryValues[i]
+          country: countries[i].country,
+          value: countries[i].value
         });
       } else {
         graphCountries.push(countries[i]);
-        graphCountryValues.push(countryValues[i]);
       }
     }
   }
@@ -142,7 +153,7 @@ const InputDetail = (props) => {
             <td key={countryInfo.country}>
               <Typography component="p">
                 {countryFlags[countryInfo.country] && <span className="flag">{countryFlags[countryInfo.country]}</span>}
-                {countryInfo.country}{countryInfo.countryValue !== "Major" && <span> ({countryInfo.countryValue})</span>}
+                {countryInfo.country}{countryInfo.value !== "Major" && <span> ({countryInfo.value})</span>}
               </Typography>
             </td>
           ))}
@@ -171,7 +182,7 @@ const InputDetail = (props) => {
           }
           {graphCountries.length > 0 &&
             <div>
-              <BarGraph countries={graphCountries} values={graphCountryValues}/>
+              <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
                 <span class="caption"> <b>Note:</b> {nodeToMeta[selectedNode].market_chart_caption}</span>
               }
