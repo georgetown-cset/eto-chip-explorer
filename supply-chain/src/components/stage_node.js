@@ -28,7 +28,7 @@ const StageNode = (props) => {
         <Button
           style={{
             display: "inline-block",
-            padding: "0px",
+            padding: "0px 10px 0px 0px",
             backgroundColor: "unset",
           }}
           disableRipple={true}
