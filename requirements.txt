@@ -1,3 +1,6 @@
+jinja2
+pdfkit
+plotly
 pycountry
 pytest
 pre-commit
