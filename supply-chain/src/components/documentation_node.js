@@ -179,7 +179,8 @@ const DocumentationNode = (props) => {
                         countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
                         countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} /> :
-              <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
+              <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
           <div style={{textAlign: "right"}}>
             <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}

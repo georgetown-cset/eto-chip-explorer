@@ -57,30 +57,11 @@ const BarGraph = (props) => {
   );
 };
 
-const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
-  const orgNames = orgs === undefined ? [] : Object.keys(orgs);
-
-  const graphCountries = [];
-  const graphCountryValues = [];
-  const undefinedProvisionCountries = [];
-  const hasCountries = (countries !== null) && (countryValues !== null) &&
-    (countries !== undefined) && (countryValues !== undefined);
-  if(hasCountries) {
-    for (let i = 0; i < countries.length; i++) {
-      if (typeof countryValues[i] !== "number") {
-        undefinedProvisionCountries.push({
-          country: countries[i],
-          countryValue: countryValues[i]
-        });
-      } else {
-        graphCountries.push(countries[i]);
-        graphCountryValues.push(countryValues[i]);
-      }
-    }
-  }
+export const OrgListing = (props) => {
+  const {orgs, orgMeta} = props;
 
   const mkOrgTableRows = () => {
+    const orgNames = orgs === undefined ? [] : Object.keys(orgs);
     const filteredOrgNames = orgNames.filter(org => org in orgMeta);
     filteredOrgNames.sort((a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
     const numRows = Math.ceil(filteredOrgNames.length/2);
@@ -106,6 +87,46 @@ const InputDetail = (props) => {
     }
     return rows;
   };
+
+  return (
+    <div>
+    {(orgs !== undefined) &&
+      <div>
+        <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+         Notable supplier companies
+        </Typography>
+        <table>
+          <tbody>
+            {mkOrgTableRows()}
+          </tbody>
+        </table>
+      </div>
+    }
+    </div>
+  )
+}
+
+const InputDetail = (props) => {
+  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
+
+  const graphCountries = [];
+  const graphCountryValues = [];
+  const undefinedProvisionCountries = [];
+  const hasCountries = (countries !== null) && (countryValues !== null) &&
+    (countries !== undefined) && (countryValues !== undefined);
+  if(hasCountries) {
+    for (let i = 0; i < countries.length; i++) {
+      if (typeof countryValues[i] !== "number") {
+        undefinedProvisionCountries.push({
+          country: countries[i],
+          countryValue: countryValues[i]
+        });
+      } else {
+        graphCountries.push(countries[i]);
+        graphCountryValues.push(countryValues[i]);
+      }
+    }
+  }
 
   const mkCountryTableRows = () => {
     const rows = [];
@@ -159,18 +180,7 @@ const InputDetail = (props) => {
           }
         </div>
       }
-      {(orgs !== undefined) &&
-        <div>
-          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-           Notable supplier companies
-          </Typography>
-          <table>
-            <tbody>
-              {mkOrgTableRows()}
-            </tbody>
-          </table>
-        </div>
-      }
+      <OrgListing orgs={orgs} orgMeta={orgMeta} />
     </div>
   )
 };
