@@ -54,12 +54,12 @@ const Map = (props) => {
   };
 
   const mkStage = (stage) => {
-    let stageClassName = "stage-border";
-    if (stage in highlights) {stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)};
+    let stageClassName = "";
+    if (stage in highlights) {stageClassName += "highlighted " + getBackgroundGradient(highlights[stage], highlights)};
     return <div key={stage} >
       <StageNode stage={stage} stageClassName={stageClassName} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
-        <div className={stageClassName}>
+        <div className={"stage-border " + stageClassName}>
           <DocumentationNode node={selectedNode} parent={parentNode}
             descriptions={descriptions} images={images} isStage={true}
             updateSelected={updateSelected} currSelectedNode={selectedNode}/>
@@ -155,11 +155,11 @@ const Map = (props) => {
     </div>
   };
 
-  // Close any open documentation node if the user clicks the background
+  // Close any open documentation node if the user clicks the background.
   useEffect(() => {
     function handleClickOutside(evt) {
       if (evt.target.classList.contains("stage-border")) {
-        updateSelected(null, null, null);
+        updateSelected(evt, null, null);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);

@@ -169,14 +169,28 @@ a {
   }
 }
 
-.stage-node-wrapper + .stage-border .MuiPaper-root.documentation-node {
-  width: 75%;
-  .documentation-node-description {
-    width: 90%;
+.stage-node-wrapper {
+  & + .stage-border .MuiPaper-root.documentation-node {
+    width: 75%;
+    .documentation-node-description {
+      width: 90%;
+    }
+  }
+  .stage-node {
+    background-color: var(--bright-blue);
+    padding: 5px 5px;
+    h3, button {
+      color: var(--white);
+    }
+    button {
+      float: right;
+      font-family: GTZirkonRegular;
+      text-transform: none;
+    }
   }
 }
 
-.graph-node, .stage-border {
+.graph-node, .stage-border, .stage-node {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
     &.gradient-100 {
@@ -350,6 +364,11 @@ a {
 
 /* Mobile view styling */
 
+.map-background {
+  min-width: unset;
+  padding: 0px 0px,
+}
+
 .stage-border {
   display: contents;
   .graph-node-wrapper {
@@ -380,6 +399,11 @@ a {
 /* Desktop styling */
 
 @media (min-width: 1300px) {
+  .map-background {
+    min-width: 700px;
+    padding: 0px 45px,
+  }
+
   .stage-border {
     display: block;
     .graph-node-wrapper {

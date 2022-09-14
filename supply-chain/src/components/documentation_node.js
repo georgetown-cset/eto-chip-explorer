@@ -125,7 +125,7 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            marginTop: (parent === null) ? "1px" : "-15px", marginBottom: "20px", marginLeft: "10px",
+            marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px", marginLeft: "10px",
             position: "relative",
       }}>
         {(currSelectedNode !== null) && !isStage &&
