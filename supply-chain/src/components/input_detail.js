@@ -6,6 +6,7 @@ import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
 import { countryFlags } from "../../data/provision";
+import { nodeToMeta } from "../../data/graph";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -156,6 +157,11 @@ const InputDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
+      {nodeToMeta[selectedNode].total_market_size &&
+        <Typography component="p">
+          The market size is {nodeToMeta[selectedNode].total_market_size}.
+        </Typography>
+      }
       {hasCountries &&
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
@@ -164,7 +170,15 @@ const InputDetail = (props) => {
             </Typography>
           }
           {graphCountries.length > 0 &&
-            <BarGraph countries={graphCountries} values={graphCountryValues}/>
+            <div>
+              <BarGraph countries={graphCountries} values={graphCountryValues}/>
+              {nodeToMeta[selectedNode].market_chart_caption &&
+                <span class="caption"> <b>Note:</b> {nodeToMeta[selectedNode].market_chart_caption}</span>
+              }
+              {nodeToMeta[selectedNode].market_chart_source &&
+                <span class="caption"> <b>Source:</b> {nodeToMeta[selectedNode].market_chart_source}</span>
+              }
+            </div>
           }
           {graphCountries.length > 0 && undefinedProvisionCountries.length > 0 &&
             <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>

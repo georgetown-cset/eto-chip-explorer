@@ -85,6 +85,11 @@ class Preprocess:
                     "name": line["input_name"],
                     "type": node_type,
                     "stage_id": line["stage_id"],
+                    "total_market_size": line[
+                        "market_share_chart_global_market_size_info"
+                    ],
+                    "market_chart_caption": line["market_share_chart_caption"],
+                    "market_chart_source": line["market_share_chart_source"],
                 }
                 assert node_type in EXPECTED_TYPES
                 self.node_to_meta[node_id][MATERIALS] = []
