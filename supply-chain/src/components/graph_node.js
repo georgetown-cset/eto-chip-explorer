@@ -100,7 +100,7 @@ const GraphNode = (props) => {
     <div className="graph-node-wrapper">
       <Paper id={node} className={
         "graph-node" +
-        (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) :
+        ((node in highlights && highlights[node] !== 0) ? " highlighted " + getBackgroundGradient(highlights[node], highlights) :
         (Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
         style={{
           margin: wide ? "" : "20px 25px",
