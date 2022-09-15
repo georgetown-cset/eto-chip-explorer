@@ -2,7 +2,6 @@
 <meta charset="utf-8">
 <head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style>
 		a{
@@ -103,7 +102,7 @@
 				<h4>Country provision</h4>
 			{% endif %}
 			{% if node_countries.get("graph") %}
-				<div id="plot"></div>
+				<img src="{{images_folder}}/{{node_id}}.png"/>
 				{% if node_countries.get("undefined") %}
 					<p>Other providers:</p>
 				{% endif %}
@@ -126,7 +125,4 @@
     	</div>
 	</div>
 </body>
-<script>
-    Plotly.newPlot("plot", {{node_graph_data | safe}}, {{node_graph_layout | safe}});
-</script>
 </html>
