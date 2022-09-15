@@ -45,7 +45,7 @@ This readme summarizes analytic decisions made in the process of turning https:/
 
 ### Inputs not incorporated due to irrelevance to advanced logic chips or other reasons
 
-- Spin coating tools
+- Spin coating tools (incorporated into "Deposition tools"
 - Non-IC deposition tools
 - Anything relating specifically to memory chips
 - CMP tools for packaging (see below)
