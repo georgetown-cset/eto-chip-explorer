@@ -147,10 +147,10 @@ const InputDetail = (props) => {
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Country Provision
               </Typography>
-                {Object.entries(variantCountries).map(([country, countryVariants]) =>
+                {Object.keys(variantCountries).sort().map((country) =>
                   <Typography component="p">
                     {countryFlags[country] && <span className="flag">{countryFlags[country]}</span>}
-                    {country} ({countryVariants.map(e => nodeToMeta[e].name).join(", ")})
+                    {country} ({variantCountries[country].map(e => nodeToMeta[e].name).join(", ")})
                   </Typography>
                 )}
             </div>
@@ -160,10 +160,12 @@ const InputDetail = (props) => {
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Notable supplier companies
               </Typography>
-              {Object.entries(variantOrgs).map(([org, orgVariants]) =>
+              {Object.keys(variantOrgs).sort(
+                (a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase())
+              ).map((org) =>
                 <Typography component="p">
                   <span className="flag">{orgMeta[org]["hq_flag"]}</span>
-                  {orgMeta[org].name} ({orgVariants.map(e => nodeToMeta[e].name).join(", ")})
+                  {orgMeta[org].name} ({variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")})
                 </Typography>
               )}
             </div>
