@@ -81,10 +81,10 @@ export const SubNode = (props) => {
                   inDocumentation={inDocumentation}
           />)}
         {props.children}
-        {inDocumentation && !props.children &&
-          <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
-            updateSelected={updateSelected} parent={parent} depth={depth + 2} />
-        }
+      {inDocumentation && !props.children &&
+        <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
+          updateSelected={updateSelected} parent={parent} depth={depth + 2} />
+      }
       </Typography>
     </div>
   );
@@ -108,16 +108,17 @@ const GraphNode = (props) => {
           display: "inline-block",
           width: wide ? "": "320px",
         }}
-        onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}
         elevation={0}
       >
         <div style={{textAlign: "left"}}>
-          {content !== null && content}
-          {content === null &&
-            <Typography component="h3">
-              {meta["name"]}
-            </Typography>
-          }
+          <div onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}>
+            {content !== null && content}
+            {content === null &&
+              <Typography component="h3">
+                {meta["name"]}
+              </Typography>
+            }
+          </div>
           {!inDocumentation &&
             <div className="graph-node-connections-text">
               {graphReverse[node] &&
