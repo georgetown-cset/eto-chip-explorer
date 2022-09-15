@@ -1,4 +1,4 @@
-This document summarizes analytic decisions made in the process of turning https://cset.georgetown.edu/wp-content/uploads/The-Semiconductor-Supply-Chain-Issue-Brief.pdf into the Supply Chain Explorer tool.
+This readme summarizes analytic decisions made in the process of turning https://cset.georgetown.edu/wp-content/uploads/The-Semiconductor-Supply-Chain-Issue-Brief.pdf into the datasets in this folder.
 
 ### Removed/altered companies relative to underlying report
 
