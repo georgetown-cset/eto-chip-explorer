@@ -260,6 +260,11 @@ a {
     margin-right: 5px;
     color: var(--bright-blue);
   }
+  .lower-icons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
   &, .graph-sub-node {
     .node-heading {
       margin-bottom: 0.7rem;

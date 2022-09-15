@@ -17,9 +17,14 @@ const Map = (props) => {
   const standaloneMinimapLayers = [];
   const data = useStaticQuery(graphql`
   query getData {
-      allFile(filter: {sourceInstanceName: {eq: "images"}}) {
+      images:allFile(filter: {sourceInstanceName: {eq: "images"}}) {
         nodes {
-          id
+          name
+          publicURL
+        }
+      },
+      pdfs:allFile(filter: {sourceInstanceName: {eq: "pdfs"}, extension: {eq: "pdf"}}) {
+        nodes {
           name
           publicURL
         }
@@ -34,7 +39,8 @@ const Map = (props) => {
   `);
 
   const descriptions= data.allMdx.nodes;
-  const images = data.allFile.nodes;
+  const images = data.images.nodes;
+  const pdfs = data.pdfs.nodes;
 
   const getLayerOrder = (nodes) => {
     nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
@@ -61,7 +67,7 @@ const Map = (props) => {
       {stage === parentNode &&
         <div className={"stage-border " + stageClassName}>
           <DocumentationNode node={selectedNode} parent={parentNode}
-            descriptions={descriptions} images={images} isStage={true}
+            descriptions={descriptions} images={images} pdfs={pdfs} isStage={true}
             updateSelected={updateSelected} currSelectedNode={selectedNode}/>
         </div>
       }
@@ -89,7 +95,7 @@ const Map = (props) => {
         )}
         {nodes.includes(parentNode) &&
           <DocumentationNode node={selectedNode} parent={parentNode}
-            descriptions={descriptions} images={images} isStage={false}
+            descriptions={descriptions} images={images} pdfs={pdfs} isStage={false}
             updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
         }
       </div>
@@ -270,7 +276,7 @@ const Map = (props) => {
       <div className="map-background">
         {filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
           <DocumentationNode node={filterValues["input-resource"]} parent={null}
-            descriptions={descriptions} images={images} isStage={false} standalone={true}
+            descriptions={descriptions} images={images} pdfs={pdfs} isStage={false} standalone={true}
             updateSelected={setDocumentationPanelToggle} currSelectedNode={filterValues["input-resource"]}
             minimap={standaloneMinimapLayers} />
         }
