@@ -48,7 +48,7 @@ This readme summarizes analytic decisions made in the process of turning https:/
 - Spin coating tools
 - Non-IC deposition tools
 - Anything relating specifically to memory chips
-
+- CMP tools for packaging (see below)
 
 ### Other methodological notes
 
