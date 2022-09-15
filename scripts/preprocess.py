@@ -397,7 +397,7 @@ class Preprocess:
                     x=[e["value"] for e in graph],
                     y=[e["country"] for e in graph],
                     orientation="h",
-                    text=[e["value"] for e in graph],
+                    text=[str(e["value"]) + "%" for e in graph],
                     textposition="auto",
                 )
             ]
@@ -428,6 +428,42 @@ class Preprocess:
             node_to_org_desc_list[node].sort()
         return node_to_org_desc_list
 
+    def _mk_pdf_for_node(
+        self,
+        node_id,
+        line,
+        images_folder,
+        node_to_country_provision,
+        node_to_org_desc_list,
+        output_dir,
+    ) -> None:
+        """
+        Generate and save a PDF with the description for a node
+        :return: None
+        """
+        node_description = line["description"].replace("\n", "<br/>")
+        node_countries = node_to_country_provision.get(node_id, {})
+        if node_countries.get("graph"):
+            self._get_country_provision_graph(
+                node_countries["graph"], output_dir, node_id
+            )
+        node_orgs = node_to_org_desc_list.get(node_id)
+        # Create PDF
+        template = env.get_template("pdf.html")
+        cluster_page = template.render(
+            node_description=node_description,
+            node_id=node_id,
+            node_name=self.node_to_meta[node_id]["name"],
+            node_countries=node_countries,
+            node_orgs=node_orgs,
+            images_folder=images_folder,
+        )
+        pdfkit.from_string(
+            cluster_page,
+            os.path.join(output_dir, node_id) + ".pdf",
+            {"enable-local-file-access": None},
+        )
+
     def mk_pdfs(self, nodes_fi: str, stages_fi: str, output_dir: str) -> None:
         """
         Generate pdf version of the each node's description
@@ -439,36 +475,28 @@ class Preprocess:
         node_to_country_provision = self._get_node_to_country_provision()
         node_to_org_desc_list = self._get_node_to_org_desc_list()
         images_folder = os.path.abspath(output_dir + "/images")
-        i = 0
         with open(nodes_fi) as f:
             for line in csv.DictReader(f):
-                i += 1
-                if i > 10:
-                    break
                 node_id = line["input_id"]
-                node_description = line["description"]
-                node_countries = node_to_country_provision.get(node_id, {})
-                if node_countries.get("graph"):
-                    self._get_country_provision_graph(
-                        node_countries["graph"], output_dir, node_id
-                    )
-                node_orgs = node_to_org_desc_list.get(node_id)
-                # Create PDF
-                template = env.get_template("pdf.html")
-                cluster_page = template.render(
-                    node_description=node_description,
-                    node_id=node_id,
-                    node_name=self.node_to_meta[node_id]["name"],
-                    node_countries=node_countries,
-                    node_orgs=node_orgs,
-                    images_folder=images_folder,
+                self._mk_pdf_for_node(
+                    node_id,
+                    line,
+                    images_folder,
+                    node_to_country_provision,
+                    node_to_org_desc_list,
+                    output_dir,
                 )
-                pdfkit.from_string(
-                    cluster_page,
-                    os.path.join(output_dir, node_id) + ".pdf",
-                    {"enable-local-file-access": None},
+        with open(stages_fi) as f:
+            for line in csv.DictReader(f):
+                node_id = line["stage_id"]
+                self._mk_pdf_for_node(
+                    node_id,
+                    line,
+                    images_folder,
+                    node_to_country_provision,
+                    node_to_org_desc_list,
+                    output_dir,
                 )
-        # TBD do same for stages
 
     def mk_provider_to_meta(self, provider_fi: str, company_metadata_fi: str):
         """
