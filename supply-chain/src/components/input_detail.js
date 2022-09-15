@@ -150,7 +150,8 @@ const InputDetail = (props) => {
                 {Object.keys(variantCountries).sort().map((country) =>
                   <Typography component="p">
                     {countryFlags[country] && <span className="flag">{countryFlags[country]}</span>}
-                    {country} ({variantCountries[country].map(e => nodeToMeta[e].name).join(", ")})
+                    {country} &nbsp;
+                    <HelpTooltip iconType="more-info" text={variantCountries[country].map(e => nodeToMeta[e].name).join(", ")} />
                   </Typography>
                 )}
             </div>
@@ -164,8 +165,9 @@ const InputDetail = (props) => {
                 (a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase())
               ).map((org) =>
                 <Typography component="p">
-                  <span className="flag">{orgMeta[org]["hq_flag"]}</span>
-                  {orgMeta[org].name} ({variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")})
+                  {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
+                  {orgMeta[org].name} &nbsp;
+                  <HelpTooltip iconType="more-info" text={variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")} />
                 </Typography>
               )}
             </div>
