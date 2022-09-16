@@ -89,13 +89,16 @@ const Map = (props) => {
       return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
-                    unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
+                    unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}
+                    descriptions={descriptions} images={images} />
         )}
-        {nodes.includes(parentNode) &&
-          <DocumentationNode node={selectedNode} parent={parentNode}
-            descriptions={descriptions} images={images} isStage={false}
-            updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
-        }
+        <div className="documentation-node-widescreen">
+          {nodes.includes(parentNode) &&
+            <DocumentationNode node={selectedNode} parent={parentNode}
+              descriptions={descriptions} images={images} isStage={false}
+              updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
+          }
+        </div>
       </div>
     }
   };

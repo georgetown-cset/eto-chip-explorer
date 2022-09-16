@@ -401,9 +401,8 @@ a {
 .stage-border {
   display: contents;
   .graph-node-wrapper {
-    display: inline;
+    display: block;
     position: relative;
-    vertical-align: top;
   }
 }
 
@@ -423,6 +422,13 @@ a {
       margin-right: 5px;
     }
   }
+}
+
+.documentation-node-widescreen {
+  display: none;
+}
+.documentation-node-mobile {
+  display: block;
 }
 
 .documentation-node {
@@ -484,6 +490,13 @@ a {
   }
 
   .graph-node-connections-text {
+    display: none;
+  }
+
+  .documentation-node-widescreen {
+    display: block;
+  }
+  .documentation-node-mobile {
     display: none;
   }
 

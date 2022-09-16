@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
 import {getIcon} from "../helpers/shared";
-import {VariantsList} from "./documentation_node";
+import DocumentationNode, {VariantsList} from "./documentation_node";
 
 export const NodeHeading = (props) => {
   const {nodeType, nodeId, currSelectedNode, name, depth=0, parentSelected=false} = props;
@@ -94,7 +94,8 @@ export const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null, inDocumentation=false} = props;
+  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null, inDocumentation=false,
+    descriptions=null, images=null} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
     (("tools" in meta) && (meta["tools"].length > 0));
@@ -186,16 +187,23 @@ const GraphNode = (props) => {
         </div>
       </Paper>
       {!inDocumentation && node === parent &&
-        <ArrowDropDownIcon
-          style={{
-            display: "block",
-            marginTop: node === currSelectedNode ? "-17px" : "-37px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            fontSize: "40px",
-            zIndex: "5",
-          }}
-        />
+        <div>
+          <ArrowDropDownIcon
+            style={{
+              display: "block",
+              marginTop: node === currSelectedNode ? "-17px" : "-37px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              fontSize: "40px",
+              zIndex: "5",
+            }}
+          />
+          <div className="documentation-node-mobile">
+            <DocumentationNode node={currSelectedNode} parent={parent}
+              descriptions={descriptions} images={images} isStage={false}
+              updateSelected={updateSelected} currSelectedNode={currSelectedNode} />
+          </div>
+        </div>
       }
     </div>
   )

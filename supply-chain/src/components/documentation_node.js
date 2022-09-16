@@ -65,7 +65,7 @@ export const VariantsList = (props) => {
 }
 
 const DocumentationNode = (props) => {
-  const {node, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
+  const {node, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap=null, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {
@@ -158,7 +158,7 @@ const DocumentationNode = (props) => {
             marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px",
             position: "relative",
       }}>
-        {(currSelectedNode !== null) && !isStage &&
+        {(currSelectedNode !== null) && !isStage && minimap &&
           <div className="minimap">
             {minimap}
           </div>
