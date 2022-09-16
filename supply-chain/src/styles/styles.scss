@@ -293,8 +293,14 @@ a {
       background-color: var(--bright-blue-lighter);
     }
   }
-  .input-detail .variants-heading {
-    margin-left: 0px;
+  .input-detail {
+    .variants-heading {
+      margin-left: 0px;
+    }
+    .node-heading.selected-node-child,
+    .variants-heading.selected-node-child {
+      background-color: unset;
+    }
   }
   .provision-heading {
     font-family: GTZirkonBold;

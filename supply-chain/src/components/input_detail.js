@@ -8,7 +8,6 @@ import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./documentation_node";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
-import { nodeToMeta } from "../../data/graph";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),

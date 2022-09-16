@@ -93,12 +93,13 @@ const DocumentationNode = (props) => {
       if (!(variant in provisionDict)) {
         continue;
       }
-      const provisionList = key ? provisionDict[variant]?.[key] : Object.keys(provisionDict[variant]);
+      const provisionList = key ? provisionDict[variant] : Object.keys(provisionDict[variant]);
       for (const provisionName of provisionList) {
-        if (!(provisionName in variantsToProvision)) {
-          variantsToProvision[provisionName] = []
+        const provisionKey = key ? provisionName[key] : provisionName;
+        if (!(provisionKey in variantsToProvision)) {
+          variantsToProvision[provisionKey] = []
         }
-        variantsToProvision[provisionName].push(variant);
+        variantsToProvision[provisionKey].push(variant);
       }
     }
     return variantsToProvision;
@@ -137,7 +138,7 @@ const DocumentationNode = (props) => {
 
   const nodeToCountryProvision = getNodeToCountryProvision();
   const nodeToOrgProvision = getNodeToOrgProvision();
-  const nodeVariantsToCountryProvision = getNodeVariantsToProvision(nodeToCountryProvision, "countries");
+  const nodeVariantsToCountryProvision = getNodeVariantsToProvision(nodeToCountryProvision, "country");
   const nodeVariantsToOrgProvision = getNodeVariantsToProvision(nodeToOrgProvision);
 
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
