@@ -157,7 +157,7 @@ class TestPreprocess(unittest.TestCase):
 
     def test_clean_md_link(self):
         self.assertEqual(
-            "Flickr user <a href='https://www.flickr.com/photos/130561288@N04/50914099198/' target='_blank' rel='noopener'>FritzchensFritz</a>",
+            "Flickr user <a target='_blank' rel='noopener' href=\"https://www.flickr.com/photos/130561288@N04/50914099198/\">FritzchensFritz</a>",
             Preprocess.clean_md_link(
                 "Flickr user [FritzchensFritz](https://www.flickr.com/photos/130561288@N04/50914099198/)"
             ),
