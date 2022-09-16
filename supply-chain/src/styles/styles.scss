@@ -217,6 +217,9 @@ a {
     & > p > .graph-node-icon {
       color: var(--grey-light);
     }
+    h3, button {
+      color: var(--grey-light);
+    }
   }
 }
 
@@ -237,6 +240,9 @@ a {
   align-items: flex-start;
   padding: 20px 5px;
   z-index: 5;
+  .graph-node-wrapper {
+    display: block;
+  }
   .documentation-node-description {
     width: 60%;
   }
@@ -262,12 +268,18 @@ a {
   }
   &, .graph-sub-node {
     .node-heading {
-      margin-bottom: 0.7rem;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      padding-right: 2px;
       &.selected-documentation-link {
         font-family: GTZirkonBold;
+        background-color: var(--bright-blue-lighter);
         .graph-node-icon {
           color: var(--black);
         }
+      }
+      &.selected-node-child {
+        background-color: var(--bright-blue-lighter);
       }
     }
   }
@@ -276,13 +288,16 @@ a {
   }
   .variants-heading {
     font-family: GTZirkonBold;
-    margin-left: 20px;
+    padding-left: 20px;
+    &.selected-node-child {
+      background-color: var(--bright-blue-lighter);
+    }
   }
   .provision-heading {
     font-family: GTZirkonBold;
   }
   .graph-node, .graph-sub-node {
-    width: unset;
+    width: 100%;
     background-color: unset;
     color: var(--black);
     border: 0px;
@@ -290,7 +305,6 @@ a {
     font-size: 0.8rem;
     text-transform: uppercase;
     font-family: GTZirkonLight;
-
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -303,6 +317,7 @@ a {
       &.variants-heading {
         font-size: 0.9rem;
         text-transform: none;
+        text-indent: 0px;
         &:hover {
           text-decoration: none;
           cursor: text;

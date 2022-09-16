@@ -30,12 +30,14 @@ const allSubVariantsList = getAllSubVariantsList();
 
 // Recursive component to construct variants tree
 export const VariantsList = (props) => {
-  const {node, currSelectedNode, inputType, updateSelected, parent, depth} = props;
+  const {node, currSelectedNode, inputType, updateSelected, parent, depth, parentSelected=false} = props;
+  const thisNodeParentSelected = parentSelected || (node === currSelectedNode);
   return (
     <div>
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
         <div>
-          <Typography className="variants-heading" component={"p"} style={{marginLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
+          <Typography className={"variants-heading" + (thisNodeParentSelected ? " selected-node-child" : "")}
+            component={"p"} style={{paddingLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
           {variants[node].sort(
             (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
           ).map((variant) =>
@@ -50,8 +52,10 @@ export const VariantsList = (props) => {
               depth={depth}
               currSelectedNode={currSelectedNode}
               inDocumentation={true}
+              parentSelected={thisNodeParentSelected}
             >
-              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected} parent={parent} depth={depth+2} />
+              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected}
+                parent={parent} depth={depth+2} parentSelected={thisNodeParentSelected} />
             </SubNode>
           )}
         </div>
@@ -102,7 +106,8 @@ const DocumentationNode = (props) => {
           <div key={parent+input_type+node}>
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
+                content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode}
+                name={nodeToMeta[node]["name"]} parentSelected={node === currSelectedNode} />}/>
             <VariantsList node={node} currSelectedNode={currSelectedNode} inputType={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
           </div>
         )}
