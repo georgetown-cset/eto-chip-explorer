@@ -484,15 +484,15 @@ class Preprocess:
     def mk_pdfs(self, nodes_fi: str, stages_fi: str, output_dir: str) -> None:
         """
         Generate pdf version of the each node's description
-        :param cabinet_info: list of dicts of cabinet dept info
-        :param recruitment_info: list of dicts of recruitment dept info
-        :param output_pdf: name of directory where pdfs should be written
+        :param nodes_fi: CSV file with node information
+        :param stages_fi: CSV file with stage information
+        :param output_dir: name of directory where pdfs should be written
         :return: None
         """
         node_to_country_provision = self._get_node_to_country_provision()
         node_to_org_desc_list = self._get_node_to_org_desc_list()
         images_folder = os.path.abspath(output_dir + "/images")
-        with open(nodes_fi) as f:
+        with open(nodes_fi, encoding="utf-8-sig") as f:
             for line in csv.DictReader(f):
                 node_id = line["input_id"]
                 self._mk_pdf_for_node(
@@ -503,7 +503,7 @@ class Preprocess:
                     node_to_org_desc_list,
                     output_dir,
                 )
-        with open(stages_fi) as f:
+        with open(stages_fi, encoding="utf-8-sig") as f:
             for line in csv.DictReader(f):
                 node_id = line["stage_id"]
                 self._mk_pdf_for_node(
