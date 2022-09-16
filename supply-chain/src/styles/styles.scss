@@ -171,7 +171,6 @@ a {
 
 .stage-node-wrapper {
   & + .stage-border .MuiPaper-root.documentation-node {
-    width: 75%;
     .documentation-node-description {
       width: 100%;
     }
@@ -242,9 +241,6 @@ a {
   z-index: 5;
   .graph-node-wrapper {
     display: block;
-  }
-  .documentation-node-description {
-    width: 60%;
   }
   .MuiTypography-root {
     font-family: GTZirkonLight;
@@ -429,6 +425,43 @@ a {
   }
 }
 
+.documentation-node {
+  margin-left: 0px;
+  padding-left: 0px;
+  .minimap {
+    display: none;
+  }
+  .documentation-node-navigation {
+    display: block;
+  }
+  .documentation-node-description {
+    width: 70%;
+  }
+}
+
+.stage-node {
+  button {
+    display: none;
+  }
+}
+
+.stage-node-wrapper {
+  & + .stage-border .MuiPaper-root.documentation-node {
+    width: calc(100% - 15px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .documentation-node {
+    .documentation-node-navigation {
+      display: none;
+    }
+    .documentation-node-description {
+      width: 100%;
+    }
+  }
+}
+
 /* Desktop styling */
 
 @media (min-width: 1300px) {
@@ -452,5 +485,31 @@ a {
 
   .graph-node-connections-text {
     display: none;
+  }
+
+  .documentation-node {
+    margin-left: 10px;
+    .minimap {
+      display: block;
+    }
+    .documentation-node-navigation {
+      min-width: 20%;
+      max-width: 300px;
+    }
+    .documentation-node-description {
+      width: 60%;
+    }
+  }
+
+  .stage-node {
+    button {
+      display: inline-block;
+    }
+  }
+
+  .stage-node-wrapper {
+    & + .stage-border .MuiPaper-root.documentation-node {
+      width: 75%;
+    }
   }
 }

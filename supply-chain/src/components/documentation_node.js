@@ -155,17 +155,17 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px", marginLeft: "10px",
+            marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px",
             position: "relative",
       }}>
         {(currSelectedNode !== null) && !isStage &&
-          <div>
+          <div className="minimap">
             {minimap}
           </div>
         }
         {
           !isStage &&
-          <div style={{width: "20%"}}>
+          <div className="documentation-node-navigation">
             {!(hasMaterials || hasTools) ?
               <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
                 <Typography component={"p"}>
