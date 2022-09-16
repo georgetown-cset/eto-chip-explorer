@@ -5,7 +5,6 @@ import os
 import re
 import urllib.request
 
-import markdown
 import pycountry
 
 EXPECTED_TYPES = {
@@ -70,17 +69,6 @@ class Preprocess:
             self.mk_provider_to_meta(args.providers, args.basic_company_info)
             self.write_provision(args.provision, args.output_dir)
 
-    def _get_market_chart_source(self, markdown_str: str):
-        """
-        Converts markdown string to HTML string
-        :param markdown_str: Markdown string with a link to the chart source
-        :return: HTML string
-        """
-        market_chart_source = markdown.markdown(markdown_str)
-        if market_chart_source.startswith("<p>"):
-            market_chart_source = market_chart_source[3:-4]
-        return market_chart_source
-
     def mk_metadata(self, nodes_fi: str, stages_fi: str):
         """
         Reads metadata from inputs sheet and instantiates a mapping between a node id and its metadata
@@ -101,7 +89,7 @@ class Preprocess:
                         "market_share_chart_global_market_size_info"
                     ],
                     "market_chart_caption": line["market_share_chart_caption"],
-                    "market_chart_source": self._get_market_chart_source(
+                    "market_chart_source": self.clean_md_link(
                         line["market_share_chart_source"]
                     ),
                 }
@@ -117,7 +105,7 @@ class Preprocess:
                         "market_share_chart_global_market_size_info"
                     ],
                     "market_chart_caption": line["market_share_chart_caption"],
-                    "market_chart_source": self._get_market_chart_source(
+                    "market_chart_source": self.clean_md_link(
                         line["market_share_chart_source"]
                     ),
                 }

@@ -173,7 +173,7 @@ const DocumentationNode = (props) => {
             </div>
           }
           {imgFileName !== undefined && meta.image_license &&
-              <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
           }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
