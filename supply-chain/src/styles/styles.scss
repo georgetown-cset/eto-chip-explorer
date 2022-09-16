@@ -300,6 +300,14 @@ a {
       &:hover {
         text-decoration: underline;
       }
+      &.variants-heading {
+        font-size: 0.9rem;
+        text-transform: none;
+        &:hover {
+          text-decoration: none;
+          cursor: text;
+        }
+      }
     }
     &.standalone-pane-heading p.MuiTypography-root:hover {
       text-decoration: none;
