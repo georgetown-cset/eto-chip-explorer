@@ -88,7 +88,7 @@ class Preprocess:
                     "stage_id": line["stage_id"],
                     "total_market_size": line[
                         "market_share_chart_global_market_size_info"
-                    ],
+                    ].lower(),  # lowercasing to prevent "The market size is Over..."
                     "market_chart_caption": line["market_share_chart_caption"],
                     "market_chart_source": self.clean_md_link(
                         line["market_share_chart_source"]
