@@ -384,6 +384,7 @@ const Dashboard = () => {
 
   return (<AppWrapper>
     <div style={{margin: "40px 20px 40px 100px", maxWidth: "1200px"}}>
+    <base target="_blank" />
     <AppIntro title={"Supply Chain Explorer"}>
       <Typography component={"div"} variant={"body1"}>
         ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
