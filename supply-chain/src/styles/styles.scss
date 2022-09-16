@@ -106,7 +106,7 @@ a {
         background-color: var(--bright-blue-light-hsl-g20);
       }
       &.unhighlighted {
-        background-color: var(--white);
+        background-color: var(--grey-lightest);
       }
     }
   }
@@ -169,14 +169,28 @@ a {
   }
 }
 
-.stage-node-wrapper + .stage-border .MuiPaper-root.documentation-node {
-  width: 75%;
-  .documentation-node-description {
-    width: 90%;
+.stage-node-wrapper {
+  & + .stage-border .MuiPaper-root.documentation-node {
+    width: 75%;
+    .documentation-node-description {
+      width: 90%;
+    }
+  }
+  .stage-node {
+    background-color: var(--bright-blue);
+    padding: 5px 5px;
+    h3, button {
+      color: var(--white);
+    }
+    button {
+      float: right;
+      font-family: GTZirkonRegular;
+      text-transform: none;
+    }
   }
 }
 
-.graph-node, .stage-border {
+.graph-node, .stage-border, .stage-node {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
     &.gradient-100 {
@@ -198,9 +212,12 @@ a {
     }
   }
   &.unhighlighted, .graph-sub-node.unhighlighted {
-    background-color: var(--white);
+    background-color: var(--grey-lightest);
     color: var(--grey-light);
     & > p > .graph-node-icon {
+      color: var(--grey-light);
+    }
+    h3, button {
       color: var(--grey-light);
     }
   }
@@ -223,6 +240,9 @@ a {
   align-items: flex-start;
   padding: 20px 5px;
   z-index: 5;
+  .graph-node-wrapper {
+    display: block;
+  }
   .documentation-node-description {
     width: 60%;
   }
@@ -248,12 +268,18 @@ a {
   }
   &, .graph-sub-node {
     .node-heading {
-      margin-bottom: 0.7rem;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      padding-right: 2px;
       &.selected-documentation-link {
         font-family: GTZirkonBold;
+        background-color: var(--bright-blue-lighter);
         .graph-node-icon {
           color: var(--black);
         }
+      }
+      &.selected-node-child {
+        background-color: var(--bright-blue-lighter);
       }
     }
   }
@@ -262,7 +288,10 @@ a {
   }
   .variants-heading {
     font-family: GTZirkonBold;
-    margin-left: 20px;
+    padding-left: 20px;
+    &.selected-node-child {
+      background-color: var(--bright-blue-lighter);
+    }
   }
   .input-detail .variants-heading {
     margin-left: 0px;
@@ -272,7 +301,7 @@ a {
     margin-top: 10px;
   }
   .graph-node, .graph-sub-node {
-    width: unset;
+    width: 100%;
     background-color: unset;
     color: var(--black);
     border: 0px;
@@ -280,7 +309,6 @@ a {
     font-size: 0.8rem;
     text-transform: uppercase;
     font-family: GTZirkonLight;
-
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -289,6 +317,15 @@ a {
       padding-left: 1.8rem;
       &:hover {
         text-decoration: underline;
+      }
+      &.variants-heading {
+        font-size: 0.9rem;
+        text-transform: none;
+        text-indent: 0px;
+        &:hover {
+          text-decoration: none;
+          cursor: text;
+        }
       }
     }
     &.standalone-pane-heading p.MuiTypography-root:hover {
@@ -354,6 +391,11 @@ a {
 
 /* Mobile view styling */
 
+.map-background {
+  min-width: unset;
+  padding: 0px 0px,
+}
+
 .stage-border {
   display: contents;
   .graph-node-wrapper {
@@ -384,6 +426,11 @@ a {
 /* Desktop styling */
 
 @media (min-width: 1300px) {
+  .map-background {
+    min-width: 700px;
+    padding: 0px 45px,
+  }
+
   .stage-border {
     display: block;
     .graph-node-wrapper {

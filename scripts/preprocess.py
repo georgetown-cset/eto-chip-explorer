@@ -5,6 +5,7 @@ import os
 import re
 import urllib.request
 
+import mistletoe
 import pycountry
 
 EXPECTED_TYPES = {
@@ -59,7 +60,7 @@ class Preprocess:
             if not os.path.exists(args.output_images_dir):
                 os.makedirs(args.output_images_dir)
 
-            self.mk_metadata(args.nodes)
+            self.mk_metadata(args.nodes, args.stages)
             self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
             if args.images:
@@ -69,14 +70,14 @@ class Preprocess:
             self.mk_provider_to_meta(args.providers, args.basic_company_info)
             self.write_provision(args.provision, args.output_dir)
 
-    def mk_metadata(self, nodes: str):
+    def mk_metadata(self, nodes_fi: str, stages_fi: str):
         """
         Reads metadata from inputs sheet and instantiates a mapping between a node id and its metadata
         :param nodes: input csv
             (from https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
         :return: Dict mapping node ids to metadata
         """
-        with open(nodes) as f:
+        with open(nodes_fi, encoding="utf-8-sig") as f:
             for line in csv.DictReader(f):
                 node_type = line["type"]
                 node_id = line["input_id"]
@@ -85,10 +86,30 @@ class Preprocess:
                     "name": line["input_name"],
                     "type": node_type,
                     "stage_id": line["stage_id"],
+                    "total_market_size": line[
+                        "market_share_chart_global_market_size_info"
+                    ].lower(),  # lowercasing to prevent "The market size is Over..."
+                    "market_chart_caption": line["market_share_chart_caption"],
+                    "market_chart_source": self.clean_md_link(
+                        line["market_share_chart_source"]
+                    ),
                 }
                 assert node_type in EXPECTED_TYPES
                 self.node_to_meta[node_id][MATERIALS] = []
                 self.node_to_meta[node_id][TOOLS] = []
+        with open(stages_fi, encoding="utf-8-sig") as f:
+            for line in csv.DictReader(f):
+                self.node_to_meta[line["stage_id"]] = {
+                    "name": line["stage_name"],
+                    "type": "stage",
+                    "total_market_size": line[
+                        "market_share_chart_global_market_size_info"
+                    ],
+                    "market_chart_caption": line["market_share_chart_caption"],
+                    "market_chart_source": self.clean_md_link(
+                        line["market_share_chart_source"]
+                    ),
+                }
 
     def update_variants(self, parent: str, child: str, record: dict) -> bool:
         """
@@ -324,19 +345,15 @@ class Preprocess:
         :return: None
         """
         header_template = "#### {}\n\n"
-        with open(nodes_fi) as f:
+        with open(nodes_fi, encoding="utf-8-sig") as f:
             for line in csv.DictReader(f):
                 with open(
                     os.path.join(output_dir, line["input_id"]) + ".mdx", mode="w"
                 ) as out:
                     out.write(header_template.format(line["input_name"]))
                     out.write(line["description"])
-        with open(stages_fi) as f:
+        with open(stages_fi, encoding="utf-8-sig") as f:
             for line in csv.DictReader(f):
-                self.node_to_meta[line["stage_id"]] = {
-                    "name": line["stage_name"],
-                    "type": "stage",
-                }
                 with open(
                     os.path.join(output_dir, line["stage_id"]) + ".mdx", mode="w"
                 ) as out:
@@ -381,11 +398,11 @@ class Preprocess:
         :param text: text that may contain a markdown link
         :return: text with markdown link replaced with html link
         """
+        # TODO: either move the markdown parsing for the captions into the webapp or use a different
+        #   mistletoe renderer rather than hacking up the default output
         return re.sub(
-            r"\[([^\]]+)\]\(([^\)]+)\)",
-            r"<a href='\2' target='_blank' rel='noopener'>\1</a>",
-            text,
-        )
+            r"<\/p>", "", re.sub(r"^<p>", "", mistletoe.markdown(text).strip())
+        ).replace("a href=", "a target='_blank' rel='noopener' href=")
 
     def mk_images(self, images_fi: str, output_dir: str) -> None:
         """
@@ -411,6 +428,7 @@ class Preprocess:
                 self.node_to_meta[image_node_id]["image_license"] = self.clean_md_link(
                     line["credit"]
                 )
+                self.node_to_meta[image_node_id]["image_offset"] = line["offset"]
 
 
 if __name__ == "__main__":

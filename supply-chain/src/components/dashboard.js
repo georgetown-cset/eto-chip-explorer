@@ -129,9 +129,22 @@ const Dashboard = () => {
       if (fv === FILTER_CHOOSE) {
         continue;
       }
-      if (defaultFilterValues[fv] !== currFilterValues[fv]){
-        highlighter = fv;
-        hasHighlighter = true;
+      // If the user hasn't selected anything, there should be no highlighting.
+      // First, we check this condition for the multi-selects, by comparing arrays.
+      if (MULTI_FILTERS.includes(fv)) {
+        if (currFilterValues[fv].length === 0) {
+          continue;
+        } else if ((defaultFilterValues[fv].length !== currFilterValues[fv].length) ||
+            (defaultFilterValues[fv][0] !== currFilterValues[fv][0])){
+          highlighter = fv;
+          hasHighlighter = true;
+        }
+      // Then, we check this condition for the single-selects, by comparing values directly.
+      } else {
+        if (defaultFilterValues[fv] !== currFilterValues[fv]){
+          highlighter = fv;
+          hasHighlighter = true;
+        }
       }
     }
     if (hasHighlighter) {
@@ -171,8 +184,9 @@ const Dashboard = () => {
           }
           for (const provKey in currMapping[name]) {
             let provValue = currMapping[name][provKey]
-            // We round qualitative "major"/"minor" values to numerical approximations
-            if (provValue === "Major") {
+            // We round qualitative "major"/"minor" values to numerical approximations.
+            // However, for orgs, we treat all values as if they are major.
+            if ((highlighter === FILTER_ORG) || (provValue === "Major")) {
               provValue = 81;
             } else if (provValue === "negligible") {
               provValue = 0;
@@ -186,9 +200,11 @@ const Dashboard = () => {
               highlightGradientMap[provKey] = provValue;
             }
             // If the provision node is a variant of another parent node,
-            // we show the highlighting on that parent node.
-            if (variantToNode[provKey] !== undefined) {
-              const variantParentNode = variantToNode[provKey];
+            // we show the highlighting on the top-level parent node.
+            let provKeyTemp = provKey;
+            while (variantToNode[provKeyTemp] !== undefined) {
+              const variantParentNode = variantToNode[provKeyTemp];
+              provKeyTemp = variantParentNode;
               if (variantParentNode in highlightGradientMap) {
                 highlightGradientMap[variantParentNode] += provValue;
               } else {
@@ -196,7 +212,7 @@ const Dashboard = () => {
               }
             }
             // Find the top node so we can scroll it into view
-            const highlightedProvKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
+            const highlightedProvKey = provKeyTemp;
             const highlightedProvElem = document.getElementById(highlightedProvKey);
             if ((highlightFirst === undefined) ||
                 (highlightedProvElem && highlightedProvElem.offsetTop < highlightFirst.offsetTop)) {
@@ -333,7 +349,11 @@ const Dashboard = () => {
       if (filterVal !== null) {
         if (MULTI_FILTERS.includes(filterKey)) {
           // This is a multi-select, so we need to pass in an array
-          filterVal = filterVal.split(",");
+          if (filterVal === "") {
+            filterVal = [];
+          } else {
+            filterVal = filterVal.split(",");
+          }
         }
         updatedFilterValues[filterKey] = filterVal;
       }
@@ -407,7 +427,7 @@ const Dashboard = () => {
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
       }
     </Paper>
-    <div style={{display: "inline-block", minWidth: "700px", padding: "0px 45px", textAlign: "center"}}>
+    <div style={{display: "inline-block", textAlign: "center"}}>
       <div style={{textAlign: "right"}}>
         <UserFeedback context={"the Supply Chain Explorer"}
                       mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>

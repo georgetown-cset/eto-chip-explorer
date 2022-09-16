@@ -30,12 +30,14 @@ const allSubVariantsList = getAllSubVariantsList();
 
 // Recursive component to construct variants tree
 export const VariantsList = (props) => {
-  const {node, currSelectedNode, inputType, updateSelected, parent, depth} = props;
+  const {node, currSelectedNode, inputType, updateSelected, parent, depth, parentSelected=false} = props;
+  const thisNodeParentSelected = parentSelected || (node === currSelectedNode);
   return (
     <div>
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
         <div>
-          <Typography className="variants-heading" component={"p"} style={{marginLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
+          <Typography className={"variants-heading" + (thisNodeParentSelected ? " selected-node-child" : "")}
+            component={"p"} style={{paddingLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
           {variants[node].sort(
             (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
           ).map((variant) =>
@@ -50,8 +52,10 @@ export const VariantsList = (props) => {
               depth={depth}
               currSelectedNode={currSelectedNode}
               inDocumentation={true}
+              parentSelected={thisNodeParentSelected}
             >
-              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected} parent={parent} depth={depth+2} />
+              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected}
+                parent={parent} depth={depth+2} parentSelected={thisNodeParentSelected} />
             </SubNode>
           )}
         </div>
@@ -69,10 +73,12 @@ const DocumentationNode = (props) => {
     for(let country in countryProvision){
       for(let node in countryProvision[country]){
         if(!(node in nodeToCountryProvision)){
-          nodeToCountryProvision[node] = {"countries": [], "values": []}
+          nodeToCountryProvision[node] = []
         }
-        nodeToCountryProvision[node]["countries"].push(country);
-        nodeToCountryProvision[node]["values"].push(countryProvision[country][node]);
+        nodeToCountryProvision[node].push({
+          country: country,
+          value: countryProvision[country][node]
+        })
       }
     }
     return nodeToCountryProvision;
@@ -120,7 +126,8 @@ const DocumentationNode = (props) => {
           <div key={parent+input_type+node}>
             <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
                 updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode} name={nodeToMeta[node]["name"]} />}/>
+                content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode}
+                name={nodeToMeta[node]["name"]} parentSelected={node === currSelectedNode} />}/>
             <VariantsList node={node} currSelectedNode={currSelectedNode} inputType={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
           </div>
         )}
@@ -147,7 +154,7 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            marginTop: (parent === null) ? "1px" : "-15px", marginBottom: "20px", marginLeft: "10px",
+            marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px", marginLeft: "10px",
             position: "relative",
       }}>
         {(currSelectedNode !== null) && !isStage &&
@@ -185,6 +192,9 @@ const DocumentationNode = (props) => {
                 role="presentation"
                 tabIndex={0}
                 alt={meta.image_caption ? meta.image_caption : "Default"}
+                style={{
+                  transform: meta.image_offset ? `translateY(-${meta.image_offset}%)` : null
+                }}
               />
               <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
                 onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
@@ -193,18 +203,18 @@ const DocumentationNode = (props) => {
             </div>
           }
           {imgFileName !== undefined && meta.image_license &&
-              <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
           }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
               <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         updateSelected={updateSelected} parent={parent}
-                        countries={nodeToCountryProvision?.[currSelectedNode]?.["countries"]}
-                        countryValues={nodeToCountryProvision?.[currSelectedNode]?.["values"]}
+                        countries={nodeToCountryProvision?.[currSelectedNode]}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta}
                         variantCountries={nodeVariantsToCountryProvision}
                         variantOrgs={nodeVariantsToOrgProvision} /> :
-              <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}/>
+              <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
+                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
           <div style={{textAlign: "right"}}>
             <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}

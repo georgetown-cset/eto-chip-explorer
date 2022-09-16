@@ -8,6 +8,7 @@ import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./documentation_node";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
+import { nodeToMeta } from "../../data/graph";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -21,11 +22,27 @@ const Plot = Loadable({
 });
 
 const BarGraph = (props) => {
-  const {countries, values} = props;
+  const {countries} = props;
+
+  countries.sort((a, b) => {
+    // Country nodes for "Various" always go last
+    if (a.country === "Various") {
+      return -1;
+    } else if (b.country === "Various") {
+      return 1;
+    // Otherwise, sort by value in descending order
+    } else if (a.value > b.value) {
+      return 1;
+    } else if (b.value > a.value) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
 
   const data = [{
-    x: values,
-    y: countries,
+    x: countries.map(e => e.value),
+    y: countries.map(e => e.country),
     type: "bar",
     orientation: "h",
     hovertemplate: '%{x}%<extra></extra>',
@@ -40,9 +57,6 @@ const BarGraph = (props) => {
         margin: {t: 30, r: 30, b: 35, l: 120, pad: 4},
         xaxis: {
           title: "Share of global market"
-        },
-        yaxis: {
-          categoryorder: "total ascending"
         },
         font: {
           family: "GTZirkonRegular, Arial"
@@ -59,31 +73,11 @@ const BarGraph = (props) => {
   );
 };
 
-const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta, updateSelected=null, parent,
-    variantCountries, variantOrgs} = props;
-  const orgNames = orgs === undefined ? [] : Object.keys(orgs);
-
-  const graphCountries = [];
-  const graphCountryValues = [];
-  const undefinedProvisionCountries = [];
-  const hasCountries = (countries !== null) && (countryValues !== null) &&
-    (countries !== undefined) && (countryValues !== undefined);
-  if (hasCountries) {
-    for (let i = 0; i < countries.length; i++) {
-      if (typeof countryValues[i] !== "number") {
-        undefinedProvisionCountries.push({
-          country: countries[i],
-          countryValue: countryValues[i]
-        });
-      } else {
-        graphCountries.push(countries[i]);
-        graphCountryValues.push(countryValues[i]);
-      }
-    }
-  }
+export const OrgListing = (props) => {
+  const {orgs, orgMeta} = props;
 
   const mkOrgTableRows = () => {
+    const orgNames = orgs === undefined ? [] : Object.keys(orgs);
     const filteredOrgNames = orgNames.filter(org => org in orgMeta);
     filteredOrgNames.sort((a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
     const numRows = Math.ceil(filteredOrgNames.length/2);
@@ -110,6 +104,45 @@ const InputDetail = (props) => {
     return rows;
   };
 
+  return (
+    <div>
+    {(orgs !== undefined) &&
+      <div>
+        <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+         Notable supplier companies
+        </Typography>
+        <table>
+          <tbody>
+            {mkOrgTableRows()}
+          </tbody>
+        </table>
+      </div>
+    }
+    </div>
+  )
+}
+
+const InputDetail = (props) => {
+  const {selectedNode, descriptions, countries, orgs, orgMeta, updateSelected=null, parent,
+    variantCountries, variantOrgs} = props;
+  const orgNames = orgs === undefined ? [] : Object.keys(orgs);
+
+  const graphCountries = [];
+  const undefinedProvisionCountries = [];
+  const hasCountries = (countries !== null) && (countries !== undefined) && (countries.length > 0);
+  if (hasCountries) {
+    for (let i = 0; i < countries.length; i++) {
+      if (typeof countries[i].value !== "number") {
+        undefinedProvisionCountries.push({
+          country: countries[i].country,
+          value: countries[i].value
+        });
+      } else {
+        graphCountries.push(countries[i]);
+      }
+    }
+  }
+
   const mkCountryTableRows = () => {
     const rows = [];
     for (let idx = 0; idx < undefinedProvisionCountries.length; idx += 2){
@@ -123,7 +156,7 @@ const InputDetail = (props) => {
             <td key={countryInfo.country}>
               <Typography component="p">
                 {countryFlags[countryInfo.country] && <span className="flag">{countryFlags[countryInfo.country]}</span>}
-                {countryInfo.country}{countryInfo.countryValue !== "Major" && <span> ({countryInfo.countryValue})</span>}
+                {countryInfo.country}{countryInfo.value !== "Major" && <span> ({countryInfo.value})</span>}
               </Typography>
             </td>
           ))}
@@ -136,8 +169,13 @@ const InputDetail = (props) => {
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
-        <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
+        <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0]?.body}</MDXRenderer>
       </MDXProvider>
+      {nodeToMeta[selectedNode].total_market_size &&
+        <Typography component="p">
+          The market size is {nodeToMeta[selectedNode].total_market_size}.
+        </Typography>
+      }
       {variants[selectedNode] &&
         <div>
           <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
@@ -182,7 +220,17 @@ const InputDetail = (props) => {
             </Typography>
           }
           {graphCountries.length > 0 &&
-            <BarGraph countries={graphCountries} values={graphCountryValues}/>
+            <div>
+              <BarGraph countries={graphCountries}/>
+              {nodeToMeta[selectedNode].market_chart_caption &&
+                <span class="caption"> <b>Note: </b> {nodeToMeta[selectedNode].market_chart_caption}</span>
+              }
+              {nodeToMeta[selectedNode].market_chart_source &&
+                <span class="caption"> <b>Source: </b>
+                  <span dangerouslySetInnerHTML={{__html: nodeToMeta[selectedNode].market_chart_source}} />
+                </span>
+              }
+            </div>
           }
           {graphCountries.length > 0 && undefinedProvisionCountries.length > 0 &&
             <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>
@@ -198,18 +246,7 @@ const InputDetail = (props) => {
           }
         </div>
       }
-      {(orgs !== undefined) &&
-        <div>
-          <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-           Notable supplier companies
-          </Typography>
-          <table>
-            <tbody>
-              {mkOrgTableRows()}
-            </tbody>
-          </table>
-        </div>
-      }
+      <OrgListing orgs={orgs} orgMeta={orgMeta} />
     </div>
   )
 };
