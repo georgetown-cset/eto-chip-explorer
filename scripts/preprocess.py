@@ -5,6 +5,7 @@ import os
 import re
 import urllib.request
 
+import mistletoe
 import pycountry
 
 EXPECTED_TYPES = {
@@ -397,11 +398,11 @@ class Preprocess:
         :param text: text that may contain a markdown link
         :return: text with markdown link replaced with html link
         """
+        # TODO: either move the markdown parsing for the captions into the webapp or use a different
+        #   mistletoe renderer rather than hacking up the default output
         return re.sub(
-            r"\[([^\]]+)\]\(([^\)]+)\)",
-            r"<a href='\2' target='_blank' rel='noopener'>\1</a>",
-            text,
-        )
+            r"<\/p>", "", re.sub(r"^<p>", "", mistletoe.markdown(text).strip())
+        ).replace("a href=", "a target='_blank' rel='noopener' href=")
 
     def mk_images(self, images_fi: str, output_dir: str) -> None:
         """
