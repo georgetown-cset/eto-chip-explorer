@@ -5,8 +5,9 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
+import { VariantsList } from "./documentation_node";
+import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
-import { nodeToMeta } from "../../data/graph";
 
 const Plot = Loadable({
   loader: () => import("react-plotly.js"),
@@ -121,7 +122,8 @@ export const OrgListing = (props) => {
 }
 
 const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, countryValues, orgs, orgMeta} = props;
+  const {selectedNode, descriptions, countries, orgs, orgMeta, updateSelected=null, parent,
+    variantCountries, variantOrgs} = props;
   const orgNames = orgs === undefined ? [] : Object.keys(orgs);
 
   const graphCountries = [];
@@ -164,7 +166,7 @@ const InputDetail = (props) => {
   };
 
   return (
-    <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
+    <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0]?.body}</MDXRenderer>
       </MDXProvider>
@@ -172,6 +174,42 @@ const InputDetail = (props) => {
         <Typography component="p">
           The market size is {nodeToMeta[selectedNode].total_market_size}.
         </Typography>
+      }
+      {variants[selectedNode] &&
+        <div>
+          <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
+            updateSelected={updateSelected} parent={parent} />
+          {Object.keys(variantCountries).length > 0 &&
+            <div>
+              <Typography component={"p"} variant={"h6"} className="provision-heading">
+                Country Provision
+              </Typography>
+                {Object.keys(variantCountries).sort().map((country) =>
+                  <Typography component="p">
+                    {countryFlags[country] && <span className="flag">{countryFlags[country]}</span>}
+                    {country} &nbsp;
+                    <HelpTooltip iconType="more-info" text={variantCountries[country].map(e => nodeToMeta[e].name).join(", ")} />
+                  </Typography>
+                )}
+            </div>
+          }
+          {Object.keys(variantOrgs).length > 0 &&
+            <div>
+              <Typography component={"p"} variant={"h6"} className="provision-heading">
+                Notable supplier companies
+              </Typography>
+              {Object.keys(variantOrgs).sort(
+                (a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase())
+              ).map((org) =>
+                <Typography component="p">
+                  {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
+                  {orgMeta[org].name} &nbsp;
+                  <HelpTooltip iconType="more-info" text={variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")} />
+                </Typography>
+              )}
+            </div>
+          }
+        </div>
       }
       {hasCountries &&
         <div>
