@@ -6,7 +6,13 @@ import re
 import urllib.request
 
 import mistletoe
+import pdfkit
+import plotly.graph_objects as go
 import pycountry
+from jinja2 import Environment, FileSystemLoader
+from tqdm import tqdm
+
+env = Environment(loader=FileSystemLoader("templates"))
 
 EXPECTED_TYPES = {
     "material_resource",
@@ -59,6 +65,9 @@ class Preprocess:
                 os.makedirs(args.output_dir)
             if not os.path.exists(args.output_images_dir):
                 os.makedirs(args.output_images_dir)
+            if not os.path.exists(args.output_pdfs_dir):
+                os.makedirs(args.output_pdfs_dir)
+                os.makedirs(args.output_pdfs_dir + "/images")
 
             self.mk_metadata(args.nodes, args.stages)
             self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
@@ -69,6 +78,9 @@ class Preprocess:
             self.write_graphs(args.sequence, args.output_dir)
             self.mk_provider_to_meta(args.providers, args.basic_company_info)
             self.write_provision(args.provision, args.output_dir)
+
+            if args.pdfs:
+                self.mk_pdfs(args.nodes, args.stages, args.output_pdfs_dir)
 
     def mk_metadata(self, nodes_fi: str, stages_fi: str):
         """
@@ -287,8 +299,8 @@ class Preprocess:
         :param output_dir: directory where output metadata should be written
         :return: None
         """
-        org_provision = {}
-        country_provision = {}
+        self.org_provision = {}
+        self.country_provision = {}
         country_flags = {}
         with open(provision_fi) as f:
             for line in csv.DictReader(f):
@@ -298,11 +310,11 @@ class Preprocess:
                 provided = line["provided_id"]
                 if provider_meta["type"] == "country":
                     country_name = self.get_country(provider_name)
-                    if country_name not in country_provision:
-                        country_provision[country_name] = {}
+                    if country_name not in self.country_provision:
+                        self.country_provision[country_name] = {}
                         country_flags[country_name] = self.get_flag(provider_name)
                     provision_share = self.get_provision(line)
-                    country_provision[country_name][provided] = provision_share
+                    self.country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
                         self.node_to_meta[provided]["type"]
                         not in ["tool_resource", "material_resource", "stage"]
@@ -312,21 +324,21 @@ class Preprocess:
                             + self.node_to_meta.get(provided, {}).get("type", "")
                         )
                 else:
-                    if provider_id not in org_provision:
-                        org_provision[provider_id] = {}
-                    org_provision[provider_id][provided] = self.get_provision(
+                    if provider_id not in self.org_provision:
+                        self.org_provision[provider_id] = {}
+                    self.org_provision[provider_id][provided] = self.get_provision(
                         line, True
                     )
         country_provision_concentration = self.get_provision_concentration(
-            country_provision
+            self.country_provision
         )
         with open(os.path.join(output_dir, "provision.js"), mode="w") as f:
-            f.write(f"const countryProvision={json.dumps(country_provision)};\n")
+            f.write(f"const countryProvision={json.dumps(self.country_provision)};\n")
             f.write(f"const countryFlags={json.dumps(country_flags)};\n")
             f.write(
                 f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n"
             )
-            f.write(f"const orgProvision={json.dumps(org_provision)};\n")
+            f.write(f"const orgProvision={json.dumps(self.org_provision)};\n")
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
             f.write(
                 "\nexport {countryProvision, countryFlags, countryProvisionConcentration, orgProvision, providerMeta};\n"
@@ -359,6 +371,152 @@ class Preprocess:
                 ) as out:
                     out.write(header_template.format(line["stage_name"]))
                     out.write(line["description"])
+
+    def _get_node_to_country_provision(self):
+        """
+        Generate dictionary mapping nodes to country provision shares
+        :return: Above dictionary
+        """
+        node_to_country_provision = {}
+        for country in self.country_provision:
+            for node in self.country_provision[country]:
+                if node not in node_to_country_provision:
+                    node_to_country_provision[node] = {
+                        "graph": [],
+                        "undefined": [],
+                    }
+                provision = self.country_provision[country][node]
+                if type(provision) == int:
+                    node_to_country_provision[node]["graph"].append(
+                        {"country": country, "value": provision}
+                    )
+                else:
+                    countryDesc = country
+                    if provision == MINOR_PROVISION:
+                        countryDesc += " (negligible market share)"
+                    node_to_country_provision[node]["undefined"].append(countryDesc)
+        for node in node_to_country_provision:
+            node_to_country_provision[node]["graph"] = sorted(
+                node_to_country_provision[node]["graph"],
+                key=lambda d: d["value"],
+                reverse=True,
+            )
+            node_to_country_provision[node]["undefined"].sort()
+        return node_to_country_provision
+
+    def _get_country_provision_graph(self, graph, output_dir, node_id):
+        """
+        Generate a graph representing country provisions for a node
+        :return: A dictionary representation of a graph
+        """
+        fig = go.Figure(
+            data=[
+                go.Bar(
+                    x=[e["value"] for e in graph],
+                    y=[e["country"] for e in graph],
+                    orientation="h",
+                    text=[str(e["value"]) + "%" for e in graph],
+                    textposition="auto",
+                )
+            ]
+        )
+        fig.update_layout(
+            xaxis=dict(title="Share of global market"),
+            yaxis=dict(categoryorder="total ascending"),
+        )
+        fig.write_image(os.path.join(output_dir, "images", node_id) + ".jpg")
+
+    def _get_node_to_org_desc_list(self):
+        """
+        Generate dictionary mapping nodes to lists of names of provider organizations
+        :return: Above dictionary
+        """
+        node_to_org_desc_list = {}
+        for org in self.org_provision:
+            for node in self.org_provision[org]:
+                if node not in node_to_org_desc_list:
+                    node_to_org_desc_list[node] = []
+                org_desc = self.provider_to_meta[org]["name"]
+                if self.org_provision[org][node] == MINOR_PROVISION:
+                    org_desc += " (negligible market share)"
+                if self.provider_to_meta[org].get("hq_country"):
+                    org_desc += " - " + self.provider_to_meta[org].get("hq_country")
+                node_to_org_desc_list[node].append(org_desc.strip())
+        for node in node_to_org_desc_list:
+            node_to_org_desc_list[node].sort()
+        return node_to_org_desc_list
+
+    def _mk_pdf_for_node(
+        self,
+        node_id,
+        line,
+        images_folder,
+        node_to_country_provision,
+        node_to_org_desc_list,
+        output_dir,
+    ) -> None:
+        """
+        Generate and save a PDF with the description for a node
+        :return: None
+        """
+        node_description = line["description"].replace("\n", "<br/>")
+        node_countries = node_to_country_provision.get(node_id, {})
+        if node_countries.get("graph"):
+            self._get_country_provision_graph(
+                node_countries["graph"], output_dir, node_id
+            )
+        node_orgs = node_to_org_desc_list.get(node_id)
+        # Create PDF
+        template = env.get_template("pdf.html")
+        cluster_page = template.render(
+            node_description=node_description,
+            node_id=node_id,
+            node_name=self.node_to_meta[node_id]["name"],
+            node_countries=node_countries,
+            node_orgs=node_orgs,
+            images_folder=images_folder,
+        )
+        pdfkit.from_string(
+            cluster_page,
+            os.path.join(output_dir, node_id) + ".pdf",
+            {"enable-local-file-access": None},
+        )
+
+    def mk_pdfs(self, nodes_fi: str, stages_fi: str, output_dir: str) -> None:
+        """
+        Generate pdf version of the each node's description
+        :param nodes_fi: CSV file with node information
+        :param stages_fi: CSV file with stage information
+        :param output_dir: name of directory where pdfs should be written
+        :return: None
+        """
+        node_to_country_provision = self._get_node_to_country_provision()
+        node_to_org_desc_list = self._get_node_to_org_desc_list()
+        images_folder = os.path.abspath(output_dir + "/images")
+        print("Generating node pdfs...")
+        with open(nodes_fi, encoding="utf-8-sig") as f:
+            for line in tqdm(csv.DictReader(f)):
+                node_id = line["input_id"]
+                self._mk_pdf_for_node(
+                    node_id,
+                    line,
+                    images_folder,
+                    node_to_country_provision,
+                    node_to_org_desc_list,
+                    output_dir,
+                )
+        print("Generating stage pdfs...")
+        with open(stages_fi, encoding="utf-8-sig") as f:
+            for line in tqdm(csv.DictReader(f)):
+                node_id = line["stage_id"]
+                self._mk_pdf_for_node(
+                    node_id,
+                    line,
+                    images_folder,
+                    node_to_country_provision,
+                    node_to_org_desc_list,
+                    output_dir,
+                )
 
     def mk_provider_to_meta(self, provider_fi: str, company_metadata_fi: str):
         """
@@ -449,6 +607,10 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--output_images_dir", default=os.path.join("supply-chain", "src", "images")
+    )
+    parser.add_argument("--pdfs", action="store_true")
+    parser.add_argument(
+        "--output_pdfs_dir", default=os.path.join("supply-chain", "src", "pdfs")
     )
     args = parser.parse_args()
 

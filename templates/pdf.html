@@ -1,0 +1,92 @@
+<html>
+<meta charset="utf-8">
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<style>
+		a{
+			color: #3f51b5;
+		}
+
+    	body {
+        	font-family: "Helvetica", "Arial", sans-serif;
+        	font-weight: 400;
+        	line-height: 1.5;
+    	}
+
+		p{
+			font-weight: 400;
+			line-height: 1.5;
+			letter-spacing: 0.00938em;
+		}
+
+		h4{
+			margin-top: 0px;
+		}
+
+		#article-body{
+			margin: 50px 3% 70px 3%;
+		}
+
+		.text-section{
+			margin-bottom: 20px;
+		}
+
+		#overview-container{
+			margin: 0px 3% 20px 3%;
+		}
+
+	</style>
+</head>
+<body onload="initialize()">
+	<div id="intro">
+    	<div id="overview-container">
+        	<div id="credits" class="text-section">
+        		<h1 style="font-weight:bold">Supply Chain Explorer</h1>
+        		<h4 id="tagline">By the Emerging Technology Observatory</h4>
+        	</div>
+        	<div id="overview" class="text-section">
+        		<p>
+        			This is an export from the ETO Supply Chain Explorer, available at:
+                    <a target="_blank" rel="noreferrer" href="https://TBD.cset.tech">https://TBD.cset.tech</a>
+                    You can see the web version of this content at
+                    <a target="_blank" rel="noreferrer" href="https://TBD.cset.tech/?filter-choose=input-resource&input-resource={{node_id}}">
+                        https://TBD.cset.tech/?filter-choose=input-resource&input-resource={{node_id}}</a>.
+        		</p>
+        	</div>
+    	</div>
+	</div>
+	<div id="article-body">
+    	<div class="text-section">
+    		<h2>{{node_name}}</h2>
+    		<p>
+    			{{node_description}}
+    		</p>
+			{% if node_countries.get("graph") or node_countries.get("undefined") %}
+				<h4>Country provision</h4>
+			{% endif %}
+			{% if node_countries.get("graph") %}
+				<img src="{{images_folder}}/{{node_id}}.jpg"/>
+				{% if node_countries.get("undefined") %}
+					<p>Other providers:</p>
+				{% endif %}
+			{% endif %}
+			{% if node_countries.get("undefined") %}
+				<ul>
+					{% for node_country in node_countries["undefined"] %}
+						<li>{{node_country}}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+			{% if node_orgs %}
+				<h4>Notable supplier companies</h4>
+				<ul>
+					{% for node_org in node_orgs %}
+						<li>{{node_org}}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+    	</div>
+	</div>
+</body>
+</html>

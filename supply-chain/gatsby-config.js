@@ -20,6 +20,13 @@ module.exports = {
         "path": "./src/images"
       },
       __key: "images"
+    }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "pdfs",
+        "path": "./src/pdfs"
+      },
+      __key: "pdfs"
     }
   ]
 };

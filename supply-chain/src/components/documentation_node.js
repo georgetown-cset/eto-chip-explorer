@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import CancelIcon from '@mui/icons-material/Cancel';
+import DownloadIcon from '@mui/icons-material/Download';
 import {UserFeedback} from "@eto/eto-ui-components";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
@@ -65,7 +66,7 @@ export const VariantsList = (props) => {
 }
 
 const DocumentationNode = (props) => {
-  const {node, parent, descriptions, images, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
+  const {node, parent, descriptions, images, pdfs, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {
@@ -144,7 +145,7 @@ const DocumentationNode = (props) => {
   const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
   const hasTools = nodeToMeta[parent]?.tools?.length > 0;
 
-  const imgFileName = images?.filter(i => i.name === node)[0] ? images.filter(i => i.name === node)[0] : images.filter(i => i.name === "default")[0];
+  const imgFileName = images?.filter(i => i.name === node)[0] ? images.filter(i => i.name === node)[0]?.publicURL : images.filter(i => i.name === "default")[0]?.publicURL;
 
   // For image modal
   const [open, setOpen] = React.useState(false);
@@ -185,7 +186,7 @@ const DocumentationNode = (props) => {
         <div className="documentation-node-description">
           {imgFileName !== undefined &&
             <div className="image-wrapper">
-              <img src={imgFileName.publicURL}
+              <img src={imgFileName}
                 onClick={() => setOpen(true)}
                 onKeyDown={(evt) => {
                   if (evt.key === "Enter") {setOpen(true)};
@@ -217,7 +218,10 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
-          <div style={{textAlign: "right"}}>
+          <div className="lower-icons-wrapper">
+            <a href={pdfs.filter(i => i.name === node)[0].publicURL} download>
+              <DownloadIcon />
+            </a>
             <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
                           mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
           </div>
@@ -240,7 +244,7 @@ const DocumentationNode = (props) => {
             p: 4,
           }}>
             {imgFileName !== undefined &&
-              <img src={imgFileName.publicURL} alt={node}
+              <img src={imgFileName} alt={node}
                 style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
               />
             }
