@@ -427,6 +427,7 @@ class Preprocess:
                 self.node_to_meta[image_node_id]["image_license"] = self.clean_md_link(
                     line["credit"]
                 )
+                self.node_to_meta[image_node_id]["image_offset"] = line["offset"]
 
 
 if __name__ == "__main__":

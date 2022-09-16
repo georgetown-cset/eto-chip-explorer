@@ -165,6 +165,9 @@ const DocumentationNode = (props) => {
                 role="presentation"
                 tabIndex={0}
                 alt={meta.image_caption ? meta.image_caption : "Default"}
+                style={{
+                  transform: meta.image_offset ? `translateY(-${meta.image_offset}%)` : null
+                }}
               />
               <IconButton className="icon-wrapper" disableRipple={true} style={{verticalAlign: "top", float: "right"}}
                 onClick={standalone ? () => updateSelected(false) : (evt) => updateSelected(evt, null, null)}>
