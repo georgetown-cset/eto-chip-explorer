@@ -9,13 +9,14 @@ import {getIcon} from "../helpers/shared";
 import {VariantsList} from "./documentation_node";
 
 export const NodeHeading = (props) => {
-  const {nodeType, nodeId, currSelectedNode, name, depth=0} = props;
+  const {nodeType, nodeId, currSelectedNode, name, depth=0, parentSelected=false} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
   return (
     <Typography component="p"
       className={
         "node-heading" +
-        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "")
+        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "") +
+        ((parentSelected) ? " selected-node-child" : "")
       }
     >
       <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
@@ -37,7 +38,8 @@ export const getBackgroundGradient = (highlight, highlights) => {
 }
 
 export const SubNode = (props) => {
-  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0, inDocumentation=false} = props;
+  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0, inDocumentation=false,
+    parentSelected=false} = props;
   const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
   const subTools = nodeToMeta?.[nodeId]?.["tools"];
 
@@ -47,7 +49,8 @@ export const SubNode = (props) => {
              className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) :
              (highlights && Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
              onClick={(evt) => updateSelected(evt, nodeId, parent)}>
-        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth} />
+        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth}
+          parentSelected={parentSelected} />
       </Paper>
       <Typography component={"div"} variant={"body2"}>
         {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.sort(
@@ -81,10 +84,10 @@ export const SubNode = (props) => {
                   inDocumentation={inDocumentation}
           />)}
         {props.children}
-        {inDocumentation && !props.children &&
-          <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
-            updateSelected={updateSelected} parent={parent} depth={depth + 2} />
-        }
+      {inDocumentation && !props.children &&
+        <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
+          updateSelected={updateSelected} parent={parent} depth={depth + 2} />
+      }
       </Typography>
     </div>
   );
@@ -100,7 +103,7 @@ const GraphNode = (props) => {
     <div className="graph-node-wrapper">
       <Paper id={node} className={
         "graph-node" +
-        (node in highlights ? " highlighted " + getBackgroundGradient(highlights[node], highlights) :
+        ((node in highlights && highlights[node] !== 0) ? " highlighted " + getBackgroundGradient(highlights[node], highlights) :
         (Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
         style={{
           margin: wide ? "" : "20px 25px",
@@ -108,16 +111,17 @@ const GraphNode = (props) => {
           display: "inline-block",
           width: wide ? "": "320px",
         }}
-        onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}
         elevation={0}
       >
         <div style={{textAlign: "left"}}>
-          {content !== null && content}
-          {content === null &&
-            <Typography component="h3">
-              {meta["name"]}
-            </Typography>
-          }
+          <div onClick={(evt) => updateSelected(evt, node, inDocumentation ? parent : node)}>
+            {content !== null && content}
+            {content === null &&
+              <Typography component="h3">
+                {meta["name"]}
+              </Typography>
+            }
+          </div>
           {!inDocumentation &&
             <div className="graph-node-connections-text">
               {graphReverse[node] &&
@@ -143,7 +147,7 @@ const GraphNode = (props) => {
             </div>
           }
           {!(inDocumentation && node === parent) && showInputs &&
-            <Typography component={"div"} variant={"body2"} style={{paddingRight: "10px"}}>
+            <Typography component={"div"} variant={"body2"} style={{paddingRight: inDocumentation? "" : "10px"}}>
               {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].sort(
                 (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
               ).map((material) =>
@@ -159,6 +163,7 @@ const GraphNode = (props) => {
                         depth={inDocumentation ? 2 : 0}
                         currSelectedNode={currSelectedNode}
                         inDocumentation={inDocumentation}
+                        parentSelected={node === currSelectedNode}
                 />)}
               {("tools" in meta) && (meta["tools"].length > 0) && meta["tools"].sort(
                 (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
@@ -175,6 +180,7 @@ const GraphNode = (props) => {
                         depth={inDocumentation ? 2 : 0}
                         currSelectedNode={currSelectedNode}
                         inDocumentation={inDocumentation}
+                        parentSelected={node === currSelectedNode}
                 />)}
             </Typography>}
         </div>

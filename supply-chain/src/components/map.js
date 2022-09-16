@@ -61,7 +61,11 @@ const Map = (props) => {
 
   const mkStage = (stage) => {
     let stageClassName = "";
-    if (stage in highlights) {stageClassName += "highlighted " + getBackgroundGradient(highlights[stage], highlights)};
+    if (stage in highlights && highlights[stage] !== 0) {
+      stageClassName += "highlighted " + getBackgroundGradient(highlights[stage], highlights)
+    } else if (highlights && Object.keys(highlights).length > 0) {
+      stageClassName += "unhighlighted";
+    }
     return <div key={stage} >
       <StageNode stage={stage} stageClassName={stageClassName} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&

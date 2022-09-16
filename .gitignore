@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+supply-chain/src/pages/*
+supply-chain/.cache/
+supply-chain/data/
+supply-chain/public/
+
+Pipfile
+Pipfile.lock

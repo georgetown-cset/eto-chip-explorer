@@ -184,8 +184,9 @@ const Dashboard = () => {
           }
           for (const provKey in currMapping[name]) {
             let provValue = currMapping[name][provKey]
-            // We round qualitative "major"/"minor" values to numerical approximations
-            if (provValue === "Major") {
+            // We round qualitative "major"/"minor" values to numerical approximations.
+            // However, for orgs, we treat all values as if they are major.
+            if ((highlighter === FILTER_ORG) || (provValue === "Major")) {
               provValue = 81;
             } else if (provValue === "negligible") {
               provValue = 0;
@@ -199,9 +200,11 @@ const Dashboard = () => {
               highlightGradientMap[provKey] = provValue;
             }
             // If the provision node is a variant of another parent node,
-            // we show the highlighting on that parent node.
-            if (variantToNode[provKey] !== undefined) {
-              const variantParentNode = variantToNode[provKey];
+            // we show the highlighting on the top-level parent node.
+            let provKeyTemp = provKey;
+            while (variantToNode[provKeyTemp] !== undefined) {
+              const variantParentNode = variantToNode[provKeyTemp];
+              provKeyTemp = variantParentNode;
               if (variantParentNode in highlightGradientMap) {
                 highlightGradientMap[variantParentNode] += provValue;
               } else {
@@ -209,7 +212,7 @@ const Dashboard = () => {
               }
             }
             // Find the top node so we can scroll it into view
-            const highlightedProvKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
+            const highlightedProvKey = provKeyTemp;
             const highlightedProvElem = document.getElementById(highlightedProvKey);
             if ((highlightFirst === undefined) ||
                 (highlightedProvElem && highlightedProvElem.offsetTop < highlightFirst.offsetTop)) {
