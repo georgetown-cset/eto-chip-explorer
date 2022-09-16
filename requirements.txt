@@ -6,3 +6,4 @@ pycountry
 pytest
 pre-commit
 mistletoe
+tqdm

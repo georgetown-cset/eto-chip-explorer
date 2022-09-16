@@ -10,6 +10,7 @@ import pdfkit
 import plotly.graph_objects as go
 import pycountry
 from jinja2 import Environment, FileSystemLoader
+from tqdm import tqdm
 
 env = Environment(loader=FileSystemLoader("templates"))
 
@@ -492,8 +493,9 @@ class Preprocess:
         node_to_country_provision = self._get_node_to_country_provision()
         node_to_org_desc_list = self._get_node_to_org_desc_list()
         images_folder = os.path.abspath(output_dir + "/images")
+        print("Generating node pdfs...")
         with open(nodes_fi, encoding="utf-8-sig") as f:
-            for line in csv.DictReader(f):
+            for line in tqdm(csv.DictReader(f)):
                 node_id = line["input_id"]
                 self._mk_pdf_for_node(
                     node_id,
@@ -503,8 +505,9 @@ class Preprocess:
                     node_to_org_desc_list,
                     output_dir,
                 )
+        print("Generating stage pdfs...")
         with open(stages_fi, encoding="utf-8-sig") as f:
-            for line in csv.DictReader(f):
+            for line in tqdm(csv.DictReader(f)):
                 node_id = line["stage_id"]
                 self._mk_pdf_for_node(
                     node_id,
