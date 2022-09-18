@@ -95,13 +95,16 @@ const Map = (props) => {
       return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
-                    unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}/>
+                    unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}
+                    descriptions={descriptions} images={images} />
         )}
-        {nodes.includes(parentNode) &&
-          <DocumentationNode node={selectedNode} parent={parentNode}
-            descriptions={descriptions} images={images} pdfs={pdfs} isStage={false}
-            updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
-        }
+        <div className="documentation-node-widescreen">
+          {nodes.includes(parentNode) &&
+            <DocumentationNode node={selectedNode} parent={parentNode}
+              descriptions={descriptions} images={images} pdfs={pdfs} isStage={false}
+              updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
+          }
+        </div>
       </div>
     }
   };
@@ -286,7 +289,8 @@ const Map = (props) => {
         }
         <Xwrapper>
           <div>{mkStage(nodeToMeta[unattached[0]]["stage_id"])}</div>
-          <div>{mkLayer(unattached, true)}</div>
+          <div>{mkLayer(unattached.slice(0, 2), true)}</div>
+          <div>{mkLayer(unattached.slice(2, 4), true)}</div>
           <div>{layers}</div>
         </Xwrapper>
       </div>

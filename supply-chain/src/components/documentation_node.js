@@ -66,7 +66,7 @@ export const VariantsList = (props) => {
 }
 
 const DocumentationNode = (props) => {
-  const {node, parent, descriptions, images, pdfs, isStage, currSelectedNode, updateSelected, minimap, standalone=false} = props;
+  const {node, parent, descriptions, images, pdfs, isStage, currSelectedNode, updateSelected, minimap=null, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {
@@ -156,17 +156,17 @@ const DocumentationNode = (props) => {
         className="documentation-node"
         elevation={0}
         style={{
-            marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px", marginLeft: "10px",
+            marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px",
             position: "relative",
       }}>
-        {(currSelectedNode !== null) && !isStage &&
-          <div>
+        {(currSelectedNode !== null) && !isStage && minimap &&
+          <div className="minimap">
             {minimap}
           </div>
         }
         {
           !isStage &&
-          <div style={{width: "20%"}}>
+          <div className="documentation-node-navigation">
             {!(hasMaterials || hasTools) ?
               <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
                 <Typography component={"p"}>
