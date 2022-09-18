@@ -386,7 +386,7 @@ const Dashboard = () => {
   }, []);
 
   return (<AppWrapper>
-    <div style={{maxWidth: "1200px"}}>
+    <div style={{maxWidth: "1500px"}}>
     <InfoCard title={"Supply Chain Explorer"} description={
       <div>
         ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
@@ -395,7 +395,11 @@ const Dashboard = () => {
         semiconductor experts get up to speed on how this essential technology is produced, and
         to allow users of all backgrounds to visually explore how different inputs, companies,
         and nations interact in the production process.
-      </div>}/>
+      </div>} sidebarTitle={"How to use the Supply Chain Explorer"} sidebarContent={
+      <div>
+        Here is some text about how to use the Supply Chain Explorer
+      </div>
+    } documentationLink={"https://eto.tech/tool-docs/chipexplorer"}/>
     </div>
     <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
       className="filter-bar"
