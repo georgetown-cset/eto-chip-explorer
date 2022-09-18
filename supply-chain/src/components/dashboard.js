@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import {AppIntro, AppWrapper, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
+import {InfoCard, AppWrapper, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
@@ -386,17 +386,16 @@ const Dashboard = () => {
   }, []);
 
   return (<AppWrapper>
-    <div style={{margin: "40px 20px 40px 100px", maxWidth: "1200px"}}>
-    <AppIntro title={"Supply Chain Explorer"}>
-      <Typography component={"div"} variant={"body1"}>
+    <div style={{maxWidth: "1200px"}}>
+    <InfoCard title={"Supply Chain Explorer"} description={
+      <div>
         ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
         This edition of the Explorer covers the essential tools, materials, processes, countries,
         and firms involved in producing advanced logic chips. It’s built to help users who are not
         semiconductor experts get up to speed on how this essential technology is produced, and
         to allow users of all backgrounds to visually explore how different inputs, companies,
         and nations interact in the production process.
-      </Typography>
-    </AppIntro>
+      </div>}/>
     </div>
     <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
       className="filter-bar"
@@ -427,7 +426,7 @@ const Dashboard = () => {
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
       }
     </Paper>
-    <div style={{display: "inline-block", textAlign: "center"}}>
+    <div style={{display: "inline-block", textAlign: "center", backgroundColor: "white"}}>
       <div style={{textAlign: "right"}}>
         <UserFeedback context={"the Supply Chain Explorer"}
                       mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
