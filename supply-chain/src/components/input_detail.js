@@ -172,7 +172,7 @@ const InputDetail = (props) => {
       </MDXProvider>
       {nodeToMeta[selectedNode].total_market_size &&
         <Typography component="p">
-          The market size is {nodeToMeta[selectedNode].total_market_size}.
+          Global market size: {nodeToMeta[selectedNode].total_market_size}.
         </Typography>
       }
       {variants[selectedNode] &&
@@ -215,7 +215,7 @@ const InputDetail = (props) => {
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
             <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
-              Country Provision
+              Supplier countries
             </Typography>
           }
           {graphCountries.length > 0 &&
