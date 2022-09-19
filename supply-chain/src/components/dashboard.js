@@ -77,6 +77,9 @@ const Dashboard = () => {
     if (evt !== null) {
       evt.stopPropagation();
     }
+    if (selectedNode !== null) {
+      window.plausible('Open Documentation Node', {props: {node: selectedNode}});
+    }
     setSelectedNode(selectedNode);
     setParentNode(parentNode);
     updateXarrow();
@@ -148,7 +151,11 @@ const Dashboard = () => {
       }
     }
     if (hasHighlighter) {
-      setHighlighterFilter(highlighter)
+      setHighlighterFilter(highlighter);
+      window.plausible('Apply Filter', {props: {
+        filter: highlighter,
+        filterValues: JSON.stringify(filterToValues[highlighter])
+      }});
     } else {
       setHighlighterFilter('');
       setHighlights({});

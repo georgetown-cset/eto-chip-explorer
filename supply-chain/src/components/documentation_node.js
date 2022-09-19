@@ -219,7 +219,8 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
           <div className="lower-icons-wrapper">
-            <a href={pdfs.filter(i => i.name === node)[0].publicURL} download>
+            <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
+               onclick={`window.plausible('Download PDF', {props: {node: '${node}'}})`}>
               <DownloadIcon />
             </a>
             <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
