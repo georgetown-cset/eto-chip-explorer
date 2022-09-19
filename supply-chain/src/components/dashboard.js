@@ -320,7 +320,7 @@ const Dashboard = () => {
 
   const dropdownParams = {
     [FILTER_INPUT]: {
-      "label": "Choose process input",
+      "label": "Choose input",
       "key": FILTER_INPUT,
       "options": inputResourceOptions
     },
