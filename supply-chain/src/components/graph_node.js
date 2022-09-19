@@ -94,7 +94,7 @@ export const SubNode = (props) => {
 };
 
 const GraphNode = (props) => {
-  const {node, highlights = {}, currSelectedNode, parent, updateSelected, wide=false, content=null, inDocumentation=false,
+  const {node, highlights = {}, currSelectedNode, parent, updateSelected, pdfs, wide=false, content=null, inDocumentation=false,
     descriptions=null, images=null} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
   const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
@@ -199,7 +199,7 @@ const GraphNode = (props) => {
             }}
           />
           <div className="documentation-node-mobile">
-            <DocumentationNode node={currSelectedNode} parent={parent}
+            <DocumentationNode node={currSelectedNode} parent={parent} pdfs={pdfs}
               descriptions={descriptions} images={images} isStage={false}
               updateSelected={updateSelected} currSelectedNode={currSelectedNode} />
           </div>

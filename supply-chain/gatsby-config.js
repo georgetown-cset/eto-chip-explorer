@@ -27,6 +27,18 @@ module.exports = {
         "path": "./src/pdfs"
       },
       __key: "pdfs"
-    }
+    },
+    {
+      resolve: "gatsby-plugin-plausible",
+      options: {
+        domain: "chipexplorer.eto.tech",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/favicon.svg"
+      },
+    },
   ]
 };

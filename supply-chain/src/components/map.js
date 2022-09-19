@@ -94,7 +94,7 @@ const Map = (props) => {
       if (!stage) {stageClassName += " uncolored"};
       return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
-          <GraphNode node={node} highlights={highlights} key={node} parent={parentNode}
+          <GraphNode node={node} highlights={highlights} key={node} parent={parentNode} pdfs={pdfs}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}
                     descriptions={descriptions} images={images} />
         )}
