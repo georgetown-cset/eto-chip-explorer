@@ -50,7 +50,7 @@ const getIcon = (nodeType, style, selected=false) => {
   } else if (nodeType === "tools") {
     return <CogIcon style={style}/>;
   } else {
-    return <BeakerIcon style={style}/>;
+    return <CogIcon style={style}/>;
   }
 };
 
