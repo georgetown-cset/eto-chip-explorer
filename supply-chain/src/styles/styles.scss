@@ -518,6 +518,11 @@ a {
     .documentation-node-description {
       width: 60%;
     }
+    &.standalone {
+      .documentation-node-description {
+        width: 85%;
+      }
+    }
   }
 
   .stage-node {

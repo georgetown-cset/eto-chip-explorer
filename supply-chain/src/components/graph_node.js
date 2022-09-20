@@ -5,7 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-import {getIcon} from "../helpers/shared";
+import {allSubVariantsList, getIcon} from "../helpers/shared";
 import DocumentationNode, {VariantsList} from "./documentation_node";
 
 export const NodeHeading = (props) => {
@@ -213,6 +213,22 @@ export const MiniGraphNode = (props) => {
   const {node, currSelectedNode, parent, standalone=false} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
+  let isVariant = false;
+  for (const inputNode of meta["materials"]) {
+    if (allSubVariantsList[inputNode]?.includes(currSelectedNode)) {
+      isVariant = true;
+      break;
+    }
+  }
+  for (const inputNode of meta["tools"]) {
+    if (isVariant === true) {
+      break;
+    } else if (allSubVariantsList[inputNode]?.includes(currSelectedNode)) {
+      isVariant = true;
+      break;
+    }
+  }
+
   return (
     <div id={`${node}-minimap` + (standalone ? "-standalone" : "") } className={`graph-node ${node === parent ? "minimap-dark" : "minimap-light"}`}
       style={{
@@ -223,7 +239,10 @@ export const MiniGraphNode = (props) => {
         verticalAlign: "middle"
       }}
     >
-      {(meta["materials"]?.includes(currSelectedNode) || meta["tools"]?.includes(currSelectedNode) || (node === parent && node !== currSelectedNode)) &&
+      {(meta["materials"]?.includes(currSelectedNode) ||
+          meta["tools"]?.includes(currSelectedNode) ||
+          isVariant ||
+          (node === parent && node !== currSelectedNode)) &&
         <span className="star-icon">
           <StarIcon
             style={{

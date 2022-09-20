@@ -2,6 +2,23 @@ import React from "react";
 import CircleIcon from '@mui/icons-material/Circle';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import SvgIcon from '@mui/material/SvgIcon';
+import { variants } from "../../data/graph";
+
+// List of all subvariants a parent variant has
+const getAllSubVariantsList = () => {
+  let subVariantsList = {...variants};
+  for (const nodeWithVariants in subVariantsList) {
+    // Deep copy
+    subVariantsList[nodeWithVariants] = [...subVariantsList[nodeWithVariants]];
+    for (const nodeVariant of subVariantsList[nodeWithVariants]) {
+      if (nodeVariant in subVariantsList) {
+        subVariantsList[nodeWithVariants].push(...subVariantsList[nodeVariant]);
+      }
+    }
+  }
+  return subVariantsList;
+};
+const allSubVariantsList = getAllSubVariantsList();
 
 const CogIcon = (props) => {
   return (
@@ -33,7 +50,7 @@ const getIcon = (nodeType, style, selected=false) => {
   } else if (nodeType === "tools") {
     return <CogIcon style={style}/>;
   } else {
-    return <BeakerIcon style={style}/>;
+    return <CogIcon style={style}/>;
   }
 };
 
@@ -42,4 +59,4 @@ const FILTER_COUNTRY = "country";
 const FILTER_CONCENTRATION = "concentration";
 const FILTER_ORG = "organization";
 
-export {getIcon, FILTER_ORG, FILTER_COUNTRY, FILTER_INPUT, FILTER_CONCENTRATION};
+export {allSubVariantsList, getIcon, FILTER_ORG, FILTER_COUNTRY, FILTER_INPUT, FILTER_CONCENTRATION};
