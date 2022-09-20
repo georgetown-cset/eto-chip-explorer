@@ -24,8 +24,8 @@ const GradientLegend = (props) => {
   switch (type) {
     case FILTER_COUNTRY:
       const has = numSelected === 1 ? "country has" : "countries have";
-      startLegend = `selected ${has} 0% market share`;
-      endLegend = `selected ${has} >80% market share`;
+      startLegend = `selected ${has} less market share`;
+      endLegend = `selected ${has} more market share`;
       boxes = <div className="gradient-box-wrapper">
         <div className="gradient-box unhighlighted" />
         <div className="gradient-box gradient-20" />
@@ -323,7 +323,7 @@ const Dashboard = () => {
 
   const dropdownParams = {
     [FILTER_INPUT]: {
-      "label": "Choose process input",
+      "label": "Choose input",
       "key": FILTER_INPUT,
       "options": inputResourceOptions
     },
