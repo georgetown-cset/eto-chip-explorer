@@ -6,28 +6,13 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import CancelIcon from '@mui/icons-material/Cancel';
 import DownloadIcon from '@mui/icons-material/Download';
-import {UserFeedback} from "@eto/eto-ui-components";
+import { UserFeedback } from "@eto/eto-ui-components";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
+import { allSubVariantsList } from "../helpers/shared";
 import InputDetail from "./input_detail";
 import GraphNode, { NodeHeading, SubNode } from "./graph_node";
-
-// List of all subvariants a parent variant has
-const getAllSubVariantsList = () => {
-  let subVariantsList = {...variants};
-  for (const nodeWithVariants in subVariantsList) {
-    // Deep copy
-    subVariantsList[nodeWithVariants] = [...subVariantsList[nodeWithVariants]];
-    for (const nodeVariant of subVariantsList[nodeWithVariants]) {
-      if (nodeVariant in subVariantsList) {
-        subVariantsList[nodeWithVariants].push(...subVariantsList[nodeVariant]);
-      }
-    }
-  }
-  return subVariantsList;
-};
-const allSubVariantsList = getAllSubVariantsList();
 
 // Recursive component to construct variants tree
 export const VariantsList = (props) => {
