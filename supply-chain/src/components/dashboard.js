@@ -57,6 +57,7 @@ const GradientLegend = (props) => {
 
   return (
     <div className="gradient-legend">
+      <span className="init-text">Legend:</span>
       {startLegend}
       {boxes}
       {endLegend}
