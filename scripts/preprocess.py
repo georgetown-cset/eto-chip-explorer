@@ -423,6 +423,7 @@ class Preprocess:
         fig.update_layout(
             xaxis=dict(title="Share of global market"),
             yaxis=dict(categoryorder="total ascending"),
+            margin=dict(t=30, r=30, b=35, l=120, pad=4),
         )
         fig.write_image(os.path.join(output_dir, "images", node_id) + ".jpg")
 
