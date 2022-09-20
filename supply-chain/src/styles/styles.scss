@@ -44,7 +44,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 35px 20px;
   width: calc(100% - 40px);
 
   .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
@@ -76,11 +76,18 @@ a {
 
   .gradient-legend {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
     display: flex;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-left: 8px;
     font-family: GTZirkonLightItalic;
+    font-weight: bold;
+    .init-text {
+      margin-right: 5px;
+      text-transform: uppercase;
+      color: var(--bright-blue);
+      font-family: GTZirkonRegular;
+    }
     .gradient-box-wrapper {
       margin: 0px 5px;
     }
