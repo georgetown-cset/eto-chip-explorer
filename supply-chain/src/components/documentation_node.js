@@ -138,7 +138,7 @@ const DocumentationNode = (props) => {
   if (node === currSelectedNode) {
     return (
       <Paper id={`${node}-documentation`}
-        className="documentation-node"
+        className={"documentation-node" + (standalone ? " standalone" : "")}
         elevation={0}
         style={{
             marginTop: (parent === null || isStage) ? "0px" : "-15px", marginBottom: isStage? "0px": "20px",
@@ -150,7 +150,7 @@ const DocumentationNode = (props) => {
           </div>
         }
         {
-          !isStage &&
+          !isStage && !standalone &&
           <div className="documentation-node-navigation">
             {!(hasMaterials || hasTools) ?
               <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
