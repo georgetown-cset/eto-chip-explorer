@@ -189,9 +189,6 @@ const DocumentationNode = (props) => {
               </IconButton>
             </div>
           }
-          {imgFileName !== undefined && meta.image_license &&
-            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
-          }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
               <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
@@ -203,6 +200,9 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
+          {imgFileName !== undefined && meta.image_license &&
+            <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}}/>
+          }
           <div className="lower-icons-wrapper">
             <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
                onclick={`window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})`}>

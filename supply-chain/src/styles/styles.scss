@@ -310,7 +310,9 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: var(--bright-blue);
+    a {
+      color: var(--bright-blue);
+    }
   }
   &, .graph-sub-node {
     .node-heading {
@@ -439,6 +441,7 @@ a {
   color: var(--grey);
   font-size: 0.8rem;
   font-family: GTZirkonLightItalic;
+  float: left;
 }
 
 /* Mobile view styling */
