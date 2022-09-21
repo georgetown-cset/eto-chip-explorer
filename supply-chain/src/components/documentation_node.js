@@ -200,16 +200,18 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
-          {imgFileName !== undefined && meta.image_license &&
-            <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}}/>
-          }
-          <div className="lower-icons-wrapper">
-            <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
-               onclick={`window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})`}>
-              <DownloadIcon />
-            </a>
-            <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
-                          mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+          <div style={{padding: "0px 40px"}}>
+            {imgFileName !== undefined && meta.image_license &&
+              <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
+            }
+            <div className="lower-icons-wrapper">
+              <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
+                onclick={`window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})`}>
+                <DownloadIcon />
+              </a>
+              <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
+                            mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+            </div>
           </div>
         </div>
 

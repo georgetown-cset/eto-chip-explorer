@@ -437,6 +437,18 @@ a {
   }
 }
 
+figure {
+  display: table;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  &.caption {
+    float: unset;
+  }
+}
+
 .caption {
   color: var(--grey);
   font-size: 0.8rem;
