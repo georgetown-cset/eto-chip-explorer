@@ -229,17 +229,19 @@ const DocumentationNode = (props) => {
             boxShadow: 24,
             p: 4,
           }}>
-            {imgFileName !== undefined &&
-              <img src={imgFileName} alt={node}
-                style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
-              />
-            }
-            {imgFileName !== undefined && meta.image_caption &&
-              <div>
-                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
-                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
-              </div>
-            }
+            <figure>
+              {imgFileName !== undefined &&
+                <img src={imgFileName} alt={node}
+                  style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
+                />
+              }
+              {imgFileName !== undefined && meta.image_caption &&
+                <figcaption className="caption" dangerouslySetInnerHTML={{__html: "Image Caption: " + meta.image_caption}}/>
+              }
+              {imgFileName !== undefined && meta.image_license &&
+                <figcaption className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+              }
+            </figure>
           </Box>
         </Modal>
       </Paper>
