@@ -183,15 +183,20 @@ a {
     }
   }
   .stage-node {
-    background-color: var(--bright-blue);
+    background-color: var(--bright-blue-lightest);
+    border-left: 10px solid var(--bright-blue);
     padding: 5px 5px;
-    h3, button {
-      color: var(--white);
+    &:hover {
+      cursor: pointer;
+    }
+    h3 {
+      margin-left: 10px;
     }
     button {
-      float: right;
+      margin-left: 20px;
       font-family: GTZirkonRegular;
       text-transform: none;
+      color: var(--bright-blue);
     }
   }
 }
