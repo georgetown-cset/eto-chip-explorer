@@ -59,13 +59,18 @@ const Map = (props) => {
     return nodesPrefix.concat(nodesSuffix);
   };
 
+  const _getStageHighlight = (stage, highlights, stageClassName) => {
+    if (stage in highlights && highlights[stage] !== 0) {
+      stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)
+    } else if (highlights && Object.keys(highlights).length > 0) {
+      stageClassName += " unhighlighted";
+    }
+    return stageClassName;
+  }
+
   const mkStage = (stage) => {
     let stageClassName = "";
-    if (stage in highlights && highlights[stage] !== 0) {
-      stageClassName += "highlighted " + getBackgroundGradient(highlights[stage], highlights)
-    } else if (highlights && Object.keys(highlights).length > 0) {
-      stageClassName += "unhighlighted";
-    }
+    stageClassName = _getStageHighlight(stage, highlights, stageClassName);
     return <div key={stage} >
       <StageNode stage={stage} stageClassName={stageClassName} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
@@ -92,6 +97,7 @@ const Map = (props) => {
       const stage = nodeToMeta[nodes[0]]?.["stage_id"];
       let stageClassName = "stage-border";
       if (!stage) {stageClassName += " uncolored"};
+      stageClassName = _getStageHighlight(stage, highlights, stageClassName);
       return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode} pdfs={pdfs}
