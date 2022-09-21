@@ -397,15 +397,15 @@ const Dashboard = () => {
     <div style={{maxWidth: "1500px"}}>
     <InfoCard title={"Supply Chain Explorer"} description={
       <div>
-        ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology.
-        This edition of the Explorer covers the essential tools, materials, processes, countries,
-        and firms involved in producing advanced logic chips. It’s built to help users who are not
-        semiconductor experts get up to speed on how this essential technology is produced, and
-        to allow users of all backgrounds to visually explore how different inputs, companies,
-        and nations interact in the production process.
-      </div>} sidebarTitle={"How to use the Supply Chain Explorer"} sidebarContent={
+        An interactive, high-level visualization of the supply chain for advanced computer chips, designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing this critical resource. Use the Explorer to learn how advanced logic chips are made, who makes them, and the tools, materials, and processes that are involved.
+      </div>} sidebarTitle={"Quick guide"} sidebarContent={
       <div>
-        Here is some text about how to use the Supply Chain Explorer
+        <ul><li>Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.</li>
+        <li>Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.</li></ul>
+        <h3>Related resources</h3>
+        <p><strong>Documentation: </strong> <a href="https://eto.tech/tool-docs/chipexplorer">Supply Chain Explorer: Advanced Chips</a></p>
+        <p><strong>Blog post: </strong><a href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips">Introducing the Supply Chain Explorer</a></p>
+        <p><strong>Blog post: </strong><a href="https://eto.tech/blog/five-takeaways-chip-supply-chain">Five quick takeaways on the chip supply chain</a></p>
       </div>
     } documentationLink={"https://eto.tech/tool-docs/chipexplorer"}/>
     </div>
