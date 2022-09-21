@@ -177,6 +177,8 @@ a {
 }
 
 .stage-node-wrapper {
+  position: relative;
+  z-index: 10;
   & + .stage-border .MuiPaper-root.documentation-node {
     .documentation-node-description {
       width: 100%;
@@ -184,7 +186,6 @@ a {
   }
   .stage-node {
     background-color: var(--bright-blue-lightest);
-    border-left: 10px solid var(--bright-blue);
     padding: 5px 5px;
     &:hover {
       cursor: pointer;
@@ -578,6 +579,9 @@ a {
   .stage-node-wrapper {
     & + .stage-border .MuiPaper-root.documentation-node {
       width: 75%;
+    }
+    .stage-node {
+      border-left: 10px solid var(--bright-blue);
     }
   }
 }
