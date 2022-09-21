@@ -43,7 +43,7 @@ This readme summarizes analytic decisions made in the process of turning https:/
 - Ion milling
 - Dry cleaning tools
 
-### Inputs not incorporated due to irrelevance to advanced logic chips or other reasons
+### Inputs not incorporated due to irrelevance to advanced logic chips or similar reasons
 
 - Spin coating tools (incorporated into "Deposition tools"
 - Non-IC deposition tools
