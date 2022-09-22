@@ -19,7 +19,7 @@ const Dashboard = React.lazy(() => import("../components/dashboard"));
 
 const IndexPage = () => {
   useEffect(() => {
-    document.title = "Semiconductor Supply Chain Mapper";
+    document.title = "Supply Chain Explorer: Advanced Chips";
     document.documentElement.lang = "en";
   }, []);
 
