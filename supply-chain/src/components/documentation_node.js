@@ -189,9 +189,6 @@ const DocumentationNode = (props) => {
               </IconButton>
             </div>
           }
-          {imgFileName !== undefined && meta.image_license &&
-            <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
-          }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
               <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
@@ -203,13 +200,18 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
-          <div className="lower-icons-wrapper">
-            <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
-               onclick={`window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})`}>
-              <DownloadIcon />
-            </a>
-            <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
-                          mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+          <div style={{padding: "0px 40px"}}>
+            {imgFileName !== undefined && meta.image_license &&
+              <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
+            }
+            <div className="lower-icons-wrapper">
+              <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
+                onclick={`window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})`}>
+                <DownloadIcon />
+              </a>
+              <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
+                            mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+            </div>
           </div>
         </div>
 
@@ -229,17 +231,19 @@ const DocumentationNode = (props) => {
             boxShadow: 24,
             p: 4,
           }}>
-            {imgFileName !== undefined &&
-              <img src={imgFileName} alt={node}
-                style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
-              />
-            }
-            {imgFileName !== undefined && meta.image_caption &&
-              <div>
-                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
-                <div className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
-              </div>
-            }
+            <figure>
+              {imgFileName !== undefined &&
+                <img src={imgFileName} alt={node}
+                  style={{maxWidth: "600px", maxHeight: "80vh", height: "auto"}}
+                />
+              }
+              {imgFileName !== undefined && meta.image_caption &&
+                <figcaption className="caption" dangerouslySetInnerHTML={{__html: "Image Caption: " + meta.image_caption}}/>
+              }
+              {imgFileName !== undefined && meta.image_license &&
+                <figcaption className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+              }
+            </figure>
           </Box>
         </Modal>
       </Paper>

@@ -311,7 +311,9 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: var(--bright-blue);
+    a {
+      color: var(--bright-blue);
+    }
   }
   &, .graph-sub-node {
     .node-heading {
@@ -436,10 +438,23 @@ a {
   }
 }
 
+figure {
+  display: table;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  &.caption {
+    float: unset;
+  }
+}
+
 .caption {
   color: var(--grey);
   font-size: 0.8rem;
   font-family: GTZirkonLightItalic;
+  float: left;
 }
 
 /* Mobile view styling */
@@ -469,7 +484,6 @@ a {
   font-family: GTZirkonLight;
   .connection-text {
     .bold {
-      font-family: GTZirkonBold;
       margin-right: 5px;
     }
   }
@@ -506,6 +520,10 @@ a {
   & + .stage-border .MuiPaper-root.documentation-node {
     width: calc(100% - 15px);
   }
+}
+
+span.bold {
+  font-family: GTZirkonBold;
 }
 
 @media (max-width: 1000px) {
