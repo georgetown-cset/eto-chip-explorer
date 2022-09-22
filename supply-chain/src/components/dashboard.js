@@ -412,7 +412,7 @@ const Dashboard = () => {
       </div>
     } documentationLink={"https://eto.tech/tool-docs/chipexplorer"}/>
     </div>
-    <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
+    <Paper style={{position: "sticky", top: "0px", zIndex: "20"}}
       className="filter-bar"
       elevation={0}
     >
