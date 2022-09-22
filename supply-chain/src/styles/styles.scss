@@ -177,38 +177,53 @@ a {
 }
 
 .stage-node-wrapper {
+  position: relative;
+  z-index: 10;
   & + .stage-border .MuiPaper-root.documentation-node {
     .documentation-node-description {
       width: 100%;
     }
   }
   .stage-node {
-    background-color: var(--bright-blue);
+    background-color: var(--bright-blue-lightest);
     padding: 5px 5px;
-    h3, button {
-      color: var(--white);
+    &:hover {
+      cursor: pointer;
+    }
+    h3 {
+      margin-left: 10px;
     }
     button {
-      float: right;
+      margin-left: 20px;
       font-family: GTZirkonRegular;
       text-transform: none;
+      color: var(--bright-blue);
     }
   }
 }
 
-.graph-node, .stage-border, .stage-node {
+.graph-node, .stage-node {
   &.highlighted, .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
     &.gradient-100 {
       background-color: var(--bright-blue-light-hsl-g100);
       color: var(--white);
+      button {
+        color: var(--white);
+      }
     }
     &.gradient-80 {
       background-color: var(--bright-blue-light-hsl-g80);
       color: var(--white);
+      button {
+        color: var(--white);
+      }
     }
     &.gradient-60 {
       background-color: var(--bright-blue-light-hsl-g60);
+      button {
+        color: var(--white);
+      }
     }
     &.gradient-40 {
       background-color: var(--bright-blue-light-hsl-g40);
@@ -226,6 +241,29 @@ a {
     h3, button {
       color: var(--grey-light);
     }
+  }
+}
+
+.stage-border, .stage-node {
+  &.highlighted {
+    &.gradient-100 {
+      border-color: var(--bright-blue-light-hsl-g100);
+    }
+    &.gradient-80 {
+      border-color: var(--bright-blue-light-hsl-g80);
+    }
+    &.gradient-60 {
+      border-color: var(--bright-blue-light-hsl-g60);
+    }
+    &.gradient-40 {
+      border-color: var(--bright-blue-light-hsl-g40);
+    }
+    &.gradient-20 {
+      border-color: var(--bright-blue-light-hsl-g20);
+    }
+  }
+  &.unhighlighted {
+    border-color: var(--grey-lightest);
   }
 }
 
@@ -541,6 +579,9 @@ a {
   .stage-node-wrapper {
     & + .stage-border .MuiPaper-root.documentation-node {
       width: 75%;
+    }
+    .stage-node {
+      border-left: 10px solid var(--bright-blue);
     }
   }
 }

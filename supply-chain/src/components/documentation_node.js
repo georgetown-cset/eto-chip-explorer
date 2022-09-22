@@ -205,7 +205,7 @@ const DocumentationNode = (props) => {
           )}
           <div className="lower-icons-wrapper">
             <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
-               onclick={`window.plausible('Download PDF', {props: {node: '${node}'}})`}>
+               onclick={`window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})`}>
               <DownloadIcon />
             </a>
             <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}

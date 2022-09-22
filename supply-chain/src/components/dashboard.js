@@ -78,7 +78,7 @@ const Dashboard = () => {
     if (evt !== null) {
       evt.stopPropagation();
     }
-    if (selectedNode !== null) {
+    if (selectedNode !== null && window.plausible) {
       window.plausible('Open Documentation Node', {props: {node: selectedNode}});
     }
     setSelectedNode(selectedNode);
@@ -153,10 +153,13 @@ const Dashboard = () => {
     }
     if (hasHighlighter) {
       setHighlighterFilter(highlighter);
-      window.plausible('Apply Filter', {props: {
-        filter: highlighter,
-        filterValues: JSON.stringify(filterToValues[highlighter])
-      }});
+      // window.plausible is not available when running in dev mode
+      if (window.plausible) {
+        window.plausible('Apply Filter', {props: {
+          filter: highlighter,
+          filterValues: JSON.stringify(filterToValues[highlighter])
+        }});
+      }
     } else {
       setHighlighterFilter('');
       setHighlights({});
@@ -411,7 +414,7 @@ const Dashboard = () => {
       </div>
     } documentationLink={"https://eto.tech/tool-docs/chipexplorer"}/>
     </div>
-    <Paper style={{position: "sticky", top: "0px", zIndex: "10"}}
+    <Paper style={{position: "sticky", top: "0px", zIndex: "20"}}
       className="filter-bar"
       elevation={0}
     >
