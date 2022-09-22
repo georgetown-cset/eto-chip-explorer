@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import CancelIcon from '@mui/icons-material/Cancel';
 import DownloadIcon from '@mui/icons-material/Download';
-import { UserFeedback } from "@eto/eto-ui-components";
+import { HelpTooltip, UserFeedback } from "@eto/eto-ui-components";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
@@ -205,10 +205,12 @@ const DocumentationNode = (props) => {
               <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
             }
             <div className="lower-icons-wrapper">
-              <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
-                 onClick={() => window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})}>
-                <DownloadIcon />
-              </a>
+              <HelpTooltip text="Download PDF">
+                <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
+                  onClick={() => window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})}>
+                  <DownloadIcon />
+                </a>
+              </HelpTooltip>
               <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
                             mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
             </div>
