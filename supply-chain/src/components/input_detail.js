@@ -165,6 +165,57 @@ const InputDetail = (props) => {
     return rows;
   };
 
+  const mkVariantCountryTableRows = () => {
+    const rows = [];
+    const variantCountryNames = Object.keys(variantCountries).sort();
+    for (let idx = 0; idx < variantCountryNames.length; idx += 2){
+      const rowCountryInfos = [variantCountryNames[idx]];
+      if(idx+1 < variantCountryNames.length){
+        rowCountryInfos.push(variantCountryNames[idx+1])
+      }
+      rows.push(
+        <tr key={idx}>
+          {rowCountryInfos.map((country) => (
+            <td key={country}>
+              <Typography component="p">
+                {countryFlags[country] && <span className="flag">{countryFlags[country]}</span>}
+                {country} &nbsp;
+                <HelpTooltip iconType="more-info" text={"Provides: " + variantCountries[country].map(e => nodeToMeta[e].name).join(", ")} />
+              </Typography>
+            </td>
+          ))}
+        </tr>
+      )
+    }
+    return rows;
+  }
+
+  const mkVariantOrgTableRows = () => {
+    const rows = [];
+    const variantOrgNames = Object.keys(variantOrgs).sort(
+      (a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
+    for (let idx = 0; idx < variantOrgNames.length; idx += 2){
+      const rowOrgs = [variantOrgNames[idx]];
+      if(idx+1 < variantOrgNames.length){
+        rowOrgs.push(variantOrgNames[idx+1])
+      }
+      rows.push(
+        <tr key={idx}>
+          {rowOrgs.map((org) => (
+            <td key={org}>
+              <Typography component="p">
+                {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
+                {orgMeta[org].name} &nbsp;
+                <HelpTooltip iconType="more-info" text={"Provides: " + variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")} />
+              </Typography>
+            </td>
+          ))}
+        </tr>
+      )
+    }
+    return rows;
+  }
+
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
@@ -182,31 +233,25 @@ const InputDetail = (props) => {
           {Object.keys(variantCountries).length > 0 &&
             <div>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
-                Country Provision
+                Country Provision (Variants)
               </Typography>
-                {Object.keys(variantCountries).sort().map((country) =>
-                  <Typography component="p">
-                    {countryFlags[country] && <span className="flag">{countryFlags[country]}</span>}
-                    {country} &nbsp;
-                    <HelpTooltip iconType="more-info" text={variantCountries[country].map(e => nodeToMeta[e].name).join(", ")} />
-                  </Typography>
-                )}
+              <table>
+                <tbody>
+                  {mkVariantCountryTableRows()}
+                </tbody>
+              </table>
             </div>
           }
           {Object.keys(variantOrgs).length > 0 &&
             <div>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
-                Notable supplier companies
+                Notable supplier companies (Variants)
               </Typography>
-              {Object.keys(variantOrgs).sort(
-                (a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase())
-              ).map((org) =>
-                <Typography component="p">
-                  {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
-                  {orgMeta[org].name} &nbsp;
-                  <HelpTooltip iconType="more-info" text={variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")} />
-                </Typography>
-              )}
+              <table>
+                <tbody>
+                  {mkVariantOrgTableRows()}
+                </tbody>
+              </table>
             </div>
           }
         </div>
@@ -222,10 +267,10 @@ const InputDetail = (props) => {
             <div>
               <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
-                <span class="caption"> <b>Note: </b> {nodeToMeta[selectedNode].market_chart_caption}</span>
+                <span className="caption"> <b>Note: </b> {nodeToMeta[selectedNode].market_chart_caption}</span>
               }
               {nodeToMeta[selectedNode].market_chart_source &&
-                <span class="caption"> <b>Source: </b>
+                <span className="caption"> <b>Source: </b>
                   <span dangerouslySetInnerHTML={{__html: nodeToMeta[selectedNode].market_chart_source}} />
                 </span>
               }
