@@ -196,11 +196,18 @@ const Dashboard = () => {
           for (const provKey in currMapping[name]) {
             let provValue = currMapping[name][provKey]
             // We round qualitative "major"/"minor" values to numerical approximations.
-            // However, for orgs, we treat all values as if they are major.
-            if ((highlighter === FILTER_ORG) || (provValue === "Major")) {
+            // For orgs, we treat all providers as if they are providing almost all of
+            // the node.
+            if (highlighter === FILTER_ORG) {
               provValue = 81;
-            } else if (provValue === "negligible") {
-              provValue = 0;
+            }
+            // For countries, we treat major providers as providing some small share.
+            else if (highlighter === FILTER_COUNTRY) {
+              if (provValue === "Major") {
+                provValue = 21;
+              } else if (provValue === "negligible") {
+                provValue = 0;
+              }
             }
             if (isNaN(provValue)) {
               continue;
