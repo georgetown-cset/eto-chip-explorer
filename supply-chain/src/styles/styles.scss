@@ -44,8 +44,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  padding: 20px 20px 35px 20px;
-  width: calc(100% - 40px);
 
   .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
     font-family: GTZirkonRegular;
@@ -71,15 +69,11 @@ a {
     font-family: GTZirkonRegular;
     border-color: var(--orange);
     font-size: 1rem;
-    margin-left: 20px;
   }
 
   .gradient-legend {
-    position: absolute;
-    bottom: 10px;
     display: flex;
     font-size: 1rem;
-    margin-left: 8px;
     font-family: GTZirkonLightItalic;
     font-weight: bold;
     .init-text {
@@ -521,6 +515,22 @@ span.bold {
   font-family: GTZirkonBold;
 }
 
+.MuiPaper-root.filter-bar {
+  padding: 10px 10px 15px 10px;
+  width: calc(100% - 20px);
+  #clear-button {
+    margin-left: 10px;
+  }
+  .gradient-legend {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 10px;
+    .gradient-box-wrapper {
+      display: flex;
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .documentation-node {
     .documentation-node-navigation {
@@ -600,4 +610,20 @@ span.bold {
       }
     }
   }
+
+  .MuiPaper-root.filter-bar {
+    padding: 20px 20px 35px 20px;
+    width: calc(100% - 40px);
+    #clear-button {
+      margin-left: 20px;
+    }
+    .gradient-legend {
+      position: absolute;
+      bottom: 10px;
+      .gradient-box-wrapper {
+        display: block;
+      }
+    }
+  }
+
 }
