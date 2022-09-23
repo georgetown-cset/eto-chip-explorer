@@ -55,7 +55,11 @@ const BarGraph = (props) => {
         autosize: true,
         margin: {t: 25, r: 30, b: 40, l: 120, pad: 4},
         xaxis: {
+          fixedrange: true,
           title: "Share of global market"
+        },
+        yaxis: {
+          fixedrange: true,
         },
         font: {
           family: "GTZirkonRegular, Arial"
@@ -107,7 +111,7 @@ export const OrgListing = (props) => {
     <div>
     {(orgs !== undefined) &&
       <div>
-        <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+        <Typography component={"p"} variant={"h6"} className="provision-heading">
          Notable supplier companies
         </Typography>
         <table>
@@ -226,40 +230,10 @@ const InputDetail = (props) => {
           <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}.
         </Typography>
       }
-      {variants[selectedNode] &&
-        <div>
-          <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
-            updateSelected={updateSelected} parent={parent} />
-          {Object.keys(variantCountries).length > 0 &&
-            <div>
-              <Typography component={"p"} variant={"h6"} className="provision-heading">
-                Country Provision (Variants)
-              </Typography>
-              <table>
-                <tbody>
-                  {mkVariantCountryTableRows()}
-                </tbody>
-              </table>
-            </div>
-          }
-          {Object.keys(variantOrgs).length > 0 &&
-            <div>
-              <Typography component={"p"} variant={"h6"} className="provision-heading">
-                Notable supplier companies (Variants)
-              </Typography>
-              <table>
-                <tbody>
-                  {mkVariantOrgTableRows()}
-                </tbody>
-              </table>
-            </div>
-          }
-        </div>
-      }
       {hasCountries &&
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
-            <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+            <Typography component={"p"} variant={"h6"} className="provision-heading">
               Supplier countries
             </Typography>
           }
@@ -291,6 +265,36 @@ const InputDetail = (props) => {
         </div>
       }
       <OrgListing orgs={orgs} orgMeta={orgMeta} />
+      {variants[selectedNode] &&
+        <div>
+          <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
+            updateSelected={updateSelected} parent={parent} />
+          {Object.keys(variantCountries).length > 0 &&
+            <div>
+              <Typography component={"p"} variant={"h6"} className="provision-heading">
+                Supplier countries (Variants)
+              </Typography>
+              <table>
+                <tbody>
+                  {mkVariantCountryTableRows()}
+                </tbody>
+              </table>
+            </div>
+          }
+          {Object.keys(variantOrgs).length > 0 &&
+            <div>
+              <Typography component={"p"} variant={"h6"} className="provision-heading">
+                Notable supplier companies (Variants)
+              </Typography>
+              <table>
+                <tbody>
+                  {mkVariantOrgTableRows()}
+                </tbody>
+              </table>
+            </div>
+          }
+        </div>
+      }
     </div>
   )
 };
