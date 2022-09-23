@@ -445,16 +445,14 @@ const Dashboard = () => {
       <Button id="clear-button" variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
         Clear Filters
       </Button>
+      <UserFeedback context={"the Supply Chain Explorer"}
+        mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
       {
         highlighterFilter !== '' && highlighterFilter !== FILTER_INPUT &&
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
       }
     </Paper>
     <div style={{display: "inline-block", textAlign: "center", backgroundColor: "white"}}>
-      <div style={{textAlign: "right"}}>
-        <UserFeedback context={"the Supply Chain Explorer"}
-                      mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
-      </div>
       <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
