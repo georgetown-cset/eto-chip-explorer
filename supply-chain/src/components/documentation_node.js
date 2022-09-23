@@ -200,7 +200,7 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
-          <div style={{padding: "0px 40px"}}>
+          <div className="lower-bar-wrapper">
             {imgFileName !== undefined && meta.image_license &&
               <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
             }

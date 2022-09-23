@@ -298,14 +298,24 @@ a {
     margin-right: 5px;
     color: var(--bright-blue);
   }
-  .lower-icons-wrapper {
+  .lower-bar-wrapper {
+    padding: 0px 40px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    a {
-      color: var(--bright-blue);
+    .caption {
+      text-align: left;
+    }
+    .lower-icons-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        color: var(--bright-blue);
+      }
     }
   }
+
   &, .graph-sub-node {
     .node-heading {
       padding-bottom: 5px;
