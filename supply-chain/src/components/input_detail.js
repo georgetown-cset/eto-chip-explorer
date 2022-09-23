@@ -111,7 +111,7 @@ export const OrgListing = (props) => {
     <div>
     {(orgs !== undefined) &&
       <div>
-        <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+        <Typography component={"p"} variant={"h6"} className="provision-heading">
          Notable supplier companies
         </Typography>
         <table>
@@ -233,7 +233,7 @@ const InputDetail = (props) => {
       {hasCountries &&
         <div>
           {(graphCountries.length > 0 || undefinedProvisionCountries.length > 0) &&
-            <Typography component={"p"} variant={"h6"} className="provision-heading" style={{marginBottom: "10px"}}>
+            <Typography component={"p"} variant={"h6"} className="provision-heading">
               Supplier countries
             </Typography>
           }
