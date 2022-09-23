@@ -55,7 +55,11 @@ const BarGraph = (props) => {
         autosize: true,
         margin: {t: 25, r: 30, b: 40, l: 120, pad: 4},
         xaxis: {
+          fixedrange: true,
           title: "Share of global market"
+        },
+        yaxis: {
+          fixedrange: true,
         },
         font: {
           family: "GTZirkonRegular, Arial"
