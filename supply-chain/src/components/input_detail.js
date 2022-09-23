@@ -53,7 +53,7 @@ const BarGraph = (props) => {
       data={data}
       layout={{
         autosize: true,
-        margin: {t: 30, r: 30, b: 35, l: 120, pad: 4},
+        margin: {t: 25, r: 30, b: 40, l: 120, pad: 4},
         xaxis: {
           title: "Share of global market"
         },
@@ -267,12 +267,12 @@ const InputDetail = (props) => {
             <div>
               <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
-                <span className="caption"> <b>Note: </b> {nodeToMeta[selectedNode].market_chart_caption}</span>
+                <div className="caption"> <b>Note: </b> {nodeToMeta[selectedNode].market_chart_caption}</div>
               }
               {nodeToMeta[selectedNode].market_chart_source &&
-                <span className="caption"> <b>Source: </b>
+                <div className="caption"> <b>Source: </b>
                   <span dangerouslySetInnerHTML={{__html: nodeToMeta[selectedNode].market_chart_source}} />
-                </span>
+                </div>
               }
             </div>
           }

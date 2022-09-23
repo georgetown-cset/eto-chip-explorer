@@ -3,6 +3,7 @@ import csv
 import json
 import os
 import re
+import shutil
 import urllib.request
 
 import mistletoe
@@ -63,8 +64,6 @@ class Preprocess:
         if not is_test:
             if not os.path.exists(args.output_dir):
                 os.makedirs(args.output_dir)
-            if not os.path.exists(args.output_images_dir):
-                os.makedirs(args.output_images_dir)
             if not os.path.exists(args.output_pdfs_dir):
                 os.makedirs(args.output_pdfs_dir)
                 os.makedirs(args.output_pdfs_dir + "/images")
@@ -73,6 +72,10 @@ class Preprocess:
             self.write_descriptions(args.nodes, args.stages, args.output_text_dir)
 
             if args.images:
+                # Delete existing images
+                if os.path.exists(args.output_images_dir):
+                    shutil.rmtree(args.output_images_dir)
+                os.makedirs(args.output_images_dir)
                 self.mk_images(args.images_file, args.output_images_dir)
 
             self.write_graphs(args.sequence, args.output_dir)
@@ -607,7 +610,8 @@ if __name__ == "__main__":
         "--output_text_dir", default=os.path.join("supply-chain", "src", "pages")
     )
     parser.add_argument(
-        "--output_images_dir", default=os.path.join("supply-chain", "src", "images")
+        "--output_images_dir",
+        default=os.path.join("supply-chain", "src", "images", "nodes"),
     )
     parser.add_argument("--pdfs", action="store_true")
     parser.add_argument(

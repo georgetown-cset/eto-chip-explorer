@@ -190,9 +190,6 @@ a {
     &:hover {
       cursor: pointer;
     }
-    h3 {
-      margin-left: 10px;
-    }
     button {
       margin-left: 20px;
       font-family: GTZirkonRegular;
@@ -355,6 +352,7 @@ a {
   .provision-heading {
     font-family: GTZirkonBold;
     margin-top: 10px;
+    display: inline-block;
   }
   .graph-node, .graph-sub-node {
     width: 100%;
@@ -446,16 +444,12 @@ figure {
 figcaption {
   display: table-caption;
   caption-side: bottom;
-  &.caption {
-    float: unset;
-  }
 }
 
 .caption {
   color: var(--grey);
   font-size: 0.8rem;
   font-family: GTZirkonLightItalic;
-  float: left;
 }
 
 /* Mobile view styling */
@@ -601,6 +595,9 @@ span.bold {
     }
     .stage-node {
       border-left: 10px solid var(--bright-blue);
+      &.unhighlighted {
+        border-color: var(--grey-lightest);
+      }
     }
   }
 }
