@@ -128,7 +128,6 @@ export const OrgListing = (props) => {
 const InputDetail = (props) => {
   const {selectedNode, descriptions, countries, orgs, orgMeta, updateSelected=null, parent,
     variantCountries, variantOrgs} = props;
-  const orgNames = orgs === undefined ? [] : Object.keys(orgs);
 
   const graphCountries = [];
   const undefinedProvisionCountries = [];
