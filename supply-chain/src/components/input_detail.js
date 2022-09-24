@@ -48,7 +48,7 @@ const BarGraph = (props) => {
   }];
 
   return (
-    <div>
+    <div style={{paddingBottom: "10px"}}>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
       layout={{
