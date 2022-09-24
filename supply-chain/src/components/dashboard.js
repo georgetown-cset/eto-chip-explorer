@@ -446,7 +446,7 @@ const Dashboard = () => {
         Clear Filters
       </Button>
       <UserFeedback context={"the Supply Chain Explorer"}
-        mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+        mkFormSubmitLink={(context, queryParams, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.1308802318=${queryParams}&entry.135985468=${context}&submit=Submit`}/>
       {
         highlighterFilter !== '' && highlighterFilter !== FILTER_INPUT &&
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>
