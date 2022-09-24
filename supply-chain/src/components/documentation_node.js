@@ -201,9 +201,11 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
           <div className="lower-bar-wrapper">
+            <div className="caption">
             {imgFileName !== undefined && meta.image_license &&
-              <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
+              <div dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
             }
+            </div>
             <div className="lower-icons-wrapper">
               <HelpTooltip text="Download PDF">
                 <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
