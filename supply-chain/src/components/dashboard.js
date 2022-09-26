@@ -166,7 +166,7 @@ const Dashboard = () => {
       if (window.plausible) {
         window.plausible('Apply Filter', {props: {
           filter: highlighter,
-          filterValues: JSON.stringify(filterToValues[highlighter])
+          filterValues: JSON.stringify(currFilterValues[highlighter])
         }});
       }
     } else {
