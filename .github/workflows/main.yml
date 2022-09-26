@@ -25,3 +25,11 @@ jobs:
       run: |
         pip install pytest
         python3 -m pytest tests
+    - name: Test with jest
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+      run: |
+        cd supply-chain
+        npm install --force
+        npm run test
