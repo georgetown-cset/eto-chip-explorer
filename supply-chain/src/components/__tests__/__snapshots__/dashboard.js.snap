@@ -2,20 +2,28 @@
 
 exports[`Dashboard renders correctly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="app-wrapper"
+  >
     <header
       class="eto-header"
     >
-      <img
-        src="test-file-stub"
-        style="height: 120px;"
-      />
+      <a
+        href="https://eto.tech/"
+        rel="noopener"
+        target="_blank"
+      >
+        <img
+          src="test-file-stub"
+          style="height: 120px;"
+        />
+      </a>
       <div
         class="header-links"
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="/"
+          href="https://eto.tech/about"
           rel="noopener"
           target="_blank"
         >
@@ -23,7 +31,7 @@ exports[`Dashboard renders correctly 1`] = `
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="/"
+          href="https://eto.tech/tools"
           rel="noopener"
           target="_blank"
         >
@@ -31,15 +39,15 @@ exports[`Dashboard renders correctly 1`] = `
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="/"
+          href="https://eto.tech/blog"
           rel="noopener"
           target="_blank"
         >
-          Data snapshots
+          Blog
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="/"
+          href="https://eto.tech/feedback"
           rel="noopener"
           target="_blank"
         >
@@ -51,41 +59,128 @@ exports[`Dashboard renders correctly 1`] = `
       style="display: flex; flex-direction: column;"
     >
       <div
-        style="margin: 40px 20px 40px 100px; max-width: 1200px;"
+        style="max-width: 1500px;"
       >
-        <div>
+        <div
+          class="info-card-wrapper undefined"
+        >
           <div
-            class="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
-            id="app-header"
-          >
-            Supply Chain Explorer
-          </div>
+            class="accent"
+          />
           <div
-            class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
-            id="app-description"
+            class="bottom-border"
+          />
+          <div
+            class="title-wrapper"
           >
             <div
-              class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h4 title css-5lbw0b-MuiTypography-root"
+              style="width: 100%;"
             >
-              ETO’s Supply Chain Explorer visualizes supply chains in critical and emerging technology. This edition of the Explorer covers the essential tools, materials, processes, countries, and firms involved in producing advanced logic chips. It’s built to help users who are not semiconductor experts get up to speed on how this essential technology is produced, and to allow users of all backgrounds to visually explore how different inputs, companies, and nations interact in the production process.
+              Supply Chain Explorer
+            </div>
+            <div
+              class="documentation-link"
+            >
+              <a
+                href="https://eto.tech/tool-docs/chipexplorer"
+              >
+                Documentation
+              </a>
             </div>
           </div>
+          <div
+            class="description-wrapper"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h6 description css-2ulfj5-MuiTypography-root"
+            >
+              <div>
+                An interactive, high-level visualization of the supply chain for advanced computer chips, designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing this critical resource. Use the Explorer to learn how advanced logic chips are made, who makes them, and the tools, materials, and processes that are involved.
+                <div
+                  class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+                  style="padding-top: 15px;"
+                >
+                  Related resources
+                </div>
+                <p>
+                  <strong>
+                    Documentation:
+                  </strong>
+
+                  <a
+                    href="https://eto.tech/tool-docs/chipexplorer"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Supply Chain Explorer: Advanced Chips
+                  </a>
+                </p>
+                <p>
+                  <strong>
+                    Blog post:
+                  </strong>
+                  <a
+                    href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Introducing the Supply Chain Explorer
+                  </a>
+                </p>
+                <p>
+                  <strong>
+                    Blog post:
+                  </strong>
+                  <a
+                    href="https://eto.tech/blog/five-takeaways-chip-supply-chain"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Five quick takeaways on the chip supply chain
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiTypography-root MuiTypography-p sidebar-title css-37jdci-MuiTypography-root"
+          >
+            Quick guide
+          </div>
+          <div
+            class="MuiTypography-root MuiTypography-p sidebar-content css-37jdci-MuiTypography-root"
+          >
+            <div>
+              <div>
+                <div
+                  style="padding-bottom: 15px;"
+                >
+                  Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
+                </div>
+                <div>
+                  Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="children"
+          />
         </div>
       </div>
       <div
         class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 filter-bar css-ee20y-MuiPaper-root"
-        style="position: sticky; top: 0px; z-index: 10;"
+        style="position: sticky; top: 0px; z-index: 20;"
       >
         <div>
           <div
             class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-standard MuiFormLabel-colorPrimary MuiFormLabel-filled css-1c2i806-MuiFormLabel-root-MuiInputLabel-root"
-              data-shrink="true"
-              id="Choose-filter-label"
+              id="Highlight-by-label"
             >
-              Choose filter
+              Highlight by
             </label>
             <div
               class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root"
@@ -93,9 +188,9 @@ exports[`Dashboard renders correctly 1`] = `
               <div
                 aria-expanded="false"
                 aria-haspopup="listbox"
-                aria-labelledby="Choose-filter-label Choose-filter"
+                aria-labelledby="Highlight-by-label Highlight-by"
                 class="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
-                id="Choose-filter"
+                id="Highlight-by"
                 role="button"
                 tabindex="0"
               >
@@ -132,9 +227,36 @@ exports[`Dashboard renders correctly 1`] = `
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
+        <div
+          class="user-feedback-wrapper"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="warn-icon"
+                data-mui-internal-clone-element="true"
+                data-testid="WarningIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
       </div>
       <div
-        style="display: inline-block; min-width: 700px; padding: 0px 45px; text-align: center;"
+        style="display: inline-block; text-align: center; background-color: white;"
       >
         <div
           class="map-background"
@@ -146,13 +268,13 @@ exports[`Dashboard renders correctly 1`] = `
                   class="stage-node-wrapper"
                 >
                   <div
-                    class="stage-border uncolored"
+                    class="uncolored"
                     style="height: 20px;"
                   />
                   <div
-                    class="stage-node stage-border"
+                    class="stage-node "
                     id="S1"
-                    style="padding-top: 10px; text-align: left;"
+                    style="text-align: left;"
                   >
                     <h3
                       class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
@@ -162,7 +284,7 @@ exports[`Dashboard renders correctly 1`] = `
                     </h3>
                     <button
                       class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                      style="vertical-align: top; display: inline-block; padding: 0px;"
+                      style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
                     >
@@ -178,6 +300,7 @@ exports[`Dashboard renders correctly 1`] = `
                           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
                         />
                       </svg>
+                       General overview
                     </button>
                   </div>
                 </div>
@@ -198,11 +321,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Logic chip design: Advanced CPUs
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: Advanced CPUs
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       />
@@ -213,6 +338,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -225,7 +351,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -235,7 +361,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -252,6 +378,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -303,11 +430,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Logic chip design: Discrete GPUs
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: Discrete GPUs
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       />
@@ -318,6 +447,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -330,7 +460,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -340,7 +470,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -357,6 +487,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -398,6 +529,15 @@ exports[`Dashboard renders correctly 1`] = `
                   </div>
                 </div>
                 <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="stage-border"
+              >
+                <div
                   class="graph-node-wrapper"
                 >
                   <div
@@ -408,11 +548,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Logic chip design: FPGAs
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: FPGAs
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       />
@@ -423,6 +565,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -435,7 +578,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -445,7 +588,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -462,6 +605,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -513,11 +657,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Logic chip design: AI ASICs
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: AI ASICs
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       />
@@ -528,6 +674,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -540,7 +687,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -550,7 +697,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -567,6 +714,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -607,6 +755,9 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
             </div>
             <div>
@@ -654,19 +805,23 @@ exports[`Dashboard renders correctly 1`] = `
               </div>
               <div
                 class="stage-border uncolored"
-              />
+              >
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
               <div>
                 <div
                   class="stage-node-wrapper"
                 >
                   <div
-                    class="stage-border uncolored"
+                    class="uncolored"
                     style="height: 20px;"
                   />
                   <div
-                    class="stage-node stage-border"
+                    class="stage-node "
                     id="S2"
-                    style="padding-top: 10px; text-align: left;"
+                    style="text-align: left;"
                   >
                     <h3
                       class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
@@ -676,7 +831,7 @@ exports[`Dashboard renders correctly 1`] = `
                     </h3>
                     <button
                       class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                      style="vertical-align: top; display: inline-block; padding: 0px;"
+                      style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
                     >
@@ -692,6 +847,7 @@ exports[`Dashboard renders correctly 1`] = `
                           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
                         />
                       </svg>
+                       General overview
                     </button>
                   </div>
                 </div>
@@ -710,11 +866,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Wafer and photomask handling
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Wafer and photomask handling
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -738,45 +896,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="fill-rule: evenodd; margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Wafer handlers
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N12"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -813,6 +933,46 @@ exports[`Dashboard renders correctly 1`] = `
                             class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                           />
                         </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N11"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wafer handlers
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -828,11 +988,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Deposition
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Deposition
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -868,6 +1030,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N88"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -880,7 +1043,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -890,7 +1053,87 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Deposition materials
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic gases
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N26"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -906,6 +1149,7 @@ exports[`Dashboard renders correctly 1`] = `
                             <div>
                               <div
                                 class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N8"
                               >
                                 <p
                                   class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -945,6 +1189,7 @@ exports[`Dashboard renders correctly 1`] = `
                             <div>
                               <div
                                 class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N9"
                               >
                                 <p
                                   class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -984,6 +1229,7 @@ exports[`Dashboard renders correctly 1`] = `
                             <div>
                               <div
                                 class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N17"
                               >
                                 <p
                                   class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1012,7 +1258,7 @@ exports[`Dashboard renders correctly 1`] = `
                                     </svg>
                                   </span>
                                   <span>
-                                    Ion implanter
+                                    Ion implanters
                                   </span>
                                 </p>
                               </div>
@@ -1023,45 +1269,7 @@ exports[`Dashboard renders correctly 1`] = `
                             <div>
                               <div
                                 class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                              >
-                                <p
-                                  class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                                >
-                                  <span
-                                    class="graph-node-icon"
-                                    style="margin-left: 10px;"
-                                  >
-                                    <svg
-                                      aria-hidden="true"
-                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                      focusable="false"
-                                      style="fill-rule: evenodd; margin: -8px 0px;"
-                                      viewBox="0 0 24 24"
-                                    >
-                                      <svg
-                                        id="a"
-                                        viewBox="0 0 44 44"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          class="b"
-                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                        />
-                                      </svg>
-                                    </svg>
-                                  </span>
-                                  <span>
-                                    Wafer marking systems
-                                  </span>
-                                </p>
-                              </div>
-                              <div
-                                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                              />
-                            </div>
-                            <div>
-                              <div
-                                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N10"
                               >
                                 <p
                                   class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1103,6 +1311,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1115,7 +1324,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -1125,85 +1334,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Deposition materials
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Electronic gases
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -1220,6 +1351,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N36"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1256,45 +1388,6 @@ exports[`Dashboard renders correctly 1`] = `
                             class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                           />
                         </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="fill-rule: evenodd; margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Chemical vapor deposition tools
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1310,11 +1403,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Process control
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Process control
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -1338,45 +1433,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="fill-rule: evenodd; margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Wafer inspection equipment
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N62"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1416,6 +1473,87 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N64"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Process monitoring equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N61"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wafer inspection equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N63"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1452,49 +1590,13 @@ exports[`Dashboard renders correctly 1`] = `
                             class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                           />
                         </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="fill-rule: evenodd; margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Process monitoring and curve tracing equipment
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
               <div
                 class="stage-border"
@@ -1510,11 +1612,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Photolithography
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Photolithography
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -1550,6 +1654,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N33"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1562,7 +1667,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -1572,13 +1677,13 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
                               </span>
                               <span>
-                                Advanced photomask
+                                Advanced photomasks
                               </span>
                             </p>
                           </div>
@@ -1588,6 +1693,7 @@ exports[`Dashboard renders correctly 1`] = `
                             <div>
                               <div
                                 class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N28"
                               >
                                 <p
                                   class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1629,6 +1735,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1641,7 +1748,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -1651,46 +1758,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Photoresist
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -1707,6 +1775,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N31"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1719,7 +1788,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -1729,7 +1798,47 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Photoresists
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -1746,6 +1855,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N19"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1785,6 +1895,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N32"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1825,6 +1936,9 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
               <div
                 class="stage-border"
@@ -1840,11 +1954,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Etch and clean
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Etch and clean
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -1880,6 +1996,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1892,7 +2009,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -1902,7 +2019,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -1919,6 +2036,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1931,7 +2049,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -1941,7 +2059,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -1958,6 +2076,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N55"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -1998,6 +2117,9 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
               <div
                 class="stage-border"
@@ -2013,11 +2135,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Chemical mechanical planarization
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Chemical mechanical planarization
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -2053,6 +2177,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N90"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2065,7 +2190,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -2075,13 +2200,13 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
                               </span>
                               <span>
-                                Chemical mechanical planarization materials
+                                CMP materials
                               </span>
                             </p>
                           </div>
@@ -2092,6 +2217,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2104,7 +2230,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -2114,7 +2240,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -2131,6 +2257,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2143,7 +2270,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -2153,7 +2280,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -2170,6 +2297,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N86"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2210,19 +2338,22 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
               <div>
                 <div
                   class="stage-node-wrapper"
                 >
                   <div
-                    class="stage-border uncolored"
+                    class="uncolored"
                     style="height: 20px;"
                   />
                   <div
-                    class="stage-node stage-border"
+                    class="stage-node "
                     id="S3"
-                    style="padding-top: 10px; text-align: left;"
+                    style="text-align: left;"
                   >
                     <h3
                       class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
@@ -2232,7 +2363,7 @@ exports[`Dashboard renders correctly 1`] = `
                     </h3>
                     <button
                       class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-                      style="vertical-align: top; display: inline-block; padding: 0px;"
+                      style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
                     >
@@ -2248,6 +2379,7 @@ exports[`Dashboard renders correctly 1`] = `
                           d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
                         />
                       </svg>
+                       General overview
                     </button>
                   </div>
                 </div>
@@ -2266,11 +2398,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Assembly and packaging
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Assembly and packaging
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -2306,6 +2440,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2318,7 +2453,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -2328,7 +2463,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -2345,6 +2480,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N100"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2357,7 +2493,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   aria-hidden="true"
                                   class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
                                   focusable="false"
-                                  style="margin: -8px 0px;"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
                                   viewBox="0 0 24 24"
                                 >
                                   <svg
@@ -2367,7 +2503,7 @@ exports[`Dashboard renders correctly 1`] = `
                                   >
                                     <path
                                       class="b"
-                                      d="M31.94,10.08H15.23c-1.02,0-2.43,.23-3.39,1.32-.62,.7-.84,1.54-.84,2.09,0,.21,.07,.4,.21,.56,.13,.15,.32,.26,.52,.28,1.58,.22,1.81,.32,1.81,1.28v14.04c0,1.13,.45,2.21,1.24,3.01,.79,.8,1.87,1.25,2.99,1.25h10.15c1.12,0,2.2-.45,2.99-1.25,.79-.8,1.24-1.88,1.24-3.01V13.49c0-.67,.39-1.45,.53-1.67h0s.03-.05,.04-.07c.11-.15,.27-.37,.27-.69,0-.57-.48-.98-1.06-.98Zm-19.03,2.72c.28-.47,.91-1.01,2.34-1.01h15.57c-.19,.47-.36,1.07-.36,1.7v3.4H15.23v-1.28c0-1.99-1.13-2.56-2.32-2.82Z"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
                                     />
                                   </svg>
                                 </svg>
@@ -2384,6 +2520,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N70"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2423,45 +2560,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="fill-rule: evenodd; margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                Dicing tools
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N72"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2501,6 +2600,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N71"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2529,7 +2629,7 @@ exports[`Dashboard renders correctly 1`] = `
                                 </svg>
                               </span>
                               <span>
-                                Packaging tools
+                                Dicing tools
                               </span>
                             </p>
                           </div>
@@ -2540,6 +2640,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N77"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2579,6 +2680,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N76"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2607,7 +2709,7 @@ exports[`Dashboard renders correctly 1`] = `
                                 </svg>
                               </span>
                               <span>
-                                Chemical mechanical planarization tools
+                                Packaging tools
                               </span>
                             </p>
                           </div>
@@ -2619,6 +2721,9 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
               <div
                 class="stage-border"
@@ -2634,11 +2739,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Testing
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Testing
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -2674,45 +2781,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
-                          >
-                            <p
-                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
-                            >
-                              <span
-                                class="graph-node-icon"
-                                style="margin-left: 0px;"
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                  focusable="false"
-                                  style="fill-rule: evenodd; margin: -8px 0px;"
-                                  viewBox="0 0 24 24"
-                                >
-                                  <svg
-                                    id="a"
-                                    viewBox="0 0 44 44"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      class="b"
-                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                    />
-                                  </svg>
-                                </svg>
-                              </span>
-                              <span>
-                                SoC test equipment
-                              </span>
-                            </p>
-                          </div>
-                          <div
-                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
-                          />
-                        </div>
-                        <div>
-                          <div
-                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N81"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2752,6 +2821,47 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N83"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Handlers and probes
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N82"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2791,6 +2901,7 @@ exports[`Dashboard renders correctly 1`] = `
                         <div>
                           <div
                             class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N80"
                           >
                             <p
                               class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
@@ -2819,7 +2930,7 @@ exports[`Dashboard renders correctly 1`] = `
                                 </svg>
                               </span>
                               <span>
-                                Handlers and probes
+                                SoC test equipment
                               </span>
                             </p>
                           </div>
@@ -2831,6 +2942,9 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
               <div
                 class="stage-border uncolored"
@@ -2846,11 +2960,13 @@ exports[`Dashboard renders correctly 1`] = `
                     <div
                       style="text-align: left;"
                     >
-                      <h3
-                        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                      >
-                        Finished logic chip
-                      </h3>
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Finished logic chip
+                        </h3>
+                      </div>
                       <div
                         class="graph-node-connections-text"
                       >
@@ -2870,6 +2986,9 @@ exports[`Dashboard renders correctly 1`] = `
                     </div>
                   </div>
                 </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
               </div>
             </div>
           </div>
@@ -2879,64 +2998,98 @@ exports[`Dashboard renders correctly 1`] = `
     <div
       class="eto-footer"
     >
-      <img
+      <div
         class="footer-brand"
-        src="test-file-stub"
-        style="height: 90px;"
-      />
+      >
+        <a
+          href="https://eto.tech/"
+          rel="noopener"
+          target="_blank"
+        >
+          <img
+            src="test-file-stub"
+            style="height: 90px;"
+          />
+        </a>
+        <a
+          href="https://cset.georgetown.edu"
+          rel="noopener"
+          style="vertical-align: top;"
+          target="_blank"
+        >
+          <img
+            alt="Center for Security and Emerging Technology logo"
+            id="footer-cset-logo"
+            src="test-file-stub"
+          />
+        </a>
+      </div>
       <div
         class="subscribe"
       >
-        <label>
-          Subscribe for updates
-        </label>
-        <p>
-          Sign up for our newsletter to receive the latest news and announcements.
-        </p>
-        <iframe
-          height="40px"
-          src="https://georgetown.az1.qualtrics.com/jfe/form/SV_3k5r7WVcUqmHF30?domain=localhost&page=http://localhost/"
-          style="border: 0px;"
-          width="100%"
-        />
+        <div
+          style="margin: 0px auto;"
+        >
+          <div
+            style="margin-bottom: 0.75rem;"
+          >
+            <label>
+              Subscribe for updates
+            </label>
+          </div>
+          <p>
+            Sign up for our newsletter to receive the latest news and announcements.
+          </p>
+          <iframe
+            height="40px"
+            src="https://georgetown.az1.qualtrics.com/jfe/form/SV_3k5r7WVcUqmHF30?domain=localhost&page=http://localhost/"
+            style="border: 0px;"
+            width="100%"
+          />
+        </div>
       </div>
       <div
         class="contact"
       >
-        <label>
-          Contact
-        </label>
-        <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="mailto:cset_eto@georgetown.edu"
-          rel="noopener"
-          target="_blank"
+        <div
+          class="contact-inner"
         >
-          cset_eto@georgetown.edu
-        </a>
-      </div>
-      <div
-        class="social-media"
-      >
-        <label>
-          Social media
-        </label>
-        <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="https://twitter.com/CSETGeorgetown"
-          rel="noopener"
-          target="_blank"
-        >
-          Twitter
-        </a>
-        <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="https://www.linkedin.com/company/georgetown-cset"
-          rel="noopener"
-          target="_blank"
-        >
-          LinkedIn
-        </a>
+          <div>
+            <label>
+              Contact
+            </label>
+          </div>
+          <div>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+              href="https://twitter.com/EmergingTechObs"
+              rel="noopener"
+              target="_blank"
+            >
+              Twitter
+            </a>
+          </div>
+          <div>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+              href="https://www.linkedin.com/company/emerging-technology-observatory"
+              rel="noopener"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          </div>
+          <div>
+            <a
+              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+              href="mailto:cset_eto@georgetown.edu"
+              rel="noopener"
+              target="_blank"
+            >
+              cset_eto@georgetown.edu
+            </a>
+          </div>
+        </div>
       </div>
       <div
         class="line"
@@ -2950,19 +3103,11 @@ exports[`Dashboard renders correctly 1`] = `
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="/"
+          href="https://eto.tech/tou"
           rel="noopener"
           target="_blank"
         >
-          Privacy Policy
-        </a>
-        <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="/"
-          rel="noopener"
-          target="_blank"
-        >
-          Cookie Policy
+          Terms of Use
         </a>
         <span
           style="margin-left: auto;"
@@ -2979,7 +3124,13 @@ exports[`Gradient Legend renders empty correctly 1`] = `
 <DocumentFragment>
   <div
     class="gradient-legend"
-  />
+  >
+    <span
+      class="init-text"
+    >
+      Legend:
+    </span>
+  </div>
 </DocumentFragment>
 `;
 
@@ -2988,10 +3139,18 @@ exports[`Gradient Legend renders with boxes correctly 1`] = `
   <div
     class="gradient-legend"
   >
-    selected countries have 0% market share
+    <span
+      class="init-text"
+    >
+      Legend:
+    </span>
+    selected countries have less market share
     <div
       class="gradient-box-wrapper"
     >
+      <div
+        class="gradient-box unhighlighted"
+      />
       <div
         class="gradient-box gradient-20"
       />
@@ -3008,7 +3167,7 @@ exports[`Gradient Legend renders with boxes correctly 1`] = `
         class="gradient-box gradient-100"
       />
     </div>
-    selected countries have &gt;80% market share
+    selected countries have more market share
   </div>
 </DocumentFragment>
 `;
