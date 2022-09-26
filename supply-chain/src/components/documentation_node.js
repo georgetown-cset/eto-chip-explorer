@@ -201,9 +201,11 @@ const DocumentationNode = (props) => {
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
           <div className="lower-bar-wrapper">
+            <div className="caption">
             {imgFileName !== undefined && meta.image_license &&
-              <div className="caption" dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
+              <div dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
             }
+            </div>
             <div className="lower-icons-wrapper">
               <HelpTooltip text="Download PDF">
                 <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
@@ -211,8 +213,8 @@ const DocumentationNode = (props) => {
                   <DownloadIcon />
                 </a>
               </HelpTooltip>
-              <UserFeedback context={nodeToMeta[currSelectedNode]["name"]}
-                            mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+              <UserFeedback context={currSelectedNode} userIdentifier={nodeToMeta[currSelectedNode]["name"]}
+                            mkFormSubmitLink={(context, queryParams, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.1308802318=${queryParams}&entry.135985468=${context}&submit=Submit`}/>
             </div>
           </div>
         </div>

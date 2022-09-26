@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import InfoIcon from '@mui/icons-material/Info';
 import {nodeToMeta} from "../../data/graph";
 
