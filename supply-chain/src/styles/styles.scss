@@ -355,9 +355,12 @@ a {
     }
   }
   .provision-heading {
-    font-family: GTZirkonBold;
+    font-weight: 900;
     margin-top: 10px;
     display: inline-block;
+    &.MuiTypography-root {
+      font-size: 1.25rem;
+    }
   }
   .graph-node, .graph-sub-node {
     width: 100%;

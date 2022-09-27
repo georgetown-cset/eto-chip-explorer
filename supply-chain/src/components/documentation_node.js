@@ -209,7 +209,7 @@ const DocumentationNode = (props) => {
             <div className="lower-icons-wrapper">
               <HelpTooltip text="Download PDF">
                 <a href={pdfs.filter(i => i.name === node)[0].publicURL} download
-                  onClick={() => window.plausible && window.plausible('Download PDF', {props: {node: '${node}'}})}>
+                  onClick={() => window.plausible && window.plausible('Download PDF', {props: {node: node}})}>
                   <DownloadIcon />
                 </a>
               </HelpTooltip>
