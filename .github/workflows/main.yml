@@ -35,13 +35,17 @@ jobs:
       with:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
+    - name: 'Set up Google Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v0'
+    - name: 'gcloud auth login'
+      id: 'gcloud'
+      run: |-
+        gcloud auth login
     - name: Setup node
       uses: actions/setup-node@v3
       with:
         node-version: '18'
     - name: Test with jest
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: "${{ steps.auth.outputs.credentials_file_path }}"
       run: |
         cd supply-chain
         npm run artifactregistry-login
