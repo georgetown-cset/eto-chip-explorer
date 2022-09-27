@@ -35,6 +35,7 @@ jobs:
       with:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
+        export_environment_variables: true
     - name: Setup node
       uses: actions/setup-node@v3
       with:
