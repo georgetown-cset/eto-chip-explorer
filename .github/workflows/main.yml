@@ -12,7 +12,7 @@ jobs:
       id-token: 'write'
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -35,12 +35,13 @@ jobs:
       with:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
-        export_environment_variables: true
     - name: Setup node
       uses: actions/setup-node@v3
       with:
         node-version: '18'
     - name: Test with jest
+      env:
+        GOOGLE_APPLICATION_CREDENTIALS: "${{ steps.auth.outputs.credentials_file_path }}"
       run: |
         cd supply-chain
         npm run artifactregistry-login
