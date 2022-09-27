@@ -10,8 +10,6 @@ exports[`Dashboard renders correctly 1`] = `
     >
       <a
         href="https://eto.tech/"
-        rel="noopener"
-        target="_blank"
       >
         <img
           src="test-file-stub"
@@ -20,36 +18,29 @@ exports[`Dashboard renders correctly 1`] = `
       </a>
       <div
         class="header-links"
+        style=""
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-          href="https://eto.tech/about"
-          rel="noopener"
-          target="_blank"
-        >
-          About
-        </a>
-        <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/tools"
-          rel="noopener"
-          target="_blank"
         >
-          Our data products
+          Tools
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/blog"
-          rel="noopener"
-          target="_blank"
         >
           Blog
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/support"
+        >
+          Support
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/feedback"
-          rel="noopener"
-          target="_blank"
         >
           Submit feedback
         </a>
@@ -75,7 +66,7 @@ exports[`Dashboard renders correctly 1`] = `
           >
             <div
               class="MuiTypography-root MuiTypography-h4 title css-5lbw0b-MuiTypography-root"
-              style="width: 100%;"
+              style="width: calc(100% - 140px);"
             >
               Supply Chain Explorer
             </div>
@@ -85,6 +76,18 @@ exports[`Dashboard renders correctly 1`] = `
               <a
                 href="https://eto.tech/tool-docs/chipexplorer"
               >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                  data-testid="InfoIcon"
+                  focusable="false"
+                  style="margin-bottom: -5px; margin-right: 5px;"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  />
+                </svg>
                 Documentation
               </a>
             </div>
@@ -93,7 +96,7 @@ exports[`Dashboard renders correctly 1`] = `
             class="description-wrapper"
           >
             <div
-              class="MuiTypography-root MuiTypography-h6 description css-2ulfj5-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h6 description  css-2ulfj5-MuiTypography-root"
             >
               <div>
                 An interactive, high-level visualization of the supply chain for advanced computer chips, designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing this critical resource. Use the Explorer to learn how advanced logic chips are made, who makes them, and the tools, materials, and processes that are involved.
@@ -150,12 +153,12 @@ exports[`Dashboard renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="MuiTypography-root MuiTypography-p sidebar-title css-37jdci-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-p sidebar-title desktop css-37jdci-MuiTypography-root"
           >
             Quick guide
           </div>
           <div
-            class="MuiTypography-root MuiTypography-p sidebar-content css-37jdci-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-p sidebar-content desktop css-37jdci-MuiTypography-root"
           >
             <div>
               <div>
@@ -171,15 +174,91 @@ exports[`Dashboard renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="children"
-          />
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-1elwnq4-MuiPaper-root-MuiAccordion-root"
+          >
+            <div
+              aria-controls="sidebar-content"
+              aria-expanded="false"
+              class="MuiButtonBase-root MuiAccordionSummary-root MuiAccordionSummary-gutters css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root"
+              id="sidebar-header"
+              role="button"
+              tabindex="0"
+            >
+              <div
+                class="MuiAccordionSummary-content MuiAccordionSummary-contentGutters css-o4b71y-MuiAccordionSummary-content"
+              >
+                <div
+                  class="MuiTypography-root MuiTypography-p sidebar-title css-37jdci-MuiTypography-root"
+                >
+                  Quick guide
+                </div>
+              </div>
+              <div
+                class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ExpandMoreIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+              style="min-height: 0px;"
+            >
+              <div
+                class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+              >
+                <div
+                  class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                >
+                  <div
+                    aria-labelledby="sidebar-header"
+                    class="MuiAccordion-region"
+                    id="sidebar-content"
+                    role="region"
+                  >
+                    <div
+                      class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
+                    >
+                      <div
+                        class="MuiTypography-root MuiTypography-p sidebar-content css-37jdci-MuiTypography-root"
+                      >
+                        <div>
+                          <div>
+                            <div
+                              style="padding-bottom: 15px;"
+                            >
+                              Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
+                            </div>
+                            <div>
+                              Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div
         class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 filter-bar css-ee20y-MuiPaper-root"
         style="position: sticky; top: 0px; z-index: 20;"
       >
-        <div>
+        <div
+          class="dropdown"
+        >
           <div
             class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
           >
@@ -244,14 +323,14 @@ exports[`Dashboard renders correctly 1`] = `
             <span>
               <svg
                 aria-hidden="true"
-                class="warn-icon"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-i4bv87-MuiSvgIcon-root"
                 data-mui-internal-clone-element="true"
-                data-testid="WarningIcon"
+                data-testid="FeedbackOutlinedIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
                 <path
-                  d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+                  d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17l-.59.59-.58.58V4h16v12zm-9-4h2v2h-2zm0-6h2v4h-2z"
                 />
               </svg>
             </span>
@@ -3005,30 +3084,50 @@ exports[`Dashboard renders correctly 1`] = `
       class="eto-footer"
     >
       <div
-        class="footer-brand"
+        class="brand"
       >
-        <a
-          href="https://eto.tech/"
-          rel="noopener"
-          target="_blank"
+        <div
+          class="logos"
         >
-          <img
-            src="test-file-stub"
-            style="height: 90px;"
-          />
-        </a>
-        <a
-          href="https://cset.georgetown.edu"
-          rel="noopener"
-          style="vertical-align: top;"
-          target="_blank"
+          <a
+            href="https://eto.tech/"
+          >
+            <img
+              src="test-file-stub"
+              style="height: 90px;"
+            />
+          </a>
+          <a
+            href="https://cset.georgetown.edu"
+          >
+            <img
+              alt="Center for Security and Emerging Technology logo"
+              class="cset-logo"
+              src="test-file-stub"
+            />
+          </a>
+        </div>
+        <div
+          class="text-blurb"
         >
-          <img
-            alt="Center for Security and Emerging Technology logo"
-            id="footer-cset-logo"
-            src="test-file-stub"
-          />
-        </a>
+          ETO is a project of the 
+          <a
+            href="https://cset.georgetown.edu/"
+            rel="noopener"
+            target="_blank"
+          >
+            Center for Security and Emerging Technology
+          </a>
+           at 
+          <a
+            href="https://www.georgetown.edu/"
+            rel="noopener"
+            target="_blank"
+          >
+            Georgetown University
+          </a>
+          .
+        </div>
       </div>
       <div
         class="subscribe"
@@ -3046,55 +3145,92 @@ exports[`Dashboard renders correctly 1`] = `
           <p>
             Sign up for our newsletter to receive the latest news and announcements.
           </p>
-          <iframe
-            height="40px"
-            src="https://georgetown.az1.qualtrics.com/jfe/form/SV_3k5r7WVcUqmHF30?domain=localhost&page=http://localhost/"
-            style="border: 0px;"
-            width="100%"
-          />
+          <div
+            class="email-form"
+          >
+            <div
+              style="display: flex; align-items: center; width: 100%;"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+                style="margin-right: 0.5rem; width: 100%;"
+              >
+                <div
+                  class="MuiInputBase-root MuiInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1aa5qj0-MuiInputBase-root-MuiInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                    id=":r2:"
+                    placeholder="you@example.com"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+              css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="ArrowForwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
         </div>
       </div>
       <div
         class="contact"
       >
-        <div
-          class="contact-inner"
-        >
-          <div>
-            <label>
-              Contact
-            </label>
-          </div>
-          <div>
-            <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-              href="https://twitter.com/EmergingTechObs"
-              rel="noopener"
-              target="_blank"
-            >
-              Twitter
-            </a>
-          </div>
-          <div>
-            <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-              href="https://www.linkedin.com/company/emerging-technology-observatory"
-              rel="noopener"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-          </div>
-          <div>
-            <a
-              class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
-              href="mailto:cset_eto@georgetown.edu"
-              rel="noopener"
-              target="_blank"
-            >
-              cset_eto@georgetown.edu
-            </a>
-          </div>
+        <div>
+          <label>
+            Contact
+          </label>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="https://twitter.com/EmergingTechObs"
+            rel="noopener"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="https://www.linkedin.com/company/emerging-technology-observatory"
+            rel="noopener"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="mailto:cset_eto@georgetown.edu"
+            rel="noopener"
+            target="_blank"
+          >
+            Email
+          </a>
         </div>
       </div>
       <div
@@ -3110,16 +3246,32 @@ exports[`Dashboard renders correctly 1`] = `
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/tou"
-          rel="noopener"
-          target="_blank"
         >
-          Terms of Use
+          Terms of Use and Privacy Policy
         </a>
-        <span
-          style="margin-left: auto;"
+        <div
+          class="copyright-notice"
         >
-          ETO, 2022
-        </span>
+          <div>
+            ETO, 2022
+          </div>
+          <div
+            class="divider"
+          >
+            |
+          </div>
+          <div>
+            Designed by 
+            <a
+              href="https://and-now.co.uk/"
+              rel="noopener"
+              style="white-space: nowrap;"
+              target="_blank"
+            >
+              And-Now
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
