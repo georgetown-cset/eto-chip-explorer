@@ -49,5 +49,6 @@ jobs:
     - name: Test with jest
       run: |
         cd supply-chain
+        npm run artifactregistry-login
         npm install --force
         npm run test
