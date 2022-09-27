@@ -48,6 +48,7 @@ jobs:
         node-version: '18'
     - name: Test with jest
       run: |
+        python3 scripts/preprocess.py
         cd supply-chain
         npm run artifactregistry-login
         npm install --force
