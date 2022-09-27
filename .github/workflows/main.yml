@@ -35,12 +35,13 @@ jobs:
       with:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
-    - name: 'Set up Google Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v0'
-    - name: 'gcloud auth login'
-      id: 'gcloud'
-      run: |-
-        gcloud auth login
+        token_format: 'access_token'
+    - name: 'Log into Artifact Registry'
+      uses: 'docker/login-action@v1'
+      with:
+        registry: 'gcr.io'
+        username: 'oauth2accesstoken'
+        password: '${{ steps.auth.outputs.access_token }}'
     - name: Setup node
       uses: actions/setup-node@v3
       with:
@@ -48,6 +49,5 @@ jobs:
     - name: Test with jest
       run: |
         cd supply-chain
-        npm run artifactregistry-login
         npm install --force
         npm run test
