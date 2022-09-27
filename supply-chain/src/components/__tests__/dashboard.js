@@ -62,7 +62,7 @@ describe("Dashboard", () => {
     expect(screen.queryAllByText("Some text about N35")).not.toBeNull();
 
     // Close the documentation panel
-    fireEvent.click(screen.getByText("Clear Filters"));
+    fireEvent.click(screen.getByText("Clear Highlights"));
     expect(screen.getAllByText("Crystal growing furnaces").length).toEqual(1);
   });
 

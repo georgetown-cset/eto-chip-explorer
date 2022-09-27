@@ -24,6 +24,9 @@ module.exports = {
   ),
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn().mockReturnValue({
+    site: {
+      buildTime: "January 31, 2022"
+    },
     images: {
       nodes: [
         {id: "N8", name: "N8.JPG", publicURL: "../src/images/nodes/N8.jpg"},

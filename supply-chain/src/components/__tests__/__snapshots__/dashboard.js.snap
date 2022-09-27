@@ -140,6 +140,12 @@ exports[`Dashboard renders correctly 1`] = `
                     Five quick takeaways on the chip supply chain
                   </a>
                 </p>
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                  style="padding-bottom: 20px;"
+                >
+                  Last updated on January 31, 2022. Data current as of 2019.
+                </p>
               </div>
             </div>
           </div>
@@ -222,7 +228,7 @@ exports[`Dashboard renders correctly 1`] = `
           tabindex="0"
           type="button"
         >
-          Clear Filters
+          Clear Highlights
           <span
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
