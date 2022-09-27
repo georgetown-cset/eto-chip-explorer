@@ -39,7 +39,7 @@ jobs:
     - name: 'Log into Artifact Registry'
       uses: 'docker/login-action@v1'
       with:
-        registry: 'gcr.io'
+        registry: us-east1-docker.pkg.dev
         username: 'oauth2accesstoken'
         password: '${{ steps.auth.outputs.access_token }}'
     - name: Setup node
