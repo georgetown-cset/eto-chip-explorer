@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import { useStaticQuery, graphql } from "gatsby"
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
@@ -100,6 +101,14 @@ const Dashboard = () => {
     setDocumentationPanelToggle(false);
   };
 
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        buildTime(formatString: "MMMM DD, YYYY")
+      }
+    }
+  `);
+
   const getInputNodes = () => {
     const inputNodes = {};
     for(let node in nodeToMeta){
@@ -157,7 +166,7 @@ const Dashboard = () => {
       if (window.plausible) {
         window.plausible('Apply Filter', {props: {
           filter: highlighter,
-          filterValues: JSON.stringify(filterToValues[highlighter])
+          filterValues: JSON.stringify(currFilterValues[highlighter])
         }});
       }
     } else {
@@ -412,6 +421,7 @@ const Dashboard = () => {
         <p><strong>Documentation: </strong> <a href="https://eto.tech/tool-docs/chipexplorer" target="_blank" rel="noopener">Supply Chain Explorer: Advanced Chips</a></p>
         <p><strong>Blog post: </strong><a href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips" target="_blank" rel="noopener">Introducing the Supply Chain Explorer</a></p>
         <p><strong>Blog post: </strong><a href="https://eto.tech/blog/five-takeaways-chip-supply-chain" target="_blank" rel="noopener">Five quick takeaways on the chip supply chain</a></p>
+        <Typography component={"p"} variant={"body2"} style={{paddingBottom: "20px"}}>Last updated on {data.site.buildTime}. Data current as of 2019.</Typography>
       </div>} sidebarTitle={"Quick guide"} sidebarContent={
       <div>
         <div>
@@ -443,10 +453,10 @@ const Dashboard = () => {
         </div>
       }
       <Button id="clear-button" variant={"outlined"} onClick={(evt) => handleChange(evt, null)}>
-        Clear Filters
+        Clear Highlights
       </Button>
       <UserFeedback context={"the Supply Chain Explorer"}
-        mkFormSubmitLink={(context, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.135985468=${context}&submit=Submit`}/>
+        mkFormSubmitLink={(context, queryParams, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.1308802318=${queryParams}&entry.135985468=${context}&submit=Submit`}/>
       {
         highlighterFilter !== '' && highlighterFilter !== FILTER_INPUT &&
         <GradientLegend type={highlighterFilter} numSelected={Array.isArray(filterValues[highlighterFilter]) ? filterValues[highlighterFilter].length : 1}/>

@@ -3,6 +3,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { ThemeProvider, createTheme } from '@mui/material';
 /* Set the body margin and padding to 0 here */
 import "../styles/styles.scss";
+import {ErrorBoundary} from "@eto/eto-ui-components";
 
 const theme = createTheme({
   components: {
@@ -17,7 +18,7 @@ const theme = createTheme({
 
 const Dashboard = React.lazy(() => import("../components/dashboard"));
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   useEffect(() => {
     document.title = "Supply Chain Explorer: Advanced Chips";
     document.documentElement.lang = "en";
@@ -27,7 +28,9 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       {(typeof window !== "undefined") &&
         <React.Suspense fallback={<div style={{textAlign: "center"}}><CircularProgress/></div>}>
-          <Dashboard/>
+          <ErrorBoundary>
+            <Dashboard/>
+          </ErrorBoundary>
         </React.Suspense>
       }
     </ThemeProvider>

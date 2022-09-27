@@ -64,10 +64,11 @@ a {
 
   #clear-button {
     text-transform: uppercase;
-    font-size: 12px;
-    color: var(--orange);
-    font-family: GTZirkonRegular;
-    border-color: var(--orange);
+    background-color: var(--bright-blue);
+    box-shadow: none;
+    border-radius: 0px;
+    color: white;
+    font-family: GTZirkonRegular, sans-serif;
     font-size: 1rem;
   }
 
@@ -354,9 +355,12 @@ a {
     }
   }
   .provision-heading {
-    font-family: GTZirkonBold;
+    font-weight: 900;
     margin-top: 10px;
     display: inline-block;
+    &.MuiTypography-root {
+      font-size: 1.25rem;
+    }
   }
   .graph-node, .graph-sub-node {
     width: 100%;
@@ -530,9 +534,10 @@ span.bold {
   width: calc(100% - 20px);
   #clear-button {
     margin-left: 10px;
+    margin-bottom: 7px;
   }
   .user-feedback-wrapper {
-    margin-left: auto;
+    margin-left: 10px;
   }
   .gradient-legend {
     position: relative;
@@ -629,11 +634,12 @@ span.bold {
     padding: 20px 20px 35px 20px;
     width: calc(100% - 40px);
     #clear-button {
+      margin-bottom: 7px;
       margin-left: 20px;
     }
     .gradient-legend {
       position: absolute;
-      bottom: 10px;
+      bottom: 5px;
       .gradient-box-wrapper {
         display: block;
       }
