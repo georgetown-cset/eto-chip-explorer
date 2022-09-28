@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import {InfoCard, AppWrapper, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
+import {InfoCard, AppWrapper, Autocomplete, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
@@ -154,7 +154,7 @@ const Dashboard = () => {
         }
       // Then, we check this condition for the single-selects, by comparing values directly.
       } else {
-        if (defaultFilterValues[fv] !== currFilterValues[fv]){
+        if (currFilterValues[fv] && defaultFilterValues[fv] !== currFilterValues[fv]){
           highlighter = fv;
           hasHighlighter = true;
         }
@@ -443,7 +443,7 @@ const Dashboard = () => {
       />
       {(DROPDOWN_FILTERS.includes(filterValues[FILTER_CHOOSE])) &&
         <div key={dropdownParams[filterValues[FILTER_CHOOSE]].label}>
-          <Dropdown
+          <Autocomplete
             inputLabel={dropdownParams[filterValues[FILTER_CHOOSE]].label}
             selected={filterValues[dropdownParams[filterValues[FILTER_CHOOSE]].key]}
             setSelected={(evt) => handleChange(evt, dropdownParams[filterValues[FILTER_CHOOSE]].key)}
