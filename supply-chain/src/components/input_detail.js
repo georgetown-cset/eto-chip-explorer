@@ -130,7 +130,7 @@ const InputDetail = (props) => {
     variantCountries, variantOrgs} = props;
 
   const graphCountries = [];
-  const undefinedProvisionCountries = [];
+  let undefinedProvisionCountries = [];
   const hasCountries = (countries !== null) && (countries !== undefined) && (countries.length > 0);
   if (hasCountries) {
     for (let i = 0; i < countries.length; i++) {
@@ -143,6 +143,8 @@ const InputDetail = (props) => {
         graphCountries.push(countries[i]);
       }
     }
+    undefinedProvisionCountries = undefinedProvisionCountries.sort(
+      (a, b) => (a.country.toLowerCase()).localeCompare(b.country.toLowerCase()));
   }
 
   const mkCountryTableRows = () => {
