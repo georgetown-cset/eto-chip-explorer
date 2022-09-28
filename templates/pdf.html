@@ -63,7 +63,7 @@
     			{{node_description}}
     		</p>
 			{% if node_countries.get("graph") or node_countries.get("undefined") %}
-				<h4>Country provision</h4>
+				<h4>Supplier countries</h4>
 			{% endif %}
 			{% if node_countries.get("graph") %}
 				<img src="{{images_folder}}/{{node_id}}.jpg"/>
@@ -85,6 +85,30 @@
 						<li>{{node_org}}</li>
 					{% endfor %}
 				</ul>
+			{% endif %}
+			{% if node_variants %}
+				<h4>Variants</h4>
+				<ul>
+					{% for node_variant in node_variants %}
+						<li>{{node_variant}}</li>
+					{% endfor %}
+				</ul>
+				{% if node_countries_variants %}
+					<h4>Supplier countries (Variants)</h4>
+					<ul>
+						{% for node_country in node_countries_variants %}
+							<li>{{node_country}}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+				{% if node_orgs_variants %}
+					<h4>Notable supplier companies (Variants)</h4>
+					<ul>
+						{% for node_org in node_orgs_variants %}
+							<li>{{node_org}}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			{% endif %}
     	</div>
 	</div>
