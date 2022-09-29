@@ -3,6 +3,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import SvgIcon from '@mui/material/SvgIcon';
 import { variants } from "../../data/graph";
+import { NODE_TYPE_PARENT } from "../components/input_list";
 
 // List of all subvariants a parent variant has
 const getAllSubVariantsList = () => {
@@ -20,6 +21,18 @@ const getAllSubVariantsList = () => {
 };
 const allSubVariantsList = getAllSubVariantsList();
 
+export const getBackgroundGradient = (highlight, highlights) => {
+  let backgroundGradient = "gradient-100";
+  if (highlights && highlights.type === "gradient") {
+    if (highlight <= 20) {backgroundGradient = "gradient-20"}
+    else if (highlight <= 40) {backgroundGradient = "gradient-40"}
+    else if (highlight <= 60) {backgroundGradient = "gradient-60"}
+    else if (highlight <= 80) {backgroundGradient = "gradient-80"}
+    else {backgroundGradient = "gradient-100"};
+  }
+  return backgroundGradient;
+}
+
 const CogIcon = (props) => {
   return (
     <SvgIcon {...props} style={{fillRule: "evenodd", margin: "-8px 0px"}}>
@@ -31,14 +44,12 @@ const CogIcon = (props) => {
 }
 
 const getIcon = (nodeType, style, selected=false) => {
-  if (nodeType === "parent") {
+  if (nodeType === NODE_TYPE_PARENT) {
     if (selected) {
       return <CircleIcon style={{...style, fontSize: "0.6rem", margin: "0px 0.4rem"}}/>;
     } else {
       return <CircleOutlinedIcon style={{...style, fontSize: "0.6rem", margin: "0px 0.4rem"}}/>;
     }
-  } else if (nodeType === "tools") {
-    return <CogIcon style={style}/>;
   } else {
     return <CogIcon style={style}/>;
   }

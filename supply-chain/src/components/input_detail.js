@@ -5,7 +5,7 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
-import { VariantsList } from "./documentation_node";
+import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
 
