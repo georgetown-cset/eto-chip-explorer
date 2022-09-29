@@ -9,7 +9,7 @@ const ProcessDetail = (props) => {
   const {selectedNode, descriptions, orgs, orgMeta} = props;
 
   return (
-    <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
+    <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}} className="process-detail">
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>

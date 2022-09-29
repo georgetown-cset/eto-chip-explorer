@@ -1,0 +1,3331 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="app-wrapper"
+  >
+    <header
+      class="eto-header"
+    >
+      <a
+        href="https://eto.tech/"
+      >
+        <img
+          src="test-file-stub"
+          style="height: 120px;"
+        />
+      </a>
+      <div
+        class="header-links"
+        style=""
+      >
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/tools"
+        >
+          Tools
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/blog"
+        >
+          Blog
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/support"
+        >
+          Support
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/feedback"
+        >
+          Submit feedback
+        </a>
+      </div>
+    </header>
+    <div
+      style="display: flex; flex-direction: column;"
+    >
+      <div
+        style="max-width: 1500px;"
+      >
+        <div
+          class="info-card-wrapper undefined"
+        >
+          <div
+            class="accent"
+          />
+          <div
+            class="bottom-border"
+          />
+          <div
+            class="title-wrapper"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h4 title css-5lbw0b-MuiTypography-root"
+              style="width: calc(100% - 140px);"
+            >
+              Supply Chain Explorer
+            </div>
+            <div
+              class="documentation-link"
+            >
+              <a
+                href="https://eto.tech/tool-docs/chipexplorer"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                  data-testid="InfoIcon"
+                  focusable="false"
+                  style="margin-bottom: -5px; margin-right: 5px;"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  />
+                </svg>
+                Documentation
+              </a>
+            </div>
+          </div>
+          <div
+            class="description-wrapper"
+          >
+            <div
+              class="MuiTypography-root MuiTypography-h6 description  css-2ulfj5-MuiTypography-root"
+            >
+              <div>
+                An interactive, high-level visualization of the supply chain for advanced computer chips, designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing this critical resource. Use the Explorer to learn how advanced logic chips are made, who makes them, and the tools, materials, and processes that are involved.
+                <div
+                  class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+                  style="padding-top: 15px;"
+                >
+                  Related resources
+                </div>
+                <p>
+                  <strong>
+                    Documentation: 
+                  </strong>
+                   
+                  <a
+                    href="https://eto.tech/tool-docs/chipexplorer"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Supply Chain Explorer: Advanced Chips
+                  </a>
+                </p>
+                <p>
+                  <strong>
+                    Blog post: 
+                  </strong>
+                  <a
+                    href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Introducing the Supply Chain Explorer
+                  </a>
+                </p>
+                <p>
+                  <strong>
+                    Blog post: 
+                  </strong>
+                  <a
+                    href="https://eto.tech/blog/five-takeaways-chip-supply-chain"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Five quick takeaways on the chip supply chain
+                  </a>
+                </p>
+                <p
+                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                  style="padding-bottom: 20px;"
+                >
+                  Last updated on January 31, 2022. Data current as of 2019.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiTypography-root MuiTypography-p sidebar-title desktop css-37jdci-MuiTypography-root"
+          >
+            Quick guide
+          </div>
+          <div
+            class="MuiTypography-root MuiTypography-p sidebar-content desktop css-37jdci-MuiTypography-root"
+          >
+            <div>
+              <div>
+                <div
+                  style="padding-bottom: 15px;"
+                >
+                  Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
+                </div>
+                <div>
+                  Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-1elwnq4-MuiPaper-root-MuiAccordion-root"
+          >
+            <div
+              aria-controls="sidebar-content"
+              aria-expanded="false"
+              class="MuiButtonBase-root MuiAccordionSummary-root MuiAccordionSummary-gutters css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root"
+              id="sidebar-header"
+              role="button"
+              tabindex="0"
+            >
+              <div
+                class="MuiAccordionSummary-content MuiAccordionSummary-contentGutters css-o4b71y-MuiAccordionSummary-content"
+              >
+                <div
+                  class="MuiTypography-root MuiTypography-p sidebar-title css-37jdci-MuiTypography-root"
+                >
+                  Quick guide
+                </div>
+              </div>
+              <div
+                class="MuiAccordionSummary-expandIconWrapper css-yw020d-MuiAccordionSummary-expandIconWrapper"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                  data-testid="ExpandMoreIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div
+              class="MuiCollapse-root MuiCollapse-vertical MuiCollapse-hidden css-bz4dnt-MuiCollapse-root"
+              style="min-height: 0px;"
+            >
+              <div
+                class="MuiCollapse-wrapper MuiCollapse-vertical css-smkl36-MuiCollapse-wrapper"
+              >
+                <div
+                  class="MuiCollapse-wrapperInner MuiCollapse-vertical css-9l5vo-MuiCollapse-wrapperInner"
+                >
+                  <div
+                    aria-labelledby="sidebar-header"
+                    class="MuiAccordion-region"
+                    id="sidebar-content"
+                    role="region"
+                  >
+                    <div
+                      class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
+                    >
+                      <div
+                        class="MuiTypography-root MuiTypography-p sidebar-content css-37jdci-MuiTypography-root"
+                      >
+                        <div>
+                          <div>
+                            <div
+                              style="padding-bottom: 15px;"
+                            >
+                              Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
+                            </div>
+                            <div>
+                              Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 filter-bar css-ee20y-MuiPaper-root"
+        style="position: sticky; top: 0px; z-index: 20;"
+      >
+        <div
+          class="dropdown"
+        >
+          <div
+            class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
+          >
+            <label
+              id="Highlight-by-label"
+            >
+              Highlight by
+            </label>
+            <div
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="Highlight-by-label Highlight-by"
+                class="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+                id="Highlight-by"
+                role="button"
+                tabindex="0"
+              >
+                None
+              </div>
+              <input
+                aria-hidden="true"
+                class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                tabindex="-1"
+                value="None"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          id="clear-button"
+          tabindex="0"
+          type="button"
+        >
+          Clear Highlights
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <div
+          class="user-feedback-wrapper"
+        >
+          <button
+            class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+            tabindex="0"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-i4bv87-MuiSvgIcon-root"
+                data-mui-internal-clone-element="true"
+                data-testid="FeedbackOutlinedIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17l-.59.59-.58.58V4h16v12zm-9-4h2v2h-2zm0-6h2v4h-2z"
+                />
+              </svg>
+            </span>
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+      </div>
+      <div
+        style="display: inline-block; text-align: center; background-color: white;"
+      >
+        <div
+          class="map-background"
+        >
+          <div>
+            <div>
+              <div>
+                <div
+                  class="stage-node-wrapper"
+                >
+                  <div
+                    class="uncolored"
+                    style="height: 20px;"
+                  />
+                  <div
+                    class="stage-node "
+                    id="S1"
+                    style="text-align: left;"
+                  >
+                    <h3
+                      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                      style="text-align: left; padding-left: 5px; display: inline-block;"
+                    >
+                      Design
+                    </h3>
+                    <button
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      style="padding: 0px 10px 0px 0px;"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="InfoIcon"
+                        focusable="false"
+                        style="vertical-align: top;"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                        />
+                      </svg>
+                       General overview
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N1"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: Advanced CPUs
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      />
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Core intellectual property
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic design automation software
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N2"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: Discrete GPUs
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      />
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Core intellectual property
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic design automation software
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N3"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: FPGAs
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      />
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Core intellectual property
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic design automation software
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N4"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Logic chip design: AI ASICs
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      />
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N85"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Core intellectual property
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N84"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic design automation software
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+            </div>
+            <div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+              </div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+              </div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+              </div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+                <span />
+                <span />
+              </div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+                <span />
+                <span />
+              </div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+                <span />
+                <span />
+              </div>
+              <div
+                class="graph-arrows-wrapper"
+              >
+                <span />
+                <span />
+              </div>
+              <div
+                class="stage-border uncolored"
+              >
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div>
+                <div
+                  class="stage-node-wrapper"
+                >
+                  <div
+                    class="uncolored"
+                    style="height: 20px;"
+                  />
+                  <div
+                    class="stage-node "
+                    id="S2"
+                    style="text-align: left;"
+                  >
+                    <h3
+                      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                      style="text-align: left; padding-left: 5px; display: inline-block;"
+                    >
+                      Fabrication
+                    </h3>
+                    <button
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      style="padding: 0px 10px 0px 0px;"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="InfoIcon"
+                        focusable="false"
+                        style="vertical-align: top;"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                        />
+                      </svg>
+                       General overview
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N59"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Wafer and photomask handling
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Deposition, Photolithography, Etch and clean, Chemical mechanical planarization
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N12"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Photomask handlers
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N11"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wafer handlers
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N35"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Deposition
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Wafer and photomask handling, Process control
+                          </span>
+                        </div>
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Photolithography
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N88"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Deposition materials
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic gases
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N26"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wafer
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          >
+                            <div>
+                              <div
+                                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N8"
+                              >
+                                <p
+                                  class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                                >
+                                  <span
+                                    class="graph-node-icon"
+                                    style="margin-left: 10px;"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                      focusable="false"
+                                      style="fill-rule: evenodd; margin: -8px 0px;"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        id="a"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
+                                      </svg>
+                                    </svg>
+                                  </span>
+                                  <span>
+                                    Crystal growing furnaces
+                                  </span>
+                                </p>
+                              </div>
+                              <div
+                                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                              />
+                            </div>
+                            <div>
+                              <div
+                                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N9"
+                              >
+                                <p
+                                  class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                                >
+                                  <span
+                                    class="graph-node-icon"
+                                    style="margin-left: 10px;"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                      focusable="false"
+                                      style="fill-rule: evenodd; margin: -8px 0px;"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        id="a"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
+                                      </svg>
+                                    </svg>
+                                  </span>
+                                  <span>
+                                    Crystal machining tools
+                                  </span>
+                                </p>
+                              </div>
+                              <div
+                                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                              />
+                            </div>
+                            <div>
+                              <div
+                                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N17"
+                              >
+                                <p
+                                  class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                                >
+                                  <span
+                                    class="graph-node-icon"
+                                    style="margin-left: 10px;"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                      focusable="false"
+                                      style="fill-rule: evenodd; margin: -8px 0px;"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        id="a"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
+                                      </svg>
+                                    </svg>
+                                  </span>
+                                  <span>
+                                    Ion implanters
+                                  </span>
+                                </p>
+                              </div>
+                              <div
+                                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                              />
+                            </div>
+                            <div>
+                              <div
+                                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N10"
+                              >
+                                <p
+                                  class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                                >
+                                  <span
+                                    class="graph-node-icon"
+                                    style="margin-left: 10px;"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                      focusable="false"
+                                      style="fill-rule: evenodd; margin: -8px 0px;"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        id="a"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
+                                      </svg>
+                                    </svg>
+                                  </span>
+                                  <span>
+                                    Wafer bonding and aligning tools
+                                  </span>
+                                </p>
+                              </div>
+                              <div
+                                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wet chemicals
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N36"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Deposition tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N60"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Process control
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Deposition, Photolithography, Etch and clean, Chemical mechanical planarization
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N62"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Photomask inspection and repair tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N64"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Process monitoring equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N61"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wafer inspection equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N63"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wafer level packaging inspection tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N25"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Photolithography
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Deposition, Wafer and photomask handling, Process control
+                          </span>
+                        </div>
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Etch and clean
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N33"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Advanced photomasks
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          >
+                            <div>
+                              <div
+                                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                                id="N28"
+                              >
+                                <p
+                                  class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                                >
+                                  <span
+                                    class="graph-node-icon"
+                                    style="margin-left: 10px;"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                      focusable="false"
+                                      style="fill-rule: evenodd; margin: -8px 0px;"
+                                      viewBox="0 0 24 24"
+                                    >
+                                      <svg
+                                        id="a"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                      >
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
+                                      </svg>
+                                    </svg>
+                                  </span>
+                                  <span>
+                                    Maskless lithography equipment
+                                  </span>
+                                </p>
+                              </div>
+                              <div
+                                class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic gases
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N31"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Photoresists
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wet chemicals
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N19"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Advanced photolithography equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N32"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Resist processing tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N46"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Etch and clean
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Photolithography, Wafer and photomask handling, Process control
+                          </span>
+                        </div>
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Chemical mechanical planarization
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic gases
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wet chemicals
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N55"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Etching and cleaning tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N57"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Chemical mechanical planarization
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Etch and clean, Wafer and photomask handling, Process control
+                          </span>
+                        </div>
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Assembly and packaging
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N90"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                CMP materials
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic gases
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N92"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Wet chemicals
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N86"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Chemical mechanical planarization tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div>
+                <div
+                  class="stage-node-wrapper"
+                >
+                  <div
+                    class="uncolored"
+                    style="height: 20px;"
+                  />
+                  <div
+                    class="stage-node "
+                    id="S3"
+                    style="text-align: left;"
+                  >
+                    <h3
+                      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                      style="text-align: left; padding-left: 5px; display: inline-block;"
+                    >
+                      Assembly, testing, and packaging (ATP)
+                    </h3>
+                    <button
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      style="padding: 0px 10px 0px 0px;"
+                      tabindex="0"
+                      type="button"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                        data-testid="InfoIcon"
+                        focusable="false"
+                        style="vertical-align: top;"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                        />
+                      </svg>
+                       General overview
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N69"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Assembly and packaging
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Chemical mechanical planarization
+                          </span>
+                        </div>
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Testing
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N91"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Electronic gases
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N100"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Packaging materials
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N70"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Assembly inspection tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N72"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Bonding tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N71"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Dicing tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N77"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Integrated assembly tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N76"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Packaging tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div
+                class="stage-border"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N78"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Testing
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Assembly and packaging
+                          </span>
+                        </div>
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Dependent processes:
+                          </span>
+                          <span>
+                            Finished logic chip
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                        style="padding-right: 10px;"
+                      >
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N81"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Burn-in test equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N83"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Handlers and probes
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N82"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                Linear and discrete testing tools
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                        <div>
+                          <div
+                            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-sub-node css-ee20y-MuiPaper-root"
+                            id="N80"
+                          >
+                            <p
+                              class="MuiTypography-root MuiTypography-body1 node-heading css-ahj2mt-MuiTypography-root"
+                            >
+                              <span
+                                class="graph-node-icon"
+                                style="margin-left: 0px;"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                  focusable="false"
+                                  style="fill-rule: evenodd; margin: -8px 0px;"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <svg
+                                    id="a"
+                                    viewBox="0 0 44 44"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      class="b"
+                                      d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                    />
+                                  </svg>
+                                </svg>
+                              </span>
+                              <span>
+                                SoC test equipment
+                              </span>
+                            </p>
+                          </div>
+                          <div
+                            class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+              <div
+                class="stage-border uncolored"
+              >
+                <div
+                  class="graph-node-wrapper"
+                >
+                  <div
+                    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation0 graph-node css-ee20y-MuiPaper-root"
+                    id="N99"
+                    style="margin: 20px 25px 20px 25px; display: inline-block; width: 320px;"
+                  >
+                    <div
+                      style="text-align: left;"
+                    >
+                      <div>
+                        <h3
+                          class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                        >
+                          Finished logic chip
+                        </h3>
+                      </div>
+                      <div
+                        class="graph-node-connections-text"
+                      >
+                        <div
+                          class="connection-text"
+                        >
+                          <span
+                            class="bold"
+                          >
+                            Input processes:
+                          </span>
+                          <span>
+                            Testing
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="documentation-node-widescreen"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="eto-footer"
+    >
+      <div
+        class="brand"
+      >
+        <div
+          class="logos"
+        >
+          <a
+            href="https://eto.tech/"
+          >
+            <img
+              src="test-file-stub"
+              style="height: 90px;"
+            />
+          </a>
+          <a
+            href="https://cset.georgetown.edu"
+          >
+            <img
+              alt="Center for Security and Emerging Technology logo"
+              class="cset-logo"
+              src="test-file-stub"
+            />
+          </a>
+        </div>
+        <div
+          class="text-blurb"
+        >
+          ETO is a project of the 
+          <a
+            href="https://cset.georgetown.edu/"
+            rel="noopener"
+            target="_blank"
+          >
+            Center for Security and Emerging Technology
+          </a>
+           at 
+          <a
+            href="https://www.georgetown.edu/"
+            rel="noopener"
+            target="_blank"
+          >
+            Georgetown University
+          </a>
+          .
+        </div>
+      </div>
+      <div
+        class="subscribe"
+      >
+        <div
+          style="margin: 0px auto;"
+        >
+          <div
+            style="margin-bottom: 0.75rem;"
+          >
+            <label>
+              Subscribe for updates
+            </label>
+          </div>
+          <p>
+            Sign up for our newsletter to receive the latest news and announcements.
+          </p>
+          <div
+            class="email-form"
+          >
+            <div
+              style="display: flex; align-items: center; width: 100%;"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+                css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+                style="margin-right: 0.5rem; width: 100%;"
+              >
+                <div
+                  class="MuiInputBase-root MuiInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1aa5qj0-MuiInputBase-root-MuiInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                    id=":r2:"
+                    placeholder="you@example.com"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+              css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+              tabindex="0"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="ArrowForwardIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                />
+              </svg>
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="contact"
+      >
+        <div>
+          <label>
+            Contact
+          </label>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="https://twitter.com/EmergingTechObs"
+            rel="noopener"
+            target="_blank"
+          >
+            Twitter
+          </a>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="https://www.linkedin.com/company/emerging-technology-observatory"
+            rel="noopener"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="mailto:cset_eto@georgetown.edu"
+            rel="noopener"
+            target="_blank"
+          >
+            Email
+          </a>
+        </div>
+      </div>
+      <div
+        class="line"
+      >
+        <div
+          class="line-internal"
+        />
+      </div>
+      <div
+        class="links"
+      >
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/tou"
+        >
+          Terms of Use and Privacy Policy
+        </a>
+        <div
+          class="copyright-notice"
+        >
+          <div>
+            ETO, 2022
+          </div>
+          <div
+            class="divider"
+          >
+            |
+          </div>
+          <div>
+            Designed by 
+            <a
+              href="https://and-now.co.uk/"
+              rel="noopener"
+              style="white-space: nowrap;"
+              target="_blank"
+            >
+              And-Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Gradient Legend renders empty correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="gradient-legend"
+  >
+    <span
+      class="init-text"
+    >
+      Legend:
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Gradient Legend renders with boxes correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="gradient-legend"
+  >
+    <span
+      class="init-text"
+    >
+      Legend:
+    </span>
+    selected countries have less market share
+    <div
+      class="gradient-box-wrapper"
+    >
+      <div
+        class="gradient-box unhighlighted"
+      />
+      <div
+        class="gradient-box gradient-20"
+      />
+      <div
+        class="gradient-box gradient-40"
+      />
+      <div
+        class="gradient-box gradient-60"
+      />
+      <div
+        class="gradient-box gradient-80"
+      />
+      <div
+        class="gradient-box gradient-100"
+      />
+    </div>
+    selected countries have more market share
+  </div>
+</DocumentFragment>
+`;
