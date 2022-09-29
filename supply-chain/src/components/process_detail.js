@@ -13,7 +13,7 @@ const ProcessDetail = (props) => {
       <MDXProvider components={mdxComponents}>
         <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
       </MDXProvider>
-      <OrgListing orgs={orgs} orgMeta={orgMeta} />
+      <OrgListing orgs={orgs} orgMeta={orgMeta} variant={false} />
     </div>
   )
 };

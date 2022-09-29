@@ -76,20 +76,39 @@ const BarGraph = (props) => {
   );
 };
 
+// Order table rows so items show up
+// alphabetically vertically
+const _mkOrderedTableRows = (items) => {
+  const numRows = Math.ceil(items.length/2);
+  const rows = [];
+  for(let idx = 0; idx < numRows; idx += 1){
+    const rowItems = [items[idx]];
+    if(numRows + idx < items.length){
+      rowItems.push(items[numRows + idx])
+    }
+    rows.push(rowItems);
+  }
+  return rows
+}
+
 export const OrgListing = (props) => {
-  const {orgs, orgMeta} = props;
+  const {orgs, variantOrgs=undefined, orgMeta, variant} = props;
 
   const mkOrgTableRows = () => {
-    const orgNames = orgs === undefined ? [] : Object.keys(orgs);
-    const filteredOrgNames = orgNames.filter(org => org in orgMeta);
-    filteredOrgNames.sort((a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
-    const numRows = Math.ceil(filteredOrgNames.length/2);
+    let orgNodes;
+    // Get correct list of org nodes
+    if (variant === true) {
+      orgNodes = Object.keys(variantOrgs);
+    } else {
+      orgNodes = orgs === undefined ? [] : Object.keys(orgs);
+    }
+    // Filter and reorder the list of orgs
+    const filteredOrgNodes = orgNodes.filter(org => org in orgMeta);
+    filteredOrgNodes.sort((a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
+    const orderedTableRows = _mkOrderedTableRows(filteredOrgNodes);
+    // Construct the table
     const rows = [];
-    for(let idx = 0; idx < numRows; idx += 1){
-      const rowOrgs = [filteredOrgNames[idx]];
-      if(numRows + idx < filteredOrgNames.length){
-        rowOrgs.push(filteredOrgNames[numRows + idx])
-      }
+    orderedTableRows.forEach(rowOrgs => {
       rows.push(
         <tr key={rowOrgs.join("-")}>
           {rowOrgs.map((org) => (
@@ -97,22 +116,27 @@ export const OrgListing = (props) => {
             <Typography component="p">
               {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
               {orgMeta[org]["name"]}
-              {orgs[org] !== "Major" && <span> ({orgs[org]} market share)</span>}
+              {orgs !== undefined && orgs[org] !== "Major" && <span> ({orgs[org]} market share)</span>}
+              {variant &&
+                <HelpTooltip iconType="more-info" text={"Provides: " + variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")} />
+              }
             </Typography>
           </td>
           ))}
         </tr>
       )
-    }
+    });
     return rows;
   };
 
+  const title = "Notable supplier companies" + (variant ? " (Variants)" : "");
+
   return (
     <div>
-    {(orgs !== undefined) &&
+    {(variant ? Object.keys(variantOrgs).length > 0 : orgs !== undefined) &&
       <div>
         <Typography component={"p"} variant={"h6"} className="provision-heading">
-         Notable supplier companies
+         {title}
         </Typography>
         <table>
           <tbody>
@@ -193,32 +217,6 @@ const InputDetail = (props) => {
     return rows;
   }
 
-  const mkVariantOrgTableRows = () => {
-    const rows = [];
-    const variantOrgNames = Object.keys(variantOrgs).sort(
-      (a, b) => ('' + orgMeta[a]["name"].toLowerCase()).localeCompare(orgMeta[b]["name"].toLowerCase()));
-    for (let idx = 0; idx < variantOrgNames.length; idx += 2){
-      const rowOrgs = [variantOrgNames[idx]];
-      if(idx+1 < variantOrgNames.length){
-        rowOrgs.push(variantOrgNames[idx+1])
-      }
-      rows.push(
-        <tr key={idx}>
-          {rowOrgs.map((org) => (
-            <td key={org}>
-              <Typography component="p">
-                {orgMeta[org]["hq_flag"] && <HelpTooltip text={orgMeta[org]["hq_country"]}><span className="flag">{orgMeta[org]["hq_flag"]}</span></HelpTooltip>}
-                {orgMeta[org].name} &nbsp;
-                <HelpTooltip iconType="more-info" text={"Provides: " + variantOrgs[org].map(e => nodeToMeta[e].name).join(", ")} />
-              </Typography>
-            </td>
-          ))}
-        </tr>
-      )
-    }
-    return rows;
-  }
-
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <MDXProvider components={mdxComponents}>
@@ -263,7 +261,7 @@ const InputDetail = (props) => {
           }
         </div>
       }
-      <OrgListing orgs={orgs} orgMeta={orgMeta} />
+      <OrgListing orgs={orgs} orgMeta={orgMeta} variant={false} />
       {variants[selectedNode] &&
         <div>
           <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
@@ -280,18 +278,7 @@ const InputDetail = (props) => {
               </table>
             </div>
           }
-          {Object.keys(variantOrgs).length > 0 &&
-            <div>
-              <Typography component={"p"} variant={"h6"} className="provision-heading">
-                Notable supplier companies (Variants)
-              </Typography>
-              <table>
-                <tbody>
-                  {mkVariantOrgTableRows()}
-                </tbody>
-              </table>
-            </div>
-          }
+          <OrgListing orgs={orgs} variantOrgs={variantOrgs} orgMeta={orgMeta} variant={true} />
         </div>
       }
     </div>

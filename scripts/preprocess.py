@@ -462,6 +462,16 @@ class Preprocess:
                     subVariants[nodeWithVariants].extend(subVariants[nodeVariant])
         return subVariants
 
+    @staticmethod
+    def _preprocess_variants_list(variants_list):
+        # Remove inapplicable text about negligible providers
+        variants_list = [re.sub(r"\W\(negligible.*?\)", "", c) for c in variants_list]
+        # Remove duplicates
+        variants_list = list(set(variants_list))
+        # Sort alphabetically
+        variants_list.sort()
+        return variants_list
+
     def _mk_pdf_for_node(
         self,
         node_id,
@@ -483,6 +493,7 @@ class Preprocess:
                 node_countries["graph"], output_dir, node_id
             )
         node_orgs = node_to_org_desc_list.get(node_id)
+        # Preprocess variant information.
         node_variants = [
             self.node_to_meta[variant_node]["name"]
             for variant_node in self.variants.get(node_id, [])
@@ -494,10 +505,8 @@ class Preprocess:
                 node_to_country_provision.get(variant_node, {}).get("all_names", [])
             )
             node_orgs_variants.extend(node_to_org_desc_list.get(variant_node, []))
-        node_countries_variants = list(set(node_countries_variants))
-        node_countries_variants.sort()
-        node_orgs_variants = list(set(node_orgs_variants))
-        node_orgs_variants.sort()
+        self._preprocess_variants_list(node_countries_variants)
+        self._preprocess_variants_list(node_countries_variants)
         # Create PDF
         template = env.get_template("pdf.html")
         cluster_page = template.render(
