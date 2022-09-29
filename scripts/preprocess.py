@@ -469,7 +469,7 @@ class Preprocess:
         # Remove duplicates
         variants_list = list(set(variants_list))
         # Sort alphabetically
-        variants_list.sort()
+        variants_list.sort(key=lambda v: v.lower())
         return variants_list
 
     def _mk_pdf_for_node(
@@ -498,6 +498,8 @@ class Preprocess:
             self.node_to_meta[variant_node]["name"]
             for variant_node in self.variants.get(node_id, [])
         ]
+        node_variants.sort()
+
         node_countries_variants = []
         node_orgs_variants = []
         for variant_node in sub_variants.get(node_id, []):
@@ -505,8 +507,10 @@ class Preprocess:
                 node_to_country_provision.get(variant_node, {}).get("all_names", [])
             )
             node_orgs_variants.extend(node_to_org_desc_list.get(variant_node, []))
-        self._preprocess_variants_list(node_countries_variants)
-        self._preprocess_variants_list(node_countries_variants)
+        node_countries_variants = self._preprocess_variants_list(
+            node_countries_variants
+        )
+        node_orgs_variants = self._preprocess_variants_list(node_orgs_variants)
         # Create PDF
         template = env.get_template("pdf.html")
         cluster_page = template.render(
