@@ -23,8 +23,8 @@ const getInputList = (node) => {
   return allList;
 };
 
-// Recursive component to construct variants tree
 export const VariantsList = (props) => {
+  // Recursive component to construct variants tree
   const {node, currSelectedNode, inputType, updateSelected, parent, depth, ancestorSelected=false} = props;
   const thisNodeAncestorSelected = ancestorSelected || (node === currSelectedNode);
   return (
@@ -61,6 +61,7 @@ export const VariantsList = (props) => {
 }
 
 export const SubNode = (props) => {
+  // Recursive component to show inputs and sub-inputs
   const {nodeType, name, parent, showParent=false, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0, ancestorSelected=false} = props;
 
   return (
@@ -102,6 +103,7 @@ export const SubNode = (props) => {
 };
 
 export const NodeHeading = (props) => {
+  // Text for each graph node, including a gear icon, the node name, and optional variants dropdown icon
   const {nodeType, nodeId, currSelectedNode, name, depth=0, ancestorSelected=false} = props;
   const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
   return (
@@ -122,6 +124,7 @@ export const NodeHeading = (props) => {
 }
 
 export const InputList = (props) => {
+  // List of tools, materials, and variants used in graph node and documentation node
   const {currSelectedNode, parent, highlights, updateSelected, inDocumentation=false} = props;
 
   return (
