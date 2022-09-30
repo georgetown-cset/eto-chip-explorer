@@ -4,7 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
-import GraphNode, {MiniGraphNode, getBackgroundGradient} from "./graph_node";
+import GraphNode, {MiniGraphNode} from "./graph_node";
+import {getBackgroundGradient} from "../helpers/shared";
 import StageNode from "./stage_node";
 
 const Map = (props) => {

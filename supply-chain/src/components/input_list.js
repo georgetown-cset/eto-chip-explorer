@@ -1,6 +1,7 @@
 import React from "react";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { nodeToMeta, variants } from "../../data/graph";
 import { allSubVariantsList, getBackgroundGradient, getIcon } from "../helpers/shared";
 
@@ -30,8 +31,10 @@ export const VariantsList = (props) => {
     <div>
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
         <div>
-          <Typography className={"variants-heading" + (thisNodeAncestorSelected ? " selected-node-child" : "")}
-            component={"p"} style={{paddingLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
+          <Typography
+            className={"variants-heading" + (thisNodeAncestorSelected ? " selected-node-child" : "")}
+            component={"p"}
+            style={{paddingLeft: `${depth * 14}px`}}>Variants</Typography>
           {variants[node].sort(
             (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
           ).map((variant) =>
@@ -111,6 +114,9 @@ export const NodeHeading = (props) => {
     >
       <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
       <span>{name}</span>
+      {variants[nodeId] &&
+        <span className="variants-dropdown"><ArrowDropDownIcon /></span>
+      }
     </Typography>
   )
 }

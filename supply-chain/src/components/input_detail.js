@@ -267,7 +267,7 @@ const InputDetail = (props) => {
       {variants[selectedNode] &&
         <div>
           <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
-            updateSelected={updateSelected} parent={parent} />
+            updateSelected={updateSelected} parent={parent} depth={0} />
           {Object.keys(variantCountries).length > 0 &&
             <div>
               <Typography component={"p"} variant={"h6"} className="provision-heading">

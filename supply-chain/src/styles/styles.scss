@@ -146,7 +146,7 @@ a {
     font-size: 0.8rem;
     text-transform: uppercase;
     border-radius: 0px;
-    width: calc(10px + 100%);
+    width: 100%;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
@@ -266,6 +266,24 @@ a {
   margin-top: -15px;
 }
 
+.MuiPaper-root.documentation-node p.MuiTypography-root.variants-heading,
+.MuiPaper-root.graph-node p.MuiTypography-root.variants-heading {
+  font-size: 0.9rem;
+  text-transform: none;
+  text-indent: 0px;
+  font-family: GTZirkonBold;
+  padding-left: 25px;
+  &:hover {
+    text-decoration: none;
+    cursor: text;
+  }
+}
+
+.node-heading .variants-dropdown {
+  vertical-align: middle;
+  color: var(--bright-blue);
+}
+
 .MuiPaper-root.documentation-node {
   background-color: var(--grey-lightest);
   border-top: 1px solid var(--bright-blue);
@@ -325,7 +343,7 @@ a {
       &.selected-documentation-link {
         font-family: GTZirkonBold;
         background-color: var(--bright-blue-lighter);
-        .graph-node-icon {
+        .graph-node-icon, .variants-dropdown {
           color: var(--black);
         }
       }
@@ -337,12 +355,8 @@ a {
   .standalone-pane-heading p.MuiTypography-root {
     font-family: GTZirkonBold;
   }
-  .variants-heading {
-    font-family: GTZirkonBold;
-    padding-left: 20px;
-    &.selected-node-child {
-      background-color: var(--bright-blue-lighter);
-    }
+  .variants-heading.selected-node-child {
+    background-color: var(--bright-blue-lighter);
   }
   .input-detail {
     .variants-heading {
@@ -379,15 +393,6 @@ a {
       padding-left: 1.8rem;
       &:hover {
         text-decoration: underline;
-      }
-      &.variants-heading {
-        font-size: 0.9rem;
-        text-transform: none;
-        text-indent: 0px;
-        &:hover {
-          text-decoration: none;
-          cursor: text;
-        }
       }
     }
     &.standalone-pane-heading p.MuiTypography-root:hover {
