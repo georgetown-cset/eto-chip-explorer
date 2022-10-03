@@ -167,6 +167,11 @@ export const ProviderListing = (props) => {
   };
 
   const title = (isOrg ? "Notable supplier companies" : "Supplier Countries") + (variant ? " (Variants)" : "");
+  const helpText = <HelpTooltip text={
+    isOrg ? "Global companies with significant market share or otherwise notable capabilities." :
+    "Countries with significant global market share."}
+    style={{verticalAlign: "middle"}}
+  />
 
   const showTable = () => {
     return (variant === true) ? Object.keys(variantProviders).length > 0 : providers !== undefined
@@ -178,6 +183,7 @@ export const ProviderListing = (props) => {
       <div>
         <Typography component={"p"} variant={"h6"} className="provision-heading">
          {title}
+         {helpText}
         </Typography>
         <table>
           <tbody>
@@ -226,6 +232,7 @@ const InputDetail = (props) => {
             <div>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Supplier countries
+                <HelpTooltip text={"Countries with significant global market share."} style={{verticalAlign: "middle"}} />
               </Typography>
               <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
