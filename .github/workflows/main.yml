@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
-    name: PR tests
-
+    name: tests-pass
     runs-on: ubuntu-latest
 
     permissions:
