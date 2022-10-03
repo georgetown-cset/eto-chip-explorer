@@ -1,4 +1,5 @@
 import argparse
+import copy
 import csv
 import json
 import os
@@ -387,8 +388,10 @@ class Preprocess:
                     node_to_country_provision[node] = {
                         "graph": [],
                         "undefined": [],
+                        "all_names": [],
                     }
                 provision = self.country_provision[country][node]
+                node_to_country_provision[node]["all_names"].append(country)
                 if type(provision) == int:
                     node_to_country_provision[node]["graph"].append(
                         {"country": country, "value": provision}
@@ -396,7 +399,7 @@ class Preprocess:
                 else:
                     countryDesc = country
                     if provision == MINOR_PROVISION:
-                        countryDesc += " (negligible market share)"
+                        countryDesc += " (negligible)"
                     node_to_country_provision[node]["undefined"].append(countryDesc)
         for node in node_to_country_provision:
             node_to_country_provision[node]["graph"] = sorted(
@@ -405,6 +408,7 @@ class Preprocess:
                 reverse=True,
             )
             node_to_country_provision[node]["undefined"].sort()
+            node_to_country_provision[node]["all_names"].sort()
         return node_to_country_provision
 
     def _get_country_provision_graph(self, graph, output_dir, node_id):
@@ -450,6 +454,24 @@ class Preprocess:
             node_to_org_desc_list[node].sort()
         return node_to_org_desc_list
 
+    def _get_sub_variants(self):
+        subVariants = copy.deepcopy(self.variants)
+        for nodeWithVariants in subVariants:
+            for nodeVariant in subVariants[nodeWithVariants]:
+                if nodeVariant in subVariants:
+                    subVariants[nodeWithVariants].extend(subVariants[nodeVariant])
+        return subVariants
+
+    @staticmethod
+    def _preprocess_variants_list(variants_list):
+        # Remove inapplicable text about negligible providers
+        variants_list = [re.sub(r"\W\(negligible.*?\)", "", c) for c in variants_list]
+        # Remove duplicates
+        variants_list = list(set(variants_list))
+        # Sort alphabetically
+        variants_list.sort(key=lambda v: v.lower())
+        return variants_list
+
     def _mk_pdf_for_node(
         self,
         node_id,
@@ -457,6 +479,7 @@ class Preprocess:
         images_folder,
         node_to_country_provision,
         node_to_org_desc_list,
+        sub_variants,
         output_dir,
     ) -> None:
         """
@@ -470,6 +493,24 @@ class Preprocess:
                 node_countries["graph"], output_dir, node_id
             )
         node_orgs = node_to_org_desc_list.get(node_id)
+        # Preprocess variant information.
+        node_variants = [
+            self.node_to_meta[variant_node]["name"]
+            for variant_node in self.variants.get(node_id, [])
+        ]
+        node_variants.sort()
+
+        node_countries_variants = []
+        node_orgs_variants = []
+        for variant_node in sub_variants.get(node_id, []):
+            node_countries_variants.extend(
+                node_to_country_provision.get(variant_node, {}).get("all_names", [])
+            )
+            node_orgs_variants.extend(node_to_org_desc_list.get(variant_node, []))
+        node_countries_variants = self._preprocess_variants_list(
+            node_countries_variants
+        )
+        node_orgs_variants = self._preprocess_variants_list(node_orgs_variants)
         # Create PDF
         template = env.get_template("pdf.html")
         cluster_page = template.render(
@@ -478,6 +519,9 @@ class Preprocess:
             node_name=self.node_to_meta[node_id]["name"],
             node_countries=node_countries,
             node_orgs=node_orgs,
+            node_variants=node_variants,
+            node_countries_variants=node_countries_variants,
+            node_orgs_variants=node_orgs_variants,
             images_folder=images_folder,
         )
         pdfkit.from_string(
@@ -496,6 +540,7 @@ class Preprocess:
         """
         node_to_country_provision = self._get_node_to_country_provision()
         node_to_org_desc_list = self._get_node_to_org_desc_list()
+        sub_variants = self._get_sub_variants()
         images_folder = os.path.abspath(output_dir + "/images")
         print("Generating node pdfs...")
         with open(nodes_fi, encoding="utf-8-sig") as f:
@@ -507,6 +552,7 @@ class Preprocess:
                     images_folder,
                     node_to_country_provision,
                     node_to_org_desc_list,
+                    sub_variants,
                     output_dir,
                 )
         print("Generating stage pdfs...")
@@ -519,6 +565,7 @@ class Preprocess:
                     images_folder,
                     node_to_country_provision,
                     node_to_org_desc_list,
+                    sub_variants,
                     output_dir,
                 )
 
