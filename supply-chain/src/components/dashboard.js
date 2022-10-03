@@ -198,7 +198,7 @@ const Dashboard = () => {
       } else if (MULTI_FILTERS.includes(highlighter)) {
         let highlightFirst = undefined;
         for (const name of currFilterValues[highlighter]) {
-          // If name is "All", we ignore it
+          // If name is not one of the choices, we ignore it
           if (!(name in currMapping)) {
             continue;
           }
@@ -267,9 +267,9 @@ const Dashboard = () => {
   const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {
     [FILTER_CHOOSE]: "None",
-    [FILTER_INPUT]: "All",
-    [FILTER_COUNTRY]: ["All"],
-    [FILTER_ORG]: ["All"],
+    [FILTER_INPUT]: null,
+    [FILTER_COUNTRY]: [],
+    [FILTER_ORG]: [],
     [FILTER_CONCENTRATION]: false,
   };
   const filterToValues = {
@@ -289,16 +289,7 @@ const Dashboard = () => {
     if (key !== null) {
       // Keep the value of FILTER_CHOOSE until the user explicitly clears it
       updatedFilterValues[FILTER_CHOOSE] = filterValues[FILTER_CHOOSE];
-      if (MULTI_FILTERS.includes(key) && (val.length > 1)){
-        if(filterValues[key].includes("All")){
-          updatedFilterValues[key] = val.filter((v) => v !== "All");
-        } else {
-          // if the user has just added the all value, clear out the rest of the values
-          updatedFilterValues[key] = val.includes("All") ? ["All"] : val;
-        }
-      } else {
-        updatedFilterValues[key] = val;
-      }
+      updatedFilterValues[key] = val;
     }
     setFilterValues(updatedFilterValues);
     // If the chosen filter is FILTER_CONCENTRATION, set that value explicitly
@@ -329,19 +320,19 @@ const Dashboard = () => {
   };
 
   // Functions to interface with ETO dropdown component
-  const countryOptions = [{"val": "All", "text": "All"}];
+  const countryOptions = [];
   Object.keys(countryProvision).sort().filter((c) => c !== "Various").map((name) => (
     countryOptions.push({"val": name, "text": name})
   ));
 
-  const inputResourceOptions = [{"val": "All", "text": "All"}];
+  const inputResourceOptions = [];
   Object.keys(inputNodes).sort(
     (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
   ).map((name) => (
     inputResourceOptions.push({"val": name, "text": nodeToMeta[name]["name"]})
   ));
 
-  const organizationOptions = [{"val": "All", "text": "All"}];
+  const organizationOptions = [];
   Object.keys(orgProvision).sort(
     (a, b) => ('' + providerMeta[a]["name"]).localeCompare(providerMeta[b]["name"])
   ).map((name) => (
