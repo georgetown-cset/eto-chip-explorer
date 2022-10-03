@@ -288,7 +288,7 @@ const Map = (props) => {
     standaloneMinimapLayers.unshift(mkLayer(unattached, true, true, true));
     return (
       <div className="map-background">
-        {filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
+        {filterValues["input-resource"] && filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
           <DocumentationNode node={filterValues["input-resource"]} parent={null}
             descriptions={descriptions} images={images} pdfs={pdfs} isStage={false} standalone={true}
             updateSelected={setDocumentationPanelToggle} currSelectedNode={filterValues["input-resource"]}

@@ -200,23 +200,25 @@ const DocumentationNode = (props) => {
               <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
                         orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
           )}
-          <div className="lower-bar-wrapper">
-            <div className="caption">
-            {imgFileName !== undefined && meta.image_license &&
-              <div dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
-            }
+          {currSelectedNode !== null &&
+            <div className="lower-bar-wrapper">
+              <div className="caption">
+              {imgFileName !== undefined && meta.image_license &&
+                <div dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
+              }
+              </div>
+              <div className="lower-icons-wrapper">
+                <HelpTooltip text="Download PDF">
+                  <a href={pdfs.filter(i => i.name === currSelectedNode)[0]?.publicURL} download={meta["name"]}
+                    onClick={() => window.plausible && window.plausible('Download PDF', {props: {node: node}})}>
+                    <DownloadIcon />
+                  </a>
+                </HelpTooltip>
+                <UserFeedback context={currSelectedNode} userIdentifier={nodeToMeta[currSelectedNode]["name"]}
+                              mkFormSubmitLink={(context, queryParams, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.1308802318=${queryParams}&entry.135985468=${context}&submit=Submit`}/>
+              </div>
             </div>
-            <div className="lower-icons-wrapper">
-              <HelpTooltip text="Download PDF">
-                <a href={pdfs.filter(i => i.name === node)[0]?.publicURL} download
-                  onClick={() => window.plausible && window.plausible('Download PDF', {props: {node: node}})}>
-                  <DownloadIcon />
-                </a>
-              </HelpTooltip>
-              <UserFeedback context={currSelectedNode} userIdentifier={nodeToMeta[currSelectedNode]["name"]}
-                            mkFormSubmitLink={(context, queryParams, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.1308802318=${queryParams}&entry.135985468=${context}&submit=Submit`}/>
-            </div>
-          </div>
+          }
         </div>
 
         <Modal
