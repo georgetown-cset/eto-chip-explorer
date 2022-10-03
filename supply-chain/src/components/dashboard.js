@@ -12,11 +12,11 @@ import {countryProvision, countryProvisionConcentration, orgProvision, providerM
 import {FILTER_INPUT, FILTER_CONCENTRATION, FILTER_COUNTRY, FILTER_ORG} from "../helpers/shared";
 import tooltips from "../helpers/tooltips";
 
-const FILTER_CHOOSE = "filter-choose";
+export const FILTER_CHOOSE = "filter-choose";
 const DROPDOWN_FILTERS = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG];
 const MULTI_FILTERS = [FILTER_COUNTRY, FILTER_ORG];
 
-const GradientLegend = (props) => {
+export const GradientLegend = (props) => {
   const {type, numSelected} = props;
 
   let startLegend, endLegend = "";

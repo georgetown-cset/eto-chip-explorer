@@ -4,11 +4,15 @@ on: [push]
 
 jobs:
   build:
-
+    name: tests-pass
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -25,3 +29,27 @@ jobs:
       run: |
         pip install pytest
         python3 -m pytest tests
+    - name: 'Authenticate to Google Cloud'
+      id: 'auth'
+      uses: 'google-github-actions/auth@v0'
+      with:
+        workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
+        service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
+        token_format: 'access_token'
+    - name: 'Log into Artifact Registry'
+      uses: 'docker/login-action@v1'
+      with:
+        registry: us-east1-docker.pkg.dev
+        username: 'oauth2accesstoken'
+        password: '${{ steps.auth.outputs.access_token }}'
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Test with jest
+      run: |
+        python3 scripts/preprocess.py
+        cd supply-chain
+        npm run artifactregistry-login
+        npm install --force
+        npm run test
