@@ -119,20 +119,27 @@ const Dashboard = () => {
     return inputNodes;
   };
 
-  const getVariantToNode = () => {
-    const variantToNode = {};
+  // Each key variant is associated with a list of all
+  // its ancestors.
+  const getVariantToAncestors = () => {
+    const variantToAncestor = {};
+    // First, map each variant to its immediate parent
     for (const node in variants) {
       for (const variant of variants[node]) {
-        let parentNode = node;
-        while (variantToNode[parentNode]) {
-          parentNode = variantToNode[parentNode];
-        }
-        variantToNode[variant] = parentNode;
+        variantToAncestor[variant] = [node];
       }
     }
-    return variantToNode;
+    // Then, add all other ancestors
+    for (const variant in variantToAncestor) {
+      let ancestor = variantToAncestor[variant];
+      while (ancestor in variantToAncestor) {
+        ancestor = variantToAncestor[ancestor];
+        variantToAncestor[variant].push(...ancestor);
+      }
+    }
+    return variantToAncestor;
   }
-  const variantToNode = getVariantToNode();
+  const variantToAncestor = getVariantToAncestors();
 
   const getCurrentHighlights = (currFilterValues = filterValues) => {
     let highlighter = FILTER_INPUT;
@@ -178,9 +185,13 @@ const Dashboard = () => {
     if(highlighter === FILTER_INPUT) {
       const identityMap = {"type": "binary"};  // Use binary on/off shading on nodes
       let provKey = currFilterValues[highlighter];
-      // If the selected input is a variant, select the canonical version
-      provKey = variantToNode[provKey] !== undefined ? variantToNode[provKey] : provKey;
       identityMap[provKey] = 1;
+      // If the selected input is a variant, select the canonical version as well
+      if (variantToAncestor[provKey] !== undefined) {
+        for (const variantAncestor of variantToAncestor[provKey]) {
+          identityMap[variantAncestor] = 1;
+        }
+      }
       setHighlights(identityMap);
     } else {
       const highlightGradientMap = {"type" : "gradient"};  // Use gradient shading on nodes
@@ -229,19 +240,21 @@ const Dashboard = () => {
             // If the provision node is a variant of another parent node,
             // we show the highlighting on the top-level parent node.
             let provKeyTemp = provKey;
-            while (variantToNode[provKeyTemp] !== undefined) {
-              const variantParentNode = variantToNode[provKeyTemp];
-              provKeyTemp = variantParentNode;
-              if (variantParentNode in highlightGradientMap) {
-                highlightGradientMap[variantParentNode] += provValue;
-              } else {
-                highlightGradientMap[variantParentNode] = provValue;
+            if (variantToAncestor[provKeyTemp] !== undefined) {
+              const variantAncestors = variantToAncestor[provKeyTemp];
+              for (const variantAncestor of variantAncestors) {
+                provKeyTemp = variantAncestor;
+                if (variantAncestor in highlightGradientMap) {
+                  highlightGradientMap[variantAncestor] = Math.max(provValue, highlightGradientMap[variantAncestor]);
+                } else {
+                  highlightGradientMap[variantAncestor] = provValue;
+                }
               }
             }
             // Find the top node so we can scroll it into view
             const highlightedProvKey = provKeyTemp;
             const highlightedProvElem = document.getElementById(highlightedProvKey);
-            if ((highlightFirst === undefined) ||
+            if ((highlightFirst === undefined) || (highlightFirst === null) ||
                 (highlightedProvElem && highlightedProvElem.offsetTop < highlightFirst.offsetTop)) {
               highlightFirst = highlightedProvElem;
             }

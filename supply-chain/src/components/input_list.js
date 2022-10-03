@@ -25,7 +25,7 @@ const getInputList = (node) => {
 
 export const VariantsList = (props) => {
   // Recursive component to construct variants tree
-  const {node, currSelectedNode, inputType, updateSelected, parent, depth, ancestorSelected=false} = props;
+  const {node, currSelectedNode, inputType, updateSelected, parent, depth, ancestorSelected=false, highlight=0, highlights={}} = props;
   const thisNodeAncestorSelected = ancestorSelected || (node === currSelectedNode);
   return (
     <div>
@@ -43,15 +43,16 @@ export const VariantsList = (props) => {
               key={nodeToMeta[variant]["name"]}
               nodeId={variant}
               metadata={nodeToMeta}
-              highlight={0}
+              highlight={variant in highlights ? highlights[variant] : 0}
               updateSelected={updateSelected}
               parent={parent}
+              highlights={highlights}
               depth={depth}
               currSelectedNode={currSelectedNode}
               ancestorSelected={thisNodeAncestorSelected}
             >
               <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected}
-                parent={parent} depth={depth+2} ancestorSelected={thisNodeAncestorSelected} />
+                parent={parent} depth={depth+2} ancestorSelected={thisNodeAncestorSelected} highlight={highlight} highlights={highlights} />
             </SubNode>
           )}
         </div>
@@ -95,7 +96,7 @@ export const SubNode = (props) => {
         {props.children}
         {!props.children &&
           <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
-            updateSelected={updateSelected} parent={parent} depth={depth + 2} />
+            updateSelected={updateSelected} parent={parent} depth={depth + 2} highlight={highlight} highlights={highlights} />
         }
       </Typography>
     </div>
