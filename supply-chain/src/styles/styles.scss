@@ -26,7 +26,7 @@ a {
   cursor: pointer;
   line-height: 1.235;
   letter-spacing: 0.00735em;
-  color: #1976d2;
+  color: var(--dark-blue);
   text-decoration: none;
   &:hover{
     text-decoration: underline;
