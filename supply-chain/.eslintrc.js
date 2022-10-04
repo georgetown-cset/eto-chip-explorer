@@ -14,7 +14,4 @@ module.exports = {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {
-    "react-hooks/exhaustive-deps": "off"
-  }
 }
