@@ -279,11 +279,6 @@ a {
   }
 }
 
-.node-heading .variants-dropdown {
-  vertical-align: middle;
-  color: var(--bright-blue);
-}
-
 .MuiPaper-root.documentation-node {
   background-color: var(--grey-lightest);
   border-top: 1px solid var(--bright-blue);
@@ -343,7 +338,7 @@ a {
       &.selected-documentation-link {
         font-family: GTZirkonBold;
         background-color: var(--bright-blue-lighter);
-        .graph-node-icon, .variants-dropdown {
+        .graph-node-icon {
           color: var(--black);
         }
       }
