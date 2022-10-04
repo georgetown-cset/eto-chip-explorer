@@ -10,6 +10,7 @@ exports[`Dashboard renders correctly 1`] = `
     >
       <a
         href="https://eto.tech/"
+        style="display: flex;"
       >
         <img
           src="test-file-stub"
@@ -66,30 +67,8 @@ exports[`Dashboard renders correctly 1`] = `
           >
             <div
               class="MuiTypography-root MuiTypography-h4 title css-5lbw0b-MuiTypography-root"
-              style="width: calc(100% - 140px);"
             >
               Supply Chain Explorer
-            </div>
-            <div
-              class="documentation-link"
-            >
-              <a
-                href="https://eto.tech/tool-docs/chipexplorer"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
-                  data-testid="InfoIcon"
-                  focusable="false"
-                  style="margin-bottom: -5px; margin-right: 5px;"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
-                  />
-                </svg>
-                Documentation
-              </a>
             </div>
           </div>
           <div
@@ -99,16 +78,13 @@ exports[`Dashboard renders correctly 1`] = `
               class="MuiTypography-root MuiTypography-h6 description  css-2ulfj5-MuiTypography-root"
             >
               <div>
-                An interactive, high-level visualization of the supply chain for advanced computer chips, designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing this critical resource. Use the Explorer to learn how advanced logic chips are made, who makes them, and the tools, materials, and processes that are involved.
-                <div
-                  class="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
-                  style="padding-top: 15px;"
+                ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
+                <p
+                  class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+                  style="padding: 15px 0px;"
                 >
-                  Related resources
-                </div>
-                <p>
                   <strong>
-                    Documentation: 
+                    Learn more:
                   </strong>
                    
                   <a
@@ -116,13 +92,27 @@ exports[`Dashboard renders correctly 1`] = `
                     rel="noopener"
                     target="_blank"
                   >
-                    Supply Chain Explorer: Advanced Chips
+                    Documentation
                   </a>
-                </p>
-                <p>
-                  <strong>
-                    Blog post: 
-                  </strong>
+                  <span
+                    style="padding: 0px 10px;"
+                  >
+                    |
+                  </span>
+                  Blog post: 
+                  <a
+                    href="https://eto.tech/blog/five-takeaways-chip-supply-chain"
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    Five quick takeaways on the chip supply chain
+                  </a>
+                  <span
+                    style="padding: 0px 10px;"
+                  >
+                    |
+                  </span>
+                  Blog post: 
                   <a
                     href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips"
                     rel="noopener"
@@ -131,23 +121,11 @@ exports[`Dashboard renders correctly 1`] = `
                     Introducing the Supply Chain Explorer
                   </a>
                 </p>
-                <p>
-                  <strong>
-                    Blog post: 
-                  </strong>
-                  <a
-                    href="https://eto.tech/blog/five-takeaways-chip-supply-chain"
-                    rel="noopener"
-                    target="_blank"
-                  >
-                    Five quick takeaways on the chip supply chain
-                  </a>
-                </p>
                 <p
-                  class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+                  class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                   style="padding-bottom: 20px;"
                 >
-                  Last updated on January 31, 2022. Data current as of 2019.
+                  Last updated on January 31, 2022. Underlying data originally published in 2021.
                 </p>
               </div>
             </div>
@@ -3152,8 +3130,7 @@ exports[`Dashboard renders correctly 1`] = `
               style="display: flex; align-items: center; width: 100%;"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
-                css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+                class="MuiFormControl-root MuiTextField-root css-1qqoial-MuiFormControl-root-MuiTextField-root-TextFieldStyled"
                 style="margin-right: 0.5rem; width: 100%;"
               >
                 <div
@@ -3171,8 +3148,7 @@ exports[`Dashboard renders correctly 1`] = `
               </div>
             </div>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-              css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-13hwolo-MuiButtonBase-root-MuiButton-root-ButtonStyled"
               tabindex="0"
               type="button"
             >
