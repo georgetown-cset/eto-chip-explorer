@@ -407,12 +407,11 @@ const Dashboard = () => {
     <div style={{maxWidth: "1500px"}}>
     <InfoCard title={"Supply Chain Explorer"} description={
       <div>
-        An interactive, high-level visualization of the supply chain for advanced computer chips, designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing this critical resource. Use the Explorer to learn how advanced logic chips are made, who makes them, and the tools, materials, and processes that are involved.
-        <Typography component={"div"} variant={"h5"} style={{paddingTop: "15px"}}>Related resources</Typography>
-        <p><strong>Documentation: </strong> <a href="https://eto.tech/tool-docs/chipexplorer" target="_blank" rel="noopener">Supply Chain Explorer: Advanced Chips</a></p>
-        <p><strong>Blog post: </strong><a href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips" target="_blank" rel="noopener">Introducing the Supply Chain Explorer</a></p>
-        <p><strong>Blog post: </strong><a href="https://eto.tech/blog/five-takeaways-chip-supply-chain" target="_blank" rel="noopener">Five quick takeaways on the chip supply chain</a></p>
-        <Typography component={"p"} variant={"body2"} style={{paddingBottom: "20px"}}>Last updated on {data.site.buildTime}. Data current as of 2019.</Typography>
+        ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
+        <Typography component={"p"} style={{paddingTop: "15px"}}>
+        <strong>Learn more:</strong> <a href="https://eto.tech/tool-docs/chipexplorer" target="_blank" rel="noopener">Documentation</a> | Blog post: <a href="https://eto.tech/blog/five-takeaways-chip-supply-chain" target="_blank" rel="noopener">Five quick takeaways on the chip supply chain</a> | Blog post: <a href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips" target="_blank" rel="noopener">Introducing the Supply Chain Explorer</a> 
+        </Typography>
+        <Typography component={"p"} variant={"body2"} style={{paddingBottom: "20px"}}>Last updated on {data.site.buildTime}. Underlying data originally published in 2021.</Typography>
       </div>} sidebarTitle={"Quick guide"} sidebarContent={
       <div>
         <div>
@@ -420,7 +419,7 @@ const Dashboard = () => {
           <div>Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.</div>
         </div>
       </div>
-    } documentationLink={"https://eto.tech/tool-docs/chipexplorer"}/>
+    } />
     </div>
     <Paper style={{position: "sticky", top: "0px", zIndex: "20"}}
       className="filter-bar"

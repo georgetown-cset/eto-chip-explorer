@@ -217,7 +217,7 @@ const InputDetail = (props) => {
       </MDXProvider>
       {nodeToMeta[selectedNode].total_market_size &&
         <Typography component="p">
-          <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}.
+          <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}
         </Typography>
       }
       {hasCountries &&
