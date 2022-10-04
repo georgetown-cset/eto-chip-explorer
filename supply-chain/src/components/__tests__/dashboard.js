@@ -1,12 +1,10 @@
 import React from "react"
-import {configure} from '@testing-library/dom'
 import {render, screen, fireEvent} from "@testing-library/react"
 
 import Dashboard, {
-  FILTER_CHOOSE,
   GradientLegend
 } from "../dashboard";
-import {FILTER_INPUT, FILTER_CONCENTRATION, FILTER_COUNTRY, FILTER_ORG} from "../../helpers/shared";
+import {FILTER_INPUT, FILTER_COUNTRY} from "../../helpers/shared";
 
 describe("Gradient Legend", () => {
   it("renders empty correctly", () => {

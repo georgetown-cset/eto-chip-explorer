@@ -112,7 +112,7 @@ const DocumentationNode = (props) => {
               <img src={imgFileName}
                 onClick={() => setOpen(true)}
                 onKeyDown={(evt) => {
-                  if (evt.key === "Enter") {setOpen(true)};
+                  if (evt.key === "Enter") {setOpen(true)}
                 }}
                 role="presentation"
                 tabIndex={0}
