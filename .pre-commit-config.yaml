@@ -18,6 +18,11 @@ repos:
         -   eslint
         -   eslint-plugin-react
         -   babel-eslint
+# You will need to install stylelint globally (`npm install stylelint -g`).
+-   repo: https://github.com/awebdeveloper/pre-commit-stylelint
+    rev: 0.0.2
+    hooks:
+    -   id: stylelint
 -   repo: https://github.com/PyCQA/isort
     rev: 5.10.1
     hooks:

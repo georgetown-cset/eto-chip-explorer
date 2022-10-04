@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "media-feature-name-disallowed-list": [
+      "^max-width",
+      {
+        "message": "Use min-width for a mobile-first approach (media-feature-name-disallowed-list)"
+      }
+    ],
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null
+  }
+}
