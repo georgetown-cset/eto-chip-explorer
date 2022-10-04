@@ -4,37 +4,43 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+  font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
 
-  --bright-blue-light-hsl-g100: hsl(215, 100%, 50%);
-  --bright-blue-light-hsl-g80: hsl(215, 100%, 60%);
-  --bright-blue-light-hsl-g60: hsl(215, 100%, 70%);
-  --bright-blue-light-hsl-g40: hsl(215, 100%, 80%);
-  --bright-blue-light-hsl-g20: hsl(215, 100%, 90%);
+  --bright-blue-light-hsl-g100: hsl(215deg 100% 50%);
+  --bright-blue-light-hsl-g80: hsl(215deg 100% 60%);
+  --bright-blue-light-hsl-g60: hsl(215deg 100% 70%);
+  --bright-blue-light-hsl-g40: hsl(215deg 100% 80%);
+  --bright-blue-light-hsl-g20: hsl(215deg 100% 90%);
 }
 
 p.MuiTypography-root {
-  font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+  font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
 }
 
 h3.MuiTypography-root {
-  font-family: GTZirkonMedium;
+  font-family: GTZirkonMedium, Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
 }
 
 a {
   cursor: pointer;
   line-height: 1.235;
+<<<<<<< HEAD
   letter-spacing: 0.00735em;
   color: var(--dark-blue);
+=======
+  letter-spacing: 0.0073em;
+  color: #1976d2;
+>>>>>>> 36748fb (Conform CSS to linting ruleS)
   text-decoration: none;
-  &:hover{
+
+  &:hover {
     text-decoration: underline;
   }
 }
 
 /* Come back to this */
-.MuiPopover-paper{
+.MuiPopover-paper {
   width: 415px !important;
   max-height: 500px !important;
 }
@@ -45,8 +51,10 @@ a {
   flex-wrap: wrap;
   align-items: flex-end;
 
-  .MuiTypography-root, .MuiFormLabel-root, .MuiButton-text {
-    font-family: GTZirkonRegular;
+  .MuiTypography-root,
+  .MuiFormLabel-root,
+  .MuiButton-text {
+    font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
     color: var(--bright-blue);
     text-transform: uppercase;
   }
@@ -54,9 +62,11 @@ a {
   #concentration-checkbox {
     margin-bottom: 5px;
     color: var(--bright-blue);
+
     .MuiCheckbox-root {
       padding-right: 3px;
     }
+
     .Mui-checked {
       color: var(--bright-blue);
     }
@@ -66,47 +76,56 @@ a {
     text-transform: uppercase;
     background-color: var(--bright-blue);
     box-shadow: none;
-    border-radius: 0px;
+    border-radius: 0;
     color: white;
-    font-family: GTZirkonRegular, sans-serif;
+    font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
     font-size: 1rem;
   }
 
   .gradient-legend {
     display: flex;
     font-size: 1rem;
-    font-family: GTZirkonLightItalic;
+    font-family: GTZirkonLightItalic, Roboto, Helvetica, Arial, sans-serif;
     font-weight: bold;
+
     .init-text {
       margin-right: 5px;
       text-transform: uppercase;
       color: var(--bright-blue);
-      font-family: GTZirkonRegular;
+      font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
     }
+
     .gradient-box-wrapper {
-      margin: 0px 5px;
+      margin: 0 5px;
     }
+
     .gradient-box {
       width: 0.8rem;
       height: 0.8rem;
       display: inline-block;
       border: 1px solid var(--black);
       margin-left: -1px;
+
       &.gradient-100 {
         background-color: var(--bright-blue-light-hsl-g100);
       }
+
       &.gradient-80 {
         background-color: var(--bright-blue-light-hsl-g80);
       }
+
       &.gradient-60 {
         background-color: var(--bright-blue-light-hsl-g60);
       }
+
       &.gradient-40 {
         background-color: var(--bright-blue-light-hsl-g40);
       }
+
       &.gradient-20 {
         background-color: var(--bright-blue-light-hsl-g20);
       }
+
       &.unhighlighted {
         background-color: var(--grey-lightest);
       }
@@ -114,50 +133,53 @@ a {
   }
 }
 
-.MuiPaper-root.graph-node{
+.MuiPaper-root.graph-node {
   z-index: 9000;
   background-color: var(--bright-blue-lightest);
   border-left: 10px solid var(--bright-blue-light);
-  border-radius: 0px;
-  padding: 20px 20px 10px 0px;
+  border-radius: 0;
+  padding: 20px 20px 10px 0;
+
   .MuiTypography-root {
-    font-family: GTZirkonRegular, "Roboto","Helvetica","Arial",sans-serif;
+    font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
   }
+
   h3.MuiTypography-root {
     margin-left: 10px;
+
     &:hover {
       text-decoration: underline;
     }
   }
-  &:hover{
-    cursor: -moz-zoom-in;
-    cursor: -webkit-zoom-in;
+
+  &:hover {
     cursor: zoom-in;
   }
+
   .graph-node-icon {
     color: var(--bright-blue);
     margin-right: 5px;
   }
+
   h3.MuiTypography-root {
     margin-bottom: 10px;
   }
+
   .graph-sub-node {
     background-color: var(--bright-blue-lightest);
     font-size: 0.8rem;
     text-transform: uppercase;
-    border-radius: 0px;
+    border-radius: 0;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 3px 10px;
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
-      font-family: GTZirkonLight;
+      font-family: GTZirkonLight, Roboto, Helvetica, Arial, sans-serif;
       text-indent: -1.8rem;
       padding-left: 1.8rem;
     }
+
     &:hover {
       text-decoration: underline;
     }
@@ -166,6 +188,7 @@ a {
 
 .stage-border {
   border-left: 10px solid var(--bright-blue);
+
   &.uncolored {
     border-color: var(--white);
   }
@@ -174,86 +197,111 @@ a {
 .stage-node-wrapper {
   position: relative;
   z-index: 10;
+
   & + .stage-border .MuiPaper-root.documentation-node {
     .documentation-node-description {
       width: 100%;
     }
   }
+
   .stage-node {
     background-color: var(--bright-blue-lightest);
-    padding: 5px 5px;
+    padding: 5px;
+
     &:hover {
       cursor: pointer;
     }
+
     button {
       margin-left: 20px;
-      font-family: GTZirkonRegular;
+      font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
       text-transform: none;
       color: var(--bright-blue);
     }
   }
 }
 
-.graph-node, .stage-node {
-  &.highlighted, .graph-sub-node.highlighted {
+.graph-node,
+.stage-node {
+  &.highlighted,
+  .graph-sub-node.highlighted {
     background-color: var(--bright-blue-light);
+
     &.gradient-100 {
       background-color: var(--bright-blue-light-hsl-g100);
       color: var(--white);
+
       button {
         color: var(--white);
       }
     }
+
     &.gradient-80 {
       background-color: var(--bright-blue-light-hsl-g80);
       color: var(--white);
+
       button {
         color: var(--white);
       }
     }
+
     &.gradient-60 {
       background-color: var(--bright-blue-light-hsl-g60);
+
       button {
         color: var(--white);
       }
     }
+
     &.gradient-40 {
       background-color: var(--bright-blue-light-hsl-g40);
     }
+
     &.gradient-20 {
       background-color: var(--bright-blue-light-hsl-g20);
     }
   }
-  &.unhighlighted, .graph-sub-node.unhighlighted {
+
+  &.unhighlighted,
+  .graph-sub-node.unhighlighted {
     background-color: var(--grey-lightest);
     color: var(--grey-light);
+
     & > p > .graph-node-icon {
       color: var(--grey-light);
     }
-    h3, button {
+
+    h3,
+    button {
       color: var(--grey-light);
     }
   }
 }
 
-.stage-border, .stage-node {
+.stage-border,
+.stage-node {
   &.highlighted {
     &.gradient-100 {
       border-color: var(--bright-blue-light-hsl-g100);
     }
+
     &.gradient-80 {
       border-color: var(--bright-blue-light-hsl-g80);
     }
+
     &.gradient-60 {
       border-color: var(--bright-blue-light-hsl-g60);
     }
+
     &.gradient-40 {
       border-color: var(--bright-blue-light-hsl-g40);
     }
+
     &.gradient-20 {
       border-color: var(--bright-blue-light-hsl-g20);
     }
   }
+
   &.unhighlighted {
     border-color: var(--grey-lightest);
   }
@@ -262,7 +310,8 @@ a {
 .documentation-node {
   margin-top: 1px;
 }
-.map .documentation-node{
+
+.map .documentation-node {
   margin-top: -15px;
 }
 
@@ -282,164 +331,223 @@ a {
 .MuiPaper-root.documentation-node {
   background-color: var(--grey-lightest);
   border-top: 1px solid var(--bright-blue);
-  border-radius: 0px;
+  border-radius: 0;
   width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 5px;
   z-index: 5;
+
   .graph-node-wrapper {
     display: block;
   }
+
   .MuiTypography-root {
-    font-family: GTZirkonLight;
+    font-family: GTZirkonLight, Roboto, Helvetica, Arial, sans-serif;
   }
+
   p.MuiTypography-root {
     font-size: 0.9rem;
     text-align: left;
   }
+
   .MuiIconButton-root:hover {
     background-color: unset;
   }
+
   .icon {
     color: var(--bright-blue);
   }
+
   .star-icon {
     color: var(--black);
   }
+
   .graph-node-icon {
     margin-right: 5px;
     color: var(--bright-blue);
   }
+
   .lower-bar-wrapper {
-    padding: 0px 40px;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .caption {
       text-align: left;
     }
+
     .lower-icons-wrapper {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+
       a {
         color: var(--bright-blue);
       }
     }
   }
 
-  &, .graph-sub-node {
+  &,
+  .graph-sub-node {
     .node-heading {
       padding-bottom: 5px;
       padding-top: 5px;
       padding-right: 2px;
+
       &.selected-documentation-link {
-        font-family: GTZirkonBold;
+        font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
         background-color: var(--bright-blue-lighter);
+
         .graph-node-icon {
           color: var(--black);
         }
       }
+
       &.selected-node-child {
         background-color: var(--bright-blue-lighter);
       }
     }
   }
+
   .standalone-pane-heading p.MuiTypography-root {
-    font-family: GTZirkonBold;
+    font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
   }
+<<<<<<< HEAD
   .variants-heading.selected-node-child {
     background-color: var(--bright-blue-lighter);
+=======
+
+  .variants-heading {
+    font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
+    padding-left: 20px;
+
+    &.selected-node-child {
+      background-color: var(--bright-blue-lighter);
+    }
+>>>>>>> 36748fb (Conform CSS to linting ruleS)
   }
+
   .input-detail {
     .variants-heading {
-      margin-left: 0px;
-      padding-left: 0px;
+      margin-left: 0;
+      padding-left: 0;
     }
+
     .node-heading.selected-node-child,
     .variants-heading.selected-node-child {
       background-color: unset;
     }
   }
+
   .provision-heading {
     font-weight: 900;
     margin-top: 10px;
     display: inline-block;
+
     &.MuiTypography-root {
       font-size: 1.25rem;
     }
   }
-  .graph-node, .graph-sub-node {
+
+  .graph-node,
+  .graph-sub-node {
     width: 100%;
     background-color: unset;
     color: var(--black);
-    border: 0px;
-    padding: 0px;
+    border: 0;
+    padding: 0;
     font-size: 0.8rem;
     text-transform: uppercase;
-    font-family: GTZirkonLight;
+    font-family: GTZirkonLight, Roboto, Helvetica, Arial, sans-serif;
+
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
       text-align: left;
       text-indent: -1.8rem;
       padding-left: 1.8rem;
+
       &:hover {
         text-decoration: underline;
       }
+<<<<<<< HEAD
+=======
+
+      &.variants-heading {
+        font-size: 0.9rem;
+        text-transform: none;
+        text-indent: 0;
+
+        &:hover {
+          text-decoration: none;
+          cursor: text;
+        }
+      }
+>>>>>>> 36748fb (Conform CSS to linting ruleS)
     }
+
     &.standalone-pane-heading p.MuiTypography-root:hover {
       text-decoration: none;
     }
+
     &.minimap-light {
       background-color: var(--bright-blue-light);
     }
+
     &.minimap-dark {
       background-color: var(--bright-blue);
     }
   }
+
   .image-wrapper {
     height: 240px;
     overflow: hidden;
     margin-top: -20px;
     margin-right: -5px;
+
     img {
       width: 100%;
       height: auto;
       transform: translateY(-10%);
     }
+
     img:hover {
       cursor: pointer;
     }
+
     .icon-wrapper {
       position: absolute;
       right: 5px;
       stroke: white;
-      stroke-opacity: 90%;
+      stroke-opacity: 0.9;
       stroke-width: 4px;
       paint-order: stroke;
+
       &:hover {
         cursor: pointer;
       }
     }
   }
+
   .graph-sub-node:hover {
     text-decoration: underline;
-    cursor: -moz-zoom-in;
-    cursor: -webkit-zoom-in;
     cursor: zoom-in;
   }
+
   table {
     text-align: left;
     width: 100%;
     margin-bottom: 10px;
+
     td {
       vertical-align: top;
       width: 50%;
     }
   }
+
   .flag {
     margin-right: 5px;
   }
@@ -457,18 +565,19 @@ figcaption {
 .caption {
   color: var(--grey);
   font-size: 0.8rem;
-  font-family: GTZirkonLightItalic;
+  font-family: GTZirkonLightItalic, Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Mobile view styling */
 
 .map-background {
   min-width: unset;
-  padding: 0px 0px,
+  padding: 0;
 }
 
 .stage-border {
   display: contents;
+
   .graph-node-wrapper {
     display: block;
     position: relative;
@@ -484,7 +593,8 @@ figcaption {
   margin-bottom: 10px;
   font-size: 0.8rem;
   text-transform: uppercase;
-  font-family: GTZirkonLight;
+  font-family: GTZirkonLight, Roboto, Helvetica, Arial, sans-serif;
+
   .connection-text {
     .bold {
       margin-right: 5px;
@@ -495,19 +605,23 @@ figcaption {
 .documentation-node-widescreen {
   display: none;
 }
+
 .documentation-node-mobile {
   display: block;
 }
 
 .documentation-node {
-  margin-left: 0px;
-  padding-left: 0px;
+  margin-left: 0;
+  padding-left: 0;
+
   .minimap {
     display: none;
   }
+
   .documentation-node-navigation {
     display: block;
   }
+
   .documentation-node-description {
     width: 70%;
     text-align: left;
@@ -527,24 +641,28 @@ figcaption {
 }
 
 span.bold {
-  font-family: GTZirkonBold;
+  font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .MuiPaper-root.filter-bar {
-  padding: 10px 10px 15px 10px;
+  padding: 10px 10px 15px;
   width: calc(100% - 20px);
+
   #clear-button {
     margin-left: 10px;
     margin-bottom: 7px;
   }
+
   .user-feedback-wrapper {
     margin-left: 10px;
   }
+
   .gradient-legend {
     position: relative;
     align-self: center;
-    margin-left: 0px;
+    margin-left: 0;
     margin-top: 10px;
+
     .gradient-box-wrapper {
       display: flex;
     }
@@ -556,6 +674,7 @@ span.bold {
     .documentation-node-navigation {
       display: none;
     }
+
     .documentation-node-description {
       width: 100%;
     }
@@ -567,11 +686,12 @@ span.bold {
 @media (min-width: 1320px) {
   .map-background {
     min-width: 700px;
-    padding: 0px 45px,
+    padding: 0 45px,;
   }
 
   .stage-border {
     display: block;
+
     .graph-node-wrapper {
       display: inline-block;
       vertical-align: middle;
@@ -590,22 +710,27 @@ span.bold {
   .documentation-node-widescreen {
     display: block;
   }
+
   .documentation-node-mobile {
     display: none;
   }
 
   .documentation-node {
     margin-left: 10px;
+
     .minimap {
       display: block;
     }
+
     .documentation-node-navigation {
       min-width: 20%;
       max-width: 300px;
     }
+
     .documentation-node-description {
       width: 60%;
     }
+
     &.standalone {
       .documentation-node-description {
         width: 85%;
@@ -623,8 +748,10 @@ span.bold {
     & + .stage-border .MuiPaper-root.documentation-node {
       width: 75%;
     }
+
     .stage-node {
       border-left: 10px solid var(--bright-blue);
+
       &.unhighlighted {
         border-color: var(--grey-lightest);
       }
@@ -632,19 +759,21 @@ span.bold {
   }
 
   .MuiPaper-root.filter-bar {
-    padding: 20px 20px 35px 20px;
+    padding: 20px 20px 35px;
     width: calc(100% - 40px);
+
     #clear-button {
       margin-bottom: 7px;
       margin-left: 20px;
     }
+
     .gradient-legend {
       position: absolute;
       bottom: 5px;
+
       .gradient-box-wrapper {
         display: block;
       }
     }
   }
-
 }
