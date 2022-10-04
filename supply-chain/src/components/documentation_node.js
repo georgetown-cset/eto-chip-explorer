@@ -244,10 +244,10 @@ const DocumentationNode = (props) => {
                 />
               }
               {imgFileName !== undefined && meta.image_caption &&
-                <figcaption className="caption" dangerouslySetInnerHTML={{__html: "Image Caption: " + meta.image_caption}}/>
+                <figcaption className="caption" dangerouslySetInnerHTML={{__html: meta.image_caption}}/>
               }
               {imgFileName !== undefined && meta.image_license &&
-                <figcaption className="caption" dangerouslySetInnerHTML={{__html: meta.image_license}}/>
+                <figcaption className="caption" dangerouslySetInnerHTML={{__html: "Credit: " + meta.image_license}}/>
               }
             </figure>
           </Box>
