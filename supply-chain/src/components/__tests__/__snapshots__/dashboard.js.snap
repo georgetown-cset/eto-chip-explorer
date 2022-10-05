@@ -1252,21 +1252,6 @@ exports[`Dashboard renders correctly 1`] = `
                                     <span>
                                       Deposition tools
                                     </span>
-                                    <span
-                                      class="variants-dropdown"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-testid="ArrowDropDownIcon"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="m7 10 5 5 5-5z"
-                                        />
-                                      </svg>
-                                    </span>
                                   </p>
                                 </div>
                                 <div
@@ -1753,21 +1738,6 @@ exports[`Dashboard renders correctly 1`] = `
                                     <span>
                                       Wafer inspection equipment
                                     </span>
-                                    <span
-                                      class="variants-dropdown"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-testid="ArrowDropDownIcon"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="m7 10 5 5 5-5z"
-                                        />
-                                      </svg>
-                                    </span>
                                   </p>
                                 </div>
                                 <div
@@ -1921,21 +1891,6 @@ exports[`Dashboard renders correctly 1`] = `
                                     <span>
                                       Advanced photolithography equipment
                                     </span>
-                                    <span
-                                      class="variants-dropdown"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-testid="ArrowDropDownIcon"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="m7 10 5 5 5-5z"
-                                        />
-                                      </svg>
-                                    </span>
                                   </p>
                                 </div>
                                 <div
@@ -2019,21 +1974,6 @@ exports[`Dashboard renders correctly 1`] = `
                                           </span>
                                           <span>
                                             Maskless lithography equipment
-                                          </span>
-                                          <span
-                                            class="variants-dropdown"
-                                          >
-                                            <svg
-                                              aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                              data-testid="ArrowDropDownIcon"
-                                              focusable="false"
-                                              viewBox="0 0 24 24"
-                                            >
-                                              <path
-                                                d="m7 10 5 5 5-5z"
-                                              />
-                                            </svg>
                                           </span>
                                         </p>
                                       </div>
@@ -2367,21 +2307,6 @@ exports[`Dashboard renders correctly 1`] = `
                                     </span>
                                     <span>
                                       Etching and cleaning tools
-                                    </span>
-                                    <span
-                                      class="variants-dropdown"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-testid="ArrowDropDownIcon"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="m7 10 5 5 5-5z"
-                                        />
-                                      </svg>
                                     </span>
                                   </p>
                                 </div>
@@ -2863,21 +2788,6 @@ exports[`Dashboard renders correctly 1`] = `
                                     <span>
                                       Bonding tools
                                     </span>
-                                    <span
-                                      class="variants-dropdown"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-testid="ArrowDropDownIcon"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="m7 10 5 5 5-5z"
-                                        />
-                                      </svg>
-                                    </span>
                                   </p>
                                 </div>
                                 <div
@@ -3053,21 +2963,6 @@ exports[`Dashboard renders correctly 1`] = `
                                     </span>
                                     <span>
                                       Packaging materials
-                                    </span>
-                                    <span
-                                      class="variants-dropdown"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
-                                        data-testid="ArrowDropDownIcon"
-                                        focusable="false"
-                                        viewBox="0 0 24 24"
-                                      >
-                                        <path
-                                          d="m7 10 5 5 5-5z"
-                                        />
-                                      </svg>
                                     </span>
                                   </p>
                                 </div>
