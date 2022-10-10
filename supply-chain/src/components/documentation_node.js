@@ -152,7 +152,7 @@ const DocumentationNode = (props) => {
                     <DownloadIcon />
                   </a>
                 </HelpTooltip>
-                <UserFeedback context={currSelectedNode} contextLabel={nodeToMeta[currSelectedNode]["name"]}
+                <UserFeedback context={currSelectedNode} userIdentifier={nodeToMeta[currSelectedNode]["name"]}
                               mkFormSubmitLink={(context, queryParams, feedback) => `https://docs.google.com/forms/d/e/1FAIpQLSeaAgmf2g6O80ebW_fsRAa6Ma0CxnRwxgEr480aIg5Xz96FJg/formResponse?usp=pp_url&entry.1524532195=${feedback}&entry.1308802318=${queryParams}&entry.135985468=${context}&submit=Submit`}/>
               </div>
             </div>
