@@ -3,52 +3,15 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import IconButton from '@mui/material/IconButton'
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
 import CancelIcon from '@mui/icons-material/Cancel';
 import DownloadIcon from '@mui/icons-material/Download';
 import { HelpTooltip, UserFeedback } from "@eto/eto-ui-components";
-import { nodeToMeta, variants } from "../../data/graph";
+import { nodeToMeta } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
 import ProcessDetail from "./process_detail";
 import { allSubVariantsList } from "../helpers/shared";
 import InputDetail from "./input_detail";
-import GraphNode, { NodeHeading, SubNode } from "./graph_node";
-
-// Recursive component to construct variants tree
-export const VariantsList = (props) => {
-  const {node, currSelectedNode, inputType, updateSelected, parent, depth, parentSelected=false} = props;
-  const thisNodeParentSelected = parentSelected || (node === currSelectedNode);
-  return (
-    <div>
-      {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
-        <div>
-          <Typography className={"variants-heading" + (thisNodeParentSelected ? " selected-node-child" : "")}
-            component={"p"} style={{paddingLeft: depth > 2 ? `${depth*10}px`: null}}>Variants</Typography>
-          {variants[node].sort(
-            (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
-          ).map((variant) =>
-            <SubNode nodeType={inputType}
-              name={nodeToMeta[variant]["name"]}
-              key={nodeToMeta[variant]["name"]}
-              nodeId={variant}
-              metadata={nodeToMeta}
-              highlight={0}
-              updateSelected={updateSelected}
-              parent={parent}
-              depth={depth}
-              currSelectedNode={currSelectedNode}
-              inDocumentation={true}
-              parentSelected={thisNodeParentSelected}
-            >
-              <VariantsList node={variant} currSelectedNode={currSelectedNode} inputType={inputType} updateSelected={updateSelected}
-                parent={parent} depth={depth+2} parentSelected={thisNodeParentSelected} />
-            </SubNode>
-          )}
-        </div>
-      }
-    </div>
-  )
-}
+import InputList from "./input_list";
 
 const DocumentationNode = (props) => {
   const {node, parent, descriptions, images, pdfs, isStage, currSelectedNode, updateSelected, minimap=null, standalone=false} = props;
@@ -104,24 +67,6 @@ const DocumentationNode = (props) => {
     return nodeToOrgProvision;
   };
 
-  const getInputList = (input_type) => {
-    return (
-      <div style={{textAlign: "left"}}>
-        {nodeToMeta[parent][input_type].sort(
-          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
-        ).map((node) =>
-          <div key={parent+input_type+node}>
-            <GraphNode node={node} currSelectedNode={currSelectedNode} parent={parent} inDocumentation={true}
-                updateSelected={updateSelected} nodeToMeta={nodeToMeta} wide={true} key={node}
-                content={<NodeHeading nodeType={input_type} nodeId={node} currSelectedNode={currSelectedNode}
-                name={nodeToMeta[node]["name"]} parentSelected={node === currSelectedNode} />}/>
-            <VariantsList node={node} currSelectedNode={currSelectedNode} inputType={input_type} updateSelected={updateSelected} parent={parent} depth={2} />
-          </div>
-        )}
-      </div>
-    )
-  };
-
   const nodeToCountryProvision = getNodeToCountryProvision();
   const nodeToOrgProvision = getNodeToOrgProvision();
   const nodeVariantsToCountryProvision = getNodeVariantsToProvision(nodeToCountryProvision, "country");
@@ -152,20 +97,13 @@ const DocumentationNode = (props) => {
         {
           !isStage && !standalone &&
           <div className="documentation-node-navigation">
-            {!(hasMaterials || hasTools) ?
-              <div className="graph-node standalone-pane-heading" style={{textAlign: "left"}}>
-                <Typography component={"p"}>
-                  {meta["name"]}
-                </Typography>
-              </div> :
-              <div style={{textAlign: "left"}}>
-                <GraphNode node={parent} parent={parent} inDocumentation={true} wide={true}
-                  updateSelected={updateSelected} currSelectedNode={currSelectedNode}
-                  content={<NodeHeading nodeType="parent" nodeId={parent} currSelectedNode={currSelectedNode} name={nodeToMeta[parent]["name"]} />} />
-              </div>
-            }
-            {hasMaterials && getInputList("materials")}
-            {hasTools && getInputList("tools")}
+            <InputList
+              currSelectedNode={currSelectedNode}
+              parent={parent}
+              highlights={{}}
+              updateSelected={updateSelected}
+              inDocumentation={true}
+            />
           </div>
         }
         <div className="documentation-node-description">

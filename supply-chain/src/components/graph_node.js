@@ -5,100 +5,14 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-import {allSubVariantsList, getIcon} from "../helpers/shared";
-import DocumentationNode, {VariantsList} from "./documentation_node";
-
-export const NodeHeading = (props) => {
-  const {nodeType, nodeId, currSelectedNode, name, depth=0, parentSelected=false} = props;
-  const icon = getIcon(nodeType, {fontSize: "20px"}, nodeId === currSelectedNode);
-  return (
-    <Typography component="p"
-      className={
-        "node-heading" +
-        ((nodeId === currSelectedNode) ? " selected-documentation-link" : "") +
-        ((parentSelected) ? " selected-node-child" : "")
-      }
-    >
-      <span style={{marginLeft: 10*depth+"px"}} className="graph-node-icon">{icon}</span>
-      <span>{name}</span>
-    </Typography>
-  )
-}
-
-export const getBackgroundGradient = (highlight, highlights) => {
-  let backgroundGradient = "gradient-100";
-  if (highlights && highlights.type === "gradient") {
-    if (highlight <= 20) {backgroundGradient = "gradient-20"}
-    else if (highlight <= 40) {backgroundGradient = "gradient-40"}
-    else if (highlight <= 60) {backgroundGradient = "gradient-60"}
-    else if (highlight <= 80) {backgroundGradient = "gradient-80"}
-    else {backgroundGradient = "gradient-100"};
-  }
-  return backgroundGradient;
-}
-
-export const SubNode = (props) => {
-  const {nodeType, name, parent, highlight, highlights, nodeId, updateSelected, currSelectedNode, depth=0, inDocumentation=false,
-    parentSelected=false} = props;
-  const subMaterials = nodeToMeta?.[nodeId]?.["materials"];
-  const subTools = nodeToMeta?.[nodeId]?.["tools"];
-
-  return (
-    <div>
-      <Paper elevation={0} id={nodeId}
-             className={"graph-sub-node" + (highlight !== 0 ? " highlighted " + getBackgroundGradient(highlight, highlights) :
-             (highlights && Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
-             onClick={(evt) => updateSelected(evt, nodeId, parent)}>
-        <NodeHeading nodeType={nodeType} nodeId={nodeId} currSelectedNode={currSelectedNode} name={name} depth={depth}
-          parentSelected={parentSelected} />
-      </Paper>
-      <Typography component={"div"} variant={"body2"}>
-        {(subMaterials !== undefined) && (subMaterials.length > 0) && subMaterials.sort(
-          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
-        ).map((material) =>
-          <SubNode nodeType={"materials"}
-                  name={nodeToMeta[material]["name"]}
-                  key={nodeToMeta[material]["name"]}
-                  nodeId={material}
-                  metadata={nodeToMeta}
-                  highlight={material in highlights ? highlights[material] : 0}
-                  highlights={highlights}
-                  updateSelected={(evt) => updateSelected(evt, material, parent)}
-                  depth={1}
-                  currSelectedNode={currSelectedNode}
-                  inDocumentation={inDocumentation}
-          />)}
-        {(subTools !== undefined) && (subTools.length > 0) && subTools.sort(
-          (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
-        ).map((tool) =>
-          <SubNode nodeType={"tools"}
-                  name={nodeToMeta[tool]["name"]}
-                  key={nodeToMeta[tool]["name"]}
-                  nodeId={tool}
-                  metadata={nodeToMeta}
-                  highlight={tool in highlights ? highlights[tool] : 0}
-                  highlights={highlights}
-                  updateSelected={(evt) => updateSelected(evt, tool, parent)}
-                  depth={1}
-                  currSelectedNode={currSelectedNode}
-                  inDocumentation={inDocumentation}
-          />)}
-        {props.children}
-      {inDocumentation && !props.children &&
-        <VariantsList node={nodeId} currSelectedNode={currSelectedNode} inputType={nodeToMeta[nodeId]["type"]}
-          updateSelected={updateSelected} parent={parent} depth={depth + 2} />
-      }
-      </Typography>
-    </div>
-  );
-};
+import { allSubVariantsList, getBackgroundGradient } from "../helpers/shared";
+import DocumentationNode from "./documentation_node";
+import InputList from "./input_list";
 
 const GraphNode = (props) => {
   const {node, highlights = {}, currSelectedNode, parent, updateSelected, pdfs, wide=false, content=null, inDocumentation=false,
     descriptions=null, images=null} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
-  const showInputs = (("materials" in meta) && (meta["materials"].length > 0)) ||
-    (("tools" in meta) && (meta["tools"].length > 0));
 
   return (
     <div className="graph-node-wrapper">
@@ -147,43 +61,13 @@ const GraphNode = (props) => {
               }
             </div>
           }
-          {!(inDocumentation && node === parent) && showInputs &&
-            <Typography component={"div"} variant={"body2"} style={{paddingRight: inDocumentation? "" : "10px"}}>
-              {("materials" in meta ) && (meta["materials"].length > 0) && meta["materials"].sort(
-                (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
-              ).map((material) =>
-                <SubNode nodeType={"materials"}
-                        name={nodeToMeta[material]["name"]}
-                        key={nodeToMeta[material]["name"]}
-                        nodeId={material}
-                        metadata={nodeToMeta}
-                        highlight={material in highlights ? highlights[material] : 0}
-                        updateSelected={updateSelected}
-                        parent={inDocumentation ? parent : node}
-                        highlights={highlights}
-                        depth={inDocumentation ? 2 : 0}
-                        currSelectedNode={currSelectedNode}
-                        inDocumentation={inDocumentation}
-                        parentSelected={node === currSelectedNode}
-                />)}
-              {("tools" in meta) && (meta["tools"].length > 0) && meta["tools"].sort(
-                (a, b) => ('' + nodeToMeta[a]["name"]).localeCompare(nodeToMeta[b]["name"])
-              ).map((tool) =>
-                <SubNode nodeType={"tools"}
-                        name={nodeToMeta[tool]["name"]}
-                        key={nodeToMeta[tool]["name"]}
-                        nodeId={tool}
-                        metadata={nodeToMeta}
-                        highlight={tool in highlights ? highlights[tool] : 0}
-                        updateSelected={updateSelected}
-                        parent={inDocumentation ? parent : node}
-                        highlights={highlights}
-                        depth={inDocumentation ? 2 : 0}
-                        currSelectedNode={currSelectedNode}
-                        inDocumentation={inDocumentation}
-                        parentSelected={node === currSelectedNode}
-                />)}
-            </Typography>}
+          <InputList
+            currSelectedNode={currSelectedNode}
+            parent={node}
+            highlights={highlights}
+            updateSelected={updateSelected}
+            inDocumentation={false}
+          />
         </div>
       </Paper>
       {!inDocumentation && node === parent &&

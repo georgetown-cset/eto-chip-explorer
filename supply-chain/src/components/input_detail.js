@@ -5,7 +5,7 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
-import { VariantsList } from "./documentation_node";
+import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
 
@@ -259,7 +259,7 @@ const InputDetail = (props) => {
       {variants[selectedNode] &&
         <div>
           <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
-            updateSelected={updateSelected} parent={parent} />
+            updateSelected={updateSelected} parent={parent} depth={0} />
           <ProviderListing isOrg={false} providers={countries} variantProviders={variantCountries} providerMeta={undefined} variant={true} />
           <ProviderListing isOrg={true} providers={orgs} variantProviders={variantOrgs} providerMeta={orgMeta} variant={true} />
         </div>
