@@ -18,7 +18,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@eto/eto-ui-components": "^1.1.48",
+    "@eto/eto-ui-components": "^1.1.49",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mui/icons-material": "^5.8.4",
