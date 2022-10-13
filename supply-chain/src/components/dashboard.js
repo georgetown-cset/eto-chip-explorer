@@ -466,7 +466,7 @@ const Dashboard = () => {
       }
     </Paper>
     <div style={{display: "inline-block", textAlign: "center", backgroundColor: "white"}}>
-      <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
+      <Map highlights={highlights} highlighterFilter={highlighterFilter} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
     </div>

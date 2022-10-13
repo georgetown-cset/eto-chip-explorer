@@ -5,11 +5,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 import DocumentationNode from "./documentation_node";
 import GraphNode, {MiniGraphNode} from "./graph_node";
-import {getBackgroundGradient} from "../helpers/shared";
+import {FILTER_CONCENTRATION, getBackgroundGradient} from "../helpers/shared";
 import StageNode from "./stage_node";
 
 const Map = (props) => {
-  const {highlights, filterValues, defaultFilterValues, documentationPanelToggle, setDocumentationPanelToggle,
+  const {highlights, highlighterFilter, filterValues, defaultFilterValues, documentationPanelToggle, setDocumentationPanelToggle,
     parentNode, selectedNode, updateSelected} = props;
 
   const finalNode = Object.keys(nodeToMeta).filter(k => nodeToMeta[k]["type"] === "ultimate_output")[0];
@@ -61,6 +61,12 @@ const Map = (props) => {
   };
 
   const _getStageHighlight = (stage, highlights, stageClassName) => {
+    // If the user is highlighting by concentration, we disable stage highlighting
+    // to avoid confusion.
+    if (highlighterFilter === FILTER_CONCENTRATION) {
+      return stageClassName += " unhighlighted";
+    }
+    // Otherwise, we highlighted based on gradient numbers as usual.
     if (stage in highlights && highlights[stage] !== 0) {
       stageClassName += " highlighted " + getBackgroundGradient(highlights[stage], highlights)
     } else if (highlights && Object.keys(highlights).length > 0) {
