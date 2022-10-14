@@ -4,6 +4,7 @@ supply-chain/src/pages/*
 supply-chain/.cache/
 supply-chain/data/
 supply-chain/public/
+supply-chain/coverage/
 
 Pipfile
 Pipfile.lock
