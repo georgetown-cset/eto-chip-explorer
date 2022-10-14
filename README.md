@@ -14,3 +14,5 @@ To run the webapp,
 * `gatsby develop`
 
 To run the Jest tests, run `npm run test`.
+
+To run the python tests, run `python3 -m pytest tests`. To run them and measure coverage, run `coverage run -m pytest tests`; you can report coverage in text format with `coverage report -m` and in HTML format with `coverage html`.

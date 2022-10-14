@@ -5,6 +5,8 @@ supply-chain/.cache/
 supply-chain/data/
 supply-chain/public/
 supply-chain/coverage/
+htmlcov/
+.coverage
 
 Pipfile
 Pipfile.lock

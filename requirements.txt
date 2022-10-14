@@ -7,3 +7,4 @@ pytest
 pre-commit
 mistletoe
 tqdm
+coverage
