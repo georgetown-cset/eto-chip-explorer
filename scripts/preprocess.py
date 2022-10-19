@@ -81,6 +81,7 @@ class Preprocess:
 
             self.write_graphs(args.sequence, args.output_dir)
             self.mk_provider_to_meta(args.providers, args.basic_company_info)
+            self.write_provider_bq_table(args.providers)
             self.write_provision(args.provision, args.output_dir)
 
             if args.pdfs:
@@ -599,6 +600,28 @@ class Preprocess:
                 if not company_id:
                     continue
                 self.provider_to_meta[company_id]["url"] = line["Website URL"]
+
+    def write_provider_bq_table(self, provider_fi: str):
+        """
+        Create a CSV table that can be loaded into bigquery. This table has
+        the same data as the providers CSV, except that the country code is
+        changed to a country name.
+        :param provider_fi: provider csv
+        """
+        with open(provider_fi) as in_f:
+            with open(provider_fi[:-4] + "_bq.csv", "w") as out_f:
+                header_names = [
+                    "provider_name",
+                    "provider_id",
+                    "provider_type",
+                    "country",
+                ]
+                writer = csv.DictWriter(out_f, fieldnames=header_names)
+                writer.writeheader()
+                for line in csv.DictReader(in_f):
+                    if line["country"]:
+                        line["country"] = self.get_country(line["country"]).strip()
+                    writer.writerow(line)
 
     @staticmethod
     def clean_md_link(text) -> str:
