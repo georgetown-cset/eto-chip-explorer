@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Distribution of input type",
+    "x_title": "Input type",
+    "y_title": "Count",
+    "type": "bar",
+    "query": "input_type_distribution.sql"
+  },
+  {
+    "title": "Distribution of country for providers of type organization",
+    "x_title": "Country",
+    "y_title": "Count",
+    "type": "bar",
+    "query": "org_provider_country_distribution.sql"
+  }
+]
