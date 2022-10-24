@@ -25,13 +25,8 @@ h3.MuiTypography-root {
 a {
   cursor: pointer;
   line-height: 1.235;
-<<<<<<< HEAD
-  letter-spacing: 0.00735em;
-  color: var(--dark-blue);
-=======
   letter-spacing: 0.0073em;
-  color: #1976d2;
->>>>>>> 36748fb (Conform CSS to linting ruleS)
+  color: var(--dark-blue);
   text-decoration: none;
 
   &:hover {
@@ -172,6 +167,7 @@ a {
     border-radius: 0;
     width: 100%;
     padding: 3px 10px;
+
     p.MuiTypography-root {
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -319,9 +315,10 @@ a {
 .MuiPaper-root.graph-node p.MuiTypography-root.variants-heading {
   font-size: 0.9rem;
   text-transform: none;
-  text-indent: 0px;
-  font-family: GTZirkonBold;
+  text-indent: 0;
+  font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
   padding-left: 25px;
+
   &:hover {
     text-decoration: none;
     cursor: text;
@@ -415,19 +412,9 @@ a {
   .standalone-pane-heading p.MuiTypography-root {
     font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
   }
-<<<<<<< HEAD
+
   .variants-heading.selected-node-child {
     background-color: var(--bright-blue-lighter);
-=======
-
-  .variants-heading {
-    font-family: GTZirkonBold, Roboto, Helvetica, Arial, sans-serif;
-    padding-left: 20px;
-
-    &.selected-node-child {
-      background-color: var(--bright-blue-lighter);
-    }
->>>>>>> 36748fb (Conform CSS to linting ruleS)
   }
 
   .input-detail {
@@ -473,20 +460,6 @@ a {
       &:hover {
         text-decoration: underline;
       }
-<<<<<<< HEAD
-=======
-
-      &.variants-heading {
-        font-size: 0.9rem;
-        text-transform: none;
-        text-indent: 0;
-
-        &:hover {
-          text-decoration: none;
-          cursor: text;
-        }
-      }
->>>>>>> 36748fb (Conform CSS to linting ruleS)
     }
 
     &.standalone-pane-heading p.MuiTypography-root:hover {
