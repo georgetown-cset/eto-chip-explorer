@@ -72,9 +72,6 @@ const DocumentationNode = (props) => {
   const nodeVariantsToCountryProvision = getNodeVariantsToProvision(nodeToCountryProvision, "country");
   const nodeVariantsToOrgProvision = getNodeVariantsToProvision(nodeToOrgProvision);
 
-  const hasMaterials = nodeToMeta[parent]?.materials?.length > 0;
-  const hasTools = nodeToMeta[parent]?.tools?.length > 0;
-
   const imgFileName = images?.filter(i => i.name === node)[0] ? images.filter(i => i.name === node)[0]?.publicURL : images.filter(i => i.name === "default")[0]?.publicURL;
 
   // For image modal
