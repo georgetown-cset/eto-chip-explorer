@@ -1,6 +1,7 @@
 import argparse
 import copy
 import csv
+import datetime
 import json
 import os
 import re
@@ -11,6 +12,7 @@ import mistletoe
 import pdfkit
 import plotly.graph_objects as go
 import pycountry
+from google.cloud import bigquery
 from jinja2 import Environment, FileSystemLoader
 from tqdm import tqdm
 
@@ -81,8 +83,11 @@ class Preprocess:
 
             self.write_graphs(args.sequence, args.output_dir)
             self.mk_provider_to_meta(args.providers, args.basic_company_info)
-            self.write_provider_bq_table(args.providers)
             self.write_provision(args.provision, args.output_dir)
+
+            if args.refresh_bq:
+                providers_bq = self.write_provider_bq_table(args.providers)
+                self.write_to_bq(args.nodes, providers_bq)
 
             if args.pdfs:
                 self.mk_pdfs(args.nodes, args.stages, args.output_pdfs_dir)
@@ -607,9 +612,11 @@ class Preprocess:
         the same data as the providers CSV, except that the country code is
         changed to a country name.
         :param provider_fi: provider csv
+        :return: string representing file name of newly-created CSV
         """
+        provider_bq_fi = provider_fi[:-4] + "_bq.csv"
         with open(provider_fi) as in_f:
-            with open(provider_fi[:-4] + "_bq.csv", "w") as out_f:
+            with open(provider_bq_fi, "w") as out_f:
                 header_names = [
                     "provider_name",
                     "provider_id",
@@ -622,6 +629,67 @@ class Preprocess:
                     if line["country"]:
                         line["country"] = self.get_country(line["country"]).strip()
                     writer.writerow(line)
+        return provider_bq_fi
+
+    def write_to_bq(self, nodes_fi, provider_bq_fi):
+        """
+        Load CSVs to bigquery tables, overwriting the existing tables.
+        Also loads the CSVs to versioned backup tables.
+        :param nodes_fi: inputs csv
+        :param provider_bq_fi: provider csv
+        """
+        client = bigquery.Client(project="gcp-cset-projects")
+        dataset_ids = [
+            "gcp-cset-projects.eto_chipexplorer",
+            "gcp-cset-projects.eto_chipexplorer_backups",
+        ]
+        table_ids = {
+            "inputs": {
+                "file": nodes_fi,
+                "schema": [
+                    bigquery.SchemaField("input_name", "STRING"),
+                    bigquery.SchemaField("input_id", "STRING"),
+                    bigquery.SchemaField("type", "STRING"),
+                    bigquery.SchemaField("stage_name", "STRING"),
+                    bigquery.SchemaField("stage_id", "STRING"),
+                    bigquery.SchemaField("description", "STRING"),
+                    bigquery.SchemaField(
+                        "market_share_chart_global_market_size_info", "STRING"
+                    ),
+                    bigquery.SchemaField("market_share_chart_caption", "STRING"),
+                    bigquery.SchemaField("market_share_chart_source", "STRING"),
+                ],
+            },
+            "providers": {
+                "file": provider_bq_fi,
+                "schema": [
+                    bigquery.SchemaField("provider_name", "STRING"),
+                    bigquery.SchemaField("provider_id", "STRING"),
+                    bigquery.SchemaField("provider_type", "STRING"),
+                    bigquery.SchemaField("country", "STRING"),
+                ],
+            },
+        }
+
+        for table_id in table_ids:
+            job_config = bigquery.LoadJobConfig(
+                source_format=bigquery.SourceFormat.CSV,
+                skip_leading_rows=1,
+                autodetect=False,
+                write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+                allow_quoted_newlines=True,
+                schema=table_ids[table_id]["schema"],
+            )
+            with open(table_ids[table_id]["file"], "rb") as source_file:
+                for dataset_id in dataset_ids:
+                    table_name = f"{dataset_id}.{table_id}"
+                    if "backups" in dataset_id:
+                        table_name += "_" + datetime.date.today().strftime("%Y%m%d")
+                    print(f"uploading data to {table_name}")
+                    job = client.load_table_from_file(
+                        source_file, table_name, job_config=job_config
+                    )
+                    job.result()  # Wait for the upload to complete
 
     @staticmethod
     def clean_md_link(text) -> str:
@@ -687,6 +755,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output_pdfs_dir", default=os.path.join("supply-chain", "src", "pdfs")
     )
+    parser.add_argument("--refresh_bq", action="store_true")
     args = parser.parse_args()
 
     Preprocess(args)
