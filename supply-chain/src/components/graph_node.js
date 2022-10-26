@@ -5,21 +5,30 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-import { allSubVariantsList, getBackgroundGradient } from "../helpers/shared";
+import { allSubVariantsList, FILTER_CONCENTRATION, FILTER_COUNTRY, getBackgroundGradient } from "../helpers/shared";
 import DocumentationNode from "./documentation_node";
 import InputList from "./input_list";
 
 const GraphNode = (props) => {
   const {node, highlights = {}, currSelectedNode, parent, updateSelected, pdfs, wide=false, content=null, inDocumentation=false,
-    descriptions=null, images=null} = props;
+    descriptions=null, images=null, highlighterFilter} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
+
+  const getHighlightClass = () => {
+    if (node in highlights && highlights[node] !== 0) {
+      return " highlighted " + getBackgroundGradient(highlights[node], highlights);
+    } else if ((highlighterFilter === FILTER_CONCENTRATION) || (highlighterFilter === FILTER_COUNTRY)) {
+      return " not-applicable";
+    } else if (Object.keys(highlights).length > 0) {
+      return " unhighlighted";
+    } else {
+      return "";
+    }
+  }
 
   return (
     <div className="graph-node-wrapper">
-      <Paper id={node} className={
-        "graph-node" +
-        ((node in highlights && highlights[node] !== 0) ? " highlighted " + getBackgroundGradient(highlights[node], highlights) :
-        (Object.keys(highlights).length > 0 ? " unhighlighted" : ""))}
+      <Paper id={node} className={"graph-node" + getHighlightClass()}
         style={{
           margin: wide ? "" : "20px 25px",
           marginBottom: node === currSelectedNode ? "0px" : (wide ? "" : "20px"),

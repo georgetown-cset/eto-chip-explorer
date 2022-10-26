@@ -64,7 +64,7 @@ const Map = (props) => {
     // If the user is highlighting by concentration, we disable stage highlighting
     // to avoid confusion.
     if (highlighterFilter === FILTER_CONCENTRATION) {
-      return stageClassName += " unhighlighted";
+      return stageClassName += " not-applicable";
     }
     // Otherwise, we highlighted based on gradient numbers as usual.
     if (stage in highlights && highlights[stage] !== 0) {
@@ -109,7 +109,7 @@ const Map = (props) => {
         {nodes.map(node =>
           <GraphNode node={node} highlights={highlights} key={node} parent={parentNode} pdfs={pdfs}
                     unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}
-                    descriptions={descriptions} images={images} />
+                    descriptions={descriptions} images={images} highlighterFilter={highlighterFilter} />
         )}
         <div className="documentation-node-widescreen">
           {nodes.includes(parentNode) &&

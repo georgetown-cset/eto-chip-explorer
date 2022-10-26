@@ -21,12 +21,15 @@ export const GradientLegend = (props) => {
 
   let startLegend, endLegend = "";
   let boxes = null;
+  let showNotApplicableBox = false;
 
   const has = numSelected === 1 ? "country has" : "countries have";
   const company = numSelected === 1 ? "company" : "companies";
 
   switch (type) {
     case FILTER_COUNTRY:
+      showNotApplicableBox = true;
+      const has = numSelected === 1 ? "country has" : "countries have";
       startLegend = `selected ${has} less market share`;
       endLegend = `selected ${has} more market share`;
       boxes = <div className="gradient-box-wrapper">
@@ -39,6 +42,7 @@ export const GradientLegend = (props) => {
       </div>;
       break;
     case FILTER_CONCENTRATION:
+      showNotApplicableBox = true;
       startLegend = "more supplier countries";
       endLegend = "fewer supplier countries";
       boxes = <div className="gradient-box-wrapper">
@@ -65,6 +69,12 @@ export const GradientLegend = (props) => {
       {startLegend}
       {boxes}
       {endLegend}
+      {showNotApplicableBox &&
+        <div>
+          &nbsp;| not applicable
+          <div className="gradient-box not-applicable" />
+        </div>
+      }
     </div>
   )
 }
