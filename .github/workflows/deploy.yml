@@ -1,7 +1,7 @@
 name: Deployment
-on: [push]
-  # push:
-  #   branches: 'main'
+on:
+  push:
+    branches: 'main'
 
 jobs:
   build:
@@ -84,5 +84,5 @@ jobs:
           gsutil -m cp -r gs://eto-cd/supply-chain/${{ steps.date.outputs.today }} .
           sudo rm -r /var/www/html/*
           sudo mv ${{ steps.date.outputs.today }}/* /var/www/html/
-#          rm -rf ${{ steps.date.outputs.today }}
-#          gsutil -m rm -r gs://eto-cd/supply-chain/${{ steps.date.outputs.today }}
+          rm -rf ${{ steps.date.outputs.today }}
+          gsutil -m rm -r gs://eto-cd/supply-chain/${{ steps.date.outputs.today }}
