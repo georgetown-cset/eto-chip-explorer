@@ -687,7 +687,10 @@ class Preprocess:
                         table_name += "_" + datetime.date.today().strftime("%Y%m%d")
                     print(f"uploading data to {table_name}")
                     job = client.load_table_from_file(
-                        source_file, table_name, job_config=job_config
+                        source_file,
+                        table_name,
+                        job_config=job_config,
+                        rewind=True,
                     )
                     job.result()  # Wait for the upload to complete
 
