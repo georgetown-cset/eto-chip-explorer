@@ -8,3 +8,4 @@ pre-commit
 mistletoe
 tqdm
 google-cloud-bigquery
+coverage
