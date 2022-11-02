@@ -47,7 +47,6 @@ jobs:
         python3 scripts/preprocess.py
         cd supply-chain
         npm run artifactregistry-login
-        npm install stylelint -g
         npm install --force
         npm run test
     - name: Run linting
