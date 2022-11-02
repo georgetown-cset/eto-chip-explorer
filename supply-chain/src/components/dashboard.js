@@ -414,6 +414,14 @@ const Dashboard = () => {
     if (!paramsSelectedNode && updatedFilterValues[FILTER_INPUT] !== defaultFilterValues[FILTER_INPUT]) {
       setDocumentationPanelToggle(true);
     }
+
+    // We want to force the arrows to rerender because some of the elements
+    // might have shifted around, but the library does not offer a force
+    // rerender function, so we will pretend the window was resized, which
+    // will force the react-xarrows library to rerender.
+    setTimeout(function (){
+      window.dispatchEvent(new Event('resize'));
+    }, 200);
   }, []);
 
   return (<AppWrapper>
@@ -466,7 +474,7 @@ const Dashboard = () => {
       }
     </Paper>
     <div style={{display: "inline-block", textAlign: "center", backgroundColor: "white"}}>
-      <Map highlights={highlights} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
+      <Map highlights={highlights} highlighterFilter={highlighterFilter} filterValues={filterValues} defaultFilterValues={defaultFilterValues}
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
     </div>

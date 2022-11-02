@@ -1,0 +1,295 @@
+provider_name,provider_id,provider_type,country
+USA,P1,country,
+CHN,P2,country,
+KOR,P4,country,
+Various,P5,country,
+JPN,P7,country,
+TWN,P8,country,
+Intel,P9,organization,United States
+AMD,P10,organization,United States
+Nvidia,P11,organization,United States
+Jingjia Micro,P12,organization,China (mainland)
+Loongson,P13,organization,China (mainland)
+Zhaoxin,P14,organization,China (mainland)
+Phytium,P15,organization,China (mainland)
+Efinix,P16,organization,China (mainland)
+HiSilicon,P17,organization,China (mainland)
+Lattice,P18,organization,United States
+Microchip,P19,organization,United States
+Achronix,P20,organization,United States
+Flex Logic,P21,organization,United States
+Google,P22,organization,United States
+Cerebras,P23,organization,United States
+Tesla,P24,organization,United States
+Graphcore,P25,organization,United Kingdom
+Cambricon,P26,organization,China (mainland)
+Horizon Robotics,P27,organization,China (mainland)
+Intellifusion,P28,organization,China (mainland)
+Gowin,P29,organization,China (mainland)
+Shenzhen Pango,P30,organization,China (mainland)
+Sunway,P31,organization,China (mainland)
+DEU,P32,country,
+ITA,P33,country,
+TSMC,P34,organization,Taiwan
+Samsung,P35,organization,South Korea
+GlobalFoundries,P36,organization,United States
+SMIC,P37,organization,China (mainland)
+UMC,P38,organization,Taiwan
+Powerchip,P39,organization,Taiwan
+Hua Hong,P40,organization,China (mainland)
+STMicroelectronics,P42,organization,Switzerland
+NXP,P43,organization,Netherlands
+Kioxia,P44,organization,Japan
+NLD,P45,country,
+MAL,P46,country,
+SGP,P47,country,
+ASE,P48,organization,Taiwan
+Amkor,P49,organization,United States
+JCET,P50,organization,China (mainland)
+TongFu,P52,organization,China (mainland)
+Tianshui Huatian Technology,P53,organization,China (mainland)
+UTAC,P54,organization,Singapore
+SK Hynix,P55,organization,South Korea
+Micron,P56,organization,United States
+Powertech,P57,organization,Taiwan
+PVA TePla,P58,organization,Germany
+JSG,P59,organization,China (mainland)
+Accretech,P60,organization,Japan
+Okamoto,P61,organization,Japan
+Disco,P62,organization,Japan
+Meyer Burger,P63,organization,Switzerland
+Toyo,P64,organization,Japan
+Lanzhou Rapid Equipment Manufacturing,P65,organization,China (mainland)
+Beijing JingYi Century Automatic Equipment,P66,organization,China (mainland)
+EV Group,P67,organization,Austria
+SUSS MicroTec,P68,organization,Germany
+Neutronix,P69,organization,United States
+SMEE,P70,organization,China (mainland)
+Daifuku,P71,organization,Japan
+Rorze,P72,organization,Japan
+SEMES,P73,organization,South Korea
+Muratec,P74,organization,Japan
+Gudeng,P75,organization,Taiwan
+RECIF,P76,organization,France
+Brooks,P77,organization,United States
+ESI,P78,organization,United States
+CHE,P79,country,
+AUT,P80,country,
+Applied Materials,P81,organization,United States
+Nissin Ion,P82,organization,Japan
+SMIT,P83,organization,Japan
+Axcelis,P84,organization,United States
+CETC,P85,organization,China (mainland)
+Hermes-Epitek,P86,organization,Taiwan
+Kingstone Semiconductor,P87,organization,China (mainland)
+ASML,P88,organization,Netherlands
+Nikon,P89,organization,Japan
+SWE,P90,country,
+NuFlare,P91,organization,Japan
+JEOL,P92,organization,Japan
+Vistec,P93,organization,Germany
+Mycronic,P94,organization,Sweden
+Heidelberg Instruments,P95,organization,Germany
+Thermo Fisher,P96,organization,United States
+Hitachi,P97,organization,Japan
+Zeiss,P98,organization,Germany
+Tescan,P99,organization,Czechia
+HORIBA,P100,organization,Japan
+Eurofins,P101,organization,Luxembourg
+A&D,P102,organization,Japan
+Raith,P103,organization,Germany
+FOCUS,P104,organization,Germany
+Tokyo Electron,P105,organization,Japan
+Screen,P106,organization,Japan
+Kingsemi,P107,organization,China (mainland)
+Brewer Science,P108,organization,United States
+Rite Track,P109,organization,United States
+GBR,P110,country,
+Lam Research,P111,organization,United States
+ASM International,P112,organization,Netherlands
+Piotech,P113,organization,China (mainland)
+SKY Technology Development,P114,organization,China (mainland)
+NAURA,P115,organization,China (mainland)
+Kokusai,P116,organization,Japan
+ULVAC,P117,organization,Japan
+KLA,P118,organization,United States
+Mattson Tech,P119,organization,United States
+AP Systems,P120,organization,South Korea
+Veeco,P121,organization,United States
+Grand Process,P122,organization,Taiwan
+AMEC,P123,organization,China (mainland)
+Plasma-Therm,P124,organization,United States
+SAMCO,P125,organization,Japan
+GigaLane,P126,organization,South Korea
+Charm Engineering,P127,organization,South Korea
+EBARA,P128,organization,Japan
+Hwatsing,P129,organization,China (mainland)
+KCTech,P130,organization,South Korea
+Revasum,P131,organization,United States
+FRA,P132,country,
+ISR,P133,country,
+BLR,P134,country,
+Bruker,P135,organization,Germany
+Rigaku,P136,organization,Japan
+RSIC,P137,organization,China (mainland)
+Nanotronics,P138,organization,United States
+Onto Innovation,P139,organization,United States
+Lasertec,P140,organization,Japan
+CAMTEK,P141,organization,Israel
+Keysight Tech,P142,organization,United States
+Keithley Instruments,P143,organization,United States
+Top Engineering,P144,organization,South Korea
+ASM Pacific,P145,organization,China (mainland)
+ASTI,P146,organization,Singapore
+Koh Young Tech,P147,organization,South Korea
+Cohu,P148,organization,United States
+MIRTEC,P149,organization,South Korea
+Grand Tec,P150,organization,China (mainland)
+DISCO,P151,organization,Japan
+Longhill Industries,P154,organization,China (mainland)
+SYNOVA,P155,organization,China (mainland)
+Besi,P156,organization,Netherlands
+Fasford Tech,P158,organization,Japan
+Canon,P159,organization,Japan
+Hoson,P160,organization,China (mainland)
+PROTEC,P161,organization,South Korea
+JIAFENG,P162,organization,China (mainland)
+DIAS Automation,P163,organization,China (mainland)
+Kulicke & Soffa,P164,organization,Singapore
+Hesse,P165,organization,Germany
+Shinkawa,P166,organization,Japan
+SSP,P167,organization,South Korea
+KOSES,P168,organization,South Korea
+TOWA,P169,organization,Japan
+HANMI,P170,organization,South Korea
+Trinity Tech,P171,organization,China (mainland)
+Grohmann,P172,organization,Germany
+CZE,P173,country,
+CAN,P174,country,
+Advantest,P175,organization,Japan
+Teradyne,P176,organization,United States
+UniTest,P177,organization,South Korea
+DI,P178,organization,South Korea
+Micro Control,P179,organization,United States
+National Instruments,P180,organization,United States
+TESEC,P181,organization,Japan
+AccoTEST,P182,organization,China (mainland)
+Shanghai Juno,P183,organization,China (mainland)
+JHT,P184,organization,China (mainland)
+Synopsys,P185,organization,United States
+Cadence,P186,organization,United States
+Mentor Graphics,P187,organization,United States
+Ansys,P188,organization,United States
+Silvaco,P189,organization,United States
+PDF Solutions,P190,organization,United States
+Huada Empyrean,P191,organization,China (mainland)
+Primarius,P192,organization,China (mainland)
+Xpeedic,P193,organization,China (mainland)
+Semitronix,P194,organization,China (mainland)
+Platform-da,P195,organization,China (mainland)
+Microscapes,P196,organization,China (mainland)
+Arcas-da,P197,organization,China (mainland)
+ARM,P198,organization,United Kingdom
+SST,P199,organization,United States
+Imagination Technologies,P200,organization,United Kingdom
+Ceva,P201,organization,United States
+Verisilicon,P202,organization,China (mainland)
+Rambus,P203,organization,United States
+eMemory Technology,P204,organization,Taiwan
+Shenzhen Newway,P205,organization,China (mainland)
+JSR,P206,organization,Japan
+Tokyo Ohka Kogyo,P207,organization,Japan
+Shin-Etsu,P208,organization,Japan
+Fujifilm Electronic Materials,P209,organization,Japan
+Dongjin,P211,organization,South Korea
+DuPont Electronic Solutions,P212,organization,United States
+EMD Electronics,P213,organization,United States
+Inpria,P214,organization,United States
+Ruihong,P215,organization,China (mainland)
+Kempur,P216,organization,China (mainland)
+Nata Opto-electronic Material,P217,organization,China (mainland)
+JHM,P218,organization,China (mainland)
+Fujimi,P219,organization,Japan
+Saint-Gobain,P220,organization,France
+Versum Materials,P221,organization,United States
+DuPont,P222,organization,United States
+Thomas West,P224,organization,United States
+SUMCO,P225,organization,Japan
+GlobalWafers,P226,organization,Taiwan
+Siltronic,P227,organization,Germany
+SK Siltron,P228,organization,South Korea
+Okmetic,P229,organization,China (mainland)
+JRH,P230,organization,China (mainland)
+Zhonghuan Semiconductor,P231,organization,China (mainland)
+Gritek,P232,organization,China (mainland)
+MCL,P233,organization,China (mainland)
+Simgui,P234,organization,China (mainland)
+GuoSheng,P235,organization,China (mainland)
+POSHING,P236,organization,China (mainland)
+ZingSEMI,P237,organization,China (mainland)
+Dai Nippon,P238,organization,Japan
+Photronics,P239,organization,United States
+Toppan Photomasks,P240,organization,Japan
+Hoya Corporation,P241,organization,Japan
+Taiwan Mask Corporation,P242,organization,Taiwan
+Merck Group,P243,organization,Germany
+CMC,P244,organization,United States
+Anji,P245,organization,China (mainland)
+Hubei Dinglong,P246,organization,China (mainland)
+JX Nippon,P247,organization,Japan
+Honeywell,P248,organization,United States
+Tosoh SMD,P249,organization,Japan
+Linde,P250,organization,Germany
+Praxair,P251,organization,United States
+KFMI,P252,organization,China (mainland)
+Grikin,P253,organization,China (mainland)
+Entegris,P255,organization,United States
+Air Products,P256,organization,United States
+Air Liquide,P257,organization,France
+BASF,P260,organization,Germany
+TNSC,P261,organization,Japan
+Showa Denko,P262,organization,Japan
+Wonik,P263,organization,South Korea
+SK Materials,P264,organization,South Korea
+Huate Gas,P265,organization,China (mainland)
+Jinhong Gas,P266,organization,China (mainland)
+PERIC,P267,organization,China (mainland)
+KMG Chemicals,P268,organization,United States
+Avantor,P269,organization,United States
+Kanto Chemical,P270,organization,Japan
+Runma,P271,organization,China (mainland)
+Sinophorus,P273,organization,China (mainland)
+Sinyang,P274,organization,China (mainland)
+Yongzhi,P276,organization,China (mainland)
+Heraeus,P277,organization,Germany
+Tanaka Denshi,P278,organization,Japan
+Nippon Micro,P279,organization,Japan
+Doublink,P280,organization,China (mainland)
+Kangqiang,P281,organization,China (mainland)
+YesDo,P282,organization,China (mainland)
+QP Technologies,P284,organization,United States
+NGK,P285,organization,Japan
+Alent,P286,organization,United Kingdom
+Kyocera,P287,organization,Japan
+LG,P288,organization,South Korea
+Sumitomo,P289,organization,Japan
+Mitsui High-Tec,P290,organization,Japan
+Henkel,P291,organization,Germany
+Toray,P292,organization,Japan
+Tanaka,P294,organization,Japan
+Zhongwei,P295,organization,China (mainland)
+Yixing,P296,organization,China (mainland)
+Ibiden,P297,organization,Japan
+NanYa,P298,organization,Taiwan
+Shinko,P299,organization,Japan
+Shennan Circuits,P300,organization,China (mainland)
+Zhuhai Yueya,P301,organization,China (mainland)
+AKM,P302,organization,China (mainland)
+Sinopaco,P303,organization,China (mainland)
+HHCK,P304,organization,China (mainland)
+Darbond,P305,organization,China (mainland)
+Hysol Huawei,P306,organization,China (mainland)
+SH Material,P308,organization,Japan
+Ningbo Hualong,P309,organization,China (mainland)
+Pureon,P310,organization,United States
+Renesas,P311,organization,Japan

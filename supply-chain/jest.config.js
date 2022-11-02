@@ -13,5 +13,19 @@ module.exports = {
   },
   setupFiles: [`<rootDir>/loadershim.js`],
   setupFilesAfterEnv: ["<rootDir>/setup-test-env.js"],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx}',
+    '!**/__tests__/**',
+  ],
+  // TBD - we have not decided on these yet
+  // coverageThreshold: {
+  //   global: {
+  //     branches: 80,
+  //     functions: 80,
+  //     lines: 80,
+  //     statements: -10,
+  //   },
+  // },
 }
