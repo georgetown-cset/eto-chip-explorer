@@ -142,7 +142,7 @@ const DocumentationNode = (props) => {
             <div className="lower-bar-wrapper">
               <div className="caption">
               {imgFileName !== undefined && meta.image_license &&
-                <div dangerouslySetInnerHTML={{__html: "Image Credit: " + meta.image_license}} />
+                <div dangerouslySetInnerHTML={{__html: "Image credit: " + meta.image_license}} />
               }
               </div>
               <div className="lower-icons-wrapper">
