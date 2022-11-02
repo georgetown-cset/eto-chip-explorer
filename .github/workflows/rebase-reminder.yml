@@ -1,0 +1,42 @@
+name: Rebase reminder
+on: [pull_request, pull_request_review]
+
+jobs:
+  build:
+    name: rebuild-reminder
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Find behind count
+      id: behind_count
+      run: |
+        echo "behind_count=$(git rev-list --count ${{ github.event.pull_request.head.sha }}..${{ github.event.pull_request.base.sha }})" >> $GITHUB_OUTPUT
+    - name: Find ahead count
+      id: ahead_count
+      run: |
+        echo "ahead_count=$(git rev-list --count ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})" >> $GITHUB_OUTPUT
+    - name: Find combined count
+      id: combined_count
+      run: |
+        echo "combined_count=$(expr ${{steps.behind_count.outputs.behind_count}} + ${{steps.ahead_count.outputs.ahead_count}})" >> $GITHUB_OUTPUT
+    - name: Edit PR comment - rebasing
+      if: steps.behind_count.outputs.behind_count > 0 && steps.combined_count.outputs.combined_count > 3
+      uses: thollander/actions-comment-pull-request@v1
+      with:
+        message: |
+          Needs rebasing :bangbang:
+          behind_count is ${{ steps.behind_count.outputs.behind_count }}
+          ahead_count is ${{ steps.ahead_count.outputs.ahead_count }}
+        comment_includes: 'rebasing'
+    - name: Edit PR comment - no rebasing
+      if: steps.behind_count.outputs.behind_count == 0 || steps.combined_count.outputs.combined_count <= 3
+      uses: thollander/actions-comment-pull-request@v1
+      with:
+        message: |
+          No need for rebasing :+1:
+          behind_count is ${{ steps.behind_count.outputs.behind_count }}
+          ahead_count is ${{ steps.ahead_count.outputs.ahead_count }}
+        comment_includes: 'rebasing'
