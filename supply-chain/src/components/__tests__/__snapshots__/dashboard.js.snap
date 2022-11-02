@@ -86,7 +86,7 @@ exports[`Dashboard renders correctly 1`] = `
                   <strong>
                     Learn more:
                   </strong>
-
+                   
                   <a
                     href="https://eto.tech/tool-docs/chipexplorer"
                     rel="noopener"
@@ -99,7 +99,7 @@ exports[`Dashboard renders correctly 1`] = `
                   >
                     |
                   </span>
-                  Blog post:
+                  Blog post: 
                   <a
                     href="https://eto.tech/blog/five-takeaways-chip-supply-chain"
                     rel="noopener"
@@ -112,7 +112,7 @@ exports[`Dashboard renders correctly 1`] = `
                   >
                     |
                   </span>
-                  Blog post:
+                  Blog post: 
                   <a
                     href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips"
                     rel="noopener"
@@ -3335,7 +3335,7 @@ exports[`Dashboard renders correctly 1`] = `
         <div
           class="text-blurb"
         >
-          ETO is a project of the
+          ETO is a project of the 
           <a
             href="https://cset.georgetown.edu/"
             rel="noopener"
@@ -3343,7 +3343,7 @@ exports[`Dashboard renders correctly 1`] = `
           >
             Center for Security and Emerging Technology
           </a>
-           at
+           at 
           <a
             href="https://www.georgetown.edu/"
             rel="noopener"
@@ -3484,7 +3484,7 @@ exports[`Dashboard renders correctly 1`] = `
             |
           </div>
           <div>
-            Designed by
+            Designed by 
             <a
               href="https://and-now.co.uk/"
               rel="noopener"
