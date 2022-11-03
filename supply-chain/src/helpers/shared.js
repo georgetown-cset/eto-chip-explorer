@@ -28,7 +28,7 @@ export const getBackgroundGradient = (highlight, highlights) => {
     else if (highlight <= 40) {backgroundGradient = "gradient-40"}
     else if (highlight <= 60) {backgroundGradient = "gradient-60"}
     else if (highlight <= 80) {backgroundGradient = "gradient-80"}
-    else {backgroundGradient = "gradient-100"};
+    else {backgroundGradient = "gradient-100"}
   }
   return backgroundGradient;
 }

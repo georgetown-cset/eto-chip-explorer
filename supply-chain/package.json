@@ -13,7 +13,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "artifactregistry-login": "npx google-artifactregistry-auth",
-    "test": "jest"
+    "test": "jest",
+    "lint-css": "stylelint src/styles/*.scss --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -44,6 +45,7 @@
     "@testing-library/react": "^13.4.0",
     "babel-jest": "^29.0.2",
     "babel-preset-gatsby": "^2.22.1",
+    "eslint-config-react-app": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.0.2",
     "jest-environment-jsdom": "^29.0.3",
