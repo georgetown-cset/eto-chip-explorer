@@ -2,7 +2,7 @@ import React from "react";
 import Loadable from "react-loadable";
 import {MDXProvider} from "@mdx-js/react";
 import {MDXRenderer} from "gatsby-plugin-mdx";
-import HelpTooltip from "@eto/eto-ui-components/dist/components/HelpTooltip";
+import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./input_list";
@@ -47,30 +47,16 @@ const BarGraph = (props) => {
     hovertemplate: '%{x}%<extra></extra>',
   }];
 
+  const plotlyDefaults = PlotlyDefaults();
+  plotlyDefaults["layout"]["margin"] = {t: 25, r: 30, b: 40, l: 120, pad: 4};
+  plotlyDefaults["layout"]["xaxis"]["title"] = "Share of global market";
+
   return (
     <div style={{paddingBottom: "10px"}}>
     <Plot style={{height: "450px", width: "100%"}}
       data={data}
-      layout={{
-        autosize: true,
-        margin: {t: 25, r: 30, b: 40, l: 120, pad: 4},
-        xaxis: {
-          fixedrange: true,
-          title: "Share of global market"
-        },
-        yaxis: {
-          fixedrange: true,
-        },
-        font: {
-          family: "GTZirkonRegular, Arial"
-        },
-        paper_bgcolor: "rgba(0,0,0,0)",
-        plot_bgcolor: "rgba(0,0,0,0)"
-      }}
-      config={{
-        displayModeBar: false,
-        responsive: true
-      }}
+      layout={plotlyDefaults.layout}
+      config={plotlyDefaults.config}
     />
     </div>
   );
