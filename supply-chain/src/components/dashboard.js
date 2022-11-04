@@ -22,9 +22,11 @@ export const GradientLegend = (props) => {
   let startLegend, endLegend = "";
   let boxes = null;
 
+  const has = numSelected === 1 ? "country has" : "countries have";
+  const company = numSelected === 1 ? "company" : "companies";
+
   switch (type) {
     case FILTER_COUNTRY:
-      const has = numSelected === 1 ? "country has" : "countries have";
       startLegend = `selected ${has} less market share`;
       endLegend = `selected ${has} more market share`;
       boxes = <div className="gradient-box-wrapper">
@@ -40,19 +42,20 @@ export const GradientLegend = (props) => {
       startLegend = "more supplier countries";
       endLegend = "fewer supplier countries";
       boxes = <div className="gradient-box-wrapper">
-      <div className="gradient-box unhighlighted" />
-      <div className="gradient-box gradient-60" />
-      <div className="gradient-box gradient-100" />
-    </div>;
+        <div className="gradient-box unhighlighted" />
+        <div className="gradient-box gradient-60" />
+        <div className="gradient-box gradient-100" />
+      </div>;
       break;
     case FILTER_ORG:
-      const company = numSelected === 1 ? "company" : "companies";
       startLegend = `not provided by selected ${company}`;
       endLegend = `provided by selected ${company}`;
       boxes = <div className="gradient-box-wrapper">
-      <div className="gradient-box unhighlighted" />
-      <div className="gradient-box gradient-100" />
-    </div>;
+        <div className="gradient-box unhighlighted" />
+        <div className="gradient-box gradient-100" />
+      </div>;
+      break;
+    default:
       break;
   }
 
@@ -422,6 +425,7 @@ const Dashboard = () => {
     setTimeout(function (){
       window.dispatchEvent(new Event('resize'));
     }, 200);
+  /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
   return (<AppWrapper>

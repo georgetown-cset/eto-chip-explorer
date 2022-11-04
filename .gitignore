@@ -6,6 +6,7 @@ supply-chain/data/
 supply-chain/public/
 supply-chain/coverage/
 htmlcov/
+coverage/*.xml
 .coverage
 
 Pipfile

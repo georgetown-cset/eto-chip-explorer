@@ -103,7 +103,7 @@ const Map = (props) => {
       // Making an assumption that the first node in the list has a stage provided
       const stage = nodeToMeta[nodes[0]]?.["stage_id"];
       let stageClassName = "stage-border";
-      if (!stage) {stageClassName += " uncolored"};
+      if (!stage) {stageClassName += " uncolored"}
       stageClassName = _getStageHighlight(stage, highlights, stageClassName);
       return <div className={stageClassName} key={JSON.stringify(nodes)}>
         {nodes.map(node =>
@@ -190,6 +190,7 @@ const Map = (props) => {
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
+  /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
   const mkGraph = () => {
@@ -264,10 +265,11 @@ const Map = (props) => {
       standaloneMinimapLayers.push(standaloneMinimapLayer);
       // Add edges for the current layer
       const centerPoint = orderedLayerNodes.length/2 - 0.5;
-      orderedLayerNodes.forEach((node, idx) => {
+      for (let idx = 0; idx < orderedLayerNodes.length; idx++) {
+        const node = orderedLayerNodes[idx];
         nodeToPosition[node] = idx - centerPoint;
         nodeToLayerNumber[node] = layerNumber;
-      });
+      }
       const edges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber);
       layerEdges.push(edges);
       const minimapEdges = mkEdges(filtEdges, nodeToPosition, nodeToLayerNumber, true);
