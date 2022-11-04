@@ -29,7 +29,6 @@ export const GradientLegend = (props) => {
   switch (type) {
     case FILTER_COUNTRY:
       showNotApplicableBox = true;
-      const has = numSelected === 1 ? "country has" : "countries have";
       startLegend = `selected ${has} less market share`;
       endLegend = `selected ${has} more market share`;
       boxes = <div className="gradient-box-wrapper">
@@ -71,7 +70,7 @@ export const GradientLegend = (props) => {
       {endLegend}
       {showNotApplicableBox &&
         <div>
-          &nbsp;| not applicable
+          &nbsp;| data not available
           <div className="gradient-box not-applicable" />
         </div>
       }

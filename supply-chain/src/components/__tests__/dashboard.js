@@ -79,7 +79,7 @@ describe("Dashboard", () => {
     // Check that the node is now highlighted correctly
     expect(inputNode.parentElement.parentElement.classList).toContain("highlighted");
     expect(inputNode.parentElement.parentElement.classList).toContain("gradient-100");
-    expect(stageNode.parentElement.classList).toContain("unhighlighted");
+    expect(stageNode.parentElement.classList).toContain("not-applicable");
   });
 
 });
