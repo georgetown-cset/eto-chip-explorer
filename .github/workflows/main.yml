@@ -1,6 +1,6 @@
 name: Python application
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
@@ -10,6 +10,7 @@ jobs:
     permissions:
       contents: 'read'
       id-token: 'write'
+      pull-requests: 'write'
 
     steps:
     - uses: actions/checkout@v3
@@ -23,8 +24,13 @@ jobs:
         pip install -r requirements.txt
     - name: Test with pytest
       run: |
-        pip install pytest
-        python3 -m pytest tests
+        coverage run -m pytest tests
+        coverage xml -o coverage/python.xml
+    - name: Report python coverage
+      uses: orgoro/coverage@v3
+      with:
+        coverageFile: coverage/python.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: 'Authenticate to Google Cloud'
       id: 'auth'
       uses: 'google-github-actions/auth@v0'
@@ -48,8 +54,18 @@ jobs:
         cd supply-chain
         npm run artifactregistry-login
         npm install --force
-        npm run test
+        npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="text" | tee ./coverage.txt
+    - name: Report javascript coverage
+      uses: MishaKav/jest-coverage-comment@v1.0.20
+      with:
+        title: "JavaScript Coverage"
+        summary-title: "Summary"
+        coverage-title: "Modified Files"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        report-only-changed-files: true
+        coverage-path: ./supply-chain/coverage.txt
+        coverage-summary-path: ./supply-chain/coverage/coverage-summary.json
+        coverage-path-prefix: supply-chain/src/
     - name: Run linting
       run: |
-        pip install pre-commit
         pre-commit run --all-files
