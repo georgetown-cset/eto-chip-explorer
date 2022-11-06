@@ -65,6 +65,7 @@ class Preprocess:
         self.provider_to_meta = {}
         self.variants = {}
         if not is_test:
+            print("not testing")
             if not os.path.exists(args.output_dir):
                 os.makedirs(args.output_dir)
             if not os.path.exists(args.output_pdfs_dir):
