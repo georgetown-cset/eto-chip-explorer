@@ -493,6 +493,7 @@ class Preprocess:
         Generate and save a PDF with the description for a node
         :return: None
         """
+        print("generating pdf")
         node_description = line["description"].replace("\n", "<br/>")
         node_countries = node_to_country_provision.get(node_id, {})
         if node_countries.get("graph"):
