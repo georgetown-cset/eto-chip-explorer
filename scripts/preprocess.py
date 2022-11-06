@@ -65,6 +65,7 @@ class Preprocess:
         self.provider_to_meta = {}
         self.variants = {}
         if not is_test:
+            print("not testing")
             if not os.path.exists(args.output_dir):
                 os.makedirs(args.output_dir)
             if not os.path.exists(args.output_pdfs_dir):
@@ -492,6 +493,7 @@ class Preprocess:
         Generate and save a PDF with the description for a node
         :return: None
         """
+        print("generating pdf")
         node_description = line["description"].replace("\n", "<br/>")
         node_countries = node_to_country_provision.get(node_id, {})
         if node_countries.get("graph"):
