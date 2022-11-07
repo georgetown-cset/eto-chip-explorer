@@ -82,7 +82,7 @@ class Preprocess:
                 self.mk_images(args.images_file, args.output_images_dir)
 
             self.write_graphs(args.sequence, args.output_dir)
-            self.mk_provider_to_meta(args.providers, args.basic_company_info)
+            self.mk_provider_to_meta(args.providers)
             self.write_provision(args.provision, args.output_dir)
 
             if args.refresh_bq:
@@ -575,13 +575,11 @@ class Preprocess:
                     output_dir,
                 )
 
-    def mk_provider_to_meta(self, provider_fi: str, company_metadata_fi: str):
+    def mk_provider_to_meta(self, provider_fi: str):
         """
         Create a mapping between provider ids and their metadata, such as name and type (for company providers)
         :param provider_fi: provider csv
             (from https://docs.google.com/spreadsheets/d/1QaUTc75gnwk1SwEy3vCx3J0w6oE0yCierYF2pO0Uino/edit#gid=0)
-        :param company_metadata_fi: Airtable export of basic company metadata
-            (from https://airtable.com/apptyAYjYFVXWONzU/tblbaY2Qa4hMpknjk/viwHEhESHcbtBk2ya?blocks=hide)
         :return: None (mutates self.provider_meta)
         """
         name_to_id = {}
@@ -599,12 +597,6 @@ class Preprocess:
                         "hq_country"
                     ] = self.get_country(line["country"]).strip()
                 name_to_id[line["provider_name"]] = line["provider_id"]
-        with open(company_metadata_fi) as f:
-            for line in csv.DictReader(f):
-                company_id = name_to_id.get(line["Company"])
-                if not company_id:
-                    continue
-                self.provider_to_meta[company_id]["url"] = line["Website URL"]
 
     def write_provider_bq_table(self, provider_fi: str):
         """
@@ -740,12 +732,11 @@ if __name__ == "__main__":
     parser.add_argument("--sequence", default=os.path.join("data", "sequence.csv"))
     parser.add_argument("--stages", default=os.path.join("data", "stages.csv"))
     parser.add_argument("--providers", default=os.path.join("data", "providers.csv"))
-    parser.add_argument(
-        "--basic_company_info", default=os.path.join("data", "basic_company_info.csv")
-    )
     parser.add_argument("--provision", default=os.path.join("data", "provision.csv"))
     parser.add_argument("--images", action="store_true")
-    parser.add_argument("--images_file", default=os.path.join("data", "images.csv"))
+    parser.add_argument(
+        "--images_file", default=os.path.join("data", "site_artifacts", "images.csv")
+    )
     parser.add_argument("--output_dir", default=os.path.join("supply-chain", "data"))
     parser.add_argument(
         "--output_text_dir", default=os.path.join("supply-chain", "src", "pages")
