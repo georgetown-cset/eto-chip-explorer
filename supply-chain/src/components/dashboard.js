@@ -69,8 +69,8 @@ export const GradientLegend = (props) => {
       {boxes}
       {endLegend}
       {showNotApplicableBox &&
-        <div>
-          &nbsp;| data not available
+        <div className="gradient-legend-not-available">
+          <span>data not available</span>
           <div className="gradient-box not-applicable" />
         </div>
       }
