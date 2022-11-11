@@ -5,7 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import StarIcon from '@mui/icons-material/Star';
 import {graph, graphReverse, nodeToMeta} from "../../data/graph";
 
-import { allSubVariantsList, FILTER_CONCENTRATION, FILTER_COUNTRY, getBackgroundGradient } from "../helpers/shared";
+import { allSubVariantsList, FILTER_CONCENTRATION, FILTER_COUNTRY, FILTER_ORG, getBackgroundGradient } from "../helpers/shared";
 import DocumentationNode from "./documentation_node";
 import InputList from "./input_list";
 
@@ -14,10 +14,21 @@ const GraphNode = (props) => {
     descriptions=null, images=null, highlighterFilter} = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
+  const _isDesignProcessNode = () => {
+    if (meta.type === "process" && meta.stage_id === "S1") {
+      return true;
+    }
+    return false;
+  }
+
   const getHighlightClass = () => {
     if (node in highlights && highlights[node] !== 0) {
       return " highlighted " + getBackgroundGradient(highlights[node], highlights);
     } else if ((highlighterFilter === FILTER_CONCENTRATION) || (highlighterFilter === FILTER_COUNTRY)) {
+      return " not-applicable";
+    } else if (highlighterFilter === FILTER_ORG && !_isDesignProcessNode()) {
+      // For the org filter, we have data for the process-level nodes in the
+      // design stage but no where else.
       return " not-applicable";
     } else if (Object.keys(highlights).length > 0) {
       return " unhighlighted";
