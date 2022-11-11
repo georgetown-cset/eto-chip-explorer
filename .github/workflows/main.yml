@@ -39,7 +39,7 @@ jobs:
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
         token_format: 'access_token'
     - name: 'Log into Artifact Registry'
-      uses: 'docker/login-action@v1'
+      uses: 'docker/login-action@v2'
       with:
         registry: us-east1-docker.pkg.dev
         username: 'oauth2accesstoken'
