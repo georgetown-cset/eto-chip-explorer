@@ -45,7 +45,7 @@ jobs:
         npm run artifactregistry-login
         npm install --force
     - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: 3.7
     - name: Build data files
