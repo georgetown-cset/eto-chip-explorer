@@ -3549,6 +3549,16 @@ exports[`Gradient Legend renders with boxes correctly 1`] = `
       />
     </div>
     selected countries have more market share
+    <div
+      class="gradient-legend-not-available"
+    >
+      <span>
+        data not available
+      </span>
+      <div
+        class="gradient-box not-applicable"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

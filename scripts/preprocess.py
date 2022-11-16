@@ -310,6 +310,7 @@ class Preprocess:
         :return: None
         """
         self.org_provision = {}
+        process_nodes_with_org_provision = set()
         self.country_provision = {}
         country_flags = {}
         with open(provision_fi) as f:
@@ -339,6 +340,8 @@ class Preprocess:
                     self.org_provision[provider_id][provided] = self.get_provision(
                         line, True
                     )
+                    if self.node_to_meta.get(provided, {}).get("type") == "process":
+                        process_nodes_with_org_provision.add(provided)
         country_provision_concentration = self.get_provision_concentration(
             self.country_provision
         )
@@ -349,9 +352,14 @@ class Preprocess:
                 f"const countryProvisionConcentration={json.dumps(country_provision_concentration)};\n"
             )
             f.write(f"const orgProvision={json.dumps(self.org_provision)};\n")
+            f.write(
+                f"const processNodesWithOrgProvision={json.dumps(list(process_nodes_with_org_provision))};\n"
+            )
             f.write(f"const providerMeta={json.dumps(self.provider_to_meta)};\n")
             f.write(
-                "\nexport {countryProvision, countryFlags, countryProvisionConcentration, orgProvision, providerMeta};\n"
+                "\nexport {countryProvision, countryFlags, "
+                "countryProvisionConcentration, orgProvision, processNodesWithOrgProvision, "
+                "providerMeta};\n"
             )
 
     def write_descriptions(

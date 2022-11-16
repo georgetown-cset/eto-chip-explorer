@@ -24,6 +24,10 @@ export const GradientLegend = (props) => {
 
   const has = numSelected === 1 ? "country has" : "countries have";
   const company = numSelected === 1 ? "company" : "companies";
+  let dataNotAvailable = <div className="gradient-legend-not-available">
+    <span>data not available</span>
+    <div className="gradient-box not-applicable" />
+  </div>;
 
   switch (type) {
     case FILTER_COUNTRY:
@@ -56,6 +60,7 @@ export const GradientLegend = (props) => {
       </div>;
       break;
     default:
+      dataNotAvailable = null;
       break;
   }
 
@@ -65,6 +70,7 @@ export const GradientLegend = (props) => {
       {startLegend}
       {boxes}
       {endLegend}
+      {dataNotAvailable}
     </div>
   )
 }
