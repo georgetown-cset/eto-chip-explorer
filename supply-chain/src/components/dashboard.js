@@ -441,10 +441,12 @@ const Dashboard = () => {
         description={
           <div>
             ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
-            <Typography component={"p"} variant={"body1"} style={{padding: "15px 0px"}}>
+            <Typography component={"div"} style={{paddingTop: "15px"}}>
             <strong>Learn more:</strong> <a href="https://eto.tech/tool-docs/chipexplorer" target="_blank" rel="noopener">Documentation</a><span style={{padding: "0px 10px"}}>|</span>Blog post: <a href="https://eto.tech/blog/five-takeaways-chip-supply-chain" target="_blank" rel="noopener">Five quick takeaways on the chip supply chain</a><span style={{padding: "0px 10px"}}>|</span>Blog post: <a href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips" target="_blank" rel="noopener">Introducing the Supply Chain Explorer</a>
+            <p>
+              Last updated on {data.site.buildTime}. Underlying data originally published in 2021.
+            </p>
             </Typography>
-            <Typography component={"p"} variant={"body1"} style={{paddingBottom: "20px"}}>Last updated on {data.site.buildTime}. Underlying data originally published in 2021.</Typography>
           </div>
         }
         documentationLink="https://eto.tech/tool-docs/chipexplorer/"
