@@ -9,6 +9,8 @@ data/providers_bq.csv
 htmlcov/
 coverage/*.xml
 .coverage
+*.code-workspace
+.venv/
 
 Pipfile
 Pipfile.lock
