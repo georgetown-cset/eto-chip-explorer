@@ -56,7 +56,7 @@ jobs:
         npm install --force
         npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="text" | tee ./coverage.txt
     - name: Report javascript coverage
-      uses: MishaKav/jest-coverage-comment@v1.0.20
+      uses: MishaKav/jest-coverage-comment@v1.0.21
       with:
         title: "JavaScript Coverage"
         summary-title: "Summary"
