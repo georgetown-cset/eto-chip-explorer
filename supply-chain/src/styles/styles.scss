@@ -5,6 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 
   --bright-blue-light-hsl-g100: hsl(215deg 100% 50%);
   --bright-blue-light-hsl-g80: hsl(215deg 100% 60%);
@@ -30,6 +31,14 @@ a {
   text-decoration: none;
 
   &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* We want link underlining to be disabled everywhere
+EXCEPT the description box at the top. */
+.info-card-wrapper .description-wrapper {
+  a {
     text-decoration: underline;
   }
 }
