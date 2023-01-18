@@ -43,8 +43,10 @@ const Map = (props) => {
   const images = data.images.nodes;
   const pdfs = data.pdfs.nodes;
 
+  const _nodeToNumber = (e) => e in graph ? graph[e].length : 0;
+
   const getLayerOrder = (nodes) => {
-    nodes.sort((e1, e2) => (e1 in graph ? graph[e1].length : 0) > (e2 in graph ? graph[e2].length : 0));
+    nodes.sort((e1, e2) => (_nodeToNumber(e1) > _nodeToNumber(e2)) ? 1 : ((_nodeToNumber(e1) < _nodeToNumber(e2)) ? -1 : 0));
     // Now that we have sorted the nodes by number of outgoing edges, we want to put the nodes with the fewest
     // edges in the middle of the node list
     const nodesPrefix = [];
