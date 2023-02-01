@@ -43,7 +43,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "babel-jest": "^29.0.2",
+    "babel-jest": "^29.4.1",
     "babel-preset-gatsby": "^2.22.1",
     "eslint-config-react-app": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
