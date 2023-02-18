@@ -49,6 +49,7 @@ jobs:
       with:
         node-version: '18'
     - name: Test with jest
+      shell: bash
       run: |
         python3 scripts/preprocess.py
         cd supply-chain

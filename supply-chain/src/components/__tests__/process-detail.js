@@ -4,8 +4,8 @@ import {render, screen} from "@testing-library/react"
 import ProcessDetail from "../process_detail"
 
 const descriptions = [
-  {"slug": "N59", "body": "Some text about N59"},
-  {"slug": "N35", "body": "Some text about N35"},
+  {fields: {slug: "N59"}, "body": "Some text about N59"},
+  {fields: {slug: "N35"}, "body": "Some text about N35"},
 ]
 
 describe("Process detail", () => {
