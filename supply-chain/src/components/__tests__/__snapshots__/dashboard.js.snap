@@ -3,23 +3,23 @@
 exports[`Dashboard renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="app-wrapper "
+    class="app-wrapper  css-zrlalh-wrapperStyles"
   >
     <header
-      class="eto-header"
+      class="eto-header css-1c57aw7-wrapperStyles"
     >
       <a
         href="https://eto.tech/"
         style="display: flex;"
       >
         <img
+          alt="ETO Logo"
           src="test-file-stub"
           style="height: 120px;"
         />
       </a>
       <div
-        class="header-links"
-        style=""
+        class="header-links css-18f1a9i-linkStyles"
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
@@ -54,34 +54,55 @@ exports[`Dashboard renders correctly 1`] = `
         style="max-width: 1500px;"
       >
         <div
-          class="info-card-wrapper undefined"
+          class="info-card-wrapper css-82b5yr-infocardWrapper-InfoCard"
         >
           <div
-            class="accent"
+            class="css-f9vkxs-accent"
           />
           <div
-            class="bottom-border"
+            class="css-sxdaro-bottomBorderGridArea-topAreaBottomBorder-InfoCard"
           />
           <div
-            class="title-wrapper"
+            class="css-3tis61-topAreaBottomBorder-titleWrapper-InfoCard"
           >
             <div
-              class="MuiTypography-root MuiTypography-h4 title css-5lbw0b-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-h4 css-bk0oki-MuiTypography-root-title"
             >
               Supply Chain Explorer
             </div>
+            <div
+              class="css-1f9ukm2-documentationLink"
+            >
+              <a
+                href="https://eto.tech/tool-docs/chipexplorer/"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"
+                  data-testid="InfoIcon"
+                  focusable="false"
+                  style="margin-bottom: -5px; margin-right: 5px;"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                  />
+                </svg>
+                Documentation
+              </a>
+            </div>
           </div>
           <div
-            class="description-wrapper"
+            class="description-wrapper css-aimaph-descriptionWrapper"
           >
             <div
-              class="MuiTypography-root MuiTypography-h6 description  css-2ulfj5-MuiTypography-root"
+              class="description  css-pkh2lv-description"
             >
               <div>
                 ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
-                <p
+                <div
                   class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                  style="padding: 15px 0px;"
+                  style="padding-top: 15px;"
                 >
                   <strong>
                     Learn more:
@@ -120,39 +141,34 @@ exports[`Dashboard renders correctly 1`] = `
                   >
                     Introducing the Supply Chain Explorer
                   </a>
-                </p>
-                <p
-                  class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-                  style="padding-bottom: 20px;"
-                >
-                  Last updated on January 31, 2022. Underlying data originally published in 2021.
-                </p>
+                  <p>
+                    Last updated on January 31, 2022. Underlying data originally published in 2021.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="MuiTypography-root MuiTypography-p sidebar-title desktop css-37jdci-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-p sidebar-title desktop css-1cdn5d8-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
           >
             Quick guide
           </div>
           <div
-            class="MuiTypography-root MuiTypography-p sidebar-content desktop css-37jdci-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-p sidebar-content desktop css-18mx5jq-MuiTypography-root-sidebarCommon-sidebarContent-InfoCard"
           >
             <div>
+              <div
+                style="padding-bottom: 15px;"
+              >
+                Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
+              </div>
               <div>
-                <div
-                  style="padding-bottom: 15px;"
-                >
-                  Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
-                </div>
-                <div>
-                  Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
-                </div>
+                Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
               </div>
             </div>
           </div>
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-1elwnq4-MuiPaper-root-MuiAccordion-root"
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-ihmixh-MuiPaper-root-MuiAccordion-root-sidebarMobile"
           >
             <div
               aria-controls="sidebar-content"
@@ -166,7 +182,7 @@ exports[`Dashboard renders correctly 1`] = `
                 class="MuiAccordionSummary-content MuiAccordionSummary-contentGutters css-o4b71y-MuiAccordionSummary-content"
               >
                 <div
-                  class="MuiTypography-root MuiTypography-p sidebar-title css-37jdci-MuiTypography-root"
+                  class="MuiTypography-root MuiTypography-p sidebar-title css-1cdn5d8-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
                 >
                   Quick guide
                 </div>
@@ -207,18 +223,16 @@ exports[`Dashboard renders correctly 1`] = `
                       class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
                     >
                       <div
-                        class="MuiTypography-root MuiTypography-p sidebar-content css-37jdci-MuiTypography-root"
+                        class="MuiTypography-root MuiTypography-p sidebar-content css-18mx5jq-MuiTypography-root-sidebarCommon-sidebarContent-InfoCard"
                       >
                         <div>
+                          <div
+                            style="padding-bottom: 15px;"
+                          >
+                            Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
+                          </div>
                           <div>
-                            <div
-                              style="padding-bottom: 15px;"
-                            >
-                              Click on any part of the diagram to view a summary description, supplier countries, and supplier companies.
-                            </div>
-                            <div>
-                              Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
-                            </div>
+                            Use the filter bar at the top to jump to a specific input, or to highlight different parts of the diagram according to countries, companies, or market concentration.
                           </div>
                         </div>
                       </div>
@@ -235,7 +249,7 @@ exports[`Dashboard renders correctly 1`] = `
         style="position: sticky; top: 0px; z-index: 20;"
       >
         <div
-          class="dropdown"
+          class="dropdown css-mxxg0t-dropdownWrapper-Dropdown"
         >
           <div
             class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
@@ -246,7 +260,7 @@ exports[`Dashboard renders correctly 1`] = `
               Highlight by
             </label>
             <div
-              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root"
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-1ow28ay-MuiInputBase-root-MuiInput-root-MuiSelect-root-select"
             >
               <div
                 aria-expanded="false"
@@ -280,7 +294,7 @@ exports[`Dashboard renders correctly 1`] = `
           </div>
         </div>
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
           id="clear-button"
           tabindex="0"
           type="button"
@@ -291,17 +305,18 @@ exports[`Dashboard renders correctly 1`] = `
           />
         </button>
         <div
-          class="user-feedback-wrapper"
+          class="user-feedback-wrapper css-17v8ss5-targetWrapper"
         >
           <button
             class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root"
+            data-testid="userfeedback-trigger"
             tabindex="0"
             type="button"
           >
             <span>
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-i4bv87-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-l7rtm5-MuiSvgIcon-root-HelpTooltip"
                 data-mui-internal-clone-element="true"
                 data-testid="FeedbackOutlinedIcon"
                 focusable="false"
@@ -346,7 +361,7 @@ exports[`Dashboard renders correctly 1`] = `
                       Design
                     </h3>
                     <button
-                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                       style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
@@ -941,7 +956,7 @@ exports[`Dashboard renders correctly 1`] = `
                       Fabrication
                     </h3>
                     <button
-                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                       style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
@@ -2611,7 +2626,7 @@ exports[`Dashboard renders correctly 1`] = `
                       Assembly, testing, and packaging (ATP)
                     </h3>
                     <button
-                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                       style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
@@ -3306,18 +3321,19 @@ exports[`Dashboard renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="eto-footer"
+      class="eto-footer css-1oyl9u3-wrapperStyles"
     >
       <div
-        class="brand"
+        class="css-b75asb-brandStyles"
       >
         <div
-          class="logos"
+          class="css-16tfurm-logoStyles"
         >
           <a
             href="https://eto.tech/"
           >
             <img
+              alt="ETO Logo"
               src="test-file-stub"
               style="height: 90px;"
             />
@@ -3333,7 +3349,7 @@ exports[`Dashboard renders correctly 1`] = `
           </a>
         </div>
         <div
-          class="text-blurb"
+          class="css-1g4lv4s-textBlurbStyles"
         >
           ETO is a project of the 
           <a
@@ -3355,7 +3371,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="subscribe"
+        class="subscribe css-1udubhv-subscribeStyles"
       >
         <div
           style="margin: 0px auto;"
@@ -3374,10 +3390,11 @@ exports[`Dashboard renders correctly 1`] = `
             class="email-form"
           >
             <div
+              data-testid="email-form-result"
               style="display: flex; align-items: center; width: 100%;"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1qqoial-MuiFormControl-root-MuiTextField-root-TextFieldStyled"
+                class="MuiFormControl-root MuiTextField-root css-d8rq7p-MuiFormControl-root-MuiTextField-root-baseStyles-customColorStyles-TextFieldStyled"
                 style="margin-right: 0.5rem; width: 100%;"
               >
                 <div
@@ -3395,8 +3412,9 @@ exports[`Dashboard renders correctly 1`] = `
               </div>
             </div>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-13hwolo-MuiButtonBase-root-MuiButton-root-ButtonStyled"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-143bajs-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
               tabindex="0"
+              title="Submit email"
               type="button"
             >
               <svg
@@ -3418,11 +3436,11 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="contact"
+        class="contact css-f99nzs-contactStyles"
       >
         <div>
           <label>
-            Contact
+            Keep in touch
           </label>
         </div>
         <div>
@@ -3455,16 +3473,26 @@ exports[`Dashboard renders correctly 1`] = `
             Email
           </a>
         </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            href="https://eto.tech/rss.xml"
+            rel="noopener"
+            target="_blank"
+          >
+            RSS
+          </a>
+        </div>
       </div>
       <div
-        class="line"
+        class="css-mgkvdw-lineStyles"
       >
         <div
           class="line-internal"
         />
       </div>
       <div
-        class="links"
+        class="links css-1ol7fc0-linksStyles"
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
@@ -3473,7 +3501,7 @@ exports[`Dashboard renders correctly 1`] = `
           Terms of Use and Privacy Policy
         </a>
         <div
-          class="copyright-notice"
+          class="css-14jcibu-copyrightNoticeStyles"
         >
           <div>
             ETO, 2022

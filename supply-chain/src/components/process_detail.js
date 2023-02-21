@@ -1,6 +1,5 @@
 import React from "react";
-import {MDXProvider} from "@mdx-js/react";
-import {MDXRenderer} from "gatsby-plugin-mdx";
+import ReactMarkdown from 'react-markdown'
 import mdxComponents from "../helpers/mdx_style";
 import { ProviderListing } from "./input_detail";
 
@@ -10,9 +9,7 @@ const ProcessDetail = (props) => {
 
   return (
     <div style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}} className="process-detail">
-      <MDXProvider components={mdxComponents}>
-        <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0].body}</MDXRenderer>
-      </MDXProvider>
+      <ReactMarkdown components={mdxComponents}>{descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}</ReactMarkdown>
       <ProviderListing isOrg={true} providers={orgs} providerMeta={orgMeta} variant={false} />
     </div>
   )

@@ -32,8 +32,10 @@ const Map = (props) => {
       },
       allMdx {
         nodes {
-          body,
-          slug
+          body
+          fields {
+            slug
+          }
         }
       }
     }

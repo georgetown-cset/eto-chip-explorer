@@ -1,7 +1,6 @@
 import React from "react";
 import Loadable from "react-loadable";
-import {MDXProvider} from "@mdx-js/react";
-import {MDXRenderer} from "gatsby-plugin-mdx";
+import ReactMarkdown from 'react-markdown'
 import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 import Typography from "@mui/material/Typography";
 import mdxComponents from "../helpers/mdx_style";
@@ -204,9 +203,7 @@ const InputDetail = (props) => {
 
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
-      <MDXProvider components={mdxComponents}>
-        <MDXRenderer>{descriptions.filter(n => n.slug === selectedNode)[0]?.body}</MDXRenderer>
-      </MDXProvider>
+      <ReactMarkdown components={mdxComponents}>{descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}</ReactMarkdown>
       {nodeToMeta[selectedNode].total_market_size &&
         <Typography component="p">
           <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}

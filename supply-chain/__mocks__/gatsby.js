@@ -45,10 +45,10 @@ module.exports = {
     },
     allMdx: {
       nodes: [
-        {slug: "N8", body: "Some text about N8"},
-        {slug: "N59", body: "Some text about N59"},
-        {slug: "N35", body: "Some text about N35"},
-        {slug: "S3", body: "Some text about S3"},
+        {fields: {slug: "N8"}, body: "Some text about N8"},
+        {fields: {slug: "N59"}, body: "Some text about N59"},
+        {fields: {slug: "N35"}, body: "Some text about N35"},
+        {fields: {slug: "S3"}, body: "Some text about S3"},
       ]
     }
   })
