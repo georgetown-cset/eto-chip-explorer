@@ -133,13 +133,12 @@ exports[`Dashboard renders correctly 1`] = `
                   >
                     |
                   </span>
-                  Blog post: 
                   <a
-                    href="https://eto.tech/blog/introducing-supply-chain-explorer-advanced-chips"
+                    href="https://eto.tech/blog/?tag=Supply%20Chain%20Explorer"
                     rel="noopener"
                     target="_blank"
                   >
-                    Introducing the Supply Chain Explorer
+                    All Explorer blog posts
                   </a>
                   <p>
                     Last updated on January 31, 2022. Underlying data originally published in 2021.
