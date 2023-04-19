@@ -1,5 +1,8 @@
 name: Rebase reminder
-on: [pull_request, pull_request_review]
+on:
+  pull_request:
+    types: closed
+    branches: [main, rebase-testing]
 
 jobs:
   build:
@@ -43,4 +46,5 @@ jobs:
           No need for rebasing :+1:
           behind_count is ${{ steps.behind_count.outputs.behind_count }}
           ahead_count is ${{ steps.ahead_count.outputs.ahead_count }}
+          sha is ${{github.event.pull_request.base.sha}}
         comment_tag: rebasing
