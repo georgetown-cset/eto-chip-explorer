@@ -281,10 +281,10 @@ const Dashboard = () => {
   const inputNodes = getInputNodes();
   const listOfFilters = [
     {val: "None", text: "None"},
-    {val: FILTER_INPUT, text: <span>Specific inputs <HelpTooltip text={tooltips[FILTER_INPUT]} style={{verticalAlign: "top", height: "23px"}}/></span>},
-    {val: FILTER_COUNTRY, text: <span>Supplier countries <HelpTooltip text={tooltips[FILTER_COUNTRY]} style={{verticalAlign: "top", height: "23px"}}/></span>},
-    {val: FILTER_ORG, text: <span>Supplier companies <HelpTooltip text={tooltips[FILTER_ORG]} style={{verticalAlign: "top", height: "23px"}}/></span>},
-    {val: FILTER_CONCENTRATION, text: <span>Market concentration <HelpTooltip text={tooltips[FILTER_CONCENTRATION]} style={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_INPUT, text: <span>Specific inputs <HelpTooltip text={tooltips[FILTER_INPUT]} iconStyle={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_COUNTRY, text: <span>Supplier countries <HelpTooltip text={tooltips[FILTER_COUNTRY]} iconStyle={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_ORG, text: <span>Supplier companies <HelpTooltip text={tooltips[FILTER_ORG]} iconStyle={{verticalAlign: "top", height: "23px"}}/></span>},
+    {val: FILTER_CONCENTRATION, text: <span>Market concentration <HelpTooltip text={tooltips[FILTER_CONCENTRATION]} iconStyle={{verticalAlign: "top", height: "23px"}}/></span>},
   ];
   const filterKeys = [FILTER_CHOOSE, FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG, FILTER_CONCENTRATION];
   const defaultFilterValues = {

@@ -155,7 +155,7 @@ export const ProviderListing = (props) => {
   const helpText = <HelpTooltip text={
     isOrg ? "Global companies with significant market share or otherwise notable capabilities." :
     "Countries with significant global market share."}
-    style={{verticalAlign: "middle"}}
+    iconStyle={{verticalAlign: "middle"}}
   />
 
   const showTable = () => {
@@ -215,7 +215,7 @@ const InputDetail = (props) => {
             <div>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Supplier countries
-                <HelpTooltip text={"Countries with significant global market share."} style={{verticalAlign: "middle"}} />
+                <HelpTooltip text={"Countries with significant global market share."} iconStyle={{verticalAlign: "middle"}} />
               </Typography>
               <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
