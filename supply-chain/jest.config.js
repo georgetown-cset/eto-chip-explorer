@@ -11,7 +11,10 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ``,
   },
-  setupFiles: [`<rootDir>/loadershim.js`],
+  setupFiles: [
+    `<rootDir>/loadershim.js`,
+    'jest-canvas-mock',
+  ],
   setupFilesAfterEnv: ["<rootDir>/setup-test-env.js"],
   testEnvironment: 'jsdom',
   collectCoverage: true,
