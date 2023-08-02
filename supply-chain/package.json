@@ -17,12 +17,12 @@
     "lint-css": "stylelint src/styles/*.scss --fix"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@eto/eto-ui-components": "^1.1.52",
     "@mdx-js/mdx": "^2.1.13",
     "@mdx-js/react": "^2.1.13",
-    "@mui/icons-material": "^5.11.11",
+    "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.11.11",
     "gatsby": "^5.4.2",
     "gatsby-plugin-emotion": "^8.4.0",
@@ -47,10 +47,10 @@
     "@testing-library/react": "^14.0.0",
     "babel-jest": "^29.5.0",
     "babel-preset-gatsby": "^2.22.1",
-    "eslint": "^8.44.0",
+    "eslint": "^8.46.0",
     "eslint-config-react-app": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^29.3.1",
+    "jest": "^29.6.2",
     "jest-canvas-mock": "^2.5.1",
     "jest-environment-jsdom": "^29.5.0",
     "react-test-renderer": "^18.2.0"
