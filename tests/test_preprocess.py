@@ -333,7 +333,7 @@ class TestPreprocess(unittest.TestCase):
             "./tests/test_input.csv", "./tests/test_stages.csv", "tests/"
         )
 
-        output_truth = open("tests/test_N1.mdx").read()
-        output_testing = open("tests/N1.mdx").read()
+        output_truth = open("tests/test_N1.mdx").read().strip()
+        output_testing = open("tests/N1.mdx").read().strip()
 
         self.assertEqual(output_testing, output_truth)
