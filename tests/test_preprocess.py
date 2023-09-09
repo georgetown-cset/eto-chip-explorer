@@ -64,6 +64,7 @@ class TestPreprocess(unittest.TestCase):
     def test_mk_provider_to_meta(self):
         self.maxDiff = None
         provider_fi = "./tests/test_providers.csv"
+        provision_fi = "./tests/test_provision.csv"
         pp = Preprocess(None, True)
         pp.mk_provider_to_meta(provider_fi)
         self.assertEqual(
@@ -92,6 +93,12 @@ class TestPreprocess(unittest.TestCase):
                 },
             },
         )
+        pp.write_provision(provision_fi, "tests/")
+
+        output_truth = open("tests/test_provision.js").read()
+        output_testing = open("tests/provision.js").read()
+
+        self.assertEqual(output_testing, output_truth)
 
     def test_get_flag(self):
         self.assertEqual("🇺🇸", Preprocess.get_flag("USA"))
@@ -319,3 +326,14 @@ class TestPreprocess(unittest.TestCase):
                 "Flickr user [FritzchensFritz](https://www.flickr.com/photos/130561288@N04/50914099198/)"
             ),
         )
+
+    def test_write_descriptions(self):
+        pp = Preprocess(None, True)
+        pp.write_descriptions(
+            "./tests/test_input.csv", "./tests/test_stages.csv", "tests/"
+        )
+
+        output_truth = open("tests/test_N1.mdx").read()
+        output_testing = open("tests/N1.mdx").read()
+
+        self.assertEqual(output_testing, output_truth)

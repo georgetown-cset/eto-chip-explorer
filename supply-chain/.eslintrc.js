@@ -1,6 +1,7 @@
 module.exports = {
   "globals": {
     __PATH_PREFIX__: true,
+    "fetchMock": true,
   },
   "env": {
     "browser": true,
@@ -12,6 +13,6 @@ module.exports = {
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
   },
 }

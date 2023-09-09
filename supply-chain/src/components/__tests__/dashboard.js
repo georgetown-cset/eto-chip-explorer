@@ -23,6 +23,18 @@ describe("Gradient Legend", () => {
 });
 
 describe("Dashboard", () => {
+  beforeEach(() => {
+    window.HTMLElement.prototype.scrollIntoView = function() {};
+    const location = {
+      ...window.location,
+      search: '',
+    };
+    Object.defineProperty(window, 'location', {
+      writable: true,
+      value: location,
+    });
+  })
+
   it("renders correctly", () => {
     const {asFragment} = render(<Dashboard/>);
     expect(asFragment()).toMatchSnapshot();
@@ -62,6 +74,25 @@ describe("Dashboard", () => {
     // Close the documentation panel
     fireEvent.click(screen.getByText("Clear Highlights"));
     expect(screen.getAllByText("Crystal growing furnaces").length).toEqual(1);
+  });
+
+  it("opens a documentation node with variants and subvariants", () => {
+    render(<Dashboard/>);
+    // Click on a node with subvariants
+    fireEvent.click(screen.getByText("Deposition tools"));
+    fireEvent.click(screen.getAllByText("Chemical vapor deposition tools")[0]);
+
+    // Show subvariants list
+    expect(screen.getAllByText("Atomic layer deposition tools").length).toEqual(5);
+  });
+
+  it("opens a stage node", () => {
+    render(<Dashboard/>);
+    // Click on a stage node title
+    fireEvent.click(screen.getByText("Fabrication"));
+
+    // Show stage node text
+    expect(screen.getByText("at the 45 nm node or below", {exact: false})).not.toBeNull();
   });
 
   it("changes the highlighting shown", () => {

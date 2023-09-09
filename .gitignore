@@ -14,3 +14,9 @@ coverage/*.xml
 
 Pipfile
 Pipfile.lock
+
+# Test output files
+tests/N1.mdx
+tests/N2.mdx
+tests/S1.mdx
+tests/provision.js

@@ -60,7 +60,7 @@ MARKET_SHARE_COL = "negligible_market_share"
 
 
 class Preprocess:
-    def __init__(self, args, is_test=False):
+    def __init__(self, args, is_test=False):  # pragma: no cover
         self.node_to_meta = {}
         self.provider_to_meta = {}
         self.variants = {}
@@ -185,7 +185,7 @@ class Preprocess:
                 self.node_to_meta[child][node_type].append(parent)
         return graph, graph_reverse
 
-    def write_graphs(self, sequence: str, output_dir: str) -> None:
+    def write_graphs(self, sequence: str, output_dir: str) -> None:  # pragma: no cover
         """
         Parses a csv that specifies node type, the edges between nodes, and node variants
         :param sequence: sequence csv
@@ -425,7 +425,9 @@ class Preprocess:
             node_to_country_provision[node]["all_names"].sort()
         return node_to_country_provision
 
-    def _get_country_provision_graph(self, graph, output_dir, node_id):
+    def _get_country_provision_graph(
+        self, graph, output_dir, node_id
+    ):  # pragma: no cover
         """
         Generate a graph representing country provisions for a node
         :return: A dictionary representation of a graph
@@ -544,7 +546,9 @@ class Preprocess:
             {"enable-local-file-access": None},
         )
 
-    def mk_pdfs(self, nodes_fi: str, stages_fi: str, output_dir: str) -> None:
+    def mk_pdfs(
+        self, nodes_fi: str, stages_fi: str, output_dir: str
+    ) -> None:  # pragma: no cover
         """
         Generate pdf version of the each node's description
         :param nodes_fi: CSV file with node information
@@ -631,7 +635,7 @@ class Preprocess:
                     writer.writerow(line)
         return provider_bq_fi
 
-    def write_to_bq(self, nodes_fi, provider_bq_fi):
+    def write_to_bq(self, nodes_fi, provider_bq_fi):  # pragma: no cover
         """
         Load CSVs to bigquery tables, overwriting the existing tables.
         Also loads the CSVs to versioned backup tables.
