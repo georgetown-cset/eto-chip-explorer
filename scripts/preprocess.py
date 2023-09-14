@@ -79,7 +79,7 @@ class Preprocess:
                 if os.path.exists(args.output_images_dir):
                     shutil.rmtree(args.output_images_dir)
                 os.makedirs(args.output_images_dir)
-                self.mk_images(args.images_file, args.output_images_dir)
+            self.mk_images(args.images, args.images_file, args.output_images_dir)
 
             self.write_graphs(args.sequence, args.output_dir)
             self.mk_provider_to_meta(args.providers)
@@ -711,9 +711,10 @@ class Preprocess:
             r"<\/p>", "", re.sub(r"^<p>", "", mistletoe.markdown(text).strip())
         ).replace("a href=", "a target='_blank' rel='noopener' href=")
 
-    def mk_images(self, images_fi: str, output_dir: str) -> None:
+    def mk_images(self, download_images: bool, images_fi: str, output_dir: str) -> None:
         """
         Downloads images from an airtable CSV and renames them according to their associated node
+        :param download_images: True if images should be re-downloaded
         :param images_fi: Path to airtable CSV
         :param output_dir: Path to output folder where images will be placed
         :return: None
@@ -725,10 +726,11 @@ class Preprocess:
                 image_fi = re.search(r"\((http.*?)\)", image_col)[1]
                 file_type = image_fi.split(".")[-1]
                 image_node_id = line["input_id"]
-                urllib.request.urlretrieve(
-                    image_fi,
-                    os.path.join(output_dir, image_node_id) + f".{file_type}",
-                )
+                if download_images:
+                    urllib.request.urlretrieve(
+                        image_fi,
+                        os.path.join(output_dir, image_node_id) + f".{file_type}",
+                    )
                 self.node_to_meta[image_node_id]["image_caption"] = self.clean_md_link(
                     line["caption"]
                 )

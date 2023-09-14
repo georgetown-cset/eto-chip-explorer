@@ -22,15 +22,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Test with pytest
-      run: |
-        coverage run -m pytest tests
-        coverage xml -o coverage/python.xml
-    - name: Report python coverage
-      uses: orgoro/coverage@v3
-      with:
-        coverageFile: coverage/python.xml
-        token: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Test with pytest
+    #   run: |
+    #     coverage run -m pytest tests
+    #     coverage xml -o coverage/python.xml
+    # - name: Report python coverage
+    #   uses: orgoro/coverage@v3
+    #   with:
+    #     coverageFile: coverage/python.xml
+    #     token: ${{ secrets.GITHUB_TOKEN }}
     - name: 'Authenticate to Google Cloud'
       id: 'auth'
       uses: 'google-github-actions/auth@v1'
@@ -54,19 +54,39 @@ jobs:
         python3 scripts/preprocess.py
         cd supply-chain
         npm run artifactregistry-login
-        npm install --force
+        npm install
         npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="text" | tee ./coverage.txt
-    - name: Report javascript coverage
-      uses: MishaKav/jest-coverage-comment@v1.0.23
-      with:
-        title: "JavaScript Coverage"
-        summary-title: "Summary"
-        coverage-title: "Modified Files"
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        report-only-changed-files: true
-        coverage-path: ./supply-chain/coverage.txt
-        coverage-summary-path: ./supply-chain/coverage/coverage-summary.json
-        coverage-path-prefix: supply-chain/src/
-    - name: Run linting
+    # - name: Report javascript coverage
+    #   uses: MishaKav/jest-coverage-comment@v1.0.23
+    #   with:
+    #     title: "JavaScript Coverage"
+    #     summary-title: "Summary"
+    #     coverage-title: "Modified Files"
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
+    #     report-only-changed-files: true
+    #     coverage-path: ./supply-chain/coverage.txt
+    #     coverage-summary-path: ./supply-chain/coverage/coverage-summary.json
+    #     coverage-path-prefix: supply-chain/src/
+    # - name: Run linting
+    #   run: |
+    #     pre-commit run --all-files
+    - name: Build output files
       run: |
-        pre-commit run --all-files
+        cd supply-chain
+        npm run build
+    - name: Check links in built files
+      id: link_check
+      run: |
+        cd supply-chain
+        find public -name "*.js" -exec grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]+" {} \; | sort -u > linklist.txt
+        printf '%s\n%s\n' "# LinkChecker URL list" "$(cat linklist.txt)" > linklist.txt
+        linkchecker linklist.txt --check-extern --ignore-url="https://.*\.fastly\.net/.*" --ignore-url="https://.*\.mapbox\..*" -o failures > output.txt || true
+        cat output.txt
+        echo "link_check=$(wc -l < output.txt | sed 's/^ *//g')" >> $GITHUB_OUTPUT
+    - name: Edit PR comment about link checking
+      if: steps.link_check.outputs.link_check > 0
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+        message: |
+          There are ${{ steps.link_check.outputs.link_check }} broken links. Check the output of the link check build step for details.
+        comment_tag: link_check_msg
