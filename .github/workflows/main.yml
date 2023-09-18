@@ -83,7 +83,9 @@ jobs:
         linkchecker linklist.txt --check-extern --ignore-url="https://.*\.fastly\.net/.*" -o failures > output.txt || true
         cat output.txt
         echo "num_links=$(wc -l < output.txt | sed 's/^ *//g')" >> $GITHUB_OUTPUT
-        echo "links=$(cat output.txt)" >> $GITHUB_OUTPUT
+        echo "links<<EOFdelimiter" >> $GITHUB_OUTPUT
+        echo "$(cat output.txt)" >> $GITHUB_OUTPUT
+        echo "EOFdelimiter" >> $GITHUB_OUTPUT
     - name: Edit PR comment about link checking
       if: steps.link_check.outputs.num_links > 0
       uses: thollander/actions-comment-pull-request@v2
