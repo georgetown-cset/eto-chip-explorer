@@ -54,7 +54,7 @@ jobs:
         python3 scripts/preprocess.py
         cd supply-chain
         npm run artifactregistry-login
-        npm install --force
+        npm install
         npm test -- --coverage --coverageReporters="json-summary" --coverageReporters="text" | tee ./coverage.txt
     - name: Report javascript coverage
       uses: MishaKav/jest-coverage-comment@v1.0.23
@@ -70,3 +70,27 @@ jobs:
     - name: Run linting
       run: |
         pre-commit run --all-files
+    - name: Build output files
+      run: |
+        cd supply-chain
+        npm run build
+    - name: Check links in built files
+      id: link_check
+      run: |
+        cd supply-chain
+        find public -name "*.js" -exec grep -Eo "(http|https):\/\/[^\{\}\"'\\ ]+" {} \; | sort -u > linklist.txt
+        printf '%s\n%s\n' "# LinkChecker URL list\n# <meta charset="UTF-8">" "$(cat linklist.txt)" > linklist.txt
+        linkchecker linklist.txt --check-extern --ignore-url="https://.*\.fastly\.net/.*" --ignore-url="https://.*\.mapbox\..*" -o failures > output.txt || true
+        cat output.txt
+        echo "num_links=$(wc -l < output.txt | sed 's/^ *//g')" >> $GITHUB_OUTPUT
+        echo "links<<EOFdelimiter" >> $GITHUB_OUTPUT
+        echo "$(cat output.txt)" >> $GITHUB_OUTPUT
+        echo "EOFdelimiter" >> $GITHUB_OUTPUT
+    - name: Edit PR comment about link checking
+      if: steps.link_check.outputs.num_links > 0
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+        message: |
+          There are ${{ steps.link_check.outputs.num_links }} broken links. Check the code for these links:
+          ${{ steps.link_check.outputs.links }}
+        comment_tag: link_check_msg

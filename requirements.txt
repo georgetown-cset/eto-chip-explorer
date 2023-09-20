@@ -1,5 +1,6 @@
 jinja2
 kaleido
+linkchecker
 pdfkit
 plotly
 pycountry
