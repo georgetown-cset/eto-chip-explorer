@@ -13,7 +13,7 @@ jobs:
       pull-requests: 'write'
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python 3.7
       uses: actions/setup-python@v4
       with:
@@ -39,7 +39,7 @@ jobs:
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
         token_format: 'access_token'
     - name: 'Log into Artifact Registry'
-      uses: 'docker/login-action@v2'
+      uses: 'docker/login-action@v3'
       with:
         registry: us-east1-docker.pkg.dev
         username: 'oauth2accesstoken'
