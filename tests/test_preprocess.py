@@ -100,6 +100,17 @@ class TestPreprocess(unittest.TestCase):
 
         self.assertEqual(output_testing, output_truth)
 
+    def test_write_provider_bq_table(self):
+        self.maxDiff = None
+        provider_fi = "./tests/test_providers.csv"
+        pp = Preprocess(None, True)
+        bq_fi = pp.write_provider_bq_table(provider_fi)
+
+        output_truth = open("tests/test_providers_bq_output.csv").read()
+        output_testing = open(bq_fi).read()
+
+        self.assertEqual(output_testing, output_truth)
+
     def test_get_flag(self):
         self.assertEqual("🇺🇸", Preprocess.get_flag("USA"))
 
