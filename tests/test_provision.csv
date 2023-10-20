@@ -1,3 +1,4 @@
 provider_name,provider_id,provided_name,provided_id,share_provided,negligible_market_share
 USA,P1,Design,S1,61%,
 USA,P1,Fabrication,S2,27%,
+Intel,P9,Logic chip design: Advanced CPUs,N1,,

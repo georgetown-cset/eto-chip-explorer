@@ -1,0 +1,7 @@
+provider_name,provider_id,provider_type,country
+USA,P1,country,
+CHN,P2,country,
+KOR,P4,country,
+Intel,P9,organization,United States
+AMD,P10,organization,United States
+Phytium,P15,organization,China (mainland)
