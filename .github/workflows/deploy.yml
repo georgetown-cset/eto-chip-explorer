@@ -31,7 +31,7 @@ jobs:
         username: 'oauth2accesstoken'
         password: '${{ steps.auth_build.outputs.access_token }}'
     - name: Setup node
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
     - name: 'Cache node_modules'
