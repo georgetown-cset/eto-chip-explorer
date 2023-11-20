@@ -55,6 +55,7 @@ This readme summarizes analytic decisions made in the process of turning https:/
 - A company has "negligible" market share if the country it belongs to has 2% or less (rounded value) of the overall market OR the text of the report explicitly indicates it's a negligible provider (for example, if its capabilities are far behind the state of the art).
 - In any case where the text of the report is in tension with the tables and figures, we rely on the tables and figures.
 - Certain small percentages were extracted from the working files of the authors of the report, rather than the report itself (generally, when the specific percentage numbers were not included in the report).
+- Percentages between 0 and 1% are rounded up to 1% in charts in the Supply Chain Explorer user interface for ease of visualization.
 - Company information may be different from what's in the paper as a result of the 2022 annotation process for companies. See, for example, the table above.
 - For simplicity's sake, CMP tools are included only in fabrication, not packaging, since the packaging application of CMP tools is relatively minor.
 - Usually, countries have a percentage market share, but in some cases it's missing (like ion implanters, CMP, wafer inspection, photoresists) where there are market share subcategories in the paper that are not meaningful to break out in the map.
