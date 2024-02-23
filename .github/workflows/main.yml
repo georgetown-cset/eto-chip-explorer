@@ -80,7 +80,7 @@ jobs:
         cd supply-chain
         find public -name "*.js" -exec grep -Eo "(http|https):\/\/[^\{\}\"'\\ ]+" {} \; | sort -u > linklist.txt
         printf '%s\n%s\n' "# LinkChecker URL list\n# <meta charset="UTF-8">" "$(cat linklist.txt)" > linklist.txt
-        linkchecker linklist.txt --check-extern --ignore-url="https://.*\.fastly\.net/.*" --ignore-url="https://.*\.mapbox\..*" -o failures > output.txt || true
+        linkchecker linklist.txt --check-extern --ignore-url="https://.*\.fastly\.net/.*" --ignore-url="https://.*\.mapbox\..*" --ignore-url="https://docs.google.com/forms/d/e/.*" -o failures > output.txt || true
         cat output.txt
         echo "num_links=$(wc -l < output.txt | sed 's/^ *//g')" >> $GITHUB_OUTPUT
         echo "links<<EOFdelimiter" >> $GITHUB_OUTPUT
