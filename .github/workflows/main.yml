@@ -6,6 +6,7 @@ jobs:
   build:
     name: tests-pass
     runs-on: ubuntu-latest
+    if: github.triggering_actor != 'dependabot[bot]'
 
     permissions:
       contents: 'read'
