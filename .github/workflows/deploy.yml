@@ -73,7 +73,7 @@ jobs:
         gsutil -m cp -r public gs://eto-cd/supply-chain/${{ steps.date.outputs.today }}
     - name: 'Copy built assets to compute engine'
       id: 'compute-ssh'
-      uses: 'google-github-actions/ssh-compute@v0'
+      uses: 'google-github-actions/ssh-compute@v1'
       with:
         instance_name: 'semi-supply-chain-dev'
         zone: 'us-east1-c'
