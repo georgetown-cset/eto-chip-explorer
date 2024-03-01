@@ -35,7 +35,7 @@ jobs:
       with:
         node-version: '18'
     - name: 'Cache node_modules'
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: supply-chain/node_modules
         key: js-${{ hashFiles('supply-chain/package-lock.json') }}
