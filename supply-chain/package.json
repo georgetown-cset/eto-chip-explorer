@@ -22,7 +22,7 @@
     "@eto/eto-ui-components": "^1.1.52",
     "@mdx-js/mdx": "^2.1.13",
     "@mdx-js/react": "^2.1.13",
-    "@mui/icons-material": "^5.14.1",
+    "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.11.11",
     "gatsby": "^5.4.2",
     "gatsby-plugin-emotion": "^8.4.0",
@@ -32,7 +32,7 @@
     "gatsby-plugin-sass": "^6.6.0",
     "gatsby-source-filesystem": "^5.4.0",
     "package.json": "^2.0.1",
-    "plotly.js": "^2.25.2",
+    "plotly.js": "^2.29.1",
     "react": "^18.2.0",
     "react-arrows": "^1.2.0",
     "react-dom": "^18.2.0",
@@ -40,10 +40,10 @@
     "react-markdown": "^8.0.7",
     "react-plotly.js": "^2.5.1",
     "react-xarrows": "^2.0.2",
-    "sass": "^1.69.6"
+    "sass": "^1.71.1"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.6",
+    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.0.0",
     "babel-jest": "^29.7.0",
     "babel-preset-gatsby": "^2.22.1",
