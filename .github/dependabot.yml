@@ -6,7 +6,7 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "niharikasingh"
+      - "jmelot"
 
   - package-ecosystem: "npm"
     # Files stored in `app` directory
@@ -14,7 +14,7 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "niharikasingh"
+      - "brianlove"
     ignore:
       - dependency-name: "@eto*"
       - dependency-name: "@mdx-js*"
@@ -27,4 +27,4 @@ updates:
     schedule:
       interval: "monthly"
     reviewers:
-      - "niharikasingh"
+      - "brianlove"
