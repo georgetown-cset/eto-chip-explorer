@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.6.0
     hooks:
     -   id: trailing-whitespace
         exclude: "supply-chain/src/components/__tests__/__snapshots__"
@@ -15,24 +15,24 @@ repos:
     hooks:
     -   id: eslint
         additional_dependencies:
-        -   eslint
+        -   eslint@8.57
         -   eslint-plugin-react
-        -   babel-eslint
+        -   "@babel/eslint-parser"
 -   repo: https://github.com/PyCQA/isort
-    rev: 5.11.5
+    rev: 5.13.2
     hooks:
     -   id: isort
 -   repo: https://github.com/ambv/black
-    rev: 22.3.0
+    rev: 24.8.0
     hooks:
     -   id: black
         language_version: python3
 -   repo: https://github.com/PyCQA/flake8
-    rev: 4.0.1
+    rev: 7.1.1
     hooks:
     -   id: flake8
 -   repo: https://github.com/sqlfluff/sqlfluff
-    rev: 0.10.1
+    rev: 3.2.0
     hooks:
     -   id: sqlfluff-lint
     -   id: sqlfluff-fix
