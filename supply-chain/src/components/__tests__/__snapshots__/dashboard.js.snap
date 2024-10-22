@@ -22,25 +22,25 @@ exports[`Dashboard renders correctly 1`] = `
         class="header-links css-18f1a9i-linkStyles"
       >
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/tools"
         >
           Tools
         </a>
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/blog"
         >
           Blog
         </a>
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/support"
         >
           Support
         </a>
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/feedback"
         >
           Submit feedback
@@ -167,18 +167,18 @@ exports[`Dashboard renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-ihmixh-MuiPaper-root-MuiAccordion-root-sidebarMobile"
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-1xrx8x5-MuiPaper-root-MuiAccordion-root-sidebarMobile"
           >
             <div
               aria-controls="sidebar-content"
               aria-expanded="false"
-              class="MuiButtonBase-root MuiAccordionSummary-root MuiAccordionSummary-gutters css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root"
+              class="MuiButtonBase-root MuiAccordionSummary-root MuiAccordionSummary-gutters css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root"
               id="sidebar-header"
               role="button"
               tabindex="0"
             >
               <div
-                class="MuiAccordionSummary-content MuiAccordionSummary-contentGutters css-o4b71y-MuiAccordionSummary-content"
+                class="MuiAccordionSummary-content MuiAccordionSummary-contentGutters css-eqpfi5-MuiAccordionSummary-content"
               >
                 <div
                   class="MuiTypography-root MuiTypography-p sidebar-title css-1cdn5d8-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
@@ -259,21 +259,23 @@ exports[`Dashboard renders correctly 1`] = `
               Highlight by
             </label>
             <div
-              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-1ow28ay-MuiInputBase-root-MuiInput-root-MuiSelect-root-select"
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-19njw3j-MuiInputBase-root-MuiInput-root-MuiSelect-root-select"
             >
               <div
+                aria-controls=":r0:"
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-labelledby="Highlight-by-label Highlight-by"
                 class="MuiSelect-select MuiSelect-standard MuiInputBase-input MuiInput-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
                 id="Highlight-by"
-                role="button"
+                role="combobox"
                 tabindex="0"
               >
                 None
               </div>
               <input
                 aria-hidden="true"
+                aria-invalid="false"
                 class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
                 tabindex="-1"
                 value="None"
@@ -293,7 +295,7 @@ exports[`Dashboard renders correctly 1`] = `
           </div>
         </div>
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
           id="clear-button"
           tabindex="0"
           type="button"
@@ -360,7 +362,7 @@ exports[`Dashboard renders correctly 1`] = `
                       Design
                     </h3>
                     <button
-                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                       style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
@@ -428,21 +430,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -472,21 +470,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -549,21 +543,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -593,21 +583,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -679,21 +665,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -723,21 +705,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -800,21 +778,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -844,21 +818,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -955,7 +925,7 @@ exports[`Dashboard renders correctly 1`] = `
                       Fabrication
                     </h3>
                     <button
-                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                       style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
@@ -1034,21 +1004,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1078,21 +1044,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1180,21 +1142,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1224,21 +1182,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1268,21 +1222,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1312,21 +1262,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1352,21 +1298,17 @@ exports[`Dashboard renders correctly 1`] = `
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                               focusable="false"
+                                              id="a"
                                               style="fill-rule: evenodd; margin: -8px 0px;"
-                                              viewBox="0 0 24 24"
+                                              viewBox="0 0 44 44"
+                                              xmlns="http://www.w3.org/2000/svg"
                                             >
-                                              <svg
-                                                id="a"
-                                                viewBox="0 0 44 44"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  class="b"
-                                                  d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                                />
-                                              </svg>
+                                              <path
+                                                class="b"
+                                                d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                              />
                                             </svg>
                                           </span>
                                           <span>
@@ -1396,21 +1338,17 @@ exports[`Dashboard renders correctly 1`] = `
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                               focusable="false"
+                                              id="a"
                                               style="fill-rule: evenodd; margin: -8px 0px;"
-                                              viewBox="0 0 24 24"
+                                              viewBox="0 0 44 44"
+                                              xmlns="http://www.w3.org/2000/svg"
                                             >
-                                              <svg
-                                                id="a"
-                                                viewBox="0 0 44 44"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  class="b"
-                                                  d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                                />
-                                              </svg>
+                                              <path
+                                                class="b"
+                                                d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                              />
                                             </svg>
                                           </span>
                                           <span>
@@ -1440,21 +1378,17 @@ exports[`Dashboard renders correctly 1`] = `
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                               focusable="false"
+                                              id="a"
                                               style="fill-rule: evenodd; margin: -8px 0px;"
-                                              viewBox="0 0 24 24"
+                                              viewBox="0 0 44 44"
+                                              xmlns="http://www.w3.org/2000/svg"
                                             >
-                                              <svg
-                                                id="a"
-                                                viewBox="0 0 44 44"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  class="b"
-                                                  d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                                />
-                                              </svg>
+                                              <path
+                                                class="b"
+                                                d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                              />
                                             </svg>
                                           </span>
                                           <span>
@@ -1484,21 +1418,17 @@ exports[`Dashboard renders correctly 1`] = `
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                               focusable="false"
+                                              id="a"
                                               style="fill-rule: evenodd; margin: -8px 0px;"
-                                              viewBox="0 0 24 24"
+                                              viewBox="0 0 44 44"
+                                              xmlns="http://www.w3.org/2000/svg"
                                             >
-                                              <svg
-                                                id="a"
-                                                viewBox="0 0 44 44"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  class="b"
-                                                  d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                                />
-                                              </svg>
+                                              <path
+                                                class="b"
+                                                d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                              />
                                             </svg>
                                           </span>
                                           <span>
@@ -1532,21 +1462,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1622,21 +1548,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1666,21 +1588,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1710,21 +1628,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1754,21 +1668,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1863,21 +1773,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1907,21 +1813,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -1947,21 +1849,17 @@ exports[`Dashboard renders correctly 1`] = `
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                               focusable="false"
+                                              id="a"
                                               style="fill-rule: evenodd; margin: -8px 0px;"
-                                              viewBox="0 0 24 24"
+                                              viewBox="0 0 44 44"
+                                              xmlns="http://www.w3.org/2000/svg"
                                             >
-                                              <svg
-                                                id="a"
-                                                viewBox="0 0 44 44"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                              >
-                                                <path
-                                                  class="b"
-                                                  d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                                />
-                                              </svg>
+                                              <path
+                                                class="b"
+                                                d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                              />
                                             </svg>
                                           </span>
                                           <span>
@@ -1995,21 +1893,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2039,21 +1933,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2083,21 +1973,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2127,21 +2013,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2236,21 +2118,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2280,21 +2158,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2324,21 +2198,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2433,21 +2303,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2477,21 +2343,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2521,21 +2383,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2565,21 +2423,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2625,7 +2479,7 @@ exports[`Dashboard renders correctly 1`] = `
                       Assembly, testing, and packaging (ATP)
                     </h3>
                     <button
-                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                       style="padding: 0px 10px 0px 0px;"
                       tabindex="0"
                       type="button"
@@ -2716,21 +2570,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2760,21 +2610,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2804,21 +2650,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2848,21 +2690,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2892,21 +2730,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2936,21 +2770,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -2980,21 +2810,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -3089,21 +2915,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -3133,21 +2955,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -3177,21 +2995,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -3221,21 +3035,17 @@ exports[`Dashboard renders correctly 1`] = `
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1m9ymud-MuiSvgIcon-root"
                                         focusable="false"
+                                        id="a"
                                         style="fill-rule: evenodd; margin: -8px 0px;"
-                                        viewBox="0 0 24 24"
+                                        viewBox="0 0 44 44"
+                                        xmlns="http://www.w3.org/2000/svg"
                                       >
-                                        <svg
-                                          id="a"
-                                          viewBox="0 0 44 44"
-                                          xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                          <path
-                                            class="b"
-                                            d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
-                                          />
-                                        </svg>
+                                        <path
+                                          class="b"
+                                          d="M13.75,29.7c-.2,.11-.46,.04-.57-.16l-2.12-3.68c-.11-.2-.05-.46,.15-.58l1.88-1.15c.2-.12,.36-.4,.36-.64v-3c0-.23-.16-.52-.36-.64l-1.88-1.15c-.2-.12-.26-.38-.15-.58l2.12-3.68c.11-.2,.38-.27,.57-.16l1.94,1.05c.2,.11,.53,.11,.73,0l2.6-1.5c.2-.12,.37-.4,.37-.63l.06-2.21c0-.23,.2-.42,.43-.42h4.24c.23,0,.42,.19,.43,.41l.06,2.21c0,.23,.17,.51,.37,.63l2.6,1.5c.2,.12,.53,.12,.73,0l1.94-1.06c.2-.11,.46-.04,.57,.16l2.12,3.68c.11,.2,.05,.46-.15,.58l-1.88,1.15c-.2,.12-.36,.4-.36,.64v3c0,.23,.16,.52,.36,.64l1.88,1.15c.2,.12,.26,.38,.15,.58l-2.12,3.68c-.11,.2-.38,.27-.57,.16l-1.94-1.05c-.2-.11-.53-.11-.73,0l-2.6,1.5c-.2,.12-.37,.4-.37,.63l-.06,2.21c0,.23-.2,.42-.43,.42h-4.24c-.23,0-.42-.19-.43-.41l-.06-2.21c0-.23-.17-.51-.37-.63l-2.6-1.5c-.2-.12-.53-.12-.73,0l-1.94,1.06Zm5.74-3.37c2.4,1.38,5.46,.56,6.84-1.83,1.38-2.4,.56-5.46-1.83-6.84-2.4-1.38-5.46-.56-6.84,1.83-1.38,2.4-.56,5.46,1.83,6.84Z"
+                                        />
                                       </svg>
                                     </span>
                                     <span>
@@ -3402,7 +3212,7 @@ exports[`Dashboard renders correctly 1`] = `
                   <input
                     aria-invalid="false"
                     class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
-                    id=":r2:"
+                    id=":r3:"
                     placeholder="you@example.com"
                     type="text"
                     value=""
@@ -3411,7 +3221,7 @@ exports[`Dashboard renders correctly 1`] = `
               </div>
             </div>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-143bajs-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-143bajs-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
               tabindex="0"
               title="Submit email"
               type="button"
@@ -3444,7 +3254,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
         <div>
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
             href="https://twitter.com/EmergingTechObs"
             rel="noopener"
             target="_blank"
@@ -3454,7 +3264,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
         <div>
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
             href="https://www.linkedin.com/company/emerging-technology-observatory"
             rel="noopener"
             target="_blank"
@@ -3464,7 +3274,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
         <div>
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
             href="mailto:cset_eto@georgetown.edu"
             rel="noopener"
             target="_blank"
@@ -3474,7 +3284,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
         <div>
           <a
-            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
             href="https://eto.tech/rss.xml"
             rel="noopener"
             target="_blank"
@@ -3494,7 +3304,7 @@ exports[`Dashboard renders correctly 1`] = `
         class="links css-1ol7fc0-linksStyles"
       >
         <a
-          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1ps4owl-MuiTypography-root-MuiLink-root"
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/tou"
         >
           Terms of Use and Privacy Policy
