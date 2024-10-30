@@ -475,6 +475,10 @@ EXCEPT the description box at the top. */
     .variants-heading.selected-node-child {
       background-color: unset;
     }
+
+    table .MuiTypography-root .helptooltip {
+      display: inline;
+    }
   }
 
   .provision-heading {

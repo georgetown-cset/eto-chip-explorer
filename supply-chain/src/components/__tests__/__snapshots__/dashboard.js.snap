@@ -29,6 +29,12 @@ exports[`Dashboard renders correctly 1`] = `
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/datasets"
+        >
+          Data
+        </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/blog"
         >
           Blog
@@ -37,13 +43,13 @@ exports[`Dashboard renders correctly 1`] = `
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
           href="https://eto.tech/support"
         >
-          Support
+          Help
         </a>
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
-          href="https://eto.tech/feedback"
+          href="https://eto.tech/#subscribe"
         >
-          Submit feedback
+          Subscribe
         </a>
       </div>
     </header>
@@ -75,6 +81,8 @@ exports[`Dashboard renders correctly 1`] = `
             >
               <a
                 href="https://eto.tech/tool-docs/chipexplorer/"
+                rel="noopener"
+                target="_blank"
               >
                 <svg
                   aria-hidden="true"
@@ -248,16 +256,21 @@ exports[`Dashboard renders correctly 1`] = `
         style="position: sticky; top: 0px; z-index: 20;"
       >
         <div
-          class="dropdown css-mxxg0t-dropdownWrapper-Dropdown"
+          class="dropdown css-1eowj61-dropdownWrapper-Dropdown"
         >
           <div
             class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
           >
-            <label
-              id="Highlight-by-label"
+            <div
+              class="css-lrrvel-label-Dropdown"
             >
-              Highlight by
-            </label>
+              <label
+                class=""
+                id="Highlight-by-label"
+              >
+                Highlight by
+              </label>
+            </div>
             <div
               class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary MuiInputBase-formControl select css-19njw3j-MuiInputBase-root-MuiInput-root-MuiSelect-root-select"
             >
@@ -314,7 +327,9 @@ exports[`Dashboard renders correctly 1`] = `
             tabindex="0"
             type="button"
           >
-            <span>
+            <span
+              class="helptooltip css-hr1mel-wrapper"
+            >
               <svg
                 aria-hidden="true"
                 class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-l7rtm5-MuiSvgIcon-root-HelpTooltip"
@@ -3129,8 +3144,8 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="eto-footer css-1oyl9u3-wrapperStyles"
+    <footer
+      class="eto-footer css-x62fuv-wrapperStyles"
     >
       <div
         class="css-b75asb-brandStyles"
@@ -3180,30 +3195,29 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="subscribe css-1udubhv-subscribeStyles"
+        class="subscribebox--core css-1xlt5sv-subscribeBoxCore-subscribeBox"
       >
         <div
-          style="margin: 0px auto;"
+          class="subscribe-inner"
         >
-          <div
-            style="margin-bottom: 0.75rem;"
+          <h3>
+            Get updates
+          </h3>
+          <label
+            class="plain css-ynzfad-subscribeBoxLabel"
+            for="subscriptionFooter"
           >
-            <label>
-              Subscribe for updates
-            </label>
-          </div>
-          <p>
-            Sign up for our newsletter to receive the latest news and announcements.
-          </p>
+            Sign up for the latest ETO analysis, news, and product updates.
+          </label>
           <div
-            class="email-form"
+            class="email-form subscribebox--form css-1aiowzb-subscribeBoxInputWrapper"
           >
             <div
+              class="css-osokpe-inputOrErrorMessage"
               data-testid="email-form-result"
-              style="display: flex; align-items: center; width: 100%;"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-d8rq7p-MuiFormControl-root-MuiTextField-root-baseStyles-customColorStyles-TextFieldStyled"
+                class="MuiFormControl-root MuiTextField-root css-gxwz9g-MuiFormControl-root-MuiTextField-root-baseStyles-customColorStyles-TextFieldStyled"
                 style="margin-right: 0.5rem; width: 100%;"
               >
                 <div
@@ -3212,7 +3226,7 @@ exports[`Dashboard renders correctly 1`] = `
                   <input
                     aria-invalid="false"
                     class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
-                    id=":r3:"
+                    id="subscriptionFooter"
                     placeholder="you@example.com"
                     type="text"
                     value=""
@@ -3221,7 +3235,7 @@ exports[`Dashboard renders correctly 1`] = `
               </div>
             </div>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-143bajs-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1op9886-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
               tabindex="0"
               title="Submit email"
               type="button"
@@ -3245,13 +3259,11 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="contact css-f99nzs-contactStyles"
+        class="contact css-ulcmjq-contactStyles"
       >
-        <div>
-          <label>
-            Keep in touch
-          </label>
-        </div>
+        <h3>
+          Keep in touch
+        </h3>
         <div>
           <a
             class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
@@ -3270,6 +3282,16 @@ exports[`Dashboard renders correctly 1`] = `
             target="_blank"
           >
             LinkedIn
+          </a>
+        </div>
+        <div>
+          <a
+            class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+            href="https://etoblog.substack.com/"
+            rel="noopener"
+            target="_blank"
+          >
+            Substack
           </a>
         </div>
         <div>
@@ -3313,7 +3335,7 @@ exports[`Dashboard renders correctly 1`] = `
           class="css-14jcibu-copyrightNoticeStyles"
         >
           <div>
-            ETO, 2022
+            ETO, 2024
           </div>
           <div
             class="divider"
@@ -3333,7 +3355,7 @@ exports[`Dashboard renders correctly 1`] = `
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   </div>
 </DocumentFragment>
 `;
