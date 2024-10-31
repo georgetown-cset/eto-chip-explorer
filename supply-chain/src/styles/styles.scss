@@ -41,6 +41,10 @@ EXCEPT the description box at the top. */
   a {
     text-decoration: underline;
   }
+
+  .MuiTypography-root {
+    font-family: GTZirkonLight;
+  }
 }
 
 /* Come back to this */
@@ -179,7 +183,7 @@ EXCEPT the description box at the top. */
   }
 
   .graph-node-icon {
-    color: var(--bright-blue);
+    fill: var(--bright-blue);
     margin-right: 5px;
   }
 
@@ -403,7 +407,11 @@ EXCEPT the description box at the top. */
 
   .graph-node-icon {
     margin-right: 5px;
-    color: var(--bright-blue);
+    fill: var(--bright-blue);
+  }
+
+  .selected-node-child .graph-node-icon {
+    fill: var(--black);
   }
 
   .lower-bar-wrapper {
@@ -466,6 +474,10 @@ EXCEPT the description box at the top. */
     .node-heading.selected-node-child,
     .variants-heading.selected-node-child {
       background-color: unset;
+    }
+
+    table .MuiTypography-root .helptooltip {
+      display: inline;
     }
   }
 

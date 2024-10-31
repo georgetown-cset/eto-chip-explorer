@@ -3,6 +3,7 @@ import Loadable from "react-loadable";
 import ReactMarkdown from 'react-markdown'
 import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 import Typography from "@mui/material/Typography";
+import { MoreHoriz as MoreHorzIcon } from "@mui/icons-material";
 import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
@@ -104,7 +105,10 @@ export const ProviderListing = (props) => {
               {providerMeta[org]["name"]}
               {!variant && providers[org] !== "Major" && <span> ({providers[org]} market share)</span>}
               {variant &&
-                <HelpTooltip iconType="more-info" text={"Provides: " + variantProviders[org].map(e => nodeToMeta[e].name).join(", ")} />
+                <HelpTooltip
+                  text={"Provides: " + variantProviders[org].map(e => nodeToMeta[e].name).join(", ")}
+                  Icon={MoreHorzIcon}
+                />
               }
             </Typography>
           </td>
@@ -134,12 +138,15 @@ export const ProviderListing = (props) => {
             const countryName = variant ? countryInfo : countryInfo.country;
             return (
               <td key={countryName}>
-                <Typography component="p">
+                <Typography component="p" className="whereisthis">
                   {countryFlags[countryName] && <span className="flag">{countryFlags[countryName]}</span>}
                   {countryName}
                   {!variant && countryInfo.value !== "Major" && <span> ({countryInfo.value})</span>}
                   {variant &&
-                    <HelpTooltip iconType="more-info" text={"Provides: " + variantProviders[countryName].map(e => nodeToMeta[e].name).join(", ")} />
+                    <HelpTooltip
+                      text={"Provides: " + variantProviders[countryName].map(e => nodeToMeta[e].name).join(", ")}
+                      Icon={MoreHorzIcon}
+                    />
                   }
                 </Typography>
               </td>
@@ -152,11 +159,16 @@ export const ProviderListing = (props) => {
   };
 
   const title = (isOrg ? "Notable supplier companies" : "Supplier Countries") + (variant ? " (Variants)" : "");
-  const helpText = <HelpTooltip text={
-    isOrg ? "Global companies with significant market share or otherwise notable capabilities." :
-    "Countries with significant global market share."}
-    iconStyle={{verticalAlign: "middle"}}
-  />
+  const helpText = (
+    <HelpTooltip
+      smallIcon
+      text={isOrg ?
+        "Global companies with significant market share or otherwise notable capabilities." :
+        "Countries with significant global market share."
+      }
+      iconStyle={{verticalAlign: "middle"}}
+    />
+  );
 
   const showTable = () => {
     return (variant === true) ? Object.keys(variantProviders).length > 0 : providers !== undefined
@@ -215,7 +227,7 @@ const InputDetail = (props) => {
             <div>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Supplier countries
-                <HelpTooltip text={"Countries with significant global market share."} iconStyle={{verticalAlign: "middle"}} />
+                <HelpTooltip smallIcon text={"Countries with significant global market share."} iconStyle={{verticalAlign: "middle"}} />
               </Typography>
               <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
