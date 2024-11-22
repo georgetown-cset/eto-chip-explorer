@@ -89,7 +89,7 @@ jobs:
         echo "EOFdelimiter" >> $GITHUB_OUTPUT
     - name: Edit PR comment about link checking
       if: steps.link_check.outputs.num_links > 0
-      uses: thollander/actions-comment-pull-request@v2
+      uses: thollander/actions-comment-pull-request@v3
       with:
         message: |
           There are ${{ steps.link_check.outputs.num_links }} broken links. Check the code for these links:

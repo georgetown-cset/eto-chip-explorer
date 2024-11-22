@@ -1,24 +1,16 @@
-import React from "react";
-import Loadable from "react-loadable";
+import React, { Suspense, lazy } from "react";
 import ReactMarkdown from 'react-markdown'
-import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 import Typography from "@mui/material/Typography";
 import { MoreHoriz as MoreHorzIcon } from "@mui/icons-material";
+
+import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
+
 import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
 
-const Plot = Loadable({
-  loader: () => import("react-plotly.js"),
-  loading: ({ timedOut }) =>
-    timedOut ? (
-      <blockquote>Error: Loading Plotly timed out.</blockquote>
-    ) : (
-      <div></div>
-    ),
-  timeout: 10000,
-});
+const Plot = lazy(() => import('react-plotly.js'));
 
 const BarGraph = (props) => {
   const {countries} = props;
@@ -53,11 +45,13 @@ const BarGraph = (props) => {
 
   return (
     <div style={{paddingBottom: "10px"}}>
-    <Plot style={{height: "450px", width: "100%"}}
-      data={data}
-      layout={plotlyDefaults.layout}
-      config={plotlyDefaults.config}
-    />
+      <Suspense fallback={<div>Loading graph...</div>}>
+        <Plot style={{height: "450px", width: "100%"}}
+          data={data}
+          layout={plotlyDefaults.layout}
+          config={plotlyDefaults.config}
+        />
+      </Suspense>
     </div>
   );
 };

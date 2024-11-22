@@ -3,7 +3,7 @@
 exports[`Dashboard renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="app-wrapper  css-zrlalh-wrapperStyles"
+    class="app-wrapper css-o20pkj-wrapperStyles"
   >
     <header
       class="eto-header css-1c57aw7-wrapperStyles"
@@ -60,24 +60,24 @@ exports[`Dashboard renders correctly 1`] = `
         style="max-width: 1500px;"
       >
         <div
-          class="info-card-wrapper css-82b5yr-infocardWrapper-InfoCard"
+          class="info-card-wrapper css-1dqxhzn-infocardWrapper-InfoCard"
         >
           <div
             class="css-f9vkxs-accent"
           />
           <div
-            class="css-sxdaro-bottomBorderGridArea-topAreaBottomBorder-InfoCard"
+            class="css-1sz4i1e-bottomBorderGridArea-topAreaBottomBorder-InfoCard"
           />
           <div
-            class="css-3tis61-topAreaBottomBorder-titleWrapper-InfoCard"
+            class="css-l151mc-topAreaBottomBorder-titleWrapper-InfoCard"
           >
             <div
-              class="MuiTypography-root MuiTypography-h4 css-bk0oki-MuiTypography-root-title"
+              class="MuiTypography-root MuiTypography-h4 css-zlcs7i-MuiTypography-root-title"
             >
               Supply Chain Explorer
             </div>
             <div
-              class="css-1f9ukm2-documentationLink"
+              class="css-kwnkor-documentationLink"
             >
               <a
                 href="https://eto.tech/tool-docs/chipexplorer/"
@@ -101,10 +101,10 @@ exports[`Dashboard renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="description-wrapper css-aimaph-descriptionWrapper"
+            class="description-wrapper css-1k40fej-descriptionWrapper"
           >
             <div
-              class="description  css-pkh2lv-description"
+              class="description css-l9xykp-description"
             >
               <div>
                 ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
@@ -156,12 +156,12 @@ exports[`Dashboard renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="MuiTypography-root MuiTypography-p sidebar-title desktop css-1cdn5d8-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
+            class="MuiTypography-root MuiTypography-p sidebar-title desktop css-mp08le-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
           >
             Quick guide
           </div>
           <div
-            class="MuiTypography-root MuiTypography-p sidebar-content desktop css-18mx5jq-MuiTypography-root-sidebarCommon-sidebarContent-InfoCard"
+            class="MuiTypography-root MuiTypography-p sidebar-content desktop css-aocfr6-MuiTypography-root-sidebarCommon-sidebarContent-InfoCard"
           >
             <div>
               <div
@@ -175,7 +175,7 @@ exports[`Dashboard renders correctly 1`] = `
             </div>
           </div>
           <div
-            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-1xrx8x5-MuiPaper-root-MuiAccordion-root-sidebarMobile"
+            class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters sidebar-mobile css-11agvpd-MuiPaper-root-MuiAccordion-root-sidebarMobile"
           >
             <div
               aria-controls="sidebar-content"
@@ -189,7 +189,7 @@ exports[`Dashboard renders correctly 1`] = `
                 class="MuiAccordionSummary-content MuiAccordionSummary-contentGutters css-eqpfi5-MuiAccordionSummary-content"
               >
                 <div
-                  class="MuiTypography-root MuiTypography-p sidebar-title css-1cdn5d8-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
+                  class="MuiTypography-root MuiTypography-p sidebar-title css-1d3drjq-MuiTypography-root-topAreaBottomBorder-sidebarCommon-sidebarTitle-InfoCard"
                 >
                   Quick guide
                 </div>
@@ -230,7 +230,7 @@ exports[`Dashboard renders correctly 1`] = `
                       class="MuiAccordionDetails-root css-15v22id-MuiAccordionDetails-root"
                     >
                       <div
-                        class="MuiTypography-root MuiTypography-p sidebar-content css-18mx5jq-MuiTypography-root-sidebarCommon-sidebarContent-InfoCard"
+                        class="MuiTypography-root MuiTypography-p sidebar-content css-4gtl7g-MuiTypography-root-sidebarCommon-sidebarContent-InfoCard"
                       >
                         <div>
                           <div
@@ -256,13 +256,13 @@ exports[`Dashboard renders correctly 1`] = `
         style="position: sticky; top: 0px; z-index: 20;"
       >
         <div
-          class="dropdown css-1eowj61-dropdownWrapper-Dropdown"
+          class="dropdown css-1fq48ug-dropdownWrapper-Dropdown"
         >
           <div
             class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
           >
             <div
-              class="css-lrrvel-label-Dropdown"
+              class="css-13b7bh9-label-Dropdown"
             >
               <label
                 class=""
@@ -332,7 +332,7 @@ exports[`Dashboard renders correctly 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-l7rtm5-MuiSvgIcon-root-HelpTooltip"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-buj1li-MuiSvgIcon-root-HelpTooltip"
                 data-mui-internal-clone-element="true"
                 data-testid="FeedbackOutlinedIcon"
                 focusable="false"
@@ -3145,13 +3145,13 @@ exports[`Dashboard renders correctly 1`] = `
       </div>
     </div>
     <footer
-      class="eto-footer css-x62fuv-wrapperStyles"
+      class="eto-footer css-qosz01-wrapperStyles"
     >
       <div
-        class="css-b75asb-brandStyles"
+        class="css-1bvzjq5-brandStyles"
       >
         <div
-          class="css-16tfurm-logoStyles"
+          class="css-1m9z1cc-logoStyles"
         >
           <a
             href="https://eto.tech/"
@@ -3173,7 +3173,7 @@ exports[`Dashboard renders correctly 1`] = `
           </a>
         </div>
         <div
-          class="css-1g4lv4s-textBlurbStyles"
+          class="css-127x865-textBlurbStyles"
         >
           ETO is a project of the 
           <a
@@ -3195,7 +3195,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="subscribebox--core css-1xlt5sv-subscribeBoxCore-subscribeBox"
+        class="subscribebox--core css-qvd9sj-subscribeBoxCore-subscribeBox"
       >
         <div
           class="subscribe-inner"
@@ -3217,7 +3217,7 @@ exports[`Dashboard renders correctly 1`] = `
               data-testid="email-form-result"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-gxwz9g-MuiFormControl-root-MuiTextField-root-baseStyles-customColorStyles-TextFieldStyled"
+                class="MuiFormControl-root MuiTextField-root css-11kv24h-MuiFormControl-root-MuiTextField-root-baseStyles-customColorStyles-TextFieldStyled"
                 style="margin-right: 0.5rem; width: 100%;"
               >
                 <div
@@ -3235,7 +3235,7 @@ exports[`Dashboard renders correctly 1`] = `
               </div>
             </div>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1op9886-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
+              class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-5nq1g3-MuiButtonBase-root-MuiButton-root-styles-ButtonStyled"
               tabindex="0"
               title="Submit email"
               type="button"
@@ -3259,7 +3259,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="contact css-ulcmjq-contactStyles"
+        class="contact css-1bnex2w-contactStyles"
       >
         <h3>
           Keep in touch
@@ -3316,14 +3316,14 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="css-mgkvdw-lineStyles"
+        class="css-1bl0spk-lineStyles"
       >
         <div
           class="line-internal"
         />
       </div>
       <div
-        class="links css-1ol7fc0-linksStyles"
+        class="links css-vss5za-linksStyles"
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"

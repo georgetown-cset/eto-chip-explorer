@@ -1,10 +1,13 @@
 import React from "react"
-import {render, screen, fireEvent} from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
+import { userEventSetup } from '../../util/testing';
 
 import Dashboard, {
   GradientLegend
 } from "../dashboard";
 import {FILTER_INPUT, FILTER_COUNTRY} from "../../helpers/shared";
+
+window.URL.createObjectURL = jest.fn();
 
 describe("Gradient Legend", () => {
   it("renders empty correctly", () => {
@@ -60,19 +63,20 @@ describe("Dashboard", () => {
     fireEvent.click(screen.getByText("None"));
   });
 
-  it("opens the documentation node", () => {
-    render(<Dashboard/>);
+  it("opens the documentation node", async () => {
+    const { user } = userEventSetup(<Dashboard />);
+
     // Click on an input node to show its documentation
     expect(screen.getAllByText("Crystal growing furnaces").length).toEqual(1);
-    fireEvent.click(screen.getByText("Crystal growing furnaces"));
+    await user.click(screen.getByText("Crystal growing furnaces"));
     expect(screen.getAllByText("Crystal growing furnaces").length).toEqual(3);
 
     // Click on another node inside the documentation panel
-    fireEvent.click(screen.getAllByText("Deposition")[1]);
+    await user.click(screen.getAllByText("Deposition")[1]);
     expect(screen.queryAllByText("Some text about N35")).not.toBeNull();
 
     // Close the documentation panel
-    fireEvent.click(screen.getByText("Clear Highlights"));
+    await user.click(screen.getByText("Clear Highlights"));
     expect(screen.getAllByText("Crystal growing furnaces").length).toEqual(1);
   });
 
