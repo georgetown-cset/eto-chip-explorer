@@ -33,7 +33,7 @@
     "gatsby-plugin-sass": "^6.11.0",
     "gatsby-source-filesystem": "^5.11.0",
     "package.json": "^2.0.1",
-    "plotly.js": "^2.29.1",
+    "plotly.js": "^2.35.3",
     "react": "^18.2.0",
     "react-arrows": "^1.2.0",
     "react-dom": "^18.2.0",
