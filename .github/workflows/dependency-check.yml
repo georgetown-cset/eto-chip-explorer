@@ -1,0 +1,73 @@
+name: Dependency check
+on: [pull_request]
+
+env:
+  GATSBY_MAX_VERSION: 5.11.0
+
+jobs:
+  build:
+    name: dependency-check
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: 'read'
+      pull-requests: 'write'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract Gatsby version in one go
+        id: extract_gatsby
+        run: |
+          echo "gatsby_version=$(git diff -p HEAD^...HEAD map-of-science/package.json | grep -E "\+\s+\"gatsby\"" | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')" >> $GITHUB_OUTPUT
+
+      - name: Log detected Gatsby version
+        if: steps.extract_gatsby.outputs.gatsby_version
+        run: |
+          echo "Detected new Gatsby version ${{ steps.extract_gatsby.outputs.gatsby_version }} in PR diff"
+      - name: Log no Gatsby detected
+        if: ${{ ! steps.extract_gatsby.outputs.gatsby_version }}
+        run: |
+          echo "No Gatsby version detected in PR diff"
+
+      ## Compare the extracted version to the maximum version that we can support.
+      - uses: madhead/semver-utils@latest
+        if: steps.extract_gatsby.outputs.gatsby_version
+        id: compare-gatsby
+        with:
+          version: ${{ steps.extract_gatsby.outputs.gatsby_version }}
+          compare-to: $GATSBY_MAX_VERSION
+      - name: Print compare results
+        id: print-compare
+        run: |
+          echo "release: ${{ steps.compare-gatsby.outputs.release }}"
+          echo "comparison result: ${{ steps.compare-gatsby.outputs.comparison-result }}"
+
+      ## Warn that an incompatible Gatsby version was detected
+      - name: Determine if dangerous
+        id: is_gatsby_dangerous
+        run: |
+          echo "danger=${{ steps.extract_gatsby.outputs.gatsby_version && steps.compare-gatsby.outputs.comparison-result == '>' }}" >> $GITHUB_OUTPUT
+      - name: Flag as dangerous
+        if: steps.is_gatsby_dangerous.outputs.danger
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+            ### 🛑 🛑 WARNING: This pull request increments **`gatsby`** beyond safe version numbers (${{ env.GATSBY_MAX_VERSION }}), likely breaking the deploy process.
+            See [Engineering Advisory 2024-03-14](https://docs.google.com/document/d/1TE8gZ6EJQQxZ0rnT-X-DtiIU6SV8aOukqiGaGWGWiOA/edit#bookmark=id.51cnltp29g57) for details
+          comment-tag: warning
+      - name: Update warning comment as resolved
+        if: ${{ ! steps.is_gatsby_dangerous.outputs.danger }}
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          message: |
+            ✅ Dependency issues have been resolved
+          comment-tag: warning
+          create-if-not-exists: false
+
+      ## Cause the workflow check to fail in GitHub
+      - name: Set exit code
+        if: steps.is_gatsby_dangerous.outputs.danger
+        run: exit 1
