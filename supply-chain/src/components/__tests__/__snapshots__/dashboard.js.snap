@@ -51,6 +51,12 @@ exports[`Dashboard renders correctly 1`] = `
         >
           Subscribe
         </a>
+        <a
+          class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
+          href="https://eto.tech/donate"
+        >
+          Donate
+        </a>
       </div>
     </header>
     <div
@@ -256,13 +262,13 @@ exports[`Dashboard renders correctly 1`] = `
         style="position: sticky; top: 0px; z-index: 20;"
       >
         <div
-          class="dropdown css-1fq48ug-dropdownWrapper-Dropdown"
+          class="dropdown css-11couqv-dropdownWrapper-Dropdown"
         >
           <div
             class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
           >
             <div
-              class="css-13b7bh9-label-Dropdown"
+              class="css-2rvm9y-label-Dropdown"
             >
               <label
                 class=""
@@ -332,7 +338,7 @@ exports[`Dashboard renders correctly 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-buj1li-MuiSvgIcon-root-HelpTooltip"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-11bm59u-MuiSvgIcon-root-muiTooltip-HelpTooltip"
                 data-mui-internal-clone-element="true"
                 data-testid="FeedbackOutlinedIcon"
                 focusable="false"
@@ -3145,13 +3151,13 @@ exports[`Dashboard renders correctly 1`] = `
       </div>
     </div>
     <footer
-      class="eto-footer css-qosz01-wrapperStyles"
+      class="eto-footer css-1rnmr11-wrapperStyles"
     >
       <div
-        class="css-1bvzjq5-brandStyles"
+        class="css-499mb9-brandStyles"
       >
         <div
-          class="css-1m9z1cc-logoStyles"
+          class="css-8xolt-logoStyles"
         >
           <a
             href="https://eto.tech/"
@@ -3173,7 +3179,7 @@ exports[`Dashboard renders correctly 1`] = `
           </a>
         </div>
         <div
-          class="css-127x865-textBlurbStyles"
+          class="css-3wxpe4-textBlurbStyles"
         >
           ETO is a project of the 
           <a
@@ -3195,7 +3201,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="subscribebox--core css-qvd9sj-subscribeBoxCore-subscribeBox"
+        class="subscribebox--core css-11nyslk-subscribeBoxCore-subscribeBox"
       >
         <div
           class="subscribe-inner"
@@ -3259,7 +3265,7 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="contact css-1bnex2w-contactStyles"
+        class="contact css-sco5nu-contactStyles"
       >
         <h3>
           Keep in touch
@@ -3316,14 +3322,14 @@ exports[`Dashboard renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="css-1bl0spk-lineStyles"
+        class="css-1b5c50x-lineStyles"
       >
         <div
           class="line-internal"
         />
       </div>
       <div
-        class="links css-vss5za-linksStyles"
+        class="links css-4bh06g-linksStyles"
       >
         <a
           class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-1xylxj1-MuiTypography-root-MuiLink-root"
@@ -3335,7 +3341,7 @@ exports[`Dashboard renders correctly 1`] = `
           class="css-14jcibu-copyrightNoticeStyles"
         >
           <div>
-            ETO, 2024
+            ETO, 2025
           </div>
           <div
             class="divider"
