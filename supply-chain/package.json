@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@eto/eto-ui-components": "^1.10.0",
+    "@eto/eto-ui-components": "^1.10.5",
+    "@eto/social-cards": "^1.0.0",
     "@mdx-js/mdx": "^2.1.13",
     "@mdx-js/react": "^2.1.13",
     "@mui/icons-material": "^5.15.11",

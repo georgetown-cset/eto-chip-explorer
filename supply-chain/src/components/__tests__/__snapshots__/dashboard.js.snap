@@ -202,13 +202,13 @@ exports[`Dashboard renders correctly 1`] = `
     style="position: sticky; top: 0px; z-index: 20;"
   >
     <div
-      class="dropdown css-1fq48ug-dropdownWrapper-Dropdown"
+      class="dropdown css-11couqv-dropdownWrapper-Dropdown"
     >
       <div
         class="MuiFormControl-root css-2m9kme-MuiFormControl-root"
       >
         <div
-          class="css-13b7bh9-label-Dropdown"
+          class="css-2rvm9y-label-Dropdown"
         >
           <label
             class=""
@@ -278,7 +278,7 @@ exports[`Dashboard renders correctly 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-buj1li-MuiSvgIcon-root-HelpTooltip"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium feedback-icon css-11bm59u-MuiSvgIcon-root-muiTooltip-HelpTooltip"
             data-mui-internal-clone-element="true"
             data-testid="FeedbackOutlinedIcon"
             focusable="false"
