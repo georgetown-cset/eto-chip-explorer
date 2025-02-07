@@ -1,9 +1,13 @@
-import React, {useEffect} from "react";
+import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { ThemeProvider, createTheme } from '@mui/material';
+
+import {ErrorBoundary} from "@eto/eto-ui-components";
+
+import MetaTagsWrapper from "../components/MetaTagsWrapper";
 /* Set the body margin and padding to 0 here */
 import "../styles/styles.scss";
-import {ErrorBoundary} from "@eto/eto-ui-components";
+
 
 const theme = createTheme({
   components: {
@@ -18,12 +22,7 @@ const theme = createTheme({
 
 const Dashboard = React.lazy(() => import("../components/dashboard"));
 
-const IndexPage = ({data}) => {
-  useEffect(() => {
-    document.title = "Supply Chain Explorer: Advanced Chips";
-    document.documentElement.lang = "en";
-  }, []);
-
+const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
       {(typeof window !== "undefined") &&
@@ -34,7 +33,11 @@ const IndexPage = ({data}) => {
         </React.Suspense>
       }
     </ThemeProvider>
-  )
+  );
 };
 
 export default IndexPage;
+
+export const Head = () => (
+  <MetaTagsWrapper />
+);
