@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import {InfoCard, AppWrapper, Autocomplete, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
+import {InfoCard, Autocomplete, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
@@ -434,7 +434,7 @@ const Dashboard = () => {
   /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
-  return (<AppWrapper>
+  return (<>
     <div style={{maxWidth: "1500px"}}>
       <InfoCard
         title={"Supply Chain Explorer"}
@@ -495,7 +495,7 @@ const Dashboard = () => {
         documentationPanelToggle={documentationPanelToggle} setDocumentationPanelToggle={setDocumentationPanelToggle}
         parentNode={parentNode} selectedNode={selectedNode} updateSelected={updateSelected} />
     </div>
-  </AppWrapper>);
+  </>);
 };
 
 export default Dashboard;
