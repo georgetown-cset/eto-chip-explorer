@@ -40,7 +40,7 @@
     "react-markdown": "^8.0.7",
     "react-plotly.js": "^2.6.0",
     "react-xarrows": "^2.0.2",
-    "sass": "^1.71.1"
+    "sass": "^1.85.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.2",
