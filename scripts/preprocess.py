@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import argparse
 import copy
 import csv
@@ -24,6 +26,7 @@ EXPECTED_TYPES = {
     "stage",
     "tool_resource",
     "ultimate_output",
+    "design_resource",
 }
 BASE_NODE_TYPES = {"process", "ultimate_output"}
 TOOLS = "tools"
@@ -52,11 +55,15 @@ COUNTRY_MAPPING = {
     "Russian Federation": "Russia",
     "Iran, Islamic Republic of": "Iran",
     "Taiwan, Province of China": "Taiwan",
+    "EUR": "Europe",
+    "Various countries": "Various countries",
 }
 
 MAJOR_PROVISION = "Major"
 MINOR_PROVISION = "negligible"
+HIGH_PROVISION = "high"
 MARKET_SHARE_COL = "negligible_market_share"
+HIGH_MARKET_SHARE_COL = "high_market_share"
 
 
 class Preprocess:
@@ -116,7 +123,10 @@ class Preprocess:
                         line["market_share_chart_source"]
                     ),
                 }
-                assert node_type in EXPECTED_TYPES
+                try:
+                    assert node_type in EXPECTED_TYPES
+                except AssertionError:
+                    print("unexpected node_type:", node_type)
                 self.node_to_meta[node_id][MATERIALS] = []
                 self.node_to_meta[node_id][TOOLS] = []
         with open(stages_fi, encoding="utf-8-sig") as f:
@@ -166,6 +176,8 @@ class Preprocess:
         graph_reverse = {}
         for line in lines:
             parent = line["input_id"]
+            if parent == "":
+                continue
             child = line["goes_into_id"]
             skip = self.update_variants(parent, child, line)
             if skip:
@@ -241,16 +253,17 @@ class Preprocess:
         :return: Provision value
         """
         assert not (
-            (len(record["share_provided"]) > 0) and (len(record[MARKET_SHARE_COL]) > 0)
-        ), f"Record should have either negligible share or provision, not both: {record}"
+            (len(record["share_provided"]) == 0)
+            and (len(record[HIGH_MARKET_SHARE_COL]) > 0)
+        ), f"Records with 'high market share' are expected to have a market share value: {record}"
         if record["share_provided"]:
             if is_org:
                 return MAJOR_PROVISION
-            return int(record["share_provided"].strip("%"))
-        share = record[MARKET_SHARE_COL].strip()
+            return float(record["share_provided"].strip("%"))
+        share = record[HIGH_MARKET_SHARE_COL].strip()
         if share:
-            assert share.lower() == MINOR_PROVISION.lower(), share
-            return MINOR_PROVISION
+            assert share.lower() == HIGH_PROVISION.lower(), share
+            return HIGH_PROVISION
         return MAJOR_PROVISION
 
     @staticmethod
@@ -388,7 +401,9 @@ class Preprocess:
                     os.path.join(output_dir, line["stage_id"]) + ".mdx", mode="w"
                 ) as out:
                     out.write(header_template.format(line["stage_name"]))
-                    out.write(line["description"])
+                    out.write(
+                        line["description"].replace("<", "&lt;").replace(">", "&gt;")
+                    )
 
     def _get_node_to_country_provision(self):
         """
@@ -726,6 +741,11 @@ class Preprocess:
                 image_fi = re.search(r"\((http.*?)\)", image_col)[1]
                 file_type = image_fi.split(".")[-1]
                 image_node_id = line["input_id"]
+
+                ## CHECK: missing node
+                if image_node_id in ["N68"]:
+                    continue
+
                 if download_images:
                     urllib.request.urlretrieve(
                         image_fi,
