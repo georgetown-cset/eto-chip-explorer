@@ -63,7 +63,6 @@ MAJOR_PROVISION = "Major"
 MINOR_PROVISION = "negligible"
 HIGH_PROVISION = "high"
 MARKET_SHARE_COL = "negligible_market_share"
-HIGH_MARKET_SHARE_COL = "high_market_share"
 
 
 class Preprocess:
@@ -252,18 +251,10 @@ class Preprocess:
             provision to major
         :return: Provision value
         """
-        assert not (
-            (len(record["share_provided"]) == 0)
-            and (len(record[HIGH_MARKET_SHARE_COL]) > 0)
-        ), f"Records with 'high market share' are expected to have a market share value: {record}"
         if record["share_provided"]:
             if is_org:
                 return MAJOR_PROVISION
             return float(record["share_provided"].strip("%"))
-        share = record[HIGH_MARKET_SHARE_COL].strip()
-        if share:
-            assert share.lower() == HIGH_PROVISION.lower(), share
-            return HIGH_PROVISION
         return MAJOR_PROVISION
 
     @staticmethod
