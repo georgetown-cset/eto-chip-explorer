@@ -1,530 +1,530 @@
 provider_name,provider_id,provided_name,provided_id,share_provided,year,source
-ACM Research,P313,Wet etching and cleaning tools,N49,0.10696,2024,CSET analysis of TechInsights data
-AMEC,P123,Insulator etching tools,N51,0.09725,2024,CSET analysis of TechInsights data
-AMEC,P123,Etching tools (for adv. pkg.),N101,0.1812,2024,CSET analysis of TechInsights data
-ASM International,P112,High-temperature CVD tools,N40,0.20541,2024,CSET analysis of TechInsights data
-ASM International,P112,Atomic layer deposition tools,N41,0.52516,2024,CSET analysis of TechInsights data
-ASM International,P112,Tube-based diffusion and deposition tools,N44,0.07018,2024,CSET analysis of TechInsights data
-ASM International,P112,CVD tools (for adv. pkg.),N110,0.02832,2024,CSET analysis of TechInsights data
-ASM Pacific,P145,PVD tools (for adv. pkg.),N111,0.03699,2024,CSET analysis of TechInsights data
-ASM Pacific,P145,ECP tools (for adv. pkg.),N113,0.08212,2024,CSET analysis of TechInsights data
-ASML,P88,i-line lithography tools,N106,0.35691,2024,CSET analysis of TechInsights data
-ASML,P88,KrF (DUV) lithography tools,N105,0.79173,2024,CSET analysis of TechInsights data
-ASML,P88,ArF dry (DUV) lithography tools,N21,0.94345,2024,CSET analysis of TechInsights data
-ASML,P88,ArF immersion (DUV) lithography tools,N22,0.98669,2024,CSET analysis of TechInsights data
-ASML,P88,Overlay metrology tools,N114,0.45104,2024,CSET analysis of TechInsights data
-ASML,P88,E-beam metrology tools,N115,0.37587,2024,CSET analysis of TechInsights data
-ASML,P88,EUV lithography tools,N20,1.0,2024,CSET analysis of TechInsights data
-AUT,P80,Imprint Lithography,N107,0.87541,2024,CSET analysis of TechInsights data
-AUT,P80,Wafer bonding and aligning tools,N10,0.55574,2024,CSET analysis of TechInsights data
-AUT,P80,Mask Exposure Systems - E-Beam,N29,0.46436,2024,CSET analysis of TechInsights data
-Accretech,P60,Crystal machining tools,N9,0.25462,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Plasma CVD tools,N38,0.57732,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Low-pressure CVD tools,N39,0.18942,2024,CSET analysis of TechInsights data
-Applied Materials,P81,High-temperature CVD tools,N40,0.73399,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Physical vapor deposition tools,N42,0.85609,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Rapid thermal processing tools,N43,0.74157,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Plasma modification tools,N104,0.86853,2024,CSET analysis of TechInsights data
-Applied Materials,P81,ECP tools (for adv. pkg.),N113,0.19386,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Conductor etching tools,N50,0.3276,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Critical dimensions metrology tools,N66,0.30053,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Defect inspection tools,N67,0.05052,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Defect review stations,N116,0.71934,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Ion implantation,N17,0.67784,2024,CSET analysis of TechInsights data
-Applied Materials,P81,E-beam metrology tools,N115,0.4952,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Mask Exposure Systems - Laser Beam,N30,0.6136,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Chemical mechanical planarization tools,N86,0.62549,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Atomic layer deposition tools,N41,0.04022,2024,CSET analysis of TechInsights data
-Applied Materials,P81,PVD tools (for adv. pkg.),N111,0.70409,2024,CSET analysis of TechInsights data
-Applied Materials,P81,Etching tools (for adv. pkg.),N101,0.14495,2024,CSET analysis of TechInsights data
-Applied Materials,P81,CVD tools (for adv. pkg.),N110,0.55032,2024,CSET analysis of TechInsights data
-Axcelis,P84,Ion implantation,N17,0.22114,2024,CSET analysis of TechInsights data
-Bruker,P135,"Film, stack, and shape metrology tools",N65,0.05034,2024,CSET analysis of TechInsights data
-CAMTEK,P141,Defect inspection tools,N67,0.03402,2024,CSET analysis of TechInsights data
-CHN,P2,Insulator etching tools,N51,0.09725,2024,CSET analysis of TechInsights data
-CHN,P2,i-line lithography tools,N106,0.04308,2024,CSET analysis of TechInsights data
-CHN,P2,Etching tools (for adv. pkg.),N101,0.2654,2024,CSET analysis of TechInsights data
-CHN,P2,Chemical mechanical planarization tools,N86,0.08805,2024,CSET analysis of TechInsights data
-CHN,P2,Plasma CVD tools,N38,0.06422,2024,CSET analysis of TechInsights data
-CHN,P2,"Film, stack, and shape metrology tools",N65,0.02281,2024,CSET analysis of TechInsights data
-CHN,P2,Physical vapor deposition tools,N42,0.10436,2024,CSET analysis of TechInsights data
-CHN,P2,Tube-based diffusion and deposition tools,N44,0.10387,2024,CSET analysis of TechInsights data
-CHN,P2,CVD tools (for adv. pkg.),N110,0.19148,2024,CSET analysis of TechInsights data
-CHN,P2,Misc. dry etch tools,N54,0.55541,2024,CSET analysis of TechInsights data
-CHN,P2,Wet etching and cleaning tools,N49,0.03289,2024,CSET analysis of TechInsights data
-CHN,P2,Low-pressure CVD tools,N39,0.02826,2024,CSET analysis of TechInsights data
-CHN,P2,High-temperature CVD tools,N40,0.03431,2024,CSET analysis of TechInsights data
-CHN,P2,PVD tools (for adv. pkg.),N111,0.0881,2024,CSET analysis of TechInsights data
-CHN,P2,Conductor etching tools,N50,0.0607,2024,CSET analysis of TechInsights data
-CHN,P2,Dry stripping tools,N53,0.07343,2024,CSET analysis of TechInsights data
-Canon,P159,i-line lithography tools,N106,0.47731,2024,CSET analysis of TechInsights data
-Canon,P159,KrF (DUV) lithography tools,N105,0.1744,2024,CSET analysis of TechInsights data
-DEU,P32,"Film, stack, and shape metrology tools",N65,0.05034,2024,CSET analysis of TechInsights data
-DEU,P32,Wafer bonding and aligning tools,N10,0.0371,2024,CSET analysis of TechInsights data
-DEU,P32,Direct Write Systems,N108,0.3279,2024,CSET analysis of TechInsights data
-DEU,P32,Photomask inspection and repair tools,N62,0.04604,2024,CSET analysis of TechInsights data
-DEU,P32,Resist processing tools,N32,0.0354,2024,CSET analysis of TechInsights data
-Daifuku,P71,Wafer handlers,N11,0.53127,2024,CSET analysis of TechInsights data
-Daifuku,P71,Photomask handlers,N12,0.0587,2024,CSET analysis of TechInsights data
-Disco,P62,Crystal machining tools,N9,0.67979,2024,CSET analysis of TechInsights data
-EBARA,P128,ECP tools (for adv. pkg.),N113,0.02943,2024,CSET analysis of TechInsights data
-EBARA,P128,Chemical mechanical planarization tools,N86,0.25874,2024,CSET analysis of TechInsights data
-EV Group,P67,Imprint Lithography,N107,0.87541,2024,CSET analysis of TechInsights data
-EV Group,P67,Wafer bonding and aligning tools,N10,0.55574,2024,CSET analysis of TechInsights data
-Eugene Technology,P320,Low-pressure CVD tools,N39,0.0747,2024,CSET analysis of TechInsights data
-GBR,P110,Misc. dry etch tools,N54,0.03705,2024,CSET analysis of TechInsights data
-GigaLane,P126,Misc. dry etch tools,N54,0.05,2024,CSET analysis of TechInsights data
-GigaLane,P126,Imprint Lithography,N107,0.07211,2024,CSET analysis of TechInsights data
-Gudeng,P75,Photomask handlers,N12,0.08324,2024,CSET analysis of TechInsights data
-Hitachi,P97,Conductor etching tools,N50,0.03967,2024,CSET analysis of TechInsights data
-Hitachi,P97,Defect inspection tools,N67,0.0227,2024,CSET analysis of TechInsights data
-Hitachi,P97,Defect review stations,N116,0.03846,2024,CSET analysis of TechInsights data
-Hitachi,P97,Critical dimensions metrology tools,N66,0.6899,2024,CSET analysis of TechInsights data
-Hwatsing,P129,Chemical mechanical planarization tools,N86,0.08805,2024,CSET analysis of TechInsights data
-IMS Nanofabrication,P328,Mask Exposure Systems - E-Beam,N29,0.46436,2024,CSET analysis of TechInsights data
-ISR,P133,"Film, stack, and shape metrology tools",N65,0.20644,2024,CSET analysis of TechInsights data
-ISR,P133,Defect inspection tools,N67,0.03402,2024,CSET analysis of TechInsights data
-JEOL,P92,Direct Write Systems,N108,0.6721,2024,CSET analysis of TechInsights data
-JEOL,P92,Mask Exposure Systems - E-Beam,N29,0.15048,2024,CSET analysis of TechInsights data
-JPN,P7,i-line lithography tools,N106,0.53474,2024,CSET analysis of TechInsights data
-JPN,P7,KrF (DUV) lithography tools,N105,0.20827,2024,CSET analysis of TechInsights data
-JPN,P7,Crystal machining tools,N9,0.99643,2024,CSET analysis of TechInsights data
-JPN,P7,Wafer handlers,N11,0.85602,2024,CSET analysis of TechInsights data
-JPN,P7,Photomask handlers,N12,0.86824,2024,CSET analysis of TechInsights data
-JPN,P7,ECP tools (for adv. pkg.),N113,0.02943,2024,CSET analysis of TechInsights data
-JPN,P7,Conductor etching tools,N50,0.06845,2024,CSET analysis of TechInsights data
-JPN,P7,Defect inspection tools,N67,0.0227,2024,CSET analysis of TechInsights data
-JPN,P7,Defect review stations,N116,0.03846,2024,CSET analysis of TechInsights data
-JPN,P7,Direct Write Systems,N108,0.6721,2024,CSET analysis of TechInsights data
-JPN,P7,Mask Exposure Systems - E-Beam,N29,0.53564,2024,CSET analysis of TechInsights data
-JPN,P7,Atomic layer deposition tools,N41,0.25379,2024,CSET analysis of TechInsights data
-JPN,P7,Tube-based diffusion and deposition tools,N44,0.799,2024,CSET analysis of TechInsights data
-JPN,P7,CVD tools (for adv. pkg.),N110,0.06676,2024,CSET analysis of TechInsights data
-JPN,P7,Photomask inspection and repair tools,N62,0.48977,2024,CSET analysis of TechInsights data
-JPN,P7,ArF dry (DUV) lithography tools,N21,0.05655,2024,CSET analysis of TechInsights data
-JPN,P7,"Film, stack, and shape metrology tools",N65,0.07124,2024,CSET analysis of TechInsights data
-JPN,P7,Rapid thermal processing tools,N43,0.05663,2024,CSET analysis of TechInsights data
-JPN,P7,Wet etching and cleaning tools,N49,0.60944,2024,CSET analysis of TechInsights data
-JPN,P7,Ion implantation,N17,0.08167,2024,CSET analysis of TechInsights data
-JPN,P7,Misc. dry etch tools,N54,0.21912,2024,CSET analysis of TechInsights data
-JPN,P7,Low-pressure CVD tools,N39,0.30514,2024,CSET analysis of TechInsights data
-JPN,P7,Plasma modification tools,N104,0.11639,2024,CSET analysis of TechInsights data
-JPN,P7,Insulator etching tools,N51,0.61756,2024,CSET analysis of TechInsights data
-JPN,P7,Physical vapor deposition tools,N42,0.02128,2024,CSET analysis of TechInsights data
-JPN,P7,PVD tools (for adv. pkg.),N111,0.07049,2024,CSET analysis of TechInsights data
-JPN,P7,Critical dimensions metrology tools,N66,0.6899,2024,CSET analysis of TechInsights data
-JPN,P7,Dry stripping tools,N53,0.34368,2024,CSET analysis of TechInsights data
-JPN,P7,Wafer bonding and aligning tools,N10,0.39486,2024,CSET analysis of TechInsights data
-JPN,P7,Chemical mechanical planarization tools,N86,0.25874,2024,CSET analysis of TechInsights data
-JPN,P7,Resist processing tools,N32,0.91006,2024,CSET analysis of TechInsights data
-Jusung Engineering,P332,Atomic layer deposition tools,N41,0.03322,2024,CSET analysis of TechInsights data
-KLA,P118,"Film, stack, and shape metrology tools",N65,0.47038,2024,CSET analysis of TechInsights data
-KLA,P118,Overlay metrology tools,N114,0.54221,2024,CSET analysis of TechInsights data
-KLA,P118,Defect inspection tools,N67,0.84581,2024,CSET analysis of TechInsights data
-KLA,P118,E-beam metrology tools,N115,0.11943,2024,CSET analysis of TechInsights data
-KLA,P118,Defect review stations,N116,0.24221,2024,CSET analysis of TechInsights data
-KLA,P118,Photomask inspection and repair tools,N62,0.4372,2024,CSET analysis of TechInsights data
-KLA,P118,PVD tools (for adv. pkg.),N111,0.07913,2024,CSET analysis of TechInsights data
-KLA,P118,Etching tools (for adv. pkg.),N101,0.09848,2024,CSET analysis of TechInsights data
-KOR,P4,Atomic layer deposition tools,N41,0.03322,2024,CSET analysis of TechInsights data
-KOR,P4,Dry stripping tools,N53,0.07913,2024,CSET analysis of TechInsights data
-KOR,P4,Low-pressure CVD tools,N39,0.0747,2024,CSET analysis of TechInsights data
-KOR,P4,Misc. dry etch tools,N54,0.05,2024,CSET analysis of TechInsights data
-KOR,P4,Plasma CVD tools,N38,0.03856,2024,CSET analysis of TechInsights data
-KOR,P4,Wafer handlers,N11,0.13698,2024,CSET analysis of TechInsights data
-KOR,P4,Wet etching and cleaning tools,N49,0.04233,2024,CSET analysis of TechInsights data
-KOR,P4,Imprint Lithography,N107,0.07211,2024,CSET analysis of TechInsights data
-KOR,P4,Dry clean tools,N102,0.39752,2024,CSET analysis of TechInsights data
-Keithley Instruments,P143,Process monitoring tools,N64,0.31407,2024,CSET analysis of TechInsights data
-Keysight Tech,P142,Process monitoring tools,N64,0.68593,2024,CSET analysis of TechInsights data
-Kokusai,P116,Atomic layer deposition tools,N41,0.0936,2024,CSET analysis of TechInsights data
-Kokusai,P116,Tube-based diffusion and deposition tools,N44,0.23667,2024,CSET analysis of TechInsights data
-Kokusai,P116,CVD tools (for adv. pkg.),N110,0.06676,2024,CSET analysis of TechInsights data
-Kokusai,P116,Plasma modification tools,N104,0.05672,2024,CSET analysis of TechInsights data
-Kokusai,P116,Rapid thermal processing tools,N43,0.02367,2024,CSET analysis of TechInsights data
-Kokusai,P116,Dry stripping tools,N53,0.27195,2024,CSET analysis of TechInsights data
-Lam Research,P111,Conductor etching tools,N50,0.48794,2024,CSET analysis of TechInsights data
-Lam Research,P111,Insulator etching tools,N51,0.25856,2024,CSET analysis of TechInsights data
-Lam Research,P111,Dry clean tools,N102,0.59304,2024,CSET analysis of TechInsights data
-Lam Research,P111,Plasma CVD tools,N38,0.27665,2024,CSET analysis of TechInsights data
-Lam Research,P111,Low-pressure CVD tools,N39,0.36878,2024,CSET analysis of TechInsights data
-Lam Research,P111,Electrochemical plating tools,N45,0.9984,2024,CSET analysis of TechInsights data
-Lam Research,P111,ECP tools (for adv. pkg.),N113,0.68351,2024,CSET analysis of TechInsights data
-Lam Research,P111,Dry stripping tools,N53,0.08131,2024,CSET analysis of TechInsights data
-Lam Research,P111,Atomic layer deposition tools,N41,0.11028,2024,CSET analysis of TechInsights data
-Lam Research,P111,Wet etching and cleaning tools,N49,0.17052,2024,CSET analysis of TechInsights data
-Lam Research,P111,Etching tools (for adv. pkg.),N101,0.49021,2024,CSET analysis of TechInsights data
-Lam Research,P111,CVD tools (for adv. pkg.),N110,0.10708,2024,CSET analysis of TechInsights data
-Lasertec,P140,Photomask inspection and repair tools,N62,0.48977,2024,CSET analysis of TechInsights data
-Mattson Tech,P119,Rapid thermal processing tools,N43,0.03814,2024,CSET analysis of TechInsights data
-Mattson Tech,P119,Dry stripping tools,N53,0.28026,2024,CSET analysis of TechInsights data
-Muratec,P74,Wafer handlers,N11,0.30078,2024,CSET analysis of TechInsights data
-Muratec,P74,Photomask handlers,N12,0.80954,2024,CSET analysis of TechInsights data
-Mycronic,P94,Mask Exposure Systems - Laser Beam,N30,0.37296,2024,CSET analysis of TechInsights data
-NAURA,P115,Physical vapor deposition tools,N42,0.10436,2024,CSET analysis of TechInsights data
-NAURA,P115,Tube-based diffusion and deposition tools,N44,0.10387,2024,CSET analysis of TechInsights data
-NAURA,P115,CVD tools (for adv. pkg.),N110,0.19148,2024,CSET analysis of TechInsights data
-NAURA,P115,Misc. dry etch tools,N54,0.55541,2024,CSET analysis of TechInsights data
-NAURA,P115,Wet etching and cleaning tools,N49,0.03289,2024,CSET analysis of TechInsights data
-NAURA,P115,Low-pressure CVD tools,N39,0.02826,2024,CSET analysis of TechInsights data
-NAURA,P115,High-temperature CVD tools,N40,0.03431,2024,CSET analysis of TechInsights data
-NAURA,P115,PVD tools (for adv. pkg.),N111,0.0881,2024,CSET analysis of TechInsights data
-NAURA,P115,Conductor etching tools,N50,0.0607,2024,CSET analysis of TechInsights data
-NAURA,P115,Etching tools (for adv. pkg.),N101,0.0842,2024,CSET analysis of TechInsights data
-NAURA,P115,Dry stripping tools,N53,0.07343,2024,CSET analysis of TechInsights data
-NLD,P45,High-temperature CVD tools,N40,0.20541,2024,CSET analysis of TechInsights data
-NLD,P45,Atomic layer deposition tools,N41,0.52516,2024,CSET analysis of TechInsights data
-NLD,P45,Tube-based diffusion and deposition tools,N44,0.07018,2024,CSET analysis of TechInsights data
-NLD,P45,i-line lithography tools,N106,0.35691,2024,CSET analysis of TechInsights data
-NLD,P45,KrF (DUV) lithography tools,N105,0.79173,2024,CSET analysis of TechInsights data
-NLD,P45,ArF dry (DUV) lithography tools,N21,0.94345,2024,CSET analysis of TechInsights data
-NLD,P45,ArF immersion (DUV) lithography tools,N22,0.98669,2024,CSET analysis of TechInsights data
-NLD,P45,Overlay metrology tools,N114,0.45104,2024,CSET analysis of TechInsights data
-NLD,P45,E-beam metrology tools,N115,0.37587,2024,CSET analysis of TechInsights data
-NLD,P45,Dry stripping tools,N53,0.11262,2024,CSET analysis of TechInsights data
-NLD,P45,EUV lithography tools,N20,1.0,2024,CSET analysis of TechInsights data
-NLD,P45,CVD tools (for adv. pkg.),N110,0.02832,2024,CSET analysis of TechInsights data
-Nikon,P89,i-line lithography tools,N106,0.05742,2024,CSET analysis of TechInsights data
-Nikon,P89,KrF (DUV) lithography tools,N105,0.03387,2024,CSET analysis of TechInsights data
-Nikon,P89,ArF dry (DUV) lithography tools,N21,0.05655,2024,CSET analysis of TechInsights data
-Nova,P337,"Film, stack, and shape metrology tools",N65,0.20644,2024,CSET analysis of TechInsights data
-NuFlare,P91,Mask Exposure Systems - E-Beam,N29,0.38516,2024,CSET analysis of TechInsights data
-Okamoto,P61,Crystal machining tools,N9,0.06202,2024,CSET analysis of TechInsights data
-Onto Innovation,P139,"Film, stack, and shape metrology tools",N65,0.13575,2024,CSET analysis of TechInsights data
-Oxford Instruments,P338,Misc. dry etch tools,N54,0.03705,2024,CSET analysis of TechInsights data
-PSK,P341,Dry stripping tools,N53,0.07913,2024,CSET analysis of TechInsights data
-PSK,P341,Dry clean tools,N102,0.39752,2024,CSET analysis of TechInsights data
-Piotech,P113,Plasma CVD tools,N38,0.06422,2024,CSET analysis of TechInsights data
-Plasma-Therm,P124,Misc. dry etch tools,N54,0.12664,2024,CSET analysis of TechInsights data
-Raintree Scientific Instruments (RSIC),P137,"Film, stack, and shape metrology tools",N65,0.02281,2024,CSET analysis of TechInsights data
-Rigaku,P136,"Film, stack, and shape metrology tools",N65,0.07124,2024,CSET analysis of TechInsights data
-Rorze,P72,Wafer handlers,N11,0.02397,2024,CSET analysis of TechInsights data
-SAMCO,P125,Misc. dry etch tools,N54,0.0827,2024,CSET analysis of TechInsights data
-SEMES,P73,Wafer handlers,N11,0.13698,2024,CSET analysis of TechInsights data
-SEMES,P73,Wet etching and cleaning tools,N49,0.04233,2024,CSET analysis of TechInsights data
-SGP,P47,PVD tools (for adv. pkg.),N111,0.03699,2024,CSET analysis of TechInsights data
-SGP,P47,ECP tools (for adv. pkg.),N113,0.08212,2024,CSET analysis of TechInsights data
-SMEE,P70,i-line lithography tools,N106,0.04308,2024,CSET analysis of TechInsights data
-SMIT,P83,Ion implantation,N17,0.08167,2024,CSET analysis of TechInsights data
-SUSS MicroTec,P68,Wafer bonding and aligning tools,N10,0.0371,2024,CSET analysis of TechInsights data
-SUSS MicroTec,P68,Resist processing tools,N32,0.0354,2024,CSET analysis of TechInsights data
-SWE,P90,Mask Exposure Systems - Laser Beam,N30,0.37296,2024,CSET analysis of TechInsights data
-Screen,P106,Rapid thermal processing tools,N43,0.03296,2024,CSET analysis of TechInsights data
-Screen,P106,Wet etching and cleaning tools,N49,0.38551,2024,CSET analysis of TechInsights data
-Semilab,P343,"Film, stack, and shape metrology tools",N65,0.02797,2024,CSET analysis of TechInsights data
-Shibaura Mechatronics,P347,Misc. dry etch tools,N54,0.13642,2024,CSET analysis of TechInsights data
-Shibaura Mechatronics,P347,Wet etching and cleaning tools,N49,0.02205,2024,CSET analysis of TechInsights data
-Shibaura Mechatronics,P347,Dry stripping tools,N53,0.07172,2024,CSET analysis of TechInsights data
-TWN,P8,Photomask handlers,N12,0.08324,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Low-pressure CVD tools,N39,0.30514,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Tube-based diffusion and deposition tools,N44,0.56233,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Plasma modification tools,N104,0.05967,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Conductor etching tools,N50,0.02878,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Insulator etching tools,N51,0.61756,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Wet etching and cleaning tools,N49,0.20188,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Atomic layer deposition tools,N41,0.16019,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Wafer bonding and aligning tools,N10,0.39486,2024,CSET analysis of TechInsights data
-Tokyo Electron,P105,Resist processing tools,N32,0.91006,2024,CSET analysis of TechInsights data
-Trymax,P350,Dry stripping tools,N53,0.11262,2024,CSET analysis of TechInsights data
-ULVAC,P117,Physical vapor deposition tools,N42,0.02128,2024,CSET analysis of TechInsights data
-ULVAC,P117,PVD tools (for adv. pkg.),N111,0.07049,2024,CSET analysis of TechInsights data
-USA,P1,Plasma CVD tools,N38,0.85397,2024,CSET analysis of TechInsights data
-USA,P1,Low-pressure CVD tools,N39,0.5582,2024,CSET analysis of TechInsights data
-USA,P1,High-temperature CVD tools,N40,0.73399,2024,CSET analysis of TechInsights data
-USA,P1,Physical vapor deposition tools,N42,0.85609,2024,CSET analysis of TechInsights data
-USA,P1,Rapid thermal processing tools,N43,0.92541,2024,CSET analysis of TechInsights data
-USA,P1,Plasma modification tools,N104,0.86853,2024,CSET analysis of TechInsights data
-USA,P1,ECP tools (for adv. pkg.),N113,0.87737,2024,CSET analysis of TechInsights data
-USA,P1,Conductor etching tools,N50,0.81555,2024,CSET analysis of TechInsights data
-USA,P1,Critical dimensions metrology tools,N66,0.30053,2024,CSET analysis of TechInsights data
-USA,P1,Defect inspection tools,N67,0.89633,2024,CSET analysis of TechInsights data
-USA,P1,Defect review stations,N116,0.96154,2024,CSET analysis of TechInsights data
-USA,P1,Ion implantation,N17,0.89898,2024,CSET analysis of TechInsights data
-USA,P1,"Film, stack, and shape metrology tools",N65,0.60614,2024,CSET analysis of TechInsights data
-USA,P1,Overlay metrology tools,N114,0.54221,2024,CSET analysis of TechInsights data
-USA,P1,E-beam metrology tools,N115,0.61463,2024,CSET analysis of TechInsights data
-USA,P1,Photomask inspection and repair tools,N62,0.4372,2024,CSET analysis of TechInsights data
-USA,P1,Process monitoring tools,N64,1.0,2024,CSET analysis of TechInsights data
-USA,P1,Insulator etching tools,N51,0.25856,2024,CSET analysis of TechInsights data
-USA,P1,Dry clean tools,N102,0.59304,2024,CSET analysis of TechInsights data
-USA,P1,Dry stripping tools,N53,0.36157,2024,CSET analysis of TechInsights data
-USA,P1,Misc. dry etch tools,N54,0.12664,2024,CSET analysis of TechInsights data
-USA,P1,Electrochemical plating tools,N45,0.9984,2024,CSET analysis of TechInsights data
-USA,P1,Atomic layer deposition tools,N41,0.1505,2024,CSET analysis of TechInsights data
-USA,P1,Wet etching and cleaning tools,N49,0.27748,2024,CSET analysis of TechInsights data
-USA,P1,Mask Exposure Systems - Laser Beam,N30,0.6136,2024,CSET analysis of TechInsights data
-USA,P1,Chemical mechanical planarization tools,N86,0.62549,2024,CSET analysis of TechInsights data
-USA,P1,PVD tools (for adv. pkg.),N111,0.78322,2024,CSET analysis of TechInsights data
-USA,P1,Etching tools (for adv. pkg.),N101,0.73364,2024,CSET analysis of TechInsights data
-USA,P1,i-line lithography tools,N106,0.04596,2024,CSET analysis of TechInsights data
-USA,P1,CVD tools (for adv. pkg.),N110,0.6574,2024,CSET analysis of TechInsights data
-Various companies,P370,Wet etching and cleaning tools,N49,0.03786,2024,CSET analysis of TechInsights data
-Various companies,P370,Plasma CVD tools,N38,0.04325,2024,CSET analysis of TechInsights data
-Various companies,P370,Insulator etching tools,N51,0.02663,2024,CSET analysis of TechInsights data
-Various companies,P370,Photomask inspection and repair tools,N62,0.02699,2024,CSET analysis of TechInsights data
-Various companies,P370,ECP tools (for adv. pkg.),N113,0.01108,2024,CSET analysis of TechInsights data
-Various companies,P370,Mask Exposure Systems - Laser Beam,N30,0.01343,2024,CSET analysis of TechInsights data
-Various companies,P370,Defect inspection tools,N67,0.04695,2024,CSET analysis of TechInsights data
-Various companies,P370,Conductor etching tools,N50,0.05531,2024,CSET analysis of TechInsights data
-Various companies,P370,ArF immersion (DUV) lithography tools,N22,0.01331,2024,CSET analysis of TechInsights data
-Various companies,P370,Ion implantation,N17,0.01935,2024,CSET analysis of TechInsights data
-Various companies,P370,Atomic layer deposition tools,N41,0.03733,2024,CSET analysis of TechInsights data
-Various companies,P370,CVD tools (for adv. pkg.),N110,0.05603,2024,CSET analysis of TechInsights data
-Various companies,P370,Wafer handlers,N11,0.007,2024,CSET analysis of TechInsights data
-Various companies,P370,"Film, stack, and shape metrology tools",N65,0.01508,2024,CSET analysis of TechInsights data
-Various companies,P370,PVD tools (for adv. pkg.),N111,0.0212,2024,CSET analysis of TechInsights data
-Various companies,P370,Dry stripping tools,N53,0.02956,2024,CSET analysis of TechInsights data
-Various companies,P370,Misc. dry etch tools,N54,0.01178,2024,CSET analysis of TechInsights data
-Various companies,P370,Tube-based diffusion and deposition tools,N44,0.02696,2024,CSET analysis of TechInsights data
-Various companies,P370,Imprint Lithography,N107,0.05248,2024,CSET analysis of TechInsights data
-Various companies,P370,Physical vapor deposition tools,N42,0.01828,2024,CSET analysis of TechInsights data
-Various companies,P370,Rapid thermal processing tools,N43,0.01796,2024,CSET analysis of TechInsights data
-Various companies,P370,Spin-on deposition tools (for adv. pkg.),N112,1.0,2024,CSET analysis of TechInsights data
-Various companies,P370,Ion milling tools,N52,1.0,2024,CSET analysis of TechInsights data
-Various companies,P370,Overlay metrology tools,N114,0.00676,2024,CSET analysis of TechInsights data
-Various companies,P370,Critical dimensions metrology tools,N66,0.00958,2024,CSET analysis of TechInsights data
-Various companies,P370,Crystal machining tools,N9,0.00357,2024,CSET analysis of TechInsights data
-Various companies,P370,Wafer bonding and aligning tools,N10,0.0123,2024,CSET analysis of TechInsights data
-Various companies,P370,Photomask handlers,N12,0.04852,2024,CSET analysis of TechInsights data
-Various companies,P370,Electrochemical plating tools,N45,0.0016,2024,CSET analysis of TechInsights data
-Various companies,P370,Low-pressure CVD tools,N39,0.0337,2024,CSET analysis of TechInsights data
-Various companies,P370,High-temperature CVD tools,N40,0.02629,2024,CSET analysis of TechInsights data
-Various companies,P370,Chemical mechanical planarization tools,N86,0.02773,2024,CSET analysis of TechInsights data
-Various companies,P370,Resist processing tools,N32,0.05454,2024,CSET analysis of TechInsights data
-Various companies,P370,Plasma modification tools,N104,0.01508,2024,CSET analysis of TechInsights data
-Various companies,P370,Etching tools (for adv. pkg.),N101,0.00096,2024,CSET analysis of TechInsights data
-Various companies,P370,E-beam metrology tools,N115,0.00949,2024,CSET analysis of TechInsights data
-Various companies,P370,i-line lithography tools,N106,0.01931,2024,CSET analysis of TechInsights data
-Various companies,P370,Dry clean tools,N102,0.00943,2024,CSET analysis of TechInsights data
-Various countries,P5,Wet etching and cleaning tools,N49,0.03786,2024,CSET analysis of TechInsights data
-Various countries,P5,Plasma CVD tools,N38,0.04325,2024,CSET analysis of TechInsights data
-Various countries,P5,Insulator etching tools,N51,0.02663,2024,CSET analysis of TechInsights data
-Various countries,P5,Photomask inspection and repair tools,N62,0.02699,2024,CSET analysis of TechInsights data
-Various countries,P5,ECP tools (for adv. pkg.),N113,0.01108,2024,CSET analysis of TechInsights data
-Various countries,P5,Mask Exposure Systems - Laser Beam,N30,0.01343,2024,CSET analysis of TechInsights data
-Various countries,P5,Defect inspection tools,N67,0.04695,2024,CSET analysis of TechInsights data
-Various countries,P5,Conductor etching tools,N50,0.05531,2024,CSET analysis of TechInsights data
-Various countries,P5,ArF immersion (DUV) lithography tools,N22,0.01331,2024,CSET analysis of TechInsights data
-Various countries,P5,Ion implantation,N17,0.01935,2024,CSET analysis of TechInsights data
-Various countries,P5,Atomic layer deposition tools,N41,0.03733,2024,CSET analysis of TechInsights data
-Various countries,P5,CVD tools (for adv. pkg.),N110,0.05603,2024,CSET analysis of TechInsights data
-Various countries,P5,Wafer handlers,N11,0.007,2024,CSET analysis of TechInsights data
-Various countries,P5,"Film, stack, and shape metrology tools",N65,0.04304,2024,CSET analysis of TechInsights data
-Various countries,P5,PVD tools (for adv. pkg.),N111,0.0212,2024,CSET analysis of TechInsights data
-Various countries,P5,Dry stripping tools,N53,0.02956,2024,CSET analysis of TechInsights data
-Various countries,P5,Misc. dry etch tools,N54,0.01178,2024,CSET analysis of TechInsights data
-Various countries,P5,Tube-based diffusion and deposition tools,N44,0.02696,2024,CSET analysis of TechInsights data
-Various countries,P5,Imprint Lithography,N107,0.05248,2024,CSET analysis of TechInsights data
-Various countries,P5,Physical vapor deposition tools,N42,0.01828,2024,CSET analysis of TechInsights data
-Various countries,P5,Rapid thermal processing tools,N43,0.01796,2024,CSET analysis of TechInsights data
-Various countries,P5,Spin-on deposition tools (for adv. pkg.),N112,1.0,2024,CSET analysis of TechInsights data
-Various countries,P5,Ion milling tools,N52,1.0,2024,CSET analysis of TechInsights data
-Various countries,P5,Overlay metrology tools,N114,0.00676,2024,CSET analysis of TechInsights data
-Various countries,P5,Critical dimensions metrology tools,N66,0.00958,2024,CSET analysis of TechInsights data
-Various countries,P5,Crystal machining tools,N9,0.00357,2024,CSET analysis of TechInsights data
-Various countries,P5,Wafer bonding and aligning tools,N10,0.0123,2024,CSET analysis of TechInsights data
-Various countries,P5,Photomask handlers,N12,0.04852,2024,CSET analysis of TechInsights data
-Various countries,P5,Electrochemical plating tools,N45,0.0016,2024,CSET analysis of TechInsights data
-Various countries,P5,Low-pressure CVD tools,N39,0.0337,2024,CSET analysis of TechInsights data
-Various countries,P5,High-temperature CVD tools,N40,0.02629,2024,CSET analysis of TechInsights data
-Various countries,P5,Chemical mechanical planarization tools,N86,0.02773,2024,CSET analysis of TechInsights data
-Various countries,P5,Resist processing tools,N32,0.05454,2024,CSET analysis of TechInsights data
-Various countries,P5,Plasma modification tools,N104,0.01508,2024,CSET analysis of TechInsights data
-Various countries,P5,Etching tools (for adv. pkg.),N101,0.00096,2024,CSET analysis of TechInsights data
-Various countries,P5,E-beam metrology tools,N115,0.00949,2024,CSET analysis of TechInsights data
-Various countries,P5,i-line lithography tools,N106,0.01931,2024,CSET analysis of TechInsights data
-Various countries,P5,Dry clean tools,N102,0.00943,2024,CSET analysis of TechInsights data
-Veeco,P121,i-line lithography tools,N106,0.04596,2024,CSET analysis of TechInsights data
-Veeco,P121,Rapid thermal processing tools,N43,0.14571,2024,CSET analysis of TechInsights data
-Vistec,P93,Direct Write Systems,N108,0.3279,2024,CSET analysis of TechInsights data
-Wonik,P263,Plasma CVD tools,N38,0.03856,2024,CSET analysis of TechInsights data
-Zeiss,P98,Photomask inspection and repair tools,N62,0.04604,2024,CSET analysis of TechInsights data
-APIC Yamada,P316,Packaging tools,N76,0.10704,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Assembly inspection tools,N70,0.14175,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Dicing tools,N71,0.02166,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Wire bonding tools,N74,0.28596,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Advanced interconnect tools,N75,0.0729,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Packaging tools,N76,0.03694,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Integrated assembly tools,N77,0.9756,2023,CSET analysis of TechInsights data
-ASM Pacific,P145,Die attaching tools,N73,0.21367,2023,CSET analysis of TechInsights data
-ASTI,P146,Assembly inspection tools,N70,0.09669,2023,CSET analysis of TechInsights data
-AccoTEST,P182,Linear and discrete testing tools,N82,0.3326,2023,CSET analysis of TechInsights data
-Accretech,P60,Handlers and probes,N83,0.21974,2023,CSET analysis of TechInsights data
-Accretech,P60,Dicing tools,N71,0.07983,2023,CSET analysis of TechInsights data
-Advantest,P175,Memory test tools,N79,0.48357,2023,CSET analysis of TechInsights data
-Advantest,P175,SoC test tools,N80,0.59031,2023,CSET analysis of TechInsights data
-Advantest,P175,Burn-in test tools,N81,0.05951,2023,CSET analysis of TechInsights data
-Advantest,P175,Handlers and probes,N83,0.03587,2023,CSET analysis of TechInsights data
-Aehr Test Systems,P314,Burn-in test tools,N81,0.20271,2023,CSET analysis of TechInsights data
-Besi,P156,Packaging tools,N76,0.18258,2023,CSET analysis of TechInsights data
-Besi,P156,Die attaching tools,N73,0.43028,2023,CSET analysis of TechInsights data
-CHN,P2,Linear and discrete testing tools,N82,0.58412,2023,CSET analysis of TechInsights data
-CHN,P2,Handlers and probes,N83,0.05267,2023,CSET analysis of TechInsights data
-CHN,P2,Burn-in test tools,N81,0.03092,2023,CSET analysis of TechInsights data
-CHN,P2,Die attaching tools,N73,0.05293,2023,CSET analysis of TechInsights data
-CHN,P2,Advanced interconnect tools,N75,0.23752,2023,CSET analysis of TechInsights data
-Canon,P159,Die attaching tools,N73,0.03438,2023,CSET analysis of TechInsights data
-Chroma ATE,P317,Burn-in test tools,N81,0.02792,2023,CSET analysis of TechInsights data
-Cohu,P148,Handlers and probes,N83,0.13225,2023,CSET analysis of TechInsights data
-Cohu,P148,SoC test tools,N80,0.03098,2023,CSET analysis of TechInsights data
-Cohu,P148,Assembly inspection tools,N70,0.14669,2023,CSET analysis of TechInsights data
-DEU,P32,Wire bonding tools,N74,0.05225,2023,CSET analysis of TechInsights data
-DEU,P32,Integrated assembly tools,N77,0.0244,2023,CSET analysis of TechInsights data
-DEU,P32,Assembly inspection tools,N70,0.02419,2023,CSET analysis of TechInsights data
-DI,P178,Burn-in test tools,N81,0.31445,2023,CSET analysis of TechInsights data
-Disco,P62,Dicing tools,N71,0.82952,2023,CSET analysis of TechInsights data
-ELES Semiconductor Equipment,P318,Burn-in test tools,N81,0.05042,2023,CSET analysis of TechInsights data
-EO Technics,P319,Packaging tools,N76,0.07679,2023,CSET analysis of TechInsights data
-Exicon,P322,Memory test tools,N79,0.02669,2023,CSET analysis of TechInsights data
-Fasford Tech,P158,Die attaching tools,N73,0.06929,2023,CSET analysis of TechInsights data
-FormFactor,P323,Handlers and probes,N83,0.06652,2023,CSET analysis of TechInsights data
-Graco,P324,Advanced interconnect tools,N75,0.02378,2023,CSET analysis of TechInsights data
-Grohmann,P172,Integrated assembly tools,N77,0.0244,2023,CSET analysis of TechInsights data
-HANMI,P170,Packaging tools,N76,0.05324,2023,CSET analysis of TechInsights data
-Hangzhou Changchuan Technology,P325,Linear and discrete testing tools,N82,0.15546,2023,CSET analysis of TechInsights data
-Hangzhou Changchuan Technology,P325,Handlers and probes,N83,0.05267,2023,CSET analysis of TechInsights data
-Hangzhou Changchuan Technology,P325,Burn-in test tools,N81,0.03092,2023,CSET analysis of TechInsights data
-Hanwha Precision Machinery,P326,Die attaching tools,N73,0.02216,2023,CSET analysis of TechInsights data
-Hesse,P165,Wire bonding tools,N74,0.05225,2023,CSET analysis of TechInsights data
-Hon Technologies,P327,Handlers and probes,N83,0.0308,2023,CSET analysis of TechInsights data
-Hoson,P160,Linear and discrete testing tools,N82,0.09605,2023,CSET analysis of TechInsights data
-Hoson,P160,Die attaching tools,N73,0.05293,2023,CSET analysis of TechInsights data
-ITA,P33,Burn-in test tools,N81,0.05042,2023,CSET analysis of TechInsights data
-Incal Technology,P329,Burn-in test tools,N81,0.04065,2023,CSET analysis of TechInsights data
-Iwashita Engineering,P330,Advanced interconnect tools,N75,0.1056,2023,CSET analysis of TechInsights data
-JPN,P7,Handlers and probes,N83,0.40501,2023,CSET analysis of TechInsights data
-JPN,P7,Memory test tools,N79,0.48357,2023,CSET analysis of TechInsights data
-JPN,P7,SoC test tools,N80,0.59031,2023,CSET analysis of TechInsights data
-JPN,P7,Burn-in test tools,N81,0.05951,2023,CSET analysis of TechInsights data
-JPN,P7,Linear and discrete testing tools,N82,0.1245,2023,CSET analysis of TechInsights data
-JPN,P7,Dicing tools,N71,0.90935,2023,CSET analysis of TechInsights data
-JPN,P7,Packaging tools,N76,0.51493,2023,CSET analysis of TechInsights data
-JPN,P7,Die attaching tools,N73,0.14076,2023,CSET analysis of TechInsights data
-JPN,P7,Wire bonding tools,N74,0.07038,2023,CSET analysis of TechInsights data
-JPN,P7,Advanced interconnect tools,N75,0.29543,2023,CSET analysis of TechInsights data
-KLA,P118,Assembly inspection tools,N70,0.35215,2023,CSET analysis of TechInsights data
-KOR,P4,Memory test tools,N79,0.20154,2023,CSET analysis of TechInsights data
-KOR,P4,Handlers and probes,N83,0.08625,2023,CSET analysis of TechInsights data
-KOR,P4,Burn-in test tools,N81,0.41808,2023,CSET analysis of TechInsights data
-KOR,P4,Packaging tools,N76,0.13003,2023,CSET analysis of TechInsights data
-KOR,P4,Advanced interconnect tools,N75,0.09817,2023,CSET analysis of TechInsights data
-KOR,P4,Assembly inspection tools,N70,0.10379,2023,CSET analysis of TechInsights data
-KOR,P4,Dicing tools,N71,0.02709,2023,CSET analysis of TechInsights data
-KOR,P4,Die attaching tools,N73,0.0554,2023,CSET analysis of TechInsights data
-KOSES,P168,Advanced interconnect tools,N75,0.03311,2023,CSET analysis of TechInsights data
-Koh Young Tech,P147,Assembly inspection tools,N70,0.05525,2023,CSET analysis of TechInsights data
-Kulicke & Soffa,P164,Wire bonding tools,N74,0.52607,2023,CSET analysis of TechInsights data
-MIRTEC,P149,Assembly inspection tools,N70,0.04854,2023,CSET analysis of TechInsights data
-Micro Control,P179,Burn-in test tools,N81,0.06394,2023,CSET analysis of TechInsights data
-MingSeal,P333,Advanced interconnect tools,N75,0.08831,2023,CSET analysis of TechInsights data
-Muehlbauer,P334,Assembly inspection tools,N70,0.02419,2023,CSET analysis of TechInsights data
-Musashi Engineering,P335,Advanced interconnect tools,N75,0.18983,2023,CSET analysis of TechInsights data
-NLD,P45,Packaging tools,N76,0.18258,2023,CSET analysis of TechInsights data
-NLD,P45,Die attaching tools,N73,0.43028,2023,CSET analysis of TechInsights data
-National Instruments,P180,Linear and discrete testing tools,N82,0.21539,2023,CSET analysis of TechInsights data
-Nordson,P336,Advanced interconnect tools,N75,0.11539,2023,CSET analysis of TechInsights data
-PROTEC,P161,Advanced interconnect tools,N75,0.02282,2023,CSET analysis of TechInsights data
-Pentamaster,P339,Handlers and probes,N83,0.0482,2023,CSET analysis of TechInsights data
-Precision Valve & Automation,P340,Advanced interconnect tools,N75,0.04505,2023,CSET analysis of TechInsights data
-SEMES,P73,Handlers and probes,N83,0.04037,2023,CSET analysis of TechInsights data
-SEMES,P73,Dicing tools,N71,0.02709,2023,CSET analysis of TechInsights data
-SEMES,P73,Die attaching tools,N73,0.03323,2023,CSET analysis of TechInsights data
-SGP,P47,Wire bonding tools,N74,0.81203,2023,CSET analysis of TechInsights data
-SGP,P47,Assembly inspection tools,N70,0.23844,2023,CSET analysis of TechInsights data
-SGP,P47,Dicing tools,N71,0.02166,2023,CSET analysis of TechInsights data
-SGP,P47,Advanced interconnect tools,N75,0.0729,2023,CSET analysis of TechInsights data
-SGP,P47,Packaging tools,N76,0.03694,2023,CSET analysis of TechInsights data
-SGP,P47,Integrated assembly tools,N77,0.9756,2023,CSET analysis of TechInsights data
-SGP,P47,Die attaching tools,N73,0.21367,2023,CSET analysis of TechInsights data
-SSP,P167,Advanced interconnect tools,N75,0.04224,2023,CSET analysis of TechInsights data
-Semics,P342,Handlers and probes,N83,0.04588,2023,CSET analysis of TechInsights data
-Shenzhen Axxon Automation,P344,Advanced interconnect tools,N75,0.0846,2023,CSET analysis of TechInsights data
-ShibaSoku,P346,Linear and discrete testing tools,N82,0.02557,2023,CSET analysis of TechInsights data
-Shibaura Mechatronics,P347,Die attaching tools,N73,0.03709,2023,CSET analysis of TechInsights data
-Shinkawa,P166,Wire bonding tools,N74,0.07038,2023,CSET analysis of TechInsights data
-TESEC,P181,Linear and discrete testing tools,N82,0.09893,2023,CSET analysis of TechInsights data
-TOWA,P169,Packaging tools,N76,0.40789,2023,CSET analysis of TechInsights data
-TWN,P8,Handlers and probes,N83,0.0308,2023,CSET analysis of TechInsights data
-TWN,P8,Burn-in test tools,N81,0.02792,2023,CSET analysis of TechInsights data
-TWN,P8,Assembly inspection tools,N70,0.03637,2023,CSET analysis of TechInsights data
-Tensun,P345,Advanced interconnect tools,N75,0.0646,2023,CSET analysis of TechInsights data
-Teradyne,P176,Memory test tools,N79,0.31375,2023,CSET analysis of TechInsights data
-Teradyne,P176,SoC test tools,N80,0.30522,2023,CSET analysis of TechInsights data
-Tokyo Electron,P105,Handlers and probes,N83,0.14939,2023,CSET analysis of TechInsights data
-USA,P1,Burn-in test tools,N81,0.3073,2023,CSET analysis of TechInsights data
-USA,P1,Memory test tools,N79,0.31375,2023,CSET analysis of TechInsights data
-USA,P1,SoC test tools,N80,0.33621,2023,CSET analysis of TechInsights data
-USA,P1,Handlers and probes,N83,0.19877,2023,CSET analysis of TechInsights data
-USA,P1,Linear and discrete testing tools,N82,0.21539,2023,CSET analysis of TechInsights data
-USA,P1,Advanced interconnect tools,N75,0.18422,2023,CSET analysis of TechInsights data
-USA,P1,Assembly inspection tools,N70,0.49884,2023,CSET analysis of TechInsights data
-UniTest,P177,Memory test tools,N79,0.02933,2023,CSET analysis of TechInsights data
-UniTest,P177,Burn-in test tools,N81,0.08127,2023,CSET analysis of TechInsights data
-Various companies,P370,Handlers and probes,N83,0.17831,2023,CSET analysis of TechInsights data
-Various companies,P370,Burn-in test tools,N81,0.10585,2023,CSET analysis of TechInsights data
-Various companies,P370,SoC test tools,N80,0.07348,2023,CSET analysis of TechInsights data
-Various companies,P370,Memory test tools,N79,0.00115,2023,CSET analysis of TechInsights data
-Various companies,P370,Linear and discrete testing tools,N82,0.07599,2023,CSET analysis of TechInsights data
-Various companies,P370,Dicing tools,N71,0.04189,2023,CSET analysis of TechInsights data
-Various companies,P370,Packaging tools,N76,0.13552,2023,CSET analysis of TechInsights data
-Various companies,P370,Wire bonding tools,N74,0.06534,2023,CSET analysis of TechInsights data
-Various companies,P370,Advanced interconnect tools,N75,0.11176,2023,CSET analysis of TechInsights data
-Various companies,P370,Die attaching tools,N73,0.10697,2023,CSET analysis of TechInsights data
-Various companies,P370,Assembly inspection tools,N70,0.09837,2023,CSET analysis of TechInsights data
-Various countries,P5,Handlers and probes,N83,0.22651,2023,CSET analysis of TechInsights data
-Various countries,P5,Burn-in test tools,N81,0.10585,2023,CSET analysis of TechInsights data
-Various countries,P5,SoC test tools,N80,0.07348,2023,CSET analysis of TechInsights data
-Various countries,P5,Memory test tools,N79,0.00115,2023,CSET analysis of TechInsights data
-Various countries,P5,Linear and discrete testing tools,N82,0.07599,2023,CSET analysis of TechInsights data
-Various countries,P5,Dicing tools,N71,0.04189,2023,CSET analysis of TechInsights data
-Various countries,P5,Packaging tools,N76,0.13552,2023,CSET analysis of TechInsights data
-Various countries,P5,Wire bonding tools,N74,0.06534,2023,CSET analysis of TechInsights data
-Various countries,P5,Advanced interconnect tools,N75,0.11176,2023,CSET analysis of TechInsights data
-Various countries,P5,Die attaching tools,N73,0.10697,2023,CSET analysis of TechInsights data
-Various countries,P5,Assembly inspection tools,N70,0.09837,2023,CSET analysis of TechInsights data
-YEST,P352,Burn-in test tools,N81,0.02236,2023,CSET analysis of TechInsights data
-YIKC,P353,Memory test tools,N79,0.14552,2023,CSET analysis of TechInsights data
-YoungTek Electronics (YTEC),P354,Assembly inspection tools,N70,0.03637,2023,CSET analysis of TechInsights data
-CHN,P2,"Assembly, testing, and packaging (ATP)",S3,0.3,2022,https://perma.cc/GT6R-SWEM
-CHN,P2,Fabrication,S2,0.24,2022,https://perma.cc/GT6R-SWEM
-CHN,P2,Design,S1,0.06,2022,https://perma.cc/GT6R-SWEM
-CHN,P2,Logic chip design,N0,0.05,2022,https://perma.cc/GT6R-SWEM
-CHN,P2,Memory chip design,N5,0.03,2022,https://perma.cc/GT6R-SWEM
-CHN,P2,DAO design,N13,0.09,2022,https://perma.cc/GT6R-SWEM
-DEU,P32,Crystal growing furnaces,N8,1.0,2022,CSET analysis of TechInsights data
-EUR,P312,"Assembly, testing, and packaging (ATP)",S3,0.03,2022,https://perma.cc/GT6R-SWEM
-EUR,P312,Fabrication,S2,0.08,2022,https://perma.cc/GT6R-SWEM
-EUR,P312,Design,S1,0.1,2022,https://perma.cc/GT6R-SWEM
-EUR,P312,Logic chip design,N0,0.09,2022,https://perma.cc/GT6R-SWEM
-EUR,P312,DAO design,N13,0.17,2022,https://perma.cc/GT6R-SWEM
-JPN,P7,"Assembly, testing, and packaging (ATP)",S3,0.06,2022,https://perma.cc/GT6R-SWEM
-JPN,P7,Fabrication,S2,0.17,2022,https://perma.cc/GT6R-SWEM
-JPN,P7,Design,S1,0.09,2022,https://perma.cc/GT6R-SWEM
-JPN,P7,Logic chip design,N0,0.04,2022,https://perma.cc/GT6R-SWEM
-JPN,P7,Memory chip design,N5,0.07,2022,https://perma.cc/GT6R-SWEM
-JPN,P7,DAO design,N13,0.18,2022,https://perma.cc/GT6R-SWEM
-KOR,P4,"Assembly, testing, and packaging (ATP)",S3,0.09,2022,https://perma.cc/GT6R-SWEM
-KOR,P4,Fabrication,S2,0.17,2022,https://perma.cc/GT6R-SWEM
-KOR,P4,Design,S1,0.13,2022,https://perma.cc/GT6R-SWEM
-KOR,P4,Logic chip design,N0,0.03,2022,https://perma.cc/GT6R-SWEM
-KOR,P4,Memory chip design,N5,0.6,2022,https://perma.cc/GT6R-SWEM
-KOR,P4,DAO design,N13,0.04,2022,https://perma.cc/GT6R-SWEM
-PVA TePla,P58,Crystal growing furnaces,N8,1.0,2022,CSET analysis of TechInsights data
-TWN,P8,"Assembly, testing, and packaging (ATP)",S3,0.28,2022,https://perma.cc/GT6R-SWEM
-TWN,P8,Fabrication,S2,0.18,2022,https://perma.cc/GT6R-SWEM
-TWN,P8,Design,S1,0.08,2022,https://perma.cc/GT6R-SWEM
-TWN,P8,Logic chip design,N0,0.11,2022,https://perma.cc/GT6R-SWEM
-TWN,P8,Memory chip design,N5,0.04,2022,https://perma.cc/GT6R-SWEM
-TWN,P8,DAO design,N13,0.05,2022,https://perma.cc/GT6R-SWEM
-USA,P1,"Assembly, testing, and packaging (ATP)",S3,0.03,2022,https://perma.cc/GT6R-SWEM
-USA,P1,Fabrication,S2,0.1,2022,https://perma.cc/GT6R-SWEM
-USA,P1,Design,S1,0.51,2022,https://perma.cc/GT6R-SWEM
-USA,P1,Logic chip design,N0,0.65,2022,https://perma.cc/GT6R-SWEM
-USA,P1,Memory chip design,N5,0.25,2022,https://perma.cc/GT6R-SWEM
-USA,P1,DAO design,N13,0.41,2022,https://perma.cc/GT6R-SWEM
-Various countries,P5,"Assembly, testing, and packaging (ATP)",S3,0.2,2022,https://perma.cc/GT6R-SWEM
-Various countries,P5,Fabrication,S2,0.07,2022,https://perma.cc/GT6R-SWEM
-Various countries,P5,Design,S1,0.04,2022,https://perma.cc/GT6R-SWEM
-Various countries,P5,Logic chip design,N0,0.04,2022,https://perma.cc/GT6R-SWEM
-Various countries,P5,Memory chip design,N5,0.01,2022,https://perma.cc/GT6R-SWEM
-Various countries,P5,DAO design,N13,0.06,2022,https://perma.cc/GT6R-SWEM
+ACM Research,P313,Wet etching and cleaning tools,N49,10.696,2024,CSET analysis of TechInsights data
+AMEC,P123,Insulator etching tools,N51,9.725,2024,CSET analysis of TechInsights data
+AMEC,P123,Etching tools (for adv. pkg.),N101,18.12,2024,CSET analysis of TechInsights data
+ASM International,P112,High-temperature CVD tools,N40,20.541,2024,CSET analysis of TechInsights data
+ASM International,P112,Atomic layer deposition tools,N41,52.516,2024,CSET analysis of TechInsights data
+ASM International,P112,Tube-based diffusion and deposition tools,N44,7.018,2024,CSET analysis of TechInsights data
+ASM International,P112,CVD tools (for adv. pkg.),N110,2.832,2024,CSET analysis of TechInsights data
+ASM Pacific,P145,PVD tools (for adv. pkg.),N111,3.699,2024,CSET analysis of TechInsights data
+ASM Pacific,P145,ECP tools (for adv. pkg.),N113,8.212,2024,CSET analysis of TechInsights data
+ASML,P88,i-line lithography tools,N106,35.691,2024,CSET analysis of TechInsights data
+ASML,P88,KrF (DUV) lithography tools,N105,79.173,2024,CSET analysis of TechInsights data
+ASML,P88,ArF dry (DUV) lithography tools,N21,94.345,2024,CSET analysis of TechInsights data
+ASML,P88,ArF immersion (DUV) lithography tools,N22,98.669,2024,CSET analysis of TechInsights data
+ASML,P88,Overlay metrology tools,N114,45.104,2024,CSET analysis of TechInsights data
+ASML,P88,E-beam metrology tools,N115,37.587,2024,CSET analysis of TechInsights data
+ASML,P88,EUV lithography tools,N20,100.0,2024,CSET analysis of TechInsights data
+AUT,P80,Imprint Lithography,N107,87.541,2024,CSET analysis of TechInsights data
+AUT,P80,Wafer bonding and aligning tools,N10,55.574,2024,CSET analysis of TechInsights data
+AUT,P80,Mask Exposure Systems - E-Beam,N29,46.436,2024,CSET analysis of TechInsights data
+Accretech,P60,Crystal machining tools,N9,25.462,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Plasma CVD tools,N38,57.732,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Low-pressure CVD tools,N39,18.942,2024,CSET analysis of TechInsights data
+Applied Materials,P81,High-temperature CVD tools,N40,73.399,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Physical vapor deposition tools,N42,85.609,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Rapid thermal processing tools,N43,74.157,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Plasma modification tools,N104,86.853,2024,CSET analysis of TechInsights data
+Applied Materials,P81,ECP tools (for adv. pkg.),N113,19.386,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Conductor etching tools,N50,32.76,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Critical dimensions metrology tools,N66,30.053,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Defect inspection tools,N67,5.052,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Defect review stations,N116,71.934,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Ion implantation,N17,67.784,2024,CSET analysis of TechInsights data
+Applied Materials,P81,E-beam metrology tools,N115,49.52,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Mask Exposure Systems - Laser Beam,N30,61.36,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Chemical mechanical planarization tools,N86,62.549,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Atomic layer deposition tools,N41,4.022,2024,CSET analysis of TechInsights data
+Applied Materials,P81,PVD tools (for adv. pkg.),N111,70.409,2024,CSET analysis of TechInsights data
+Applied Materials,P81,Etching tools (for adv. pkg.),N101,14.495,2024,CSET analysis of TechInsights data
+Applied Materials,P81,CVD tools (for adv. pkg.),N110,55.032,2024,CSET analysis of TechInsights data
+Axcelis,P84,Ion implantation,N17,22.114,2024,CSET analysis of TechInsights data
+Bruker,P135,"Film, stack, and shape metrology tools",N65,5.034,2024,CSET analysis of TechInsights data
+CAMTEK,P141,Defect inspection tools,N67,3.402,2024,CSET analysis of TechInsights data
+CHN,P2,Insulator etching tools,N51,9.725,2024,CSET analysis of TechInsights data
+CHN,P2,i-line lithography tools,N106,4.308,2024,CSET analysis of TechInsights data
+CHN,P2,Etching tools (for adv. pkg.),N101,26.54,2024,CSET analysis of TechInsights data
+CHN,P2,Chemical mechanical planarization tools,N86,8.805,2024,CSET analysis of TechInsights data
+CHN,P2,Plasma CVD tools,N38,6.422,2024,CSET analysis of TechInsights data
+CHN,P2,"Film, stack, and shape metrology tools",N65,2.281,2024,CSET analysis of TechInsights data
+CHN,P2,Physical vapor deposition tools,N42,10.436,2024,CSET analysis of TechInsights data
+CHN,P2,Tube-based diffusion and deposition tools,N44,10.387,2024,CSET analysis of TechInsights data
+CHN,P2,CVD tools (for adv. pkg.),N110,19.148,2024,CSET analysis of TechInsights data
+CHN,P2,Misc. dry etch tools,N54,55.541,2024,CSET analysis of TechInsights data
+CHN,P2,Wet etching and cleaning tools,N49,3.289,2024,CSET analysis of TechInsights data
+CHN,P2,Low-pressure CVD tools,N39,2.826,2024,CSET analysis of TechInsights data
+CHN,P2,High-temperature CVD tools,N40,3.431,2024,CSET analysis of TechInsights data
+CHN,P2,PVD tools (for adv. pkg.),N111,8.81,2024,CSET analysis of TechInsights data
+CHN,P2,Conductor etching tools,N50,6.07,2024,CSET analysis of TechInsights data
+CHN,P2,Dry stripping tools,N53,7.343,2024,CSET analysis of TechInsights data
+Canon,P159,i-line lithography tools,N106,47.731,2024,CSET analysis of TechInsights data
+Canon,P159,KrF (DUV) lithography tools,N105,17.44,2024,CSET analysis of TechInsights data
+DEU,P32,"Film, stack, and shape metrology tools",N65,5.034,2024,CSET analysis of TechInsights data
+DEU,P32,Wafer bonding and aligning tools,N10,3.71,2024,CSET analysis of TechInsights data
+DEU,P32,Direct Write Systems,N108,32.79,2024,CSET analysis of TechInsights data
+DEU,P32,Photomask inspection and repair tools,N62,4.604,2024,CSET analysis of TechInsights data
+DEU,P32,Resist processing tools,N32,3.54,2024,CSET analysis of TechInsights data
+Daifuku,P71,Wafer handlers,N11,53.127,2024,CSET analysis of TechInsights data
+Daifuku,P71,Photomask handlers,N12,5.87,2024,CSET analysis of TechInsights data
+Disco,P62,Crystal machining tools,N9,67.979,2024,CSET analysis of TechInsights data
+EBARA,P128,ECP tools (for adv. pkg.),N113,2.943,2024,CSET analysis of TechInsights data
+EBARA,P128,Chemical mechanical planarization tools,N86,25.874,2024,CSET analysis of TechInsights data
+EV Group,P67,Imprint Lithography,N107,87.541,2024,CSET analysis of TechInsights data
+EV Group,P67,Wafer bonding and aligning tools,N10,55.574,2024,CSET analysis of TechInsights data
+Eugene Technology,P320,Low-pressure CVD tools,N39,7.47,2024,CSET analysis of TechInsights data
+GBR,P110,Misc. dry etch tools,N54,3.705,2024,CSET analysis of TechInsights data
+GigaLane,P126,Misc. dry etch tools,N54,5.0,2024,CSET analysis of TechInsights data
+GigaLane,P126,Imprint Lithography,N107,7.211,2024,CSET analysis of TechInsights data
+Gudeng,P75,Photomask handlers,N12,8.324,2024,CSET analysis of TechInsights data
+Hitachi,P97,Conductor etching tools,N50,3.967,2024,CSET analysis of TechInsights data
+Hitachi,P97,Defect inspection tools,N67,2.27,2024,CSET analysis of TechInsights data
+Hitachi,P97,Defect review stations,N116,3.846,2024,CSET analysis of TechInsights data
+Hitachi,P97,Critical dimensions metrology tools,N66,68.99,2024,CSET analysis of TechInsights data
+Hwatsing,P129,Chemical mechanical planarization tools,N86,8.805,2024,CSET analysis of TechInsights data
+IMS Nanofabrication,P328,Mask Exposure Systems - E-Beam,N29,46.436,2024,CSET analysis of TechInsights data
+ISR,P133,"Film, stack, and shape metrology tools",N65,20.644,2024,CSET analysis of TechInsights data
+ISR,P133,Defect inspection tools,N67,3.402,2024,CSET analysis of TechInsights data
+JEOL,P92,Direct Write Systems,N108,67.21,2024,CSET analysis of TechInsights data
+JEOL,P92,Mask Exposure Systems - E-Beam,N29,15.048,2024,CSET analysis of TechInsights data
+JPN,P7,i-line lithography tools,N106,53.474,2024,CSET analysis of TechInsights data
+JPN,P7,KrF (DUV) lithography tools,N105,20.827,2024,CSET analysis of TechInsights data
+JPN,P7,Crystal machining tools,N9,99.643,2024,CSET analysis of TechInsights data
+JPN,P7,Wafer handlers,N11,85.602,2024,CSET analysis of TechInsights data
+JPN,P7,Photomask handlers,N12,86.824,2024,CSET analysis of TechInsights data
+JPN,P7,ECP tools (for adv. pkg.),N113,2.943,2024,CSET analysis of TechInsights data
+JPN,P7,Conductor etching tools,N50,6.845,2024,CSET analysis of TechInsights data
+JPN,P7,Defect inspection tools,N67,2.27,2024,CSET analysis of TechInsights data
+JPN,P7,Defect review stations,N116,3.846,2024,CSET analysis of TechInsights data
+JPN,P7,Direct Write Systems,N108,67.21,2024,CSET analysis of TechInsights data
+JPN,P7,Mask Exposure Systems - E-Beam,N29,53.564,2024,CSET analysis of TechInsights data
+JPN,P7,Atomic layer deposition tools,N41,25.379,2024,CSET analysis of TechInsights data
+JPN,P7,Tube-based diffusion and deposition tools,N44,79.9,2024,CSET analysis of TechInsights data
+JPN,P7,CVD tools (for adv. pkg.),N110,6.676,2024,CSET analysis of TechInsights data
+JPN,P7,Photomask inspection and repair tools,N62,48.977,2024,CSET analysis of TechInsights data
+JPN,P7,ArF dry (DUV) lithography tools,N21,5.655,2024,CSET analysis of TechInsights data
+JPN,P7,"Film, stack, and shape metrology tools",N65,7.124,2024,CSET analysis of TechInsights data
+JPN,P7,Rapid thermal processing tools,N43,5.663,2024,CSET analysis of TechInsights data
+JPN,P7,Wet etching and cleaning tools,N49,60.944,2024,CSET analysis of TechInsights data
+JPN,P7,Ion implantation,N17,8.167,2024,CSET analysis of TechInsights data
+JPN,P7,Misc. dry etch tools,N54,21.912,2024,CSET analysis of TechInsights data
+JPN,P7,Low-pressure CVD tools,N39,30.514,2024,CSET analysis of TechInsights data
+JPN,P7,Plasma modification tools,N104,11.639,2024,CSET analysis of TechInsights data
+JPN,P7,Insulator etching tools,N51,61.756,2024,CSET analysis of TechInsights data
+JPN,P7,Physical vapor deposition tools,N42,2.128,2024,CSET analysis of TechInsights data
+JPN,P7,PVD tools (for adv. pkg.),N111,7.049,2024,CSET analysis of TechInsights data
+JPN,P7,Critical dimensions metrology tools,N66,68.99,2024,CSET analysis of TechInsights data
+JPN,P7,Dry stripping tools,N53,34.368,2024,CSET analysis of TechInsights data
+JPN,P7,Wafer bonding and aligning tools,N10,39.486,2024,CSET analysis of TechInsights data
+JPN,P7,Chemical mechanical planarization tools,N86,25.874,2024,CSET analysis of TechInsights data
+JPN,P7,Resist processing tools,N32,91.006,2024,CSET analysis of TechInsights data
+Jusung Engineering,P332,Atomic layer deposition tools,N41,3.322,2024,CSET analysis of TechInsights data
+KLA,P118,"Film, stack, and shape metrology tools",N65,47.038,2024,CSET analysis of TechInsights data
+KLA,P118,Overlay metrology tools,N114,54.221,2024,CSET analysis of TechInsights data
+KLA,P118,Defect inspection tools,N67,84.581,2024,CSET analysis of TechInsights data
+KLA,P118,E-beam metrology tools,N115,11.943,2024,CSET analysis of TechInsights data
+KLA,P118,Defect review stations,N116,24.221,2024,CSET analysis of TechInsights data
+KLA,P118,Photomask inspection and repair tools,N62,43.72,2024,CSET analysis of TechInsights data
+KLA,P118,PVD tools (for adv. pkg.),N111,7.913,2024,CSET analysis of TechInsights data
+KLA,P118,Etching tools (for adv. pkg.),N101,9.848,2024,CSET analysis of TechInsights data
+KOR,P4,Atomic layer deposition tools,N41,3.322,2024,CSET analysis of TechInsights data
+KOR,P4,Dry stripping tools,N53,7.913,2024,CSET analysis of TechInsights data
+KOR,P4,Low-pressure CVD tools,N39,7.47,2024,CSET analysis of TechInsights data
+KOR,P4,Misc. dry etch tools,N54,5.0,2024,CSET analysis of TechInsights data
+KOR,P4,Plasma CVD tools,N38,3.856,2024,CSET analysis of TechInsights data
+KOR,P4,Wafer handlers,N11,13.698,2024,CSET analysis of TechInsights data
+KOR,P4,Wet etching and cleaning tools,N49,4.233,2024,CSET analysis of TechInsights data
+KOR,P4,Imprint Lithography,N107,7.211,2024,CSET analysis of TechInsights data
+KOR,P4,Dry clean tools,N102,39.752,2024,CSET analysis of TechInsights data
+Keithley Instruments,P143,Process monitoring tools,N64,31.407,2024,CSET analysis of TechInsights data
+Keysight Tech,P142,Process monitoring tools,N64,68.593,2024,CSET analysis of TechInsights data
+Kokusai,P116,Atomic layer deposition tools,N41,9.36,2024,CSET analysis of TechInsights data
+Kokusai,P116,Tube-based diffusion and deposition tools,N44,23.667,2024,CSET analysis of TechInsights data
+Kokusai,P116,CVD tools (for adv. pkg.),N110,6.676,2024,CSET analysis of TechInsights data
+Kokusai,P116,Plasma modification tools,N104,5.672,2024,CSET analysis of TechInsights data
+Kokusai,P116,Rapid thermal processing tools,N43,2.367,2024,CSET analysis of TechInsights data
+Kokusai,P116,Dry stripping tools,N53,27.195,2024,CSET analysis of TechInsights data
+Lam Research,P111,Conductor etching tools,N50,48.794,2024,CSET analysis of TechInsights data
+Lam Research,P111,Insulator etching tools,N51,25.856,2024,CSET analysis of TechInsights data
+Lam Research,P111,Dry clean tools,N102,59.304,2024,CSET analysis of TechInsights data
+Lam Research,P111,Plasma CVD tools,N38,27.665,2024,CSET analysis of TechInsights data
+Lam Research,P111,Low-pressure CVD tools,N39,36.878,2024,CSET analysis of TechInsights data
+Lam Research,P111,Electrochemical plating tools,N45,99.84,2024,CSET analysis of TechInsights data
+Lam Research,P111,ECP tools (for adv. pkg.),N113,68.351,2024,CSET analysis of TechInsights data
+Lam Research,P111,Dry stripping tools,N53,8.131,2024,CSET analysis of TechInsights data
+Lam Research,P111,Atomic layer deposition tools,N41,11.028,2024,CSET analysis of TechInsights data
+Lam Research,P111,Wet etching and cleaning tools,N49,17.052,2024,CSET analysis of TechInsights data
+Lam Research,P111,Etching tools (for adv. pkg.),N101,49.021,2024,CSET analysis of TechInsights data
+Lam Research,P111,CVD tools (for adv. pkg.),N110,10.708,2024,CSET analysis of TechInsights data
+Lasertec,P140,Photomask inspection and repair tools,N62,48.977,2024,CSET analysis of TechInsights data
+Mattson Tech,P119,Rapid thermal processing tools,N43,3.814,2024,CSET analysis of TechInsights data
+Mattson Tech,P119,Dry stripping tools,N53,28.026,2024,CSET analysis of TechInsights data
+Muratec,P74,Wafer handlers,N11,30.078,2024,CSET analysis of TechInsights data
+Muratec,P74,Photomask handlers,N12,80.954,2024,CSET analysis of TechInsights data
+Mycronic,P94,Mask Exposure Systems - Laser Beam,N30,37.296,2024,CSET analysis of TechInsights data
+NAURA,P115,Physical vapor deposition tools,N42,10.436,2024,CSET analysis of TechInsights data
+NAURA,P115,Tube-based diffusion and deposition tools,N44,10.387,2024,CSET analysis of TechInsights data
+NAURA,P115,CVD tools (for adv. pkg.),N110,19.148,2024,CSET analysis of TechInsights data
+NAURA,P115,Misc. dry etch tools,N54,55.541,2024,CSET analysis of TechInsights data
+NAURA,P115,Wet etching and cleaning tools,N49,3.289,2024,CSET analysis of TechInsights data
+NAURA,P115,Low-pressure CVD tools,N39,2.826,2024,CSET analysis of TechInsights data
+NAURA,P115,High-temperature CVD tools,N40,3.431,2024,CSET analysis of TechInsights data
+NAURA,P115,PVD tools (for adv. pkg.),N111,8.81,2024,CSET analysis of TechInsights data
+NAURA,P115,Conductor etching tools,N50,6.07,2024,CSET analysis of TechInsights data
+NAURA,P115,Etching tools (for adv. pkg.),N101,8.42,2024,CSET analysis of TechInsights data
+NAURA,P115,Dry stripping tools,N53,7.343,2024,CSET analysis of TechInsights data
+NLD,P45,High-temperature CVD tools,N40,20.541,2024,CSET analysis of TechInsights data
+NLD,P45,Atomic layer deposition tools,N41,52.516,2024,CSET analysis of TechInsights data
+NLD,P45,Tube-based diffusion and deposition tools,N44,7.018,2024,CSET analysis of TechInsights data
+NLD,P45,i-line lithography tools,N106,35.691,2024,CSET analysis of TechInsights data
+NLD,P45,KrF (DUV) lithography tools,N105,79.173,2024,CSET analysis of TechInsights data
+NLD,P45,ArF dry (DUV) lithography tools,N21,94.345,2024,CSET analysis of TechInsights data
+NLD,P45,ArF immersion (DUV) lithography tools,N22,98.669,2024,CSET analysis of TechInsights data
+NLD,P45,Overlay metrology tools,N114,45.104,2024,CSET analysis of TechInsights data
+NLD,P45,E-beam metrology tools,N115,37.587,2024,CSET analysis of TechInsights data
+NLD,P45,Dry stripping tools,N53,11.262,2024,CSET analysis of TechInsights data
+NLD,P45,EUV lithography tools,N20,100.0,2024,CSET analysis of TechInsights data
+NLD,P45,CVD tools (for adv. pkg.),N110,2.832,2024,CSET analysis of TechInsights data
+Nikon,P89,i-line lithography tools,N106,5.742,2024,CSET analysis of TechInsights data
+Nikon,P89,KrF (DUV) lithography tools,N105,3.387,2024,CSET analysis of TechInsights data
+Nikon,P89,ArF dry (DUV) lithography tools,N21,5.655,2024,CSET analysis of TechInsights data
+Nova,P337,"Film, stack, and shape metrology tools",N65,20.644,2024,CSET analysis of TechInsights data
+NuFlare,P91,Mask Exposure Systems - E-Beam,N29,38.516,2024,CSET analysis of TechInsights data
+Okamoto,P61,Crystal machining tools,N9,6.202,2024,CSET analysis of TechInsights data
+Onto Innovation,P139,"Film, stack, and shape metrology tools",N65,13.575,2024,CSET analysis of TechInsights data
+Oxford Instruments,P338,Misc. dry etch tools,N54,3.705,2024,CSET analysis of TechInsights data
+PSK,P341,Dry stripping tools,N53,7.913,2024,CSET analysis of TechInsights data
+PSK,P341,Dry clean tools,N102,39.752,2024,CSET analysis of TechInsights data
+Piotech,P113,Plasma CVD tools,N38,6.422,2024,CSET analysis of TechInsights data
+Plasma-Therm,P124,Misc. dry etch tools,N54,12.664,2024,CSET analysis of TechInsights data
+Raintree Scientific Instruments (RSIC),P137,"Film, stack, and shape metrology tools",N65,2.281,2024,CSET analysis of TechInsights data
+Rigaku,P136,"Film, stack, and shape metrology tools",N65,7.124,2024,CSET analysis of TechInsights data
+Rorze,P72,Wafer handlers,N11,2.397,2024,CSET analysis of TechInsights data
+SAMCO,P125,Misc. dry etch tools,N54,8.27,2024,CSET analysis of TechInsights data
+SEMES,P73,Wafer handlers,N11,13.698,2024,CSET analysis of TechInsights data
+SEMES,P73,Wet etching and cleaning tools,N49,4.233,2024,CSET analysis of TechInsights data
+SGP,P47,PVD tools (for adv. pkg.),N111,3.699,2024,CSET analysis of TechInsights data
+SGP,P47,ECP tools (for adv. pkg.),N113,8.212,2024,CSET analysis of TechInsights data
+SMEE,P70,i-line lithography tools,N106,4.308,2024,CSET analysis of TechInsights data
+SMIT,P83,Ion implantation,N17,8.167,2024,CSET analysis of TechInsights data
+SUSS MicroTec,P68,Wafer bonding and aligning tools,N10,3.71,2024,CSET analysis of TechInsights data
+SUSS MicroTec,P68,Resist processing tools,N32,3.54,2024,CSET analysis of TechInsights data
+SWE,P90,Mask Exposure Systems - Laser Beam,N30,37.296,2024,CSET analysis of TechInsights data
+Screen,P106,Rapid thermal processing tools,N43,3.296,2024,CSET analysis of TechInsights data
+Screen,P106,Wet etching and cleaning tools,N49,38.551,2024,CSET analysis of TechInsights data
+Semilab,P343,"Film, stack, and shape metrology tools",N65,2.797,2024,CSET analysis of TechInsights data
+Shibaura Mechatronics,P347,Misc. dry etch tools,N54,13.642,2024,CSET analysis of TechInsights data
+Shibaura Mechatronics,P347,Wet etching and cleaning tools,N49,2.205,2024,CSET analysis of TechInsights data
+Shibaura Mechatronics,P347,Dry stripping tools,N53,7.172,2024,CSET analysis of TechInsights data
+TWN,P8,Photomask handlers,N12,8.324,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Low-pressure CVD tools,N39,30.514,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Tube-based diffusion and deposition tools,N44,56.233,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Plasma modification tools,N104,5.967,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Conductor etching tools,N50,2.878,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Insulator etching tools,N51,61.756,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Wet etching and cleaning tools,N49,20.188,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Atomic layer deposition tools,N41,16.019,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Wafer bonding and aligning tools,N10,39.486,2024,CSET analysis of TechInsights data
+Tokyo Electron,P105,Resist processing tools,N32,91.006,2024,CSET analysis of TechInsights data
+Trymax,P350,Dry stripping tools,N53,11.262,2024,CSET analysis of TechInsights data
+ULVAC,P117,Physical vapor deposition tools,N42,2.128,2024,CSET analysis of TechInsights data
+ULVAC,P117,PVD tools (for adv. pkg.),N111,7.049,2024,CSET analysis of TechInsights data
+USA,P1,Plasma CVD tools,N38,85.397,2024,CSET analysis of TechInsights data
+USA,P1,Low-pressure CVD tools,N39,55.82,2024,CSET analysis of TechInsights data
+USA,P1,High-temperature CVD tools,N40,73.399,2024,CSET analysis of TechInsights data
+USA,P1,Physical vapor deposition tools,N42,85.609,2024,CSET analysis of TechInsights data
+USA,P1,Rapid thermal processing tools,N43,92.541,2024,CSET analysis of TechInsights data
+USA,P1,Plasma modification tools,N104,86.853,2024,CSET analysis of TechInsights data
+USA,P1,ECP tools (for adv. pkg.),N113,87.737,2024,CSET analysis of TechInsights data
+USA,P1,Conductor etching tools,N50,81.555,2024,CSET analysis of TechInsights data
+USA,P1,Critical dimensions metrology tools,N66,30.053,2024,CSET analysis of TechInsights data
+USA,P1,Defect inspection tools,N67,89.633,2024,CSET analysis of TechInsights data
+USA,P1,Defect review stations,N116,96.154,2024,CSET analysis of TechInsights data
+USA,P1,Ion implantation,N17,89.898,2024,CSET analysis of TechInsights data
+USA,P1,"Film, stack, and shape metrology tools",N65,60.614,2024,CSET analysis of TechInsights data
+USA,P1,Overlay metrology tools,N114,54.221,2024,CSET analysis of TechInsights data
+USA,P1,E-beam metrology tools,N115,61.463,2024,CSET analysis of TechInsights data
+USA,P1,Photomask inspection and repair tools,N62,43.72,2024,CSET analysis of TechInsights data
+USA,P1,Process monitoring tools,N64,100.0,2024,CSET analysis of TechInsights data
+USA,P1,Insulator etching tools,N51,25.856,2024,CSET analysis of TechInsights data
+USA,P1,Dry clean tools,N102,59.304,2024,CSET analysis of TechInsights data
+USA,P1,Dry stripping tools,N53,36.157,2024,CSET analysis of TechInsights data
+USA,P1,Misc. dry etch tools,N54,12.664,2024,CSET analysis of TechInsights data
+USA,P1,Electrochemical plating tools,N45,99.84,2024,CSET analysis of TechInsights data
+USA,P1,Atomic layer deposition tools,N41,15.05,2024,CSET analysis of TechInsights data
+USA,P1,Wet etching and cleaning tools,N49,27.748,2024,CSET analysis of TechInsights data
+USA,P1,Mask Exposure Systems - Laser Beam,N30,61.36,2024,CSET analysis of TechInsights data
+USA,P1,Chemical mechanical planarization tools,N86,62.549,2024,CSET analysis of TechInsights data
+USA,P1,PVD tools (for adv. pkg.),N111,78.322,2024,CSET analysis of TechInsights data
+USA,P1,Etching tools (for adv. pkg.),N101,73.364,2024,CSET analysis of TechInsights data
+USA,P1,i-line lithography tools,N106,4.596,2024,CSET analysis of TechInsights data
+USA,P1,CVD tools (for adv. pkg.),N110,65.74,2024,CSET analysis of TechInsights data
+Various companies,P370,Wet etching and cleaning tools,N49,3.786,2024,CSET analysis of TechInsights data
+Various companies,P370,Plasma CVD tools,N38,4.325,2024,CSET analysis of TechInsights data
+Various companies,P370,Insulator etching tools,N51,2.663,2024,CSET analysis of TechInsights data
+Various companies,P370,Photomask inspection and repair tools,N62,2.699,2024,CSET analysis of TechInsights data
+Various companies,P370,ECP tools (for adv. pkg.),N113,1.108,2024,CSET analysis of TechInsights data
+Various companies,P370,Mask Exposure Systems - Laser Beam,N30,1.343,2024,CSET analysis of TechInsights data
+Various companies,P370,Defect inspection tools,N67,4.695,2024,CSET analysis of TechInsights data
+Various companies,P370,Conductor etching tools,N50,5.531,2024,CSET analysis of TechInsights data
+Various companies,P370,ArF immersion (DUV) lithography tools,N22,1.331,2024,CSET analysis of TechInsights data
+Various companies,P370,Ion implantation,N17,1.935,2024,CSET analysis of TechInsights data
+Various companies,P370,Atomic layer deposition tools,N41,3.733,2024,CSET analysis of TechInsights data
+Various companies,P370,CVD tools (for adv. pkg.),N110,5.603,2024,CSET analysis of TechInsights data
+Various companies,P370,Wafer handlers,N11,0.7,2024,CSET analysis of TechInsights data
+Various companies,P370,"Film, stack, and shape metrology tools",N65,1.508,2024,CSET analysis of TechInsights data
+Various companies,P370,PVD tools (for adv. pkg.),N111,2.12,2024,CSET analysis of TechInsights data
+Various companies,P370,Dry stripping tools,N53,2.956,2024,CSET analysis of TechInsights data
+Various companies,P370,Misc. dry etch tools,N54,1.178,2024,CSET analysis of TechInsights data
+Various companies,P370,Tube-based diffusion and deposition tools,N44,2.696,2024,CSET analysis of TechInsights data
+Various companies,P370,Imprint Lithography,N107,5.248,2024,CSET analysis of TechInsights data
+Various companies,P370,Physical vapor deposition tools,N42,1.828,2024,CSET analysis of TechInsights data
+Various companies,P370,Rapid thermal processing tools,N43,1.796,2024,CSET analysis of TechInsights data
+Various companies,P370,Spin-on deposition tools (for adv. pkg.),N112,100.0,2024,CSET analysis of TechInsights data
+Various companies,P370,Ion milling tools,N52,100.0,2024,CSET analysis of TechInsights data
+Various companies,P370,Overlay metrology tools,N114,0.676,2024,CSET analysis of TechInsights data
+Various companies,P370,Critical dimensions metrology tools,N66,0.958,2024,CSET analysis of TechInsights data
+Various companies,P370,Crystal machining tools,N9,0.357,2024,CSET analysis of TechInsights data
+Various companies,P370,Wafer bonding and aligning tools,N10,1.23,2024,CSET analysis of TechInsights data
+Various companies,P370,Photomask handlers,N12,4.852,2024,CSET analysis of TechInsights data
+Various companies,P370,Electrochemical plating tools,N45,0.16,2024,CSET analysis of TechInsights data
+Various companies,P370,Low-pressure CVD tools,N39,3.37,2024,CSET analysis of TechInsights data
+Various companies,P370,High-temperature CVD tools,N40,2.629,2024,CSET analysis of TechInsights data
+Various companies,P370,Chemical mechanical planarization tools,N86,2.773,2024,CSET analysis of TechInsights data
+Various companies,P370,Resist processing tools,N32,5.454,2024,CSET analysis of TechInsights data
+Various companies,P370,Plasma modification tools,N104,1.508,2024,CSET analysis of TechInsights data
+Various companies,P370,Etching tools (for adv. pkg.),N101,0.096,2024,CSET analysis of TechInsights data
+Various companies,P370,E-beam metrology tools,N115,0.949,2024,CSET analysis of TechInsights data
+Various companies,P370,i-line lithography tools,N106,1.931,2024,CSET analysis of TechInsights data
+Various companies,P370,Dry clean tools,N102,0.943,2024,CSET analysis of TechInsights data
+Various countries,P5,Wet etching and cleaning tools,N49,3.786,2024,CSET analysis of TechInsights data
+Various countries,P5,Plasma CVD tools,N38,4.325,2024,CSET analysis of TechInsights data
+Various countries,P5,Insulator etching tools,N51,2.663,2024,CSET analysis of TechInsights data
+Various countries,P5,Photomask inspection and repair tools,N62,2.699,2024,CSET analysis of TechInsights data
+Various countries,P5,ECP tools (for adv. pkg.),N113,1.108,2024,CSET analysis of TechInsights data
+Various countries,P5,Mask Exposure Systems - Laser Beam,N30,1.343,2024,CSET analysis of TechInsights data
+Various countries,P5,Defect inspection tools,N67,4.695,2024,CSET analysis of TechInsights data
+Various countries,P5,Conductor etching tools,N50,5.531,2024,CSET analysis of TechInsights data
+Various countries,P5,ArF immersion (DUV) lithography tools,N22,1.331,2024,CSET analysis of TechInsights data
+Various countries,P5,Ion implantation,N17,1.935,2024,CSET analysis of TechInsights data
+Various countries,P5,Atomic layer deposition tools,N41,3.733,2024,CSET analysis of TechInsights data
+Various countries,P5,CVD tools (for adv. pkg.),N110,5.603,2024,CSET analysis of TechInsights data
+Various countries,P5,Wafer handlers,N11,0.7,2024,CSET analysis of TechInsights data
+Various countries,P5,"Film, stack, and shape metrology tools",N65,4.304,2024,CSET analysis of TechInsights data
+Various countries,P5,PVD tools (for adv. pkg.),N111,2.12,2024,CSET analysis of TechInsights data
+Various countries,P5,Dry stripping tools,N53,2.956,2024,CSET analysis of TechInsights data
+Various countries,P5,Misc. dry etch tools,N54,1.178,2024,CSET analysis of TechInsights data
+Various countries,P5,Tube-based diffusion and deposition tools,N44,2.696,2024,CSET analysis of TechInsights data
+Various countries,P5,Imprint Lithography,N107,5.248,2024,CSET analysis of TechInsights data
+Various countries,P5,Physical vapor deposition tools,N42,1.828,2024,CSET analysis of TechInsights data
+Various countries,P5,Rapid thermal processing tools,N43,1.796,2024,CSET analysis of TechInsights data
+Various countries,P5,Spin-on deposition tools (for adv. pkg.),N112,100.0,2024,CSET analysis of TechInsights data
+Various countries,P5,Ion milling tools,N52,100.0,2024,CSET analysis of TechInsights data
+Various countries,P5,Overlay metrology tools,N114,0.676,2024,CSET analysis of TechInsights data
+Various countries,P5,Critical dimensions metrology tools,N66,0.958,2024,CSET analysis of TechInsights data
+Various countries,P5,Crystal machining tools,N9,0.357,2024,CSET analysis of TechInsights data
+Various countries,P5,Wafer bonding and aligning tools,N10,1.23,2024,CSET analysis of TechInsights data
+Various countries,P5,Photomask handlers,N12,4.852,2024,CSET analysis of TechInsights data
+Various countries,P5,Electrochemical plating tools,N45,0.16,2024,CSET analysis of TechInsights data
+Various countries,P5,Low-pressure CVD tools,N39,3.37,2024,CSET analysis of TechInsights data
+Various countries,P5,High-temperature CVD tools,N40,2.629,2024,CSET analysis of TechInsights data
+Various countries,P5,Chemical mechanical planarization tools,N86,2.773,2024,CSET analysis of TechInsights data
+Various countries,P5,Resist processing tools,N32,5.454,2024,CSET analysis of TechInsights data
+Various countries,P5,Plasma modification tools,N104,1.508,2024,CSET analysis of TechInsights data
+Various countries,P5,Etching tools (for adv. pkg.),N101,0.096,2024,CSET analysis of TechInsights data
+Various countries,P5,E-beam metrology tools,N115,0.949,2024,CSET analysis of TechInsights data
+Various countries,P5,i-line lithography tools,N106,1.931,2024,CSET analysis of TechInsights data
+Various countries,P5,Dry clean tools,N102,0.943,2024,CSET analysis of TechInsights data
+Veeco,P121,i-line lithography tools,N106,4.596,2024,CSET analysis of TechInsights data
+Veeco,P121,Rapid thermal processing tools,N43,14.571,2024,CSET analysis of TechInsights data
+Vistec,P93,Direct Write Systems,N108,32.79,2024,CSET analysis of TechInsights data
+Wonik,P263,Plasma CVD tools,N38,3.856,2024,CSET analysis of TechInsights data
+Zeiss,P98,Photomask inspection and repair tools,N62,4.604,2024,CSET analysis of TechInsights data
+APIC Yamada,P316,Packaging tools,N76,10.704,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Assembly inspection tools,N70,14.175,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Dicing tools,N71,2.166,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Wire bonding tools,N74,28.596,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Advanced interconnect tools,N75,7.29,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Packaging tools,N76,3.694,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Integrated assembly tools,N77,97.56,2023,CSET analysis of TechInsights data
+ASM Pacific,P145,Die attaching tools,N73,21.367,2023,CSET analysis of TechInsights data
+ASTI,P146,Assembly inspection tools,N70,9.669,2023,CSET analysis of TechInsights data
+AccoTEST,P182,Linear and discrete testing tools,N82,33.26,2023,CSET analysis of TechInsights data
+Accretech,P60,Handlers and probes,N83,21.974,2023,CSET analysis of TechInsights data
+Accretech,P60,Dicing tools,N71,7.983,2023,CSET analysis of TechInsights data
+Advantest,P175,Memory test tools,N79,48.357,2023,CSET analysis of TechInsights data
+Advantest,P175,SoC test tools,N80,59.031,2023,CSET analysis of TechInsights data
+Advantest,P175,Burn-in test tools,N81,5.951,2023,CSET analysis of TechInsights data
+Advantest,P175,Handlers and probes,N83,3.587,2023,CSET analysis of TechInsights data
+Aehr Test Systems,P314,Burn-in test tools,N81,20.271,2023,CSET analysis of TechInsights data
+Besi,P156,Packaging tools,N76,18.258,2023,CSET analysis of TechInsights data
+Besi,P156,Die attaching tools,N73,43.028,2023,CSET analysis of TechInsights data
+CHN,P2,Linear and discrete testing tools,N82,58.412,2023,CSET analysis of TechInsights data
+CHN,P2,Handlers and probes,N83,5.267,2023,CSET analysis of TechInsights data
+CHN,P2,Burn-in test tools,N81,3.092,2023,CSET analysis of TechInsights data
+CHN,P2,Die attaching tools,N73,5.293,2023,CSET analysis of TechInsights data
+CHN,P2,Advanced interconnect tools,N75,23.752,2023,CSET analysis of TechInsights data
+Canon,P159,Die attaching tools,N73,3.438,2023,CSET analysis of TechInsights data
+Chroma ATE,P317,Burn-in test tools,N81,2.792,2023,CSET analysis of TechInsights data
+Cohu,P148,Handlers and probes,N83,13.225,2023,CSET analysis of TechInsights data
+Cohu,P148,SoC test tools,N80,3.098,2023,CSET analysis of TechInsights data
+Cohu,P148,Assembly inspection tools,N70,14.669,2023,CSET analysis of TechInsights data
+DEU,P32,Wire bonding tools,N74,5.225,2023,CSET analysis of TechInsights data
+DEU,P32,Integrated assembly tools,N77,2.44,2023,CSET analysis of TechInsights data
+DEU,P32,Assembly inspection tools,N70,2.419,2023,CSET analysis of TechInsights data
+DI,P178,Burn-in test tools,N81,31.445,2023,CSET analysis of TechInsights data
+Disco,P62,Dicing tools,N71,82.952,2023,CSET analysis of TechInsights data
+ELES Semiconductor Equipment,P318,Burn-in test tools,N81,5.042,2023,CSET analysis of TechInsights data
+EO Technics,P319,Packaging tools,N76,7.679,2023,CSET analysis of TechInsights data
+Exicon,P322,Memory test tools,N79,2.669,2023,CSET analysis of TechInsights data
+Fasford Tech,P158,Die attaching tools,N73,6.929,2023,CSET analysis of TechInsights data
+FormFactor,P323,Handlers and probes,N83,6.652,2023,CSET analysis of TechInsights data
+Graco,P324,Advanced interconnect tools,N75,2.378,2023,CSET analysis of TechInsights data
+Grohmann,P172,Integrated assembly tools,N77,2.44,2023,CSET analysis of TechInsights data
+HANMI,P170,Packaging tools,N76,5.324,2023,CSET analysis of TechInsights data
+Hangzhou Changchuan Technology,P325,Linear and discrete testing tools,N82,15.546,2023,CSET analysis of TechInsights data
+Hangzhou Changchuan Technology,P325,Handlers and probes,N83,5.267,2023,CSET analysis of TechInsights data
+Hangzhou Changchuan Technology,P325,Burn-in test tools,N81,3.092,2023,CSET analysis of TechInsights data
+Hanwha Precision Machinery,P326,Die attaching tools,N73,2.216,2023,CSET analysis of TechInsights data
+Hesse,P165,Wire bonding tools,N74,5.225,2023,CSET analysis of TechInsights data
+Hon Technologies,P327,Handlers and probes,N83,3.08,2023,CSET analysis of TechInsights data
+Hoson,P160,Linear and discrete testing tools,N82,9.605,2023,CSET analysis of TechInsights data
+Hoson,P160,Die attaching tools,N73,5.293,2023,CSET analysis of TechInsights data
+ITA,P33,Burn-in test tools,N81,5.042,2023,CSET analysis of TechInsights data
+Incal Technology,P329,Burn-in test tools,N81,4.065,2023,CSET analysis of TechInsights data
+Iwashita Engineering,P330,Advanced interconnect tools,N75,10.56,2023,CSET analysis of TechInsights data
+JPN,P7,Handlers and probes,N83,40.501,2023,CSET analysis of TechInsights data
+JPN,P7,Memory test tools,N79,48.357,2023,CSET analysis of TechInsights data
+JPN,P7,SoC test tools,N80,59.031,2023,CSET analysis of TechInsights data
+JPN,P7,Burn-in test tools,N81,5.951,2023,CSET analysis of TechInsights data
+JPN,P7,Linear and discrete testing tools,N82,12.45,2023,CSET analysis of TechInsights data
+JPN,P7,Dicing tools,N71,90.935,2023,CSET analysis of TechInsights data
+JPN,P7,Packaging tools,N76,51.493,2023,CSET analysis of TechInsights data
+JPN,P7,Die attaching tools,N73,14.076,2023,CSET analysis of TechInsights data
+JPN,P7,Wire bonding tools,N74,7.038,2023,CSET analysis of TechInsights data
+JPN,P7,Advanced interconnect tools,N75,29.543,2023,CSET analysis of TechInsights data
+KLA,P118,Assembly inspection tools,N70,35.215,2023,CSET analysis of TechInsights data
+KOR,P4,Memory test tools,N79,20.154,2023,CSET analysis of TechInsights data
+KOR,P4,Handlers and probes,N83,8.625,2023,CSET analysis of TechInsights data
+KOR,P4,Burn-in test tools,N81,41.808,2023,CSET analysis of TechInsights data
+KOR,P4,Packaging tools,N76,13.003,2023,CSET analysis of TechInsights data
+KOR,P4,Advanced interconnect tools,N75,9.817,2023,CSET analysis of TechInsights data
+KOR,P4,Assembly inspection tools,N70,10.379,2023,CSET analysis of TechInsights data
+KOR,P4,Dicing tools,N71,2.709,2023,CSET analysis of TechInsights data
+KOR,P4,Die attaching tools,N73,5.54,2023,CSET analysis of TechInsights data
+KOSES,P168,Advanced interconnect tools,N75,3.311,2023,CSET analysis of TechInsights data
+Koh Young Tech,P147,Assembly inspection tools,N70,5.525,2023,CSET analysis of TechInsights data
+Kulicke & Soffa,P164,Wire bonding tools,N74,52.607,2023,CSET analysis of TechInsights data
+MIRTEC,P149,Assembly inspection tools,N70,4.854,2023,CSET analysis of TechInsights data
+Micro Control,P179,Burn-in test tools,N81,6.394,2023,CSET analysis of TechInsights data
+MingSeal,P333,Advanced interconnect tools,N75,8.831,2023,CSET analysis of TechInsights data
+Muehlbauer,P334,Assembly inspection tools,N70,2.419,2023,CSET analysis of TechInsights data
+Musashi Engineering,P335,Advanced interconnect tools,N75,18.983,2023,CSET analysis of TechInsights data
+NLD,P45,Packaging tools,N76,18.258,2023,CSET analysis of TechInsights data
+NLD,P45,Die attaching tools,N73,43.028,2023,CSET analysis of TechInsights data
+National Instruments,P180,Linear and discrete testing tools,N82,21.539,2023,CSET analysis of TechInsights data
+Nordson,P336,Advanced interconnect tools,N75,11.539,2023,CSET analysis of TechInsights data
+PROTEC,P161,Advanced interconnect tools,N75,2.282,2023,CSET analysis of TechInsights data
+Pentamaster,P339,Handlers and probes,N83,4.82,2023,CSET analysis of TechInsights data
+Precision Valve & Automation,P340,Advanced interconnect tools,N75,4.505,2023,CSET analysis of TechInsights data
+SEMES,P73,Handlers and probes,N83,4.037,2023,CSET analysis of TechInsights data
+SEMES,P73,Dicing tools,N71,2.709,2023,CSET analysis of TechInsights data
+SEMES,P73,Die attaching tools,N73,3.323,2023,CSET analysis of TechInsights data
+SGP,P47,Wire bonding tools,N74,81.203,2023,CSET analysis of TechInsights data
+SGP,P47,Assembly inspection tools,N70,23.844,2023,CSET analysis of TechInsights data
+SGP,P47,Dicing tools,N71,2.166,2023,CSET analysis of TechInsights data
+SGP,P47,Advanced interconnect tools,N75,7.29,2023,CSET analysis of TechInsights data
+SGP,P47,Packaging tools,N76,3.694,2023,CSET analysis of TechInsights data
+SGP,P47,Integrated assembly tools,N77,97.56,2023,CSET analysis of TechInsights data
+SGP,P47,Die attaching tools,N73,21.367,2023,CSET analysis of TechInsights data
+SSP,P167,Advanced interconnect tools,N75,4.224,2023,CSET analysis of TechInsights data
+Semics,P342,Handlers and probes,N83,4.588,2023,CSET analysis of TechInsights data
+Shenzhen Axxon Automation,P344,Advanced interconnect tools,N75,8.46,2023,CSET analysis of TechInsights data
+ShibaSoku,P346,Linear and discrete testing tools,N82,2.557,2023,CSET analysis of TechInsights data
+Shibaura Mechatronics,P347,Die attaching tools,N73,3.709,2023,CSET analysis of TechInsights data
+Shinkawa,P166,Wire bonding tools,N74,7.038,2023,CSET analysis of TechInsights data
+TESEC,P181,Linear and discrete testing tools,N82,9.893,2023,CSET analysis of TechInsights data
+TOWA,P169,Packaging tools,N76,40.789,2023,CSET analysis of TechInsights data
+TWN,P8,Handlers and probes,N83,3.08,2023,CSET analysis of TechInsights data
+TWN,P8,Burn-in test tools,N81,2.792,2023,CSET analysis of TechInsights data
+TWN,P8,Assembly inspection tools,N70,3.637,2023,CSET analysis of TechInsights data
+Tensun,P345,Advanced interconnect tools,N75,6.46,2023,CSET analysis of TechInsights data
+Teradyne,P176,Memory test tools,N79,31.375,2023,CSET analysis of TechInsights data
+Teradyne,P176,SoC test tools,N80,30.522,2023,CSET analysis of TechInsights data
+Tokyo Electron,P105,Handlers and probes,N83,14.939,2023,CSET analysis of TechInsights data
+USA,P1,Burn-in test tools,N81,30.73,2023,CSET analysis of TechInsights data
+USA,P1,Memory test tools,N79,31.375,2023,CSET analysis of TechInsights data
+USA,P1,SoC test tools,N80,33.621,2023,CSET analysis of TechInsights data
+USA,P1,Handlers and probes,N83,19.877,2023,CSET analysis of TechInsights data
+USA,P1,Linear and discrete testing tools,N82,21.539,2023,CSET analysis of TechInsights data
+USA,P1,Advanced interconnect tools,N75,18.422,2023,CSET analysis of TechInsights data
+USA,P1,Assembly inspection tools,N70,49.884,2023,CSET analysis of TechInsights data
+UniTest,P177,Memory test tools,N79,2.933,2023,CSET analysis of TechInsights data
+UniTest,P177,Burn-in test tools,N81,8.127,2023,CSET analysis of TechInsights data
+Various companies,P370,Handlers and probes,N83,17.831,2023,CSET analysis of TechInsights data
+Various companies,P370,Burn-in test tools,N81,10.585,2023,CSET analysis of TechInsights data
+Various companies,P370,SoC test tools,N80,7.348,2023,CSET analysis of TechInsights data
+Various companies,P370,Memory test tools,N79,0.115,2023,CSET analysis of TechInsights data
+Various companies,P370,Linear and discrete testing tools,N82,7.599,2023,CSET analysis of TechInsights data
+Various companies,P370,Dicing tools,N71,4.189,2023,CSET analysis of TechInsights data
+Various companies,P370,Packaging tools,N76,13.552,2023,CSET analysis of TechInsights data
+Various companies,P370,Wire bonding tools,N74,6.534,2023,CSET analysis of TechInsights data
+Various companies,P370,Advanced interconnect tools,N75,11.176,2023,CSET analysis of TechInsights data
+Various companies,P370,Die attaching tools,N73,10.697,2023,CSET analysis of TechInsights data
+Various companies,P370,Assembly inspection tools,N70,9.837,2023,CSET analysis of TechInsights data
+Various countries,P5,Handlers and probes,N83,22.651,2023,CSET analysis of TechInsights data
+Various countries,P5,Burn-in test tools,N81,10.585,2023,CSET analysis of TechInsights data
+Various countries,P5,SoC test tools,N80,7.348,2023,CSET analysis of TechInsights data
+Various countries,P5,Memory test tools,N79,0.115,2023,CSET analysis of TechInsights data
+Various countries,P5,Linear and discrete testing tools,N82,7.599,2023,CSET analysis of TechInsights data
+Various countries,P5,Dicing tools,N71,4.189,2023,CSET analysis of TechInsights data
+Various countries,P5,Packaging tools,N76,13.552,2023,CSET analysis of TechInsights data
+Various countries,P5,Wire bonding tools,N74,6.534,2023,CSET analysis of TechInsights data
+Various countries,P5,Advanced interconnect tools,N75,11.176,2023,CSET analysis of TechInsights data
+Various countries,P5,Die attaching tools,N73,10.697,2023,CSET analysis of TechInsights data
+Various countries,P5,Assembly inspection tools,N70,9.837,2023,CSET analysis of TechInsights data
+YEST,P352,Burn-in test tools,N81,2.236,2023,CSET analysis of TechInsights data
+YIKC,P353,Memory test tools,N79,14.552,2023,CSET analysis of TechInsights data
+YoungTek Electronics (YTEC),P354,Assembly inspection tools,N70,3.637,2023,CSET analysis of TechInsights data
+CHN,P2,"Assembly, testing, and packaging (ATP)",S3,30.0,2022,https://perma.cc/GT6R-SWEM
+CHN,P2,Fabrication,S2,24.0,2022,https://perma.cc/GT6R-SWEM
+CHN,P2,Design,S1,6.0,2022,https://perma.cc/GT6R-SWEM
+CHN,P2,Logic chip design,N0,5.0,2022,https://perma.cc/GT6R-SWEM
+CHN,P2,Memory chip design,N5,3.0,2022,https://perma.cc/GT6R-SWEM
+CHN,P2,DAO design,N13,9.0,2022,https://perma.cc/GT6R-SWEM
+DEU,P32,Crystal growing furnaces,N8,100.0,2022,CSET analysis of TechInsights data
+EUR,P312,"Assembly, testing, and packaging (ATP)",S3,3.0,2022,https://perma.cc/GT6R-SWEM
+EUR,P312,Fabrication,S2,8.0,2022,https://perma.cc/GT6R-SWEM
+EUR,P312,Design,S1,10.0,2022,https://perma.cc/GT6R-SWEM
+EUR,P312,Logic chip design,N0,9.0,2022,https://perma.cc/GT6R-SWEM
+EUR,P312,DAO design,N13,17.0,2022,https://perma.cc/GT6R-SWEM
+JPN,P7,"Assembly, testing, and packaging (ATP)",S3,6.0,2022,https://perma.cc/GT6R-SWEM
+JPN,P7,Fabrication,S2,17.0,2022,https://perma.cc/GT6R-SWEM
+JPN,P7,Design,S1,9.0,2022,https://perma.cc/GT6R-SWEM
+JPN,P7,Logic chip design,N0,4.0,2022,https://perma.cc/GT6R-SWEM
+JPN,P7,Memory chip design,N5,7.0,2022,https://perma.cc/GT6R-SWEM
+JPN,P7,DAO design,N13,18.0,2022,https://perma.cc/GT6R-SWEM
+KOR,P4,"Assembly, testing, and packaging (ATP)",S3,9.0,2022,https://perma.cc/GT6R-SWEM
+KOR,P4,Fabrication,S2,17.0,2022,https://perma.cc/GT6R-SWEM
+KOR,P4,Design,S1,13.0,2022,https://perma.cc/GT6R-SWEM
+KOR,P4,Logic chip design,N0,3.0,2022,https://perma.cc/GT6R-SWEM
+KOR,P4,Memory chip design,N5,60.0,2022,https://perma.cc/GT6R-SWEM
+KOR,P4,DAO design,N13,4.0,2022,https://perma.cc/GT6R-SWEM
+PVA TePla,P58,Crystal growing furnaces,N8,100.0,2022,CSET analysis of TechInsights data
+TWN,P8,"Assembly, testing, and packaging (ATP)",S3,28.0,2022,https://perma.cc/GT6R-SWEM
+TWN,P8,Fabrication,S2,18.0,2022,https://perma.cc/GT6R-SWEM
+TWN,P8,Design,S1,8.0,2022,https://perma.cc/GT6R-SWEM
+TWN,P8,Logic chip design,N0,11.0,2022,https://perma.cc/GT6R-SWEM
+TWN,P8,Memory chip design,N5,4.0,2022,https://perma.cc/GT6R-SWEM
+TWN,P8,DAO design,N13,5.0,2022,https://perma.cc/GT6R-SWEM
+USA,P1,"Assembly, testing, and packaging (ATP)",S3,3.0,2022,https://perma.cc/GT6R-SWEM
+USA,P1,Fabrication,S2,10.0,2022,https://perma.cc/GT6R-SWEM
+USA,P1,Design,S1,51.0,2022,https://perma.cc/GT6R-SWEM
+USA,P1,Logic chip design,N0,65.0,2022,https://perma.cc/GT6R-SWEM
+USA,P1,Memory chip design,N5,25.0,2022,https://perma.cc/GT6R-SWEM
+USA,P1,DAO design,N13,41.0,2022,https://perma.cc/GT6R-SWEM
+Various countries,P5,"Assembly, testing, and packaging (ATP)",S3,20.0,2022,https://perma.cc/GT6R-SWEM
+Various countries,P5,Fabrication,S2,7.0,2022,https://perma.cc/GT6R-SWEM
+Various countries,P5,Design,S1,4.0,2022,https://perma.cc/GT6R-SWEM
+Various countries,P5,Logic chip design,N0,4.0,2022,https://perma.cc/GT6R-SWEM
+Various countries,P5,Memory chip design,N5,1.0,2022,https://perma.cc/GT6R-SWEM
+Various countries,P5,DAO design,N13,6.0,2022,https://perma.cc/GT6R-SWEM
