@@ -22,7 +22,7 @@ const StageNode = (props) => {
             paddingLeft: "5px",
             display: "inline-block",
         }}>
-          {nodeToMeta[stage]["name"]}
+          {nodeToMeta[stage]?.["name"]}
         </Typography>
         <Button
           style={{
