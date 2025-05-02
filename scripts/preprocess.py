@@ -101,6 +101,7 @@ class Preprocess:
     def mk_metadata(self, nodes_fi: str, stages_fi: str):
         """
         Reads metadata from inputs sheet and instantiates a mapping between a node id and its metadata
+
         :param nodes: input csv
             (from https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
         :return: Dict mapping node ids to metadata
@@ -146,6 +147,7 @@ class Preprocess:
         """
         Checks a sequence file row for variants, which should have a non-null is_type_of_id. Also prints
         warnings if other column values are unexpected
+
         :param parent: Parent (input) node
         :param child: Child (target) node
         :param record: A sequence file row
@@ -168,6 +170,7 @@ class Preprocess:
     def generate_graph(self, lines: iter) -> tuple:
         """
         Generates dicts specifying a graph of process nodes, and associates nodes with their inputs
+
         :param lines: iterable of dict-like objects corresponding to node edge list
         :return: A tuple of the graph dict (parents: children) and its reverse (children: parents)
         """
@@ -199,6 +202,7 @@ class Preprocess:
     def write_graphs(self, sequence: str, output_dir: str) -> None:  # pragma: no cover
         """
         Parses a csv that specifies node type, the edges between nodes, and node variants
+
         :param sequence: sequence csv
             (from https://docs.google.com/spreadsheets/d/1DLfaIrmJYRy3FzculWDF2gRo74lDnf5WptnC7uIIkhE/edit#gid=0)
         :param output_dir: directory where graph metadata should be written
@@ -218,6 +222,7 @@ class Preprocess:
     def get_flag(country_name: str) -> str:
         """
         Return flag emoji for country
+
         :param raw_country_name: Country name string
         :return: Flag emoji (in unicode) for that country or None
         """
@@ -231,6 +236,7 @@ class Preprocess:
     def get_country(raw_country_name: str) -> str:
         """
         Normalize country names, including mapping from alpha3
+
         :param raw_country_name: Raw analyst-specified country name
         :return: Normalized country name
         """
@@ -246,6 +252,7 @@ class Preprocess:
     def get_provision(record: dict, is_org: bool = False):
         """
         Get numeric or descriptive provision value from row of provision data
+
         :param record: Row of provision data
         :param is_org: If true, the provider is an org and we should map any numeric
             provision to major
@@ -263,6 +270,7 @@ class Preprocess:
         Calculate how concentrated the country provision for each node is. This is
         approximated as the number of countries it takes to account for 75% of the
         market.
+
         :param country_provision: The country provision dictionary, created in the
             mk_provision function
         :return: A dictionary mapping node ID to number of countries
@@ -308,6 +316,7 @@ class Preprocess:
     def write_provision(self, provision_fi: str, output_dir: str) -> None:
         """
         Create metadata for providers
+
         :param provision_fi: provision csv
             (from https://docs.google.com/spreadsheets/d/1FGib0RJ2vEFOXNZOGWNcZJZu82r330337DjKIbsz2ao/edit#gid=0)
         :param output_dir: directory where output metadata should be written
@@ -371,6 +380,7 @@ class Preprocess:
     ) -> None:
         """
         Write out node or stage descriptions as markdown
+
         :param nodes_fi: inputs csv
             (from https://docs.google.com/spreadsheets/d/1fqM2FIdzhrG5ZQnXUMyBfeSodJldrjY0vZeTA5TRqrg/edit#gid=0)
         :param stages_fi: stages csv
@@ -399,6 +409,7 @@ class Preprocess:
     def _get_node_to_country_provision(self):
         """
         Generate dictionary mapping nodes to country provision shares
+
         :return: Above dictionary
         """
         node_to_country_provision = {}
@@ -436,6 +447,7 @@ class Preprocess:
     ):  # pragma: no cover
         """
         Generate a graph representing country provisions for a node
+
         :return: A dictionary representation of a graph
         """
         fig = go.Figure(
@@ -459,6 +471,7 @@ class Preprocess:
     def _get_node_to_org_desc_list(self):
         """
         Generate dictionary mapping nodes to lists of names of provider organizations
+
         :return: Above dictionary
         """
         node_to_org_desc_list = {}
@@ -506,6 +519,7 @@ class Preprocess:
     ) -> None:
         """
         Generate and save a PDF with the description for a node
+
         :return: None
         """
         node_description = line["description"].replace("\n", "<br/>")
@@ -557,6 +571,7 @@ class Preprocess:
     ) -> None:  # pragma: no cover
         """
         Generate pdf version of the each node's description
+
         :param nodes_fi: CSV file with node information
         :param stages_fi: CSV file with stage information
         :param output_dir: name of directory where pdfs should be written
@@ -596,6 +611,7 @@ class Preprocess:
     def mk_provider_to_meta(self, provider_fi: str):
         """
         Create a mapping between provider ids and their metadata, such as name and type (for company providers)
+
         :param provider_fi: provider csv
             (from https://docs.google.com/spreadsheets/d/1QaUTc75gnwk1SwEy3vCx3J0w6oE0yCierYF2pO0Uino/edit#gid=0)
         :return: None (mutates self.provider_meta)
@@ -621,6 +637,7 @@ class Preprocess:
         Create a CSV table that can be loaded into bigquery. This table has
         the same data as the providers CSV, except that the country code is
         changed to a country name.
+
         :param provider_fi: provider csv
         :return: string representing file name of newly-created CSV
         """
@@ -645,6 +662,7 @@ class Preprocess:
         """
         Load CSVs to bigquery tables, overwriting the existing tables.
         Also loads the CSVs to versioned backup tables.
+
         :param nodes_fi: inputs csv
         :param provider_bq_fi: provider csv
         """
@@ -708,6 +726,7 @@ class Preprocess:
     def clean_md_link(text) -> str:
         """
         Turns markdown link into html link
+
         :param text: text that may contain a markdown link
         :return: text with markdown link replaced with html link
         """
@@ -720,6 +739,7 @@ class Preprocess:
     def mk_images(self, download_images: bool, images_fi: str, output_dir: str) -> None:
         """
         Downloads images from an airtable CSV and renames them according to their associated node
+
         :param download_images: True if images should be re-downloaded
         :param images_fi: Path to airtable CSV
         :param output_dir: Path to output folder where images will be placed
