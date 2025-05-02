@@ -308,9 +308,13 @@ const Map = (props) => {
             minimap={standaloneMinimapLayers} />
         }
         <Xwrapper>
-          <div>{mkStage(nodeToMeta[unattached[0]]["stage_id"])}</div>
-          <div>{mkLayer(unattached.slice(0, 2), true)}</div>
-          <div>{mkLayer(unattached.slice(2, 4), true)}</div>
+          {unattached.length > 0 &&
+            <>
+              <div>{mkStage(nodeToMeta[unattached[0]]["stage_id"])}</div>
+              <div>{mkLayer(unattached.slice(0, 2), true)}</div>
+              <div>{mkLayer(unattached.slice(2, 4), true)}</div>
+            </>
+          }
           <div>{layers}</div>
         </Xwrapper>
       </div>
