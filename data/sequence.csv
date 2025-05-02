@@ -6,11 +6,11 @@ ArF dry (DUV) lithography tools,N21,,,Lithography tools,N19
 ArF immersion (DUV) lithography tools,N22,,,Lithography tools,N19
 Lithography tools,N19,Photolithography,N25,,
 Ion implantation,N17,Chemical mechanical planarization,N57,,
+Etch and clean,N46,Ion implantation,N17,,
 Maskless lithography tools,N28,,,Lithography tools,N19
 Mask Exposure Systems - E-Beam,N29,,,Maskless lithography tools,N28
 Mask Exposure Systems - Laser Beam,N30,,,Maskless lithography tools,N28
 Advanced photomasks,N33,Photolithography,N25,,
-Wafer production,N26,Deposition,N35,,
 Photoresists,N31,Photolithography,N25,,
 Resist processing tools,N32,Photolithography,N25,,
 Deposition tools,N36,Deposition,N35,,
@@ -30,7 +30,6 @@ Dry etching and cleaning tools,N48,,,Etching and cleaning tools,N55
 Wet etching and cleaning tools,N49,,,Etching and cleaning tools,N55
 Conductor etching tools,N50,,,Dry etch tools,N103
 Insulator etching tools,N51,,,Dry etch tools,N103
-Etch and clean,N46,Chemical mechanical planarization,N57,,
 Chemical mechanical planarization tools,N86,Chemical mechanical planarization,N57,,
 Wafer handlers,N11,Wafer and photomask handling,N59,,
 Photomask handlers,N12,Wafer and photomask handling,N59,,
@@ -66,14 +65,8 @@ SoC test tools,N80,Testing,N78,,
 Burn-in test tools,N81,Testing,N78,,
 Linear and discrete testing tools,N82,Testing,N78,,
 Handlers and probes,N83,Testing,N78,,
-Core intellectual property,N85,Advanced CPUs,N1,,
-Core intellectual property,N85,Discrete GPUs,N2,,
-Core intellectual property,N85,FPGAs,N3,,
-Core intellectual property,N85,AI ASICs,N4,,
-Electronic design automation software,N84,Advanced CPUs,N1,,
-Electronic design automation software,N84,Discrete GPUs,N2,,
-Electronic design automation software,N84,FPGAs,N3,,
-Electronic design automation software,N84,AI ASICs,N4,,
+Core intellectual property,N85,EDA and Core IP,N7,,
+Electronic design automation software,N84,EDA and Core IP,N7,,
 CMP materials,N90,Chemical mechanical planarization,N57,,
 Deposition materials,N88,Deposition,N35,,
 Electronic gases,N91,Deposition,N35,,
@@ -93,10 +86,10 @@ Encapsulation resins,N97,,,Packaging materials,N100
 Die attach materials,N98,,,Packaging materials,N100
 Testing,N78,Finished logic chip,N99,,
 Packaging materials,N100,Assembly and packaging,N69,,
-Advanced CPUs,N1,,,Logic chip design,N0
-Discrete GPUs,N2,,,Logic chip design,N0
-FPGAs,N3,,,Logic chip design,N0
-AI ASICs,N4,,,Logic chip design,N0
+Advanced CPUs,N1,,,Logic chip design,N6
+Discrete GPUs,N2,,,Logic chip design,N6
+FPGAs,N3,,,Logic chip design,N6
+AI ASICs,N4,,,Logic chip design,N6
 Imprint Lithography,N107,,,Lithography tools,N19
 KrF (DUV) lithography tools,N105,,,Lithography tools,N19
 i-line lithography tools,N106,,,Lithography tools,N19
@@ -117,3 +110,9 @@ CVD tools (for adv. pkg.),N110,,,Advanced packaging tools,N109
 PVD tools (for adv. pkg.),N111,,,Advanced packaging tools,N109
 Spin-on deposition tools (for adv. pkg.),N112,,,Advanced packaging tools,N109
 ECP tools (for adv. pkg.),N113,,,Advanced packaging tools,N109
+Memory chip design,N5,Chip design,N0,,
+DAO chip design,N13,Chip design,N0,,
+Logic chip design,N6,Chip design,N0,,
+EDA and Core IP,N7,Chip design,N0,,
+Chip design,N0,Wafer production,N26,,
+Wafer production,N26,Deposition,N35,,
