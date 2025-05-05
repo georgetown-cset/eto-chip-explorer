@@ -762,6 +762,11 @@ class Preprocess:
                         image_fi,
                         os.path.join(output_dir, image_node_id) + f".{file_type}",
                     )
+                if image_node_id == "N55":
+                    # Node N55 has been removed from the dataset, but remnants
+                    # seem to still exist somewhere
+                    continue
+
                 self.node_to_meta[image_node_id]["image_caption"] = self.clean_md_link(
                     line["caption"]
                 )
