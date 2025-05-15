@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    "^.+\\.jsx?$": `<rootDir>/jest-preprocess.js`,
+    "^.+\\.(jsx?|tsx?)$": `<rootDir>/jest-preprocess.js`,
   },
   moduleNameMapper: {
     ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
@@ -19,7 +19,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.{js,jsx}',
+    'src/**/*.{js,jsx,ts,tsx}',
     '!src/pages/*',
     '!**/__tests__/**',
   ],
