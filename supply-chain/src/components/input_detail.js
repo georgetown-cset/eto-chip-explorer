@@ -1,14 +1,13 @@
 import React, { Suspense, lazy } from "react";
 import ReactMarkdown from 'react-markdown'
 import Typography from "@mui/material/Typography";
-import { MoreHoriz as MoreHorzIcon } from "@mui/icons-material";
 
 import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 
 import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
-import { countryFlags } from "../../data/provision";
+import ProviderListing from "./ProviderListing";
 
 const Plot = lazy(() => import('react-plotly.js'));
 
@@ -56,136 +55,6 @@ const BarGraph = (props) => {
   );
 };
 
-export const ProviderListing = (props) => {
-  const {isOrg, providers, variantProviders=undefined, providerMeta, variant} = props;
-
-  // Order table rows so items show up
-  // alphabetically vertically
-  const _mkOrderedTableRows = (items) => {
-    const numRows = Math.ceil(items.length/2);
-    const rows = [];
-    for(let idx = 0; idx < numRows; idx += 1){
-      const rowItems = [items[idx]];
-      if(numRows + idx < items.length){
-        rowItems.push(items[numRows + idx])
-      }
-      rows.push(rowItems);
-    }
-    return rows
-  }
-
-  const mkOrgTableRows = () => {
-    let orgNodes;
-    // Get correct list of org nodes
-    if (variant === true) {
-      orgNodes = Object.keys(variantProviders);
-    } else {
-      orgNodes = providers === undefined ? [] : Object.keys(providers);
-    }
-    // Filter and reorder the list of orgs
-    const filteredOrgNodes = orgNodes.filter(org => org in providerMeta);
-    filteredOrgNodes.sort((a, b) => ('' + providerMeta[a]["name"].toLowerCase()).localeCompare(providerMeta[b]["name"].toLowerCase()));
-    const orderedTableRows = _mkOrderedTableRows(filteredOrgNodes);
-    // Construct the table
-    const rows = [];
-    orderedTableRows.forEach(rowOrgs => {
-      rows.push(
-        <tr key={rowOrgs.join("-")}>
-          {rowOrgs.map((org) => (
-          <td key={org}>
-            <Typography component="p">
-              {providerMeta[org]["hq_flag"] &&
-                <HelpTooltip text={providerMeta[org]["hq_country"]}><span className="flag">{providerMeta[org]["hq_flag"]}</span></HelpTooltip>}
-              {providerMeta[org]["name"]}
-              {!variant && providers[org] !== "Major" && <span> ({providers[org]} market share)</span>}
-              {variant &&
-                <HelpTooltip
-                  text={"Provides: " + variantProviders[org].map(e => nodeToMeta[e].name).join(", ")}
-                  Icon={MoreHorzIcon}
-                />
-              }
-            </Typography>
-          </td>
-          ))}
-        </tr>
-      )
-    });
-    return rows;
-  };
-
-  const mkCountryTableRows = () => {
-    let countryNodes;
-    // Get correct, sorted list of country nodes
-    if (variant === true) {
-      countryNodes = Object.keys(variantProviders).sort();
-    } else {
-      countryNodes = providers.sort(
-        (a, b) => (a.country.toLowerCase()).localeCompare(b.country.toLowerCase())
-      );
-    }
-    const orderedTableRows = _mkOrderedTableRows(countryNodes);
-    const rows = [];
-    orderedTableRows.forEach(rowCountries => {
-      rows.push(
-        <tr key={JSON.stringify(rowCountries)}>
-          {rowCountries.map((countryInfo) => {
-            const countryName = variant ? countryInfo : countryInfo.country;
-            return (
-              <td key={countryName}>
-                <Typography component="p" className="whereisthis">
-                  {countryFlags[countryName] && <span className="flag">{countryFlags[countryName]}</span>}
-                  {countryName}
-                  {!variant && countryInfo.value !== "Major" && <span> ({countryInfo.value})</span>}
-                  {variant &&
-                    <HelpTooltip
-                      text={"Provides: " + variantProviders[countryName].map(e => nodeToMeta[e].name).join(", ")}
-                      Icon={MoreHorzIcon}
-                    />
-                  }
-                </Typography>
-              </td>
-            )
-          })}
-        </tr>
-      )
-    })
-    return rows;
-  };
-
-  const title = (isOrg ? "Notable supplier companies" : "Supplier Countries") + (variant ? " (Variants)" : "");
-  const helpText = (
-    <HelpTooltip
-      smallIcon
-      text={isOrg ?
-        "Global companies with significant market share or otherwise notable capabilities." :
-        "Countries with significant global market share."
-      }
-      iconStyle={{verticalAlign: "middle"}}
-    />
-  );
-
-  const showTable = () => {
-    return (variant === true) ? Object.keys(variantProviders).length > 0 : providers !== undefined
-  }
-
-  return (
-    <div>
-    {showTable() &&
-      <div>
-        <Typography component={"p"} variant={"h6"} className="provision-heading">
-         {title}
-         {helpText}
-        </Typography>
-        <table>
-          <tbody>
-            {isOrg ? mkOrgTableRows() : mkCountryTableRows()}
-          </tbody>
-        </table>
-      </div>
-    }
-    </div>
-  )
-}
 
 const InputDetail = (props) => {
   const {selectedNode, descriptions, countries, orgs, orgMeta, updateSelected=null, parent,
