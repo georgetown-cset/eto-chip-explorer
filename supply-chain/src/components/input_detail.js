@@ -85,9 +85,9 @@ const InputDetail = (props) => {
         </Typography>
       }
       {hasCountries &&
-        <div>
+        <div className="country-graph-wrapper">
           {graphCountries.length > 0 &&
-            <div>
+            <>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Supplier countries
                 <HelpTooltip smallIcon text={"Countries with significant global market share."} iconStyle={{verticalAlign: "middle"}} />
@@ -101,7 +101,7 @@ const InputDetail = (props) => {
                   <span dangerouslySetInnerHTML={{__html: nodeToMeta[selectedNode].market_chart_source}} />
                 </div>
               }
-            </div>
+            </>
           }
           {graphCountries.length > 0 && undefinedProvisionCountries.length > 0 &&
             <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>
@@ -116,8 +116,14 @@ const InputDetail = (props) => {
       <ProviderListing isOrg={true} providers={orgs} providerMeta={orgMeta} variant={false} />
       {variants[selectedNode] &&
         <div>
-          <VariantsList node={selectedNode} currSelectedNode={selectedNode} inputType={nodeToMeta[selectedNode].type}
-            updateSelected={updateSelected} parent={parent} depth={0} />
+          <VariantsList
+            currSelectedNode={selectedNode}
+            depth={0}
+            inputType={nodeToMeta[selectedNode].type}
+            node={selectedNode}
+            parent={parent}
+            updateSelected={updateSelected}
+          />
           <ProviderListing isOrg={false} providers={countries} variantProviders={variantCountries} providerMeta={undefined} variant={true} />
           <ProviderListing isOrg={true} providers={orgs} variantProviders={variantOrgs} providerMeta={orgMeta} variant={true} />
         </div>
