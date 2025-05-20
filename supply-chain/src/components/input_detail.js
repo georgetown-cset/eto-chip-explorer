@@ -59,8 +59,17 @@ const BarGraph = (props) => {
 
 
 const InputDetail = (props) => {
-  const {selectedNode, descriptions, countries, orgs, orgMeta, updateSelected=null, parent,
-    variantCountries, variantOrgs} = props;
+  const {
+    countries,
+    description,
+    orgs,
+    orgMeta,
+    parent,
+    selectedNode,
+    updateSelected=null,
+    variantCountries,
+    variantOrgs,
+  } = props;
 
   const graphCountries = [];
   const undefinedProvisionCountries = [];
@@ -102,7 +111,7 @@ const InputDetail = (props) => {
 
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
-      <ReactMarkdown components={mdxComponents}>{descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}</ReactMarkdown>
+      <ReactMarkdown components={mdxComponents}>{description}</ReactMarkdown>
       {nodeToMeta[selectedNode].total_market_size &&
         <Typography component="p">
           <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}

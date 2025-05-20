@@ -86,9 +86,16 @@ const Map = (props) => {
       <StageNode stage={stage} stageClassName={stageClassName} updateSelected={updateSelected} parent={parentNode} />
       {stage === parentNode &&
         <div className={"stage-border " + stageClassName}>
-          <DocumentationNode node={selectedNode} parent={parentNode}
-            descriptions={descriptions} images={images} pdfs={pdfs} isStage={true}
-            updateSelected={updateSelected} currSelectedNode={selectedNode}/>
+          <DocumentationNode
+            currSelectedNode={selectedNode}
+            description={descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}
+            images={images}
+            isStage={true}
+            node={selectedNode}
+            parent={parentNode}
+            pdfs={pdfs}
+            updateSelected={updateSelected}
+          />
         </div>
       }
     </div>
@@ -117,9 +124,17 @@ const Map = (props) => {
         )}
         <div className="documentation-node-widescreen">
           {nodes.includes(parentNode) &&
-            <DocumentationNode node={selectedNode} parent={parentNode}
-              descriptions={descriptions} images={images} pdfs={pdfs} isStage={false}
-              updateSelected={updateSelected} currSelectedNode={selectedNode} minimap={minimapLayers} />
+            <DocumentationNode
+              currSelectedNode={selectedNode}
+              description={descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}
+              images={images}
+              isStage={false}
+              minimap={minimapLayers}
+              node={selectedNode}
+              parent={parentNode}
+              pdfs={pdfs}
+              updateSelected={updateSelected}
+            />
           }
         </div>
       </div>
@@ -302,10 +317,18 @@ const Map = (props) => {
     return (
       <div className="map-background">
         {filterValues["input-resource"] && filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
-          <DocumentationNode node={filterValues["input-resource"]} parent={null}
-            descriptions={descriptions} images={images} pdfs={pdfs} isStage={false} standalone={true}
-            updateSelected={setDocumentationPanelToggle} currSelectedNode={filterValues["input-resource"]}
-            minimap={standaloneMinimapLayers} />
+          <DocumentationNode
+            currSelectedNode={filterValues["input-resource"]}
+            description={descriptions.filter(n => n.fields.slug === filterValues["input-resource"])[0]?.body}
+            images={images}
+            isStage={false}
+            minimap={standaloneMinimapLayers}
+            node={filterValues["input-resource"]}
+            parent={null}
+            pdfs={pdfs}
+            standalone={true}
+            updateSelected={setDocumentationPanelToggle}
+          />
         }
         <Xwrapper>
           {unattached.length > 0 &&

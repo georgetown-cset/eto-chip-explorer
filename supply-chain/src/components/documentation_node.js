@@ -14,7 +14,18 @@ import InputDetail from "./input_detail";
 import InputList from "./input_list";
 
 const DocumentationNode = (props) => {
-  const {node, parent, descriptions, images, pdfs, isStage, currSelectedNode, updateSelected, minimap=null, standalone=false} = props;
+  const {
+    currSelectedNode,
+    description,
+    images,
+    isStage,
+    minimap=null,
+    node,
+    parent,
+    pdfs,
+    standalone=false,
+    updateSelected,
+  } = props;
   const meta = node in nodeToMeta ? nodeToMeta[node] : {};
 
   const getNodeToCountryProvision = () => {
@@ -126,14 +137,22 @@ const DocumentationNode = (props) => {
           }
           {(currSelectedNode !== null) && (
             (nodeToMeta[currSelectedNode]?.["type"] !== "process") ?
-              <InputDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                        updateSelected={updateSelected} parent={parent}
-                        countries={nodeToCountryProvision?.[currSelectedNode]}
-                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta}
-                        variantCountries={nodeVariantsToCountryProvision}
-                        variantOrgs={nodeVariantsToOrgProvision} /> :
-              <ProcessDetail selectedNode={currSelectedNode} descriptions={descriptions}
-                        orgs={nodeToOrgProvision[currSelectedNode]} orgMeta={providerMeta} />
+              <InputDetail
+                countries={nodeToCountryProvision?.[currSelectedNode]}
+                description={description}
+                orgs={nodeToOrgProvision[currSelectedNode]}
+                orgMeta={providerMeta}
+                parent={parent}
+                selectedNode={currSelectedNode}
+                updateSelected={updateSelected}
+                variantCountries={nodeVariantsToCountryProvision}
+                variantOrgs={nodeVariantsToOrgProvision} /> :
+              <ProcessDetail
+                description={description}
+                orgs={nodeToOrgProvision[currSelectedNode]}
+                orgMeta={providerMeta}
+                selectedNode={currSelectedNode}
+              />
           )}
           {currSelectedNode !== null &&
             <div className="lower-bar-wrapper">
