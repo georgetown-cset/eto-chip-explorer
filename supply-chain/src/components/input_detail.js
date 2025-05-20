@@ -7,7 +7,9 @@ import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 import mdxComponents from "../helpers/mdx_style";
 import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
+import { countryFlags } from "../../data/provision";
 import ProviderListing from "./ProviderListing";
+import ProviderTable from "./ProviderTable";
 
 const Plot = lazy(() => import('react-plotly.js'));
 
@@ -76,6 +78,28 @@ const InputDetail = (props) => {
     }
   }
 
+  const countryList = undefinedProvisionCountries.map(({country}) => ({
+    provider: country,
+    flag: countryFlags[country],
+  }));
+
+  const variantCountryList = Object.keys(variantCountries).map((country) => ({
+    provider: country,
+    flag: countryFlags[country],
+    details: "Provides: " + variantCountries?.[country].map(e => nodeToMeta[e].name).join(", "),
+  }));
+
+  const orgList = Object.keys(orgs ?? {}).map(e => ({
+    provider: orgMeta[e].name,
+    flag: orgMeta[e].hq_flag,
+  }));
+
+  const variantOrgList = Object.keys(variantOrgs).map((org) => ({
+    provider: orgMeta[org].name,
+    flag: orgMeta[org].hq_flag,
+    details: "Provides: " + variantOrgs?.[org].map(e => nodeToMeta[e].name).join(", "),
+  }));
+
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
       <ReactMarkdown components={mdxComponents}>{descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}</ReactMarkdown>
@@ -108,12 +132,23 @@ const InputDetail = (props) => {
               Minor providers (not pictured): {undefinedProvisionCountries.map(c => c.country).join(", ")}
             </Typography>
           }
-          {graphCountries.length === 0 && undefinedProvisionCountries.length > 0 &&
+          {graphCountries.length === 0 && undefinedProvisionCountries.length > 0 && <>
             <ProviderListing isOrg={false} providers={undefinedProvisionCountries} variantProviders={undefined} providerMeta={undefined} variant={false} />
+            <ProviderTable
+              caption="Supplier Countries (NEW A)"
+              providers={countryList}
+              tooltip="Countries with significant global market share."
+            />
+            </>
           }
         </div>
       }
       <ProviderListing isOrg={true} providers={orgs} providerMeta={orgMeta} variant={false} />
+      <ProviderTable
+        caption="Notable supplier companies (NEW B)"
+        providers={orgList}
+        tooltip="Global companies with significant market share or otherwise notable capabilities."
+      />
       {variants[selectedNode] &&
         <div>
           <VariantsList
@@ -125,7 +160,17 @@ const InputDetail = (props) => {
             updateSelected={updateSelected}
           />
           <ProviderListing isOrg={false} providers={countries} variantProviders={variantCountries} providerMeta={undefined} variant={true} />
+          <ProviderTable
+            caption="Supplier Countries (Variants) (NEW C)"
+            providers={variantCountryList}
+            tooltip="Countries with significant global market share."
+          />
           <ProviderListing isOrg={true} providers={orgs} variantProviders={variantOrgs} providerMeta={orgMeta} variant={true} />
+          <ProviderTable
+            caption="Notable supplier companies (Variants) (NEW D)"
+            providers={variantOrgList}
+            tooltip="Global companies with significant market share or otherwise notable capabilities."
+          />
         </div>
       }
     </div>
