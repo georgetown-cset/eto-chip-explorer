@@ -8,7 +8,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import { HelpTooltip, UserFeedback } from "@eto/eto-ui-components";
 import { nodeToMeta } from "../../data/graph";
 import { countryProvision, orgProvision, providerMeta } from "../../data/provision";
-import ProcessDetail from "./process_detail";
+import ProcessDetail from "./ProcessDetail";
 import { allSubVariantsList } from "../helpers/shared";
 import InputDetail from "./input_detail";
 import InputList from "./input_list";

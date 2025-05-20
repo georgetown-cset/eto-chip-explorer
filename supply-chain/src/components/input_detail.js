@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import {HelpTooltip, PlotlyDefaults} from "@eto/eto-ui-components";
 
 import mdxComponents from "../helpers/mdx_style";
+import tooltips from "../helpers/tooltips";
 import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
@@ -123,7 +124,7 @@ const InputDetail = (props) => {
             <>
               <Typography component={"p"} variant={"h6"} className="provision-heading">
                 Supplier countries
-                <HelpTooltip smallIcon text={"Countries with significant global market share."} iconStyle={{verticalAlign: "middle"}} />
+                <HelpTooltip smallIcon text={tooltips.providers.countries} iconStyle={{verticalAlign: "middle"}} />
               </Typography>
               <BarGraph countries={graphCountries}/>
               {nodeToMeta[selectedNode].market_chart_caption &&
@@ -146,7 +147,7 @@ const InputDetail = (props) => {
             <ProviderTable
               caption="Supplier Countries (NEW A)"
               providers={countryList}
-              tooltip="Countries with significant global market share."
+              tooltip={tooltips.providers.countries}
             />
             </>
           }
@@ -156,7 +157,7 @@ const InputDetail = (props) => {
       <ProviderTable
         caption="Notable supplier companies (NEW B)"
         providers={orgList}
-        tooltip="Global companies with significant market share or otherwise notable capabilities."
+        tooltip={tooltips.providers.orgs}
       />
       {variants[selectedNode] &&
         <div>
@@ -172,13 +173,13 @@ const InputDetail = (props) => {
           <ProviderTable
             caption="Supplier Countries (Variants) (NEW C)"
             providers={variantCountryList}
-            tooltip="Countries with significant global market share."
+            tooltip={tooltips.providers.countries}
           />
           <ProviderListing isOrg={true} providers={orgs} variantProviders={variantOrgs} providerMeta={orgMeta} variant={true} />
           <ProviderTable
             caption="Notable supplier companies (Variants) (NEW D)"
             providers={variantOrgList}
-            tooltip="Global companies with significant market share or otherwise notable capabilities."
+            tooltip={tooltips.providers.orgs}
           />
         </div>
       }
