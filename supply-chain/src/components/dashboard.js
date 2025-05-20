@@ -450,6 +450,7 @@ const Dashboard = () => {
           </div>
         }
         documentationLink="https://eto.tech/tool-docs/chipexplorer/"
+        headingComponent="h1"
         sidebarTitle={"Quick guide"}
         sidebarContent={
           <div>

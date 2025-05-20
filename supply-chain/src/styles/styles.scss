@@ -18,7 +18,7 @@ p.MuiTypography-root {
   font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
 }
 
-h3.MuiTypography-root {
+h2.MuiTypography-root {
   font-family: GTZirkonMedium, Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.1rem;
 }
@@ -233,6 +233,9 @@ EXCEPT the description box at the top. */
 
   .stage-node {
     background-color: var(--bright-blue-lightest);
+    column-gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
     padding: 5px;
 
     &:hover {
@@ -240,10 +243,13 @@ EXCEPT the description box at the top. */
     }
 
     button {
-      margin-left: 20px;
       font-family: GTZirkonRegular, Roboto, Helvetica, Arial, sans-serif;
       text-transform: none;
       color: var(--bright-blue);
+
+      svg {
+        margin-right: 0.25rem;
+      }
     }
   }
 }
@@ -650,12 +656,6 @@ figcaption {
   .documentation-node-description {
     width: 70%;
     text-align: left;
-  }
-}
-
-.stage-node {
-  button {
-    display: none;
   }
 }
 
