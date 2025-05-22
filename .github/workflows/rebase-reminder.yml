@@ -34,7 +34,7 @@ jobs:
           Needs rebasing :bangbang:
           behind_count is ${{ steps.behind_count.outputs.behind_count }}
           ahead_count is ${{ steps.ahead_count.outputs.ahead_count }}
-        comment_tag: rebasing
+        comment-tag: rebasing
     - name: Edit PR comment - no rebasing
       if: steps.behind_count.outputs.behind_count == 0 || steps.combined_count.outputs.combined_count <= 3
       uses: thollander/actions-comment-pull-request@v3
@@ -43,4 +43,4 @@ jobs:
           No need for rebasing :+1:
           behind_count is ${{ steps.behind_count.outputs.behind_count }}
           ahead_count is ${{ steps.ahead_count.outputs.ahead_count }}
-        comment_tag: rebasing
+        comment-tag: rebasing
