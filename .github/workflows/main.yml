@@ -48,7 +48,7 @@ jobs:
     - name: Setup node
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '22'
     - name: Test with jest
       shell: bash
       run: |
@@ -94,4 +94,4 @@ jobs:
         message: |
           There are ${{ steps.link_check.outputs.num_links }} broken links. Check the code for these links:
           ${{ steps.link_check.outputs.links }}
-        comment_tag: link_check_msg
+        comment-tag: link_check_msg

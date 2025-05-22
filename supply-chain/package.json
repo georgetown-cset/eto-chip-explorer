@@ -17,6 +17,9 @@
     "test": "jest",
     "lint-css": "stylelint src/styles/*.scss --fix"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@eto/eto-ui-components": "^1.10.5",
