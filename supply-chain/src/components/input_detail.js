@@ -7,7 +7,6 @@ import tooltips from "../helpers/tooltips";
 import { VariantsList } from "./input_list";
 import { nodeToMeta, variants } from "../../data/graph";
 import { countryFlags } from "../../data/provision";
-import ProviderListing from "./ProviderListing";
 import ProviderTable from "./ProviderTable";
 import ProviderGraph from "./ProviderGraph";
 
@@ -57,9 +56,8 @@ const InputDetail = (props) => {
         tooltip={tooltips.providers.countries}
       />
 
-      <ProviderListing isOrg={true} providers={orgs} providerMeta={orgMeta} variant={false} />
       <ProviderTable
-        caption="Notable supplier companies (NEW B)"
+        caption="Notable supplier companies"
         providers={orgList}
         tooltip={tooltips.providers.orgs}
       />
@@ -73,15 +71,13 @@ const InputDetail = (props) => {
             parent={parent}
             updateSelected={updateSelected}
           />
-          <ProviderListing isOrg={false} providers={countries} variantProviders={variantCountries} providerMeta={undefined} variant={true} />
           <ProviderTable
-            caption="Supplier Countries (Variants) (NEW C)"
+            caption="Supplier Countries (Variants)"
             providers={variantCountryList}
             tooltip={tooltips.providers.countries}
           />
-          <ProviderListing isOrg={true} providers={orgs} variantProviders={variantOrgs} providerMeta={orgMeta} variant={true} />
           <ProviderTable
-            caption="Notable supplier companies (Variants) (NEW D)"
+            caption="Notable supplier companies (Variants)"
             providers={variantOrgList}
             tooltip={tooltips.providers.orgs}
           />
