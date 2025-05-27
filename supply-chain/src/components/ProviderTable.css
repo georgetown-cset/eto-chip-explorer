@@ -9,6 +9,10 @@
   font-size: 1.25rem;
   font-weight: 900;
   margin: 10px 0 0;
+
+  svg {
+    vertical-align: text-bottom;
+  }
 }
 
 .provider-table table {
