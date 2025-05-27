@@ -17,11 +17,11 @@ exports[`Dashboard renders correctly 1`] = `
       <div
         class="css-l151mc-topAreaBottomBorder-titleWrapper-InfoCard"
       >
-        <div
+        <h1
           class="MuiTypography-root MuiTypography-h4 css-zlcs7i-MuiTypography-root-title"
         >
           Supply Chain Explorer
-        </div>
+        </h1>
         <div
           class="css-kwnkor-documentationLink"
         >
@@ -316,12 +316,12 @@ exports[`Dashboard renders correctly 1`] = `
                 id="S1"
                 style="text-align: left;"
               >
-                <h3
+                <h2
                   class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                   style="text-align: left; padding-left: 5px; display: inline-block;"
                 >
                   Design
-                </h3>
+                </h2>
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   style="padding: 0px 10px 0px 0px;"
@@ -412,7 +412,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -452,11 +454,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -525,7 +531,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -565,11 +573,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -647,7 +659,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -687,11 +701,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -760,7 +778,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -800,11 +820,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -879,12 +903,12 @@ exports[`Dashboard renders correctly 1`] = `
                 id="S2"
                 style="text-align: left;"
               >
-                <h3
+                <h2
                   class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                   style="text-align: left; padding-left: 5px; display: inline-block;"
                 >
                   Fabrication
-                </h3>
+                </h2>
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   style="padding: 0px 10px 0px 0px;"
@@ -986,7 +1010,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1026,11 +1052,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1124,7 +1154,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1164,7 +1196,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1204,7 +1238,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1280,7 +1316,9 @@ exports[`Dashboard renders correctly 1`] = `
                                   <div
                                     class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                                   >
-                                    <div />
+                                    <div
+                                      class="variants-list"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -1320,7 +1358,9 @@ exports[`Dashboard renders correctly 1`] = `
                                   <div
                                     class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                                   >
-                                    <div />
+                                    <div
+                                      class="variants-list"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -1360,7 +1400,9 @@ exports[`Dashboard renders correctly 1`] = `
                                   <div
                                     class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                                   >
-                                    <div />
+                                    <div
+                                      class="variants-list"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -1400,11 +1442,15 @@ exports[`Dashboard renders correctly 1`] = `
                                   <div
                                     class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                                   >
-                                    <div />
+                                    <div
+                                      class="variants-list"
+                                    />
                                   </div>
                                 </div>
                               </div>
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1444,11 +1490,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1530,7 +1580,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1570,7 +1622,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1610,7 +1664,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1650,11 +1706,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1755,7 +1815,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1831,11 +1893,15 @@ exports[`Dashboard renders correctly 1`] = `
                                   <div
                                     class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                                   >
-                                    <div />
+                                    <div
+                                      class="variants-list"
+                                    />
                                   </div>
                                 </div>
                               </div>
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1875,7 +1941,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1915,7 +1983,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1955,7 +2025,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1995,11 +2067,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -2100,7 +2176,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2140,7 +2218,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2180,11 +2260,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -2285,7 +2369,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2325,7 +2411,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2365,7 +2453,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2405,11 +2495,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -2433,12 +2527,12 @@ exports[`Dashboard renders correctly 1`] = `
                 id="S3"
                 style="text-align: left;"
               >
-                <h3
+                <h2
                   class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
                   style="text-align: left; padding-left: 5px; display: inline-block;"
                 >
                   Assembly, testing, and packaging (ATP)
-                </h3>
+                </h2>
                 <button
                   class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-1e6y48t-MuiButtonBase-root-MuiButton-root"
                   style="padding: 0px 10px 0px 0px;"
@@ -2552,7 +2646,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2592,7 +2688,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2632,7 +2730,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2672,7 +2772,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2712,7 +2814,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2752,7 +2856,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2792,11 +2898,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -2897,7 +3007,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2937,7 +3049,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -2977,7 +3091,9 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
@@ -3017,11 +3133,15 @@ exports[`Dashboard renders correctly 1`] = `
                             <div
                               class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                             >
-                              <div />
+                              <div
+                                class="variants-list"
+                              />
                             </div>
                           </div>
                         </div>
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>
@@ -3074,7 +3194,9 @@ exports[`Dashboard renders correctly 1`] = `
                       <div
                         class="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
                       >
-                        <div />
+                        <div
+                          class="variants-list"
+                        />
                       </div>
                     </div>
                   </div>

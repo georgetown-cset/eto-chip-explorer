@@ -16,7 +16,7 @@ const StageNode = (props) => {
           textAlign: "left",
         }}
       >
-        <Typography component={"h3"}
+        <Typography component={"h2"}
           style={{
             textAlign: "left",
             paddingLeft: "5px",

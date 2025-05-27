@@ -27,9 +27,9 @@ export const VariantsList = (props) => {
   const {node, currSelectedNode, inputType, updateSelected, parent, depth, ancestorSelected=false, highlight=0, highlights={}} = props;
   const thisNodeAncestorSelected = ancestorSelected || (node === currSelectedNode);
   return (
-    <div>
+    <div className="variants-list">
       {variants[node] && (currSelectedNode === node || allSubVariantsList[node].includes(currSelectedNode)) &&
-        <div>
+        <>
           <Typography
             className={"variants-heading" + (thisNodeAncestorSelected ? " selected-node-child" : "")}
             component={"p"}
@@ -54,7 +54,7 @@ export const VariantsList = (props) => {
                 parent={parent} depth={depth+2} ancestorSelected={thisNodeAncestorSelected} highlight={highlight} highlights={highlights} />
             </SubNode>
           )}
-        </div>
+        </>
       }
     </div>
   )

@@ -95,9 +95,16 @@ const GraphNode = (props) => {
             }}
           />
           <div className="documentation-node-mobile">
-            <DocumentationNode node={currSelectedNode} parent={parent} pdfs={pdfs}
-              descriptions={descriptions} images={images} isStage={false}
-              updateSelected={updateSelected} currSelectedNode={currSelectedNode} />
+            <DocumentationNode
+              currSelectedNode={currSelectedNode}
+              description={descriptions.filter(n => n.fields.slug === currSelectedNode)[0]?.body}
+              images={images}
+              isStage={false}
+              node={currSelectedNode}
+              parent={parent}
+              pdfs={pdfs}
+              updateSelected={updateSelected}
+            />
           </div>
         </div>
       }

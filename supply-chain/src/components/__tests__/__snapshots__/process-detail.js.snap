@@ -9,7 +9,6 @@ exports[`Process detail renders correctly 1`] = `
     <div>
       Some text about N35
     </div>
-    <div />
   </div>
 </DocumentFragment>
 `;
