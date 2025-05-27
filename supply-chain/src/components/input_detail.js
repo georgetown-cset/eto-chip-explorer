@@ -1,6 +1,10 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown'
 import Typography from "@mui/material/Typography";
+import {
+  CorporateFare as CorporateFareIcon,
+  Public as PublicIcon,
+} from "@mui/icons-material";
 
 import mdxComponents from "../helpers/mdx_style";
 import tooltips from "../helpers/tooltips";
@@ -12,7 +16,7 @@ import ProviderGraph from "./ProviderGraph";
 
 const InputDetail = (props) => {
   const {
-    countries,
+    countries = [],
     description,
     orgs,
     orgMeta,
@@ -23,15 +27,22 @@ const InputDetail = (props) => {
     variantOrgs,
   } = props;
 
+  const countryList = countries.map(({ country, value }) => ({
+    provider: country,
+    flag: countryFlags[country],
+    value,
+  }));
+
   const variantCountryList = Object.keys(variantCountries).map((country) => ({
     provider: country,
     flag: countryFlags[country],
     details: "Provides: " + variantCountries?.[country].map(e => nodeToMeta[e].name).join(", "),
   }));
 
-  const orgList = Object.keys(orgs ?? {}).map(e => ({
-    provider: orgMeta[e].name,
-    flag: orgMeta[e].hq_flag,
+  const orgList = Object.entries(orgs ?? {}).map(([orgId, value]) => ({
+    provider: orgMeta[orgId].name,
+    flag: orgMeta[orgId].hq_flag,
+    value,
   }));
 
   const variantOrgList = Object.keys(variantOrgs).map((org) => ({
@@ -51,14 +62,15 @@ const InputDetail = (props) => {
       <ProviderGraph
         marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
         marketShareSource={nodeToMeta[selectedNode].market_chart_source}
-        providers={countries}
-        title="Supplier countries"
+        providers={countryList}
+        title={<><PublicIcon /> Supplier countries</>}
         tooltip={tooltips.providers.countries}
       />
 
-      <ProviderTable
-        caption="Notable supplier companies"
+      <ProviderGraph
+        // TODO - Jacob - do you want market share caption/sources?
         providers={orgList}
+        title={ <><CorporateFareIcon /> Supplier companies</> }
         tooltip={tooltips.providers.orgs}
       />
       {variants[selectedNode] &&
@@ -72,12 +84,12 @@ const InputDetail = (props) => {
             updateSelected={updateSelected}
           />
           <ProviderTable
-            caption="Supplier Countries (Variants)"
+            caption={<><PublicIcon /> Supplier countries</>}
             providers={variantCountryList}
             tooltip={tooltips.providers.countries}
           />
           <ProviderTable
-            caption="Notable supplier companies (Variants)"
+            caption={ <><CorporateFareIcon /> Supplier companies</> }
             providers={variantOrgList}
             tooltip={tooltips.providers.orgs}
           />

@@ -350,9 +350,7 @@ class Preprocess:
                 else:
                     if provider_id not in self.org_provision:
                         self.org_provision[provider_id] = {}
-                    self.org_provision[provider_id][provided] = self.get_provision(
-                        line, True
-                    )
+                    self.org_provision[provider_id][provided] = self.get_provision(line)
                     if self.node_to_meta.get(provided, {}).get("type") == "process":
                         process_nodes_with_org_provision.add(provided)
         country_provision_concentration = self.get_provision_concentration(

@@ -8,7 +8,7 @@ import "./ProviderTable.css";
 
 export interface ProvidersEntry {
   details?: ReactNode;
-  flag: string;
+  flag?: string;
   provider: string;
 }
 export interface ProviderTableProps {

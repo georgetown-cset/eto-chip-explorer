@@ -3,18 +3,19 @@ import Typography from '@mui/material/Typography';
 
 import { HelpTooltip, PlotlyDefaults } from '@eto/eto-ui-components';
 
-import { countryFlags } from "../../data/provision";
 import ProviderTable from "./ProviderTable";
 import "./ProviderTable.css";
 
 const Plot = lazy(() => import('react-plotly.js'));
 
 interface ProviderWithProvisionValue {
-  country: string;
+  flag?: string;
+  provider: string;
   value: number;
 }
 interface ProviderWithoutProvisionValue {
-  country: string;
+  flag?: string;
+  provider: string;
   value: string;
 }
 type Provider = ProviderWithProvisionValue | ProviderWithoutProvisionValue;
@@ -27,57 +28,47 @@ export interface ProviderGraphProps {
   tooltip?: ReactNode;
 }
 
-const ProviderGraph = (props: ProviderGraphProps) => {
-  const {
-    marketShareCaption,
-    marketShareSource,
-    providers,
-    title,
-    tooltip,
-  } = props;
+const ProviderGraph = ({
+  marketShareCaption,
+  marketShareSource,
+  providers,
+  title,
+  tooltip,
+}: ProviderGraphProps) => {
+  const hasProviders = (providers !== null) && (providers !== undefined) && (providers.length > 0);
 
-  const graphProviders: Array<ProviderWithProvisionValue> = [];
-  const minorProviders: Array<ProviderWithoutProvisionValue> = [];
-  const hasCountries = (providers !== null) && (providers !== undefined) && (providers.length > 0);
-
-  if ( hasCountries ) {
-    for (let i = 0; i < providers.length; i++) {
-      if (typeof providers[i].value !== "number") {
-        minorProviders.push(providers[i] as ProviderWithoutProvisionValue);
-      } else {
-        graphProviders.push(providers[i] as ProviderWithProvisionValue);
-      }
-    }
-  } else {
+  if ( ! hasProviders ) {
     // Don't display the graph component if we have no data.
     return null;
   }
 
-  graphProviders.sort((a, b) => {
-    // Country nodes for "Various" always go last
-    if (a.country === "Various") {
-      return -1;
-    } else if (b.country === "Various") {
-      return 1;
-    // Otherwise, sort by value in descending order
-    } else if (a.value > b.value) {
-      return 1;
-    } else if (b.value > a.value) {
-      return -1;
-    } else {
-      return 0;
-    }
-  });
+  const graphProviders = providers
+    .filter(provider => typeof provider.value === "number")
+    .map(provider => provider as ProviderWithProvisionValue)
+    .toSorted((a, b) => {
+      // Nodes for "Various" always go last
+      if ( a.provider.startsWith("Various") ) {
+        return -1;
+      } else if ( b.provider.startsWith("Various") ) {
+        return 1;
+      // Otherwise, sort by value in descending order
+      } else if (a.value > b.value) {
+        return 1;
+      } else if (b.value > a.value) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
 
-  const minorProviderList = minorProviders.map(({ country }) => ({
-    provider: country,
-    flag: countryFlags[country],
-  }));
+  const minorProviders = providers
+    .filter(provider => typeof provider.value !== "number")
+    .map(provider => provider as ProviderWithoutProvisionValue);
 
   const data = [
     {
       x: graphProviders.map(e => e.value),
-      y: graphProviders.map(e => e.country),
+      y: graphProviders.map(e => e?.flag ? `${e.provider} ${e?.flag}` : e.provider),
       type: "bar",
       orientation: "h",
       hovertemplate: '%{x}%<extra></extra>',
@@ -118,13 +109,13 @@ const ProviderGraph = (props: ProviderGraphProps) => {
       }
       {graphProviders.length > 0 && minorProviders.length > 0 &&
         <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>
-          Minor providers (not pictured): {minorProviders.map(c => c.country).join(", ")}
+          Minor providers (not pictured): {minorProviders.map(c => c.provider).join(", ")}
         </Typography>
       }
       {graphProviders.length === 0 && minorProviders.length > 0 &&
         <ProviderTable
           caption={title}
-          providers={minorProviderList}
+          providers={minorProviders}
           tooltip={tooltip}
         />
       }
