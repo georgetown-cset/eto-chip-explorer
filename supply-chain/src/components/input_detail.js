@@ -36,7 +36,7 @@ const InputDetail = (props) => {
   const variantCountryList = Object.keys(variantCountries).map((country) => ({
     provider: country,
     flag: countryFlags[country],
-    details: "Provides: " + variantCountries?.[country].map(e => nodeToMeta[e].name).join(", "),
+    details: variantCountries?.[country].map(e => nodeToMeta[e].name).join(", "),
   }));
 
   const orgList = Object.entries(orgs ?? {}).map(([orgId, value]) => ({
@@ -48,7 +48,7 @@ const InputDetail = (props) => {
   const variantOrgList = Object.keys(variantOrgs).map((org) => ({
     provider: orgMeta[org].name,
     flag: orgMeta[org].hq_flag,
-    details: "Provides: " + variantOrgs?.[org].map(e => nodeToMeta[e].name).join(", "),
+    details: variantOrgs?.[org].map(e => nodeToMeta[e].name).join(", "),
   }));
 
   return (

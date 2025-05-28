@@ -61,8 +61,11 @@ const ProviderGraph = ({
       }
     });
 
+  // We don't want to show the graph if the only entry is "Various countries/companies"
+  const onlyVariousInGraph = (graphProviders.length === 1) && (graphProviders[0].provider.startsWith("Various"));
+
   const minorProviders = providers
-    .filter(provider => typeof provider.value !== "number")
+    .filter(provider => onlyVariousInGraph || typeof provider.value !== "number")
     .map(provider => provider as ProviderWithoutProvisionValue);
 
   const data = [
@@ -81,7 +84,7 @@ const ProviderGraph = ({
 
   return (
     <div className="provider-graph">
-      {graphProviders.length > 0 &&
+      {graphProviders.length > 0 && !onlyVariousInGraph &&
         <>
           <h5>
             {title}
@@ -107,12 +110,12 @@ const ProviderGraph = ({
           }
         </>
       }
-      {graphProviders.length > 0 && minorProviders.length > 0 &&
+      {graphProviders.length > 0 && !onlyVariousInGraph && minorProviders.length > 0 &&
         <Typography component={"p"} variant={"body2"} style={{marginTop: "20px"}}>
           Minor providers (not pictured): {minorProviders.map(c => c.provider).join(", ")}
         </Typography>
       }
-      {graphProviders.length === 0 && minorProviders.length > 0 &&
+      {(graphProviders.length === 0 || onlyVariousInGraph) && minorProviders.length > 0 &&
         <ProviderTable
           caption={title}
           providers={minorProviders}
