@@ -1,0 +1,11 @@
+- name: Full graph view
+  url: http://localhost:8530
+
+- name: Deposition tools
+  url: http://localhost:8530/?parentNode=N35&selectedNode=N36
+
+- name: Ion milling tools
+  url: http://localhost:8530/?parentNode=N46&selectedNode=N52
+
+- name: Assembly inspection tools
+  url: http://localhost:8530/?parentNode=N69&selectedNode=N70

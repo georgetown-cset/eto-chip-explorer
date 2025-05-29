@@ -1,0 +1,63 @@
+name: Percy visual testing
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - update-2025
+
+jobs:
+  build:
+    name: percy-tests
+    runs-on: ubuntu-latest
+    env:
+      app-dir: ./supply-chain
+    if: github.triggering_actor != 'dependabot[bot]'
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: 'Authenticate to Google Cloud'
+      id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
+        service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
+        token_format: 'access_token'
+    - name: 'Log into Artifact Registry'
+      uses: 'docker/login-action@v3'
+      with:
+        registry: us-east1-docker.pkg.dev
+        username: 'oauth2accesstoken'
+        password: '${{ steps.auth.outputs.access_token }}'
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - name: Install dependencies
+      run: |
+        npm run artifactregistry-login
+        npm install
+        npm install --save-dev @percy/cli
+      shell: bash
+      working-directory: ${{ env.app-dir }}
+    - name: Run server
+      env:
+        NODE_OPTIONS: "--max_old_space_size=4096"
+      run: |
+        npm run build
+        npm run serve -- -p 8530 &
+      shell: bash
+      working-directory: ${{ env.app-dir }}
+    - name: Snapshot with Percy
+      env:
+        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      run: |
+        sleep 20 &&
+        npm run percy-snapshot
+      shell: bash
+      working-directory: ${{ env.app-dir }}

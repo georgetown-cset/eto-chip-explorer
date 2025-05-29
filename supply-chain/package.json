@@ -15,6 +15,7 @@
     "artifactregistry-login": "npx google-artifactregistry-auth",
     "arlogin": "npm run artifactregistry-login",
     "test": "jest",
+    "percy-snapshot": "npx percy snapshot snapshots.yml",
     "lint-css": "stylelint src/styles/*.scss --fix"
   },
   "engines": {
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.27.1",
+    "@percy/cli": "^1.30.11",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
