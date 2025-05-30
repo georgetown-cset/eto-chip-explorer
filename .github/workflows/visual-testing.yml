@@ -69,7 +69,7 @@ jobs:
       env:
         PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
       run: |
-        sleep 20 &&
+        sleep 40 &&
         npm run percy-snapshot
       shell: bash
       working-directory: ${{ env.app-dir }}

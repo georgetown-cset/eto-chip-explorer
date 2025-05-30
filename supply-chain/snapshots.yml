@@ -1,11 +1,15 @@
 - name: Full graph view
   url: http://localhost:8530
+  waitForTimeout: 20000
 
 - name: Deposition tools
   url: http://localhost:8530/?parentNode=N35&selectedNode=N36
+  waitForTimeout: 20000
 
 - name: Ion milling tools
   url: http://localhost:8530/?parentNode=N46&selectedNode=N52
+  waitForTimeout: 20000
 
 - name: Assembly inspection tools
   url: http://localhost:8530/?parentNode=N69&selectedNode=N70
+  waitForTimeout: 20000
