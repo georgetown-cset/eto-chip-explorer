@@ -45,11 +45,13 @@ const InputDetail = (props) => {
     value,
   }));
 
-  const variantOrgList = Object.keys(variantOrgs).map((org) => ({
-    provider: orgMeta[org].name,
-    flag: orgMeta[org].hq_flag,
-    details: variantOrgs?.[org].map(e => nodeToMeta[e].name).join(", "),
-  }));
+  const variantOrgList = Object.keys(variantOrgs)
+    .map((org) => ({
+      provider: orgMeta[org].name,
+      flag: orgMeta[org].hq_flag,
+      details: variantOrgs?.[org].map(e => nodeToMeta[e].name).join(", "),
+    }))
+    .filter(orgObj => !orgObj.provider.startsWith("Various"));
 
   return (
     <div className="input-detail" style={{display: "inline-block", padding: "0px 40px", textAlign: "left"}}>
