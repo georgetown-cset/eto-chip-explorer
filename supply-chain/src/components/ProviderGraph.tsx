@@ -65,7 +65,12 @@ const ProviderGraph = ({
   const onlyVariousInGraph = (graphProviders.length === 1) && (graphProviders[0].provider.startsWith("Various"));
 
   const minorProviders = providers
-    .filter(provider => onlyVariousInGraph || typeof provider.value !== "number")
+    .filter((provider) => {
+      return (
+        (onlyVariousInGraph || typeof provider.value !== "number") &&
+        provider.provider !== "Various companies"
+      );
+    })
     .map(provider => provider as ProviderWithoutProvisionValue);
 
   const data = [

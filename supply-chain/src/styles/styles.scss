@@ -1,6 +1,12 @@
 @import "../../node_modules/@eto/eto-ui-components/dist/styles/colors.css";
 @import "../../node_modules/@eto/eto-ui-components/dist/styles/fonts.css";
 
+@media only percy {
+    .no-percy {
+        visibility: hidden;
+    }
+}
+
 body {
   padding: 0;
   margin: 0;
