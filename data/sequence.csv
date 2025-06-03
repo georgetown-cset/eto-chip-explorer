@@ -1,12 +1,12 @@
 input_name,input_id,goes_into_name,goes_into_id,is_type_of_name,is_type_of_id
-Crystal growing furnaces,N8,Wafer production,N26,,
-Crystal machining tools,N9,Wafer production,N26,,
+Crystal growing furnaces,N8,Wafer,N26,,
+Crystal machining tools,N9,Wafer,N26,,
 EUV lithography tools,N20,,,Lithography tools,N19
 ArF dry (DUV) lithography tools,N21,,,Lithography tools,N19
 ArF immersion (DUV) lithography tools,N22,,,Lithography tools,N19
 Lithography tools,N19,Photolithography,N25,,
-Ion implantation,N17,Chemical mechanical planarization,N57,,
-Etch and clean,N46,Ion implantation,N17,,
+Ion implantation,N16,Chemical mechanical planarization,N57,,
+Etch and clean,N46,Ion implantation,N16,,
 Maskless lithography tools,N28,,,Lithography tools,N19
 Mask Exposure Systems - E-Beam,N29,,,Maskless lithography tools,N28
 Mask Exposure Systems - Laser Beam,N30,,,Maskless lithography tools,N28
@@ -22,6 +22,7 @@ Physical vapor deposition tools,N42,,,Deposition tools,N36
 Rapid thermal processing tools,N43,,,Deposition tools,N36
 Tube-based diffusion and deposition tools,N44,,,Deposition tools,N36
 Electrochemical plating tools,N45,,,Deposition tools,N36
+Chip design,N0,Deposition,N35,,
 Deposition,N35,Photolithography,N25,,
 Photolithography,N25,Etch and clean,N46,,
 Chemical vapor deposition tools,N47,,,Deposition tools,N36
@@ -32,15 +33,15 @@ Insulator etching tools,N51,,,Dry etch tools,N103
 CMP tools,N86,Chemical mechanical planarization,N57,,
 Wafer handlers,N11,,,Wafer and photomask handling,N59
 Photomask handlers,N12,,,Wafer and photomask handling,N59
-Wafer bonding and aligning tools,N10,Wafer production,N26,,
+Wafer bonding and aligning tools,N10,Wafer,N26,,
 Process control and handling,N118,Deposition,N35,,
 Process control and handling,N118,Photolithography,N25,,
 Process control and handling,N118,Etch and clean,N46,,
 Process control and handling,N118,Chemical mechanical planarization,N57,,
-Process control and handling,N118,Ion implantation,N17,,
+Process control and handling,N118,Ion implantation,N16,,
 Wafer inspection tools,N61,,,Process control,N60
 Photomask inspection and repair tools,N62,,,Process control,N60
-Wafer level packaging inspection tools,N63,,,Process control,N60
+Wafer level packaging inspection tools,N63,,,Fabrication tools (for advanced packaging),N109
 Process monitoring tools,N64,,,Process control,N60
 "Film, stack, and shape metrology tools",N65,,,Wafer inspection tools,N61
 Critical dimensions metrology tools,N66,,,Wafer inspection tools,N61
@@ -63,12 +64,11 @@ Core intellectual property,N85,EDA and Core IP,N7,,
 Electronic design automation software,N84,EDA and Core IP,N7,,
 CMP materials,N90,Chemical mechanical planarization,N57,,
 Deposition materials,N88,Deposition,N35,,
-Electronic gases,N91,Assembly and packaging,N69,,
-General Chemicals and Gases,N117,Deposition,N35,,
-General Chemicals and Gases,N117,Photolithography,N25,,
-General Chemicals and Gases,N117,Etch and clean,N46,,
-General Chemicals and Gases,N117,Chemical mechanical planarization,N57,,
-General Chemicals and Gases,N117,Ion implantation,N17,,
+Fabrication Materials,N117,Deposition,N35,,
+Fabrication Materials,N117,Photolithography,N25,,
+Fabrication Materials,N117,Etch and clean,N46,,
+Fabrication Materials,N117,Chemical mechanical planarization,N57,,
+Fabrication Materials,N117,Ion implantation,N16,,
 Lead frames,N93,,,Packaging materials,N100
 Bond wires,N94,,,Packaging materials,N100
 Ceramic packages,N95,,,Packaging materials,N100
@@ -94,22 +94,35 @@ Dry stripping tools,N53,,,Dry etching and cleaning tools,N48
 Overlay metrology tools,N114,,,Wafer inspection tools,N61
 E-beam metrology tools,N115,,,Wafer inspection tools,N61
 Defect review stations,N116,,,Wafer inspection tools,N61
-Memory test tools,N79,Testing,N78,,
+Memory test tools,N79,,,Test tools,N120
 Fabrication tools (for advanced packaging),N109,Assembly and packaging,N69,,
-Etching tools (for adv. pkg.),N101,,,Fabrication tools (for advanced packaging),N109
-CVD tools (for adv. pkg.),N110,,,Fabrication tools (for advanced packaging),N109
-PVD tools (for adv. pkg.),N111,,,Fabrication tools (for advanced packaging),N109
-Spin-on deposition tools (for adv. pkg.),N112,,,Fabrication tools (for advanced packaging),N109
-ECP tools (for adv. pkg.),N113,,,Fabrication tools (for advanced packaging),N109
+Etching tools (adv. pkg.),N101,,,Fabrication tools (for advanced packaging),N109
+CVD tools (adv. pkg.),N110,,,Fabrication tools (for advanced packaging),N109
+PVD tools (adv. pkg.),N111,,,Fabrication tools (for advanced packaging),N109
+Spin-on deposition tools (adv. pkg.),N112,,,Fabrication tools (for advanced packaging),N109
+ECP tools (adv. pkg.),N113,,,Fabrication tools (for advanced packaging),N109
 Memory chip design,N5,Chip design,N0,,
 DAO chip design,N13,Chip design,N0,,
 Logic chip design,N6,Chip design,N0,,
 EDA and Core IP,N7,Chip design,N0,,
-Chip design,N0,Wafer production,N26,,
-Wafer production,N26,Deposition,N35,,
+Wafer,N26,Fabrication Materials,N117,,
 Wafer and photomask handling,N59,Process control and handling,N118,,
 Process control,N60,Process control and handling,N118,,
-Electronic gases,N91,General Chemicals and Gases,N117,,
-Wet chemicals,N92,General Chemicals and Gases,N117,,
+Electronic gases,N91,Fabrication Materials,N117,,
+Wet chemicals,N92,Fabrication Materials,N117,,
 Assembly tools,N119,Assembly and packaging,N69,,
 Test tools,N120,Testing,N78,,
+Ion implanters,N17,Ion implantation,N16,,
+Resist processing tools (adv. pkg.),N122,,,Fabrication tools (for advanced packaging),N109
+Mask Aligners,N123,,,Lithography tools,N19
+CMP tools (adv. pkg.),N124,,,Fabrication tools (for advanced packaging),N109
+Single Wafer Spin & Spray Systems (adv. pkg.),N125,,,Fabrication tools (for advanced packaging),N109
+ATP Materials,N121,Assembly and packaging,N69,,
+ATP Materials,N121,Testing,N78,,
+Electronic gases,N91,ATP Materials,N121,,
+Packaging materials,N100,ATP Materials,N121,,
+Process-specific Fabrication Materials,N126,Fabrication Materials,N117,,
+CMP materials,N90,,,Process-specific Fabrication Materials,N126
+Deposition materials,N88,,,Process-specific Fabrication Materials,N126
+Photomasks,N33,,,Process-specific Fabrication Materials,N126
+Photoresists,N31,,,Process-specific Fabrication Materials,N126
