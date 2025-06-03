@@ -41,7 +41,7 @@ STMicroelectronics,,P42,organization,CHE
 NXP,,P43,organization,NLD
 Kioxia,,P44,organization,JPN
 NLD,Netherlands,P45,country,
-MAL,Malaysia,P46,country,
+MYS,Malaysia,P46,country,
 SGP,Singapore,P47,country,
 ASE,,P48,organization,TWN
 Amkor,,P49,organization,USA
@@ -113,7 +113,7 @@ NAURA,,P115,organization,CHN
 Kokusai,Kokusai Electric,P116,organization,JPN
 ULVAC,,P117,organization,JPN
 KLA,,P118,organization,USA
-Mattson Tech,Mattson Technology,P119,organization,USA
+Mattson Tech,Mattson Technology,P119,organization,CHN
 AP Systems,,P120,organization,KOR
 Veeco,,P121,organization,USA
 Grand Process,Grand Plastic Technology,P122,organization,TWN
@@ -129,7 +129,7 @@ Revasum,,P131,organization,USA
 FRA,France,P132,country,
 ISR,Israel,P133,country,
 BLR,Belarus,P134,country,
-Bruker,"Bruker, AXS",P135,organization,DEU
+Bruker,"Bruker, AXS",P135,organization,USA
 Rigaku,Rigaku International,P136,organization,JPN
 Raintree Scientific Instruments (RSIC),RSIC Scientic Instrument,P137,organization,CHN
 Nanotronics,,P138,organization,USA
@@ -162,7 +162,7 @@ KOSES,,P168,organization,KOR
 TOWA,,P169,organization,JPN
 HANMI,,P170,organization,KOR
 Trinity Tech,Trinity Technology,P171,organization,CHN
-Grohmann,Grohmann Engineering,P172,organization,DEU
+Grohmann,Grohmann Engineering,P172,organization,USA
 CZE,Czech Republic,P173,country,
 CAN,Canada,P174,country,
 Advantest,,P175,organization,JPN
@@ -274,7 +274,7 @@ LG,,P288,organization,KOR
 Sumitomo,,P289,organization,JPN
 Mitsui High-Tec,,P290,organization,JPN
 Henkel,,P291,organization,DEU
-Toray,,P292,organization,JPN
+Toray,Toray Engineering,P292,organization,JPN
 Tanaka,,P294,organization,JPN
 Zhongwei,,P295,organization,CHN
 Yixing,,P296,organization,CHN
@@ -326,7 +326,7 @@ Precision Valve & Automation,"Precision Valve & Automation, Inc.(PVA)",P340,orga
 PSK,,P341,organization,KOR
 Semics,,P342,organization,KOR
 Semilab,,P343,organization,HUN
-Shenzhen Axxon Automation,"Shenzhen Axxon Automation Co.,Ltd",P344,organization,CHN
+Shenzhen Axxon Automation,"Shenzhen Axxon Automation Co.,Ltd",P344,organization,SWE
 Tensun,"Shenzhen Tensun Industrial Equipments Co., Ltd.",P345,organization,CHN
 ShibaSoku,,P346,organization,JPN
 Shibaura Mechatronics,,P347,organization,JPN
@@ -355,3 +355,6 @@ Trion Technology,,P369,organization,USA
 Onto Innovation,Rudolph Technologies,P139,organization,USA
 Onto Innovation,Nanometrics,P139,organization,USA
 Various companies,,P370,organization,
+LUX,Luxembourg,P371,country,
+Ushio,,P372,organization,JPN
+Panasonic,Panasonic Factory Solutions,P373,organization,JPN
