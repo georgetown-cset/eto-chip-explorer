@@ -8,7 +8,7 @@
   font-family: GTZirkonLight;
   font-size: 1.25rem;
   font-weight: 900;
-  margin: 10px 0 0;
+  margin: 1em 0 0;
 
   svg {
     vertical-align: text-bottom;
@@ -28,10 +28,6 @@
   font-size: 0.9rem;
 }
 
-
-.provider-graph .graph-wrapper {
-  padding-bottom: 10px;
-}
 
 .provider-graph .js-plotly-plot {
   height: 450px;

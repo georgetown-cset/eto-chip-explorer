@@ -70,7 +70,8 @@ const InputDetail = (props) => {
       />
 
       <ProviderGraph
-        // TODO - Jacob - do you want market share caption/sources?
+        marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
+        marketShareSource={nodeToMeta[selectedNode].market_chart_source}
         providers={orgList}
         title={ <><CorporateFareIcon /> Supplier companies</> }
         tooltip={tooltips.providers.orgs}
