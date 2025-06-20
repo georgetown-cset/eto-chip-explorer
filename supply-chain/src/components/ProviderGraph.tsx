@@ -83,9 +83,11 @@ const ProviderGraph = ({
     },
   ];
 
-  const plotlyDefaults = PlotlyDefaults();
-  plotlyDefaults.layout.margin = {t: 25, r: 30, b: 40, l: 120, pad: 4};
-  plotlyDefaults.layout.xaxis.title = "Share of global market";
+  const plotlyConfig = PlotlyDefaults();
+  plotlyConfig.layout.margin = {t: 25, r: 30, b: 40, l: 120, pad: 4};
+  plotlyConfig.layout.xaxis.title = "Share of global market";
+  plotlyConfig.layout.yaxis.automargin = true;
+  plotlyConfig.layout.yaxis.dtick = 1;
 
   return (
     <div className="provider-graph">
@@ -100,8 +102,8 @@ const ProviderGraph = ({
             <Suspense fallback={<div>Loading graph...</div>}>
               <Plot
                 data={data}
-                layout={plotlyDefaults.layout}
-                config={plotlyDefaults.config}
+                layout={plotlyConfig.layout}
+                config={plotlyConfig.config}
               />
             </Suspense>
           </div>
