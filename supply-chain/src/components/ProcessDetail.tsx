@@ -1,5 +1,8 @@
 import React from "react";
+import Typography from "@mui/material/Typography";
 import ReactMarkdown from 'react-markdown'
+
+import { nodeToMeta } from "../../data/graph";
 import mdxComponents from "../helpers/mdx_style";
 import ProviderTable from "./ProviderTable";
 import tooltips from "../helpers/tooltips";
@@ -13,12 +16,14 @@ export interface ProcessDetailProps {
     hq_flag: string;
     hq_country: string;
   }>;
+  selectedNode: string;
 }
 
 const ProcessDetail = ({
   description,
   orgs = {},
   orgMeta,
+  selectedNode,
 }: ProcessDetailProps) => {
   const orgList = Object.keys(orgs).map(org => ({
     provider: orgMeta[org].name,
@@ -31,6 +36,11 @@ const ProcessDetail = ({
       className="process-detail"
     >
       <ReactMarkdown components={mdxComponents}>{description}</ReactMarkdown>
+      {nodeToMeta[selectedNode]?.total_market_size &&
+        <Typography component="p">
+          <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}
+        </Typography>
+      }
       <ProviderTable
         caption="Notable supplier companies"
         providers={orgList}
