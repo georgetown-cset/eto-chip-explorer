@@ -146,7 +146,9 @@ const DocumentationNode = (props) => {
                 selectedNode={currSelectedNode}
                 updateSelected={updateSelected}
                 variantCountries={nodeVariantsToCountryProvision}
-                variantOrgs={nodeVariantsToOrgProvision} /> :
+                variantOrgs={nodeVariantsToOrgProvision}
+              />
+            :
               <ProcessDetail
                 description={description}
                 orgs={nodeToOrgProvision[currSelectedNode]}
