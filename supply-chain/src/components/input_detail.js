@@ -61,21 +61,25 @@ const InputDetail = (props) => {
           <span className="bold">Global market size: </span> {nodeToMeta[selectedNode].total_market_size}
         </Typography>
       }
-      <ProviderGraph
-        marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
-        marketShareSource={nodeToMeta[selectedNode].market_chart_source}
-        providers={countryList}
-        title={<><PublicIcon /> Supplier countries</>}
-        tooltip={tooltips.providers.countries}
-      />
+      {countryList?.length > 0 &&
+        <ProviderGraph
+          marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
+          marketShareSource={nodeToMeta[selectedNode].market_chart_source}
+          providers={countryList}
+          title={<><PublicIcon /> Supplier countries</>}
+          tooltip={tooltips.providers.countries}
+        />
+      }
+      {orgList?.length > 0 &&
+        <ProviderGraph
+          marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
+          marketShareSource={nodeToMeta[selectedNode].market_chart_source}
+          providers={orgList}
+          title={ <><CorporateFareIcon /> Supplier companies</> }
+          tooltip={tooltips.providers.orgs}
+        />
+      }
 
-      <ProviderGraph
-        marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
-        marketShareSource={nodeToMeta[selectedNode].market_chart_source}
-        providers={orgList}
-        title={ <><CorporateFareIcon /> Supplier companies</> }
-        tooltip={tooltips.providers.orgs}
-      />
       {variants[selectedNode] &&
         <div>
           <VariantsList
@@ -86,16 +90,20 @@ const InputDetail = (props) => {
             parent={parent}
             updateSelected={updateSelected}
           />
-          <ProviderTable
-            caption={<><PublicIcon /> Supplier countries</>}
-            providers={variantCountryList}
-            tooltip={tooltips.providers.countries}
-          />
-          <ProviderTable
-            caption={ <><CorporateFareIcon /> Supplier companies</> }
-            providers={variantOrgList}
-            tooltip={tooltips.providers.orgs}
-          />
+          {!(countryList?.length > 0) &&
+            <ProviderTable
+              caption={<><PublicIcon /> Supplier countries</>}
+              providers={variantCountryList}
+              tooltip={tooltips.providers.countries}
+            />
+          }
+          {!(orgList?.length > 0) &&
+            <ProviderTable
+              caption={ <><CorporateFareIcon /> Supplier companies</> }
+              providers={variantOrgList}
+              tooltip={tooltips.providers.orgs}
+            />
+          }
         </div>
       }
     </div>
