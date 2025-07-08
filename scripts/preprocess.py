@@ -59,6 +59,10 @@ COUNTRY_MAPPING = {
     "Various countries": "Various countries",
 }
 
+MANUAL_FLAG_MAPPING = {
+    "EUR": "🇪🇺",
+}
+
 MAJOR_PROVISION = "Major"
 MINOR_PROVISION = "negligible"
 HIGH_PROVISION = "high"
@@ -230,7 +234,10 @@ class Preprocess:
             country = pycountry.countries.lookup(country_name)
             return country.flag
         except LookupError:
-            return None
+            if country_name in MANUAL_FLAG_MAPPING:
+                return MANUAL_FLAG_MAPPING[country_name]
+            else:
+                return None
 
     @staticmethod
     def get_country(raw_country_name: str) -> str:
