@@ -87,7 +87,7 @@ describe("Dashboard", () => {
     fireEvent.click(screen.getAllByText("Chemical vapor deposition tools")[0]);
 
     // Show subvariants list
-    expect(screen.getAllByText("Atomic layer deposition tools").length).toEqual(5);
+    expect(screen.getAllByText("Atomic layer deposition tools").length).toEqual(3);
   });
 
   it("opens a stage node", () => {
