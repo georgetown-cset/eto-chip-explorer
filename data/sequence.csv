@@ -33,7 +33,7 @@ Insulator etching tools,N51,,,Dry etch tools,N103
 CMP tools,N86,Chemical mechanical planarization,N57,,
 Wafer handlers,N11,,,Wafer and photomask handlers,N59
 Photomask handlers,N12,,,Wafer and photomask handlers,N59
-Wafer bonding and aligning tools,N10,Wafer,N26,Fabrication tools (for advanced packaging),N109
+Wafer bonding and aligning tools,N10,,,Fabrication tools (for advanced packaging),N109
 Process control and handling,N118,Photolithography,N25,,
 Process control and handling,N118,Etch and clean,N46,,
 Process control and handling,N118,Chemical mechanical planarization,N57,,
@@ -83,7 +83,7 @@ AI ASICs,N4,,,Logic chip design,N6
 Imprint lithography,N107,,,Lithography tools,N19
 KrF (DUV) lithography tools,N105,,,Lithography tools,N19
 i-line lithography tools,N106,,,Lithography tools,N19
-Direct write systems,N108,,,Lithography tools,N19
+Direct write systems,N108,,,Maskless lithography tools,N28
 Plasma modification tools,N104,,,Deposition tools,N36
 Dry etch tools,N103,,,Dry etching and cleaning tools,N48
 Dry clean tools,N102,,,Dry etching and cleaning tools,N48
