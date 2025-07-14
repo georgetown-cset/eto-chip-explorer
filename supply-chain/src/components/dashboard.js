@@ -3,7 +3,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import {InfoCard, Autocomplete, Dropdown, HelpTooltip, UserFeedback} from "@eto/eto-ui-components";
+import {
+  Autocomplete,
+  Dropdown,
+  ExternalLink,
+  HelpTooltip,
+  InfoCard,
+  UserFeedback,
+} from "@eto/eto-ui-components";
 import {useXarrow} from "react-xarrows";
 
 import Map from "./map";
@@ -434,18 +441,40 @@ const Dashboard = () => {
   /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
 
+  const docsAndBlogLinks = [
+    <>
+      <strong>Learn more:</strong> {
+        <ExternalLink href="https://eto.tech/tool-docs/chipexplorer">
+          Documentation
+        </ExternalLink>
+      }
+    </>,
+    <>
+      Blog post: {
+        <ExternalLink href="https://eto.tech/blog/updated-supply-chain-explorer/">
+          Updated Supply Chain Explorer for Advanced Semiconductors
+        </ExternalLink>
+      }
+    </>,
+    <ExternalLink href="https://eto.tech/blog/?tag=Supply%20Chain%20Explorer">
+      All Explorer blog posts
+    </ExternalLink>,
+  ];
+
   return (<>
     <div style={{maxWidth: "1500px"}}>
       <InfoCard
-        title={"Supply Chain Explorer"}
+        title="Supply Chain Explorer"
         description={
           <div>
             ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
             <Typography component={"div"} style={{paddingTop: "15px"}}>
-            <strong>Learn more:</strong> <a href="https://eto.tech/tool-docs/chipexplorer" target="_blank" rel="noopener">Documentation</a><span style={{padding: "0px 10px"}}>|</span>Blog post: <a href="https://eto.tech/blog/five-takeaways-chip-supply-chain" target="_blank" rel="noopener">Five quick takeaways on the chip supply chain</a><span style={{padding: "0px 10px"}}>|</span><a href="https://eto.tech/blog/?tag=Supply%20Chain%20Explorer" target="_blank" rel="noopener">All Explorer blog posts</a>
-            <p className="no-percy">
-              Last updated on {data.site.buildTime}.
-            </p>
+              <div>
+                {docsAndBlogLinks.reduce((prev, curr) => [prev, <span style={{padding: "0px 10px"}}>|</span>, curr])}
+              </div>
+              <p className="no-percy">
+                Last updated on {data.site.buildTime}.
+              </p>
             </Typography>
           </div>
         }
