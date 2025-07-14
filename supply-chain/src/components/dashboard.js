@@ -444,7 +444,7 @@ const Dashboard = () => {
             <Typography component={"div"} style={{paddingTop: "15px"}}>
             <strong>Learn more:</strong> <a href="https://eto.tech/tool-docs/chipexplorer" target="_blank" rel="noopener">Documentation</a><span style={{padding: "0px 10px"}}>|</span>Blog post: <a href="https://eto.tech/blog/five-takeaways-chip-supply-chain" target="_blank" rel="noopener">Five quick takeaways on the chip supply chain</a><span style={{padding: "0px 10px"}}>|</span><a href="https://eto.tech/blog/?tag=Supply%20Chain%20Explorer" target="_blank" rel="noopener">All Explorer blog posts</a>
             <p className="no-percy">
-              Last updated on {data.site.buildTime}. Underlying data originally published in 2021.
+              Last updated on {data.site.buildTime}.
             </p>
             </Typography>
           </div>
