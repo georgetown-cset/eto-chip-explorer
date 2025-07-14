@@ -1,4 +1,4 @@
-const countryProvision={"United States": {"S1": 61, "S2": 27}};
+const countryProvision={"United States": {"S1": 61.0, "S2": 27.0}};
 const countryFlags={"United States": "\ud83c\uddfa\ud83c\uddf8"};
 const countryProvisionConcentration={"S1": 1, "S2": 1};
 const orgProvision={"P9": {"N1": "Major"}};

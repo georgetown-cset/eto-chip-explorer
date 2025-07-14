@@ -1,0 +1,35 @@
+
+.provider-table {
+  margin-top: 20px;
+}
+
+.provider-graph h5,
+.provider-table h5 {
+  font-family: GTZirkonLight;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 1em 0 0;
+
+  svg {
+    vertical-align: text-bottom;
+  }
+}
+
+.provider-table table {
+  margin-top: 0.25rem;
+}
+
+.provider-table table .helptooltip {
+  vertical-align: text-bottom;
+}
+
+.provider-table td {
+  font-family: GTZirkonLight;
+  font-size: 0.9rem;
+}
+
+
+.provider-graph .js-plotly-plot {
+  height: 450px;
+  width: 100%;
+}

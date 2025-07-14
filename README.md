@@ -12,7 +12,7 @@ To run the webapp,
 
 * `cd supply-chain`
 * `npm install`
-* `gatsby develop`
+* `npm run develop`
 
 To run the Jest tests, run `npm run test`.
 

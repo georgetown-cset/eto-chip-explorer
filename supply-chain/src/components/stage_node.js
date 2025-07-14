@@ -16,13 +16,13 @@ const StageNode = (props) => {
           textAlign: "left",
         }}
       >
-        <Typography component={"h3"}
+        <Typography component={"h2"}
           style={{
             textAlign: "left",
             paddingLeft: "5px",
             display: "inline-block",
         }}>
-          {nodeToMeta[stage]["name"]}
+          {nodeToMeta[stage]?.["name"]}
         </Typography>
         <Button
           style={{
