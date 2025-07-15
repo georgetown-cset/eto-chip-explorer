@@ -1,7 +1,7 @@
 name: Deployment
 on:
   push:
-    branches: 'update-2025'
+    branches: 'main'
 
 jobs:
   build:
