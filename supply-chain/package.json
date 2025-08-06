@@ -29,7 +29,7 @@
     "@mdx-js/react": "^2.1.13",
     "@mui/icons-material": "^5.17.1",
     "@mui/material": "^5.17.1",
-    "gatsby": "^5.14.1",
+    "gatsby": "^5.14.6",
     "gatsby-plugin-emotion": "^8.4.0",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-mdx": "^5.11.0",
