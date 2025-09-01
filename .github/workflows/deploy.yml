@@ -65,7 +65,7 @@ jobs:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-cd-github@gcp-cset-projects.iam.gserviceaccount.com'
     - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v2'
+      uses: 'google-github-actions/setup-gcloud@v3'
     - name: 'Copy built assets to cloud'
       id: 'gcloud'
       working-directory: supply-chain
