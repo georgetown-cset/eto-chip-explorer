@@ -13,13 +13,13 @@ jobs:
       id-token: 'write'
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Get current date
       id: date
       run: echo "today=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
     - name: 'Authenticate to Google Cloud - building'
       id: 'auth_build'
-      uses: 'google-github-actions/auth@v2'
+      uses: 'google-github-actions/auth@v3'
       with:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-artifact-registry-github@gcp-cset-projects.iam.gserviceaccount.com'
@@ -31,7 +31,7 @@ jobs:
         username: 'oauth2accesstoken'
         password: '${{ steps.auth_build.outputs.access_token }}'
     - name: Setup node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: '22'
     - name: 'Cache node_modules'
@@ -60,12 +60,12 @@ jobs:
         gatsby build
     - name: 'Authenticate to Google Cloud - deployment'
       id: 'auth_deploy'
-      uses: 'google-github-actions/auth@v2'
+      uses: 'google-github-actions/auth@v3'
       with:
         workload_identity_provider: 'projects/855475113448/locations/global/workloadIdentityPools/eto-github/providers/eto-github'
         service_account: 'eto-cd-github@gcp-cset-projects.iam.gserviceaccount.com'
     - name: 'Set up Cloud SDK'
-      uses: 'google-github-actions/setup-gcloud@v2'
+      uses: 'google-github-actions/setup-gcloud@v3'
     - name: 'Copy built assets to cloud'
       id: 'gcloud'
       working-directory: supply-chain
