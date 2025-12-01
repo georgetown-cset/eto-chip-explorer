@@ -45,7 +45,7 @@ jobs:
         npm run artifactregistry-login
         npm install --force
     - name: Set up Python 3.10
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: "3.10.15"
     - name: Build data files
