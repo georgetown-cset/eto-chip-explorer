@@ -47,7 +47,7 @@ jobs:
         username: 'oauth2accesstoken'
         password: '${{ steps.auth.outputs.access_token }}'
     - name: Setup node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: '22'
     - name: Install dependencies
