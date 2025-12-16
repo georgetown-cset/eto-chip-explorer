@@ -18,6 +18,7 @@ import { nodeToMeta, variants } from "../../data/graph";
 import {countryProvision, countryProvisionConcentration, orgProvision, providerMeta} from "../../data/provision";
 import {FILTER_INPUT, FILTER_CONCENTRATION, FILTER_COUNTRY, FILTER_ORG} from "../helpers/shared";
 import tooltips from "../helpers/tooltips";
+import "./Dashboard.css";
 
 export const FILTER_CHOOSE = "filter-choose";
 const DROPDOWN_FILTERS = [FILTER_INPUT, FILTER_COUNTRY, FILTER_ORG];
@@ -464,10 +465,27 @@ const Dashboard = () => {
   return (<>
     <div style={{maxWidth: "1500px"}}>
       <InfoCard
-        title="Supply Chain Explorer"
+        title="Supply Chain Explorer: Semiconductors"
         description={
-          <div>
-            ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players, and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
+          <>
+            <p>
+              ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players,
+              and relationships involved in producing semiconductor devices (i.e. chips), including AI chips. Use the
+              Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes
+              involved in the supply chain.
+
+              ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players,
+              and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
+            </p>
+
+            <p className="eto-description">
+              ETO is a project of the {
+                <ExternalLink href="https://cset.georgetown.edu/">Center for Security and Emerging Technology</ExternalLink>
+              } at <ExternalLink href="https://www.georgetown.edu/">Georgetown University</ExternalLink>. The
+              Supply Chain Explorer is maintained by CSET’s {
+                <ExternalLink href="https://cset.georgetown.edu/research-topic/data/">data</ExternalLink>
+              } and <ExternalLink href="https://cset.georgetown.edu/research-topics">analysis</ExternalLink> teams.
+            </p>
             <Typography component={"div"} style={{paddingTop: "15px"}}>
               <div>
                 {docsAndBlogLinks.reduce((prev, curr) => [prev, <span style={{padding: "0px 10px"}}>|</span>, curr])}
@@ -476,7 +494,7 @@ const Dashboard = () => {
                 Last updated on {data.site.buildTime}.
               </p>
             </Typography>
-          </div>
+          </>
         }
         documentationLink="https://eto.tech/tool-docs/chipexplorer/"
         headingComponent="h1"

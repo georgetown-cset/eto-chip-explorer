@@ -4,7 +4,7 @@ import { userEventSetup } from '../../util/testing';
 
 import Dashboard, {
   GradientLegend
-} from "../dashboard";
+} from "../Dashboard";
 import {FILTER_INPUT, FILTER_COUNTRY} from "../../helpers/shared";
 
 window.URL.createObjectURL = jest.fn();
