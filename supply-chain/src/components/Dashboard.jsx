@@ -465,7 +465,7 @@ const Dashboard = () => {
   return (<>
     <div style={{maxWidth: "1500px"}}>
       <InfoCard
-        title="Supply Chain Explorer"
+        title="Supply Chain Explorer: Semiconductors"
         description={
           <>
             <p>
