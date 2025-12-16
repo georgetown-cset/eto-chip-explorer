@@ -10,3 +10,4 @@ index 52d011c..5b29f5a 100644
 +    location: { configurable: true },
      top: { configurable: false }
    });
+ 
