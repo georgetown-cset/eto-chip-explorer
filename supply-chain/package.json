@@ -7,6 +7,7 @@
     "gatsby"
   ],
   "scripts": {
+    "postinstall": "patch-package",
     "develop": "gatsby develop -p 8530",
     "start": "gatsby develop -p 8530",
     "build": "gatsby build",
@@ -48,19 +49,20 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.28.5",
     "@percy/cli": "^1.30.11",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "@types/react": "^19.1.4",
-    "babel-jest": "^29.7.0",
+    "babel-jest": "^30.2.0",
     "babel-preset-gatsby": "^2.22.1",
     "eslint": "^8.57.1",
     "eslint-config-react-app": "^7.0.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^29.7.0",
+    "jest": "^30.2.0",
     "jest-canvas-mock": "^2.5.2",
-    "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "patch-package": "^8.0.1",
     "react-test-renderer": "^18.2.0",
     "typescript": "^5.9.3"
   }
