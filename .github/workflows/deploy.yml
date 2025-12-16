@@ -31,7 +31,7 @@ jobs:
         username: 'oauth2accesstoken'
         password: '${{ steps.auth_build.outputs.access_token }}'
     - name: Setup node
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: '22'
     - name: 'Cache node_modules'
@@ -45,7 +45,7 @@ jobs:
         npm run artifactregistry-login
         npm install --force
     - name: Set up Python 3.10
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: "3.10.15"
     - name: Build data files
@@ -73,7 +73,7 @@ jobs:
         gsutil -m cp -r public gs://eto-cd/supply-chain/${{ steps.date.outputs.today }}
     - name: 'Copy built assets to compute engine'
       id: 'compute-ssh'
-      uses: 'google-github-actions/ssh-compute@v1'
+      uses: 'google-github-actions/ssh-compute@v2'
       with:
         instance_name: 'semi-supply-chain-dev'
         zone: 'us-east1-c'
