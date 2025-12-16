@@ -19,7 +19,7 @@ const theme = createTheme({
 });
 
 
-const Dashboard = React.lazy(() => import("../components/dashboard"));
+const Dashboard = React.lazy(() => import("../components/Dashboard"));
 
 const IndexPage = () => {
   return (
