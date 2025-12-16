@@ -75,7 +75,7 @@ jobs:
       id: 'compute-ssh'
       uses: 'google-github-actions/ssh-compute@v2'
       with:
-        instance_name: 'semi-supply-chain-dev'
+        instance_name: 'eto-supply-chain-staging'
         zone: 'us-east1-c'
         project_id: 'gcp-cset-projects'
         user: 'eto-cd-github'
