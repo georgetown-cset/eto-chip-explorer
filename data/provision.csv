@@ -979,44 +979,44 @@ Zeiss,P98,Photomask inspection and repair tools,N62,10.1,2025,"CSET analysis of 
 CHN,P2,"Assembly, testing, and packaging (ATP)",S3,30.0,2022,
 CHN,P2,Fabrication,S2,24.0,2022,
 CHN,P2,Design,S1,6.0,2022,
-CHN,P2,Chip design,N0,5.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+CHN,P2,Logic chip design,N6,5.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 CHN,P2,Memory chip design,N5,3.0,2022,Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
 CHN,P2,DAO chip design,N13,9.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 DEU,P32,Crystal growing furnaces,N8,100.0,2022,"CSET analysis of TechInsights data (2022). Data used for analysis were published by TechInsights on July 3, 2026."
 EUR,P312,"Assembly, testing, and packaging (ATP)",S3,3.0,2022,
 EUR,P312,Fabrication,S2,8.0,2022,
 EUR,P312,Design,S1,10.0,2022,
-EUR,P312,Chip design,N0,9.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+EUR,P312,Logic chip design,N6,9.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 EUR,P312,DAO chip design,N13,17.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 JPN,P7,"Assembly, testing, and packaging (ATP)",S3,6.0,2022,
 JPN,P7,Fabrication,S2,17.0,2022,
 JPN,P7,Design,S1,9.0,2022,
-JPN,P7,Chip design,N0,4.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+JPN,P7,Logic chip design,N6,4.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 JPN,P7,Memory chip design,N5,7.0,2022,Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
 JPN,P7,DAO chip design,N13,18.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 KOR,P4,"Assembly, testing, and packaging (ATP)",S3,9.0,2022,
 KOR,P4,Fabrication,S2,17.0,2022,
 KOR,P4,Design,S1,13.0,2022,
-KOR,P4,Chip design,N0,3.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+KOR,P4,Logic chip design,N6,3.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 KOR,P4,Memory chip design,N5,60.0,2022,Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
 KOR,P4,DAO chip design,N13,4.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 PVA TePla,P58,Crystal growing furnaces,N8,100.0,2022,"CSET analysis of TechInsights data (2022). Data used for analysis were published by TechInsights on July 3, 2026."
 TWN,P8,"Assembly, testing, and packaging (ATP)",S3,28.0,2022,
 TWN,P8,Fabrication,S2,18.0,2022,
 TWN,P8,Design,S1,8.0,2022,
-TWN,P8,Chip design,N0,11.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+TWN,P8,Logic chip design,N6,11.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 TWN,P8,Memory chip design,N5,4.0,2022,Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
 TWN,P8,DAO chip design,N13,5.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 USA,P1,"Assembly, testing, and packaging (ATP)",S3,3.0,2022,
 USA,P1,Fabrication,S2,10.0,2022,
 USA,P1,Design,S1,51.0,2022,
-USA,P1,Chip design,N0,65.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+USA,P1,Logic chip design,N6,65.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 USA,P1,Memory chip design,N5,25.0,2022,Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
 USA,P1,DAO chip design,N13,41.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 Various countries,P5,"Assembly, testing, and packaging (ATP)",S3,20.0,2022,
 Various countries,P5,Fabrication,S2,7.0,2022,
 Various countries,P5,Design,S1,4.0,2022,
-Various countries,P5,Chip design,N0,4.0,2022,Worldwide semiconductor sales. [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
+Various countries,P5,Logic chip design,N6,4.0,2022,"Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 Various countries,P5,Memory chip design,N5,1.0,2022,Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).
 Various countries,P5,DAO chip design,N13,6.0,2022,"Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS)."
 AccoTEST,P182,Linear and discrete testing tools,N82,40.8,2021,"CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026."
@@ -1037,12 +1037,12 @@ Various companies,P370,Linear and discrete testing tools,N82,2.5,2021,"CSET anal
 Various countries,P5,Linear and discrete testing tools,N82,1.7,2021,"CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026."
 AKM,P302,Substrates,N96,,2019,
 AMD,P10,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-AMD,P10,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 AMD,P10,Discrete GPUs,N2,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
+AMD,P10,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 ARM,P198,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 ASM Pacific,P145,Lead frames,N93,,2019,
-Achronix,P20,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 Achronix,P20,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
+Achronix,P20,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 Air Liquide,P257,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 Air Products,P256,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 Alent,P286,Ceramic packages,N95,,2019,
@@ -1051,28 +1051,28 @@ Anji,P245,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication
 Ansys,P188,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 Arcas-da,P197,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 Avantor,P269,Wet chemicals,N92,,2019,
-BASF,P260,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 BASF,P260,Wet chemicals,N92,,2019,
 BASF,P260,Ceramic packages,N95,,2019,
-CHN,P2,Lead frames,N93,,2019,
-CHN,P2,Discrete GPUs,N2,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-CHN,P2,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-CHN,P2,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
+BASF,P260,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 CHN,P2,AI ASICs,N4,,2019,
-CHN,P2,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-CHN,P2,Electronic design automation software,N84,1.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
-CHN,P2,Core intellectual property,N85,2.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
-CHN,P2,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-CHN,P2,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 CHN,P2,Wet chemicals,N92,,2019,
-CHN,P2,Wafer,N26,4.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
-CHN,P2,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-CHN,P2,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+CHN,P2,Lead frames,N93,,2019,
 CHN,P2,Bond wires,N94,,2019,
 CHN,P2,Ceramic packages,N95,,2019,
 CHN,P2,Substrates,N96,,2019,
 CHN,P2,Encapsulation resins,N97,,2019,
 CHN,P2,Die attach materials,N98,,2019,
+CHN,P2,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+CHN,P2,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+CHN,P2,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+CHN,P2,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+CHN,P2,Wafer,N26,4.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
+CHN,P2,Electronic design automation software,N84,1.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
+CHN,P2,Core intellectual property,N85,2.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
+CHN,P2,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
+CHN,P2,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
+CHN,P2,Discrete GPUs,N2,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
+CHN,P2,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 CHN,P2,Wafer inspection tools,N61,,2019,
 CHN,P2,Packaging materials,N100,,2019,
 CMC,P244,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
@@ -1081,16 +1081,15 @@ Cadence,P186,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetow
 Cambricon,P26,AI ASICs,N4,,2019,
 Cerebras,P23,AI ASICs,N4,,2019,
 Ceva,P201,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
-DEU,P32,,N68,,2019,
-DEU,P32,Wafer,N26,14.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
-DEU,P32,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-DEU,P32,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
-DEU,P32,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 DEU,P32,Wet chemicals,N92,,2019,
-DEU,P32,Ceramic packages,N95,,2019,
 DEU,P32,Bond wires,N94,,2019,
+DEU,P32,Ceramic packages,N95,,2019,
 DEU,P32,Encapsulation resins,N97,,2019,
 DEU,P32,Die attach materials,N98,,2019,
+DEU,P32,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+DEU,P32,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+DEU,P32,Wafer,N26,14.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
+DEU,P32,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 DEU,P32,Wafer inspection tools,N61,,2019,
 DEU,P32,Packaging materials,N100,,2019,
 Dai Nippon,P238,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
@@ -1110,10 +1109,10 @@ Fujifilm,P209,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publicat
 Fujifilm,P209,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Fujimi,P219,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 GBR,P110,AI ASICs,N4,,2019,
-GBR,P110,Core intellectual property,N85,43.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 GBR,P110,Ceramic packages,N95,,2019,
-GBR,P110,Electronic design automation software,N84,1.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
+GBR,P110,Core intellectual property,N85,43.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 GBR,P110,Packaging materials,N100,,2019,
+GBR,P110,Electronic design automation software,N84,1.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 GlobalFoundries,P36,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 GlobalWafers,P226,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 Google,P22,AI ASICs,N4,,2019,
@@ -1128,13 +1127,12 @@ Henkel,P291,Encapsulation resins,N97,,2019,
 Henkel,P291,Die attach materials,N98,,2019,
 Heraeus,P277,Bond wires,N94,,2019,
 HiSilicon,P17,AI ASICs,N4,,2019,
-Hitachi,P97,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Hitachi,P97,Ceramic packages,N95,,2019,
 Hitachi,P97,Encapsulation resins,N97,,2019,
 Hitachi,P97,Die attach materials,N98,,2019,
-Hitachi,P97,,N68,,2019,
-Honeywell,P248,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+Hitachi,P97,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Honeywell,P248,Wet chemicals,N92,,2019,
+Honeywell,P248,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Horizon Robotics,P27,AI ASICs,N4,,2019,
 Hoya Corporation,P241,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Huada Empyrean,P191,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
@@ -1145,29 +1143,28 @@ ISR,P133,Electronic design automation software,N84,1.0,2019,"[CSET](https://cset
 Ibiden,P297,Substrates,N96,,2019,
 Imagination Technologies,P200,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 Inpria,P214,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+Intel,P9,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Intel,P9,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 Intel,P9,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-Intel,P9,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Intellifusion,P28,AI ASICs,N4,,2019,
-JHM,P218,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 JHM,P218,Wet chemicals,N92,,2019,
-JPN,P7,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+JHM,P218,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+JPN,P7,Wet chemicals,N92,,2019,
+JPN,P7,Lead frames,N93,,2019,
+JPN,P7,Bond wires,N94,,2019,
 JPN,P7,Ceramic packages,N95,,2019,
+JPN,P7,Substrates,N96,,2019,
 JPN,P7,Encapsulation resins,N97,,2019,
 JPN,P7,Die attach materials,N98,,2019,
-JPN,P7,,N68,,2019,
-JPN,P7,Lead frames,N93,,2019,
-JPN,P7,Substrates,N96,,2019,
 JPN,P7,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-JPN,P7,Wafer,N26,56.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 JPN,P7,Photomasks,N33,53.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 JPN,P7,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+JPN,P7,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+JPN,P7,Wafer,N26,56.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 JPN,P7,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
-JPN,P7,Wet chemicals,N92,,2019,
-JPN,P7,Bond wires,N94,,2019,
 JPN,P7,Wafer inspection tools,N61,,2019,
-JPN,P7,Electronic design automation software,N84,3.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 JPN,P7,Packaging materials,N100,,2019,
+JPN,P7,Electronic design automation software,N84,3.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 JRH,P230,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 JSR,P206,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 JSR,P206,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
@@ -1176,12 +1173,12 @@ Jingjia Micro,P12,Discrete GPUs,N2,,2019,"[CSET](https://cset.georgetown.edu/pub
 Jinhong,P266,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 KFMI,P252,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 KMG Chemicals,P268,Wet chemicals,N92,,2019,
-KOR,P4,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
-KOR,P4,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+KOR,P4,Ceramic packages,N95,,2019,
 KOR,P4,Substrates,N96,,2019,
 KOR,P4,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+KOR,P4,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 KOR,P4,Wafer,N26,10.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
-KOR,P4,Ceramic packages,N95,,2019,
+KOR,P4,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 KOR,P4,Packaging materials,N100,,2019,
 Kangqiang,P281,Lead frames,N93,,2019,
 Kangqiang,P281,Bond wires,N94,,2019,
@@ -1204,7 +1201,6 @@ Mitsui High-Tec,P290,Ceramic packages,N95,,2019,
 NGK,P285,Ceramic packages,N95,,2019,
 NLD,P45,Wafer inspection tools,N61,,2019,
 NanYa,P298,Substrates,N96,,2019,
-Nanotronics,P138,,N68,,2019,
 Nata Opto-electronic Material,P217,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Nata Opto-electronic Material,P217,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 Ningbo Hualong,P309,Lead frames,N93,,2019,
@@ -1214,7 +1210,6 @@ Okmetic,P229,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-
 PDF Solutions,P190,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 PERIC,P267,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 POSHING,P236,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
-PVA TePla,P58,,N68,,2019,
 Photronics,P239,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Phytium,P15,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 Platform-da,P195,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
@@ -1234,14 +1229,14 @@ SMIC,P37,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the
 SST,P199,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 SUMCO,P225,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 Saint-Gobain,P220,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-Samsung,P35,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Samsung,P35,Substrates,N96,,2019,
+Samsung,P35,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Semitronix,P194,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 Shennan Circuits,P300,Substrates,N96,,2019,
 Shenzhen Newway,P205,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Shenzhen Pango,P30,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-Shin-Etsu,P208,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 Shin-Etsu,P208,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+Shin-Etsu,P208,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 Shinko,P299,Lead frames,N93,,2019,
 Shinko,P299,Substrates,N96,,2019,
 Showa Denka,P262,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
@@ -1251,45 +1246,43 @@ Simgui,P234,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-s
 Sinopaco,P303,Encapsulation resins,N97,,2019,
 Sinophorus,P273,Wet chemicals,N92,,2019,
 Sinyang,P274,Wet chemicals,N92,,2019,
-Sumitomo,P289,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Sumitomo,P289,Ceramic packages,N95,,2019,
 Sumitomo,P289,Encapsulation resins,N97,,2019,
 Sumitomo,P289,Die attach materials,N98,,2019,
+Sumitomo,P289,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Sunway,P31,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 Synopsys,P185,Electronic design automation software,N84,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 Synopsys,P185,Core intellectual property,N85,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 TNSC,P261,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
 TSMC,P34,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-TWN,P8,Photomasks,N33,7.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-TWN,P8,Core intellectual property,N85,1.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
-TWN,P8,Wafer,N26,16.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 TWN,P8,Substrates,N96,,2019,
+TWN,P8,Photomasks,N33,7.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+TWN,P8,Wafer,N26,16.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
+TWN,P8,Core intellectual property,N85,1.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 TWN,P8,Packaging materials,N100,,2019,
 Taiwan Mask Corporation,P242,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Tanaka,P294,Ceramic packages,N95,,2019,
 Tanaka Denshi,P278,Bond wires,N94,,2019,
 Tesla,P24,AI ASICs,N4,,2019,
-Thermo Fisher,P96,,N68,,2019,
 Thomas West,P224,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Tokyo Ohka Kogyo,P207,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Toppan Photomasks,P240,Photomasks,N33,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Toray,P292,Ceramic packages,N95,,2019,
 Tosoh SMD,P249,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 Trinity Tech,P171,Lead frames,N93,,2019,
-USA,P1,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-USA,P1,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-USA,P1,Photomasks,N33,40.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-USA,P1,Discrete GPUs,N2,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
-USA,P1,Core intellectual property,N85,52.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 USA,P1,AI ASICs,N4,,2019,
-USA,P1,Ceramic packages,N95,,2019,
-USA,P1,,N68,,2019,
-USA,P1,Electronic design automation software,N84,96.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
-USA,P1,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-USA,P1,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
-USA,P1,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
 USA,P1,Wet chemicals,N92,,2019,
+USA,P1,Ceramic packages,N95,,2019,
+USA,P1,Photoresists,N31,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+USA,P1,Photomasks,N33,40.0,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+USA,P1,Deposition materials,N88,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+USA,P1,CMP materials,N90,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)
+USA,P1,Electronic design automation software,N84,96.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
+USA,P1,Core intellectual property,N85,52.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
 USA,P1,Electronic gases,N91,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SEMI)
+USA,P1,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
+USA,P1,Discrete GPUs,N2,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
+USA,P1,FPGAs,N3,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 USA,P1,Wafer inspection tools,N61,,2019,
 USA,P1,Packaging materials,N100,,2019,
 Various,P5,Core intellectual property,N85,2.0,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)"
@@ -1300,7 +1293,6 @@ Xpeedic,P193,Electronic design automation software,N84,,2019,"[CSET](https://cse
 YesDo,P282,Bond wires,N94,,2019,
 Yixing,P296,Ceramic packages,N95,,2019,
 Yongzhi,P276,Lead frames,N93,,2019,
-Zeiss,P98,,N68,,2019,
 Zhaoxin,P14,Advanced CPUs,N1,,2019,"[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing SIA, IC Insights, TrendForce, financial statements)"
 Zhonghuan,P231,Wafer,N26,,2019,[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)
 Zhongwei,P295,Ceramic packages,N95,,2019,
