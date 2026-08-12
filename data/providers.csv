@@ -116,6 +116,7 @@ KLA,,P118,organization,USA
 Mattson Tech,Mattson Technology,P119,organization,CHN
 AP Systems,,P120,organization,KOR
 Veeco,,P121,organization,USA
+Grand Process,,P122,organization,TWN
 Grand Process,Grand Plastic Technology,P122,organization,TWN
 AMEC,Advanced Micro-Fabrication Equipment Inc. China,P123,organization,CHN
 Plasma-Therm,,P124,organization,USA
@@ -280,7 +281,7 @@ Zhongwei,,P295,organization,CHN
 Yixing,,P296,organization,CHN
 Ibiden,,P297,organization,JPN
 NanYa,,P298,organization,TWN
-Shinko,,P299,organization,JPN
+Shinko,SINFONIA,P299,organization,JPN
 Shennan Circuits,,P300,organization,CHN
 Zhuhai Yueya,,P301,organization,CHN
 AKM,,P302,organization,CHN
@@ -308,7 +309,8 @@ Exicon,,P322,organization,KOR
 FormFactor,,P323,organization,USA
 Graco,,P324,organization,USA
 Hangzhou Changchuan Technology,,P325,organization,CHN
-Hanwha Precision Machinery,,P326,organization,KOR
+Hanwha Semitech,,P326,organization,KOR
+Hanwha Semitech,Hanwha Precision Machinery,P326,organization,KOR
 Hon Technologies,,P327,organization,TWN
 IMS Nanofabrication,IMS Nanofabrication AG,P328,organization,AUT
 Incal Technology,,P329,organization,USA
@@ -396,3 +398,7 @@ Intevac,,P408,organization,USA
 Palomar Technologies,,P409,organization,USA
 PacTech,,P410,organization,JPN
 Component Technology,,P411,organization,SGP
+Grand Process,Grand Process Technology,P122,organization,TWN
+Scientech Corporation,,P412,organization,TWN
+Hirata,HIRATA,P413,organization,JPN
+Yamaha Robotics,YAMAHA ROBOTICS,P414,organization,JPN
