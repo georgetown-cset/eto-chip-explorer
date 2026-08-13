@@ -67,6 +67,12 @@ MAJOR_PROVISION = "Major"
 MINOR_PROVISION = "negligible"
 HIGH_PROVISION = "high"
 MARKET_SHARE_COL = "negligible_market_share"
+VALID_COUNTRY_PROVISION_TYPES = [
+    "tool_resource",
+    "material_resource",
+    "design_resource",
+    "stage",
+]
 
 
 class Preprocess:
@@ -348,7 +354,7 @@ class Preprocess:
                     self.country_provision[country_name][provided] = provision_share
                     if (provided not in self.node_to_meta) or (
                         self.node_to_meta[provided]["type"]
-                        not in ["tool_resource", "material_resource", "stage"]
+                        not in VALID_COUNTRY_PROVISION_TYPES
                     ):
                         print(
                             f"unexpected country provision: {provided} "
