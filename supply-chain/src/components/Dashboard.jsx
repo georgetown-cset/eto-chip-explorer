@@ -463,7 +463,7 @@ const Dashboard = () => {
   ];
 
   return (<>
-    <div style={{maxWidth: "1500px"}}>
+    <div className="dashboard">
       <InfoCard
         title="Supply Chain Explorer: Semiconductors"
         description={
@@ -486,14 +486,12 @@ const Dashboard = () => {
                 <ExternalLink href="https://cset.georgetown.edu/research-topic/data/">data</ExternalLink>
               } and <ExternalLink href="https://cset.georgetown.edu/research-topics">analysis</ExternalLink> teams.
             </p>
-            <Typography component={"div"} style={{paddingTop: "15px"}}>
-              <div>
-                {docsAndBlogLinks.reduce((prev, curr) => [prev, <span style={{padding: "0px 10px"}}>|</span>, curr])}
-              </div>
-              <p className="no-percy">
-                Last updated on {data.site.buildTime}.
-              </p>
-            </Typography>
+            <p className="learn-more">
+              {docsAndBlogLinks.reduce((prev, curr) => [prev, <span style={{padding: "0px 10px"}}>|</span>, curr])}
+            </p>
+            <p className="build-time no-percy">
+              Last updated on {data.site.buildTime}.
+            </p>
           </>
         }
         documentationLink="https://eto.tech/tool-docs/chipexplorer/"

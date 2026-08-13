@@ -1,4 +1,22 @@
 
+.dashboard {
+  margin: 0 auto;
+  max-width: 1500px;
+
+  .infocard--description a {
+    text-decoration: underline;
+  }
+}
+
 .eto-description {
+  font-size: 1rem;
+}
+
+.learn-more {
+  font-size: 1rem;
+}
+
+.build-time {
+  color: var(--grey);
   font-size: 1rem;
 }
