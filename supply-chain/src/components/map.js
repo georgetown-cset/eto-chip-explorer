@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useRef } from "react";
 import Xarrow, {Xwrapper} from "react-xarrows";
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -40,6 +40,12 @@ const Map = (props) => {
       }
     }
   `);
+
+  // Due to how the minimap nodes are created, there's no way to differentiate
+  // the nodes where the `nodes` prop is `[]`.  Therefore, we use this external
+  // ref to provide a unique numeric addition to the key.  Long-term this should
+  // be refactored to use a cleaner implementation.
+  const keyIx = useRef(0);
 
   const descriptions= data.allMdx.nodes;
   const images = data.images.nodes;
@@ -101,44 +107,48 @@ const Map = (props) => {
     </div>
   }
 
-  const mkLayer = (nodes, isUnattached=false, minimap=false, standalone=false) => {
-    if (minimap) {
-      return <div key={JSON.stringify(nodes)}>
+  const makeMinimapLayer = (nodes, isUnattached=false, standalone=false) => {
+    return (
+      <div key={nodes.length > 0 ? JSON.stringify(nodes) : `[]-${keyIx.current++}`}>
         {nodes.map(node =>
           <MiniGraphNode node={node} key={node} parent={standalone ? null : parentNode} standalone={standalone}
             currSelectedNode={standalone ? filterValues["input-resource"] : selectedNode}/>
         )}
       </div>
+    );
+  };
+
+  const mkLayer = (nodes, isUnattached=false, minimap=false, standalone=false) => {
+    if ( minimap ) {
+      console.warn("Error - should not happen - use makeMinimapLayer()");
     }
-    else {
-      // Making an assumption that the first node in the list has a stage provided
-      const stage = nodeToMeta[nodes[0]]?.["stage_id"];
-      let stageClassName = "stage-border";
-      if (!stage) {stageClassName += " uncolored"}
-      stageClassName = _getStageHighlight(stage, highlights, stageClassName);
-      return <div className={stageClassName} key={JSON.stringify(nodes)}>
-        {nodes.map(node =>
-          <GraphNode node={node} highlights={highlights} key={node} parent={parentNode} pdfs={pdfs}
-                    unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}
-                    descriptions={descriptions} images={images} highlighterFilter={highlighterFilter} />
-        )}
-        <div className="documentation-node-widescreen">
-          {nodes.includes(parentNode) &&
-            <DocumentationNode
-              currSelectedNode={selectedNode}
-              description={descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}
-              images={images}
-              isStage={false}
-              minimap={minimapLayers}
-              node={selectedNode}
-              parent={parentNode}
-              pdfs={pdfs}
-              updateSelected={updateSelected}
-            />
-          }
-        </div>
+    // Making an assumption that the first node in the list has a stage provided
+    const stage = nodeToMeta[nodes[0]]?.["stage_id"];
+    let stageClassName = "stage-border";
+    if (!stage) {stageClassName += " uncolored"}
+    stageClassName = _getStageHighlight(stage, highlights, stageClassName);
+    return <div className={stageClassName} key={JSON.stringify(nodes)}>
+      {nodes.map(node =>
+        <GraphNode node={node} highlights={highlights} key={node} parent={parentNode} pdfs={pdfs}
+                  unattached={isUnattached} updateSelected={updateSelected} currSelectedNode={selectedNode}
+                  descriptions={descriptions} images={images} highlighterFilter={highlighterFilter} />
+      )}
+      <div className="documentation-node-widescreen">
+        {nodes.includes(parentNode) &&
+          <DocumentationNode
+            currSelectedNode={selectedNode}
+            description={descriptions.filter(n => n.fields.slug === selectedNode)[0]?.body}
+            images={images}
+            isStage={false}
+            minimap={minimapLayers}
+            node={selectedNode}
+            parent={parentNode}
+            pdfs={pdfs}
+            updateSelected={updateSelected}
+          />
+        }
       </div>
-    }
+    </div>
   };
 
   const arrowShape = {svgElem: <path d="M 0.5 0.25 L 1 0.5 L 0.5 0.75 z"/>, offsetForward: 0.75}
@@ -216,8 +226,8 @@ const Map = (props) => {
     let currNodes = [finalNode];
     const layers = [mkLayer(currNodes)];
     const layerEdges = [];
-    minimapLayers.push(mkLayer(currNodes, false, true));
-    standaloneMinimapLayers.push(mkLayer(currNodes, false, true, true));
+    minimapLayers.push(makeMinimapLayer(currNodes, false));
+    standaloneMinimapLayers.push(makeMinimapLayer(currNodes, false, true));
     const seen = new Set();
     currNodes.map(n => seen.add(n));
     // To help us figure out how to draw arrows
@@ -278,9 +288,9 @@ const Map = (props) => {
       // Add nodes for the current layer
       const layer = mkLayer(orderedLayerNodes);
       layers.push(layer);
-      const minimapLayer = mkLayer(orderedLayerNodes, false, true);
+      const minimapLayer = makeMinimapLayer(orderedLayerNodes, false);
       minimapLayers.push(minimapLayer);
-      const standaloneMinimapLayer = mkLayer(orderedLayerNodes, false, true, true);
+      const standaloneMinimapLayer = makeMinimapLayer(orderedLayerNodes, false, true);
       standaloneMinimapLayers.push(standaloneMinimapLayer);
       // Add edges for the current layer
       const centerPoint = orderedLayerNodes.length/2 - 0.5;
@@ -312,8 +322,8 @@ const Map = (props) => {
         unattached.push(node)
       }
     }
-    minimapLayers.unshift(mkLayer(unattached, true, true));
-    standaloneMinimapLayers.unshift(mkLayer(unattached, true, true, true));
+    minimapLayers.unshift(makeMinimapLayer(unattached, true));
+    standaloneMinimapLayers.unshift(makeMinimapLayer(unattached, true, true));
     return (
       <div className="map-background">
         {filterValues["input-resource"] && filterValues["input-resource"] !== defaultFilterValues["input-resource"] && documentationPanelToggle &&
