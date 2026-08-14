@@ -487,7 +487,11 @@ const Dashboard = () => {
               } and <ExternalLink href="https://cset.georgetown.edu/research-topics">analysis</ExternalLink> teams.
             </p>
             <p className="learn-more">
-              {docsAndBlogLinks.reduce((prev, curr) => [prev, <span style={{padding: "0px 10px"}}>|</span>, curr])}
+              {docsAndBlogLinks.map((entry, ix) => (
+                <React.Fragment key={ix}>
+                  {ix > 0 && " | "}{entry}
+                </React.Fragment>
+              ))}
             </p>
             <p className="build-time no-percy">
               Last updated on {data.site.buildTime}.
