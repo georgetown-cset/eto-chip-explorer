@@ -12,7 +12,7 @@ Mask exposure systems - e-beam,N29,,,Maskless lithography tools,N28
 Mask exposure systems - laser beam,N30,,,Maskless lithography tools,N28
 Photomasks,N33,Photolithography,N25,,
 Photoresists,N31,Photolithography,N25,,
-Resist processing tools,N32,Photolithography,N25,,
+Resist processing tools,N32,,,Lithography tools,N19
 Deposition tools,N36,Deposition,N35,,
 Plasma CVD tools,N38,,,Chemical vapor deposition tools,N47
 Low-pressure CVD tools,N39,,,Chemical vapor deposition tools,N47
