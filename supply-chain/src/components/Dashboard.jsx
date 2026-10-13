@@ -473,9 +473,6 @@ const Dashboard = () => {
               and relationships involved in producing semiconductor devices (i.e. chips), including AI chips. Use the
               Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes
               involved in the supply chain.
-
-              ETO's Supply Chain Explorer is designed to quickly orient non-experts to the essential inputs, players,
-              and relationships involved in producing advanced computer chips. Use the Explorer to learn how these chips are made, who makes them, and the tools, materials, and processes involved in the supply chain.
             </p>
 
             <p className="eto-description">
