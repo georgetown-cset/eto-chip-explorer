@@ -123,11 +123,18 @@ const ProviderGraph = ({
         </Typography>
       }
       {(graphProviders.length === 0 || onlyVariousInGraph) && minorProviders.length > 0 &&
-        <ProviderTable
-          caption={title}
-          providers={minorProviders}
-          tooltip={tooltip}
-        />
+        <>
+          <ProviderTable
+            caption={title}
+            providers={minorProviders}
+            tooltip={tooltip}
+          />
+          {marketShareSource &&
+            <div className="caption"> <b>Source: </b>
+              <span dangerouslySetInnerHTML={{__html: marketShareSource}} />
+            </div>
+          }
+        </>
       }
     </div>
   );
