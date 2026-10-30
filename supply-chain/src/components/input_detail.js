@@ -64,7 +64,6 @@ const InputDetail = (props) => {
       {countryList?.length > 0 &&
         <ProviderGraph
           marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
-          marketShareSource={nodeToMeta[selectedNode].market_chart_source}
           providers={countryList}
           title={<><PublicIcon /> Supplier countries</>}
           tooltip={tooltips.providers.countries}
@@ -73,7 +72,6 @@ const InputDetail = (props) => {
       {orgList?.length > 0 &&
         <ProviderGraph
           marketShareCaption={nodeToMeta[selectedNode].market_chart_caption}
-          marketShareSource={nodeToMeta[selectedNode].market_chart_source}
           providers={orgList}
           title={ <><CorporateFareIcon /> Supplier companies</> }
           tooltip={tooltips.providers.orgs}
@@ -104,6 +102,12 @@ const InputDetail = (props) => {
               tooltip={tooltips.providers.orgs}
             />
           }
+        </div>
+      }
+
+      {nodeToMeta?.[selectedNode]?.market_chart_source &&
+        <div className="caption source-note"> <b>Source: </b>
+          <span dangerouslySetInnerHTML={{__html: nodeToMeta[selectedNode].market_chart_source}} />
         </div>
       }
     </div>
