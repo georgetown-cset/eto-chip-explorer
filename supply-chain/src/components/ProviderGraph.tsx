@@ -22,7 +22,6 @@ type Provider = ProviderWithProvisionValue | ProviderWithoutProvisionValue;
 
 export interface ProviderGraphProps {
   marketShareCaption?: string;
-  marketShareSource?: string; // TODO: Make this a ReactNode, or something safer?
   providers: Array<Provider>;
   title: string;
   tooltip?: ReactNode;
@@ -30,7 +29,6 @@ export interface ProviderGraphProps {
 
 const ProviderGraph = ({
   marketShareCaption,
-  marketShareSource,
   providers,
   title,
   tooltip,
@@ -110,11 +108,6 @@ const ProviderGraph = ({
           {marketShareCaption &&
             <div className="caption"> <b>Note: </b> {marketShareCaption}</div>
           }
-          {marketShareSource &&
-            <div className="caption"> <b>Source: </b>
-              <span dangerouslySetInnerHTML={{__html: marketShareSource}} />
-            </div>
-          }
         </>
       }
       {graphProviders.length > 0 && !onlyVariousInGraph && minorProviders.length > 0 &&
@@ -123,18 +116,11 @@ const ProviderGraph = ({
         </Typography>
       }
       {(graphProviders.length === 0 || onlyVariousInGraph) && minorProviders.length > 0 &&
-        <>
-          <ProviderTable
-            caption={title}
-            providers={minorProviders}
-            tooltip={tooltip}
-          />
-          {marketShareSource &&
-            <div className="caption"> <b>Source: </b>
-              <span dangerouslySetInnerHTML={{__html: marketShareSource}} />
-            </div>
-          }
-        </>
+        <ProviderTable
+          caption={title}
+          providers={minorProviders}
+          tooltip={tooltip}
+        />
       }
     </div>
   );
